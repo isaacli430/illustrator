@@ -1,0 +1,7 @@
+sheet SymbolPanel
+{
+	interface:
+		listMode: true;
+		floatingPanel: true;
+		symbolLibLoaded: false;
+}

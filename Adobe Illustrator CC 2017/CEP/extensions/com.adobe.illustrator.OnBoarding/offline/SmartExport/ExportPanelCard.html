@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Exporting Assets</title>
+<link rel="stylesheet" type="text/css" href="style2.css">
+    <style>
+        body{
+            background-color: white;
+            overflow: hidden;
+        }
+        .img-radius{
+            border-radius: 0;
+        }
+        #imageContainer{
+            height: 280px;
+            width: 255px;
+            border-top:    1px solid #888;
+            border-right:  1px solid #888; 
+            border-left:   1px solid #888;
+        }
+        .content {
+            border-radius: 0;
+            /* Add an extra pixel of border thickness to the content as 1px gets clipped by OnBoarding */
+            border-bottom: 2px solid #888;
+            border-right:  1px solid #888; 
+            border-left:   1px solid #888;
+            width: 223px;
+            
+        }
+    </style>
+    <script type="text/javascript" src="../../js/CSInterface.js"></script>
+   
+		<script type="text/javascript"> 
+
+			var CSLibrary = new CSInterface();
+			var InformClientAboutPopupHeight = function ()
+            {
+                var rsp_event = new CSEvent("SmartExportOnBoardingEvent", "APPLICATION");
+                var jsonObj = {
+                    "Data": document.body.offsetHeight.toString(), 
+                    "Type": "HeightInformationFromCardPopup"
+                };
+                rsp_event.data = JSON.stringify(jsonObj);
+                CSLibrary.dispatchEvent(rsp_event);
+            }
+            function DismissClickedFromExportPanelCard() {
+                var rsp_event = new CSEvent("SmartExportOnBoardingEvent", "APPLICATION");
+                var jsonObj = {
+                    "Data": '', 
+                    "Type": "DismissClickedFromExportPanelCard"
+                };
+                rsp_event.data = JSON.stringify(jsonObj);
+                CSLibrary.dispatchEvent(rsp_event);
+            }
+            
+            function LearnMoreClickedFromExportPanelCard() {
+                var rsp_event = new CSEvent("SmartExportOnBoardingEvent", "APPLICATION");
+                var jsonObj = {
+                    "Data": '', 
+                    "Type": "LearnMoreClickedFromExportPanelCard"
+                };
+                rsp_event.data = JSON.stringify(jsonObj);
+                CSLibrary.dispatchEvent(rsp_event);
+            }
+			
+			
+    </script>
+</head>
+<body>
+<div class="coach" id="main">
+		<div id="imageContainer"><img class="img-radius" src="smart-export.gif"/></div>
+		<div class="content">
+					<div>
+						<p data-locale="ExportingAssetsCardHeading" style="float:left"></p>
+						<p style="float:right"> <span data-locale="CloseLink"  class="close" onclick="DismissClickedFromExportPanelCard()"></span></p>
+					</div>
+            <div data-locale="CardTextOne" class="show" id="div1"></div>
+            <div data-locale="CardTextTwo" class="hide" id="div2"></div>
+            <div data-locale="CardTextThree" class="hide" id="div3"></div>
+            <div style="text-align: center"><button data-locale="LearnMoreButton" class="cta" onclick="LearnMoreClickedFromExportPanelCard()"></button></div>
+		</div>	
+</div>
+<script>
+    	
+window.onload=function()
+{
+    var cs = new CSInterface();
+    var resourceBundle = cs.initResourceBundle();														
+    InformClientAboutPopupHeight();
+	setTimeout(func1, 4500);
+	setTimeout(func2, 8000);
+	setTimeout(func3, 12200);
+};
+function func1()
+{
+	document.getElementById("div1").className="hide";
+	document.getElementById("div2").className="show";
+
+    
+}
+function func2()
+{
+	document.getElementById("div2").className="hide";
+	document.getElementById("div3").className="show";
+
+}
+function func3()
+{
+	document.getElementById("div1").className="show";
+	document.getElementById("div3").className="hide";
+
+    
+	setTimeout(func1, 4500);
+	setTimeout(func2, 8000);
+	setTimeout(func3, 12200);
+}
+</script>
+</body>
+</html>

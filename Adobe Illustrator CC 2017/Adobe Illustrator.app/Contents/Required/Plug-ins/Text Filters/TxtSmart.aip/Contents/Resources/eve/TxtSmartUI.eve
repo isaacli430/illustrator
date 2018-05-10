@@ -1,0 +1,84 @@
+layout TxtSmartUI
+{
+    view subview(identifier: "AIEveSubView",
+                 child_horizontal: @align_fill,
+                 layout_theme: @dialog_large,
+                 placement: @place_column,
+				 show_border: false,spacing: @unrelated_spacing)
+    {
+        column(child_horizontal: @align_fill,spacing: @inter_group_spacing)
+        {
+            group(identifier: "ReplacePunctuationGroup",
+					placement: @place_row,
+					name: "$$$/TxtSmart/Dlg/TxtSmart/13=Replace Punctuation")
+            {
+                column()
+                {
+                    checkbox(identifier: "fiCheckBox",
+                             set_default_focus: true,
+                             name: "$$$/TxtSmart/Dlg/TxtSmart/fiCheckBox=f&f, fi, ffi Ligatures");
+
+                    checkbox(identifier: "flCheckBox",
+                             name: "$$$/TxtSmart/Dlg/TxtSmart/flCheckBox=ff, f&l, ffl Ligatures");
+
+                    checkbox(identifier: "quotesCheckBox",
+                             name: "$$$/TxtSmart/Dlg/TxtSmart/quotesCheckBox=Smart &Quotes (^[ ^])");
+
+                    checkbox(identifier: "spacesCheckBox",
+                             name: "$$$/TxtSmart/Dlg/TxtSmart/spacesCheckBox=Smart &Spaces (. )");
+                }
+
+                column()
+                {
+                    checkbox(identifier: "emCheckBox",
+                             name: "$$$/TxtSmart/Dlg/TxtSmart/emCheckBox=En, Em &Dashes (--)");
+
+                    checkbox(identifier: "ellipsesCheckBox",
+                             name: "$$$/TxtSmart/Dlg/TxtSmart/ellipsesCheckBox=&Ellipses (...)");
+
+                    checkbox(identifier: "fractionCheckBox",
+                             name: "$$$/TxtSmart/Dlg/TxtSmart/fractionCheckBox=E&xpert Fractions");
+                }
+            }
+
+            group(identifier: "ReplaceInGroup",
+                  name: "$$$/TxtSmart/Dlg/TxtSmart/14=Replace In",
+                  placement: @place_row)
+            {
+				radiogroup(placement: @place_row, horizontal: @align_fill, show_border: false, margin: 0)			
+				{
+					radio_button(bind: @Size,
+								 identifier: "selectedRadioButton",
+								 name: "$$$/TxtSmart/Dlg/TxtSmart/selectedRadioButton=Selected &Text Only",
+								 value: 1);
+
+					radio_button(bind: @Size,
+								 identifier: "entireRadioButton",
+								 name: "$$$/TxtSmart/Dlg/TxtSmart/entireRadioButton=E&ntire Document",
+								 value: 2);
+                }
+            }
+
+      }     
+		row(vertical: @align_fill,child_horizontal: @align_fill,child_vertical: @align_center,spacing: @separated_spacing)
+		{
+		 checkbox(identifier: "resultCheckBox",
+                     indent: gIndent,
+                     name: "$$$/TxtSmart/Dlg/TxtSmart/resultCheckBox=&Report Results");
+	
+			
+				row(horizontal: @align_fill,
+					child_horizontal: @align_right,
+					reverse: os == @mac, spacing: @related_spacing)
+				{
+					button(default: true, name: "$$$/gOK=OK",
+        					identifier: "okButton", commit_button: true);
+					button(cancel: true,name: "$$$/gCancel=Cancel",
+        				   identifier: "cancelButton", commit_button: true);
+				}
+			                      
+       	} 
+
+
+    }
+}

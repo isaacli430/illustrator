@@ -1,0 +1,24 @@
+layout ShaperSoftMessage
+{
+ 	view subview(identifier: "ShaperSoftMessageSubView",
+			 child_horizontal: @align_fill,
+			 vertical: @align_fill,
+			 layout_theme: @panel,
+			 show_border: false,
+			 margin: [10, 10, 10, 10],
+			 placement: @place_column)
+    {		
+		row(horizontal: @align_fill, spacing: 10)
+		{
+			image (identifier:"ShaperIcon", guide_mask:[@guide_label], horizontal: @align_left, vertical: @align_center, image:{normal:"SP_ShaperTool_Lg_N.png", dark_normal:"SP_ShaperTool_Lg_N_D.png"});
+			
+			column(horizontal: @align_fill, spacing: 0, horizontal: @align_fill, vertical: @align_top)
+			{
+				static_text(identifier: "CreateWithShaper", characters: 18, name: "$$$/ShapeSoftMessage/CreateWithShaper=Create Shapes With Gestures");
+				link_button(identifier: "SelectShaper", name: "$$$/ShapeSoftMessage/SelectShaperMessage=More...", wants_focus: false);
+			}	
+			
+			image( identifier: "CloseButton", horizontal: @align_right, vertical: @align_top, image: {normal: "SP_Close_5x7_N.png", dark_normal:"SP_Close_5x7_N_D.png"});			
+		}
+	}
+}

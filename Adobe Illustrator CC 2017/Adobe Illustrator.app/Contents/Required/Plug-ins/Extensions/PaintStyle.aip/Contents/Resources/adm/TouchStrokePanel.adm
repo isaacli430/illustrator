@@ -1,0 +1,11 @@
+sheet TouchStrokeModel
+{
+interface: 	
+	FlipAlongEnabled : false;
+	FlipAcrossEnabled : false;
+	ShowFlipButtons : 0;
+invariant: 	
+
+	Invariant_FlipAlongOk <== FlipAlongEnabled;
+	Invariant_FlipAcrossOk <== FlipAcrossEnabled;
+}

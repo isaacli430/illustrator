@@ -1,0 +1,36 @@
+/* [1] */
+$$$/Pathfinder/Str/Undo/1=Undo Add
+/* [2] */
+$$$/Pathfinder/Str/Undo/2=Undo Intersect
+/* [3] */
+$$$/Pathfinder/Str/Undo/3=Undo Exclude
+/* [4] */
+$$$/Pathfinder/Str/Undo/4=Undo Subtract
+/* [5] */
+$$$/Pathfinder/Str/Undo/5=Undo Minus Back
+/* [6] */
+$$$/Pathfinder/Str/Undo/6=Undo Divide
+/* [7] */
+$$$/Pathfinder/Str/Undo/7=Undo Outline
+/* [8] */
+$$$/Pathfinder/Str/Undo/8=Undo Trim
+/* [9] */
+$$$/Pathfinder/Str/Undo/9=Undo Merge
+/* [10] */
+$$$/Pathfinder/Str/Undo/10=Undo Crop
+/* [11] */
+$$$/Pathfinder/Str/Undo/11=Undo Hard Mix
+/* [12] */
+$$$/Pathfinder/Str/Undo/12=Undo Soft Mix
+/* [13] */
+$$$/Pathfinder/Str/Undo/13=Undo Trap
+/* [14] */
+$$$/Pathfinder/Str/Undo/14=Undo Options
+/* [15] */
+
+/* [16] */
+$$$/Pathfinder/Str/Undo/16=Undo Make Compound Shape
+/* [17] */
+$$$/Pathfinder/Str/Undo/17=Undo Release Compound Shape
+/* [18] */
+$$$/Pathfinder/Str/Undo/18=Undo Expand Compound Shape

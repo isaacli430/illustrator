@@ -1,0 +1,24 @@
+/* [1] */
+!MEM
+/* [2] */
+$$$/PathSuite/Str/Error/2=The filter cannot complete because there isn't enough memory (RAM) available.
+/* [3] */
+271
+/* [4] */
+$$$/PathSuite/Str/Error/4=The filter cannot complete because there isn't enough memory (RAM) available.
+/* [5] */
+SEGM
+/* [6] */
+$$$/PathSuite/Str/Error/8=The filter cannot complete because a path has too many anchor points.
+/* [7] */
+NESS
+/* [8] */
+$$$/PathSuite/Str/Error/6=The filter cannot complete because a layer is locked or invisible.
+/* [9] */
+!sel
+/* [10] */
+$$$/PathSuite/Str/Error/10/Mac=You must select a path first.
+/* [11] */
+<others>
+/* [12] */
+$$$/PathSuite/Str/Error/14=The filter cannot complete because of an unknown error.

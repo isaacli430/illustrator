@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+  <menuItem id ="1" text="$$$/ArtStyle/Mnu/16700/Add=Add to Graphic Styles"></menuItem>
+  <separator></separator>
+  <menuItem id ="3" text="$$$/ArtStyle/Mnu/16700/5=Use Square for Preview"></menuItem>
+  <menuItem id ="4" text="$$$/ArtStyle/Mnu/16700/6=Use Text for Preview"></menuItem>
+  <separator></separator>
+  <menuItem id ="6" text="$$$/ArtStyle/Mnu/16700/1=Thumbnail View"></menuItem>
+  <menuItem id ="7" text="$$$/ArtStyle/Mnu/16700/2=Small List View"></menuItem>
+  <menuItem id ="8" text="$$$/ArtStyle/Mnu/16700/3=Large List View"></menuItem>
+  <separator></separator>
+  <menuItem id ="10" text="$$$/ArtStyle/Mnu/16700/4=Persistent"></menuItem>
+</menu>

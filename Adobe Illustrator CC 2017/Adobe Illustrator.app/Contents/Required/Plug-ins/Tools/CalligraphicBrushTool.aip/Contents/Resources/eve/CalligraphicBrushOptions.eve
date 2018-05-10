@@ -1,0 +1,140 @@
+layout CalligraphicBrushOptions
+{
+    view subview(identifier: "calligraphicBrushOptionsSubView",
+										child_horizontal: @align_fill,
+										placement: @place_column,
+                                        show_border: false,
+                                        spacing: @unrelated_spacing,
+                                        layout_theme: @dialog_large)
+
+    {
+		
+		optional(bind: @show_name, margin: 0, vertical: @align_fill, value: true)
+		{
+			edit_text(identifier: "BrushOptionsNameEditText", horizontal: @align_fill, bind: @calligraphicBrush_title, name:'$$$/calligraphicBrushOptions/dialog/nameTitle=&Name:', max_characters: 31);
+		}
+		
+		row(horizontal: @align_center)
+		{
+			column(guide_mask:[])
+			{
+				display_text(identifier: "ForUIAlingment",bind:@BlankString,wants_focus: false);
+				brush_shape(identifier: "BrushShapeControl", bind_angle: @angle,alt: '$$$/CalligraphicBrushTool/Str/16805=Brush Shape Editor', 
+								bind_roundness: @round, wants_focus: false, show_border: true, height:72, width:72);
+			}
+			column(guide_mask:[])
+			{
+				static_text(identifier: "DiameterScalingString",name:"$$$/CalligraphicBrushOptions/DiameterScalingStringDummy=XXXXXXXXX",
+					horizontal: @align_center,wants_focus: false);
+				brush_shape_preview(angle: @angle, 
+									roundness: @round, 
+									diameter: @diameter,
+									show_variation: true,
+									diameter_variation: @AV_diameter_right,
+									angle_variation: @AV_angle_right,
+									roundness_variation: @AV_roundness_right,
+									width:200,
+									height:72,
+									wants_focus: false);
+			}
+
+		}
+		
+		
+		row(child_vertical: @align_center)
+		{
+			row(spacing: 5)
+			{
+				combo_slider(bind: @angle, minLength: 125,
+						slider_point: @up,	
+						identifier: "angle_left", decimal_places: 0, 
+						value_range: {min_value: -180, max_value: 180},
+						min_max_filter: {min_value: -180, max_value: 180},
+						name: '$$$/CalligraphicBrushTool/Dlg/BrushDef/Angle=&Angle:',
+						unit: 'NumberEditUnit_Degree',
+						show_editbox: false);
+				unit_hot_number(bind: @angle, set_default_focus: true, identifier: "angle_left_edit", digits: 3, decimal_places: 0,
+						min_value: -180, max_value: 180, unit:'NumberEditUnit_Degree');
+			}
+			row(spacing: 0)
+			{
+				guide_consumer(consume_horizontal: 1);
+				popup(	bind: @AV_brush_param_type_for_angle, identifier: "brush_param_type_for_angle",
+						items: @dependingItems,
+						include_custom_item: false);
+            }       
+            unit_hot_number(bind: @AV_angle_right, identifier: "angle_right", digits: 4, decimal_places: 0, slider: true, min_value: @min_angle_variation, 
+                        max_value: @max_angle_variation, unit:"NumberEditUnit_Degree",name: '$$$/CalligraphicBrushTool/Dlg/BrushDef/17=Var&iation:');
+		}
+		
+		row(child_vertical: @align_center)
+		{
+			row(spacing: 5)
+			{
+				combo_slider(bind: @round, minLength: 125,        
+						slider_point: @up,
+                        identifier: "roundness_left", decimal_places: 0, slider: true, min_max_filter: {min_value: 0, max_value: 100},
+                        value_range: {min_value: 0, max_value: 100},
+						name: '$$$/CalligraphicBrushTool/Dlg/BrushDef/Roundness=&Roundness:',
+						unit: 'NumberEditUnit_Percent',
+						show_editbox: false);
+				unit_hot_number(bind: @round, identifier: "roundness_left_edit", digits: 3, decimal_places: 0,
+						min_value: 0, max_value: 100, unit:'NumberEditUnit_Percent');
+			}
+            row(spacing: 0)
+			{
+				guide_consumer(consume_horizontal: 1);
+				popup(bind: @AV_brush_param_type_for_roundness, identifier: "brush_param_type_for_roundness",
+					  items: @dependingItems,
+							 include_custom_item: false);
+            }         
+            unit_hot_number(bind: @AV_roundness_right, identifier: "roundness_right", digits: 4, decimal_places: 0, slider: true, min_value: @min_roundness_variation, 
+                            max_value: @max_roundness_variation, unit: "NumberEditUnit_Percent",name: '$$$/CalligraphicBrushTool/Dlg/BrushDef/20=Varia&tion:');
+		}
+		
+		row(child_vertical: @align_center)
+		{
+			row(spacing: 5)
+			{
+				combo_slider(bind: @diameter, minLength: 125,        
+						slider_point: @up,
+                        identifier: "diameter_left", decimal_places: 1, min_max_filter: {min_value: 0, max_value: 1296},
+                        value_range: {min_value: 0, max_value: 1296},
+                        segments: [[0, 1], [0.50, 100], [0.51, 102], [0.70, 200], [1, 1000]],
+						name: '$$$/CalligraphicBrushTool/Dlg/BrushDef/Size=Si&ze:',
+						unit: @ruler_units,
+						show_editbox: false);
+				unit_hot_number(bind: @diameter, identifier: "diameter_left_edit", digits: 3, decimal_places: 1, 
+						min_value: 0, max_value: 1296, unit: @ruler_units);
+			}
+            row(spacing: 0)
+			{
+				guide_consumer(consume_horizontal: 1);
+				popup(bind: @AV_brush_param_type_for_diameter, identifier: "brush_param_type_for_diameter",
+					  items: @dependingItems,
+							 include_custom_item: false);
+            }            
+            unit_hot_number(bind: @AV_diameter_right, identifier: "diameter_right", digits: 4, decimal_places: 1, slider: true, min_value: @min_diameter_variation, 
+                            max_value: @max_diameter_variation, unit: @ruler_units,name: '$$$/CalligraphicBrushTool/Dlg/BrushDef/23=Variati&on:');
+		}
+		
+		row(horizontal: @align_fill, guide_mask: [ @guide_label ],child_vertical: @align_center,spacing: @separated_spacing)
+		{
+			optional(bind: @show_preview, margin: 0, value: true)
+			{
+				checkbox(identifier: "previewButton", name: "$$$/CalligraphicBrushTool/Dlg/PreviewCheckbox=Pre&view",bind: @preview,vertical: @align_center);
+			}
+			row(horizontal: @align_right,
+				reverse: os == @mac,spacing: @related_spacing)
+				{
+                    button(identifier: "okButton",
+						commit_button: true,
+						name: "$$$/gOK=OK");
+                    button(identifier: "cancelButton",
+						   commit_button: true,
+                           name: "$$$/gCancel=Cancel");
+                }
+        }
+
+	}
+}

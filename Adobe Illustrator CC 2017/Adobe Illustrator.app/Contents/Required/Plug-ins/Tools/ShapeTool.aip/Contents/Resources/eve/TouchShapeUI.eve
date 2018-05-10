@@ -1,0 +1,53 @@
+layout TouchShapeUI
+{
+    view subview(horizontal: @align_fill,
+                 identifier: "TouchShapeToolUIDialog",
+                 layout_theme: @dialog_large,
+                 placement: @place_row,
+                 spacing: @label_widget_spacing,
+				 show_border: false,
+				 layout_theme:@touch_panel)
+    {
+	
+		column(guide_mask:[], child_horizontal: @align_right)
+		{
+			static_text(identifier: "staticTextWidth", name: "$$$/ShapeTool/Dlg/Shape/TouchShapeWidthText=Width:");
+			static_text(identifier: "staticTextHeight", name: "$$$/ShapeTool/Dlg/Shape/TouchShapeHeightText=Height:");
+			static_text(identifier: "staticTextRadius", name: "$$$/ShapeTool/Dlg/Shape/TouchShapeRadiusText=Corner Radius:");
+		}
+		column(guide_mask:[])
+		{
+			row()
+			{
+				column(guide_mask:[])
+				{
+					unit_hot_number(set_default_focus: true,
+								bind: @Width, 
+								decimal_places: 2,
+								identifier: "width_editNumber");
+
+					unit_hot_number(bind: @Height, 
+								decimal_places: 2,
+								identifier: "height_editNumber");
+				}
+				toggle_button(identifier: "NoConstrainIcon", 
+								image: {normal: "NoConstrainIcon.png", dark_normal:"NoConstrainIconDark.png", down: "LinkOnConstrainIcon.png", dark_down:"LinkOnConstrainIconDark.png"}, 
+								alt: "$$$/ShapeTool/Dlg/Shape/ShapeNoConstrainToolTipText=Constrain Width and Height Proportions",
+								value_on: true, value_off: false, 
+								action: @constrain_action, 
+								bind: @showConstrainIcon, 
+								vertical: @align_center,
+								wants_focus: false);
+			}
+			unit_hot_number(decimal_places: 1,
+							bind: @Radius,
+							identifier: "cornerRadius_editNumber");			
+			row(margin:[0, 0, 0, 32], horizontal: @align_fill)
+			{
+				button(identifier: "Create",
+						name: "$$$/ShapeTool/Dlg/Shape/gCreate=Create",
+						wants_focus: false, horizontal: @align_fill );		
+			}
+		}
+	}
+}

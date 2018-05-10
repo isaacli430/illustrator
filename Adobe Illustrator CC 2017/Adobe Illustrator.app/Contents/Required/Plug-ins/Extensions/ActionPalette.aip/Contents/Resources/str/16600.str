@@ -1,0 +1,90 @@
+/* [1] */
+$$$/ActionPalette/Str/16601=Action Panel
+/* [2] */
+$$$/ActionPalette/Str/16602=By Grace Ge
+/* [3] */
+$$$/ActionPalette/Str/16603=Action 
+/* [4] */
+$$$/ActionPalette/Str/16604=New Action
+/* [5] */
+$$$/ActionPalette/Str/16605=New Set
+/* [6] */
+$$$/ActionPalette/Str/16606=Save Set To:
+/* [7] */
+$$$/ActionPalette/Str/16607=Save Set As:
+/* [8] */
+$$$/ActionPalette/Str/16608=Load Set From:
+/* [9] */
+$$$/ActionPalette/Str/16609=Insert Menu Item
+/* [10] */
+$$$/ActionPalette/Str/16610=Action Options
+/* [11] */
+$$$/gOK=OK
+/* [12] */
+$$$/ActionPalette/Str/16612=Set 
+/* [13] */
+$$$/ActionPalette/Str/16613=Set Options
+/* [14] */
+$$$/ActionPalette/Str/16614=Stop
+/* [15] */
+$$$/ActionPalette/Str/16615= has not been registered for action.
+/* [16] */
+$$$/ActionPalette/Str/16616=Record
+/* [17] */
+$$$/ActionPalette/Str/16617=Some event
+/* [18] */
+$$$/ActionPalette/Str/16618=Insert Menu Command is not available.
+/* [19] */
+F
+/* [20] */
+\0x05 F
+/* [21] */
+\0x11 F
+/* [22] */
+\0x11 \0x05 F
+/* [23] */
+$$$/ActionPalette/Str/16623=Set Work Path
+/* [24] */
+$$$/ActionPalette/Str/16624=Delete the selection?
+/* [25] */
+$$$/ActionPalette/Str/16625=Replace the current actions?
+/* [26] */
+$$$/ActionPalette/Str/16626=The object ^[
+/* [27] */
+$$$/ActionPalette/Str/16627=^] is not currently available.
+/* [28] */
+$$$/ActionPalette/Str/16628=&Continue
+/* [29] */
+$$$/ActionPalette/Str/16629=&Stop
+/* [30] */
+$$$/ActionPalette/Str/16630=Set Selection
+/* [31] */
+$$$/ActionPalette/Str/16631=Delete all the actions?
+/* [32] */
+$$$/ActionPalette/Str/16632=Play action
+/* [33] */
+$$$/ActionPalette/Str/16633=Command: 
+/* [34] */
+$$$/ActionPalette/Str/16634=Action: 
+/* [35] */
+$$$/ActionPalette/Str/16635=Set: 
+/* [36] */
+
+/* [37] */
+$$$/ActionPalette/Str/16637=Select Batch Source Folder.
+/* [38] */
+$$$/ActionPalette/Str/16638=Select Batch Destination Folder.
+/* [39] */
+$$$/ActionPalette/Str/16639=Select Batch Export Folder.
+/* [40] */
+$$$/ActionPalette/Str/16640=Select Batch Error Log File.
+/* [41] */
+
+/* [42] */
+$$$/ActionPalette/Str/16642=An error was encounted while batching. Check the error log file for details.
+/* [43] */
+$$$/ActionPalette/Str/16643=Message: 
+/* [44] */
+$$$/ActionPalette/Str/16644=Allow Continue: 
+/* [45] */
+$$$/ActionPalette/Str/16645=%s is not available.

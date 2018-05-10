@@ -1,0 +1,13 @@
+layout kMessageWithoutVCMenuID
+{
+	view menu( id: 803,
+				menubar: false )
+	{
+	    menu( text:  "$$$/_DocumentWindow/Mnu/800/5=Artboard Name", id:		1296388876, help_id:0);
+	    menu( text:  "$$$/_DocumentWindow/Mnu/800/2=Current Tool", id:				1296388864, help_id:0);
+	    menu( text:  "$$$/_DocumentWindow/Mnu/800/3=Date and Time", id:				1296388865, help_id:0);
+	    menu( text:  "$$$/_DocumentWindow/Mnu/800/4=Number of Undos", id:			1296388866, help_id:0);
+		separator();
+		menu( text:  "$$$/_DocumentWindow/Mnu/800/6=Document Color Profile", id:	1296388867, help_id:0);
+}
+}

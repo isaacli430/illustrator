@@ -1,0 +1,6 @@
+sheet Round
+{
+interface:
+	EnablePreview: true;
+	unlink Preview: false <== (EnablePreview == true) ? Preview : false;	
+}

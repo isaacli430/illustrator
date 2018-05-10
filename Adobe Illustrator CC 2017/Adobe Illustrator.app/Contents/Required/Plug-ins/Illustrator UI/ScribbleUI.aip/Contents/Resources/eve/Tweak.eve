@@ -1,0 +1,39 @@
+layout tweak
+{
+    view subview(placement: @place_column, layout_theme: @dialog_large, show_border: false, spacing: @unrelated_spacing)
+    {
+        column(horizontal:@align_fill, spacing: @inter_group_spacing)
+	{
+		group(name: "$$$/Scribble/Dlg/Scribble/Amount=Amount", placement: @place_column, horizontal:@align_fill)
+        	{							
+				combo_slider(bind: @HSliderValue, bind_final: true, name: "$$$/Scribble/Dlg/Scribble/HorizontalText=&Horizontal:", unit: @SliderUnits, 
+					min_max_filter: @abs_filter, value_range: @EditRange, identifier: "hslider", slider_point: @up, decimal_places: 2, digits: 6, set_default_focus: true);
+					
+				combo_slider(bind: @VSliderValue, bind_final: true, name: "$$$/Scribble/Dlg/Scribble/VerticalText=&Vertical:", unit: @SliderUnits, 
+					min_max_filter: @abs_filter, value_range: @EditRange, identifier: "vslider", slider_point: @up, decimal_places: 2, digits: 6);
+					
+				radiogroup(placement: @place_row, horizontal: @align_proportional, spacing: @button_group_spacing, show_border: false, margin: 0)
+				{
+					radio_button(bind: @Mode, horizontal: @align_left, value: false, identifier: "rel_btn", name: "$$$/Scribble/Dlg/Scribble/RelRadio=&Relative");
+					radio_button(bind: @Mode, horizontal: @align_right, value: true, identifier: "abs_btn", name: "$$$/Scribble/Dlg/Scribble/AbsRadio=&Absolute");
+				}
+			}
+        
+        	group(name: "$$$/Scribble/Dlg/Scribble/Modify=Modify", guide_mask: [@guide_label], horizontal: @align_fill, placement: @place_column)
+        	{
+            	checkbox(name: "$$$/Scribble/Dlg/Scribble/AnchorCheck=A&nchor Points", identifier: "modifyAnchor", bind: @modifyAnchor);
+            	checkbox(name: "$$$/Scribble/Dlg/Scribble/InCheck='&In' Control Points", identifier: "modifyIn", bind: @modifyIn);
+            	checkbox(name: "$$$/Scribble/Dlg/Scribble/OutCheck='&Out' Control Points", identifier: "modifyOut", bind: @modifyOut);
+        	}
+        }
+        row(horizontal: @align_fill, child_vertical: @align_center)
+        {
+            checkbox(bind: @Preview, name: "$$$/Scribble/Dlg/Scribble/Preview=&Preview", identifier: "previewButton", horizontal: @align_left, guide_mask: [@guide_label]);
+            row(reverse: os == @mac, horizontal: @align_right, spacing: @related_spacing)
+            {
+				button(name: "$$$/gOK=OK", commit_button: true, identifier: "okButton");
+				button(name: "$$$/gCancel=Cancel", commit_button: true, identifier: "cancelButton");
+	    }            
+        }
+    }
+}

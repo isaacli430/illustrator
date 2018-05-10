@@ -1,0 +1,68 @@
+layout AddArrow
+{
+    view subview(identifier: "AIEveSubView",
+				 child_horizontal: @align_fill,
+				 placement: @place_column,
+				 show_border: false, 
+				 layout_theme: @dialog_large, 
+				 spacing: @unrelated_spacing
+			)
+  {
+    column(child_horizontal: @align_fill)
+    {
+		row()
+		{
+    			static_text(identifier: "startText", name: "$$$/AddArrow/Dlg/Plugin/StartLabel=Start:");
+    			static_text(identifier: "startlegendText", name: "$$$/AddArrow/Str/Filter/5=%d of %d", horizontal: @align_right);
+    		}
+    		button( identifier: "startImage", height: 70, show_border: true, horizontal: @align_fill, wants_focus: false);
+    		row(horizontal: @align_center, child_vertical: @align_center, spacing: @related_spacing)
+    		{
+    			button(identifier: "prevButton", action: @startPrev,image: {normal: "SP_ArrowHeadLeft_Lg_N.png", dark_normal: "SP_ArrowHeadLeft_Lg_N.png"} ,show_border: true, wants_focus: false );
+    			button(identifier: "nextButton",action: @startNext,image: {normal:"SP_ArrowHeadRight_Lg_N.png",dark_normal:"SP_ArrowHeadRight_Lg_N_D.png"},show_border: true, wants_focus: false);
+		}
+
+		row()
+		{
+			static_text(identifier: "endText", name: "$$$/AddArrow/Dlg/Plugin/EndLabel=End:");
+			static_text(identifier: "endlegendText", name: "$$$/AddArrow/Str/Filter/5=%d of %d", horizontal: @align_right);
+		}
+    		button( identifier: "endImage", height: 70, show_border: true, horizontal: @align_fill, wants_focus: false);
+    		row(horizontal: @align_center, child_vertical: @align_center, spacing: @related_spacing)
+    		{
+    			button(identifier: "prevButton2", action: @endPrev,image: {normal: "SP_ArrowHeadLeft_Lg_N.png", dark_normal: "SP_ArrowHeadLeft_Lg_N.png"}, show_border: true,wants_focus: false );    		
+    			button(identifier: "nextButton2", action: @endNext,image: {normal:"SP_ArrowHeadRight_Lg_N.png",dark_normal:"SP_ArrowHeadRight_Lg_N_D.png"}, show_border: true,wants_focus: false );
+		}
+	
+
+	unit_hot_number(identifier: "Scale", min_value: 1, max_value: 1000, decimal_places: 2,
+			name :"$$$/AddArrow/Dlg/Plugin/ArrowScaleText=&Scale:",
+			digits: 4, set_default_focus: true,
+			suffix: "$$$/gPercent=%", bind: @scaleEdit, bind_final: true);
+   } 
+  
+      
+	row(horizontal: @align_fill, child_vertical: @align_center,spacing: @separated_spacing)
+    {
+    	panel(margin: 0, bind: @showPreviewField, horizontal: @align_left, vertical: @align_center, wants_focus:false)
+        {
+    		checkbox(identifier: "CheckBoxpreview",guide_mask: [ @guide_label ],
+    					 name: "$$$/AddArrow/Dlg/Plugin/PreviewButton=&Preview", horizontal: @align_left, vertical: @align_center,
+    					 wants_focus:true, bind: @preview);
+    	}
+    	
+    	row(reverse: os == @mac, horizontal: @align_right, spacing: @related_spacing)
+    	{ 
+    		button(
+    				identifier: "okButton", commit_button: true, 
+    				name: "$$$/gOK=OK");
+    		button(
+    				identifier: "cancelButton", commit_button: true,
+    				name: "$$$/gCancel=Cancel");       
+    	} 
+    
+        
+    }
+}
+}
+

@@ -1,0 +1,51 @@
+sheet DxfDwgExport
+{
+	interface:		
+		AutoCADVersionItems: [{ name: '$$$/DxfDwg/Dlg/ExportParam/RadioButton/Rel13=R13/LT95',
+									 value: 0 },
+								   { name: '$$$/DxfDwg/Dlg/ExportParam/RadioButton/Rel14=R14/LT98/LT97',
+									 value: 1 },
+								   { name: '$$$/DxfDwg/Dlg/ExportParam/RadioButton/Rel15=2000/LT2000',
+									 value: 2 },
+								   { name: '$$$/DxfDwg/Dlg/ExportParam/RadioButton/Rel18=2004/2005/2006',
+									 value: 3 },
+									 { name: '$$$/DxfDwg/Dlg/ExportParam/RadioButton/Rel19=2007/2008/2009',
+									 value: 4 },
+									 { name: '$$$/DxfDwg/Dlg/ExportParam/RadioButton/Rel24=2010/2011/2012',
+									 value: 5 }];
+		Num_Color_Items: [ { name: '$$$/DxfDwg/Dlg/ExportParam/RadioButton/8Color=8',
+									 value: 0 },
+								   { name: '$$$/DxfDwg/Dlg/ExportParam/RadioButton/16Color=16',
+									 value: 1 },
+								   { name: '$$$/DxfDwg/Dlg/ExportParam/RadioButton/256Color=256',
+									 value: 2 },
+								   { name: '$$$/DxfDwg/Dlg/ExportParam/RadioButton/TrueColor=True Color',
+									 value : 3}];	
+
+        ScaleItems: [ { name: "$$$/DxfDwg/UnitTypes/pt=Points",
+									 value: 0 },
+								   { name: "$$$/DxfDwg/UnitTypes/pi=Picas",
+									 value: 1 },
+								   { name: "$$$/DxfDwg/UnitTypes/in=Inches",
+									 value: 2 },
+								   { name: "$$$/DxfDwg/UnitTypes/mm=Millimeters",
+									 value: 3 },
+								   { name: "$$$/DxfDwg/UnitTypes/cm=Centimeters",
+									 value: 4 },
+								   { name: "$$$/DxfDwg/UnitTypes/px=Pixels",
+									 value: 5 } ];											
+		AutoCADVersion: 0;
+		RatsterFormat: 0;		
+		Options: 0;		
+		ScaleType: 0;		
+		ScaleTo: 1;
+		ScaleFrom: 1;
+		ScaleLineWeight: 0;
+		ExportSelectedArt: 0;
+		AlterPaths: 0;
+		OutLineText: 0;
+		DisabledList: [3]  <== (AutoCADVersion >= 3) ? [] : [3];
+		ScaleView: 1;
+		ScaleFinal: 1 <== (ScaleFinal != ScaleFrom) ? ScaleFrom : ScaleView;
+		NumberOfColors: 0 <== (AutoCADVersion < 3 && NumberOfColors == 3) ? 2 : NumberOfColors;		
+}

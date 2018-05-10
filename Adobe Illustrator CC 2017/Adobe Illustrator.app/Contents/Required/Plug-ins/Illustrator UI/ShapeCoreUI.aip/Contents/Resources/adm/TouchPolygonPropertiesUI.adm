@@ -1,0 +1,14 @@
+sheet TouchPolygonPropertiesUI
+{
+constant:
+	kInvalidCornerType: 0;
+
+interface:
+
+	MultipleSelection: false;
+	ShowRegularPolygonProperties: true;
+	SideCountValue: {min_value: 3, max_value: 20};
+
+	PolygonCornerType: kInvalidCornerType;
+}
+

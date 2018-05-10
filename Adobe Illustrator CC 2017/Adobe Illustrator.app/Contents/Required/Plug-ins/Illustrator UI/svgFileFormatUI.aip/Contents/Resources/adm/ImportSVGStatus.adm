@@ -1,0 +1,7 @@
+sheet ImportSVGStatus
+{
+interface:
+	TotalFilterRead: "0";
+	FiltersSkipped: "0";
+	FiltersRenamed: "0";
+}

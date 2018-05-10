@@ -1,0 +1,199 @@
+layout PerformancePreference
+{
+interface:
+	cell_filter: {min_value:2, max_value:4};
+	view subview(identifier: "PerformancePrefEveSubView",
+				 child_horizontal: @align_fill,
+				 horizontal: @align_fill,
+				 vertical: @align_fill, 
+				 placement: @place_column,
+				 show_border: false,
+				 margin: [22,15,0,15], 
+				 layout_theme: @dialog_large)
+	{
+		column(spacing: 0)
+		{
+			static_text(identifier: "PerformanceStaticTextCaption",
+				name: "$$$/PrefsDlg/PerformanceDlg/Caption=GPU Performance"
+				);
+		
+			separator(identifier: "PerformanceTopSeparator");
+		}
+
+			row(horizontal: @align_fill, placement: @place_row, child_horizontal:@align_left, child_vertical:@align_top)
+			{
+				overlay(horizontal: @align_fill, child_horizontal:@align_left, child_vertical:@align_top)
+				{
+					panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@ShowGPUStatus, value:0)
+					{
+						static_text(identifier: "GPUEnabled", characters: 0, name: "$$$/PrefsDlg/PerformanceDlg/GPUStatusCompatible=Compatible GPU available.", adjust_baseline_for_single_line_text: false);
+					}
+					
+					panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@ShowGPUStatus, value:1)
+					{
+						static_text(identifier: "IncompatibleGPU", characters: 0, name: "$$$/PrefsDlg/PerformanceDlg/GPUStatusNotCompatible=Compatible GPU not available.", adjust_baseline_for_single_line_text: false);
+					}
+
+					panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@ShowGPUStatus, value:2)
+					{
+						static_text(identifier: "OutdatedDriver", characters: 0, name: "$$$/PrefsDlg/PerformanceDlg/GPUStatusOutdatedDriver=Compatible GPU available. Update driver to use GPU Performance.", adjust_baseline_for_single_line_text: false);
+					}
+
+					panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@ShowGPUStatus, value:3)
+					{
+						static_text(identifier: "OutdatedOS", characters: 0, name: "$$$/PrefsDlg/PerformanceDlg/GPUStatusOutdatedOS=Compatible GPU available. Update OS to use GPU Performance.", adjust_baseline_for_single_line_text: false);
+					}
+
+					panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@ShowGPUStatus, value:4)
+					{
+						static_text(identifier: "DisabledForSession", characters: 0, name: "$$$/PrefsDlg/PerformanceDlg/GPUStatusDisabledForSession=Compatible GPU available. GPU Performance is disabled for the session.", adjust_baseline_for_single_line_text: false);
+					}
+					panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@ShowGPUStatus, value:5)
+					{
+						static_text(identifier: "DisabledForWin32Binaries", characters: 0, name: "$$$/PrefsDlg/PerformanceDlg/GPUStatusDisabledForWin32Binaries=The GPU Performance feature is not available for 32-bit operating systems.", adjust_baseline_for_single_line_text: false);
+					}
+				}
+				
+				link_button(identifier: "PerfGPUMoreInfo",
+					font_size: 13,
+					name: "$$$/PrefDlg/PerformanceDlg/PerfStaticTextGPUMoreInfo=More Info..."
+					);
+			}
+
+			checkbox(identifier: "PerfCheckboxEnableGPU",
+				name: "$$$/PrefsDlg/PerformanceDlg/GPSettings=GPU &Performance", guide_mask:[ @guide_label ],
+				bind: @PerfEnableGPUBoolCell);
+
+			row(margin:[0,30,0,0])
+			{
+				checkbox(identifier: "PerfCheckboxAnimatedZoom",
+					name: "$$$/PrefsDlg/PerformanceDlg/PerfCheckboxAnimZoom=Animated &Zoom",
+					guide_mask:[ @guide_label ],
+					bind: @PerfAnimZoomBoolCell);
+			}
+
+			row(margin:[0,30,0,0])
+			{
+				checkbox(identifier: "PerfCheckboxEnableThinFilledPaths",
+					name: "$$$/PrefsDlg/PerformanceDlg/PerfCheckboxEnableThinFilledPaths=Enhance Thin &Lines",
+					guide_mask:[ @guide_label ],
+					bind: @PerfEnableThinFilledPathsBoolCell);
+			}
+
+			optional(horizontal: @align_fill, margin: 0, value: true, bind: @ShowDisplayPerformanceSettings)
+			{
+				row()
+				{
+					static_text(identifier: "displayPerformanceSetting", name: "$$$/IllustratorUI/GPURendering/displayPerformanceSetting=Display Performance Setting:", adjust_baseline_for_single_line_text: false);
+
+					overlay()
+					{
+						panel( margin: 0, value:false, bind:@ShowAlertApplicableOnRestart)
+						{						
+						}
+						panel( placement: @place_row, margin: 0, value: true, bind: @ShowAlertApplicableOnRestart)
+						{
+							info_icon(icontype: "warning", size: "small",
+								alt:"$$$/PrefsDlg/FPDlg/FPCRInfoComplex=Changes will take effect the next time you launch Illustrator."
+								);							
+						}
+					}
+				}
+				row(child_horizontal: @align_left)
+				{
+					column(identifier: "PerfRadioGroupfordisplaySettings", margin:[0,30,0,0])
+					{
+						radio_button(bind: @PerfEnabledisplaySettingOption,
+										value: 1,
+										identifier: "PerfRadiodisplaySettingAuto",
+										guide_mask:[ @guide_label ],
+										name: "$$$/IllustratorUI/GPURendering/optimalForCurrentDisplay=Optimal for current display (Auto)");
+						row()
+						{
+							radio_button(bind: @PerfEnabledisplaySettingOption,
+										value: 0,
+										identifier: "PerfRadiodisplaySettingCustom",
+										guide_mask:[ @guide_label ],
+										name: "$$$/IllustratorUI/GPURendering/custom=Custom");
+							combo_slider(identifier: "PerfdisplayCustomSettings",
+									slider_point: @up, 
+									minLength: 160,
+									ticks_pos: [0, 1],
+									show_ticks: true,
+									left_mini_label: "$$$/IllustratorUI/GPURendering/performance=Performance",
+									right_mini_label:  "$$$/IllustratorUI/GPURendering/quality=Quality",
+									show_editbox: false,		                		                
+									min_max_filter: @cell_filter, 
+									bind: @CustomSettingValue);
+						}
+					}
+				}
+
+				separator(identifier: "DetailsSeparator2", horizontal:@align_fill);
+			}
+			optional(horizontal: @align_fill, margin: 0, value: false, bind: @ShowDisplayPerformanceSettings)
+			{
+				separator(identifier: "DetailsSeparator1", horizontal:@align_fill);
+			}
+
+			static_text(identifier: "GPDetailsGrp", name: "$$$/PrefsDlg/PerformanceDlg/GPDetails=GPU Details");
+			display_text(name: "$$$/PrefsDlg/PerformanceDlg/PerfStaticTextVendor=Vendor:",
+					value: @PerfVendorString);
+			display_text(name: "$$$/PrefsDlg/PerformanceDlg/PerfStaticTextDevice=Device:",
+					value: @PerfDeviceString);
+			display_text(name: "$$$/PrefsDlg/PerformanceDlg/PerfStaticTextVersion=Version:",
+					value: @PerfVersionString);
+			display_text(name: "$$$/PrefsDlg/PerformanceDlg/PerfStaticTextMemory=Total Memory:",
+					value: @PerfMemoryString);
+			
+			row(child_horizontal: @align_left)
+			{
+				button(identifier: "PerfButtonSysInfo",	name: "$$$/PrefDialog/PerformanceDlg/ShowSysInfo=Show System Info");
+			}
+
+		row()
+		{
+			image(identifier: "StatusWarning",guide_mask:[@guide_label],
+					image: {normal:"SP_Alert_Sm_N.png",dark_normal:"SP_Alert_Sm_N_D.png"});
+
+            optional(margin: 0, bind: @ShowGPUWarning, value: 0)
+            {
+                static_text(identifier: "InSufficientGPUMemory",
+                name: "$$$/PrefsDlg/PerformanceDlg/InsufficientGPUMemory=GPU Performance requires a minimum of 1GB VRAM. Illustrator has detected less than that on your system.",
+                characters: 1, horizontal:@align_fill, theme_font_size: @small);
+            }
+            optional(margin: 0, bind: @ShowGPUWarning, value: 1)
+            {
+                static_text(identifier: "WinAMDWarning",
+                name: "$$$/Preferences/GPUWarningoutdatedDriverMsg=Device drivers for one or more GPU cards are not up-to-date, and this may cause issues with rendering and performance. Update your device drivers to the latest version and restart Illustrator.",
+                characters: 1, horizontal:@align_fill, theme_font_size: @small,
+                adjust_baseline_for_single_line_text: false
+				);
+            }
+            optional(margin: 0, bind: @ShowGPUWarning, value: 2)
+            {
+                static_text(identifier: "WinAMDOSWarning",
+                name: "$$$/Preferences/GPUWarningBelowWin8=To use GPU Performance features with your current graphics card, upgrade your operating system to Windows 8 or later.",
+                characters: 1, horizontal:@align_fill, theme_font_size: @small,
+                adjust_baseline_for_single_line_text: false
+				);
+            }
+            optional(margin: 0, bind: @ShowGPUWarning, value: 3)
+            {
+                static_text(identifier: "WinIntelWarning",
+                name: "$$$/Preferences/GPUWarningOutdatedDriver=To use GPU Performance features with your current graphics card, update to the latest version of your graphics card drivers, and then restart Illustrator.",
+                characters: 1, horizontal:@align_fill, theme_font_size: @small,
+                adjust_baseline_for_single_line_text: false
+				);
+            }
+            optional(margin: 0, bind: @ShowGPUWarning, value: 4)
+            {
+                static_text(identifier: "GPUFallBackWarning",
+                name: "$$$/Preferences/GPUWarningFallbacktoCPU=Illustrator detected an error with your graphic processor software or hardware, and has switched to CPU Preview mode for this session. Click More Info to troubleshoot the error.",
+                characters: 1, horizontal:@align_fill, theme_font_size: @small,
+                adjust_baseline_for_single_line_text: false
+				);
+            }
+		}
+	}
+}

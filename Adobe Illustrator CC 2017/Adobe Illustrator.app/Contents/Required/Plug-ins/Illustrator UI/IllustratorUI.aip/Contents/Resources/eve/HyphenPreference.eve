@@ -1,0 +1,52 @@
+layout HyphenPreference
+{
+	view subview(identifier: "HyphenPrefEveSubView",
+				 child_horizontal: @align_fill,
+				 placement: @place_column,
+				 show_border: false, 
+				 margin: [22,15,0,15],
+				 layout_theme: @dialog_large)
+	{
+		
+		column(spacing: 0)
+		{
+		static_text(identifier: "HPStaticTextCaption",
+					name: "$$$/PrefsDlg/HPDlg/HCaption=Hyphenation"
+					);
+		
+		separator(identifier: "HPTopSeparator");
+		}
+		
+
+			popup(identifier: "HPPopupDefLang",
+					include_custom_item: false,
+					name: "$$$/PrefsDlg/HPDlg/HPPopupDefLang=Default &Language:",
+					horizontal: @align_left,
+					items: [{name: "$$$/_STRList/STR/300/36=German: Swiss 2006 Reform", value: 0}]
+					);
+			column(horizontal: @align_fill)
+			{
+			static_text(identifier: "HPStaticTextExceptions",
+						name: "$$$/PrefsDlg/HPDlg/HPStaticTextExceptions=Exceptions:", horizontal: @align_left);
+						
+			list(identifier:"HPExceptionList", height: 90, width: 300, horizontal: @align_fill, guide_mask: [ @guide_label ]);
+			}
+		
+		
+		edit_text(identifier: "HPEditTextNewEntry",
+					name: "$$$/PrefsDlg/HPDlg/HPEditTextNewEntry=New &Entry:",
+					
+					horizontal: @align_fill
+				);
+				
+		row(child_horizontal: @align_right)
+		{
+			button(identifier: "HPButtonAdd",
+					name: "$$$/PrefsDlg/HPDlg/HPButtonAdd=&Add"
+					);
+			button(identifier: "HPButtonDelete",
+					name: "$$$/PrefsDlg/HPDlg/HPButtonDelete=&Delete"
+					);
+		}
+	}
+}

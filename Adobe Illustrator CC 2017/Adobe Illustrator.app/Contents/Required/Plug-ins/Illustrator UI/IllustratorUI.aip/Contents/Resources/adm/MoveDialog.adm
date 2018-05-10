@@ -1,0 +1,16 @@
+sheet MoveDialog
+{
+interface:
+	objectCheckBoxID: true <== (dummyCell == true)? objectCheckBoxID : true;
+	patternCheckBoxID: false <== ( dummyCell == true)? patternCheckBoxID : false ;
+	previewCheckBoxID: true;
+	dummyCell: true;
+	
+	logic:
+	when (dummyCell) relate
+	{
+		objectCheckBoxID <== (!patternCheckBoxID && !objectCheckBoxID)? !patternCheckBoxID :objectCheckBoxID;
+		patternCheckBoxID <== (!patternCheckBoxID && !objectCheckBoxID)? !objectCheckBoxID :patternCheckBoxID;
+		
+	}
+}

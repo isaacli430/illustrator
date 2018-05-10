@@ -1,0 +1,16 @@
+sheet TextImportDlg
+{
+interface:
+	unlink SpaceCapValue: 3 <== RemoveSpace ? SpaceCapValue : SpaceCapValue_retain;
+	SpaceCapValue_retain: 3 <== !RemoveSpace ? SpaceCapValue_retain : SpaceCapValue;
+	PlatformType: 0;
+	CharSet: 0;
+	RemoveCREOL: false;
+	RemoveCRBP: false;
+	RemoveSpace: true;
+	PlatformTypeChoices: [{name: "$$$/SangamService/Mnu/Platform/Windows=Windows", value: 1}, {name: "$$$/SangamService/Mnu/Platform/MacPPC=Mac (PowerPC-based)", value: 2}, {name: "$$$/SangamService/Mnu/Platform/MacTel=Mac (Intel-based)", value: 3}];
+	CharSetChoices: [{name: "$$$/SangamService/Mnu/Encoding/1=ANSI", value: 1}, {name: "$$$/SangamService/Mnu/Encoding/2=Unicode", value: 2}, {name: "$$$/SangamService/Mnu/Encoding/3=Shift JIS", value: 3}, {name: "$$$/SangamService/Mnu/Encoding/4=GB2312", value: 4}, {name: "$$$/SangamService/Mnu/Encoding/5=GB18030", value: 5}, {name: "$$$/SangamService/Mnu/Encoding/6=Chinese Big 5", value: 6}, {name: "$$$/SangamService/Mnu/Encoding/7=Cyrillic", value: 7}, {name: "$$$/SangamService/Mnu/Encoding/8=Greek", value: 8}, {name: "$$$/SangamService/Mnu/Encoding/9=Turkish", value: 9}, {name: "$$$/SangamService/Mnu/Encoding/10=Baltic", value: 10}, {name: "$$$/SangamService/Mnu/Encoding/11=Central European", value: 11}];
+	IsWorldReadyMode : false;
+	
+	
+}

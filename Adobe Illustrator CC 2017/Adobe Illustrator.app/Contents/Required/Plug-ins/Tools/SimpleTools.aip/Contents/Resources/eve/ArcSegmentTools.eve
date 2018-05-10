@@ -1,0 +1,77 @@
+layout ArcSegmentTools
+{
+    view subview(identifier: "AIEveSubView",
+				layout_theme: @dialog_large,
+				show_border: false,
+				spacing: @unrelated_spacing)
+    {    
+     column()
+     {   
+		row()
+		{
+			column()
+			{ 			
+				  unit_hot_number(name: "$$$/SegmentTools/DITL/17101/12=Length &X-Axis:", 
+						identifier: "XAxisLengthEdit",
+						decimal_places: 2,
+						min_value :1,
+						max_value :16383,
+						set_default_focus: true,
+						unit :"CurrentDocumentUnit",
+						 bind: @lengthXAxisCell);
+				unit_hot_number(name: "$$$/SegmentTools/DITL/17101/13=Length &Y-Axis:", 
+					identifier: "YAxisLengthEdit",
+					decimal_places: 2,
+					min_value :1,
+					max_value :16383,
+					unit :"CurrentDocumentUnit",
+					bind: @lengthYAxisCell);
+				popup(identifier: "TypePopUp", horizontal: @align_fill, 
+								name: "$$$/SegmentTools/DITL/17101/14=&Type:",							
+								include_custom_item: false,
+								items: @entriesType,											
+								bind: @typePopUp);
+				popup(identifier: 'BaseAlongPopUp',horizontal: @align_fill, 
+								name: '$$$/SegmentTools/DITL/17101/16=&Base Along:',
+								include_custom_item: false,
+								items: @entriesBase,						
+								bind: @basePopUp);
+			}
+			column(vertical: @align_top)
+			{
+				  pin_selector(identifier: "4PointPinSelector",
+									  selector_type: "PinSelector_FourPinType",
+									  wants_focus: false,
+									bind: @fourPointPinSelectorCell);   
+			}
+			column(vertical: @align_top, vertical: @align_center)
+				{
+					image(identifier: "artworkPreviewItem", show_border: true, height: 98, width: 98);         
+				}		
+			}	
+			
+	combo_slider(identifier: "Slope",
+                slider_point: @up,
+                horizontal: @align_fill,
+                min_max_filter: @filter,
+                name: "$$$/SegmentTools/DITL/17101/15=&Slope:",
+                left_mini_label: "$$$/SegmentTools/DITL/17101/18=Concave",
+			    right_mini_label: "$$$/SegmentTools/DITL/17101/17=Convex",
+                digits: 5,
+				bind_final: true,
+                decimal_places : 2,
+                bind : @slopeCell);          		
+	 checkbox(identifier: "FillArcCheckBox", 
+			 name: "$$$/SegmentTools/DITL/17101/9=&Fill Arc",
+			 bind: @fillCell);
+
+        }
+        row(horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+        {
+			button(name: "$$$/gOK=OK", commit_button: true, identifier: "okButton");
+			button(identifier: "cancel_ResetButton", commit_button: true,
+							items: [{name: "$$$/gCancel=Cancel", action: @cancel},
+									{name: "$$$/gReset=Reset", action: @reset, modifiers: @opt}]);
+        }
+    }
+}

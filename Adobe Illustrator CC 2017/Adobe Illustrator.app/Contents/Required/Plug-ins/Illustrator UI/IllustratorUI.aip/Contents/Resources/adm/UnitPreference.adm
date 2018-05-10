@@ -1,0 +1,58 @@
+sheet UnitPreference
+{
+interface:
+	UPIdentifyObjectRadioGrp: false;
+	UPAsianOptions: false;
+	UPGeneralCell: 1;
+	
+	UPStrokeCell: 1;
+	UPTypeCell: 1;
+	
+	UPGeneralAsianPopupItems:[
+						{ name: "$$$/Units/Points=Points", value: 1 },
+						{ name: "$$$/Units/Picas=Picas", value: 2 },
+						{ name: "$$$/Units/Inches=Inches", value: 3 },
+						{ name: "$$$/Units/Millimeters=Millimeters", value: 4 },
+						{ name: "$$$/Units/Centimeters=Centimeters", value: 5 },
+						{ name: "$$$/Units/Ha=Ha", value: 6 },
+						{ name: "$$$/Units/Pixels=Pixels", value: 7 }
+						];
+						
+	UPGeneralNonAsianPopupItems:[
+						{ name: "$$$/PrefsDlg/UPDlg/Units/Points=Points", value: 1 },
+						{ name: "$$$/PrefsDlg/UPDlg/Units/Picas=Picas", value: 2 },
+						{ name: "$$$/PrefsDlg/UPDlg/Units/Inches=Inches", value: 3 },
+						{ name: "$$$/PrefsDlg/UPDlg/Units/Millimeters=Millimeters", value: 4 },
+						{ name: "$$$/PrefsDlg/UPDlg/Units/Centimeters=Centimeters", value: 5 },
+						{ name: "$$$/PrefsDlg/UPDlg/Units/Pixels=Pixels", value: 7 }
+						];
+	
+	UPTypeAsianPopupItems:[
+						{ name: "$$$/PrefsDlg/UPDlg/Units/Points=Points", value: 1 },
+						{ name: "$$$/PrefsDlg/UPDlg/Units/Inches=Inches", value: 3 },
+						{ name: "$$$/PrefsDlg/UPDlg/Units/Millimeters=Millimeters", value: 4 },
+						{ name: "$$$/PrefsDlg/UPDlg/Units/Q=Q", value: 6 },
+						{ name: "$$$/PrefsDlg/UPDlg/Units/Pixels=Pixels", value: 7 }
+						];
+						
+	UPTypeNonAsianPopupItems:[
+						{ name: "$$$/PrefsDlg/UPDlg/Units/Points=Points", value: 1 },
+						{ name: "$$$/PrefsDlg/UPDlg/Units/Inches=Inches", value: 3 },
+						{ name: "$$$/PrefsDlg/UPDlg/Units/Millimeters=Millimeters", value: 4 },
+						{ name: "$$$/PrefsDlg/UPDlg/Units/Pixels=Pixels", value: 7 }
+						];
+	
+	UPAsianTypePopupItems:[
+						{ name: "$$$/PrefsDlg/UPDlg/Units/Points=Points", value: 1 },
+						{ name: "$$$/PrefsDlg/UPDlg/Units/Inches=Inches", value: 3 },
+						{ name: "$$$/PrefsDlg/UPDlg/Units/Millimeters=Millimeters", value: 4 },
+						{ name: "$$$/PrefsDlg/UPDlg/Units/Ha=Ha", value: 6 },
+						{ name: "$$$/PrefsDlg/UPDlg/Units/Pixels=Pixels", value: 7 }
+						];
+							
+	unlink UPTreatPtCell: false <== (UPGeneralCell == 2) ? UPTreatPtCell : false;		
+	unlink UPGeneralPopupItems: UPGeneralAsianPopupItems <==  UPAsianOptions == true? UPGeneralAsianPopupItems : UPGeneralNonAsianPopupItems;
+	unlink UPTypePopupItems: UPTypeAsianPopupItems <==  UPAsianOptions == true? UPTypeAsianPopupItems : UPTypeNonAsianPopupItems;
+	unlink UPAsianTypeCell: 1 <== UPAsianOptions == true ? UPAsianTypeCell : UPAsianTypeCellRemember;
+	UPAsianTypeCellRemember: 1 <== UPAsianOptions == true ? UPAsianTypeCell : UPAsianTypeCellRemember;
+}

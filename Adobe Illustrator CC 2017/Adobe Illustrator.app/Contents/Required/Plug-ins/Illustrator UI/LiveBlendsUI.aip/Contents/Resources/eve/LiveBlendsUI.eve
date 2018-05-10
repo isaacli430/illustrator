@@ -1,0 +1,75 @@
+layout LiveBlendsUI
+{
+    view subview(identifier: "BlendOptionsDialog",
+				 layout_theme: @dialog_large,
+				 placement: @place_column,
+				 child_horizontal: @align_fill,
+				 show_border: false,
+				 spacing: @unrelated_spacing)
+    {
+	row()
+	{
+		popup(identifier: "spacingPopup",
+				  include_custom_item: false,
+				  bind: @SpacingOption,
+				  items: @SpacingOptions,
+				  name: "$$$/LiveBlendsUI/Dlg/SpacingLabel=&Spacing:",
+				  set_default_focus: true);
+			
+		overlay()
+		{
+			panel(margin: 0, bind: @SpacingOption, value: 1)
+			{
+				unit_hot_number(identifier: "spacingStepsEdit",
+								bind: @SpacingSteps,
+								max_value: 1000,
+								min_value: 1,
+								bind_final: true,
+								digits: 7,
+								decimal_places: 0);
+			}
+			panel(margin: 0, bind: @SpacingOption, value: 2)
+			{
+				unit_hot_number(identifier: "spacingDistanceEdit",
+								bind: @SpacingDistance,
+								unit: "CurrentDocumentUnit",
+								max_value: 1000.0,
+								min_value: 0.1,
+								bind_final: true,
+								digits: 7,
+								decimal_places: 2);
+			}
+		}
+	
+	}
+       		row(child_horizontal: @align_left)
+        	{
+			button_bar( name: "$$$/LiveBlendsUI/Dlg/OrientationRadioGpLabel=Orientation:", bind: @OrientationRadioGp,
+						identifier: "Orientation",
+						items: [{ image: { normal: "SP_PageAlignBlend_36x20_N.png",dark_normal: "SP_PageAlignBlend_36x20_N_D.png"}, value: 0, alt: "$$$/LiveBlendsUI/Dlg/AlignToPage=Align to Page"},
+								{ image: { normal: "SP_PathAlignBlend_36x20_N.png",dark_normal: "SP_PathAlignBlend_36x20_N_D.png"}, value: 1, alt: "$$$/LiveBlendsUI/Dlg/AlignToPath=Align to Path"} ] );
+        	}
+
+        row(child_horizontal: @align_fill, spacing: @separated_spacing)
+		{
+			checkbox(identifier: "previewButton",
+				 vertical:@align_center,
+				 name: "$$$/gPreview=&Preview",
+				 state: "unchecked", value_on: true, value_off: false,
+				 bind: @PreviewCBState, guide_mask: [@guide_label]);
+
+			row(child_horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+			{
+				button(default: true,
+					commit_button: true,
+					   identifier: "okButton",
+					   name: "$$$/gOK=OK");
+
+				button(cancel: true,
+					commit_button: true,
+					   identifier: "cancelButton",
+					   name: "$$$/gCancel=Cancel");
+			}
+		}
+    }
+}

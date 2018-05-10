@@ -1,0 +1,14 @@
+sheet ColorProfileMismatchWarning
+{
+interface:
+ showRGBOrCMYKWarning : 0;
+ assignProfileDialog  : true;
+ workingProfName	  : "";
+ assigRGBOrCMYK		  : 0;
+ radiobuttonIndex     : 0;
+ dialogGroupName      : "" <== assignProfileDialog ? "$$$/_ColorConvdg/Dlg/AddProfileCMYK/ProfileCluster=Assign Profile" : "$$$/_ColorConvdg/Dlg/OpenNoProfileDlgCMYK/3=What would you like to do?" ;
+ firstOption          : "" <== assignProfileDialog ? "$$$/_ColorConvdg/Dlg/AddProfileCMYK/RemoveProfButton=&Don^}t Color Manage This Document" : "$$$/_ColorConvdg/Dlg/OpenNoProfileDlgCMYK/RemoveProfButton=&Leave as is (don^}t color manage)" ;
+ secondOption         : "" <== assignProfileDialog ? assigRGBOrCMYK  == 0? "$$$/_ColorConvdg/Dlg/AddProfileRGB/AssignWSProfButton=&Working RGB:" : "$$$/_ColorConvdg/Dlg/AddProfileCMYK/AssignWSProfButton=&Working CMYK:" : "$$$/_ColorConvdg/Dlg/OpenNoProfileDlgCMYK/AssignWSProfButton=&Assign current working space:";
+ thirdOption          : "" <== assignProfileDialog ? "$$$/_ColorConvdg/Dlg/AddProfileRGB/AssingProfButton=&Profile:" : "$$$/_ColorConvdg/Dlg/OpenNoProfileDlgCMYK/AssingProfButton=Assign &profile:";
+}
+

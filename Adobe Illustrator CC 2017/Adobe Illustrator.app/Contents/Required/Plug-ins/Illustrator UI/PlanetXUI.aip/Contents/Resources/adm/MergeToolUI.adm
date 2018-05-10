@@ -1,0 +1,9 @@
+sheet MergeToolUI
+{
+	interface:
+			  strokeSplit: true;
+			  mergeSelectionType: 1;
+			  pickColorPopup: 0;
+			  unlink cursorSwatchPreviewCheckBox: true <== pickColorPopup == 0 ? value_remember  : cursorSwatchPreviewCheckBox;
+			  value_remember: true <== pickColorPopup != 0 ? cursorSwatchPreviewCheckBox : value_remember;
+}

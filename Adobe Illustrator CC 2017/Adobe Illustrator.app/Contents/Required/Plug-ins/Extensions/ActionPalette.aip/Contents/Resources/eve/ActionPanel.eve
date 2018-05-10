@@ -1,0 +1,85 @@
+layout ActionsPanel
+{
+    view subview(identifier: "actions_panel_subview",
+				 layout_theme: @panel, margin: gPanelToolbarSubviewMargin,
+				 show_border: false)
+	{
+		overlay(vertical: @align_fill, horizontal: @align_fill)
+		{
+			panel(margin: 0, bind: @showButtonMode, value: 0, vertical: @align_fill, horizontal: @align_fill, spacing: gPanelToolbarTopSpacing)
+			{
+				multicolumn_tree(identifier: "multicolumntree",
+								wants_focus: false,
+								horizontal: @align_fill,
+								vertical: @align_fill);
+								
+
+				buttongroup(horizontal: @align_right, vertical: @align_bottom, spacing: gPanelToolbarIconSpacing, child_width: gPanelToolbarIconWidth, child_height: gPanelToolbarIconHeight, child_vertical: @align_fill)
+				{
+					button(identifier: "stopButton",
+							image: {normal: "SP_Stop_Xs_N.png", dark_normal:"SP_Stop_Xs_N_D.png"},
+							alt: "$$$/ActionPalette/Str/16701=Stop Playing/Recording");
+					
+					overlay(child_vertical: @align_fill)
+					{
+						panel(margin: 0, bind: @showProxyRecord, value: 0, child_vertical: @align_fill) {
+							buttongroup(spacing: gPanelToolbarIconSpacing, child_width: gPanelToolbarIconWidth, child_height: gPanelToolbarIconHeight, child_vertical: @align_fill) {
+								button(identifier: "recordButton",
+									image: {normal: "SP_Record_Xs_N.png", dark_normal:"SP_Record_Xs_N_D.png"},
+									alt: "$$$/ActionPalette/Str/16702=Begin Recording");
+							}
+						}
+						
+						panel(margin: 0, bind: @showProxyRecord, value: 1, child_vertical: @align_fill) {
+							buttongroup(spacing: gPanelToolbarIconSpacing, child_width: gPanelToolbarIconWidth, child_height: gPanelToolbarIconHeight, child_vertical: @align_fill) {
+								button(identifier: "proxyRecordButton",
+									image: {normal: "SP_Record_Xs_S.png", dark_normal:"SP_Record_Xs_S_D.png"},
+									alt: "$$$/ActionPalette/Str/16702=Begin Recording");
+							}
+						}
+					}
+					
+					overlay() {
+						panel(margin: 0, bind: @showProxyPlay, value: 0, child_vertical: @align_fill) {
+							buttongroup(spacing: gPanelToolbarIconSpacing, child_width: gPanelToolbarIconWidth, child_height: gPanelToolbarIconHeight, child_vertical: @align_fill) {
+								button(identifier: "playButton",
+									image: {normal: "SP_Play_Xs_N.png", dark_normal:"SP_Play_Xs_N_D.png"},
+									alt: "$$$/ActionPalette/Str/16703=Play Current Selection");
+							}
+						}
+						
+						panel(margin: 0, bind: @showProxyPlay, value: 1, child_vertical: @align_fill) {	
+							buttongroup(spacing: gPanelToolbarIconSpacing, child_width: gPanelToolbarIconWidth, child_height: gPanelToolbarIconHeight, child_vertical: @align_fill) {
+								button(identifier: "proxyPlayButton",
+									image: {normal: "SP_Play_Xs_N.png", dark_normal: "SP_Play_Xs_N_D.png"},
+									alt: "$$$/ActionPalette/Str/16703=Play Current Selection");
+							}
+						}
+					}
+							
+					button(identifier: "newSetButton",
+							image: {normal: "SP_Folder_Wi_N.png", dark_normal: "SP_Folder_Wi_N_D.png"},
+							alt: "$$$/ActionPalette/Str/16704=Create New Set");
+					
+					button(identifier: "newActionButton",
+							image: {normal: "SP_New_Wi_N.png", dark_normal: "SP_New_Wi_N_D.png"},
+							alt: "$$$/ActionPalette/Str/16705=Create New Action");
+							
+					button(identifier: "deleteButton",
+							image: {normal: "SP_Delete_Wi_N.png", dark_normal: "SP_Delete_Wi_N_D.png"},
+							alt: "$$$/ActionPalette/Str/16706=Delete Selection");
+					
+					resize_gripper_gap();
+				}
+			}
+			panel(margin: 0, bind: @showButtonMode, value: 1,vertical: @align_fill, horizontal: @align_fill)
+			{
+				grid_view(horizontal: @align_fill, vertical: @align_fill, identifier: "gridView");
+				
+				resize_gripper_gap();
+			}
+		}
+		
+		
+	}
+}

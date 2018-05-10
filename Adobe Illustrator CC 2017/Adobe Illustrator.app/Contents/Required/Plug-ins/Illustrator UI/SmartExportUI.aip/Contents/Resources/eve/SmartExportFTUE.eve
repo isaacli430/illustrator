@@ -1,0 +1,55 @@
+layout SmartExportFTUE
+{
+	view subview(identifier: "SmartExportFTUE_Dialog",
+				 show_border: false)
+	{
+		row(horizontal:@align_fill, margin: [20, 20, 10, 20])
+		{
+			static_text(identifier: "FtueDialogTextHeader",
+				theme_font_size: @large,
+				text_placement: @center,
+				font_size: 16,
+				horizontal: @align_left,
+				name: "$$$/SmartExport/FTUE/Dialog/Header/text=Export to multiple scale factors and file formats",
+				bold: true
+			);
+		}
+
+		row(horizontal:@align_fill, margin: [15, 20, 10, 20])
+		{
+			static_text(identifier: "FtueDialogText",
+				theme_font_size: @large,
+				text_placement: @center,
+				font_size: 16,
+				horizontal: @align_left,
+				characters: 25,
+				name: "$$$/SmartExport/FTUE/Dialog/text=Export your artboards or assets in various scale factors and different file formats in one click. Use the all-new File > Export > Export for Screens dialog."
+			);
+		}
+		
+		row(horizontal:@align_fill, margin: [15, 20, 20, 20])
+		{
+			column(horizontal: @align_left, vertical: @align_center)
+			{
+				link_button(identifier: "OKGotItButton",
+					font_size: 16,
+					wants_focus: false,		
+					name: "$$$/SmartExoprt/Dlg/AssetTab/EmptyState/Banner/LinkButton/text=Close",
+					horizontal: @align_left
+				);
+			}
+			
+			column(horizontal: @align_right, vertical: @align_center)
+			{
+				button(identifier: "TryNowButton",
+					horizontal: @align_right,
+					wants_focus: false,
+					font_size: 16,
+					name: "$$$/SmartExoprtFTUE/Banners/BannerButtonString=Try Export for Screens"
+				);
+			}
+
+		}	
+	}
+}
+	 

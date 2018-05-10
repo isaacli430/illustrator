@@ -1,0 +1,15 @@
+sheet StrokePanel
+{
+interface: 	
+	StateOne: true;
+	StateTwo: true;
+	StateThree: true;
+	
+	CapRadioGp: empty;
+	CornerRadioGp: empty;
+	AlignStrokeRadioGp: empty;
+	DashLineRadioGp: empty;
+	
+	FlipLineRadioGp: empty;
+	AlignLineRadioGp: empty;
+}

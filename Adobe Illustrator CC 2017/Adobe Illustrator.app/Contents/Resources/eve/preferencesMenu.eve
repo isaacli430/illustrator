@@ -1,0 +1,18 @@
+layout preferencesMenu
+{
+	view menu( id: 12,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/Prefs/General=&General...", id:				(os == @win) ? 1886545254 : 1886545254, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Prefs/Selection=Selection && &Anchor Display...", id:				289, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Prefs/Type=&Type...", id:		98, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Prefs/UnitsUndo=&Units...", id:	99, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Prefs/GuidesGrid=Guides && G&rid...", id:			161, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Prefs/SmartGuides=&Smart Guides...", id:		55, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Prefs/Slices=&Slices...", id: 294, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Prefs/Hyphenation=Hyphenation...", id:			140, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Prefs/Plugins=&Plug-ins && Scratch Disks...", id:		141, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Prefs/UserInterface=User &Interface...", id:		293, help_id:0);
+		
+	}
+}

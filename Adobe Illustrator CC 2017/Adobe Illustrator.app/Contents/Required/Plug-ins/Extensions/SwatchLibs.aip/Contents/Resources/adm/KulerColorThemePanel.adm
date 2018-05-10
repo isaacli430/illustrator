@@ -1,0 +1,24 @@
+sheet KulerColorThemePanel
+{
+	interface:
+		KulerError: 1;
+		
+		/*Any changes here should have corresponding changes in KulerColorThemePanel.cpp*/
+			kNoKulerError					:0;
+			kNoThemesPresentInAccountError	:1;
+			kPartiallyReadThemesError		:2;
+			kNoThemesReadError				:3;
+		
+		showColorThemesList: 0;
+		/*Any changes here should have corresponding changes in KulerColorThemePanel.cpp*/
+			kDownloadMyThemesPS : 0;
+			kKulerProgressBarPS : 1;
+			kThemesInMCTListPS  : 2;
+			kNetworkBusyPS 		: 3;
+			kInvalidAdobeIDPS	: 4;
+			kCCEUserError		: 5;
+	
+		showSearchBar: true;
+		EmailIdValue: "";
+		showMCT <==	(KulerError == kNoKulerError || KulerError == kPartiallyReadThemesError) ? true: false;
+}

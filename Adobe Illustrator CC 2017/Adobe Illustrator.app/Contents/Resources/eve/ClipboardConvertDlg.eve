@@ -1,0 +1,14 @@
+layout ClipboardConvertDlg
+{
+    view subview(	
+		identifier: "ClipboardConvertSubview",
+		layout_theme: @dialog_large,
+		show_border: false,
+		child_horizontal: @align_fill)
+    {
+		row(horizontal: @align_fill)
+		{
+			static_text(identifier: "StaticText", name: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", horizontal: @align_fill, placement: @place_row);
+		}		
+    }
+}

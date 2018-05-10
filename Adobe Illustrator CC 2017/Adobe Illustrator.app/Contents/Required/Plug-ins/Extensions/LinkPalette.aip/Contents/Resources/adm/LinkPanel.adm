@@ -1,0 +1,21 @@
+sheet LinkPanel
+{
+constant:
+	kEmptyStr:" - ";
+interface:
+	/* Show Link Info*/
+	LinkInfoVisible:false;
+	ShowLinkInfo:true;
+	
+	LinkNameCell:kEmptyStr;
+	FormatCell:kEmptyStr;
+	ColorSpaceProfileCell:kEmptyStr;
+	LinkLocationCell:kEmptyStr;
+	ResolutionCell:kEmptyStr;
+	SizeCell:kEmptyStr;
+	CreatedCell:kEmptyStr;
+	ModifiedCell:kEmptyStr;
+	DimensionsCell:kEmptyStr;
+	ScaleCell:kEmptyStr;
+	TransparentCell:kEmptyStr;
+}

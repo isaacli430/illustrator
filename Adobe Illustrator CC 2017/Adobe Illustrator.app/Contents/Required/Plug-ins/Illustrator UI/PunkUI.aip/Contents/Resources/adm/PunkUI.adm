@@ -1,0 +1,8 @@
+sheet PunkUI
+{
+interface:
+	enablePreview: true;
+	preview: false <== enablePreview ? preview : false;
+	dFactorParam: 0;
+	filter: {min_value: -200, max_value: 200};
+}

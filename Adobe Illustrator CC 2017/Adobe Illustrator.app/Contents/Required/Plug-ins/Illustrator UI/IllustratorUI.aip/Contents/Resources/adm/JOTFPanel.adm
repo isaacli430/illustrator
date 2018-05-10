@@ -1,0 +1,52 @@
+sheet OpenTypeFormat
+{
+  interface:
+  
+  stdLigaturesEnable: false;
+  contextAltEnable: false;
+  disLigaturesEnable: false; 
+  swashEnable: false;
+  styleAltEnable: false;
+  titlAltEnable: false;
+  ordinalsEnable: false;
+  fractionsEnable: false;
+  proportionalMetricsEnable: false;
+  hOrVStylesEnable: false;
+  romanItalicsEnable: false;
+  showAsianTextOptions: 0;
+  
+  unlink stdLigatures: false	<== stdLigaturesEnable ? stdLigatures : stdLigaturesLast;
+  stdLigaturesLast: false <== (stdLigaturesEnable != true) ? stdLigaturesLast : stdLigatures;
+
+  unlink contextAlt: false	<== contextAltEnable ? contextAlt : contextAltLast;
+  contextAltLast: false	<== (contextAltEnable!= true) ? contextAltLast : contextAlt;
+
+  unlink disLigatures: false	<== disLigaturesEnable ? disLigatures : disLigaturesLast;
+  disLigaturesLast: false	<== (disLigaturesEnable!= true) ? disLigaturesLast : disLigatures;
+
+  unlink swash: false			<== swashEnable ? swash : swashLast;
+  swashLast: false	<== (swashEnable!= true) ? swashLast : swash;
+
+  unlink styleAlt: false		<== styleAltEnable ? styleAlt : styleAltLast;
+  styleAltLast: false	<== (styleAltEnable!= true) ? styleAltLast : styleAlt;
+
+  unlink titlAlt: false		<== titlAltEnable ? titlAlt : titlAltLast;
+  titlAltLast: false	<== (titlAltEnable!= true) ? titlAltLast : titlAlt;
+
+  unlink ordinals: false		<== ordinalsEnable ? ordinals : ordinalsLast;
+  ordinalsLast: false	<== (ordinalsEnable!= true) ? ordinalsLast : ordinals;
+
+  unlink fractions: false		<== fractionsEnable ? fractions : fractionsLast;
+  fractionsLast: false	<== (fractionsEnable!= true) ? fractionsLast : fractions;
+
+  unlink proportionalMetrics: false	<== proportionalMetricsEnable ? proportionalMetrics : proportionalMetricsLast;
+  proportionalMetricsLast: false	<== (proportionalMetricsEnable!= true) ? proportionalMetricsLast : proportionalMetrics;
+
+  unlink hOrVStyles: false	<== hOrVStylesEnable ? hOrVStyles : hOrVStylesLast;
+  hOrVStylesLast: false	<== (hOrVStylesEnable!= true) ? hOrVStylesLast : hOrVStyles;
+
+  unlink romanItalics: false	<== romanItalicsEnable ? romanItalics : romanItalicsLast;
+  romanItalicsLast: false	<== (romanItalicsEnable!= true) ? romanItalicsLast : romanItalics;
+  
+	
+}

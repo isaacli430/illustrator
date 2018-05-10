@@ -1,0 +1,259 @@
+layout DocumentSetup
+{
+	view subview(identifier: "AIEveSubView",
+				 child_horizontal: @align_fill,
+				 placement: @place_column,
+				 show_border: false,
+				 layout_theme: @dialog_large,
+				 spacing:@unrelated_spacing
+				 )
+	{
+		column(child_horizontal: @align_fill,spacing:@inter_group_spacing)
+		{	row(child_horizontal: @align_fill)
+			{
+				column()
+				{
+					group(identifier: "document_setup_options_group", header: "button_bar(bind: @GeneralType, identifier: 'GeneralTypeBar', horizontal: @align_center, wants_focus: false, 
+									items: [{ name: '$$$/_ARTWORKD/Dlg/Artwork/GeneralTabName=General', value: 0 },
+											{ name: '$$$/_ARTWORKD/Dlg/Artwork/TypeTabName=Type', value: 1}])")
+					{
+						overlay()
+						{
+							panel(guide_mask: [ @guide_baseline ], bind: @GeneralType, value: 0)
+							{
+								column(child_horizontal: @align_fill,horizontal: @align_fill,guide_mask: [ @guide_label ])
+								{
+									row(horizontal: @align_fill)
+									{
+										popup(identifier: "PopupUnits",
+										  include_custom_item: false,
+										  set_default_focus: true,
+										  items: @unitItems,
+											name: "$$$/_ARTWORKD/Dlg/Artwork/rulerUnitsTitle=&Units:",
+											bind:@unitsValue
+										  );
+										button(identifier: "EditArtboards",
+												name: "$$$/_ARTWORKD/Dlg/Artwork/ArtboardEdit=E&dit Artboards",horizontal: @align_right);
+									}
+									row(placement: @place_row, horizontal: @align_fill, spacing: @related_spacing)
+									{
+										column(spacing: 0)
+										{
+											row(spacing: 18, horizontal: @align_fill)
+											{
+												guide_consumer(consume_horizontal: 1);
+												static_text(identifier: "TopBleedStaticText", name: '$$$/_NewArtworkDlg/Dlg/Bleed/top=Top');
+											}
+											unit_hot_number(identifier: "TopBleedEditNumber", bind: @bleed_top, unit: @ruler_units, digits : 5
+											, name: '$$$/_NewArtworkDlg/Dlg/Bleed/Bleed=B&leed:'
+											, stepper: true, min_value: 0, max_value: @max_tb_bleed_value, decimal_places: @bleed_decimal_places);
+										}
+										column(spacing: 0,guide_mask: [ @guide_label ])
+										{
+											row(margin: [0, 18, 0, 0])
+											{
+												static_text(identifier: "BottomBleedStaticText", name: '$$$/_NewArtworkDlg/Dlg/Bleed/bottom=Bottom');
+											}
+											unit_hot_number(identifier: "BottomBleedEditNumber", bind: @bleed_bottom, unit: @ruler_units, digits : 5, name: ""
+											, stepper: true, min_value: 0, max_value: @max_tb_bleed_value, decimal_places: @bleed_decimal_places);
+										}
+										column(spacing: 0,guide_mask: [ @guide_label ])
+										{
+											row(margin: [0, 18, 0, 0])
+											{
+												static_text(identifier: "LeftBleedStaticText", name: '$$$/_NewArtworkDlg/Dlg/Bleed/left=Left');
+											}
+											unit_hot_number(identifier: "LeftBleedEditNumber", bind: @bleed_left, unit: @ruler_units, digits : 5, name: ""
+											, stepper: true, min_value: 0, max_value: @max_lr_bleed_value, decimal_places: @bleed_decimal_places);
+										}				
+										column(spacing: 0,guide_mask: [ @guide_label ])
+										{
+											row(margin: [0, 18, 0, 0])
+											{
+												static_text(identifier: "RightBleedStaticText", name: '$$$/_NewArtworkDlg/Dlg/Bleed/right=Right');
+											}
+											unit_hot_number(identifier: "RightBleedEditNumber", bind: @bleed_right, unit: @ruler_units, digits : 5, name: ""
+											, stepper: true, min_value: 0, max_value: @max_lr_bleed_value, decimal_places: @bleed_decimal_places);
+										}
+										column(spacing: 0,guide_mask: [ @guide_label ])
+										{
+											guide_consumer(consume_vertical: 1);
+											toggle_button(identifier: "NoConstrainIcon", 
+												image: {normal: "NoConstrainIcon.png", dark_normal:"NoConstrainIconDark.png", down: "LinkOnConstrainIcon.png", dark_down:"LinkOnConstrainIconDark.png"},
+												alt: "$$$/_NewArtworkDlg/Dlg/ArtworkNew/zLockBleedString=Make all settings the same",
+												value_on: true, value_off: false, 
+												bind: @bleed_values_locked, 
+												vertical: @align_center,
+												horizontal: @align_center,
+												wants_focus: false);
+										}				
+									}
+									checkbox(identifier: "ImageInOutline",guide_mask: [ @guide_label ], name: "$$$/_ARTWORKD/Dlg/Artwork/showPlacedImages=Sh&ow Images In Outline Mode",bind:@ImageInOutline);
+									checkbox(identifier: "SubstitutedGlyphs",guide_mask: [ @guide_label ], name: '$$$/_ARTWORKD/Dlg/Artwork/Type/subGlyphs=&Highlight Substituted Glyphs',bind:@SubstitutedGlyphs);
+								}
+								column(spacing:0,margin:[10, 0, 10, 0],horizontal:@align_fill)
+								{
+									static_text(identifier: "TransparencyAndOverprintViewText",name:'$$$/_ARTWORKD/Dlg/Artwork/TransparencyAndOverprintViewFrame=Transparency and Overprint Options');
+									separator(identifier: "separator1");
+								}
+								column(horizontal: @align_fill,guide_mask: [ @guide_label ])
+								{
+									row(child_vertical:@align_fill,horizontal:@align_fill)
+									{
+										column(child_horizontal: @align_fill)
+										{
+											popup(identifier: "PopupGridSize",
+											  include_custom_item: false,
+											  items: [{name:"$$$/_ARTWORKD/Mnu/GridSize/1=Small",value:1},
+														{name:"$$$/_ARTWORKD/Mnu/GridSize/2=Medium",value:2},
+														{name:"$$$/_ARTWORKD/Mnu/GridSize/3=Large",value:3}
+											  ],
+												name: '$$$/_ARTWORKD/Dlg/Artwork/GridSizeTitle=&Grid Size:',
+												bind:@GridSize
+											  );
+											popup(identifier: "TransparencyGridPopup", name: '$$$/_ARTWORKD/Dlg/Artwork/GridColorsTitle=G&rid Colors:'
+												, bind: @transparency_grid, include_custom_item: false, horizontal: @align_fill,
+														items: [
+														{name:"$$$/_ARTWORKD/Mnu/GridColors/1=Custom", value: "custom"},
+														{name:'-'},
+														{icon: "SP_GridColorsLight_Sm_N", name:'$$$/_ARTWORKD/Mnu/GridColors/3=Light', value: "light"},
+														{icon: "SP_GridColorsMedium_Sm_N", name:'$$$/_ARTWORKD/Mnu/GridColors/4=Medium', value: "medium"},
+														{icon: "SP_GridColorsDark_Sm_N", name:'$$$/_ARTWORKD/Mnu/GridColors/5=Dark', value: "dark"},
+														{name:'-'},
+														{icon: "SP_GridColorsRed_Sm_N", name:'$$$/_ARTWORKD/Mnu/GridColors/7=Red', value: "red"},
+														{icon: "SP_GridColorsOrange_Sm_N", name:'$$$/_ARTWORKD/Mnu/GridColors/8=Orange', value: "orange"},
+														{icon: "SP_GridColorsGreen_Sm_N", name:'$$$/_ARTWORKD/Mnu/GridColors/9=Green', value: "green"},
+														{icon: "SP_GridColorsBlue_Sm_N", name:'$$$/_ARTWORKD/Mnu/GridColors/10=Blue', value: "blue"},
+														{icon: "SP_GridColorsPurple_Sm_N", name:'$$$/_ARTWORKD/Mnu/GridColors/11=Purple', value: "purple"}
+													]);
+											checkbox(identifier: "SimulatePaperColor",guide_mask: [ @guide_label ], name: '$$$/_ARTWORKD/Dlg/Artwork/ColoredPaper=&Simulate Colored Paper',bind:@SimulatePaperColor);
+										}
+										row(horizontal:@align_center,vertical:@align_center)
+										{
+											column()
+											{
+												swatch(identifier: "gridColor1", width: 43, height: 29);
+												swatch(identifier: "gridColor2", width: 43, height: 29);
+											}
+											column()
+											{
+												image(identifier: "tilepreview", show_border: true, width: 66,height:66);
+											}
+										}
+									}
+									row()
+									{
+										popup(	identifier:				"FlattenerPresetPopup",
+												name:					'$$$/_ARTWORKD/Dlg/Artwork/FlattenerPresetTitle=Prese&t:',
+												popup_minimum_width_chars:8,
+												include_custom_item:	false
+												);
+										button(	identifier: "FlattenerPresetCustomBtn",
+												name:		'$$$/_ARTWORKD/Dlg/Artwork/FlattenerPresetCustom=&Custom...',
+												action: @CustomButtonAction
+											);
+									}
+
+									checkbox(identifier: "SuppressWhiteOverprint",guide_mask: [ @guide_label ], name: "$$$/_ARTWORKD/Dlg/Artwork/DiscardWhiteOverprint=Discard &White Overprint in Output", bind:@SuppressWhiteOverprint);
+								}
+							}
+
+							panel(guide_mask: [ @guide_baseline ], bind: @GeneralType, value: 1)
+							{
+							column(horizontal: @align_fill,guide_mask: [ @guide_label ])
+							{
+								checkbox(identifier: "TypographerQuotes",guide_mask: [ @guide_label ], name: "$$$/_ARTWORKD/Dlg/Artwork/Type/useTypoQuotes=Use T&ypographer^}s Quotes", bind:@UseTypographerQuotes);
+								popup(identifier: "PopupLanguages",
+									  include_custom_item: false,
+										popup_minimum_width_chars:10,
+										name: "$$$/_ARTWORKD/Dlg/Artwork/Type/languageFrame=Language:"
+									  );
+								row()
+								{
+									popup(identifier: "PopupDoubleQuotes",
+											  include_custom_item: false,
+												name: "$$$/_ARTWORKD/Dlg/Artwork/Type/doubleQuotes=Double &Quotes:",
+												items:[
+														{icon: "SP_DbQuotation_Sm_N", value:0, name : " "},
+														{icon: "SP_RtDbQuotation_Sm_N", value:1, name : " "},
+														{icon: "SP_RtDbLowQuotation_Sm_N", value:2, name : " "},
+														{icon: "SP_LowLtDbQuotation_Sm_N", value:3, name : " "},
+														{icon: "SP_OutDbAngBracketQuot_Sm_N", value:4, name : " "},
+														{icon: "SP_OutDbAngQuotation_Sm_N", value:5, name : " "},
+														{icon: "SP_InDbAngQuotation_Sm_N", value:6, name : " "},
+														{icon: "SP_LowHighRtDbQuot_Sm_N", value:7, name : " "},
+														{icon: "SP_ReversedDbPrimeQuot_Sm_N", value:8, name : " "},
+														{icon: "SP_CornerBracketQuot_Sm_N", value:9, name : " "},
+														{icon: "SP_StraightDbQuotation_Sm_N", value:10, name : " "} ]
+											  );
+									popup(identifier: "PopupSingleQuotes",
+											  include_custom_item: false,
+												name: "$$$/_ARTWORKD/Dlg/Artwork/Type/singleQuotes=S&ingle Quotes:"
+											  );
+
+								}
+								row(placement: @place_row, horizontal: @align_fill, spacing: @related_spacing)
+								{
+									column()
+									{
+										column(spacing:0)
+										{
+											row(spacing: 0, horizontal: @align_fill)
+											{
+												guide_consumer(consume_horizontal: 1);
+												row(horizontal: @align_fill)
+												{
+													static_text(identifier: "Size", name: '$$$/_ARTWORKD/Dlg/Artwork/Type/Size=Size', horizontal: @align_left);
+												}
+											}
+											unit_hot_number(identifier: "SuperScriptSize", bind: @SuperScriptSize, unit: "NumberEditUnit_NoUnit", digits : 5
+											, name: '$$$/_ARTWORKD/Dlg/Artwork/Type/Superscript=Su&perscript:'
+											, stepper: false, min_value: 0, max_value: 100, decimal_places: 2, suffix:'$$$/gPercent=%');
+										}
+										unit_hot_number(identifier: "SubScriptSize", bind: @SubScriptSize, unit: "NumberEditUnit_NoUnit", digits : 5
+										, name: '$$$/_ARTWORKD/Dlg/Artwork/Type/Subscript=Su&bscript:'
+										, stepper: false, min_value: 0, max_value: 100, decimal_places: 2, suffix:'$$$/gPercent=%');
+									}
+									column(guide_mask: [@guide_label])
+									{
+										column(spacing: 0)
+										{
+											static_text(identifier: "Position", name: '$$$/_ARTWORKD/Dlg/Artwork/Type/Position=Position', horizontal: @align_left);
+											unit_hot_number(identifier: "SuperScriptPosition", bind: @SuperScriptPosition, unit: "NumberEditUnit_NoUnit", digits : 5, name: ""
+											, stepper: false, min_value: 0, max_value: 100, decimal_places: 2, suffix:'$$$/gPercent=%');
+										}
+											unit_hot_number(identifier: "SubScriptPosition", bind: @SubScriptPosition, unit: "NumberEditUnit_NoUnit", digits : 5, name: ""
+											, stepper: false, min_value: 0, max_value: 100, decimal_places: 2, suffix:'$$$/gPercent=%');
+									}
+								}
+								unit_hot_number(identifier: "SmallCaps", bind: @SmallCaps, unit: "NumberEditUnit_NoUnit", digits : 5
+										, name:  '$$$/_ARTWORKD/Dlg/Artwork/Type/SmallCaps=S&mall Caps:'
+										, stepper: false, min_value: 0, max_value: 100, decimal_places: 2, suffix:'$$$/gPercent=%');
+								popup(identifier: "PopupExport",
+									  include_custom_item: false,
+									  items: [{name:"$$$/_ARTWORKD/Mnu/Export/1=Preserve Text Editability",value:1},
+												{name:"$$$/_ARTWORKD/Mnu/Export/2=Preserve Text Appearance",value:2}
+									  ],
+										name: '$$$/_ARTWORKD/Dlg/Artwork/Type/Export=&Export:',
+										bind:@ExportValue
+								  );
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+		row(child_horizontal: @align_right, reverse: os == @mac,spacing:@related_spacing)
+		{ 
+			button(default: true,
+						identifier: "okButton",
+						commit_button: true,
+						name: "$$$/gOK=OK");
+			button(cancel: true,
+						identifier: "cancelButton",
+						commit_button: true,
+						name: "$$$/gCancel=Cancel");
+		} 
+	}
+}

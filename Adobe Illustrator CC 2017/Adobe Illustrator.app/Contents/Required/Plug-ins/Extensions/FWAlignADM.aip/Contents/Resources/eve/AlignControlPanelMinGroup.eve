@@ -1,0 +1,24 @@
+layout AlignControlPanelMinGroup
+{
+    view subview(identifier: "AlignControlPanelMinGroup",
+				 layout_theme: @controlbar,
+				 show_border: false,
+				 child_vertical: @align_center,
+				 margin : 0,
+				 spacing: 5,
+				 height:  31)
+    {					
+		optional(identifier: "AlignButtonSubGroup", child_vertical: @align_center,placement: @place_row, margin:0, spacing: 5)
+		{
+			subview(margin:0, show_border: false, height: 25 , child_vertical:@align_center)
+			{
+				separator(orientation: @vertical, vertical: @align_fill);
+			}
+			link_button(identifier: "AlignHyperlinkButton",
+					wants_focus: false,
+					name: "$$$/FWAlignADM/Title=Align",
+					alt: "$$$/FWAlignADM/Str/AlignPalette=Align Panel");
+		}
+	}
+}
+

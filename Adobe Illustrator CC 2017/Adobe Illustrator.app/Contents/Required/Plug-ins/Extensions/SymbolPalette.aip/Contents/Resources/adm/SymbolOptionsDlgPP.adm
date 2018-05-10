@@ -1,0 +1,12 @@
+sheet SymbolOptionsDlg
+{
+interface:
+	IsSymbolCreation: false;
+	IsDynamicSymbolsOn: false;
+	SymbolName: "New Symbol";
+	RegistrationValue: 4;
+	SymbolExportType: 0;
+	EnableGuides: false;
+	SymbolExportTypeChoices: [{name: "$$$/SymbolPalette/Dlg/optDlgStaticExportMovieClip=Movie Clip", value: 2}, {name: "$$$/SymbolPalette/Dlg/optDlgStaticExportGraphic=Graphic", value: 1}];
+	SymbolTypeRadio: 2;
+}

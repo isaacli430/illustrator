@@ -1,0 +1,8 @@
+/* [1] */
+$$$/TransformPalett/Str/Misc/ShowPalette=Transform
+/* [2] */
+$$$/TransformPalett/Str/Misc/HidePalette=Hide Transform
+/* [3] */
+$$$/TransformPalett/Str/Misc/Progress=Transforming objects...
+/* [4] */
+$$$/TransformPalett/Str/Misc/OffOfArtworkError=Can't transform the objects. The requested transformation could make some objects extend beyond, or fall completely off of, the drawing area.

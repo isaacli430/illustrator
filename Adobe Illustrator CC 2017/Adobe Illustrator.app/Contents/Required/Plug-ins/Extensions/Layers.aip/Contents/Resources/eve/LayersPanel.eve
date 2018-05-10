@@ -1,0 +1,42 @@
+layout LayersPanel
+{
+    view subview(identifier: "AIEveSubView",
+                 layout_theme: @panel,
+                 placement: @place_column,
+				 show_border: false,
+				 child_horizontal: @align_fill,
+				 margin: gPanelToolbarSubviewMargin,
+				 spacing: gPanelToolbarTopSpacing)
+    {
+		multicolumn_tree(identifier: "LayerTree", wants_focus: false, vertical: @align_fill);
+		row()
+		{
+			static_text(identifier: "LayerCount", name: "000 Layers", dialog_resize: "always", vertical:@align_center);
+			buttongroup(horizontal: @align_right, child_vertical: @align_fill,
+							spacing: gPanelToolbarIconSpacing, child_width: gPanelToolbarIconWidth, child_height: gPanelToolbarIconHeight)
+			{
+				button(identifier: "LocateButton",
+						image: {normal: "SP_Search_Sm_N.png", dark_normal:"SP_Search_Sm_N_D.png"},
+						alt: "$$$/Layers/Str/Tooltip/locateButtonTip=Locate Object");
+						
+				button(identifier: "ClippingMaskButton",
+						image: {normal: "SP_ClippingPath_Xs_N.png", dark_normal:"SP_ClippingPath_Xs_N_D.png"},
+						alt: "$$$/Layers/Str/Tooltip/makeMaskButtonTip=Make/Release Clipping Mask");
+				
+				button(identifier: "CreateSublayerButton",
+						image: {normal: "SP_NewSubItem_Wi_N.png", dark_normal:"SP_NewSubItem_Wi_N_D.png"},
+						alt: "$$$/Layers/Str/Tooltip/newSubLayerButtonTip=Create New Sublayer");
+						
+				button(identifier: "CreateLayerButton",
+						image: {normal: "SP_New_Wi_N.png", dark_normal:"SP_New_Wi_N_D.png"},
+						alt: "$$$/Layers/Str/Tooltip/newButtonTip=Create New Layer");
+						
+				button(identifier: "TrashButton",
+						image: {normal: "SP_Delete_Wi_N.png", dark_normal:"SP_Delete_Wi_N_D.png"},
+						alt: "$$$/Layers/Str/Tooltip/trashButtonTip=Delete Selection");
+						
+				resize_gripper_gap();
+			}
+		}
+    }	
+}

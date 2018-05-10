@@ -1,0 +1,56 @@
+layout GlyphsPanel
+{
+    view subview(identifier: "GlyphsPanelSubView",
+			        layout_theme: @panel,
+				 show_border: false)
+    { 
+		row(vertical: @align_top,horizontal: @align_fill)
+		{
+			
+			popup(identifier: "ShowGlyphPopup",
+			 	name: "$$$/GlyphPanel/Popup/ShowGlyphPopup=Show:",
+				max_characters: 255,
+				horizontal: @align_left,
+				popup_minimum_width_chars:10,
+				popup_maximum_width_chars:10);
+			static_text(identifier: "TextHandle",
+				name: "$$$/GlyphPanel/String/TextHandle=None",
+				horizontal: @align_fill);
+
+		}
+		row(horizontal: @align_fill, vertical: @align_fill)
+		{
+			 grid_view(horizontal: @align_fill, vertical: @align_fill, identifier: "gridView", wants_focus: false);
+		}
+		row(vertical: @align_bottom, horizontal: @align_fill)
+		{
+			popup(identifier: "FontList",horizontal: @align_fill);
+			popup(identifier: "FontStyle",
+				popup_minimum_width_chars:6,
+				popup_maximum_width_chars:6);
+			
+			
+			
+			button(identifier: "ZoomOut",
+				image: {normal:"SP_ZoomOut_Wi_N.png",dark_normal: "SP_ZoomOut_Wi_N_D.png"},
+  	            alt: "$$$/GlyphPanel/ZoomOut/Str=Zoom Out",
+				wants_focus: false
+              	  );
+			button(identifier: "ZoomIn",
+				image: {normal:"SP_ZoomIn_Wi_N.png",dark_normal: "SP_ZoomIn_Wi_N_D.png"},
+  	            alt: "$$$/GlyphPanel/ZoomIn/Str=Zoom In",
+				wants_focus: false
+			    );
+			
+			
+			
+			resize_gripper_gap();
+		}
+		
+    }
+}
+
+
+
+
+

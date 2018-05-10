@@ -1,0 +1,28 @@
+/* [1] */
+OBJ1
+/* [2] */
+$$$/BoundingBox/Str/Error/MultiSelect=The operation cannot complete because more than one object is selected.
+/* [3] */
+!MEM
+/* [4] */
+$$$/BoundingBox/Str/Error/2=The operation cannot complete because there isn't enough memory (RAM) available.
+/* [5] */
+271
+/* [6] */
+$$$/BoundingBox/Str/Error/4=The operation cannot complete because there isn't enough memory (RAM) available.
+/* [7] */
+SEGM
+/* [8] */
+$$$/BoundingBox/Str/Error/6=The operation cannot complete because a path has too many anchor points.
+/* [9] */
+NESS
+/* [10] */
+$$$/BoundingBox/Str/Error/8=The operation cannot complete because a layer is locked or invisible.
+/* [11] */
+!sel
+/* [12] */
+$$$/BoundingBox/Str/Error/10=The selection is not valid for this operation.
+/* [13] */
+<others>
+/* [14] */
+$$$/BoundingBox/Str/Error/14=Bounding Box or Free Transform encountered an unknown error.

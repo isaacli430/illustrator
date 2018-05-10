@@ -1,0 +1,7 @@
+sheet CropUIControlGroup
+{
+interface:
+	ninePointPinSelector: 4;
+	showConstrainIcon: false;
+	ResolutionEditValue:0;
+}	

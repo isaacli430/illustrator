@@ -1,0 +1,13 @@
+sheet SwatchPanel
+{
+	interface:
+		showListMode: false;
+		showFindOptions: false;
+		SwatchType: 0;
+		swatchTYpeButtonImage <== (SwatchType == 1 ? "P_ShowColorSwatches_Wi_N.png" : 
+										(SwatchType == 2 ? "P_ShowGradientSwatches_Wi_N.png" : 
+											(SwatchType == 3 ? "P_ShowPatternSwatches_Wi_N.png" : 
+												(SwatchType == 4 ? "P_ShowColorGroups_Wi_N.png" : "P_ShowAllSwatches_Wi_N.png" ))));
+		showHeaderStrip: true;
+		displayViewType: 0;
+}

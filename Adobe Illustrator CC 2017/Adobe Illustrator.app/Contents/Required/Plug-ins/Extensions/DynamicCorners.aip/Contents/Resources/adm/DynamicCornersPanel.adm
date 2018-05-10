@@ -1,0 +1,5 @@
+sheet DynamicCornersPanel
+{
+	interface:
+	CornerRadiusField : 0;
+}

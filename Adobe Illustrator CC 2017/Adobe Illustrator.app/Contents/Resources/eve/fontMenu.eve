@@ -1,0 +1,6 @@
+layout fontMenu
+{
+	view menu( id: 19,
+				menubar: false )
+	{ separator();  }
+}

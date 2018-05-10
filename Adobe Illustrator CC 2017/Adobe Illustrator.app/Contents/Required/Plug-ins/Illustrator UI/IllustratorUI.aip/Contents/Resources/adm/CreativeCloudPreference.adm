@@ -1,0 +1,36 @@
+sheet CreativeCloud
+{
+	interface:
+		CCPreferencesBoolCell		: true;
+		CCSwatchesBoolCell			: true;
+		CCPresetsBoolCell			: true;
+		CCSymbolsBoolCell			: true;
+		CCBrushesBoolCell			: true;
+		CCGraphicStylesBoolCell		: true;
+		CCWorkspacesBoolCell		: true;
+		CCKBSBoolCell				: true;
+		CCAsianSettingsBoolCell		: true;
+		CCUserCCEError				: false;
+
+		CCUserId					: " ";
+		CCStatusString				: " ";
+
+		CCSyncPopupItems:[
+						{ name: "$$$/CC/AllSettings=All Settings"},
+						{ name: "$$$/CC/SelectedSettings=Selected Settings"},
+						{ name: "$$$/CC/None=None"}
+						];
+
+		CCConflictPopupItems:[
+						{ name: "$$$/CC/KeepLocal=Sync Local Settings" },
+						{ name: "$$$/CC/KeepServer=Sync Cloud Settings" },
+						{ name: "$$$/CC/KeepLatest=Keep Latest File"},
+						{ name:	""},
+						{ name: "$$$/CC/AskMe=Ask My Preference" }
+						];
+
+		CCStatusLabel				: 1;
+		CCShowToolTip				: 0;
+		
+		CCStatusLabelString			: (CCStatusLabel == 1)? ( "$$$/PrefsDlg/CCDlg/CCStaticTextLastSync=Last Sync:") : ("$$$/PrefsDlg/CCDlg/CCStaticTextStatus=Status:");
+}

@@ -1,0 +1,72 @@
+layout CropUIControlGroup
+{
+     view subview(identifier: "CropUIControlGroup",
+				 layout_theme: @controlbar,
+				 show_border: false,
+				 child_vertical: @align_center,
+				 placement: @place_row,
+				 margin : 0,
+				 spacing: 5,
+				 height:  31)
+    {		
+		optional(identifier: "CropSubGroup", child_vertical: @align_center, margin: 0,placement: @place_row, spacing: 5)			
+		{
+			row(spacing:@related_spacing, child_vertical: @align_center)
+			{
+				unit_hot_number(identifier: "Resolution",
+								alt: "$$$/CropUI/Str/ToolTip/ResolutionTip=Resolution",
+								min_value: 0,
+								popuplist: true,
+								decimal_places: 0,
+								digits: 4,
+								max_digits: 8,									
+   								name: "$$$/CropUI/Str/Label=PPI:",
+   								bind: @ResolutionEditValue,
+   								bind_final: true
+								);
+				separator(orientation: @vertical);
+				pin_selector(identifier: "NinePointPinSelector",
+							alt: "$$$/CropUI/Str/ToolTip/ProxyItem=Reference Point",
+							wants_focus: false,
+							bind: @ninePointPinSelector);
+				unit_hot_number(identifier: "XPosition",
+								alt: "$$$/CropUI/Str/ToolTip/XTextItem=X Value",
+								decimal_places: 3, digits: 4, stepper: true,
+								name: "$$$/CropUI/Str/Max/X=X:",
+								unit:"CurrentDocumentUnit",
+								max_value: 16384, min_value: -16384,
+								bind_final: true);
+				unit_hot_number(identifier: "YPosition",
+								alt: "$$$/CropUI/Str/ToolTip/YTextItem=Y Value",
+								decimal_places: 3, digits: 4, stepper: true,
+								name: "$$$/CropUI/Str/Max/Y=Y:",
+								unit:"CurrentDocumentUnit",
+								max_value: 16384, min_value: -16384,
+								bind_final: true);				
+				unit_hot_number(identifier: "WidthValue",
+								alt: "$$$/CropUI/Str/ToolTip/WidthTextItem=W Value",
+								decimal_places: 3,digits: 4, stepper: true,
+								name: "$$$/CropUI/Str/Max/W=W:",
+								unit:"CurrentDocumentUnit",
+								max_value: 16384,	min_value: 0, 
+								bind_final: true);
+				toggle_button(identifier: "NoConstrainIcon",
+								image: {down: "SP_LinkHori_Sm_N.png", dark_down:"SP_LinkHori_Sm_N_D.png", normal: "SP_UnlinkHor_Sm_N.png", dark_normal:"SP_UnlinkHor_Sm_N_D.png"},
+								alt: "$$$/CropUI/Str/ToolTip/LinkItem=Constrain Width and Height Proportions",
+								value_on: true, value_off: false,
+								bind: @showConstrainIcon,
+								wants_focus: false);
+				unit_hot_number(identifier: "HeightValue",
+								alt: "$$$/CropUI/Str/ToolTip/HeightTextItem=H Value",
+								decimal_places: 3,	digits: 4, stepper: true,
+								name: "$$$/CropUI/Str/Max/H=H:",
+								unit:"CurrentDocumentUnit",
+								max_value: 16384,	min_value: 0,
+								bind_final: true);
+				button(name: '$$$/ImageCrop/Options/Apply=Apply',identifier: "ApplyButton");
+				button(name: '$$$/ImageCrop/Options/Cancel=Cancel',identifier: "CancelButton");
+			}
+		}
+    }
+}
+

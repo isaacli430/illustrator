@@ -1,0 +1,143 @@
+layout ArtboardControlPanelGroup
+{
+	view subview(identifier: "ArtboardControlGroupUI",					
+					show_border: false,
+					layout_theme:  @controlbar,
+					placement: @place_row,
+					child_vertical:  @align_center,
+					margin:0,
+					spacing: 5,
+					height:  31					
+				 )	
+	{											
+			optional(identifier: "ArtboardPresetSubGroup", placement: @place_row, child_vertical:  @align_center, margin : 0)
+			{
+			
+				popup(identifier: 'ArtboardPresetPopup',
+					  name: '$$$/CropAreaPlugin/ControlPalette/Presets=Presets:',
+					  alt:"$$$/CropAreaPlugin/ControlPalette/Str/Presets=Select Preset",
+					  wants_focus: false, popup_minimum_width_chars: 10,
+					  include_custom_item: false , guide_mask: [@guide_baseline]);
+			
+			}			
+			optional(identifier: "ArtboardOrientationSubGroup", placement: @place_row, child_vertical: @align_center, margin : 0)
+			{
+				button_bar(identifier: "ArtboardOrientationButtonBar",
+							wants_focus: false,
+    					items: [
+    						{image: {normal: "SP_Portrait_Md_N.png",dark_normal: "SP_Portrait_Md_N_D.png"} , show_border: true, value: 0, alt:"$$$/CropAreaPlugin/ControlPalette/Str/Potrait=Portrait"},
+    						{image: {normal: "SP_Landscape2_Md_N.png",dark_normal: "SP_Landscape2_Md_N_D.png"} , show_border: true, value: 1, alt:"$$$/CropAreaPlugin/ControlPalette/Str/LandScape=Landscape"}
+    					]
+    					);
+			}
+			optional(identifier: "ArtboardSubGroup", placement: @place_row, child_vertical: @align_center, margin : 0)
+			{
+				row(spacing: @related_spacing, margin: 0)
+				{
+					button(identifier: "ArtboardNewPictureBtn",
+						   button_style: true,
+						   alt: "$$$/CropAreaPlugin/ControlPalette/Str/NewArtBoard=New Artboard",
+						   wants_focus: false,
+						   image:{normal:"SP_New_Wi_N.png",dark_normal:"SP_New_Wi_N_D.png"}						   
+						   );
+
+					button(identifier: "ArtboardDeletePictureBtn",
+							button_style: true,
+							alt: "$$$/CropAreaPlugin/ControlPalette/Str/Delete=Delete Artboard",
+							wants_focus: false,
+						   image:{normal:"SP_Delete_Wi_N.png",dark_normal:"SP_Delete_Wi_N_D.png"}						   
+						   );
+				}
+				
+				edit_text(identifier: "ArtboardNameEdit",
+							name: "$$$/CropAreaPlugin/ControlPalette/Name=Name:",
+							characters: 17,							
+							max_characters: 100);
+							
+				toggle_button(	identifier: "ArtboardMoveArtworkBtn", 
+								value_on: false, value_off: true, 
+								image:{normal:"SP_ContentMove_Md_N.png",dark_normal:"SP_ContentMove_Md_N_D.png"}, 
+								wants_focus: false,
+								alt:"$$$/CropAreaPlugin/ControlPalette/Str/ToggleArtworkMove=Move/Copy Artwork with Artboard"
+							 );				
+			}
+
+			optional(identifier: "ArtboardOptionsDialogSubGroup", placement: @place_row, child_vertical: @align_center, margin : 0, spacing: @related_spacing)
+			{
+				row(spacing:0)
+   				{
+   					toggle_button(identifier: "CenterMarkPictureBtn",
+						button_style: true,
+						wants_focus: false,
+						alt: "$$$/CropAreaPlugin/Property01=Show Center Mark",
+					    image:{normal:"SP_ArtboardCenter_Md_N.png",dark_normal:"SP_ArtboardCenter_Md_N_D.png"}
+					   );
+					toggle_button(identifier: "CrossHairPictureBtn",
+						button_style: true,
+						wants_focus: false,
+						alt: "$$$/CropAreaPlugin/Property02=Show Cross Hairs",
+					    image:{normal:"SP_ArtboardCrossHairs_Md_N.png",dark_normal:"SP_ArtboardCrossHairs_Md_N_D.png"}
+					   );
+					toggle_button(identifier: "VideoSafePictureBtn",
+						button_style: true,
+						wants_focus: false,
+						alt: "$$$/CropAreaPlugin/Property03=Show Video Safe Areas",
+					    image:{normal:"SP_ArtboardVideoSafeAreas_Md_N.png",dark_normal:"SP_ArtboardVideoSafeAreas_Md_N_D.png"}
+					   );      
+   				}			   	
+				button(identifier: "ArtboardOptionsDlgPictureBtn",
+						button_style: true,
+						wants_focus: false,
+						alt: "$$$/CropAreaPlugin/ControlPalette/Str/OptionsDialog=Artboard Options",
+					   image:{normal:"SP_ShowDialog_Md_N.png",dark_normal:"SP_ShowDialog_Md_N_D.png"}
+					   );
+			}
+			
+			optional(identifier: "ArtboardPositionSubGroup", placement: @place_row, child_vertical: @align_center, margin : 0)				
+			{
+				pin_selector(identifier: "ArtboardReferencePoint", 
+							 alt:"$$$/CropAreaPlugin/ControlPalette/Str/9PointRef=Reference Point",
+							 wants_focus: false,
+							 bind: @valueRefPoint
+							  );
+				
+				unit_hot_number(identifier: "ArtboardPositionXEdit",
+							name: "$$$/CropAreaPlugin/ControlPalette/X=X:",
+							alt:"$$$/CropAreaPlugin/ControlPalette/Str/X=X Value",
+							digits:4, decimal_places: 2);
+
+				unit_hot_number(identifier: "ArtboardPositionYEdit",
+							name: "$$$/CropAreaPlugin/ControlPalette/Y=Y:",
+							alt:"$$$/CropAreaPlugin/ControlPalette/Str/Y=Y Value",
+							digits:4, decimal_places: 2);
+			}
+			optional(identifier: "ArtboardWidthHeightSubGroup", placement: @place_row, child_vertical: @align_center, margin : 0, spacing: @related_spacing)
+			{														
+									
+				unit_hot_number(identifier: "ArtboardWidthEdit",
+							name: "$$$/CropAreaPlugin/ControlPalette/W=W:",
+							alt:"$$$/CropAreaPlugin/ControlPalette/Str/Width=W Value",
+							digits:4, decimal_places: 2);
+
+				toggle_button(identifier: "LinkButton", 
+									image: {down: "SP_LinkHori_Sm_N.png", dark_down:"SP_LinkHori_Sm_N_D.png", normal: "SP_UnlinkHor_Sm_N.png", dark_normal:"SP_UnlinkHor_Sm_N_D.png"},
+									alt: "$$$/CropAreaPlugin/ControlPalette/Str/9ConstraingtoolTip=Constrain Width and Height Proportions",
+									value_on: true, value_off: false, 
+									wants_focus: false);
+													 						
+
+				unit_hot_number(identifier: "ArtboardHeightEdit",
+							name: "$$$/CropAreaPlugin/ControlPalette/H=H:",
+							alt: "$$$/CropAreaPlugin/ControlPalette/Str/Height=H Value",
+							digits:4, decimal_places: 2);
+								
+			
+			}
+			optional(identifier: "ArtboardInfoSubGroup", placement: @place_row, child_vertical: @align_center, margin : 0)	
+			{
+				static_text(identifier: "ArtboardCountString",
+							alt: "$$$/CropAreaPlugin/ControlPalette/Str/InfoTextMac=Number of Artboards in current document",
+							name: "$$$/CropAreaPlugin/Str/UserInterface/ArtboardInfoStringPL=Artboards: 888");			
+			}
+	}
+}

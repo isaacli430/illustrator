@@ -1,0 +1,45 @@
+sheet app_bar
+{
+	constant:
+		layout_widget_image: {
+								normal:"P_AB3Up2RowsR_Lg_N.png",
+								dark_normal:"P_AB3Up2RowsR_Lg_N_D.png"
+							};
+							 
+	interface:
+		doc_count: 0;
+		enable_override: true;
+		
+		selectedview_image: layout_widget_image <== (enable_override == true && doc_count > 0)	? selectedview_image : layout_widget_image;
+
+		enable_1_up_layout: false;
+		enable_2_up_layout: false;
+		enable_3_up_layout: false;
+		enable_4_up_layout: false;
+		enable_5_up_layout: false;
+		enable_6_up_layout: false;
+		enable_bridge_button: false;
+				
+		layout_1_up <== enable_1_up_layout;
+		layout_2_up <== enable_2_up_layout;
+		layout_3_up <== enable_3_up_layout;
+		layout_4_up <== enable_4_up_layout;
+		layout_5_up <== enable_5_up_layout;
+		layout_6_up <== enable_6_up_layout;
+		layout_bridge_button <== enable_bridge_button;
+		show_Adobe_Stock_icon: 1;
+		show_GPU_icon: (os == @win) ? 2 : 0;
+		show_TWS_icon: true;
+		show_safemode_button: false;
+		show_Learn_icon: false;
+
+	invariant:
+
+		invariant_doc_count_ge_1 <== enable_1_up_layout == true;
+		invariant_doc_count_ge_2 <== enable_2_up_layout == true;
+		invariant_doc_count_ge_3 <== enable_3_up_layout == true;
+		invariant_doc_count_ge_4 <== enable_4_up_layout == true;
+		invariant_doc_count_ge_5 <== enable_5_up_layout == true;
+		invariant_doc_count_ge_6 <== enable_6_up_layout == true;
+		invariant_bridge_button <== enable_bridge_button == true;
+}

@@ -1,0 +1,182 @@
+layout ArtboardOptionDialog
+{
+	view subview(identifier: "AIEveSubView",
+					placement: @place_column,
+					show_border: false,
+					layout_theme: @dialog_large,
+					child_horizontal:@align_fill,spacing: @unrelated_spacing)
+	{
+		column(spacing:@inter_group_spacing,child_horizontal:@align_fill)
+		{
+			row()
+			{
+				edit_text(identifier: "ArtboardName",
+						name: "$$$/CropAreaPlugin/Dialog/Name=&Name:",
+						set_default_focus: true,
+						max_characters: 100,
+						bind: @ArtboardNameCellId,
+						horizontal: @align_fill);
+			}
+
+			group(identifier: "SizeGroup",
+					header: "popup(identifier: 'PresetPopup',
+							name: '$$$/CropAreaPlugin/Dialog/Preset=&Preset:',
+							include_custom_item: false, horizontal: @align_left,
+							popup_minimum_width_chars:20,
+							popup_maximum_width_chars:20)",
+					child_horizontal: @align_fill)
+			{
+				row(child_vertical: @align_center,spacing:@unrelated_spacing)
+				{	
+					row(spacing:0,child_vertical: @align_center)
+					{
+						column()
+						{
+							unit_hot_number(identifier: "WidthEdit",
+										name: "$$$/CropAreaPlugin/Dialog/Width=&Width:",
+										decimal_places:2,
+										digits:8,
+										unit:"CurrentDocumentUnit");
+
+							unit_hot_number(identifier: "HeightEdit",
+										name: "$$$/CropAreaPlugin/Dialog/Height=&Height:",
+										decimal_places:2,
+										digits:8,
+										unit:"CurrentDocumentUnit");
+						}
+						image(identifier: "LinkIcon",
+								image:{normal:"SP_Link_Md_N.png",dark_normal:"SP_Link_Md_N_D.png"}
+							);
+					}
+					row(horizontal:@align_right,child_vertical: @align_center)
+					{
+						pin_selector(identifier: "ReferencePoint", alt:"$$$/CropAreaPlugin/ControlPalette/Str/9PointRef=Reference Point",bind:@RefPoint);
+						column()
+						{
+							unit_hot_number(identifier: "PositionX",
+										name: "$$$/CropAreaPlugin/Dialog/X=&X:",
+										decimal_places:2,
+										digits:8,
+										unit:"CurrentDocumentUnit");
+
+							unit_hot_number(identifier: "PositionY",
+										name: "$$$/CropAreaPlugin/Dialog/Y=&Y:",
+										decimal_places:2,
+										digits:8,
+										unit:"CurrentDocumentUnit");
+						}
+					}
+				}
+				row()
+				{
+					button_bar(identifier: "Orientation",name: "$$$/CropAreaPlugin/Dialog/Orientation=Orientation:",
+							items:[{image:{normal:"SP_Portrait2_Md_N.png",dark_normal:"SP_Portrait2_Md_N_D.png"},value:true},
+									{image:{normal:"SP_Landscape2_Md_N.png",dark_normal:"SP_Landscape2_Md_N_D.png"},value:false}],
+									bind:@Orientation);
+				}
+				row(child_vertical:@align_center, guide_mask: [@guide_label],spacing:@unrelated_spacing)
+				{
+					checkbox(name: "$$$/CropAreaPlugin/Dialog/ConstrainProportions=&Constrain proportions",
+								identifier: "ConstrainProportions");
+					
+					row(spacing:@related_spacing)
+					{
+						info_icon(icontype:"note",size:"small");
+						static_text(name:"$$$/CropAreaPlugin/Str/UserInterface/CurrentProportionsPL=Current proportions: 8888",
+									identifier: "ConstrainInfoText");
+					}
+				}
+			}
+			
+			group(identifier: "DisplayGroup",
+					placement: @place_column,
+					name:"$$$/CropAreaPlugin/Dialog/Display=Display",
+					guide_mask: [@guide_label])
+			{
+				checkbox(name: "$$$/CropAreaPlugin/Dialog/ShowCenter=Show Center &Mark",
+							identifier: "ShowCenter");
+
+				checkbox(name: "$$$/CropAreaPlugin/Dialog/ShowCrossHairs=Show Cross Ha&irs",
+							 identifier: "ShowCrossHairs");
+
+				checkbox(name: "$$$/CropAreaPlugin/Dialog/ShowSafeAreas=Show Video &Safe Areas",
+							 identifier: "ShowSafeAreas");
+
+				unit_hot_number(identifier: "RulersPAR",
+							guide_mask: [ @guide_label ],
+							digits:8,
+							name: "$$$/CropAreaPlugin/Dialog/RulersPAR=Video Ruler Pixe&l Aspect Ratio:");
+			}
+			
+			group(identifier: "GlobalGroup",
+					placement: @place_column,
+					name:"$$$/CropAreaPlugin/Dialog/Global=Global")
+			{
+				checkbox(name: "$$$/CropAreaPlugin/Dialog/Fade=&Fade region outside Artboard",
+							identifier: "Fade",
+							guide_mask: [@guide_label]);
+
+				checkbox(name: "$$$/CropAreaPlugin/Dialog/RealTimeUpdate=&Update while dragging",
+							indent:	gLargeSpacing,
+							identifier: "RealTimeUpdate",
+							guide_mask: [@guide_label]);
+			}
+			
+			group(identifier: "InfoGroup",
+					placement: @place_column,
+					child_horizontal: @align_fill,
+					guide_mask: [@guide_label])
+			{
+				row(child_vertical: @align_center,spacing:@related_spacing)
+				{
+					info_icon(icontype:"note",size:"small");
+					
+					static_text(identifier: "ArtboardCountString",
+								characters: 1,
+								horizontal: @align_fill,
+								adjust_baseline_for_single_line_text:false,
+								name: "$$$/CropAreaPlugin/Str/UserInterface/CropAreasInfoStringPL=Artboards: 888");
+				}
+				row(spacing:@related_spacing)
+				{
+					column(spacing: 0)
+					{
+						info_icon(icontype:"note",size:"small");
+					}
+					column(spacing:0,
+							horizontal: @align_fill)
+					{
+						static_text(identifier: "TipStringFirst",
+									characters: 1,
+									horizontal: @align_fill,
+									adjust_baseline_for_single_line_text:false,
+									name: "$$$/CropAreaPlugin/Str/UserInterface/CopyMoveTipStringFirst=To create a new artboard within an artboard, press Shift.");
+
+						static_text(identifier: "TipStringTwo",
+									characters: 1,
+									horizontal: @align_fill,
+									adjust_baseline_for_single_line_text:false,
+									name: "$$$/CropAreaPlugin/Str/UserInterface/CopyMoveTipStringSecond/Win=Alt+Drag to duplicate artboard.");
+					}
+				}
+			}
+		}
+        row(child_horizontal: @align_right, spacing: @button_group_spacing, child_vertical:@align_fill)
+        {
+            button(name: "$$$/CropAreaPlugin/Dialog/Delete=&Delete",
+					commit_button:true,
+            	   identifier: "deleteButton");
+            	   
+            row(reverse:os==@mac,horizontal: @align_right,spacing:@related_spacing)
+            {
+				button(name: "$$$/gOK=OK",
+						commit_button:true,
+            		   identifier: "okButton");
+
+				button(name: "$$$/gCancel=Cancel",
+						commit_button:true,
+            		   identifier: "cancelButton");
+            }
+        }
+    }
+}

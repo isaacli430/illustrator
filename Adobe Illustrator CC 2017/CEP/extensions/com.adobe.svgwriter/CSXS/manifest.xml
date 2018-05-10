@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ExtensionManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ExtensionBundleId="com.adobe.svgwriter" ExtensionBundleName="SVG Writer" ExtensionBundleVersion="0.0.1" Version="6.0"> <!-- VERSION-UPDATE-MARKER -->
+    <ExtensionList>
+        <!-- VERSION-UPDATE-MARKER -->
+        <Extension Id="com.adobe.svgwriter.extension" Version="0.0.1"/>
+    </ExtensionList>
+    <ExecutionEnvironment>
+        <HostList>
+            <Host Name="ILST" Version="19.0"/>
+			<Host Name="MUSE" Version="[2015.0,2016.0]"/>
+        </HostList>
+        <LocaleList>
+            <Locale Code="All"/>
+        </LocaleList>
+        <RequiredRuntimeList>
+            <RequiredRuntime Name="CSXS" Version="6.0"/>
+        </RequiredRuntimeList>
+    </ExecutionEnvironment>
+    <DispatchInfoList>
+        <Extension Id="com.adobe.svgwriter.extension">
+            <DispatchInfo>
+                <Resources>
+                    <MainPath>./index.html</MainPath>
+                    <CEFCommandLine>
+                        <Parameter>--enable-nodejs</Parameter>
+						<Parameter>--disable-gpu</Parameter>
+                    </CEFCommandLine>
+                </Resources>
+                <Lifecycle>
+                    <!-- <AutoVisible>true</AutoVisible> -->
+                    <AutoVisible>false</AutoVisible>
+                </Lifecycle>
+                <UI>
+                    <!-- This extension should not be visible:
+                        - remove the menu entry
+                        - set Type=Custom
+                        - set Width=1 and Height= 1
+                        - set AutoVisible=false. -->
+                    <!-- <Type>Panel</Type> -->
+                    <Type>Custom</Type>
+                    <!-- <Menu>Export as SVG</Menu> -->
+                    <Geometry>
+                        <Size>
+                            <!-- <Height>400</Height>
+                            <Width>300</Width> -->
+                            <Height>1</Height>
+                            <Width>1</Width>
+                        </Size>
+                    </Geometry>
+                </UI>
+            </DispatchInfo>
+        </Extension>
+    </DispatchInfoList>
+</ExtensionManifest>

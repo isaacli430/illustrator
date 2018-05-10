@@ -1,0 +1,50 @@
+layout TouchCalligraphicStylusPanel
+{
+    view subview(identifier: "TouchCalligraphicStylusPanel",
+				show_border: false,
+				margin:0,
+				width:190,
+				layout_theme:@touch_panel)
+    {	
+		row(spacing:0, margin:[5,10,5,10], child_vertical: @align_center, horizontal: @align_fill)
+		{	
+			column(horizontal: @align_left)
+			{			
+				static_text(identifier: "WidthLabel", theme_font_size: @medium, name: "Width:");
+			}
+			column(horizontal: @align_right)
+			{		
+				button_bar(	identifier: "buttonBar", 
+   								items: [
+   									 {name: "Fixed", show_border: true, value: false},
+   									 {name: "Pressure", show_border: true, value: false}
+								]
+   							); 
+			}
+		}	
+		row(spacing:0, margin:[5,10,2,10], child_vertical: @align_center, horizontal: @align_fill)
+		{
+			column(horizontal: @align_left)
+			{
+				static_text(identifier: "VariationLabel", theme_font_size: @medium, name: "Variation:");   
+	        }
+		}		
+		row(spacing:0, margin:[5,10,10,10], child_vertical: @align_center, horizontal: @align_fill)
+		{
+			column(horizontal: @align_left)
+			{
+				subview(identifier: "SliderView", horizontal:@align_left, width:125, height:22, show_border: false);	
+			}
+			column(horizontal: @align_right)
+			{
+				edit_number(identifier: "PressureVariation",
+							min_value: 0,
+	                        decimal_places: 0,
+	                        digits: 2,
+							unit: "CurrentDocumentUnit"
+	                        );    
+	        }
+		}		
+    }
+}
+

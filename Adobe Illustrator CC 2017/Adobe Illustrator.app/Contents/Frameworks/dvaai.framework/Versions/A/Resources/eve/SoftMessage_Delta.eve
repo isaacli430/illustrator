@@ -1,0 +1,22 @@
+layout SoftMessage_Dimension_
+{
+    view subview(show_border: false, spacing: 0)
+    {		
+	row(horizontal: @align_fill, spacing: 0)
+	{
+		column(horizontal: @align_fill, spacing: 0)
+		{	
+			static_text(identifier: "DeltaXLabel", name: "$$$/FreeTransform/SoftMessage/DXString=dX:", horizontal: @align_right);
+			static_text(identifier:"DeltaYLabel", name: "$$$/FreeTransform/SoftMessage/DYString=dY:", horizontal: @align_right);
+						
+		}
+		column(horizontal: @align_fill, spacing: 0)
+		{
+				
+			static_text(identifier:"DeltaXValue", name:"0000mm", horizontal: @align_left);
+			static_text(identifier:"DeltaYValue", name:"0000mm", horizontal: @align_left);
+		}
+	}
+    }
+}
+

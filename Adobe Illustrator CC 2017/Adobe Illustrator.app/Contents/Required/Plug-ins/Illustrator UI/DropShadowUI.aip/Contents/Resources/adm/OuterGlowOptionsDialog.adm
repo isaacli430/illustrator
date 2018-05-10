@@ -1,0 +1,7 @@
+sheet OuterGlowOptionsDialog
+{
+	interface:
+		BlendMode: 1;
+		EnablePreview:false;
+		unlink Preview:false <== EnablePreview == true? Preview : false;
+}

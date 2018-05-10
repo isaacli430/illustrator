@@ -1,0 +1,39 @@
+layout InsertStopUI
+{
+    view subview(	identifier: "AIEveSubView",
+                 layout_theme: @dialog_large,
+                 child_horizontal: @align_fill,
+		     placement: @place_column,
+                 show_border: false,
+				 spacing: @unrelated_spacing)
+    {
+        column(child_horizontal: @align_fill)
+            {
+				column(spacing: @label_widget_spacing) {
+					static_text(identifier: "prefixOfTextEditBox",
+                            name:"$$$/ActionPalette/Dlg/17100/3=&Message:");
+
+					edit_text(characters: 28,
+					max_characters: 255,
+                          identifier: "textEditBox",
+                          lines: 6.5,
+                          set_default_focus: true,
+                          scrollable: true);
+				}
+
+                checkbox(identifier: "allowContinue_Chkbox",
+                         name:"$$$/ActionPalette/Dlg/17100/5=&Allow Continue");
+            }
+		row(child_horizontal: @align_right, child_vertical: @align_center, reverse: os == @mac, spacing:@related_spacing)
+		{ 
+          button(
+              identifier: "okButton",
+              name: "$$$/gOK=OK",
+              commit_button: true);
+          button(
+              identifier: "cancelButton",
+              name: "$$$/gCancel=Cancel",
+              commit_button: true); 
+		} 
+    }
+}

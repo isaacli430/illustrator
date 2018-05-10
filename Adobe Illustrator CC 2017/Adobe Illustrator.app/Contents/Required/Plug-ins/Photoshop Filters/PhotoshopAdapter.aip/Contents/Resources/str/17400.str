@@ -1,0 +1,7 @@
+$$$/PhotoshopAdapter/GenPSError1=the plug-in requires services not provided by the Photoshop Adapter
+$$$/PhotoshopAdapter/GenPSError2=a requested property could not be found
+$$$/PhotoshopAdapter/GenPSError3=the plug-in made an invalid request of the Photoshop Adapter
+$$$/PhotoshopAdapter/GenPSError4=the plug-in does not support images in this color space
+$$$/PhotoshopAdapter/GenPSError5=a file path was provided that cannot be understood by this platform
+$$$/PhotoshopAdapter/GenPSError6=the plug-in could not be loaded (possibly because of a missing DLL)
+

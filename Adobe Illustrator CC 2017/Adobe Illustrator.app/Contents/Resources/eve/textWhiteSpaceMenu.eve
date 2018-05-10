@@ -1,0 +1,12 @@
+layout textWhiteSpaceMenu
+{
+	view menu( id: 82,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/Type/EmSpace=E&m Space", 			id:			382, help_id:  0 );
+		menu( text: "$$$/_MBAR/Mnu/Type/EnSpace=E&n Space", 			id:			383, help_id:  0 ); 
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/Type/HairSpace=&Hair Space", 		id:			384, help_id:  0); 
+		menu( text: "$$$/_MBAR/Mnu/Type/ThinSpace=&Thin Space", 		id:			385, help_id:  0);
+	}
+}

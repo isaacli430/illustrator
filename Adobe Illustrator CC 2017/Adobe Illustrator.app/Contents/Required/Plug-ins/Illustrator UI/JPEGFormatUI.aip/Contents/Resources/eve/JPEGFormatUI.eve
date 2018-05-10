@@ -1,0 +1,186 @@
+layout JPEGFormatUI
+{
+    view subview(identifier: "JPEGOptionsSubview", placement: @place_column, show_border: false, margin: 0)
+	{
+		optional(bind: @ShowJPEGBanner, value: true)
+		{
+			subview(identifier: "JPEGOptionsBanner", spacing: 0, horizontal: @align_fill, margin: 0, placement: @place_row, show_border: false)
+			{
+				row(horizontal: @align_fill, margin:[10,15,10,15])
+				{
+					static_text(identifier: "JPEGOptionsBannerText",
+								font_size: 12,
+								vertical: @align_center,
+								name: "$$$/JPEGFormat/Dlg/Options/BannerText=Export in multiple scale factors in one click.");
+							
+					button(identifier: "JPEGOptionsBannerButton",
+							vertical: @align_center, 
+							horizontal: @align_right,
+							font_size: 12,
+							name: "$$$/SmartExoprtFTUE/Banners/BannerButtonString=Try Export for Screens");
+				}
+			}
+		}
+	
+		subview(identifier: "AIEveSubView", layout_theme: @dialog_large, child_horizontal: @align_fill, placement: @place_column, show_border: false, 
+			spacing: @unrelated_spacing)
+		{
+			column(child_horizontal: @align_fill,spacing: @inter_group_spacing)
+			{
+			
+				optional(bind: @ShowGrpImage, value: true)
+				{
+					group(identifier: "GrpImage", name: "$$$/JPEGFormat/Dlg/Options/optionsItemRectImage=Image")
+					{
+						popup(identifier: "PopupColorModel", include_custom_item: false, set_default_focus: true,
+								bind: @ColorModel,
+								name: "$$$/JPEGFormat/Dlg/Options/optionsItemTextColorModel=&Color Model:",
+								items: [{ name: "$$$/JPEGFormat/Mnu/ColorModel/1=RGB", value: 1 },
+										{ name: "$$$/JPEGFormat/Mnu/ColorModel/2=CMYK", value: 2 },
+										{ name: "$$$/JPEGFormat/Mnu/ColorModel/3=Grayscale", value: 3 }]);
+
+						row()
+						{
+							combo_slider(identifier: "EditNumberQuality",  
+								name: "$$$/JPEGFormat/Dlg/Options/optionsItemTextQuality=&Quality:",
+								bind: @ImageQuality,
+								min_max_filter: @filter,
+								slider_point: @up,
+								bind_final: false,
+								digits: 3, decimal_places:2, min_value: 0, max_value:10,
+								left_mini_label: "$$$/JPEGFormat/Dlg/Options/optionsItemTextSmaller=smaller file",
+								right_mini_label: "$$$/JPEGFormat/Dlg/Options/optionsItemTextLarger=larger file");
+											
+							popup(identifier: "PopupQuality", include_custom_item: false, bind: @ImageQualityPopup, guide_mask: [@guide_baseline],
+								items: [{ name: "$$$/JPEGFormat/Mnu/Quality/1=Low", value: 1 },
+										{ name: "$$$/JPEGFormat/Mnu/Quality/2=Medium", value: 3 },
+										{ name: "$$$/JPEGFormat/Mnu/Quality/3=High", value: 6 },
+										{ name: "$$$/JPEGFormat/Mnu/Quality/4=Maximum", value: 8 }]);
+						}
+					}
+				}
+				
+				group(identifier: "GrpFormat", name: "$$$/JPEGFormat/Dlg/Options/optionsItemRectOptions=Options")
+				{
+					row()
+					{
+						column()
+						{
+							row()
+							{
+								popup(identifier: "PopupMethod", include_custom_item: false, bind: @CompressionMethod,
+									name: "$$$/JPEGFormat/Dlg/Options/optionsItemTextMethod=Compression &Method:",
+									items: [{ name: "$$$/JPEGFormat/Mnu/Method/1=Baseline (Standard)", value: 1 },
+										{ name: "$$$/JPEGFormat/Mnu/Method/2=Baseline Optimized", value: 2 },
+										{ name: "$$$/JPEGFormat/Mnu/Method/3=Progressive", value: 3 }]);
+								panel(bind: @CompressionMethod, value: 3, margin: 0)
+								{
+									popup(identifier: "PopupScans", include_custom_item: false,
+										bind: @ProgressiveScans,
+										name: "$$$/JPEGFormat/Dlg/Options/optionsItemTextScans=&Scans:",
+										items: [{ name: "3", value: 3 },
+												{ name: "4", value: 4 },
+												{ name: "5", value: 5 }]);
+								}
+							}
+							optional(bind: @ShowJPEGResolution, value: true)
+							{
+								row()
+								{
+									popup(identifier: "PopupDepth", include_custom_item: false, bind: @Resolution,
+										name: "$$$/JPEGFormat/Dlg/Options/optionsItemTextDepth=&Resolution:",
+										items: [{ name: "$$$/JPEGFormat/Mnu/Depth/1=Screen (72 ppi)", value: 72 },
+											{ name: "$$$/JPEGFormat/Mnu/Depth/2=Medium (150 ppi)", value: 150 },
+											{ name: "$$$/JPEGFormat/Mnu/Depth/3=High (300 ppi)", value: 300 },
+											{ name: "", value: 0},
+											{ name: "$$$/JPEGFormat/Mnu/Depth/4=Other", value: -1 }]);
+									
+									panel(bind: @Resolution, value: -1)
+									{
+										unit_hot_number(identifier: "EditNumberCustom",
+														suffix: "$$$/JPEGFormat/Dlg/Options/optionsItemTextPPI=ppi", 
+														guide_mask: [@guide_label], 
+														max_value: 2400,
+														min_value: 72,
+														digits: 4,
+														decimal_places: 2,
+														bind: @OtherResolution);
+									}						
+								}
+							}
+						}
+						
+						panel(margin: 0, bind: @CompressionMethod, value: 10, placement: @place_row)
+						{
+							info_icon(identifier: "dummy1", icontype: "warning", size: "small");
+							info_icon(identifier: "dummy2", icontype: "warning", size: "small");
+						}
+					}
+					
+					row(child_vertical: @align_center)
+					{
+						popup(identifier: "antiAliasOption", name: "$$$/JPEGFormat/Dlg/Options/AntiAlias=&Anti-aliasing:", 
+							bind: @Antialias,
+							include_custom_item: false,
+							items: [{name: "$$$/JPEGFormat/Dlg/Options/AntialiasingNone=None", value: 1},
+									{name: "$$$/JPEGFormat/Dlg/Options/AntialiasingArtOptimized=Art Optimized (Supersampling)", value: 2},
+									{name: "$$$/JPEGFormat/Dlg/Options/AntialiasingTypeOptimized=Type Optimized (Hinted)", value: 3}]);
+						overlay()
+						{	
+							panel(margin: 0, bind: @Antialias, value: 2)
+							{
+								info_icon(identifier: "WarningIcon1", icontype: "note", size: "small", alt: "$$$/Rasterize/Str/ToolTip/ArtOptimizedAntialias=Text anti-aliasing settings will not be honored.");
+							}
+							panel(margin: 0, bind: @Antialias, value: 3)
+							{
+								info_icon(identifier: "WarningIcon2", icontype: "note", size: "small", alt: "$$$/Rasterize/Str/ToolTip/TextOptimizedAntialias=Best suited for text Objects. Text anti-aliasing settings will be honored.");
+							}
+						}
+					}
+					
+					optional(bind: @ShowImageMapOptions, value: true, margin: 0)
+					{
+						checkbox(identifier: "CheckboxImageMap", name: "$$$/JPEGFormat/Dlg/Options/optionsItemCheckboxImagemap=&Imagemap", bind: @ImageMap);
+					
+					
+						optional(bind: @ImageMap, value: true, margin: 0)
+						{
+							row()
+							{
+								radiogroup(placement: @place_column, show_border: false, margin: 0)
+								{
+									radio_button(bind: @ImageMapRadioGp, name: "$$$/JPEGFormat/Dlg/Options/optionsItemRadioImagemapClientside=C&lient-side (.html)", identifier: "RadioButtonClient", value: 1);
+									radio_button(bind: @ImageMapRadioGp, name: "$$$/JPEGFormat/Dlg/Options/optionsItemRadioImagemapServerside=Ser&ver-side (.map)", identifier: "RadioButtonServer", value: 2);
+								}
+								panel(bind: @ImageMapRadioGp, value: 1, margin: 0, placement: @place_row)
+								{
+									edit_text(identifier: "EditTextAnchor", bind: @AnchorString, name: "$$$/JPEGFormat/Dlg/Options/optionsItemTextAnchor=A&nchor:", max_characters: 32);
+									panel(margin: 0, bind: @EmptyAnchorWarning, value: false)
+									{
+										info_icon(alt: "$$$/JPEGFormat/Str/16405=You must set a name for the imagemap anchor.", identifier: "EmptyAnchorIcon", icontype: "warning", size: "small");
+									}
+								}
+							}
+						}
+					}
+				}
+				
+				optional(bind: @ShowProfileName, value: true, placement: @place_row,spacing: @label_widget_spacing, child_vertical:@align_center)
+				{				
+					checkbox(identifier: "EmbedProfileCheckbox", bind: @EmbedProfile, guide_mask: [@guide_label], name: "$$$/JPEGFormat/Dlg/Options/optionsItemCheckboxEmbed=&Embed ICC Profile:");
+					static_text(identifier: "StaticTextInfo", name: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",dialog_resize: @if_new_name_larger,
+								theme_font_size: @small);
+				}
+			}
+			
+			optional(bind: @ShowOkCancelButton, value: true)
+			{
+				row(horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+				{
+					button(default: true, identifier: "okButton", name: "$$$/gOK=OK", bind: @result,commit_button: true);
+					button(cancel: true, identifier: "cancelButton", name: "$$$/gCancel=Cancel",commit_button: true);
+				}
+			}
+		}
+	}
+}

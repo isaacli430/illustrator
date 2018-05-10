@@ -1,0 +1,92 @@
+sheet EPSOptions
+{
+  interface:
+	LanguageLevelPopupItems: 
+    [ 
+		{ name: "$$$/_FFILLUST/Mnu/11300/2=LanguageLevel 2", value: 2 },
+		{ name: "$$$/_FFILLUST/Mnu/11300/3=LanguageLevel 3", value: 3 }
+	];
+    EPSCompatibilityPopupItems:
+    [
+		{ name: "$$$/_FFILLUST/Mnu/11301/CS7=Illustrator CC EPS", value: 17 },
+		{ name: "", value: 1 },
+        { name: "$$$/_FFILLUST/Mnu/11301/LegacyEPSFormat=Legacy Formats", value: 2 },
+		{ name: "$$$/_FFILLUST/Mnu/11301/CS6=Illustrator CS6 EPS", value: 16 },
+		{ name: "$$$/_FFILLUST/Mnu/11301/CS5=Illustrator CS5 EPS", value: 15 },
+		{ name: "$$$/_FFILLUST/Mnu/11301/CS4=Illustrator CS4 EPS", value: 14 },
+        { name: "$$$/_FFILLUST/Mnu/11301/CS3=Illustrator CS3 EPS", value: 13 },
+        { name: "$$$/_FFILLUST/Mnu/11301/CS2=Illustrator CS2 EPS", value: 12 },
+		{ name: "$$$/_FFILLUST/Mnu/11301/CS=Illustrator CS EPS", value: 11 },
+        { name: "$$$/_FFILLUST/Mnu/11301/1=Illustrator 10 EPS",	value: 10 },
+        { name: "$$$/_FFILLUST/Mnu/11301/2=Illustrator 9 EPS", value: 9 },
+        { name: "$$$/_FFILLUST/Mnu/11301/3=Illustrator 8 EPS", value: 8 },
+        { name: "$$$/_FFILLUST/Mnu/11301/8=Illustrator 3 EPS", value: 3 },
+        { name: "$$$/_FFILLUST/Mnu/11301/9=Japanese Illustrator 3 EPS",	value: 4 } 
+    ];
+    PreviewMenuItems:
+    [
+		{ name: "$$$/_FFILLUST/Mnu/11302/1=None", value: 0 },
+        { name: "", value: 1 },
+        { name: "$$$/_FFILLUST/Mnu/11302/3=TIFF (Black & White)", value: 2 },
+        { name: "$$$/_FFILLUST/Mnu/11302/4=TIFF (8-bit Color)", value: 3 }
+    ];
+    EPSOverprintMenuItems:
+    [
+		{ name: "$$$/_FFILLUST/Mnu/11304/1=Preserve", value: 1 },
+        { name: "$$$/_FFILLUST/Mnu/11304/2=Discard", value: 2 }
+    ];
+
+    EPSCompatibilityPopupVal: 17;
+    DataHasObject: false;
+    IncludePlaced: false;
+    documentHasTransparency: false;
+    documentHasOverprints: false;
+
+    unlink showWarning: false <== (EPSCompatibilityPopupVal != 17);
+
+    unlink OverlayToUse: 1 <== (EPSCompatibilityPopupVal>=11) ? 0 : (EPSCompatibilityPopupVal<=8) ? 1 : 2;
+    
+    enableFormatPopup: true;
+    unlink FormatPopupVal: 1 <== ( enableFormatPopup ) ? FormatPopupVal : 1;
+    
+    enableTransparentOrOpaque: false <== (FormatPopupVal > 2 && EPSCompatibilityPopupVal >= 8);
+    selectTransparent: 1 <== selectTransparent;
+    selectOpaque: 2 <== selectOpaque;
+    TransparentOrOpaqueVal: 1 <== ( !enableTransparentOrOpaque ) ? ((FormatPopupVal == 2) ? selectOpaque : selectTransparent) : TransparentOrOpaqueVal;
+    
+    enableOverprintsPopup: false <== documentHasOverprints;
+    unlink OverprintsPopupVal: 1 <== ( enableOverprintsPopup ) ? OverprintsPopupVal : 1;
+    
+    enableTransparency: false <== (documentHasTransparency && EPSCompatibilityPopupVal<=8);
+    unlink TransparencyVal: 1 <== ( enableTransparency ) ? TransparencyVal : 1;
+    
+    enableEmbedFontsCheckbox: false <== (EPSCompatibilityPopupVal >= 7);
+    EmbedFontsCheckboxChecked: false <== (EPSCompatibilityPopupVal >= 7);
+    unlink EmbedFontsCheckboxVal: false <== ( enableEmbedFontsCheckbox ) ? EmbedFontsCheckboxVal : EmbedFontsCheckboxChecked ? true : false;
+    
+    unlink showInfo: false <== (enableEmbedFontsCheckbox == true);
+    
+    enableLinkedFilesCheckBox: false <== (IncludePlaced);
+    LinkedFilesCheckBoxChecked: false;
+    unlink LinkedFilesCheckBoxVal: false <== ( enableLinkedFilesCheckBox ) ? LinkedFilesCheckBoxVal : LinkedFilesCheckBoxChecked ? true : false;
+    
+    enableDocumentThumbnailsCheckBox: false <== (DataHasObject && EPSCompatibilityPopupVal >= 7);
+    DocumentThumbnailsCheckBoxChecked: false<== (EPSCompatibilityPopupVal >= 7);
+    unlink DocumentThumbnailsCheckBoxVal: false <== ( enableDocumentThumbnailsCheckBox ) ? DocumentThumbnailsCheckBoxVal : DocumentThumbnailsCheckBoxChecked ? true : false;
+    
+    enableIncludePostScriptCheckBox: false <== (EPSCompatibilityPopupVal >= 8);
+    IncludePostScriptCheckBoxChecked: false;
+    unlink IncludePostScriptCheckBoxVal: false <== ( enableIncludePostScriptCheckBox ) ? IncludePostScriptCheckBoxVal : IncludePostScriptCheckBoxChecked ? true : false;
+    
+    enableCompatibleGradientCheckBox: false <== DataHasObject;
+    CompatibleGradientCheckBoxChecked: false;
+    unlink CompatibleGradientCheckBoxVal: false <== ( enableCompatibleGradientCheckBox ) ? CompatibleGradientCheckBoxVal : CompatibleGradientCheckBoxChecked ? true : false;
+    
+    enableUsePrinterDefaultScreenCheckBox: false <== (EPSCompatibilityPopupVal == 8);
+    UsePrinterDefaultScreenCheckBoxChecked: false;
+    unlink UsePrinterDefaultScreenCheckBoxVal: false <== ( enableUsePrinterDefaultScreenCheckBox ) ? UsePrinterDefaultScreenCheckBoxVal : UsePrinterDefaultScreenCheckBoxChecked ? true : false;
+    
+    enableAdobePSPopup: true;
+    AdobePSPopupLanguage2Selected: true;
+    unlink AdobePSPopupVal: 1 <== ( enableAdobePSPopup ) ? AdobePSPopupVal : AdobePSPopupLanguage2Selected ? 2 : 3;
+}

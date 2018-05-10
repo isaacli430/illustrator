@@ -1,0 +1,73 @@
+sheet SwfExportDialog
+{
+	interface:
+		editORnewUI: false;
+		basic: true;
+		presetPopup: 0;
+		presetTextEdit: "";
+		exportAsPopup: 1;
+		versionPopup: 9;
+		
+		unlink cliipToArtboardCheckBox: true <== (exportAsPopup != 5)? cliipToArtboardCheckBox: cliipToArtboardCheckBox_retain;
+		cliipToArtboardCheckBox_retain: true <== (exportAsPopup == 5)? cliipToArtboardCheckBox_retain: cliipToArtboardCheckBox;		
+		
+		unlink appearanceCheckBox: false <== (exportAsPopup == 1 || exportAsPopup == 5)? appearanceCheckBox: false;		
+		
+		unlink compressCheckBox: false <== (versionPopup >=6)? compressCheckBox: false;		
+		
+		symbolsCheckBox: false;
+		outlineCheckBox: false;
+		kerningCheckBox: false;
+		metadataCheckBox: false;
+		protectImportCheckBox: false;
+		
+		unlink passwordTextEdit: "" <== (protectImportCheckBox &&  !editORnewUI)? passwordTextEdit: passwordTextEdit_retain;
+		passwordTextEdit_retain: "" <== (!protectImportCheckBox ||  editORnewUI)? passwordTextEdit_retain: passwordTextEdit;
+		
+		curveQualityNumberEdit: 7;
+		playbackSecurityPopup: 1;
+		imgFormatRadioButton: 1;
+		
+		unlink jpegQualityPopup: 2 <== (imgFormatRadioButton == 2)? jpegQualityPopup: jpegQualityPopup_retain;
+		jpegQualityPopup_retain: 2 <== (imgFormatRadioButton != 2)? jpegQualityPopup_retain : jpegQualityPopup;
+		
+		unlink jpegQualityNumberEdit: 3 <== (imgFormatRadioButton == 2)? jpegQualityNumberEdit: jpegQualityNumberEdit_retain;
+		jpegQualityNumberEdit_retain: 3 <== (imgFormatRadioButton != 2)? jpegQualityNumberEdit_retain: jpegQualityNumberEdit;
+		
+		unlink methodRadioButton: 1 <== (imgFormatRadioButton == 2)? methodRadioButton: methodRadioButton_retain;
+		methodRadioButton_retain: 1 <== (imgFormatRadioButton != 2)? methodRadioButton_retain: methodRadioButton;
+		
+		resolutionNumberEdit: 72;
+		
+		unlink framerateNumberEdit: 12 <== (exportAsPopup == 2)? framerateNumberEdit: framerateNumberEdit_retain;
+		framerateNumberEdit_retain: 12 <== (exportAsPopup != 2)? framerateNumberEdit_retain: framerateNumberEdit;
+		
+		unlink loopingCheckBox: false <== (exportAsPopup == 2)? loopingCheckBox: loopingCheckBox_retain;
+		loopingCheckBox_retain: false <== (exportAsPopup != 2)? loopingCheckBox_retain: loopingCheckBox;
+		
+		unlink animateBlendsCheckBox: false <== (exportAsPopup == 2)? animateBlendsCheckBox: animateBlendsCheckBox_retain;
+		animateBlendsCheckBox_retain: false <== (exportAsPopup != 2)? animateBlendsCheckBox_retain: animateBlendsCheckBox;
+		
+		unlink blendAnimationRadioButton: 1 <== (exportAsPopup == 2 && animateBlendsCheckBox == true)? blendAnimationRadioButton: blendAnimationRadioButton_retain;
+		blendAnimationRadioButton_retain: 1 <== (exportAsPopup != 2 || animateBlendsCheckBox != true)? blendAnimationRadioButton_retain: blendAnimationRadioButton;
+		
+		unlink layerOrderPopup: 1 <== (exportAsPopup == 2)? layerOrderPopup: layerOrderPopup_retain;
+		layerOrderPopup_retain: 1 <== (exportAsPopup != 2)? layerOrderPopup_retain: layerOrderPopup;
+		
+		unlink exportStaticLCheckBox: false <== (exportAsPopup == 2)? exportStaticLCheckBox: exportStaticLCheckBox_retain;
+		exportStaticLCheckBox_retain: false <== (exportAsPopup != 2)? exportStaticLCheckBox_retain: exportStaticLCheckBox;
+		
+		warningPanel: 27;
+		
+		logic:
+			relate
+			{
+				cliipToArtboardCheckBox_retain <== (exportAsPopup == 5)? true: cliipToArtboardCheckBox;
+				exportAsPopup <== exportAsPopup;
+			}
+			when (imgFormatRadioButton == 2) relate
+			{
+				jpegQualityPopup <== (jpegQualityNumberEdit < 3)? 1: ((jpegQualityNumberEdit < 6)? 2: ((jpegQualityNumberEdit < 8)? 3: 4));
+				jpegQualityNumberEdit <== (jpegQualityPopup == 1)? 1: ((jpegQualityPopup == 2)? 3: ((jpegQualityPopup == 3)? 6: 8));
+			}
+}

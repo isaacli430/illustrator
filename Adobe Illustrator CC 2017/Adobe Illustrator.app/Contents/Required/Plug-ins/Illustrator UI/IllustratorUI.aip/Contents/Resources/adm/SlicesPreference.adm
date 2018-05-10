@@ -1,0 +1,7 @@
+sheet SlicesPreference
+{
+interface:
+	
+	SlSliceNoCell: 0;
+	SlColorPopupCell: 1;
+}

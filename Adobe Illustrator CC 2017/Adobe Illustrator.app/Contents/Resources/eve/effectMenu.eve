@@ -1,0 +1,6 @@
+layout effectMenu
+{
+	view menu( id: 9,
+				menubar: false )
+	{ separator();  }
+}

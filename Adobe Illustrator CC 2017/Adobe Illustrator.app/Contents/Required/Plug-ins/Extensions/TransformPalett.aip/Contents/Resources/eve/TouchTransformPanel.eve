@@ -1,0 +1,219 @@
+layout TouchTransformPanel
+{
+	view subview(identifier: "AIEveSubView",
+				 show_border: false,
+				 layout_theme:@touch_panel, 
+				 spacing : @button_group_spacing
+				 )
+    {
+    	
+		button_bar(	identifier: "buttonBar", horizontal : @align_center,
+    				bind: @subview,
+   					items: [
+   								{name: "$$$/TransformPalette/16000/Transform=Transform", show_border: true, value: 0},
+   								{name: "$$$/TransformPalette/16000/Shapes=Shapes", show_border: true, value: 1}
+							]
+   					);
+    	
+    	
+	   	overlay()
+    	{
+    		panel( bind: @subview, value : 0, horizontal: @align_fill)
+			{
+				column(spacing : @button_group_spacing, horizontal: @align_fill)
+				{
+					row(horizontal: @align_fill, child_vertical : @align_center)
+					{
+						pin_selector(identifier: "ninePointPinSelector",
+						alt: "$$$/TransformPalett/Str/ToolTip/ProxyItem=Reference Point",
+						wants_focus: false,
+						is_large : true,
+						guide_mask: [@guide_label],
+						bind: @ninePointPinSelector,
+						horizontal : @align_left);
+						
+						checkbox(identifier: "CopyCheckBox", horizontal : @align_right, guide_mask: [@guide_label]);
+
+						unit_scrubby_number(name: "$$$/TransformPalette/16000/Copies=Copies:",
+										max_value: 1000, min_value: 1, 
+										digits: 3, increment: 1, cmdIncrement: 1,
+										bind_final: true,
+										want_focus :true,
+										identifier: "CopyValue",
+										horizontal : @align_right
+										);
+					}
+				
+					row(horizontal: @align_fill)
+					{
+						unit_scrubby_number(name: "$$$/TransformPalette/16000/Lbl1=X:",
+										alt: "$$$/TransformPalett/Str/ToolTip/XTextItem=X Value",
+										unit:"CurrentDocumentUnit",
+										max_value: 16384, min_value: -16384,
+										decimal_places: 3,	digits: 3,
+										wants_focus: true,
+										identifier: "XPosition",
+										bind_final: true,
+										value: 0
+										);
+						
+						unit_scrubby_number(name: "$$$/TransformPalette/16000/Lbl2=Y:",
+											alt: "$$$/TransformPalett/Str/ToolTip/YTextItem=Y Value",
+											decimal_places: 3,	digits: 3,
+											wants_focus: true,
+											unit:"CurrentDocumentUnit",
+											max_value: 16384,
+											min_value: -16384,
+											bind_final: true,
+											identifier: "YPosition",
+											value: 0,
+											horizontal: @align_right);
+					}
+				}
+				column(spacing : @button_group_spacing, horizontal: @align_fill)
+				{
+					row(horizontal: @align_fill, child_vertical : @align_center)
+					{
+						unit_scrubby_number(name: "$$$/TransformPalette/16000/Lbl3=W:",
+										alt: "$$$/TransformPalett/Str/ToolTip/WidthTextItem=W Value",
+										wants_focus: true,
+										unit:"CurrentDocumentUnit",
+										max_value: 16384,
+										min_value: 0,
+										decimal_places: 3,	digits: 3,
+										bind: true, value: 0,
+										identifier: "Width");
+						
+						toggle_button(identifier: "NoConstrainIcon", image: {normal: "SP_Unlink_Md_N.png", dark_normal:"SP_Unlink_Md_N_D.png", down: "SP_Link_Md_N.png", dark_down:"SP_Link_Md_N_D.png"},
+													alt: "$$$/TransformPalett/Str/ToolTip/LinkItem=Constrain Width and Height Proportions",
+													value_on: true, value_off: false, 
+													bind: @showConstrainIcon, 
+													wants_focus: false,
+													horizontal: @align_center);
+						
+						unit_scrubby_number(name: "$$$/TransformPalette/16000/Lbl4=H:",
+										alt: "$$$/TransformPalett/Str/ToolTip/HeightTextItem=H Value",
+										decimal_places: 3,	digits: 3,
+										wants_focus: true,
+										unit:"CurrentDocumentUnit",
+										max_value: 16384,
+										min_value: 0,
+										bind: true, value: 0,
+										identifier: "Height",
+										horizontal: @align_right);
+					}
+					
+					row(horizontal: @align_fill, child_vertical : @align_center)
+					{
+						unit_scrubby_number(identifier: "RotatePopup",
+								label: "SP_TouchAngle_Sm_N.png",
+								is_image_label: true,
+								digits: 1,
+								horizontal : @align_left,
+								max_value: 360,
+								min_value: -360,
+								bind: true,
+								unit:"NumberEditUnit_Degree",
+								alt: "$$$/TransformPalett/Str/ToolTip/RotateTextItem=Rotate");
+						row( horizontal : @align_right )
+						{
+							button(identifier : "AntiClockWiseRotate", alt: "$$$/TransformPalett/Str/TouchTransparencyPanel/Rotate/AntiClockwise=Rotate Anti-Clockwise", image : {normal : "SP_TouchRotateCCW_Sm_N.png", dark_normal : "SP_TouchRotateCCW_Sm_N_D.png"});
+							button(identifier : "ClockWiseRotate", alt: "$$$/TransformPalett/Str/TouchTransparencyPanel/Rotate/Clockwise=Rotate Clockwise", image : {normal : "SP_TouchRotateCW_Sm_N.png", dark_normal : "SP_TouchRotateCW_Sm_N_D.png"});
+						}
+								
+					}
+				}
+				separator();
+				row(horizontal : @align_fill, child_vertical : @align_center)
+				{
+					static_text(identifier: "ShearAlongLabel", name: "$$$/TransformPalett/Str/ShearAlongLabel=Shear Along:");
+					overlay()
+					{
+						optional(bind: @shearSelect, value : 0)
+						{
+							static_text(identifier: "HorizontalAxis",  name: "$$$/TransformPalett/Str/HorizontalAxis=Horizontal Axis");
+						}
+						optional(bind: @shearSelect, value : 1)
+						{
+							static_text(identifier: "VerticalAxis",  name: "$$$/TransformPalett/Str/VerticalAxis=Vertical Axis");
+						}
+						optional(bind: @shearSelect, value : 2)
+						{
+							static_text(identifier: "AngleAxis", name: "$$$/TransformPalett/Str/AngleAxis=Angle Axis");
+						}
+					}
+					
+				}
+				row(horizontal : @align_fill, child_vertical : @align_center)
+				{
+					button_bar(	identifier: "ShearButtonBar",
+    							bind: @shearSelect,
+    							button_inner_bevel: false, button_outer_bevel: false, button_inner_gradient: false, hasSeparators: false, width_margin: 7.0, height_margin: 7.0,
+   								items: [
+   									{ show_border: true, alt: "$$$/TransformPalett/Str/TouchTransparencyPanel/ShearButtonBar/Horizontal=Shear Horizontal", image : {normal : "SP_TouchSkewXAxis_Sm_N.png", dark_normal : "SP_TouchSkewXAxis_Sm_N_D.png"}, value: 0},
+   									{ show_border: true, alt: "$$$/TransformPalett/Str/TouchTransparencyPanel/ShearButtonBar/Vertical=Shear Vertical", image : {normal : "SP_TouchSkewYAxis_Sm_N.png", dark_normal : "SP_TouchSkewYAxis_Sm_N_D.png"}, value: 1},
+   									{ show_border: true, alt: "$$$/TransformPalett/Str/TouchTransparencyPanel/ShearButtonBar/AlongAxis=Shear Along Axis", image : {normal : "SP_TouchCustomAngle_Sm_N.png", dark_normal : "SP_TouchCustomAngle_Sm_N_D.png"}, value: 2}
+								]
+   					);
+   					unit_scrubby_number(identifier: "ShearAxisAngle",
+							digits: 1,
+							max_value: 360,
+							min_value: -360,
+							horizontal : @align_right,
+							unit:"NumberEditUnit_Degree",
+							alt: "$$$/TransformPalett/Str/ToolTip/ShearAxis=Shear Axis");
+				}
+				row(horizontal : @align_fill)
+				{
+					static_text(identifier: "ShearAngle", name: "$$$/TransformPalett/Str/ShearAngle=Shear Angle:");
+
+					unit_scrubby_number(identifier: "ShearPopup",
+							digits: 1,
+							max_value: 360,
+							min_value: -360,
+							guide_mask : [@guide_label],
+							unit:"NumberEditUnit_Degree",
+							alt: "$$$/TransformPalett/Str/ToolTip/ShearAngle=Shear Angle");
+				}
+				separator();
+				static_text(identifier: "ReflectLabel", name: "$$$/TransformPalett/Str/ReflectLabel=Reflect:");
+				row(horizontal : @align_fill, child_vertical : @align_center)
+				{
+   					button(identifier : "ReflectButtonH", alt: "$$$/TransformPalett/Str/TouchTransparencyPanel/Reflect/Horizontal=Reflect Horizontal", image : {normal : "SP_TouchReflectHorizontal_Sm_N.png", dark_normal : "SP_TouchReflectHorizontal_Sm_N_D.png"});
+   					button(identifier : "ReflectButtonV", alt: "$$$/TransformPalett/Str/TouchTransparencyPanel/Reflect/Vertical=Reflect Vertical", image : {normal : "SP_TouchReflectVertical_Sm_N.png", dark_normal : "SP_TouchReflectVertical_Sm_N_D.png"});
+   					checkbox(identifier: "ReflectCheckBox", alt: "$$$/TransformPalett/Str/TouchTransparencyPanel/Reflect/Axis=Reflect Axis", horizontal : @align_right, guide_mask: [@guide_label] );
+   					unit_scrubby_number(identifier: "ReflectAngle",
+							digits: 1,
+							max_value: 360,
+							min_value: -360,
+							horizontal : @align_right,
+							unit:"NumberEditUnit_Degree",
+							alt: "$$$/TransformPalett/Str/ToolTip/ReflectAngle=Reflect Angle");
+				}
+				separator();
+				row(horizontal : @align_fill, child_vertical : @align_center)
+				{
+					button (identifier : "ApplyBtn", name : "$$$/_GraphDataDialog/Str/3926=Apply", horizontal : @align_right, commit_button: true );
+				}
+
+			}
+			panel( bind: @subview, value : 1, horizontal: @align_fill)
+			{
+				overlay(horizontal: @align_fill, vertical: @align_fill)
+    			{
+					panel(guide_mask: [ @guide_baseline ], bind: @PropertiesViewAvailable, value: false, horizontal: @align_fill)
+					{
+						subview(identifier: "NoPropertiesSubView", show_border: false, horizontal: @align_fill, height: 300)
+						{
+							static_text(identifier: "NoPropertiesLabel", horizontal: @align_center, vertical: @align_center, name: "$$$/TransformPalett/Str/NoShapeProperties=No Shape Properties", display_disable: true);
+						}
+					}
+					panel(guide_mask: [ @guide_baseline ], bind: @PropertiesViewAvailable, value: true, horizontal: @align_fill)
+					{
+						subview(identifier: "PropertiesSubView", show_border: false, horizontal: @align_fill, vertical: @align_center, height: 300);
+					}
+				}
+			}
+    	}	
+	}
+}

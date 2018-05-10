@@ -1,0 +1,74 @@
+layout CSSExtract
+{
+    view subview(identifier: "AIEveSubView",
+				 placement: @place_column,
+				 layout_theme: @panel,
+				 show_border: false,
+				 margin: gPanelToolbarSubviewMargin,
+				 spacing: gPanelToolbarTopSpacing,
+				 child_vertical: @align_center,
+				 horizontal:@align_fill)
+	{
+	
+		row(horizontal: @align_fill,vertical:@align_fill)
+		{
+			column(horizontal: @align_fill,vertical:@align_fill)
+			{
+				multicolumn_tree(identifier: "MCT",
+									wants_focus: false,
+									horizontal: @align_fill,
+									height:115,
+									width:230);
+		
+		
+				edit_text(identifier:	"DescriptionEditText",								
+							lines: 4,
+							vertical:@align_fill,
+							scrollable:	true,
+							readonly: true,
+							horizontal: @align_fill
+							);
+				
+			}			
+		}
+							
+		row(horizontal: @align_fill,vertical:@align_bottom)
+		{
+			
+				panel(margin: 0, bind:@showWarning,horizontal: @align_left, vertical: @align_fill)
+			{
+				image(identifier: "infoIconImage",
+						image: {normal: "SP_Warning_Xs_N.png", dark_normal: "SP_Warning_Xs_N_D.png"},
+						alt: "$$$/CSSPanel/TipString/Warning=Some properties are lost",
+						wants_focus: false);
+			}
+
+			buttongroup(horizontal: @align_right, vertical: @align_fill, 
+							 spacing: gPanelToolbarIconSpacing, child_width: gPanelToolbarIconWidth, child_height: gPanelToolbarIconHeight)
+			{
+				
+				button(identifier: "ExportOptions",
+						image: {normal:"SP_OptionsView_Xs_N.png", dark_normal:"SP_OptionsView_Xs_N_D.png"},
+						alt: "$$$/CSSPanel/TipString/ExportOptions=Export Options",
+						wants_focus: false);
+				
+				button(identifier: "ExportCSS",
+						image: {normal: "SP_Export_Wi_N.png", dark_normal:"SP_Export_Wi_N_D.png"},
+						alt: "$$$/CSSPanel/TipString/ExportCSS=Export Selected CSS",
+						wants_focus: false);		
+				
+				button(identifier: "CopySelected",
+						image: {normal: "SP_Copy_Wi_N.png", dark_normal:"SP_Copy_Wi_N_D.png"},
+						alt: "$$$/CSSPanel/TipString/CopySelected=Copy Selected Style",
+						wants_focus: false);
+
+				button(identifier: "GenerateCSS",
+						image: {normal: "SP_GenerateCSS_Wi_N.png", dark_normal: "SP_GenerateCSS_Wi_N_D.png"},
+						alt: "$$$/CSSPanel/TipString/NewStyle=Generate CSS",
+						wants_focus: false);
+
+				resize_gripper_gap();
+			}
+		}
+	}
+}

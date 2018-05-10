@@ -1,0 +1,103 @@
+layout TabPanel_Vertical
+{
+	view subview(identifier: "TabPanelSubView",
+				 layout_theme: @panel,
+				 show_border: false,
+				 placement: @place_row)
+	{
+		row(spacing: 2, vertical: @align_fill)
+		{	
+			panel(identifier: "TabWidgetPanel", spacing: os == @mac ? 0 : -1, show_border: false, width: 34, height: 400, margin: 0, placement: @place_row, vertical: @align_fill)
+			{
+				image(identifier: "TabRulerWidget", width: 25, height: 400,  vertical: @align_fill);		
+				image(identifier: "TabDragWidget", width: 12, height: 400,  vertical: @align_fill);
+			}
+				
+			column(placement: @place_column, vertical: @align_fill, margin: 0)
+			{
+				column(vertical: @align_top, margin: 0)
+				{
+					column(spacing: 0)
+					{	
+						toggle_button(identifier: "TopJustTab",
+							toolbox_style: true,
+							image: {normal: "SP_TabTopVert_Sm_N.png", dark_normal:"SP_TabTopVert_Sm_N_D.png"},
+							alt: "$$$/_STRList/STR/258/176=Top-Justified Tab",
+							bind: @TabJustRadioGp,
+							value_on: 0,
+							guide_mask: []);
+				
+						toggle_button(identifier: "CenterJustTab",
+							toolbox_style: true,
+							image: {normal: "SP_TabCenterVert_Sm_N.png",dark_normal:"SP_TabCenterVert_Sm_N_D.png"},
+							alt: "$$$/_STRList/STR/258/178=Center-Justified Tab",
+							bind: @TabJustRadioGp,
+							value_on: 1,
+							guide_mask: []);
+						
+						toggle_button(identifier: "BottomJustTab",
+							toolbox_style: true,
+							image: {normal: "SP_TabBottomVert_Sm_N.png",dark_normal:"SP_TabBottomVert_Sm_N_D.png"},
+							alt: "$$$/_STRList/STR/258/177=Bottom-Justified Tab",
+							bind: @TabJustRadioGp,
+							value_on: 2,
+							guide_mask: []);
+						
+						toggle_button(identifier: "DecimalJustTab",
+							toolbox_style: true,
+							image: {normal: "SP_TabDecimalVert_Sm_N.png",dark_normal:"SP_TabDecimalVert_Sm_N_D.png"},
+							alt: "$$$/_STRList/STR/258/179=Decimal-Justified Tab",
+							bind: @TabJustRadioGp,
+							value_on: 3,
+							guide_mask: []);
+					}
+
+					column(spacing: @label_widget_spacing)
+					{	
+						static_text(identifier: "XYValLabel", name: "$$$/TabPanel/Dlg/Y=Y:",guide_mask: []);
+					
+						unit_hot_number(identifier: "TabXEdit",
+							decimal_places:2,
+							digits: 4,
+							min_value:0,
+							max_value:2304,
+							unit:"CurrentDocumentUnit",
+							bind: @TabXValue, guide_mask: [], bind_final: true);
+					}
+
+					column(spacing: @label_widget_spacing)
+					{
+						static_text(identifier: "LeaderLabel", name: "$$$/TabPanel/Dlg/Leader=Leader:", guide_mask: []);
+					
+						edit_text(identifier: "TabLeaderEdit",
+							max_characters: 8,
+							characters: 8,
+							bind: @TabLeaderStr, guide_mask: []);
+					}
+
+					column(spacing: @label_widget_spacing)
+					{
+						static_text(identifier: "AlignOnLabel", name: "$$$/TabPanel/Dlg/AlignOn=Align On:", guide_mask: []);
+					
+						edit_text(identifier: "TabAlignOnEdit",
+							max_characters: 1,
+							characters: 1,
+							bind: @TabAlignOnStr,
+							guide_mask: []);
+					}
+				}
+						
+				column(vertical: @align_bottom, horizontal: @align_right, child_horizontal: @align_right, margin: 0)
+				{
+					button(identifier: "Magnet",
+						image: { normal: "SP_MagnetSnap_Sm_N.png", dark_normal: "SP_MagnetSnap_Sm_N_D.png" },
+						alt: "$$$/TabPanel/Dlg/MagnetTooltipVertical=Position Panel Above Text",
+						action: @MagentAction, guide_mask: []);	
+					panel(height: 10, guide_mask: []);	
+				}
+			}
+		}
+	}
+}
+
+

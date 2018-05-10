@@ -1,0 +1,28 @@
+layout GraphDesign
+{
+	view subview(identifier: "AIEveSubView", placement: @place_column, show_border: false, layout_theme: @dialog_large, spacing:@unrelated_spacing)
+	{
+		row(vertical:@align_fill, child_vertical:@align_fill, horizontal:@align_fill)
+		{
+			list(identifier: "designslist", width: 200, horizontal: @align_fill);
+			column(vertical: @align_top, child_horizontal: @align_fill)
+			{
+				button(identifier: "newDesign", name: "$$$/_GraphDesign/Dlg/Design/newPattern=&New Design", action: @newdesign);
+				button(identifier: "deleteDesign", name: "$$$/_GraphDesign/Dlg/Design/deletePattern=&Delete Design", action: @deletedesign);
+				button(identifier: "renameDesign", name: "$$$/_GraphDesign/Dlg/Design/renamePattern=&Rename", action: @rename );
+				button(identifier: "pasteDesign", name: "$$$/_GraphDesign/Dlg/Design/pastePattern=&Paste Design", action: @pastedesign);
+				button(identifier: "selectUnused", name: "$$$/_GraphDesign/Dlg/Design/selectUnusedPattern=&Select Unused", action: @selectunused);
+				column(child_horizontal: @align_fill, spacing: @label_widget_spacing)
+				{
+					static_text(name: "$$$/_GraphDesign/Dlg/Design/previewPatternText=Preview:", horizontal: @align_center);
+					image(identifier: "designpreview", show_border: true, width: 100, height: 100);
+				}
+			}
+		}
+		row(reverse: os == @mac, horizontal: @align_right, spacing:@related_spacing)
+        {
+			button(default: true, identifier: "okButton", name: "$$$/gOK=OK", commit_button:true);
+			button(cancel: true, identifier: "cancelButton", name: "$$$/gCancel=Cancel", commit_button:true);
+        }
+    }
+}

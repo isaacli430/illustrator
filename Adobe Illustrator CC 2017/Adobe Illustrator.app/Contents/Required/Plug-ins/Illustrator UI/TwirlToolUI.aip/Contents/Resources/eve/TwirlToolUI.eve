@@ -1,0 +1,36 @@
+layout TwirlUI
+{
+	view subview(layout_theme: @dialog_large,
+				placement: @place_column,
+				show_border: false,
+				spacing: @unrelated_spacing)
+	{
+		unit_hot_number(identifier: "angleNumberEdit",
+					stepper: true,
+					name: "$$$/TwirlUI/Dlg/AngleStaticText=&Angle:",
+					min_value: -3600,
+					max_value: 3600,
+					decimal_places: 2,
+					set_default_focus: true,
+					unit:"NumberEditUnit_Degree");
+		row(child_horizontal: @align_fill,spacing: @separated_spacing)
+		{
+			checkbox(identifier: "previewButton",
+					horizontal: @align_left,
+					vertical: @align_center,
+					name: "$$$/TwirlUI/Dlg/Preview=&Preview", guide_mask: [@guide_label]);
+			row(horizontal: @align_right,
+				reverse: os == @mac, spacing: @related_spacing)
+			{
+				button(default: true,
+					identifier: "okButton",
+					name: "$$$/gOK=OK",
+					commit_button: true);
+				button(cancel: true,
+					identifier: "cancelButton",
+					name: "$$$/gCancel=Cancel",
+					commit_button: true);
+			}
+		}
+	}
+}

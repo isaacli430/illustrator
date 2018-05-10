@@ -1,0 +1,14 @@
+layout legacyTypeMenu
+{
+	view menu( id: 59,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/legacyTypeMenu/UpdateAllLegacyText=Update All Legacy Text", id:			278, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/legacyTypeMenu/UpdateSelectedLegacyText=Update Selected Legacy Text", id:	279, help_id:0);
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/legacyTypeMenu/HideShowCopies=Hide &Copies", id:	280, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/legacyTypeMenu/DeleteCopies=Delete Copies", id:	281, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/legacyTypeMenu/SelectCopies=Select Copies", id:	282, help_id:0);
+	
+} 
+}

@@ -1,0 +1,15 @@
+sheet DebugPanel
+{
+	interface:
+	showMemory: 1;
+	showCompact: 1;
+	showObjects: 1;
+	showObjectTree: 1;
+	showTty: 1;
+	showNewSelection: 1;
+	showNewProperties: 1;
+	showArtwork: 1;
+	showArtview: 1;
+	showGlobalObjects: 1;
+  
+}

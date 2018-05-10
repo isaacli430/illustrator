@@ -1,0 +1,49 @@
+sheet TypePreference
+{
+interface:
+	TPSizeCell: 0;
+	TPTrackCell: 0;
+	TPBaselineShiftCell: 0;
+	TPSelectionBoolCell: false;	
+	TPEngBoolCell: false;
+	TPAutoSizingCell: false;
+	TPFontCell: 1;
+	TPFontNumber:  [
+					{ name: "$$$/PrefsDlg/FPDlg/ADAM/1=1", value: 1 },
+					{ name: "$$$/PrefsDlg/FPDlg/ADAM/2=2", value: 2 },
+					{ name: "$$$/PrefsDlg/FPDlg/ADAM/3=3", value: 3 },
+					{ name: "$$$/PrefsDlg/FPDlg/ADAM/4=4", value: 4 },
+					{ name: "$$$/PrefsDlg/FPDlg/ADAM/5=5", value: 5 },
+					{ name: "$$$/PrefsDlg/FPDlg/ADAM/6=6", value: 6 },
+					{ name: "$$$/PrefsDlg/FPDlg/ADAM/7=7", value: 7 },
+					{ name: "$$$/PrefsDlg/FPDlg/ADAM/8=8", value: 8 },
+					{ name: "$$$/PrefsDlg/FPDlg/ADAM/9=9", value: 9 },
+					{ name: "$$$/PrefsDlg/FPDlg/ADAM/10=10", value: 10 },
+					{ name: "$$$/PrefsDlg/FPDlg/ADAM/11=11", value: 11 },
+					{ name: "$$$/PrefsDlg/FPDlg/ADAM/12=12", value: 12 },
+					{ name: "$$$/PrefsDlg/FPDlg/ADAM/13=13", value: 13 },
+					{ name: "$$$/PrefsDlg/FPDlg/ADAM/14=14", value: 14 },
+					{ name: "$$$/PrefsDlg/FPDlg/ADAM/15=15", value: 15 }
+			];
+	TPPreviewState: false;
+	unlink TPPreviewPopupState: 1 <== (TPPreviewState == false) ? TPPreviewPopupStateRemember : TPPreviewPopupState;
+	TPPreviewPopupStateRemember: 1 <== (TPPreviewState == false) ? TPPreviewPopupStateRemember : TPPreviewPopupState;
+	
+	TPGlyphBoolCell: false;
+	TPNonLatinBoolCell: false;
+	TPHilightFontsBoolCell: true;
+	TPFillTextBoolCell: true;
+	TPShowNonInlineOption: os == @win;
+	IsWorldReadyModeCell : false;
+	dummyCell: true;		
+	TPAsianBoolCell: false <== (dummyCell == true) ? TPAsianBoolCell : true ;
+	EnableIndic: false <== (dummyCell == true) ? EnableIndic : false ;
+	logic:
+	when (dummyCell) relate
+	{
+		TPAsianBoolCell <== (EnableIndic)? !EnableIndic :TPAsianBoolCell;
+		EnableIndic <== (TPAsianBoolCell)? !TPAsianBoolCell :EnableIndic;
+		
+	}
+	
+}

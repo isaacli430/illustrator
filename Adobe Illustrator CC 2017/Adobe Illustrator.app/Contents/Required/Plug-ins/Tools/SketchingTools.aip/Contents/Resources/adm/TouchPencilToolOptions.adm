@@ -1,0 +1,5 @@
+sheet TouchPencilOptionsPanel
+{
+	interface:
+		pencilSize: 0;
+}

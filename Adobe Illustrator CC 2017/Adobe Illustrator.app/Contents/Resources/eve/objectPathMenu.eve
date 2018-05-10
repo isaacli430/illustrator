@@ -1,0 +1,9 @@
+layout objectPathMenu
+{
+	view menu( id: 42,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/Path/Join=&Join", id:			25, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Path/Average=A&verage...", id:	26, help_id:0);
+}
+}

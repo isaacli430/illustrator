@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+  	<menuItem id="1" text="$$$/svgFileFormat/Mnu/18700/1=&amp;Delete Event"></menuItem>
+	<menuItem id="2" text="$$$/svgFileFormat/Mnu/18700/2=&amp;Clear Events"></menuItem>
+	<separator></separator>
+	<menuItem id="3" text="$$$/svgFileFormat/Mnu/18700/3=&amp;JavaScript Files..."></menuItem>
+</menu>
+

@@ -1,0 +1,63 @@
+layout TextImportDlg
+{
+    view subview(identifier: "AIEveSubView",
+					placement: @place_column,
+					show_border: false,
+					layout_theme: @dialog_large,spacing: @inter_group_spacing)
+    {
+		group(horizontal: @align_fill, identifier: "EncodingBox", placement: @place_column, guide_mask: [@guide_label], name: '$$$/sangamservice/Dlg/Text_Import/STATIC/2=Encoding')
+		{
+			overlay()
+               {
+                   optional(margin:0, bind: @IsWorldReadyMode, value: false)
+                    {
+						popup(identifier:"PlatformChoicePopup", name: '$$$/sangamservice/Dlg/Text_Import/STATIC=Platform:', include_custom_item: false, bind: @PlatformType, items: @PlatformTypeChoices);
+					}
+				}
+				
+				popup(name: '$$$/sangamservice/Dlg/Text_Import/STATIC/1=&Character Set:', include_custom_item: false, identifier: "CharSetPopup", bind: @CharSet, items: @CharSetChoices);
+				
+				
+			overlay()
+               {	
+					optional(margin:0, bind: @IsWorldReadyMode, value: true)
+					{
+						popup(identifier:"LanguagePopup",name: '$$$/sangamservice/Dlg/Text_Import/STATIC/6=&Language:', include_custom_item: false );
+					}
+				}
+		}
+
+		group(horizontal: @align_fill,identifier:"ExtraCarriageReturn", placement: @place_column, name: '$$$/sangamservice/Dlg/Text_Import/STATIC/3=Extra Carriage Returns')
+		{
+			checkbox(	name: '$$$/sangamservice/Dlg/Text_Import/REMOVE_END_OF_LINE=Remove at &End of Every Line', identifier:"RemoveAtEndOfEveryLine",
+						bind: @RemoveCREOL);
+
+			checkbox(	name: '$$$/sangamservice/Dlg/Text_Import/REMOVE_BET_PARA=Remove &Between Paragraphs', identifier:"RemoveBetweenParagraphs",
+						bind: @RemoveCRBP);
+		}
+
+		column(horizontal: @align_fill, spacing: @unrelated_spacing)
+		{
+			group(horizontal: @align_fill, identifier:"ExtraSpaceSetting", placement: @place_row, spacing: @label_widget_spacing, name: '$$$/sangamservice/Dlg/Text_Import/STATIC/5=Extra Spaces')
+			{
+				checkbox(	name: '$$$/sangamservice/Dlg/Text_Import/REPLACE=&Replace', identifier:"ReplaceOption",
+							bind: @RemoveSpace);
+
+				edit_number(	identifier: "UserText",
+								digits: 2,
+								max_value: 79,
+								min_value: 3,
+								set_default_focus: true,
+								suffix: "$$$/sangamservice/Dlg/Text_Import/STATIC/4=or More Spaces with a Tab",
+								guide_mask: [@guide_label], 
+								bind: @SpaceCapValue);
+			}
+
+			row(horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+			{
+				button(name: "$$$/gOK=OK", commit_button: true, identifier: "okButton");
+				button(name: "$$$/gCancel=Cancel", commit_button: true, identifier: "cancelButton");
+			}
+		}
+	}
+}

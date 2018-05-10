@@ -1,0 +1,27 @@
+sheet PatternOnPathOptionsUI
+{
+    interface:
+		AV_PatternBrushName: "";
+		AV_scale_left:100;
+		AV_scale_right_old:	100;
+		AV_brush_param_type_for_scale: 0;
+		unlink AV_scale_right:100 <== AV_brush_param_type_for_scale == 0 ? AV_scale_right_old: AV_scale_right ;
+		AV_spacing:0;
+		AV_PatternTileRadioGp: 0;
+		AV_FlipAlong: false;
+		AV_FlipAcross: false;
+		AV_FitRadioGp: empty;
+		AV_brush_param_colorization_method : 0;
+		AV_pick_key_color: false;
+		AV_PatternSwatchId: 0;
+
+		AV_Preview : false;
+		min_max: 1;
+
+	logic:
+		when ( ! (AV_brush_param_type_for_scale		== 0) ) relate
+		{
+			AV_scale_right		<== AV_scale_right_old;
+			AV_scale_right_old	<== AV_scale_right;
+		}
+}

@@ -1,0 +1,10 @@
+/* [1] */
+$$$/TypeCase/Str/16130=Upper/Lower Case filter could not allocate global storage record.
+/* [2] */
+$$$/TypeCase/Str/16131=Upper/Lower Case filter could not build the internal text list.
+/* [3] */
+$$$/TypeCase/Str/16132=Upper/Lower Case filter got an unknown item number in the main dialog.
+/* [4] */
+$$$/TypeCase/Str/16133=Upper/Lower Case filter could not complete the replace command.
+/* [5] */
+$$$/TypeCase/Str/16134=You must select some text with the Type tool to use the Change Case filter.

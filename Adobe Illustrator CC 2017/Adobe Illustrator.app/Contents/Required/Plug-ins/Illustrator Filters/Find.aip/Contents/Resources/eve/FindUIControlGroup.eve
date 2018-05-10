@@ -1,0 +1,30 @@
+layout FindUIControlGroup
+{
+	view subview(identifier: "FindUIControlGroupUI",					
+					show_border: false,
+					layout_theme:  @controlbar,
+					placement: @place_row,
+					margin:0,
+					spacing: 5,
+					height:  31)	
+	{											
+		optional(identifier: "FindUIControlGroup", placement: @place_row, child_vertical: @align_center, margin:0, spacing: 0)
+		{
+			row(child_vertical: @align_fill, spacing:0){
+				button(identifier: "SelectSameButtonObject",
+						alt: "$$$/Find/Str/ControlPalette/ToolTip/SelectSame=Select Similar Objects",
+						image:{normal:"SP_SelectSame_Md_N.png", dark_normal:"SP_SelectSame_Md_N_D.png"},
+						wants_focus: false,
+						action: @selectButtonAction);
+				popup(identifier: "SelectSamePopup",
+						image:"P_DropDownArrow_N.png",
+						alt: "$$$/Find/Str/ControlPalette/ToolTip/SelectSameOptions=Select Similar Options",
+						include_custom_item: false,
+						bind: @selectSame,
+						wants_focus: false,button_view:true,
+						allow_mouse_scroll: false,
+						items: @entriesSelectSame);					
+			}
+		}
+	}
+}

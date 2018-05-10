@@ -1,0 +1,209 @@
+layout PatternOnPathOptionsUI
+{
+    
+    view subview(identifier: "AIEveSubView",
+					layout_theme: @dialog_large,
+					child_horizontal: @align_fill,
+					placement: @place_column,
+					show_border: false,
+					spacing: @unrelated_spacing,
+                    name: "$$$/ArtOnPathBrushTool/PatternOnPathOptionsDialog/Title=Stroke Options (Pattern Brush)")
+    {
+	column(child_horizontal: @align_fill)
+	{
+		group(horizontal: @align_fill,
+				  child_horizontal: @align_fill,  
+				  identifier: "PaintBrushOptionsGroup",
+				  name: '$$$/gOptions=Options')
+		{
+				edit_text(bind: @AV_PatternBrushName, name: '$$$/ScatterBrushTool/Dlg/BrushDef/36=&Name:', identifier: "PatternBrushName", max_characters: 31, set_default_focus: true);
+				row(child_horizontal: @align_fill)
+				{
+					popup(bind: @AV_brush_param_type_for_scale, identifier: "brush_param_type_for_scale",name: "$$$/ArtOnPathBrushTool/Dlg/Scale=&Scale:",
+								items:	[ 
+										{name: "$$$/ArtOnPathBrushToolUI/Menu/PatternOnPathOptions/Scale/1=Fixed",					value: 0},
+										{name: "$$$/ArtOnPathBrushToolUI/Menu/PatternOnPathOptions/Scale/2=Width Points/Profile",	value: 1},
+										{name: "$$$/ArtOnPathBrushToolUI/Menu/PatternOnPathOptions/Scale/3=Pressure",				value: 2},
+										{name: "$$$/ArtOnPathBrushToolUI/Menu/PatternOnPathOptions/Scale/4=Stylus Wheel",			value: 3},
+										{name: "$$$/ArtOnPathBrushToolUI/Menu/PatternOnPathOptions/Scale/5=Tilt",					value: 4},
+										{name: "$$$/ArtOnPathBrushToolUI/Menu/PatternOnPathOptions/Scale/6=Bearing",				value: 5},
+										{name: "$$$/ArtOnPathBrushToolUI/Menu/PatternOnPathOptions/Scale/7=Rotation",				value: 6}
+										], include_custom_item: false);
+										
+					row(spacing: @connected_spacing)
+					{
+						overlay()
+						{
+							panel(bind: @min_max, value: 1)
+							{
+								image(alt: "$$$/ArtOnPathBrushToolUI/Dlg/MinTips=Minimum",image: { normal: "SP_MinValue_Sm_N.png", dark_normal: "SP_MinValue_Sm_N_D.png" });
+							}
+							panel(bind: @min_max, value: 0)
+							{
+								image(alt: "$$$/ArtOnPathBrushToolUI/Dlg/MaxTips=Maximum",image: { normal: "SP_MaxValue_Sm_N.png", dark_normal: "SP_MaxValue_Sm_N_D.png" });
+							}
+						}
+
+						combo_slider(bind: @AV_scale_left, bind_final: true,	identifier: "scale_left",	minLength: 120, slider_point: @up,	segments: [[0, 1], [0.50, 100], [0.51, 102], [0.70, 200], [1, 1000]],
+										digits: 4, decimal_places: 2, min_max_filter: { min_value: 1, max_value: 1000},	value_range: {min_value: 1, max_value: 1000},center_tick: true,	unit: "NumberEditUnit_Percent");
+					}
+					
+					row(spacing: @connected_spacing)
+					{
+						overlay()
+						{
+							panel(bind: @min_max, value: 0)
+							{
+								image(alt: "$$$/ArtOnPathBrushToolUI/Dlg/MinTips=Minimum",image: { normal: "SP_MinValue_Sm_N.png", dark_normal: "SP_MinValue_Sm_N_D.png" });
+							}
+							panel(bind: @min_max, value: 1)
+							{
+								image(alt: "$$$/ArtOnPathBrushToolUI/Dlg/MaxTips=Maximum",image: { normal: "SP_MaxValue_Sm_N.png", dark_normal: "SP_MaxValue_Sm_N_D.png" });
+							}
+						}
+
+						combo_slider(bind: @AV_scale_right,	bind_final: true, identifier: "scale_right",	minLength: 120, slider_point: @up,	segments: [[0, 1], [0.50, 100], [0.51, 102], [0.70, 200], [1, 1000]],
+										digits: 4, decimal_places: 2, min_max_filter: { min_value: 1, max_value: 1000},	value_range: {min_value: 1, max_value: 1000}, center_tick: true, unit: "NumberEditUnit_Percent");
+					}
+				}
+				unit_hot_number(horizontal: @align_left, identifier: "spacing", bind: @AV_spacing,
+							name: "$$$/ArtOnPathBrushToolUI/Dlg/PatternOnPathOptions/ScaleText=S&pacing:",
+							digits: 4,
+							decimal_places: 2,
+							min_value: 0,
+							max_value: 10000,
+							unit: "NumberEditUnit_Percent");
+							
+		}
+		column(child_horizontal: @align_fill, spacing: @unrelated_spacing)
+		{
+			row(guide_mask: [@guide_label], child_vertical: @align_fill, child_horizontal: @align_fill, spacing:@inter_group_spacing)
+			{
+				column(child_horizontal: @align_fill)
+				{
+					row(spacing:@related_spacing, child_horizontal:@align_center)
+					{
+						
+						column(spacing: 12, child_horizontal:@align_center)
+						{
+							popup_panel_button(	identifier: "OuterCornerTilePopup",
+												alt: "$$$/ArtOnPathBrushTool/Str/OuterCornerTile=Outer Corner Tile", shape_square: true);
+							image( image:{normal:"SP_PatternStrokeOuter_32x32_N.png",dark_normal:"SP_PatternStrokeOuter_32x32_N_D.png"});
+						}
+						
+						column(spacing: 12, child_horizontal:@align_center)
+						{
+							popup_panel_button(	identifier: "BorderTilePopup",
+												alt: "$$$/ArtOnPathBrushTool/Str/SideTile=Side Tile", shape_square: true);
+							image( image:{normal:"SP_PatternStrokeBorder_32x32_N.png",dark_normal:"SP_PatternStrokeBorder_32x32_N_D.png"});
+						}
+
+						column(spacing: 12, child_horizontal:@align_center)
+						{
+							popup_panel_button(	identifier: "InnerCornerTilePopup",
+												alt: "$$$/ArtOnPathBrushTool/Str/InnerCornerTile=Inner Corner Tile", shape_square: true);
+							image(image:{normal:"SP_PatternStrokeInner_32x32_N.png",dark_normal:"SP_PatternStrokeInner_32x32_N_D.png"});				
+						}
+
+						column(spacing: 12, child_horizontal:@align_center)
+						{
+							popup_panel_button(	identifier: "StartTilePopup",
+												alt: "$$$/ArtOnPathBrushTool/Str/StartTile=Start Tile", shape_square: true);
+							image( image:{normal:"SP_PatternStrokeBegin_32x32_N.png",dark_normal:"SP_PatternStrokeBegin_32x32_N_D.png"});	
+						}
+
+						column(spacing: 12, child_horizontal:@align_center)
+						{
+							popup_panel_button(	identifier: "EndTilePopup",
+												alt: "$$$/ArtOnPathBrushTool/Str/EndTile=End Tile", shape_square: true);
+							image( image:{normal:"SP_PatternStrokeEnd_32x32_N.png",dark_normal:"SP_PatternStrokeEnd_32x32_N_D.png"});	
+						}
+					}
+					subview(identifier: "SamplePreviewSubView", width: 245, height: 265, horizontal: @align_fill, vertical: @align_fill);
+				}
+				column(child_horizontal: @align_fill, spacing: @inter_group_spacing)
+				{
+					group(name: "$$$/ArtOnPathBrushTool/Dlg/Flip=Flip", horizontal: @align_fill, identifier: "flipGroup", child_vertical: @align_top)
+					{
+						row(child_vertical: @align_center)
+						{
+							checkbox(identifier: "FlipAlong", bind: @AV_FlipAlong, guide_mask: [@guide_label], name: "$$$/ArtOnPathBrushTool/Dlg/FlipAlong=&Flip Along");
+							image(image: {normal:"SP_Reflect_Lg_N.png",dark_normal:"SP_Reflect_Lg_N_D.png"});
+						}
+						row(child_vertical: @align_center)
+						{
+							checkbox(identifier: "FlipAcross", bind: @AV_FlipAcross, guide_mask: [@guide_label], name: "$$$/ArtOnPathBrushTool/Dlg/FlipAcross=Flip A&cross");
+							image(image: {normal:"SP_ReflectVertical_Lg_N.png",dark_normal:"SP_ReflectVertical_Lg_N_D.png"});
+						}	
+					}
+					group(guide_mask: [ @guide_label ], name: "$$$/ArtOnPathBrushTool/Dlg/Fit=Fit",
+						  identifier: "FitRadioGp", child_horizonatal: @align_left)
+					{
+						radiogroup(child_horizontal: @align_left)
+						{
+						radio_button(bind: @AV_FitRadioGp,
+							name: "$$$ArtOnPathBrushToolUI/Dlg/PatternOnPathOptions/StretchToFit=S&tretch to fit",
+							identifier: "StretchToFit",
+							value: 1);
+	                        
+						radio_button(bind: @AV_FitRadioGp,
+							name: "$$$ArtOnPathBrushToolUI/Dlg/PatternOnPathOptions/AddSpace=&Add space to fit",
+							identifier: "AddSpaceToFit",
+							value: 2);    
+	                    
+						radio_button(bind: @AV_FitRadioGp,
+							name: "$$$ArtOnPathBrushToolUI/Dlg/PatternOnPathOptions/ApproxPath=App&roximate path",
+							identifier: "ApproximatePath",
+							value: 4);
+						}
+					}
+					group(guide_mask: [@guide_label],name: "$$$/ArtOnPathBrushToolUI/Dlg/PatternOnPathOptions/Colorization=Colorization",
+						  identifier: "colorizationGroup", placement: @place_column)
+					{
+						row(child_vertical: @align_center, child_horizontal: @align_left)
+						{
+							popup(identifier: "brush_param_colorization_method", bind: @AV_brush_param_colorization_method,
+								  items: [ { name: "$$$/ArtOnPathBrushToolUI/Menu/PatternOnPathOptions/Colorize/1=None",			value: 0 },
+										   { name: "$$$/ArtOnPathBrushToolUI/Menu/PatternOnPathOptions/Colorize/2=Tints",			value: 1 },
+										   { name: "$$$/ArtOnPathBrushToolUI/Menu/PatternOnPathOptions/Colorize/3=Tints and Shades",value: 2 },
+										   { name: "$$$/ArtOnPathBrushToolUI/Menu/PatternOnPathOptions/Colorize/4=Hue Shift",		value: 3 } 
+										 ],
+								  include_custom_item: false,                      
+								  name: "$$$/ArtOnPathBrushToolUI/Dlg/PatternOnPathOptions/Method=&Method:");
+
+							button(identifier: "ColorizeTipsPictureButton",
+								   image: { normal: "SP_Tips_Md_N.png", dark_normal: "SP_Tips_Md_N_D.png" },
+								   alt: "$$$/ArtOnPathBrushTool/Str/Tips=Tips",
+								   wants_focus: false);
+						}
+						row(child_vertical: @align_center, child_horizontal: @align_left)
+						{
+							toggle_button(identifier: "keyColorToggleButton", bind: @AV_pick_key_color,label : '$$$/ScatterBrushTool/Dlg/BrushDef/29=Key Color:',
+							      image: {	normal:"SP_Sampler_Lg_N.png" , dark_normal: "SP_Sampler_Lg_N_D.png"},	
+							   wants_focus: false);
+						   	image(identifier: "key_color", height: 24, width: 24);
+						}
+					}
+				}
+			}
+		}
+	}
+		row(horizontal: @align_fill, guide_mask: [ @guide_label ],child_vertical: @align_center,spacing: @separated_spacing)
+		{
+			checkbox(bind: @AV_Preview, identifier: "PreviewCheckbox", name: "$$$/ArtOnPathBrushToolUI/Dlg/Preview=Pre&view");
+
+			row(horizontal: @align_right, child_vertical: @align_center, reverse: os == @mac, spacing: @related_spacing)
+			{
+				button(identifier: "okButton",
+						default: true,
+						name: "$$$/gOK=OK",  commit_button: true);
+						
+				button(identifier: "cancelButton",
+						cancel: true,
+						name: "$$$/gCancel=Cancel",  commit_button: true);
+			}
+		}
+	}
+}
+
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+  <menuItem id="1" text="$$$/ColorHarmony/ColorGuide/FlyoutMenu/ShowOptions=Show Options"></menuItem>
+  <separator></separator>
+  <menuItem id="3" text="$$$/ColorHarmony/ColorGuide/FlyoutMenu/Adjust=Edit Colors..."></menuItem>
+  <menuItem id="4" text="$$$/ColorHarmony/ColorGuide/FlyoutMenu/Save=Save Colors as Swatches"></menuItem>
+  <menuItem id="5" text="$$$/ColorHarmony/ColorGuide/FlyoutMenu/Options=Color Guide Options..."></menuItem>
+  <separator></separator>
+  <menuItem id="7" text="$$$/ColorHarmony/Variation/TintsShades=Show Tints/Shades"></menuItem>
+  <menuItem id="8" text="$$$/ColorHarmony/Variation/WarmCool=Show Warm/Cool"></menuItem>
+  <menuItem id="9" text="$$$/ColorHarmony/Variation/VividMuted=Show Vivid/Muted"></menuItem>
+</menu>

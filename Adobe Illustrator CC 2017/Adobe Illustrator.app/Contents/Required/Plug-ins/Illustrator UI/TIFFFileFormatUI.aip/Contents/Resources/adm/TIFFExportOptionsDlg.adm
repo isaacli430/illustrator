@@ -1,0 +1,13 @@
+sheet TIFFExportOptionsDlg
+{
+	interface:
+		Antialias: 3; 
+		ColorModel: 1;
+		LZWCompression: false;
+		Resolution: 72;
+		ProfileNamePlaceHolder: true;
+		ShowProfile: true <== (ColorModel == 3) ? false : true;
+		ShowInfo: true <== (Antialias == 1) ? false : true;
+		EmbedProfile: false;
+		OtherResolution	: Resolution <== (Resolution == -1) ? OtherResolution : Resolution;
+}

@@ -1,0 +1,20 @@
+sheet justificationOptionsDialog
+{
+	interface:
+		autoLeading: 0;
+		minimumWordSpacing: 0;
+		desiredWordSpacing: 0;
+		maximumWordSpacing: 0;		
+		minimumLetterSpacing: 0;
+		desiredLetterSpacing: 0;
+		maximumLetterSpacing: 0;
+		minimumGlyphScaling: 0;
+		desiredGlyphScaling: 0;
+		maximumGlyphScaling: 0;
+		singleWordJustification: 1;
+		singleWordJustificationItems: [{name: "$$$/_TextDlgs/Mnu/SLOJustificationList/1=Full Justify", value: 1},
+										{name: "$$$/_TextDlgs/Mnu/SLOJustificationList/2=Align Left", value: 2},
+										{name: "$$$/_TextDlgs/Mnu/SLOJustificationList/3=Align Center", value: 3},
+										{name: "$$$/_TextDlgs/Mnu/SLOJustificationList/4=Align Right", value: 4}];
+		preview: 0;
+}

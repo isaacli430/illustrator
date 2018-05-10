@@ -1,0 +1,36 @@
+/* [1] */
+-108
+/* [2] */
+$$$/FWAlignADM/Str/Error/2=The filter cannot complete because there isn't enough memory (RAM) available.
+/* [3] */
+271
+/* [4] */
+$$$/FWAlignADM/Str/Error/4=The filter cannot complete because there isn't enough memory (RAM) available.
+/* [5] */
+SEGM
+/* [6] */
+$$$/FWAlignADM/Str/Error/6=The filter cannot complete because a path has too many anchor points.
+/* [7] */
+NESS
+/* [8] */
+$$$/FWAlignADM/Str/Error/8=The filter cannot complete because a layer is locked or invisible.
+/* [9] */
+!sel
+/* [10] */
+$$$/FWAlignADM/Str/Error/10=The selection is not valid for this filter.
+/* [11] */
+<Others>
+/* [12] */
+$$$/FWAlignADM/Str/Error/12=The filter cannot complete because of an unknown error.
+/* [13] */
+PARM
+/* [14] */
+$$$/FWAlignADM/Str/Error/14=Bad Parameter
+/* [15] */
+
+/* [16] */
+$$$/FWAlignADM/Str/Error/16=Please choose a key object by clicking on one of the selected object(s) with the selection tool, or set the spacing value to Auto.
+/* [17] */
+$$$/FWAlignADM/Str/Error/17=Total length can't exceed 16384 pt.
+/* [18] */
+$$$/FWAlignADM/Str/Error/18=Please choose a key anchor point by clicking on one of the selected anchor point(s) with the direct selection tool, or set the spacing value to Auto.

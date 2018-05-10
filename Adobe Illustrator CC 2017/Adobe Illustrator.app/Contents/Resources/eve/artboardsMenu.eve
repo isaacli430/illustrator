@@ -1,0 +1,8 @@
+layout artboardsMenu
+{
+	view menu( id: 71,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/Object/CropMarks=&Convert to Artboards", id:		127, help_id:0);
+}
+}

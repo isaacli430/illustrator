@@ -1,0 +1,10 @@
+layout textSpecialCharacter
+{
+	view menu( id: 81,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/Type/Symbols=&Symbols", 					id:			365, help_id:  84 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/Type/HyphenDashes=&Hyphens And Dashes", 	id:			366, help_id:  85 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/Type/Quotation=&Quotation Marks", 		id:			367, help_id:  86 ) { separator();  }
+	}
+}

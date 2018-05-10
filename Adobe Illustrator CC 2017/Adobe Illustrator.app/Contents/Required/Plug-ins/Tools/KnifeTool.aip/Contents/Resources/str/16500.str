@@ -1,0 +1,12 @@
+/* [1] */
+$$$/KnifeTool/Str/Undo/UndoKnife=Undo Knife Tool
+/* [2] */
+$$$/KnifeTool/Str/Undo/RedoKnife=Redo Knife Tool
+/* [3] */
+$$$/KnifeTool/Str/Undo/UndoLasso=Undo Lasso Tool
+/* [4] */
+$$$/KnifeTool/Str/Undo/RedoLasso=Redo Lasso Tool
+/* [5] */
+$$$/KnifeTool/Str/Undo/UndoSlice=Undo Divide Objects Below
+/* [6] */
+$$$/KnifeTool/Str/Undo/RedoSlice=Redo Divide Objects Below

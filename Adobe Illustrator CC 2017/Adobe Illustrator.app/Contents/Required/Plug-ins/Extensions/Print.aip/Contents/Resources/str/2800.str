@@ -1,0 +1,10 @@
+$$$/Print/Str/2801=Invalid page range value.
+$$$/Print/Str/2802=The selected PPD file is either invalid or corrupted. Please select another PPD file.
+$$$/Print/Str/2803=The specified PPD is invalid. The default PPD will be used.
+$$$/Print/Str/2804=Use this option only when you're having trouble printing gradients or gradient meshes. See the documentation for more information.
+$$$/Print/Str/2805=The specified print preset name is already in use. Would you like to overwrite the existing print preset?
+$$$/Print/Str/2806=The specified print preset name is already in use. Please enter a different print preset name.
+$$$/Print/Str/2807=The specified print preset name is not valid. Please enter the print preset name.
+$$$/Print/Str/2808=The custom media size exceeds the maximum transverse media size.  Some clipping may occur.
+$$$/Print/Str/2809=The page range is empty.
+

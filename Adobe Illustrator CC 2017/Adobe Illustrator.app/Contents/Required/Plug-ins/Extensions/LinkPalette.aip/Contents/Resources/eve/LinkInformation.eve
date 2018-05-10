@@ -1,0 +1,44 @@
+layout LinkInformation
+{
+    view subview(identifier: "AIEveSubView",
+                 layout_theme: @dialog_large,
+                 child_horizontal: @align_fill,
+                 placement: @place_column,
+                 show_border: false,
+		 spacing:@unrelated_spacing)
+	{
+		row()
+		{
+			image(identifier: "link_artPreview", height: 180, width: 180);
+			panel(placement: @place_column)
+			{
+			row(spacing:@label_widget_spacing)
+			{
+				column(guide_mask: [])
+				{
+					static_text(identifier: "labelName",		name: "$$$/LinkPalette/Dlg/Details/4=Name:", horizontal: @align_right);
+					static_text(identifier: "labelLocation",		name: "$$$/LinkPalette/Dlg/Details/6=Location:", horizontal: @align_right);
+					static_text(identifier: "labelSize",		name: "$$$/LinkPalette/Dlg/Details/8=Size:", horizontal: @align_right);
+					static_text(identifier: "labelKind",		name: "$$$/LinkPalette/Dlg/Details/10=Kind:", horizontal: @align_right);
+					static_text(identifier: "labelCreated",		name: "$$$/LinkPalette/Dlg/Details/12=Created:", horizontal: @align_right);
+					static_text(identifier: "labelModified",		name: "$$$/LinkPalette/Dlg/Details/14=Modified:", horizontal: @align_right);
+					static_text(identifier: "labelTransform",		name: "$$$/LinkPalette/Dlg/Details/16=Transform:", horizontal: @align_right);
+					static_text(identifier: "labelURL",		name: "$$$/LinkPalette/Dlg/Details/18=Server URL:", horizontal: @align_right);
+				}
+				column(guide_mask: [])
+				{
+					static_text(identifier: "name",		name: @AV_name,theme_font_size: @small);
+					static_text(identifier: "location",		name: @AV_location,    theme_font_size: @small, text_truncation: @path_ellipsis);
+					static_text(identifier: "size",				name: @AV_size,		characters: 32,theme_font_size: @small);
+					static_text(identifier: "kind",				name: @AV_kind,		characters: 32, theme_font_size: @small);
+					static_text(identifier: "created",			name: @AV_created,	characters: 32,theme_font_size: @small);
+					static_text(identifier: "modified",		name: @AV_modified,     characters: 32, theme_font_size: @small);
+					static_text(identifier: "transform",		name: @AV_transform,    characters: 32 ,theme_font_size: @small);
+					static_text(identifier: "URL",			name: @AV_URL,	theme_font_size: @small);
+				}
+			}
+			}
+		}
+		button(commit_button: true, identifier: "okButton",  horizontal: @align_right, name: "$$$/gOK=OK");
+	}
+}

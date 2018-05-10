@@ -1,0 +1,35 @@
+sheet FileHandlingPreference
+{
+interface:
+	FPUpdateOptionsPopupItems: [
+					{ name: "$$$/fileclipboardpref/Str/25006=Automatically", value: 0 },
+					{ name: "$$$/fileclipboardpref/Str/25007=Manually", value: 1 },
+					{ name: "$$$/fileclipboardpref/Str/25008=Ask When Modified", value: 2 }
+				];
+
+	FPAutomaticallySaveItems: [
+					{ name: "$$$/fileclipboardpref/Str/TimerInterval/1x30=30 Seconds", value: 0},
+					{ name: "$$$/fileclipboardpref/Str/TimerInterval/1x60=1 Minute", value: 1},
+					{ name: "$$$/fileclipboardpref/Str/TimerInterval/2x60=2 Minutes", value: 2},
+					{ name: "$$$/fileclipboardpref/Str/TimerInterval/5x60=5 Minutes", value: 3},
+					{ name: "$$$/fileclipboardpref/Str/TimerInterval/10x60=10 Minutes", value: 4},
+					{ name: "$$$/fileclipboardpref/Str/TimerInterval/15x60=15 Minutes", value: 5},
+					{ name: "$$$/fileclipboardpref/Str/TimerInterval/30x60=30 Minutes", value: 6},
+					{ name: "$$$/fileclipboardpref/Str/TimerInterval/60x60=1 Hour", value: 7}
+				];
+	FPCheckPDF: false;
+	FPCheckSVG: true;
+	FPCheckAICB: false;
+	FPCheckUseLowRes: false;
+	FPRecentFileNumber: 0;
+	FPCheckAutomaticallySave: true;
+	FPCheckTurnOffComplexDoc: true;
+	FPCheckBitmapsPixelPreview: false;
+	FPPopupUpdate: 1;
+	FPAutomaticallySavePopup: 2;
+	FPShowAlert: false;
+	FPShowAlertComplexDoc: false;
+	
+	unlink FPPreserveRadioGrp: "FPRadioPath" <== FPCheckAICB ? FPPreserveRadioGrp : FPPreserveRadioGrpRemember;
+	FPPreserveRadioGrpRemember: "FPRadioPath" <== FPCheckAICB ? FPPreserveRadioGrp : FPPreserveRadioGrpRemember;
+}

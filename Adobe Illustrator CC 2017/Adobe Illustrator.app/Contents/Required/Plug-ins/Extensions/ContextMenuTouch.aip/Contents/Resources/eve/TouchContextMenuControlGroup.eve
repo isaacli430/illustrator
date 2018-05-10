@@ -1,0 +1,21 @@
+layout ContextMenuControlGroup
+{
+     view subview(identifier: "ContextMenuControlGroup",
+				 show_border: false,
+				 child_vertical: @align_center,
+				 placement: @place_row,
+				 margin: 0)
+    {		
+		optional(identifier: "ContextMenulinkSubGroup", child_vertical:  @align_center, child_horizontal:  @align_center, margin : 0, spacing: 0, placement: @place_row)			
+		{
+			 button(identifier: "ContetxMenuControlGroupImage",
+						image: { normal: "SP_PL_TouchContextMenu_N.png", dark_normal: "SP_PL_TouchContextMenu_N_D.png" },
+						alt: "$$$/ContextMenuTouch/Str/TCMPalette/ToolTip=Context Menu",
+						horizontal:@align_fill,
+						vertical:@align_fill,
+						wants_focus: false);
+		}
+				
+    }
+}
+

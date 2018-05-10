@@ -1,0 +1,62 @@
+layout SafeModeDialog
+{
+    view subview(name: "$$$/AISafeMode/SafeModeDialog=Safe Mode",
+                     show_border: false,
+                     child_horizontal: @align_fill,
+                     layout_theme: @dialog_large)
+	{
+		row()
+		{
+			info_icon(icontype: "warning", size: "medium");
+			static_text(identifier: "safeModeDescription", characters: 1, horizontal: @align_fill,
+                                         name: '$$$/SafeModeDialog/SafeModeMessage=Adobe Illustrator is running in Safe Mode, and has disabled the following items:');
+		}
+		
+		column(spacing: @related_spacing)
+		{
+			multicolumn_tree(identifier: "SafeModeTree", horizontal: @align_fill, width:400, height: 84);
+		}
+		
+		group(identifier: "helpInfoGroup",
+ 								horizontal: @align_fill,
+ 								name: '$$$/SafeModeDialog/HelpInfoGroup/HeaderText=Troubleshooting Tips'
+ 								)
+ 		{
+			static_text(identifier: "itemHelpDescription", characters: 1, theme_font_size: @small, horizontal: @align_fill,
+                                    name: '$$$/SafeModeDialog/itemHelpInfoDescriptionPlaceholderText=XXXXXXXX XXXXXX XXXXXX XXXXXXX XXXXXX XXXXXX XXXXXX XXXXXX XXXXXX XXXXX XXXXXX XXXXX XXXXXX XXXXXX XXXXXXXX XXXXXX XXXXXX XXXXXXX XXXXXX XXXXXX XXXXXX XXXXXX XXXXXX XXXXX XXXXXX XXXXX XXXXXX XXXXXX');
+
+		}
+
+		static_text(identifier: "safeModeDetail1", horizontal: @align_fill,
+                                         name: '$$$/SafeModeDialog/SafeModeMessageDetail1=Do one of the following:');
+
+		column(spacing:0,horizontal: @align_fill)
+		{
+ 			static_text(identifier: "safeModeDetailRecommended", horizontal: @align_fill,
+                                         name: '$$$/SafeModeDialog/SafeModeMessageRecommended=^B Recommended:');
+										 
+			row(horizontal: @align_fill)
+			{
+				static_text(identifier: "safeModeDetail1Indent", horizontal: @align_left, name:'  ');
+				static_text(identifier: "safeModeDetail1List", characters: 1, horizontal: @align_fill, name:'$$$/SafeModeDialog/SafeModeMessageDetailList1=1. Save and close all open files.#{endl}2. Fix the listed items (see the toubleshooting Tips).#{endl}3. For fixed issues, select the corresponding checkbox.#{endl}4. Click Enable on Relaunch to allow Illustrator to check the disabled items (listed above).');
+			}
+		}	
+
+		static_text(identifier: "safeModeDetail2", characters: 1, theme_font_size: @small, horizontal: @align_fill,
+                                         name: '$$$/SafeModeDialog/SafeModeMessageDetail2=NOTE: Illustrator will run in Safe Mode untill there are no more items in the list.');
+
+		static_text(identifier: "safeModeDetail3", characters: 1, horizontal: @align_fill,
+                                         name: '$$$/SafeModeDialog/SafeModeMessageDetail3=^B Click Close to continue working in Safe Mode (Items in the list will continue to remain disabled until fixed).');
+
+		row()
+		{
+			button(identifier: "safeModeMoreInfoButton", horizontal: @align_left, name:'$$$/SafeModeDialog/SafeModeMoreInfoButtonText=&More Info...', commit_button: true);
+
+			row(horizontal: @align_fill, reverse: os == @mac, child_horizontal: @align_right, spacing: @related_spacing)
+			{
+				button(identifier: "safeModeEnableButton", name:'$$$/SafeModeDialog/EnableButtonText=&Enable on Relaunch', commit_button: true);
+				button(identifier: "safeModeIgnoreButton", default: true, action:@cancel, name: '$$$/SafeModeDialog/CloseButtonText=&Close', commit_button: true);
+			}
+		}
+	}
+}

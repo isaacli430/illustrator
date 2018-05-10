@@ -1,0 +1,12 @@
+layout hiddenMenuBarMenu
+{
+	view menu( id: 13,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/HiddenMenuBar/OtherSelect=Other Select", id:	274, help_id:  53 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/HiddenMenuBar/OtherText=Other Text", id:		275, help_id:  54 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/HiddenMenuBar/OtherObject=Other Object", id:	276, help_id:  55 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/HiddenMenuBar/OtherPalette=Other Panel", id:	277, help_id:  56 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/HiddenMenuBar/OtherMisc=Other Misc", id:		283, help_id:  57 ) { separator();  }
+}
+}

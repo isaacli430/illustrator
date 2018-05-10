@@ -1,0 +1,81 @@
+layout OptimizeFileSizeUI
+{
+    view subview(identifier: "AIEveSubView",
+					placement: @place_column,
+					layout_theme: @dialog_large,
+					show_border: false,
+					spacing: @unrelated_spacing)
+    {
+			column(child_horizontal: @align_fill, spacing: @unrelated_spacing)
+        	{
+            	unit_hot_number(decimal_places: 3,
+                        identifier: "FileSize",
+                        max_value: 2048,
+                        min_value: 0,
+						digits:4,
+						suffix: "$$$/Save4Web/OptimizeFileDialog/FileSizeSuffix=K",
+                        set_default_focus: true,
+                        name: "$$$/Save4Web/OptimizeFileDialog/FileSize=&Desired File Size:");
+
+				column(child_horizontal: @align_fill, spacing: @inter_group_spacing)
+				{
+					group(name: "$$$/Save4Web/OptimizeFileDialog/=Start With",
+					guide_mask: [ @guide_label])
+					{
+						radiogroup(child_vertical:@align_center)
+						{
+							 radio_button(name: "$$$/Save4Web/OptimizeFileDialog/CurrentSettings=&Current Settings",
+								identifier: "CurrentSettings",
+								bind: @AutoCurrentSettings,
+								value: 0);
+							 
+							 radio_button(name: "$$$/Save4Web/OptimizeFileDialog/AutoSelect=&Auto Select GIF/JPEG",
+								identifier: "AutoSelect",
+								bind: @AutoCurrentSettings,
+								value: 1);
+						}
+				    }
+
+					group(name: "$$$/Save4Web/OptimizeFileDialog/UseFrameLabel=Use",
+					guide_mask: [ @guide_label])
+					{
+						radiogroup(child_vertical: @align_center)
+						{
+							 radio_button(name: "$$$/Save4Web/OptimizeFileDialog/CurrentSlice=Current &Slice",
+								 identifier: "CurrentSlice",
+								 bind: @SliceSelectOption,
+								 value: 0);
+			
+							 radio_button(name: "$$$/Save4Web/OptimizeFileDialog/EachSlice=&Each Slice",
+								 identifier: "EachSlice",
+								 bind: @SliceSelectOption,
+								 value: 1);
+
+
+							 radio_button(name: "$$$/Save4Web/OptimizeFileDialog/Total=&Total of All Slices",
+								 identifier: "Total",
+								 bind: @SliceSelectOption,
+								 value: 2);
+						}
+				    }
+
+			}
+
+				row(horizontal: @align_right,
+					reverse: os == @mac, spacing: @related_spacing)
+				{
+					button(default: true,
+						name: "$$$/gOK=OK",
+						identifier: "okButton",
+						commit_button: true);
+
+					button(cancel: true,
+						name: "$$$/gCancel=Cancel",
+						identifier: "cancelButton",
+						commit_button: true);
+            
+				}
+			}
+	
+	}
+}

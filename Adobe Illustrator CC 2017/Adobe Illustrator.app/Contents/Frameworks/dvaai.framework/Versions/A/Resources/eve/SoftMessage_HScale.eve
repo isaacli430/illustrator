@@ -1,0 +1,18 @@
+
+layout SoftMessage_HScale_
+{
+    view subview(show_border: false, spacing: 0  )
+    {	
+	row(horzontal:@align_fill, spacing: 0)
+	{	
+		column(horizontal: @align_fill, spacing: 0)
+		{	
+			static_text(identifier: "WidthLabel", name: "$$$/TextTouchUp/SoftMessage/HScale=H.Scale: ", horizontal: @align_right);
+		}
+		column(horizontal: @align_fill, spacing: 0)
+		{
+			static_text(identifier: "WidthValue", name:"-0000.00 mm", horizontal: @align_left);	
+		}
+	}	
+    }
+}

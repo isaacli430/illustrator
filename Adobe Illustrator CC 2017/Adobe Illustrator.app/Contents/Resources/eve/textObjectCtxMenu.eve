@@ -1,0 +1,30 @@
+layout textObjectCtxMenu
+{
+	view menu( id: 33,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/context/Undo=Undo", id:						(os == @win) ? 1970168943 : 1970168943, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/context/Redo=Redo", id:						(os == @win) ? 1919247471 : 1919247471, help_id:0);
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/text/Font=Font", id:							129, help_id: 19 ) { separator();  } 
+		menu( text: "$$$/_MBAR/Mnu/text/RecentFonts=Recent Fonts", id:			231, help_id:  58 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/text/Size=Size", id:							130, help_id:  20 ) { separator();  }
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/text/CreateOutlines=Create Outlines", id:	62, help_id:0);
+		
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/text/SpecialCharacter=Insert Special Character", 		id:		362, help_id:  81 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/text/WhiteSpaceCharacter=Insert WhiteSpace Character", 	id:		363, help_id:  82 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/text/BreakCharacter=Insert Break Character", 			id:		364, help_id:  83 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/text/PlaceHolderText=Fill With PlaceHolder Text", 		id:		391, help_id:  0 );
+		
+		separator();
+		
+		menu( text: "$$$/_MBAR/Mnu/context/Transform=Transform", id:	 		91, help_id:  23 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/context/Arrange=Arrange", id:		 		92, help_id:  47 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/context/Select=Select", id:		 			79, help_id:  24 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/context/DL=Add to Library", id:		 0x51756C01, help_id:  0 ) ;
+		menu( text: "$$$/_MBAR/Mnu/context/SmartExport=Collect For Export", id: 			0x65697A10, help_id: 0 ) ;
+		menu( text: "$$$/_MBAR/Mnu/context/Export=Export Selection...", id:		 		 0x63697A00, help_id:  0 ) ;
+	}
+}

@@ -1,0 +1,9 @@
+layout lockMenu
+{
+	view menu( id: 51,
+				menubar: false )
+	{
+	
+		menu( text: "$$$/_MBAR/Mnu/Lock/Selection=Selection", id:	28, help_id:0);
+}
+}

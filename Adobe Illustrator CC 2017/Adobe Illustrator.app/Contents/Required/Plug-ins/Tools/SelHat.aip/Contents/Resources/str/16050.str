@@ -1,0 +1,37 @@
+/* [1] */
+-108
+/* [2] */
+$$$/VMCommon/Str/16052=The operation cannot complete because there isn't enough memory (RAM) available.
+/* [3] */
+271
+/* [4] */
+$$$/VMCommon/Str/16054=The operation cannot complete because there isn't enough memory (RAM) available.
+/* [5] */
+!MEM
+/* [6] */
+$$$/VMCommon/Str/16056=The operation cannot complete because there isn't enough memory (RAM) available.
+/* [7] */
+NESS
+/* [8] */
+$$$/VMCommon/Str/16058=The operation cannot complete because a layer is locked or invisible.
+/* [9] */
+SEGM
+/* [10] */
+$$$/VMCommon/Str/16060=The operation cannot complete because a path has too many anchor points.
+/* [11] */
+!sel
+/* [12] */
+$$$/VMCommon/Str/16062=The selection is not valid for this operation.
+/* [13] */
+VMES
+/* [14] */
+$$$/VMCommon/Str/16064=The operation cannot complete because there is no selection.
+/* [15] */
+DOC?
+/* [16] */
+$$$/VMCommon/Str/16066=The operation cannot complete because there is no open document.
+/* [17] */
+<Others>
+/* [18] */
+$$$/VMCommon/Str/16068=The operation cannot complete because of an unknown error.    [%s]
+

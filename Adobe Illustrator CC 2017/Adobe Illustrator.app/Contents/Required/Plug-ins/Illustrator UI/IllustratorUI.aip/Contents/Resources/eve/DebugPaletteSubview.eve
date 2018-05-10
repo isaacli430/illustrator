@@ -1,0 +1,215 @@
+layout DebugPanel
+{
+	view subview(identifier: "AIDebugPanelSubView",
+				 layout_theme: @panel,
+				 show_border: false, 
+				 wants_focus: false)
+		{	column(horizontal: @align_fill)
+			{
+				row(child_vertical: @align_center)
+				{
+					reveal(bind: @showMemory, value_on: 1);
+					static_text(name: "Memory", horizontal: @align_center, bold: true);
+				}
+				optional(value: 1, margin: 0, bind: @showMemory, wants_focus: false, horizontal: @align_fill)
+				{
+					edit_text(identifier: "MemoryContent",
+								set_default_focus: false,
+								readonly: true,
+								theme_font_size: @small,
+								lines: 2,
+								vertical: @align_fill,
+								horizontal: @align_fill);
+				}
+			}
+
+			column(horizontal: @align_fill)
+			{
+				row(child_vertical: @align_center)
+				{
+					reveal(bind: @showCompact, value_on: 1);
+					static_text(name: "Compact", horizontal: @align_center, bold: true);
+				}
+				optional(value: 1, margin: 0, bind: @showCompact, wants_focus: false, horizontal: @align_fill)
+				{
+					button(identifier: "CompactButon", name: "Purge Undos");
+				}
+			}
+
+			column(horizontal: @align_fill)
+			{
+				row(child_vertical: @align_center)
+				{
+					reveal(bind: @showObjects, value_on: 1);
+					static_text(name: "Objects", horizontal: @align_center, bold: true);
+				}
+				optional(value: 1, margin: 0, bind: @showObjects, wants_focus: false, horizontal: @align_fill)
+				{
+					edit_text(identifier: "ObjectsContent",
+								set_default_focus: false,
+								readonly: true,
+								theme_font_size: @small,
+								scrollable: true, 
+								lines: 10,
+								vertical: @align_fill,
+								horizontal: @align_fill);
+				}
+			}
+			
+			column(horizontal: @align_fill)
+			{
+				row(child_vertical: @align_center)
+				{
+					reveal(bind: @showObjectTree, value_on: 1);
+					static_text(name: "Object Tree", horizontal: @align_center, bold: true);
+				}
+				optional(value: 1, margin: 0, bind: @showObjectTree, wants_focus: false, horizontal: @align_fill)
+				{
+					buttongroup(horizontal: @align_fill)
+					{
+						button(identifier: "ObjTreeRefreshButon", name: "Refresh");
+						button(identifier: "ObjTreeResetButon", name: "Reset");
+						button(identifier: "ObjTreeObjectButon", name: "Object");
+						button(identifier: "ObjTreeStyleArtButon", name: "Style Art");
+						button(identifier: "ObjTreeSymbolButon", name: "Symbol");
+						button(identifier: "ObjTreeUpButon", name: "Up");
+					}
+					edit_text(identifier: "ObjectTreeContent",
+								set_default_focus: false,
+								readonly: true,
+								theme_font_size: @small,
+								scrollable: true, 
+								lines: 20,
+								vertical: @align_fill,
+								horizontal: @align_fill);
+				}
+			}
+
+			column(horizontal: @align_fill)
+			{
+				row(child_vertical: @align_center)
+				{
+					reveal(bind: @showTty, value_on: 1);
+					static_text(name: "Tty", horizontal: @align_center, bold: true);
+				}
+				optional(value: 1, margin: 0, bind: @showTty, wants_focus: false, horizontal: @align_fill)
+				{
+					edit_text(identifier: "TtyContent",
+								set_default_focus: false,
+								readonly: true,
+								theme_font_size: @small,
+								lines: 2,
+								vertical: @align_fill,
+								horizontal: @align_fill);
+				}
+			}
+
+			column(horizontal: @align_fill)
+			{
+				row(child_vertical: @align_center)
+				{
+					reveal(bind: @showNewSelection, value_on: 1);
+					static_text(name: "New Selection", horizontal: @align_center, bold: true);
+				}
+				optional(value: 1, margin: 0, bind: @showNewSelection, wants_focus: false, horizontal: @align_fill)
+				{
+					edit_text(identifier: "NewSelectionContent",
+								set_default_focus: false,
+								readonly: true,
+								theme_font_size: @small,
+								lines: 2,
+								vertical: @align_fill,
+								horizontal: @align_fill);
+				}
+			}
+
+			column(horizontal: @align_fill)
+			{
+				row(child_vertical: @align_center)
+				{
+					reveal(bind: @showNewProperties, value_on: 1);
+					static_text(name: "New Properties", horizontal: @align_center, bold: true);
+				}
+				optional(value: 1, margin: 0, bind: @showNewProperties, wants_focus: false, horizontal: @align_fill)
+				{
+					edit_text(identifier: "PropertiesContent",
+								set_default_focus: false,
+								readonly: true,
+								theme_font_size: @small,
+								lines: 2,
+								vertical: @align_fill,
+								horizontal: @align_fill);
+				}
+			}
+
+			column(horizontal: @align_fill)
+			{
+				row(child_vertical: @align_center)
+				{
+					reveal(bind: @showArtwork, value_on: 1);
+					static_text(name: "Artwork", horizontal: @align_center, bold: true);
+				}
+				optional(value: 1, margin: 0, bind: @showArtwork, wants_focus: false, horizontal: @align_fill)
+				{
+					edit_text(identifier: "ArtworkContent",
+								set_default_focus: false,
+								readonly: true,
+								theme_font_size: @small,
+								scrollable: true, 
+								lines: 8,
+								vertical: @align_fill,
+								horizontal: @align_fill);
+				}
+			}
+
+			column(horizontal: @align_fill)
+			{
+				row(child_vertical: @align_center)
+				{
+					reveal(bind: @showArtview, value_on: 1);
+					static_text(name: "Artview", horizontal: @align_center, bold: true);
+				}
+				optional(value: 1, margin: 0, bind: @showArtview, wants_focus: false, horizontal: @align_fill)
+				{
+					edit_text(identifier: "ArtviewContent",
+								set_default_focus: false,
+								readonly: true,
+								theme_font_size: @small,
+								scrollable: true, 
+								lines: 16,
+								vertical: @align_fill,
+								horizontal: @align_fill);
+				}
+			}
+
+			column(horizontal: @align_fill)
+			{
+				row(child_vertical: @align_center)
+				{
+					reveal(bind: @showGlobalObjects, value_on: 1);
+					static_text(name: "Global Objects", horizontal: @align_center, bold: true);
+				}
+				optional(value: 1, margin: 0, bind: @showGlobalObjects, wants_focus: false, horizontal: @align_fill)
+				{
+					button(identifier: "GlobalObjectsRefresh", name: "Refresh");
+					edit_text(identifier: "GlobalObjectsContent",
+								set_default_focus: false,
+								readonly: true,
+								theme_font_size: @small,
+								scrollable: true, 
+								lines: 16,
+								vertical: @align_fill,
+								horizontal: @align_fill);
+				}
+			}
+
+
+
+
+
+			
+		}
+									
+}
+
+

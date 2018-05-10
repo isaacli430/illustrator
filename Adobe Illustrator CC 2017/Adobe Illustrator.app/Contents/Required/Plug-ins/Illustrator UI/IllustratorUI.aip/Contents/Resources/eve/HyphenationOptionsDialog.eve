@@ -1,0 +1,96 @@
+layout hyphenationOptionsDialog
+{
+	view subview(identifier: "hyphenationOptionsDialog_subview",
+					layout_theme: @dialog_large,
+					child_horizontal: @align_fill,
+					spacing: @unrelated_spacing,
+					show_border: false)
+	{
+		group(identifier: "hyphenation_group",
+				header: "checkbox(identifier: 'hyphenation_checkbox', horizontal: @align_left,
+									name: '$$$/_Hyphenation/Dlg/kHyphenationDialog/Hyphenation=&Hyphenation',
+									value_off: 0,
+									value_on: 1,
+									bind: @hyphenation)")
+		{
+			unit_hot_number(identifier: "wordsLongerThan_editNumber",
+						name: "$$$/_Hyphenation/Dlg/kHyphenationDialog/WordsLongerThan=&Words Longer Than:",
+						suffix: "$$$/_Hyphenation/Dlg/kHyphenationDialog/hLetter1=letters",
+						min_value: 3,
+						max_value: 25,
+						decimal_places: 0,
+						digits: 7,
+						set_default_focus: true,
+						bind: @wordsLongerThan, bind_final: true);
+			unit_hot_number(identifier: "afterFirst_editNumber",
+						name: "$$$/_Hyphenation/Dlg/kHyphenationDialog/AfterFirst=&After First:",
+						suffix: "$$$/_Hyphenation/Dlg/kHyphenationDialog/hLetter2=letters",
+						min_value: 1,
+						max_value: 15,
+						decimal_places: 0,
+						digits: 7,
+						bind: @afterFirst, bind_final: true);
+			unit_hot_number(identifier: "beforeLast_editNumber",
+						name: "$$$/_Hyphenation/Dlg/kHyphenationDialog/BeforeLast=&Before Last:",
+						suffix: "$$$/_Hyphenation/Dlg/kHyphenationDialog/hLetter3=letters",
+						min_value: 1,
+						max_value: 15,
+						decimal_places: 0,
+						digits: 7,
+						bind: @beforeLast, bind_final: true);
+			unit_hot_number(identifier: "hyphenLimit_editNumber",
+						name: "$$$/_Hyphenation/Dlg/kHyphenationDialog/HyphenLimit=Hyphen &Limit:",
+						suffix: "$$$/_Hyphenation/Dlg/kHyphenationDialog/hLetter4=hyphens",
+						min_value: 0,
+						max_value: 25,
+						decimal_places: 0,
+						digits: 7,
+						bind: @hyphenLimit, bind_final: true);
+			unit_hot_number(identifier: "hyphenationZone_editNumber",
+						name: "$$$/_Hyphenation/Dlg/kHyphenationDialog/HyphenationZone=Hyphenation &Zone:",
+						unit: @hyphenationZoneUnit,
+						min_value: 0,
+						max_value: 8640,
+						decimal_places: 2,
+						digits: 7,
+						bind: @hyphenationZone, bind_final: true);
+			combo_slider(identifier: "betterSpacingOrFewerHyphens_slider",
+							min_max_filter: @betterSpacingOrFewerHyphensFilter,
+							slider_point: @up,
+							left_mini_label: "$$$/_Hyphenation/Dlg/kHyphenationDialog/BetterSpacing=Better Spacing",
+							right_mini_label: "$$$/_Hyphenation/Dlg/kHyphenationDialog/FewerHyphens=Fewer Hyphens",
+							minLength: 200,
+							show_editbox: false,
+							ticks_pos: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+							show_ticks: true,
+							snap_on_ticks: true,
+							horizontal: @align_center,
+							bind: @betterSpacingOrFewerHyphens, bind_final: true);
+			checkbox(identifier: "hyphenateCapitalizedWords_checkbox",
+						name: "$$$/_Hyphenation/Dlg/kHyphenationDialog/HyphenateCapitalWords=Hyphenate &Capitalized Words",
+						value_off: 0,
+						value_on: 1,
+						guide_mask: [@guide_label],
+						bind: @hyphenateCapitalizedWords);
+		}
+		row(horizontal: @align_fill,vertical: @align_fill,child_vertical: @align_center,spacing: @separated_spacing)
+		{
+			checkbox(identifier: "preview_checkbox", vertical: @align_center,
+						name: "$$$/_Hyphenation/Dlg/kHyphenationDialog/Preview=&Preview",
+						guide_mask: [@guide_label],
+						value_off: 0,
+						value_on: 1,
+						bind: @preview);
+			
+			row(horizontal: @align_fill, spacing: @related_spacing, 
+				child_horizontal: @align_right,
+				reverse: os == @mac)
+			{
+				button(identifier: "okButton", commit_button: true,
+						name: "$$$/gOK=OK");
+				button(identifier: "cancelButton", commit_button: true,
+						name: "$$$/gCancel=Cancel");
+			}
+		}
+	}
+}

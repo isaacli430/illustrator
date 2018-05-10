@@ -1,0 +1,43 @@
+layout StarToolOptionsDialog
+{
+    view subview(identifier: "AIEveSubView",
+                 name: '$$$/ShapeTool/Cap/Star=Star',
+                 placement: @place_column,
+                 show_border: false,
+                 spacing: @unrelated_spacing,
+                 layout_theme: @dialog_large)
+    {
+		
+		unit_hot_number(identifier: "Radius_1",
+						decimal_places: 4,
+						digits: 10,
+						name: '$$$/ShapeTool/Dlg/Star/StarText1=Radius &1:'
+						);
+        unit_hot_number(identifier: "Radius_2",
+						decimal_places: 4,
+						digits: 10,
+						name: '$$$/ShapeTool/Dlg/Star/StarText2=Radius &2:'
+						);
+        unit_hot_number(identifier: "StarPoints",
+						decimal_places: 0,
+						digits: 4,
+						name: '$$$/ShapeTool/Dlg/Star/StarUnit=&Points:',
+						set_default_focus: true,
+						stepper: true
+						);
+		
+		row(horizontal: @align_right,
+			reverse: os == @mac,
+			spacing: @related_spacing)
+		{
+			button(	default: true,
+					identifier: "okButton",
+					commit_button: true,
+					name: "$$$/gOK=OK");
+            button(	cancel: true,
+					identifier: "cancelButton",
+					commit_button: true,
+					name: "$$$/gCancel=Cancel");
+		}
+	}
+}

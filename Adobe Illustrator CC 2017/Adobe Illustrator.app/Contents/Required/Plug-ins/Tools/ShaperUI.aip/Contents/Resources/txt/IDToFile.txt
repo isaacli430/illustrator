@@ -1,0 +1,6 @@
+19000.png		SP_ShaperTool_Lg_N.png
+19001.png		SP_ShaperTool_Lg_N_D.png
+19002.eve        TouchShaperToolOption.eve   
+19003.png		SP_TouchAddRemoveSelection_Md_N
+19004.png		SP_TouchAddRemoveSelection_Md_N_D
+19005.eve	 	ShaperSoftMessage.eve

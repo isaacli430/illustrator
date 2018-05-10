@@ -1,0 +1,173 @@
+layout Compositefonts
+{
+	view subview(name: "$$$/CompositeFontDialog/Name=Composite Fonts",
+                     show_border: false,
+                     placement: @place_column,
+                     layout_theme: @dialog_large)
+	{
+		row(horizontal: @align_fill)
+		{
+			column(horizontal: @align_fill)
+			{
+				row(horizontal: @align_fill)
+				{
+								
+					popup(horizontal:@align_left,	identifier: "Set",   name: "$$$/CompositeFontDialog/CompositeFont=Composite Font:", include_custom_item: false, popup_minimum_width_chars: 11, guide_mask: [@guide_label]);
+					popup(horizontal:@align_right,	identifier: "Units", name: "$$$/CompositeFontDialog/Units=Units:", include_custom_item: false, popup_minimum_width_chars: 2, guide_mask: [@guide_label],
+							items: [{name: "$$$/CompositeFontDialog/Percentage=%", value: 0}, {name: "$$$/CompositeFontDialog/Q=Q", value: 1}]);
+					
+				}
+				
+				row(horizontal: @align_fill){
+					multicolumn_tree(identifier: "ListBoxDefault", horizontal: @align_fill, wants_focus: false,  width:585, height: 200);
+				}
+				
+				row(horizontal: @align_fill)
+				{
+					column( vertical:@align_fill)
+					{
+						row( child_horizontal: @align_left, vertical:@align_fill, spacing: @related_spacing,child_vertical: @align_fill)
+						{
+							button( 	identifier: "New", name: "$$$/CompositeFontDialog/New=New...");
+							button(	identifier: "Save", name: "$$$/CompositeFontDialog/Save=Save");
+							button(	identifier: "Delete", name: "$$$/CompositeFontDialog/DeleteFont=Delete Font");
+							
+						}
+					}
+					
+					column(vertical:@align_fill, horizontal: @align_fill, child_horizontal: @align_right)
+					{
+						row( child_horizontal: @align_right, horizontal: @align_fill, vertical:@align_fill, spacing: @related_spacing,child_vertical: @align_fill)
+						{
+							button(	identifier: "Export", name: "$$$/CompositeFontDialog/Export=Export...");
+							button(	identifier: "Custom", name: "$$$/CompositeFontDialog/Custom=Custom...");
+						}
+					}
+				}
+				
+				row(child_vertical: @align_center, spacing: 0, horizontal: @align_fill)
+				{
+					overlay()
+					{
+						panel(bind: @show_sample, value: true, margin: 0)
+						{
+							row()
+							{
+								toggle_button(identifier: "HideSampleToggle", bind: @show_sample, value_on: false, value_off: true, image:{normal:"DisclosureDown_N.png", dark_normal: "DisclosureDown_N_D.png"}, wants_focus: false);				
+								static_text(identifier: "HideSampleText", name:'$$$/AI/CF/HideSample=Hide Sample');
+							}
+						}
+						panel(bind: @show_sample, value: false, margin: 0)
+						{
+							row()
+							{
+								toggle_button(identifier: "ShowSampleToggle", bind: @show_sample, value_on: true, value_off: false, image:{normal:"DisclosureUp_N.png", dark_normal: "DisclosureUp_N_D.png"}, wants_focus: false);
+								static_text(identifier: "ShowSampleText", name:'$$$/CompositeFontDialog/ShowSample=Show Sample');
+							}
+						}
+					}
+					
+					separator();
+				}
+				row(horizontal: @align_fill){
+					
+					optional(bind: @show_sample, value: true, margin: 0, spacing: @related_spacing)
+					{
+						row(horizontal: @align_fill)
+						{
+							column(child_horizontal: @align_left)
+							{
+								buttongroup()
+								{
+									toggle_button(identifier: "ICFBox", bind: @sample_icf_box, vertical: @align_fill, value_on: true, 
+										value_off: false, image: {normal:"SP_ICFGuide_Md_N.png", dark_normal:"SP_ICFGuide_Md_N_D.png"},  
+										alt: "$$$/AI/CF/ICFBox=ICF Box", wants_focus: false); 
+										
+									toggle_button(identifier: "EmBox", bind: @sample_em_box, vertical: @align_fill, value_on: true, 
+										value_off: false, image: {normal:"SP_EMBoxAi_Md_N.png", dark_normal:"SP_EMBoxAi_Md_N_D.png"} ,  
+										alt: "$$$/AI/CF/Embox=Embox", wants_focus: false); 
+									
+									toggle_button(identifier: "BaselineB", bind: @sample_base_line, vertical: @align_fill, value_on: true, 
+										value_off: false, image: {normal:"SP_Baseline_Md_N.png", dark_normal:"SP_Baseline_Md_N_D.png"} ,  
+										alt: "$$$/AI/CF/Baseline=Baseline", wants_focus: false); 
+									
+									toggle_button(identifier: "CapHeight", bind: @sample_cap_height, vertical: @align_fill, value_on: true, 
+										value_off: false, image: {normal:"SP_CapHeight_Md_N.png", dark_normal:"SP_CapHeight_Md_N_D.png"} ,  
+										alt: "$$$/AI/CF/CapHeight=Cap Height", wants_focus: false); 
+										
+									toggle_button(identifier: "MaxAsentDesent", bind: @sample_max_ascent_descent, vertical: @align_fill, value_on: true, 
+										value_off: false, image: {normal:"SP_MaxAscender_Md_N.png", dark_normal:"SP_MaxAscender_Md_N_D.png"},  
+										alt: "$$$/AI/CF/MaxAscentDescent=Max Ascent/Descent", wants_focus: false); 
+																		
+									toggle_button(identifier: "MaxAsender", bind: @sample_max_ascender, vertical: @align_fill, value_on: true, 
+										value_off: false, image: {normal:"SP_Ascender_Md_N.png", dark_normal:"SP_Ascender_Md_N_D.png"},  
+										alt: "$$$/AI/CF/MaxAscender=Max Ascender", wants_focus: false); 
+									
+									toggle_button(identifier: "XHeight", bind: @sample_x_height, vertical: @align_fill, value_on: true, 
+										value_off: false, image: {normal:"SP_XHeight_Md_N.png", dark_normal:"SP_XHeight_Md_N_D.png"},  
+										alt: "$$$/AI/CF/xheight=x-height", wants_focus: false); 
+								}
+
+							}
+							
+							column(horizontal: @align_fill)
+							{
+								unit_hot_number(identifier: "Zoom", name: "$$$/CompositeFontDialog/Zoom=Zoom",
+									include_custom_item: false,
+									horizontal:@align_right,
+									digits: 5,
+									popuplist: true,
+									min_value: 50,
+									max_value:1000,
+									unit: "NumberEditUnit_Percent",
+									items: ["50%", "100%", "150%", "200%", "400%", "800%", "1000%"]
+									
+									);
+							}
+						}
+						row(horizontal: @align_fill) 
+						{
+							column(horizontal: @align_fill)
+							{
+								panel(identifier: "ImageWidgetPanel", spacing: 0, show_border: false, horizontal: @align_fill, height: 200, margin: 0)
+								{
+									subview( identifier: "ListBoxSample", height: 200, show_border: false, horizontal: @align_fill);
+								}
+							}
+						}
+					}
+				}
+			}	
+		}
+		row(horizontal: @align_fill)
+		{
+			optional(margin: 0, bind: @cant_preview, horizontal: @align_left)
+			{
+				row(horizontal: @align_fill)
+				{
+					column(horizontal: @align_fill)
+					{
+						info_icon(identifier: "WarningIcon", icontype: "warning", size: "small", horizontal: @align_left,
+						alt: "$$$/AI/CF/CannotPreviewWarning=Sample text not displayed for large sizes.");
+					}
+					column(horizontal: @align_fill)
+					{
+						static_text(name: "$$$/AI/CF/CannotPreviewWarning=Sample text not displayed for large sizes.");
+					}
+				}
+			}
+		}
+		row(horizontal: @align_fill)
+		{
+			column(horizontal: @align_fill)
+			{
+				row(horizontal: @align_fill, reverse: os == @mac, child_horizontal: @align_right, spacing: @related_spacing)
+				{
+					button(identifier: "okButton", name:'$$$/gOK=OK', commit_button: true);
+					button(identifier: "cancelButton", name: '$$$/gCancel=Cancel', commit_button: true);
+				}
+			}
+		}
+	}
+}
+	

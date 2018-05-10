@@ -1,0 +1,57 @@
+layout PlaneOffset
+{
+    view subview(identifier: "AIEveSubView",
+                 placement: @place_row,
+                 show_border: false,
+                 placement: @place_column,
+                 spacing: @unrelated_spacing,
+                 layout_theme: @dialog_large)
+    {
+        column(child_horizontal: @align_fill, horizontal: @align_fill)
+        {
+			unit_hot_number(bind: @LocationValue, decimal_places: 2, digits: 10,
+				  max_value: 32767, min_value: -32768,
+				  identifier: "PlaneOffsetLocationEdit",
+				  set_default_focus: true,
+				  name: "$$$/PlaneOffset/Dlg/Location=&Location:");
+                      
+			group(name: "$$$/PlaneOffset/Dlg/ObjectsOptions=Object Options", guide_mask: [ @guide_label ])
+			{
+				radiogroup()
+				{
+					radio_button(bind: @ObjectOptions, value: "DoNotMove", identifier: "DoNotMoveRadio",
+								 name: "$$$/PlaneOffset/Dlg/DonNotMoveObjects=Do Not Move");
+				                 
+					overlay()
+					{
+						panel(bind: @ApplyToAll, value: true, margin: 0)
+						{
+							radio_button(bind: @ObjectOptions, value: "MoveObjects", identifier: "MoveAllObjectsRadio",
+										 name: "$$$/PerspectiveUI/Title/PlaneOffset/MoveAllObjects=Move All Objects");				
+							radio_button(bind: @ObjectOptions, value: "CopyObjects", identifier: "CopyAllObjectsRadio",
+										 name: "$$$/PerspectiveUI/Title/PlaneOffset/CopyAllObjects=Copy All Objects");
+						}
+						panel(bind: @ApplyToAll, value: false, margin: 0)
+						{
+							radio_button(bind: @ObjectOptions, value: "MoveObjects", identifier: "MoveSelectedObjectsRadio",
+										 name: "$$$/PerspectiveUI/Title/PlaneOffset/MoveSelectedObjects=Move Selected Objects");				
+							radio_button(bind: @ObjectOptions, value: "CopyObjects", identifier: "CopySelectedObjectsRadio",
+										 name: "$$$/PerspectiveUI/Title/PlaneOffset/CopySelectedObjects=Copy Selected Objects");
+						}
+					}
+				}
+			}
+        }
+
+        row(horizontal: @align_right, spacing: @related_spacing, reverse: os == @mac)
+        {
+            button(identifier: "okButton",
+                   commit_button: true,
+                   name: "$$$/gOK=OK");
+
+            button(identifier: "cancelButton",
+                   commit_button: true,
+                   name: "$$$/gCancel=Cancel");
+        }
+    }
+}

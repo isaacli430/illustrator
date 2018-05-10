@@ -1,0 +1,39 @@
+layout VariablePaletteWarningDialog
+{
+    view subview(placement: @place_column,
+					layout_theme: @dialog_large,
+					show_border: false,
+					spacing: @unrelated_spacing)
+    {
+		column(horizontal: @align_fill,
+				child_horizontal: @align_fill)
+		{
+			row()
+			{
+				info_icon(icontype: "warning",
+							size: "small",
+							identifier: "warningImage");
+
+				static_text(characters: 20,
+							identifier: "warningHeaderText",
+							horizontal: @align_fill,
+							name: "$$$/VariablesPalette/16006/Txt1=The following variables are bound to multiple object attributes that do not match:");
+			}
+
+	        list(height: 100,
+					identifier: "list",
+					width: 180);
+
+			static_text(characters: 20,adjust_baseline_for_single_line_text: false,
+						identifier: "warningFooterText",
+						name: "$$$/VariablesPalette/16006/Txt2=These attributes must have the same value before capturing or updating a data set.");
+		}
+
+        button(default: true,
+				commit_button: true,
+			    horizontal: @align_right,
+			    identifier: "okButton",
+			    set_default_focus: true,
+			    name: "$$$/gOK=OK");
+    }
+}

@@ -1,0 +1,6 @@
+sheet FlattenTransparency16200
+{
+interface:
+		filterRasterVector : {min_value: 0, max_value: 100};
+
+}

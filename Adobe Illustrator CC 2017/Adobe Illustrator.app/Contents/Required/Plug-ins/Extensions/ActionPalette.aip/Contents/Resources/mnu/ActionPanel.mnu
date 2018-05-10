@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+	<menuItem id="1" text="$$$/ActionPalette/Mnu/16500/1=&amp;New Action..."></menuItem>
+	<menuItem id="2" text="$$$/ActionPalette/Mnu/16500/2=New Se&amp;t..."></menuItem>
+	<menuItem id="3" text="$$$/ActionPalette/Mnu/16500/3=D&amp;uplicate"></menuItem>
+	<menuItem id="4" text="$$$/ActionPalette/Mnu/16500/4=&amp;Delete"></menuItem>
+	<menuItem id="5" text="$$$/ActionPalette/Mnu/16500/5=Pla&amp;y"></menuItem>
+	<separator></separator>
+	<menuItem id="7" text="$$$/ActionPalette/Mnu/16500/7/Win=Start Re&amp;cording"></menuItem>
+	<menuItem id="8" text="$$$/ActionPalette/Mnu/16500/8=Record A&amp;gain..."></menuItem>
+	<menuItem id="9" text="$$$/ActionPalette/Mnu/16500/9=Insert &amp;Menu Item..."></menuItem>
+	<menuItem id="10" text="$$$/ActionPalette/Mnu/16500/10=&amp;Insert Stop..."></menuItem>
+	<menuItem id="11" text="$$$/ActionPalette/Mnu/16500/11=Insert Select Pat&amp;h"></menuItem>
+	<menuItem id="12" text="$$$/ActionPalette/Mnu/16500/12=Select &amp;Object..."></menuItem>
+	<separator></separator>
+	<menuItem id="14" text="$$$/ActionPalette/Mnu/16500/14=Action Option&amp;s..."></menuItem>
+	<menuItem id="15" text="$$$/ActionPalette/Mnu/16500/15=&amp;Playback Options..."></menuItem>
+	<separator></separator>
+	<menuItem id="17" text="$$$/ActionPalette/Mnu/16500/17=Cl&amp;ear Actions"></menuItem>
+	<menuItem id="18" text="$$$/ActionPalette/Mnu/16500/18=Reset Act&amp;ions"></menuItem>
+	<menuItem id="19" text="$$$/ActionPalette/Mnu/16500/19=&amp;Load Actions..."></menuItem>
+	<menuItem id="20" text="$$$/ActionPalette/Mnu/16500/20=&amp;Replace Actions..."></menuItem>
+	<menuItem id="21" text="$$$/ActionPalette/Mnu/16500/21=Sa&amp;ve Actions..."></menuItem>
+	<separator></separator>
+	<menuItem id="23" text="$$$/ActionPalette/Mnu/16500/23=&amp;Button Mode"></menuItem>
+	<separator></separator>
+	<menuItem id="25" text="$$$/ActionPalette/Mnu/16500/25=B&amp;atch..."></menuItem>
+</menu>

@@ -1,0 +1,33 @@
+layout LinePropertiesUI
+{
+     view subview(identifier: "LinePropertiesUI",
+				 layout_theme: @panel,
+				 show_border: false)
+    {
+		optional(bind: @ShowLinePropertiesString, value: true)
+		{
+			static_text(identifier: "LinePropertiesLabel",
+						name: "$$$/ShapeCoreUI/LineProperties/Label/LineProperties=Line Properties:");
+		}
+
+		unit_edit_number(identifier: "LineLength",
+							alt: "$$$/ShapeCoreUI/LineProperties/ToolTip/LineLength=Line Length",
+							decimal_places: 3,
+							digits: 4,
+							unit:"CurrentDocumentUnit",
+							max_value: 16384,
+							min_value: 0.0,
+							label: "SP_Width_Md_N.png",
+							is_image_label: true);
+		
+		unit_edit_number(identifier: "LineAngle",
+							alt: "$$$/ShapeCoreUI/LineProperties/ToolTip/LineAngle=Line Angle",
+							popuplist: true,
+							items: @AngleValues,
+							decimal_places: 2,
+							digits: 1,
+							unit:"NumberEditUnit_Degree",
+							label: "SP_RotateCCW_Md_N.png",
+							is_image_label: true);
+    }
+}

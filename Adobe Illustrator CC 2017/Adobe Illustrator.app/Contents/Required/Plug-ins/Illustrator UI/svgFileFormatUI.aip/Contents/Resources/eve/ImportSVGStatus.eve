@@ -1,0 +1,20 @@
+layout ImportSVGStatus
+{
+   view subview(identifier: "AIEveSubView",
+				 placement: @place_column,
+				 spacing: @unrelated_spacing,
+				 show_border: false, 
+				 layout_theme: @dialog_large)
+    {	
+		panel(width: 170, horizontal:@align_left)
+		{
+				display_text(identifier: "TotalFiltersReadText", name: "$$$/SVGFileFormatUI/StatusDlg/TotalRead=Total Filters Read:", bind: @TotalFilterRead);
+				display_text(identifier: "SkipFiltersText", name: "$$$/SVGFileFormatUI/StatusDlg/SkippedFilters=Filters Skipped:", bind: @FiltersSkipped);
+				display_text(identifier: "RenameFiltersText", name: "$$$/SVGFileFormatUI/StatusDlg/RenamedFilters=Filters Renamed:", bind: @FiltersRenamed);
+		}
+
+		button(default: true, horizontal:@align_right, commit_button: true,
+					   identifier: "okButton",
+					   name: "$$$/SVGFileFormatUI/StatusDlg/OK=OK");
+    }
+}

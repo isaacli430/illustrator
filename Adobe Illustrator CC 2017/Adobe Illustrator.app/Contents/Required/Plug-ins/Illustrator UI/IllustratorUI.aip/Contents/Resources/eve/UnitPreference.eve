@@ -1,0 +1,69 @@
+layout UnitPreference
+{
+	view subview(identifier: "UnitPrefEveSubView",
+				 child_horizontal: @align_left,
+				 placement: @place_column,
+				 show_border: false, 
+				 margin: [22,15,0,15],
+				 layout_theme: @dialog_large)
+	{
+		column(spacing: 0, horizontal: @align_fill)
+		{
+		static_text(identifier: "UPStaticTextCaption",
+					name: "$$$/PrefsDlg/UPDlg/Caption=Units"
+					);
+		
+		separator(identifier: "UPTopSeparator", horizontal: @align_fill);
+		}
+		
+		column(child_horizontal: @align_fill)
+		{
+		popup(identifier: "UPPopupGeneral",
+              include_custom_item: false,
+              name: "$$$/PrefsDlg/UPDlg/UPPopupGeneral=&General:",
+              items: @UPGeneralPopupItems,
+              bind: @UPGeneralCell
+              );
+              
+        popup(identifier: "UPPopupStroke",
+              include_custom_item: false,
+              name: "$$$/PrefsDlg/UPDlg/UPPopupStroke=&Stroke:",
+              items: @UPGeneralPopupItems,
+              bind: @UPStrokeCell
+              );
+              
+         popup(identifier: "UPPopupType",
+              include_custom_item: false,
+              name: "$$$/PrefsDlg/UPDlg/UPPopupType=&Type:",
+              items: @UPTypePopupItems,
+              bind: @UPTypeCell
+              );
+              
+          popup(identifier: "UPPopupAsianType",
+              include_custom_item: false,
+              name: "$$$/PrefsDlg/UPDlg/UPPopupAsianType=&East Asian Type:",
+              items: @UPAsianTypePopupItems,
+              bind: @UPAsianTypeCell
+              );
+          }
+              
+          checkbox(identifier: "UPCheckboxTreatPoint",
+					name: "$$$/PrefsDlg/UPDlg/UPCheckboxTreatPoint=Numbers &Without Units Are Points",
+					bind:@UPTreatPtCell);
+              
+             radiogroup(placement: @place_row, show_border: false, margin: 0)
+             {
+			
+			radio_button(identifier: "UPCheckboxObjectName",
+					bind: @UPIdentifyObjectRadioGrp,
+					value: false,
+					name: "$$$/PrefsDlg/UPDlg/UPCheckboxObjectName=&Object Name",
+					label: "$$$/PrefsDlg/UPDlg/UPStaticTextIdentifyObjects=Identify Objects By:");
+			radio_button(identifier: "UPCheckboxXMLid",
+					bind: @UPIdentifyObjectRadioGrp,
+					value: true,
+					name: "$$$/PrefsDlg/UPDlg/UPCheckboxXMLid=&XML ID");
+			}
+	
+	}
+}

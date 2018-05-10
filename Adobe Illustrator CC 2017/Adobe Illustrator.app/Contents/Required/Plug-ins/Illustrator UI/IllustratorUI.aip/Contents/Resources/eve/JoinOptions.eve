@@ -1,0 +1,44 @@
+layout JoinOptions
+{
+    view subview(identifier: "AIEveSubView",
+				 placement: @place_column,
+				 show_border: false,
+				 spacing: @unrelated_spacing,
+				 layout_theme: @dialog_large)
+    {			
+        group(identifier: "AxisGroup",
+			  horizontal: @align_fill,
+			  name: "$$$/_AverageCmd/Dlg/Join/titleFrameJoin=Points",
+			  placement: @place_column)
+        {
+			radiogroup()
+			{
+				radio_button(identifier: "CornerRadioButton",
+							 set_default_focus: true,
+							 bind: @Join,
+							 name: "$$$/_AverageCmd/Dlg/Join/cornerJoin=&Corner",
+							 value: "corner");
+										
+				radio_button(identifier: "SmoothRadioButton",
+							 bind: @Join,
+							 name: "$$$/_AverageCmd/Dlg/Join/smoothJoin=&Smooth",
+							 value: "smooth");
+			}
+        }
+
+        row(horizontal: @align_right,
+			spacing: @related_spacing,
+			reverse: os == @mac)
+        {
+			button(default: true,
+				   commit_button: true,
+				   identifier: "okButton",
+				   name: "$$$/gOK=OK");
+
+			button(cancel: true,
+				   commit_button: true,
+				   identifier: "cancelButton",
+				   name: "$$$/gCancel=Cancel");
+        }
+    }
+}

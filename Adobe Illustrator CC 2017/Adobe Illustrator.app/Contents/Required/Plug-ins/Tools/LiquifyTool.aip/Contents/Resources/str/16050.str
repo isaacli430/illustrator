@@ -1,0 +1,59 @@
+/* [1] */
+-108
+/* [2] */
+$$$/LiquifyTool/16052/Mac=The filter cannot complete because there isn’t enough memory (RAM) available.\n\?
+/* [3] */
+271
+/* [4] */
+$$$/LiquifyTool/16054/Mac=The filter cannot complete because there isn’t enough memory (RAM) available.\n\?
+/* [5] */
+SEGM
+/* [6] */
+$$$/LiquifyTool/16056/Mac=The filter cannot complete because a path has too many anchor points.
+/* [7] */
+NESS
+/* [8] */
+$$$/LiquifyTool/16058/Mac=The filter cannot complete because a layer is locked or invisible.
+/* [9] */
+!sel
+/* [10] */
+$$$/LiquifyTool/16060/Mac=You must select a path first.
+/* [11] */
+VMNT
+/* [12] */
+$$$/LiquifyTool/16062=The selected artwork contains text, which must be converted to outlines before being used.
+/* [13] */
+VMGR
+/* [14] */
+$$$/LiquifyTool/16064=The selected artwork contains graph, which must be converted to paths before being used.
+/* [15] */
+VMSM
+/* [16] */
+$$$/LiquifyTool/16066=The selected artwork contains symbols.  Use the break link command prior to using Liquify Tools.
+/* [17] */
+VMPA
+/* [18] */
+$$$/LiquifyTool/16068=The selected artwork contains placed art, which must be embedded prior to using Liquify Tools.
+/* [19] */
+VMFA
+/* [20] */
+$$$/LiquifyTool/16070=The selected artwork contains non-native art, which must be rasterized prior to using Liquify Tools.
+/* [21] */
+VMLT
+/* [22] */
+$$$/LiquifyTool/16072=The selected artwork contains legacy text, which must be converted prior to using Liquify Tools.
+/* [23] */
+VMTS
+/* [24] */
+$$$/LiquifyTool/16074/Mac=The filter cannot continue because the object contains too many points.
+/* [25] */
+<others>
+/* [26] */
+$$$/LiquifyTool/16076/Mac=The filter cannot complete because of an unknown error.
+/* [27] */
+VMPO
+/* [28] */
+$$$/LiquifyTool/16077/Mac=The selected artwork contains invalid objects (perspective text, perspective symbol), which must be expanded prior to using Liquify Tools.
+VMCH
+/* [29] */
+$$$/LiquifyTool/16078/Mac=The selected artwork contains charts.  Use the expand command prior to using Liquify Tools.

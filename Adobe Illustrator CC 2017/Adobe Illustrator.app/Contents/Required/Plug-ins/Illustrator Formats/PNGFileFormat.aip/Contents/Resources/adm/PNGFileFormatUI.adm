@@ -1,0 +1,16 @@
+sheet PNGFileFormatUI
+{
+	interface:
+		Resolution: 72;
+		Background: 0;
+		Antialias: 3;
+		Interlaced: false;
+		ShowInfo: true <== (Antialias == 1) ? false : true;
+		otherRes	: Resolution <== (Resolution == -1) ? otherRes : Resolution;
+		
+		ShowPNGBanner: false;
+		ShowPNGResolution: false;
+		ShowPreview: false;
+		ShowOkCancelButton: false;
+		ShowBgColorInsideOptionsGroup : false;
+}

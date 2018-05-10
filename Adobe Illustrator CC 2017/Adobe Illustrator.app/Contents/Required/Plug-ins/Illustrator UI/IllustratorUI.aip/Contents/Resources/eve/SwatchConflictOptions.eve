@@ -1,0 +1,49 @@
+layout SwatchConflictOptions
+{
+    view subview(identifier: "SwatchConflictOptions",
+					child_horizontal: @align_fill,
+					placement: @place_column,
+					show_border: false,
+					spacing: @unrelated_spacing,
+					layout_theme: @dialog_large)
+	{
+		column(child_horizontal: @align_fill)
+		{
+			static_text(identifier: "Text",
+						characters: 25,
+						name: @Text);
+
+			group(identifier: "OptionsGroup",
+					name: "$$$/_SwatchConflictDlg/Dlg/SwatchConflict/titleRadioButtonText=Options")
+			{
+				radiogroup()
+				{
+					radio_button(identifier: "MergeSwatchesRadioButton",
+									bind: @MergeOption,
+									value: true,
+									set_default_focus: true,
+									name: "$$$/_SwatchConflictDlg/Dlg/SwatchConflict/mergeSwatchRadioButton=&Merge swatches");
+
+					radio_button(identifier: "AddSwatchesRadioButton",
+									bind: @AddOption,
+									value: true,
+									name: "$$$/_SwatchConflictDlg/Dlg/SwatchConflict/addSwatchRadioButton=A&dd swatches");
+				}
+			}
+		}
+
+        row(child_vertical: @align_center,
+			guide_mask: [@guide_label],spacing: @separated_spacing,horizontal:@align_fill)
+        {
+			checkbox(identifier: "ApplyToAllCheckbox",
+						bind: @ApplyToAll,horizontal:@align_left,
+						name: "$$$/_SwatchConflictDlg/Dlg/SwatchConflict/applyAllChkBox=&Apply to all");
+
+			button(default: true,
+					commit_button: true,
+					identifier: "okButton",
+					horizontal: @align_right,
+					name: "$$$/gOK=OK");
+        }
+	}
+}

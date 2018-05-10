@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE ThemeParameters [
+  <!-- Inline DTD for Drover Theme files -->
+  
+	<!ENTITY kColor_Unused									"5000000">
+	
+	<!-- PALETTE -->
+	<!-- CORE -->
+	<!ENTITY kColor_ApplicationBackground							"5000012">
+	<!ENTITY kColor_ContentBackground									"5000013">
+	<!ENTITY kColor_ListBackground										"5000064">
+
+ <!-- theme colors -->
+  <!ENTITY General 	"0.0000">
+  <!ENTITY Darkest 	"0.0000">
+  <!ENTITY Dark 	"0.5000">
+  <!ENTITY Light 	"0.5001">
+  <!ENTITY Lightest	"1.0000">
+	
+]>
+
+<ThemeParameters>
+	
+	<ThemeColors>
+  
+		<Theme t="&Darkest;" >
+		
+			<!-- CORE -->
+			<KeyFrame name="&kColor_ApplicationBackground;" 					v="0.196" />
+		</Theme>
+  
+		<Theme t="&Dark;" >
+  
+			<!-- CORE -->
+			<KeyFrame name="&kColor_ApplicationBackground;" 					v="0.325" />
+		</Theme>
+  
+		<Theme t="&Light;" >
+  
+			<!-- CORE -->
+			<KeyFrame name="&kColor_ApplicationBackground;" 					v="0.72" />
+		</Theme>
+  
+		<Theme t="&Lightest;" >
+  
+			<!-- CORE -->
+			<KeyFrame name="&kColor_ApplicationBackground;" 					v="0.94" />
+		</Theme>
+  
+	</ThemeColors>
+	
+</ThemeParameters>

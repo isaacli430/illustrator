@@ -1,0 +1,16 @@
+sheet LiveBlendsUI
+{
+interface:
+	OrientationRadioGp: 0;
+	SpacingOption: 0;
+	SpacingEditState: 0 <== 0;
+	SpacingSteps: 8;
+	SpacingDistance: 4;
+
+	SpacingOptions: [{ name: "$$$/LiveBlendsUI/Dlg/SpacingMnu/SmoothColor=Smooth Color", value: 0 },
+					 { name: "$$$/LiveBlendsUI/Dlg/SpacingMnu/Steps=Specified Steps", value: 1 },
+					 { name: "$$$/LiveBlendsUI/Dlg/SpacingMnu/Distance=Specified Distance", value: 2 }] ;
+
+	PreviewCB: 0;
+	unlink PreviewCBState: false <== (PreviewCB == 0) ? false : PreviewCBState;	
+}

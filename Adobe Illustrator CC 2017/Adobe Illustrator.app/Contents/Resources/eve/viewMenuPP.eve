@@ -1,0 +1,51 @@
+layout viewMenu
+{
+	view menu( id: 45,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/View/Preview=&Preview", id:						30, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/View/GPUPreview=&GPU Preview", id:		347, help_id:0);
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/View/Overprint=O&verprint Preview", id:			143, help_id:0);
+	  	menu( text: "$$$/_MBAR/Mnu/View/Pixel=Pi&xel Preview", id:					33, help_id:0);
+	  	separator();
+		menu( text: "$$$/_MBAR/Mnu/View/ProofSetup=Proo&f Setup", id:				201, help_id:  46 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/View/ProofColors=Proof &Colors", id:				202, help_id:0);
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/View/ZoomIn=&Zoom In", id:						135, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/View/ZoomOut=Zoo&m Out", id:						136, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/View/ZoomWindow=Fit Artboard in &Window", id:	35, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/View/ZoomAll=Fit A&ll in Window", id:			311, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/View/ZoomActual=Actual Siz&e", id:				63, help_id:0);
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/View/HideEdges=Hide E&dges", id:					147, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/View/HideArtboard=Hide Art&boards", id:			86, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/View/HideTiling=Hide Print &Tiling", id:			85, help_id:0);
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/View/ShowTemplate=Show Temp&late", id:			114, help_id:0);
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/View/Rulers=&Rulers", id:							317, help_id:  17 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/View/ShowTextThreads=Show Text T&hreads", id:	150, help_id:0);
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/View/Guides=G&uides", id:						124, help_id:  14 ) { separator();  }
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/View/ShowGrid=Show &Grid", id:					159, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/View/SnapGrid=Sn&ap to Grid", id:				160, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/View/SnapPixel=&Snap to Pixel", id:				353, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/View/SnapPoint=S&nap to Point", id:				146, help_id:0);
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/View/NewView=New V&iew...", id:					144, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/View/EditViews=Edit Views...", id:				145, help_id:0);
+	
+		menu( text: "$$$/_MBAR/Mnu/View/View1=Custom View 1", id:					191, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/View/View2=Custom View 2", id:					192, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/View/View3=Custom View 3", id:					193, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/View/View4=Custom View 4", id:					194, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/View/View5=Custom View 5", id:					195, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/View/View6=Custom View 6", id:					196, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/View/View7=Custom View 7", id:					197, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/View/View8=Custom View 8", id:					198, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/View/View9=Custom View 9", id:					199, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/View/View10=Custom View 10", id:					200, help_id:0);
+}
+}

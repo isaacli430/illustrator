@@ -1,0 +1,78 @@
+layout NewActionUI
+{
+	view subview(identifier: "AIEveSubView",
+				layout_theme: @dialog_large,
+				placement: @place_column,
+				show_border: false,
+				spacing: @unrelated_spacing)
+	{
+		column(child_vertical: @align_fill)
+		{
+			edit_text(identifier: "ActionName",
+					horizontal: @align_fill,
+					set_default_focus: true,
+					bind: @actionName,
+					name: "$$$/ActionPalette/Dlg/16700/3=&Name:",
+					max_characters: 31);
+
+			popup(identifier: "ActionSet",
+					include_custom_item: false,
+					horizontal: @align_fill,
+					name: "$$$/ActionPalette/Dlg/16700/11=S&et:");
+
+			row(child_vertical: @align_center)
+			{
+				popup(identifier: "FunctionKey",
+						include_custom_item: false,
+						bind: @functionPopup,
+						items: (os == @mac ? @KeyItemSetMac : @KeyItemSetWin) ,
+						name: "$$$/ActionPalette/Dlg/16700/5=&Function Key:");
+
+				checkbox(identifier: "Shift",
+							bind: @shiftCheckbox,
+							state: "unchecked", value_on: true, value_off: false,
+ 							name: "$$$/ActionPalette/Dlg/16700/9=&Shift");
+						
+				checkbox(identifier: "Command",
+							bind: @commandCheckbox,
+							state: "unchecked", value_on: true, value_off: false,
+							name: (os == @mac ? "$$$/ActionPalette/Dlg/16700/10/Mac=Command"
+										: "$$$/ActionPalette/Dlg/16700/10/Win=&Control") );  
+
+			}
+
+			popup(identifier: "colorPopup", 
+					name: "$$$/ActionPalette/Dlg/16700/7=Co&lor:",
+					bind: @colorPopupCell,
+					include_custom_item: false,
+					items: @colorItems);
+		}
+
+		row(horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+		{
+			overlay()
+			{
+				panel(bind: @showRecordButton, value: 0, margin: 0)
+				{
+					button(default: true,
+							commit_button: true,
+							name: "$$$/ActionPalette/Str/16616=Record",
+							identifier: "recordButton", action: @Record); 
+				}
+				
+				panel(bind: @showRecordButton, value: 1, margin: 0)
+				{
+					button(default: true,
+							commit_button: true,
+							name: "$$$/gOK=OK",
+							identifier: "okButton"); 
+				}
+			}
+			
+			button(cancel: true,
+					commit_button: true,
+					name: "$$$/gCancel=Cancel",
+					identifier: "cancelButton");
+		}
+	}
+}

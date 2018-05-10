@@ -1,0 +1,11 @@
+layout selectMenu
+{
+	view menu( id: 24,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/Select/FirstAbove=First Object Above", id:	187, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Select/NextAbove=Next Object Above", id:		185, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Select/NextBelow=Next Object Below", id:		184, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Select/LastBelow=Last Object Below", id:		186, help_id:0);
+}
+}

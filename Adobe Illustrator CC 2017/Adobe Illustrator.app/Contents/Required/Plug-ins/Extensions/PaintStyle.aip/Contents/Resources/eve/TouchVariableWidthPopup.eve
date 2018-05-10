@@ -1,0 +1,35 @@
+layout VariableWidthPopup
+{
+	view subview(identifier: "VariableWidthPopupEveSubView",
+			 layout_theme: @panel,
+			 show_border: false,
+			 child_vertical: @align_center,
+			 margin: gPanelToolbarSubviewMargin,
+			 spacing: gPanelToolbarTopSpacing,
+			 placement: @place_column)	
+	{
+			multicolumn_tree(identifier: "MCT",
+							wants_focus: false,
+							height: 218,
+							width: 136
+							);
+			row(vertical: @align_bottom, horizontal: @align_fill)
+			{			
+			buttongroup(horizontal: @align_right, vertical: @align_bottom, 
+							 child_vertical: @align_fill,spacing: gPanelToolbarIconSpacing, child_width: gPanelToolbarIconWidth, child_height: gPanelToolbarIconHeight)
+			{
+				button(identifier: "Delete",
+						action: @delete,
+						image: {normal: "SP_Delete_Wi_N.png",dark_normal:"SP_Delete_Wi_N_D.png"},
+						alt: "$$$/PaintStyle/Str/VariableWidth/DeleteToolTip=Delete Profile",
+						wants_focus: false);
+
+				button(identifier: "Reset",
+						action: @reset,
+						image: {normal: "SP_Reset_Wi_N.png", dark_normal:"SP_Reset_Wi_N_D.png"},
+						alt: "$$$/PaintStyle/Str/VariableWidth/ResetToolTip=Reset Profiles",
+						wants_focus: false);
+			}
+			}
+	}
+}

@@ -1,0 +1,24 @@
+sheet SmartExportUI
+{
+	interface:
+		AddButtonType:0;
+		ViewToggle:1;
+		ShowViewToggle:true;
+		ActiveTab: 0;
+		Selection: -1;
+		Selection_all_artboards:0;
+		Selection_artboards_range:1;
+		Selection_full_document:2;
+		AssetTabEmptyState: false;
+		ShowEmptyWarning:false;
+		
+		ShowArtboardOptions <== (ActiveTab==0);
+		ShowAssetOptions <== (ActiveTab==1);
+
+		ExportButtonName <== ( (ActiveTab == 0 )? "$$$/SmartExportUI/SmartExportDialog/ExportArtboard=Export Artboard" : "$$$/SmartExportUI/SmartExportDialog/ExportAsset=Export Asset");
+
+		SelectName <== ( (ActiveTab == 0 )? "$$$/SmartExportUI/SmartExportDialog/SelectArtboards=Select:" : "$$$/SmartExportUI/SmartExportDialog/SelectAssets=Select:");
+		
+		IsMacOS <== ( os == @mac) ;
+		IsWinOS <== !IsMacOS;
+}

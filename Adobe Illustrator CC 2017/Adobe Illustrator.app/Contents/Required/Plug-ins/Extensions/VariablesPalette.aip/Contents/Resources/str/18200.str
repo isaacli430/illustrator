@@ -1,0 +1,42 @@
+/* [1] */
+$$$/VariablesPalette/Str/ObjectDynamic=Make Object Dynamic
+/* [2] */
+$$$/VariablesPalette/Str/VisibilityDynamic=Make Visibility Dynamic
+/* [3] */
+$$$/VariablesPalette/Str/NewVar=New Variable
+/* [4] */
+$$$/VariablesPalette/Str/DeleteVar=Delete Variable
+/* [5] */
+$$$/VariablesPalette/Str/VarOp=Variable Options
+/* [6] */
+$$$/VariablesPalette/Str/LoadVarLib=Load Variable Library
+/* [7] */
+$$$/VariablesPalette/Str/SaveVarLib=Save Variable Library
+/* [8] */
+$$$/VariablesPalette/Str/UnbindVar=Unbind Variable
+/* [9] */
+$$$/VariablesPalette/Str/CapDataSet=Capture Data Set
+/* [10] */
+$$$/VariablesPalette/Str/DelDataSet=Delete Data Set
+/* [11] */
+$$$/VariablesPalette/Str/UpDataSet=Update Data Set
+/* [12] */
+$$$/VariablesPalette/Str/RenDataSet=Rename Data Set
+/* [13] */
+$$$/VariablesPalette/Str/POptions=Panel Options
+/* [14] */
+$$$/VariablesPalette/Str/NxtDataSet=Next Data Set
+/* [15] */
+$$$/VariablesPalette/Str/PrevSet=Previous Data Set
+/* [16] */
+$$$/VariablesPalette/Str/LVariables=Lock Variables
+/* [17] */
+$$$/VariablesPalette/Str/UnlockVari=Unlock Variables
+/* [18] */
+$$$/VariablesPalette/Str/ByType=Sort By Type
+/* [19] */
+$$$/VariablesPalette/Str/ByVar=Sort By Variable
+/* [20] */
+$$$/VariablesPalette/Str/ByObj=Sort By Object
+/* [21] */
+$$$/VariablesPalette/Str/Vars=Variables

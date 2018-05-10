@@ -1,0 +1,9 @@
+layout docColorMenu
+{
+	view menu( id: 44,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/DocMode/CMYK=&CMYK Color", id:	223, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/DocMode/RGB=&RGB Color", id:		224, help_id:0);	
+}
+}

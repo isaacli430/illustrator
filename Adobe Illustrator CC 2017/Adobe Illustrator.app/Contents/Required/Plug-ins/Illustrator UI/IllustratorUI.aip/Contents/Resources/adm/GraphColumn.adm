@@ -1,0 +1,28 @@
+sheet GraphColumn
+{
+	interface:
+		designListValue:0;
+		
+		retainColumnTypeValue:0 <== (designListValue == 0) ? retainColumnTypeValue : columnTypeValue;
+		columnTypeValue:0 <== (designListValue == 0) ? retainColumnTypeValue : columnTypeValue;
+		
+		retainRotateLegendValue:0 <== (designListValue == 0) ? retainRotateLegendValue : rotateLegendValue;
+		rotateLegendValue:0 <== (designListValue == 0) ? retainRotateLegendValue : rotateLegendValue;
+		
+		retainEachDesignValue: 0 <== designListValue == 0 || columnTypeValue != 2 ? retainEachDesignValue: eachDesignValue;
+		eachDesignValue:0 <== designListValue == 0 || columnTypeValue != 2 ? retainEachDesignValue: eachDesignValue;
+		
+		retainFractionsPopupValue : 0 <== designListValue == 0 || columnTypeValue != 2 ? retainFractionsPopupValue: fractionsPopupValue;
+		fractionsPopupValue:0 <== designListValue == 0 || columnTypeValue != 2 ? retainFractionsPopupValue: fractionsPopupValue;
+		
+		columnTypeItems: [
+							{name:"$$$/Graphs/ColumnType/VerticallyScaled=Vertically Scaled", value: 0},
+							{name:"$$$/Graphs/ColumnType/UniformlyScaled=Uniformly Scaled", value:1},
+							{name:"$$$/Graphs/ColumnType/Repeating=Repeating", value:2},
+							{name:"$$$/Graphs/ColumnType/Sliding=Sliding", value:3}
+						 ];
+		fractionPopupItems: [
+								{name:"$$$/Graphs/Fraction/ChopDesign=Chop Design", value:0},
+								{name:"$$$/Graphs/Fraction/ScaleDesign=Scale Design", value:1}
+							];
+}

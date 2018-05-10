@@ -1,0 +1,25 @@
+layout SVGFilter
+{
+   view subview(identifier: "AIEveSubView", placement: @place_column, show_border: false, child_horizontal:@align_fill, spacing: @unrelated_spacing, layout_theme: @dialog_large)
+    {	
+		group(child_horizontal:@align_right, placement: @place_column, spacing:0, margin: [0, 1, 0, 1])
+		{		
+				multicolumn_tree(identifier: "filterListItem", set_default_focus: true, vertical: @align_top, horizontal: @align_fill, width:250, height:105);
+				row(horizontal:@align_right, spacing:0, margin: 0)
+				{
+					button(identifier: "EditSVGFilter", wants_focus: false, show_border:@hover, action: @EditFilter, alt: "$$$/SVGFileFormatUI/toolTip/Edit=Edit SVG Filter", image:{normal:"EditSVGFilter_N.png", dark_normal:"EditSVGFilter_D.png"});
+					button(identifier: "NewSVGFilter", wants_focus: false, show_border:@hover, action: @NewFilter, alt: "$$$/SVGFileFormatUI/toolTip/New=New SVG Filter", image:{normal:"NewSVGFilter_N.png", dark_normal:"NewSVGFilter_D.png"});
+					button(identifier: "DeleteSVGFilter", wants_focus: false, show_border:@hover, action: @DeleteFilter, alt: "$$$/SVGFileFormatUI/toolTip/Delete=Delete SVG Filter", image:{normal:"DeleteSVGFilter_N.png", dark_normal:"DeleteSVGFilter_D.png"});
+				}	
+		}					   
+		row(spacing: @separated_spacing)
+		{
+			checkbox(identifier: "Preview", bind:@PreviewCell, horizontal: @align_left, vertical: @align_center, name: "$$$/SVGFileFormatUI/ApplySVGFilterDlg/Preview=&Preview");
+			row(horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+			{
+				button(default: true, commit_button: true, identifier: "okButton", name: "$$$/SVGFileFormatUI/ApplySVGFilterDlg/Ok=OK");
+				button(cancel: true, commit_button: true, identifier: "cancelButton", name: "$$$/SVGFileFormatUI/ApplySVGFilterDlg/Cancel=Cancel");
+			}
+		}
+    }
+}

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE Layout [
+  <!ENTITY kTheme_LargeDialog "dialog_large">
+  <!ENTITY kTheme_Panel "panel">
+  <!ENTITY kTheme_ControlBar "controlbar">
+  <!ENTITY kTheme_TouchPanel "touch_panel">
+  <!ENTITY kTheme_TouchToolOptions "touch_tooloptions">
+  <!ENTITY kTheme_TouchAppbar "touch_appbar">
+    
+  <!ENTITY kWidget_Default "">
+  <!ENTITY kWidget_Group "group">
+  <!ENTITY kWidget_RadioGroup "radiogroup">
+  <!ENTITY kWidget_Subview "subview">
+
+  <!ENTITY kSpacingOverride_Connected "connected_spacing">
+  <!ENTITY kSpacingOverride_LabelWidget "label_widget_spacing">
+  <!ENTITY kSpacingOverride_ButtonGroup "button_group_spacing">
+  <!ENTITY kSpacingOverride_Related "related_spacing">
+  <!ENTITY kSpacingOverride_InterGroup "inter_group_spacing">
+  <!ENTITY kSpacingOverride_Unrelated "unrelated_spacing">
+  <!ENTITY kSpacingOverride_Separated "separated_spacing">
+
+  <!ENTITY kGlobalConstant_Indentation "gIndent">
+  <!ENTITY kGlobalConstant_LargeIndentation "gLargeIndent">
+  <!ENTITY kGlobalConstant_LargeSpacing "gLargeSpacing">
+  
+  <!ENTITY kGlobalConstant_LargeTouchWidgetWidth "gLargeTouchWidgetWidth">
+  <!ENTITY kGlobalConstant_LargeTouchWidgetHeight "gLargeTouchWidgetHeight">
+  <!ENTITY kGlobalConstant_SmallTouchWidgetWidth "gSmallTouchWidgetWidth">
+  <!ENTITY kGlobalConstant_SmallTouchWidgetHeight "gSmallTouchWidgetHeight">
+
+  <!ENTITY kNumberConstant_LabelWidgetSpacing "3">
+  <!ENTITY kNumberConstant_LabelWidgetSpacingForPanel "3">
+]>
+
+<Layout>
+  <Theme name="&kTheme_LargeDialog;">
+    <Control name="&kWidget_Default;">
+      <Margin top="0" left="0" bottom="0" right="0"/>
+      <Spacing value="10"/>
+      <LabelWidgetSpacing value="&kNumberConstant_LabelWidgetSpacing;"/>
+    </Control>
+    <Control name="&kWidget_Group;">
+      <Margin top="10" left="10" bottom="15" right="10"/>
+      <Spacing value="10"/>
+      <LabelWidgetSpacing value="&kNumberConstant_LabelWidgetSpacing;"/>
+    </Control>
+    <Control name="&kWidget_RadioGroup;">
+      <Margin top="0" left="0" bottom="0" right="0"/>
+      <Spacing value="10"/>
+      <LabelWidgetSpacing value="&kNumberConstant_LabelWidgetSpacing;"/>
+    </Control>
+    <Control name="&kWidget_Subview;">
+      <Margin top="22" left="15" bottom="30" right="15"/>
+      <Spacing value="15"/>
+      <LabelWidgetSpacing value="&kNumberConstant_LabelWidgetSpacing;"/>
+    </Control>
+    <SpacingOverride name="&kSpacingOverride_Connected;" value="2"/>
+    <SpacingOverride name="&kSpacingOverride_LabelWidget;" value="&kNumberConstant_LabelWidgetSpacing;"/>
+    <SpacingOverride name="&kSpacingOverride_ButtonGroup;" value="15"/>
+    <SpacingOverride name="&kSpacingOverride_Related;" value="5"/>
+    <SpacingOverride name="&kSpacingOverride_InterGroup;" value="15"/>
+    <SpacingOverride name="&kSpacingOverride_Unrelated;" value="22"/>
+    <SpacingOverride name="&kSpacingOverride_Separated;" value="20"/>
+  </Theme>
+  <Theme name="&kTheme_Panel;">
+    <Control name="&kWidget_Default;">
+      <Margin top="0" left="0" bottom="0" right="0"/>
+      <Spacing value="5"/>
+      <LabelWidgetSpacing value="&kNumberConstant_LabelWidgetSpacingForPanel;"/>
+    </Control>
+    <Control name="&kWidget_Group;">
+      <Margin top="10" left="10" bottom="15" right="10"/>
+      <Spacing value="5"/>
+      <LabelWidgetSpacing value="&kNumberConstant_LabelWidgetSpacingForPanel;"/>
+    </Control>
+    <Control name="&kWidget_RadioGroup;">
+      <Margin top="0" left="0" bottom="0" right="0"/>
+      <Spacing value="5"/>
+      <LabelWidgetSpacing value="&kNumberConstant_LabelWidgetSpacingForPanel;"/>
+    </Control>
+    <Control name="&kWidget_Subview;">
+      <Margin top="5" left="5" bottom="5" right="5"/>
+      <Spacing value="5"/>
+      <LabelWidgetSpacing value="&kNumberConstant_LabelWidgetSpacingForPanel;"/>
+    </Control>
+    <SpacingOverride name="&kSpacingOverride_Connected;" value="2"/>
+    <SpacingOverride name="&kSpacingOverride_LabelWidget;" value="&kNumberConstant_LabelWidgetSpacingForPanel;"/>
+    <SpacingOverride name="&kSpacingOverride_ButtonGroup;" value="10"/>
+    <SpacingOverride name="&kSpacingOverride_Related;" value="5"/>
+    <SpacingOverride name="&kSpacingOverride_InterGroup;" value="5"/>
+    <SpacingOverride name="&kSpacingOverride_Unrelated;" value="22"/>
+    <SpacingOverride name="&kSpacingOverride_Separated;" value="10"/>
+  </Theme>
+   <Theme name="&kTheme_ControlBar;">
+    <Control name="&kWidget_Default;">
+      <Margin top="0" left="0" bottom="0" right="0"/>
+      <Spacing value="10"/>
+      <LabelWidgetSpacing value="&kNumberConstant_LabelWidgetSpacing;"/>
+    </Control>
+    <Control name="&kWidget_Group;">
+      <Margin top="0" left="0" bottom="0" right="0"/>
+      <Spacing value="5"/>
+      <LabelWidgetSpacing value="&kNumberConstant_LabelWidgetSpacing;"/>
+    </Control>
+    <Control name="&kWidget_RadioGroup;">
+      <Margin top="0" left="0" bottom="0" right="0"/>
+      <Spacing value="5"/>
+      <LabelWidgetSpacing value="&kNumberConstant_LabelWidgetSpacing;"/>
+    </Control>
+    <Control name="&kWidget_Subview;">
+      <Margin top="5" left="7" bottom="5" right="7"/>
+      <Spacing value="10"/>
+      <LabelWidgetSpacing value="&kNumberConstant_LabelWidgetSpacing;"/>
+    </Control>
+    <SpacingOverride name="&kSpacingOverride_Connected;" value="2"/>
+    <SpacingOverride name="&kSpacingOverride_LabelWidget;" value="&kNumberConstant_LabelWidgetSpacing;"/>
+    <SpacingOverride name="&kSpacingOverride_ButtonGroup;" value="10"/>
+    <SpacingOverride name="&kSpacingOverride_Related;" value="5"/>
+    <SpacingOverride name="&kSpacingOverride_InterGroup;" value="15"/>
+    <SpacingOverride name="&kSpacingOverride_Unrelated;" value="22"/>
+    <SpacingOverride name="&kSpacingOverride_Separated;" value="10"/>
+  </Theme>
+  <Theme name="&kTheme_TouchPanel;">
+    <Control name="&kWidget_Default;">
+      <Margin top="0" left="0" bottom="0" right="0"/>
+      <Spacing value="5"/>
+      <LabelWidgetSpacing value="&kNumberConstant_LabelWidgetSpacing;"/>
+    </Control>
+    <Control name="&kWidget_Group;">
+      <Margin top="10" left="10" bottom="15" right="10"/>
+      <Spacing value="5"/>
+      <LabelWidgetSpacing value="&kNumberConstant_LabelWidgetSpacing;"/>
+    </Control>
+    <Control name="&kWidget_RadioGroup;">
+      <Margin top="0" left="0" bottom="0" right="0"/>
+      <Spacing value="5"/>
+      <LabelWidgetSpacing value="&kNumberConstant_LabelWidgetSpacing;"/>
+    </Control>
+    <Control name="&kWidget_Subview;">
+      <Margin top="10" left="10" bottom="10" right="10"/>
+      <Spacing value="5"/>
+      <LabelWidgetSpacing value="&kNumberConstant_LabelWidgetSpacing;"/>
+    </Control>
+    <SpacingOverride name="&kSpacingOverride_Connected;" value="2"/>
+    <SpacingOverride name="&kSpacingOverride_LabelWidget;" value="&kNumberConstant_LabelWidgetSpacing;"/>
+    <SpacingOverride name="&kSpacingOverride_ButtonGroup;" value="10"/>
+    <SpacingOverride name="&kSpacingOverride_Related;" value="5"/>
+    <SpacingOverride name="&kSpacingOverride_InterGroup;" value="5"/>
+    <SpacingOverride name="&kSpacingOverride_Unrelated;" value="22"/>
+    <SpacingOverride name="&kSpacingOverride_Separated;" value="10"/>
+  </Theme>
+  <Theme name="&kTheme_TouchToolOptions;">
+    <Control name="&kWidget_Default;">
+      <Margin top="0" left="0" bottom="0" right="0"/>
+      <Spacing value="10"/>
+      <LabelWidgetSpacing value="&kNumberConstant_LabelWidgetSpacing;"/>
+    </Control>
+    <Control name="&kWidget_Group;">
+      <Margin top="0" left="0" bottom="0" right="0"/>
+      <Spacing value="10"/>
+      <LabelWidgetSpacing value="&kNumberConstant_LabelWidgetSpacing;"/>
+    </Control>
+    <Control name="&kWidget_RadioGroup;">
+      <Margin top="0" left="0" bottom="0" right="0"/>
+      <Spacing value="0"/>
+      <LabelWidgetSpacing value="&kNumberConstant_LabelWidgetSpacing;"/>
+    </Control>
+    <Control name="&kWidget_Subview;">
+      <Margin top="10" left="7" bottom="10" right="7"/>
+      <Spacing value="10"/>
+      <LabelWidgetSpacing value="&kNumberConstant_LabelWidgetSpacing;"/>
+    </Control>
+    <SpacingOverride name="&kSpacingOverride_Connected;" value="2"/>
+    <SpacingOverride name="&kSpacingOverride_LabelWidget;" value="&kNumberConstant_LabelWidgetSpacing;"/>
+    <SpacingOverride name="&kSpacingOverride_ButtonGroup;" value="10"/>
+    <SpacingOverride name="&kSpacingOverride_Related;" value="5"/>
+    <SpacingOverride name="&kSpacingOverride_InterGroup;" value="10"/>
+    <SpacingOverride name="&kSpacingOverride_Unrelated;" value="22"/>
+    <SpacingOverride name="&kSpacingOverride_Separated;" value="10"/>
+  </Theme>
+  <Theme name="&kTheme_TouchAppbar;">
+    <Control name="&kWidget_Default;">
+      <Margin top="0" left="0" bottom="0" right="0"/>
+      <Spacing value="5"/>
+      <LabelWidgetSpacing value="&kNumberConstant_LabelWidgetSpacing;"/>
+    </Control>
+    <Control name="&kWidget_Group;">
+      <Margin top="10" left="10" bottom="15" right="10"/>
+      <Spacing value="5"/>
+      <LabelWidgetSpacing value="&kNumberConstant_LabelWidgetSpacing;"/>
+    </Control>
+    <Control name="&kWidget_RadioGroup;">
+      <Margin top="0" left="0" bottom="0" right="0"/>
+      <Spacing value="5"/>
+      <LabelWidgetSpacing value="&kNumberConstant_LabelWidgetSpacing;"/>
+    </Control>
+    <Control name="&kWidget_Subview;">
+      <Margin top="0" left="0" bottom="0" right="0"/>
+      <Spacing value="5"/>
+      <LabelWidgetSpacing value="&kNumberConstant_LabelWidgetSpacing;"/>
+    </Control>
+    <SpacingOverride name="&kSpacingOverride_Connected;" value="2"/>
+    <SpacingOverride name="&kSpacingOverride_LabelWidget;" value="&kNumberConstant_LabelWidgetSpacing;"/>
+    <SpacingOverride name="&kSpacingOverride_ButtonGroup;" value="10"/>
+    <SpacingOverride name="&kSpacingOverride_Related;" value="5"/>
+    <SpacingOverride name="&kSpacingOverride_InterGroup;" value="5"/>
+    <SpacingOverride name="&kSpacingOverride_Unrelated;" value="22"/>
+    <SpacingOverride name="&kSpacingOverride_Separated;" value="10"/>
+  </Theme>
+  <GlobalConstant name="&kGlobalConstant_Indentation;" value="18"/>
+  <GlobalConstant name="&kGlobalConstant_LargeIndentation;" value="30"/>
+  <GlobalConstant name="&kGlobalConstant_LargeSpacing;" value="18"/>
+</Layout>
+
+

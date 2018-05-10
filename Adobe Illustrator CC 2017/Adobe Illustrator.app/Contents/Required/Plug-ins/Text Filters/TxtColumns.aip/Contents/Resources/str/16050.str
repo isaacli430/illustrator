@@ -1,0 +1,40 @@
+/* [1] */
+-108
+/* [2] */
+$$$/TxtColumns/Str/16052/Mac=The filter cannot complete because there isn't enough memory (RAM) available.
+/* [3] */
+271
+/* [4] */
+$$$/TxtColumns/Str/16054/Mac=The filter cannot complete because there isn't enough memory (RAM) available.
+/* [5] */
+SEGM
+/* [6] */
+$$$/TxtColumns/Str/16056=The filter cannot complete because a path has too many anchor points.
+/* [7] */
+NESS
+/* [8] */
+$$$/TxtColumns/Str/16058=The filter cannot complete because a layer is locked or invisible.
+/* [9] */
+!sel
+/* [10] */
+$$$/TxtColumns/Str/16060=Please select one or more closed path objects (or rectangles)
+/* [11] */
+MIXT
+/* [12] */
+$$$/TxtColumns/Str/16062=You must select all rectangles or all text blocks; you can't mix the selection.
+/* [13] */
+LINK
+/* [14] */
+$$$/TxtColumns/Str/16064=Please link the text blocks and try again.
+/* [15] */
+TSEL
+/* [16] */
+$$$/TxtColumns/Str/16066=Please select the text blocks with the Selection tool instead of the Type tool.
+/* [17] */
+WRAP
+/* [18] */
+$$$/TxtColumns/Str/16068=Split Into Grid filter can't operate on text blocks that have wraps; please select Release Wrap from the text wrap menu under object menu.
+/* [19] */
+ALSE
+/* [20] */
+$$$/TxtColumns/Str/16070=You must select all of the text objects that are linked together.

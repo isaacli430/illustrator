@@ -1,0 +1,37 @@
+layout EnvelopeMeshPanelGroup
+{
+	view subview(identifier: "EnvelopeControlPanelGroupUI",					
+					show_border: false,
+					layout_theme:  @controlbar,
+					placement: @place_row,
+					child_vertical:  @align_center,
+					margin:0,
+					spacing: 5,
+					height:  31					
+				 )	
+	{											
+		optional(identifier: "EnvelopeWarpOptionsSubGroup", placement: @place_row, child_vertical: @align_center, margin : 0, spacing: @related_spacing)
+		{
+			unit_hot_number(decimal_places: 0,
+							digits: 2,
+							max_value:50,
+							stepper: true,
+							min_value:1,
+							name: "$$$/Deform/CreateGridControlGroup/Rows=Rows:",
+							identifier: "RowsSpinEditCG");
+							
+             unit_hot_number(decimal_places: 0,
+							digits: 2,
+							stepper: true,
+							max_value:50,
+							min_value:1,							
+							name: "$$$/Deform/CreateGridControlGroup/Columns=Columns:",
+							identifier: "ColsSpinEditCG");	
+							
+			button(identifier: "ResetWarpCG",
+				wants_focus: false,
+				name: "$$$/Deform/Str/16428=Reset Envelope Shape",
+				alt: "$$$/Deform/Str/16428=Reset Envelope Shape");			
+		}		
+	}
+}

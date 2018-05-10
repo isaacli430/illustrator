@@ -1,0 +1,52 @@
+layout Scale
+{
+    view subview(identifier: "AIEveSubView",
+                 layout_theme: @dialog_large, child_horizontal:@align_fill,
+                 placement: @place_column, spacing:@unrelated_spacing,
+                 show_border: false)
+    {
+       
+      column(child_horizontal: @align_fill)
+      {
+          group(identifier: "PGridSettingsScale",
+                name: "$$$/PerspectiveUI/Dlg/AutoOptions/ScaleGroup=Scale", placement: @place_row)
+          {
+              column(horizontal: @align_fill, spacing: @related_spacing) {  
+                row(child_vertical: @align_center, horizontal: @align_fill) {
+                  unit_hot_number(identifier: "ArtScaleNumberEdit",
+                                  min_value: 1,
+                                  set_default_focus: true,
+                                  max_value:1000000, 
+                                  decimal_places: 0, 
+                                  digits: 8, horizontal: @align_left);
+                  static_text(identifier: "ScaleEqualStaticText",
+                              name: "$$$/PerspectiveUI/Scale/EQ==", horizontal: @align_right);
+                }
+                static_text(identifier: "ArtBoardStaticText",
+                            name: "$$$/PerspectiveUI/Scale/ArtBoardStaticText=Artboard", horizontal: @align_left);
+              }
+
+              column(horizontal: @align_fill, spacing: @related_spacing){
+                unit_hot_number(identifier: "RealScaleNumberEdit",
+                                min_value: 1,
+                                max_value:1000000, 
+                                decimal_places: 0, 
+                                digits: 8, horizontal: @align_left);
+                static_text(identifier: "RealScaleStaticText",
+                            name: "$$$/PerspectiveUI/Scale/RealWordStaticText=Real world", horizontal: @align_left);
+              }
+          }
+
+      }
+      
+    row(child_horizontal: @align_right, reverse: os == @mac,spacing: @related_spacing)
+		{ 
+				button(default: true,
+							identifier: "okButton",commit_button: true,
+							name: "$$$/gOK=OK");
+				button(cancel: true,
+							identifier: "cancelButton",commit_button: true,
+							name: "$$$/gCancel=Cancel");       
+		} 
+  }
+}

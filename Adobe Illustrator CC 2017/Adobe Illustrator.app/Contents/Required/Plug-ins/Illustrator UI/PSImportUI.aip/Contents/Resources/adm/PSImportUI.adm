@@ -1,0 +1,40 @@
+sheet PSImportDlg
+{
+interface:
+	Links: 0;
+	EnableImportHiddenLayers: false;
+	unlink ImportHiddenLayers: false <== EnableImportHiddenLayers && ObjectOptions == "ConvertLayers" ? ImportHiddenLayers : false;
+	EnableImportSlice: true;
+	ImportSlice: false <== EnableImportSlice ? ImportSlice : false;
+	LayerCompAvail: false;
+
+	LinkChoices:	[
+						{name: "$$$/PhotoshopFileFormat/ImportDialog/KeepLayerVisibilityOverridesStr=Keep Layer Visibility Overrides",		value: 0},
+						{name: "$$$/PhotoshopFileFormat/ImportDialog/UsePhotoshopsLayerVisibilityStr=Use Photoshop's Layer Visibility",		value: 1}
+					];
+
+	LayerCompChoices:	[
+							{name:  "$$$/PhotoshopFileFormat/Mnu/16040/1=Last Document State    ",		value: 0}
+						];
+
+	LayerCompType: 0 <== !LayerCompAvail ? 0 : LayerCompType;
+
+	showPreviewVal: false;
+
+	ColorModeMismatch: false;
+	ShowColorModeMismatchWarning: false <== ColorModeMismatch && ObjectOptions == "ConvertLayers";
+
+	EnableConvertLayersOption: true;
+	ObjectOptions: "ConvertLayers" <== ConvertLayersOption ? "ConvertLayers" : "FlattenLayers";
+	/* The following cells are bound to the two radio buttons */
+	ConvertLayersOption: false <== EnableConvertLayersOption ? ConvertLayersOption : false;
+	FlattenLayersOption: true;
+
+logic:
+	/* This enforces the radio-group behavior */
+	when (EnableConvertLayersOption) relate
+	{
+		ConvertLayersOption <== !FlattenLayersOption;
+		FlattenLayersOption <== !ConvertLayersOption;
+	}
+}

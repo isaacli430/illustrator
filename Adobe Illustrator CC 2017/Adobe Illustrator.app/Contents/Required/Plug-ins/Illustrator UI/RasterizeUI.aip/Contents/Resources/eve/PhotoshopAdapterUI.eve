@@ -1,0 +1,83 @@
+layout PhotoshopAdapterUI
+{
+	view subview(identifier: "AIEveSubView",
+					placement: @place_column,
+					show_border: false,
+					layout_theme: @dialog_large,
+					spacing: @unrelated_spacing
+					)
+    {
+	column(child_horizontal: @align_fill)
+	{
+			popup(identifier: "ColorModelPopup",
+					name: "$$$/Rasterize/Dlg/AutoOptions/TextModel=&Color Model:",
+					include_custom_item: false,
+					set_default_focus: true,
+					items: [ { name: "$$$/Rasterize/Mnu/Model/RGB=RGB", value: "rgbPopupValue" },
+							 { name: "$$$/Rasterize/Mnu/Model/CMYK=CMYK", value: "cmykPopupValue" },
+							 { name: "$$$/Rasterize/Mnu/Model/Grayscale=Grayscale", value: "grayscalePopupValue" },
+							 { name: "$$$/Rasterize/Mnu/Model/Bitmap=Bitmap", value:"bitmapValue" }] );
+					
+			row(horizontal: @align_fill, child_horizontal: @align_fill)
+			{
+				popup(identifier: "ResolutionPopup", include_custom_item: false, bind: @ResolutionPopup,
+					  name: "$$$/Rasterize/Dlg/AutoOptions/GroupResolution=&Resolution:",
+					  items: [{ name: "$$$/Rasterize/Dlg/AutoOptions/RadioScreen=Screen (72 ppi)", value: 72 },
+						{ name: "$$$/Rasterize/Dlg/AutoOptions/RadioMedium=Medium (150 ppi)", value: 150 },
+						{ name: "$$$/Rasterize/Dlg/AutoOptions/RadioHigh=High (300 ppi)", value: 300 },
+						{ name: "", value: 0},
+						{ name: "$$$/Rasterize/Dlg/AutoOptions/RadioOther=Other", value: -1 }
+						]);
+				
+				panel(bind: @ResolutionPopup, value: -1)
+				{
+					unit_hot_number(identifier: "ResolutionNumberEdit",
+									min_value: 72,
+									max_value: 2400,
+									decimal_places: 2,
+									digits: 4,
+									suffix: "$$$/Rasterize/Dlg/AutoOptions/TextResolution=ppi",
+									bind: @OtherResolution,
+									guide_mask: [@guide_label]);
+				}				
+			}
+			
+			column(horizontal: @align_fill, child_horizontal: @align_fill,spacing: @inter_group_spacing)
+			{				
+				row(child_vertical: @align_top)
+				{
+					popup(identifier: "AntiAliasPopup",
+						bind: @Antialias,
+						name: "$$$/Rasterize/Dlg/Options/TextAntialiasing=&Anti-aliasing:",
+						include_custom_item: false,
+						items: [ { name: "$$$/Rasterize/Mnu/Antialiasing/None=None", value: 0 },
+						{ name: "$$$/Rasterize/Mnu/Antialiasing/ArtOptimized=Art Optimized (Supersampling)", value: 1 },
+						{ name: "$$$/Rasterize/Mnu/Antialiasing/TypeOptimized=Type Optimized (Hinted)", value: 2 } ] );
+				overlay()
+					{
+						panel(bind: @Antialias,	value: 1, margin: 0)
+						{
+							info_icon( icontype: "note", size: "small",
+							alt: "$$$/Rasterize/Str/ToolTip/ArtOptimizedAntialias=Text anti-aliasing settings will not be honored.");
+						}
+						panel(bind: @Antialias, value: 2, margin: 0)
+						{
+							info_icon( icontype: "note", size: "small",
+							alt: "$$$/Rasterize/Str/ToolTip/TextOptimizedAntialias=Best suited for text Objects. Text anti-aliasing settings will be honored.");
+						}	
+					}
+				}				
+			}
+		}				
+		row(horizontal: @align_fill,
+						child_horizontal: @align_right,
+						reverse: os == @mac, spacing: @related_spacing)
+					{
+						button(name: "$$$/gOK=OK",
+            					identifier: "okButton", commit_button: true);
+						button(name: "$$$/gCancel=Cancel",
+            				   identifier: "cancelButton", commit_button: true);
+					}
+	}	
+}
+

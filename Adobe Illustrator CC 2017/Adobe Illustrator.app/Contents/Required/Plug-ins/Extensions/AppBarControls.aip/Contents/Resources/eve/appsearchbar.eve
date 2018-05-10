@@ -1,0 +1,10 @@
+layout app_bar_search
+{		
+    view subview(identifier: "AIAppBarSearchView", name:'AIAppSearchBar', margin: 0, horizontal: @align_fill, vertical: @align_center, show_border: false, wants_focus: false)
+    {
+		row(margin: 0, vertical: @align_fill, horizontal: @align_fill)
+		{
+			edit_text(identifier: "DummyWidgetID", horizontal: @align_fill, vertical: @align_fill, characters: 20);
+		} 
+    }
+}

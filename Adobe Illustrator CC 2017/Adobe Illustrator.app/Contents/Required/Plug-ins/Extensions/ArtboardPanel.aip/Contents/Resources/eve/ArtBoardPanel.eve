@@ -1,0 +1,51 @@
+layout ArtBoardPanel
+{
+    view subview(identifier: "AIEveSubView",
+				 placement: @place_column,
+				 layout_theme: @panel,
+				 show_border: false,
+				 margin: gPanelToolbarSubviewMargin,
+				 spacing: gPanelToolbarTopSpacing,
+				 child_vertical: @align_center)
+	{
+		multicolumn_tree(identifier: "MCT",
+							wants_focus: false,
+							horizontal: @align_fill,
+							vertical: @align_fill);
+							
+		row(vertical: @align_bottom, horizontal: @align_fill)
+		{
+			static_text(identifier: "ArtboardNumber",
+						name: "$$$/ArtboardPanel/artboardCountMax=100 Artboards",
+						horizontal: @align_left,
+						vertical: @align_center);
+
+			
+			buttongroup(horizontal: @align_right, vertical: @align_bottom, 
+							 child_vertical: @align_fill,spacing: gPanelToolbarIconSpacing, child_width: gPanelToolbarIconWidth, child_height: gPanelToolbarIconHeight)
+			{
+				button(identifier: "MoveUp",
+						image: {normal: "SP_Up_Xs_N.png", dark_normal:"SP_Up_Xs_N_D.png"},
+						alt: "$$$/ArtboardPanel/TipString/MoveUp=Move Up",
+						wants_focus: false);
+						
+				button(identifier: "MoveDown",
+						image: {normal: "SP_Down_Xs_N.png", dark_normal:"SP_Down_Xs_N_D.png"},
+						alt: "$$$/ArtboardPanel/TipString/MoveDown=Move Down",
+						wants_focus: false);
+
+				button(identifier: "NewArtboard",
+						image: {normal: "SP_New_Wi_N.png", dark_normal: "SP_New_Wi_N_D.png"},
+						alt: "$$$/CropAreaPlugin/ControlPalette/Str/NewArtBoard=New Artboard",
+						wants_focus: false);
+						
+				button(identifier: "DeleteArtboard",
+						image: {normal: "SP_Delete_Wi_N.png", dark_normal: "SP_Delete_Wi_N_D.png"},
+						alt: "$$$/CropAreaPlugin/ControlPalette/Str/Delete=Delete Artboard",
+						wants_focus: false);
+						
+				resize_gripper_gap();
+			}
+		}
+	}
+}

@@ -1,0 +1,40 @@
+layout sizeMenu
+{
+	view menu( id: 20,
+				menubar: false )
+	{
+		menu( id: 1936292367,
+				text: "$$$/_MBAR/Mnu/Size/Other=&Other..." , help_id:0);
+		separator();
+		menu( id: 1936292352,
+				text: "$$$/_MBAR/Mnu/Size/6=6 pt", help_id:0 );
+		menu( id: 1936292353,
+				text: "$$$/_MBAR/Mnu/Size/7=7 pt" , help_id:0);
+		menu( id: 1936292354,
+				text: "$$$/_MBAR/Mnu/Size/8=8 pt", help_id:0 );
+		menu( id: 1936292355,
+				text: "$$$/_MBAR/Mnu/Size/9=9 pt" , help_id:0);
+		menu( id: 1936292356,
+				text: "$$$/_MBAR/Mnu/Size/10=10 pt" , help_id:0);
+		menu( id: 1936292357,
+				text: "$$$/_MBAR/Mnu/Size/11=11 pt" , help_id:0);
+		menu( id: 1936292358,
+				text: "$$$/_MBAR/Mnu/Size/12=12 pt", help_id:0 );
+		menu( id: 1936292359,
+				text: "$$$/_MBAR/Mnu/Size/14=14 pt", help_id:0 );
+		menu( id: 1936292360,
+				text: "$$$/_MBAR/Mnu/Size/18=18 pt", help_id:0 );
+		menu( id: 1936292361,
+				text: "$$$/_MBAR/Mnu/Size/21=21 pt", help_id:0 );
+		menu( id: 1936292362,
+				text: "$$$/_MBAR/Mnu/Size/24=24 pt" , help_id:0);
+		menu( id: 1936292363,
+				text: "$$$/_MBAR/Mnu/Size/36=36 pt", help_id:0 );
+		menu( id: 1936292364,
+				text: "$$$/_MBAR/Mnu/Size/48=48 pt" , help_id:0);
+		menu( id: 1936292365,
+				text: "$$$/_MBAR/Mnu/Size/60=60 pt" , help_id:0);
+		menu( id: 1936292366,
+				text: "$$$/_MBAR/Mnu/Size/72=72 pt" , help_id:0);
+	}
+}

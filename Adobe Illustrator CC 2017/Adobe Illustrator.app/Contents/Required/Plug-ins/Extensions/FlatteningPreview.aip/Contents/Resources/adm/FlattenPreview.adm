@@ -1,0 +1,47 @@
+sheet FlattenPreviewPanel
+{
+	interface:
+		HighlightPopupItems: [{name: "$$$/FlatteningPreview/PreviewPalette/HighlightMenu/ColorPreview=None (Color Preview)", value: 0},
+					    {name: "-", value: -1},
+                                  {name: "$$$/FlatteningPreview/PreviewPalette/HighlightMenu/RasterizeComplex=Rasterized Complex Regions", value: 2}, 
+                                  {name: "$$$/FlatteningPreview/PreviewPalette/HighlightMenu/TransparentObjects=Transparent Objects", value: 3}, 
+                                  {name: "$$$/FlatteningPreview/PreviewPalette/HighlightMenu/AffectedObjects=All Affected Objects", value: 4}, 
+                                  {name: "$$$/FlatteningPreview/PreviewPalette/HighlightMenu/AffectedFiles=Affected Linked EPS Files", value: 5}, 
+                                  {name: "$$$/FlatteningPreview/PreviewPalette/HighlightMenu/ExpandedPatterns=Expanded Patterns", value: 6}, 
+                                  {name: "$$$/FlatteningPreview/PreviewPalette/HighlightMenu/OutlinedStrokes=Outlined Strokes", value: 7}
+						];
+
+		OverprintPopupItems: [{name: "$$$/FlatteningPreview/PreviewPalette/OverprintMenu/Preserve=Preserve", value: 0}, 
+                                  {name: "$$$/FlatteningPreview/PreviewPalette/OverprintMenu/Discard=Discard", value: 1}, 
+                                  {name: "$$$/FlatteningPreview/PreviewPalette/OverprintMenu/Simulate=Simulate", value: 2}
+						 ];
+		PresetPopupItems: [{name: "$$$/FlatteningPreview/PreviewPalette/PresetMenu/Custom=Custom", value: 0},
+							{name: "-", value: -1}
+					    ];
+
+		ArtPopupItems: [  "72",	
+				      "150",
+				      "288",
+				      "300",
+					"400",
+					"600",
+					"900",
+					"1200",
+					"1600",
+					"2400"];
+		MeshPopupItems: [ "60",
+					"85", 
+					"120",
+					"133",
+					"144",
+					"150",
+					"175",
+					"200",
+					"300",
+					"400"
+					];
+	    filterSlider: {min_value: 0, max_value: 100};
+	    ShowOptionsPanel: 0 <== (BRPreviewPanelState == 1) ? 1 : 0;
+	    BRPreviewPanelState: 0;
+	    SpacingSliderValue: 0;
+}

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ExtensionManifest Version="5.0" ExtensionBundleId="com.adobe.illustrator.ShaperOnBoarding" ExtensionBundleVersion="1.0.0"
+		ExtensionBundleName="ShaperOnBoarding" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ExtensionList>
+		<Extension Id="com.adobe.illustrator.ShaperOnBoarding.extension1" Version="1.0" />
+	</ExtensionList>
+	<ExecutionEnvironment>
+		<HostList>
+			<Host Name="ILST" Version="19.0" />
+		</HostList>
+		<LocaleList>
+			<Locale Code="All" />
+		</LocaleList>
+		<RequiredRuntimeList>
+			<RequiredRuntime Name="CSXS" Version="5.0" />
+
+		</RequiredRuntimeList>
+	</ExecutionEnvironment>
+	<DispatchInfoList>
+		<Extension Id="com.adobe.illustrator.ShaperOnBoarding.extension1">
+			<DispatchInfo >
+				<Resources>
+				<MainPath>./index.html</MainPath>
+				<ScriptPath>./OnBoarding.jsx</ScriptPath>
+				<CEFCommandLine>
+                        <Parameter>--proxy-auto-detect</Parameter>
+				</CEFCommandLine>
+				</Resources>
+				<Lifecycle>
+					<AutoVisible>true</AutoVisible>
+				</Lifecycle>
+				<UI>
+					<Type>ModalDialog</Type>
+					<Menu>%IntroToShaper</Menu>
+					<Geometry>
+						<Size>
+							<Height>640</Height>
+							<Width>870</Width>
+						</Size>
+						<MaxSize>
+							<Height>640</Height>
+							<Width>870</Width>
+						</MaxSize>
+						<MinSize>
+							<Height>640</Height>
+							<Width>870</Width>
+						</MinSize>
+					</Geometry>
+				</UI>
+			</DispatchInfo>
+		</Extension>
+	</DispatchInfoList>
+</ExtensionManifest>

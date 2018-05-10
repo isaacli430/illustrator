@@ -1,0 +1,17 @@
+sheet RotateDialog
+{
+interface:
+	objectCheckBoxCell: true <== (dummyCell == true)? objectCheckBoxCell : true;
+	patternCheckBoxCell: false <== ( dummyCell == true)? patternCheckBoxCell : false ;
+	previewCheckBoxCell: true;
+	dummyCell: false;
+	angleEditNumber: 1.0;
+
+logic:
+	when (dummyCell) relate
+	{
+		objectCheckBoxCell <== (!patternCheckBoxCell && !objectCheckBoxCell)? !patternCheckBoxCell :objectCheckBoxCell;
+		patternCheckBoxCell <== (!patternCheckBoxCell && !objectCheckBoxCell)? !objectCheckBoxCell :patternCheckBoxCell;
+		
+	}
+}

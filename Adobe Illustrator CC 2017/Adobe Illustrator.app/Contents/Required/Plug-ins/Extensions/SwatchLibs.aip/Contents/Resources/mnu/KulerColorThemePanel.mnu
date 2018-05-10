@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+	<menuItem id="1" text="$$$/KulerPanel/FlyoutMenu/AddToSwatches/1=Add to Swatches"></menuItem>
+	<separator></separator>
+	<menuItem id="2" text="$$$/KulerPanel/FlyoutMenu/ShowFindField/2=Show Find Field"></menuItem>
+	<separator></separator>
+</menu>

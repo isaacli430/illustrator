@@ -1,0 +1,34 @@
+layout NewKinsokuUI
+{
+    view subview(identifier: "NewKinsokuShoriSet",
+                 layout_theme: @dialog_large,
+                 child_horizontal: @align_fill,
+		     placement: @place_column,
+                 show_border: false,
+				 spacing: @unrelated_spacing)
+    {
+        column(child_horizontal: @align_fill)
+        {
+            edit_text(name: "$$$/KinsokuDlg/NewDlg/Name=Name:",
+			    characters: 22,
+			    set_default_focus: true,
+			    identifier: "Name_editText",
+                       max_characters: 255);
+
+            popup(name: "$$$/KinsokuDlg/NewDlg/BasedOn=Based On:",
+			identifier: "BasedOn_popup");
+        }
+
+		row(child_horizontal: @align_right, child_vertical: @align_center, reverse: os == @mac, spacing:@related_spacing)
+		{ 
+          button(
+              identifier: "okButton",
+              name: "$$$/gOK=OK",
+              commit_button: true);
+          button(
+              identifier: "cancelButton",
+              name: "$$$/gCancel=Cancel",
+              commit_button: true); 
+		} 
+    }
+}

@@ -1,0 +1,51 @@
+layout ActionPalettePlaybackOptionsUI
+{
+	interface:
+			PerformanceRadioGp: empty;
+   view subview(identifier: "AIEveSubView",
+    			 show_border: false,
+				 layout_theme: @dialog_large,
+					spacing: @unrelated_spacing)
+    {
+        group(name: "$$$/ActionPalette/Dlg/17200/8=Performance")
+        {
+            radiogroup(placement: @place_column, horizontal: @align_fill, show_border: false, margin: 0)
+		{
+
+		radio_button(name: "$$$/ActionPalette/Dlg/17200/3=&Accelerated",
+            			 bind: @PerformanceRadioGp,
+            			 value: @one,
+            			 identifier: "AcceleratedRadioButton");
+
+            radio_button(name: "$$$/ActionPalette/Dlg/17200/4=&Step By Step",
+            			 bind: @PerformanceRadioGp,
+            			 value: @two,
+            			 identifier: "StepByStepRadioButton");
+		
+		
+            row( spacing: @label_widget_spacing,horizontal:@align_fill)
+            {
+			radio_button(name: "$$$/ActionPalette/Dlg/17200/5=&Pause For:",
+                		bind: @PerformanceRadioGp,
+                		 value: @three,
+                		 identifier: "PauseForRadioButton");
+					
+			unit_hot_number(suffix: "$$$/ActionPalette/Dlg/17200/7=seconds",
+                		identifier: "SecondsNumberEdit",
+						digits: 4);
+				
+            }
+		}
+        }
+
+        row(horizontal: @align_fill,
+			child_horizontal: @align_right,
+			reverse: os == @mac, spacing: @related_spacing)
+		{
+			button(name: "$$$/gOK=OK",
+            	    identifier: "okButton", commit_button: true);
+			button(name: "$$$/gCancel=Cancel",
+            	   identifier: "cancelButton", commit_button: true);
+		}
+    }
+}

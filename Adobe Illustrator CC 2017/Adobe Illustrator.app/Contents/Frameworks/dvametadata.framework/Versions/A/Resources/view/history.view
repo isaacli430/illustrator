@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<views
+    xmlns="http://ns.adobe.com/metadata/ui/1.0/">
+	
+<!-- 
+	History View
+-->	
+<view name="com.adobe.xmp.view.history"
+      label="$$$/metadataui/history/view_label=History"
+      description="$$$/metadataui/history/view_description=Contains information regarding the identification, composition, and history of a resource."
+	  version="1.0"
+	  xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"
+	  xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#">
+
+	<property name="xmpMM:DocumentID"/>
+	<property name="xmpMM:InstanceID"/>	
+	<property name="xmpMM:OriginalDocumentID"/>		
+
+	<property name="xmpMM:DerivedFrom">
+	 	<property name="xmpMM:DerivedFrom/stRef:documentID"/>
+	 	<property name="xmpMM:DerivedFrom/stRef:instanceID"/> 	
+	</property>
+	
+	<property name="xmpMM:History"/>			
+	
+</view>
+
+</views>

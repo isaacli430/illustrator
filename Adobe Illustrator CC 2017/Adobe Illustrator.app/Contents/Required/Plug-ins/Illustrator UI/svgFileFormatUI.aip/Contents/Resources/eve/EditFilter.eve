@@ -1,0 +1,43 @@
+layout EditFilter
+{
+   view subview(identifier: "AIEveSubView",
+				 placement: @place_column,
+				 show_border: false,
+				 spacing: @unrelated_spacing,
+				 layout_theme: @dialog_large)
+    {	
+		column(spacing: @inter_group_spacing,horizontal: @align_fill)
+		{
+			edit_text(identifier: "FiterEditItem", characters: 70, lines: 30, set_default_focus: true,
+                          scrollable: true, bind:@SVGFilterText);
+                        
+       
+			group(horizontal: @align_fill)
+			{
+				panel(bind:@showWarning, value:true, placement: @place_row)
+				{
+					info_icon(icontype: "warning", size: "medium");      
+				
+					static_text(characters: 1, horizontal:@align_fill, name:@warningText);
+				}
+			}
+		}
+			
+		row(horizontal: @align_fill, child_horizontal: @align_fill,spacing: @separated_spacing)
+		{
+			button(identifier: "UpdatePreview", horizontal: @align_left, vertical: @align_fill, action:@PreviewAction, 
+				   name: "$$$/svgFileFormatUI/EditFilter/Dlg/UpdatePreview=Update &Preview",commit_button: true);
+				   	
+			row(child_horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+			{
+				button(default: true, commit_button: true,
+					   identifier: "okButton",
+					   name: "$$$/svgFileFormatUI/EditFilter/Dlg/Ok=&OK");
+
+				button(cancel: true, commit_button: true,
+					   identifier: "cancelButton",
+					   name: "$$$/svgFileFormatUI/EditFilter/Dlg/Cancel=&Cancel");
+			}
+		}
+    }
+}

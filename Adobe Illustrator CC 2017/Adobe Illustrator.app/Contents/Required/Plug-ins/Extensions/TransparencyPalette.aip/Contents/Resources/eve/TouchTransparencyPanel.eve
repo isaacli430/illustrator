@@ -1,0 +1,62 @@
+layout TouchTransparencyPanel
+{
+    view subview(identifier: "TouchTransparencyPanelSubView",
+				show_border: false,
+				layout_theme:@touch_panel)
+    {	
+		row( horizontal: @align_fill, vertical: @align_center )
+		{				
+			popup(	identifier: "BlendingModePopup", 
+					include_custom_item: false,
+					horizontal: @align_fill,
+					show_border : true,
+					items: [{name:"$$$/TransparencyPalette/Mnu/Mode/Normal=Normal", value:0}
+							,{name:"-"}
+							,{name:"$$$/TransparencyPalette/Mnu/Mode/Darken=Darken" , value:8}
+							,{name:"$$$/TransparencyPalette/Mnu/Mode/Multiply=Multiply" , value:1}
+							,{name:"$$$/TransparencyPalette/Mnu/Mode/ColorBurn=Color Burn" , value:7}
+							,{name:"-"}
+							,{name:"$$$/TransparencyPalette/Mnu/Mode/Lighten=Lighten" , value:9}
+							,{name:"$$$/TransparencyPalette/Mnu/Mode/Screen=Screen" , value:2}
+							,{name:"$$$/TransparencyPalette/Mnu/Mode/ColorDodge=Color Dodge" , value:6}
+							,{name:"-"}
+							,{name:"$$$/TransparencyPalette/Mnu/Mode/Overlay=Overlay" , value:3}
+							,{name:"$$$/TransparencyPalette/Mnu/Mode/SoftLight=Soft Light", value:4}
+							,{name:"$$$/TransparencyPalette/Mnu/Mode/HardLight=Hard Light" , value:5}
+							,{name:"-"}
+							,{name:"$$$/TransparencyPalette/Mnu/Mode/Difference=Difference" , value:10}
+							,{name:"$$$/TransparencyPalette/Mnu/Mode/Exclusion=Exclusion" , value:11}
+							,{name:"-"}
+							,{name:"$$$/TransparencyPalette/Mnu/Mode/Hue=Hue" , value:12}
+							,{name:"$$$/TransparencyPalette/Mnu/Mode/Saturation=Saturation" , value:13}
+							,{name:"$$$/TransparencyPalette/Mnu/Mode/Color=Color" , value:14}
+							,{name:"$$$/TransparencyPalette/Mnu/Mode/Luminosity=Luminosity" , value:15}],
+					bind: @BlendingMode,
+					alt: "$$$/TransparencyPalette/Str/16701=Blending Mode");		
+		}	
+		row( child_vertical: @align_center, horizontal: @align_fill)
+		{
+			column(horizontal: @align_left)
+			{
+				static_text(identifier: "OpacityValueLabel", theme_font_size: @medium, name: "$$$/TransparencyPalette/Str/TouchOpacityLabel=Opacity");   
+	        }
+			column(horizontal: @align_right)
+			{
+				edit_number(identifier: "OpacityValueEditNumber",
+							unit:"NumberEditUnit_Percent",
+							max_value: 100,
+	                        min_value: 0,
+	                        decimal_places: 0,
+	                        digits: 2,
+	                        touch_control: true
+							);    
+	        }
+
+		}		
+		row( horizontal: @align_fill, vertical:@align_center )
+		{
+			subview(identifier: "SliderView", horizontal:@align_fill, show_border: false, height:22);	
+		}		
+    }
+}
+

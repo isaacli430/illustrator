@@ -1,0 +1,65 @@
+layout VisualShortcutsDialog
+{
+	view dva_dialog(name: '$$$/dvaeve/ksv/kResDLGShortcutsDlgTitle=Keyboard Shortcuts', identifier:'VisualShortcutsDialog', canResize:'true', spacing:15)
+	{
+		row()
+		{
+			column(horizontal:align_left)
+			{
+				dva_popup(identifier:'setPopup', label:'$$$/dvaeve/ksv/kResDLGShortcutsDialogKeyboardLayoutPresetPopupName=Keyboard Layout Preset:', minWidth:260, minHeigth:20);
+				dva_popup(identifier:'panelPopup', label:'$$$/dvaeve/ksv/kResDLGShorcutsDialogCommandPanelPopupName=Commands:', minWidth:260, minHeight:20);
+			}
+			column(horizontal:align_left)
+			{
+				dva_static_text(minWidth:20, maxWidth:20);
+			}
+			column(horizontal:align_left)
+			{
+				row(horizontal: align_left, child_horizontal: align_left)
+				{
+					dva_button(name: '$$$/Premiere/DLG/kResDLGSaveAs=Save As...', identifier:'saveAsButton', minWidth:80);
+					dva_button(name: '$$$/dvaeve/ksv/kResDLGClipboard=Copy To Clipboard', identifier:'clipboardButton', minWidth:80);
+					dva_button(name: '$$$/Premiere/DLG/kResDLGDelete=Delete', identifier:'deleteButton', minWidth:80);
+				}
+			}
+		}
+		row(vertical:align_top, child_vertical:align_top, horizontal:align_fill)
+		{
+			dva_subview(identifier:'visualKeyboard', minWidth:1120, minHeight:385, maxWidth:1120, maxHeight:385);
+		}
+		row(vertical:align_top, child_vertical:align_top, horizontal:align_fill)
+		{
+			column(horizontal:align_fill, spacing:6)
+			{
+				dva_search_box(identifier:'searchBox', minWidth:220);
+			}
+			column(horizontal:align_fill, child_horizontal:align_fill, spacing:6)
+			{
+				dva_static_text(identifier:'selectedKey', minWidth:220);
+			}
+		}
+		row(horizontal:align_fill, child_horizontal:align_fill, vertical:align_top)
+		{
+			column(child_vertical: align_proportional, horizontal:align_fill, spacing:6)
+			{
+				dva_listbox(identifier:'shortcutsList', direction:'vertical', minWidth:500, minHeight:200, horizontal:align_fill);
+			}
+			column(child_vertical: align_proportional, horizontal:align_fill, spacing:6)
+			{
+				dva_listbox(identifier:'modifiersList', direction:'vertical', minWidth:500, minHeight:200, horizontal:align_fill);
+			}
+			column(horizontal:align_right, vertical:align_bottom)
+			{
+				dva_button(name: '$$$/dvaeve/ksv/kResDLGShortcutsDialogUndo=Undo', identifier:'undoButton', minWidth:95, maxWidth:95);
+				dva_button(name: '$$$/dvaeve/ksv/kResDLGShortcutsDialogClear=Clear', identifier:'clearButton', minWidth:95, maxWidth:95);
+			}
+		}
+		row(horizontal: align_right)
+		{
+			dva_static_image(identifier:'alertImage', minHeight:30, maxHeight:30, minWidth:30, maxWidth:30);
+			dva_subview(identifier:'alertText', minHeight:30, maxHeight:30, minWidth:1000, horizontal:align_fill, vertical:align_center, topSpace: 3);
+			dva_ok_cancel_row(minWidth:80, minHeight:20, maxHeight:20);
+		}
+
+	}
+}

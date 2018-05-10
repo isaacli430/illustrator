@@ -1,0 +1,70 @@
+layout PackageDialogUI
+{
+	view subview(identifier: "PackageDialogUI_subview",
+					layout_theme: @dialog_large,
+					spacing: @unrelated_spacing,
+					show_border: false,
+					placement: @place_column,
+					child_horizontal: @align_fill)
+	{
+		column(child_horizontal: @align_fill, spacing: @inter_group_spacing,horizontal: @align_fill)
+		{
+			row(child_horizontal: @align_fill,child_vertical: @align_center)
+			{
+				edit_text(identifier: "LocationCell", name: "$$$/Package/Dialog/Location=L&ocation:", 
+							set_default_focus: true, characters: 31,max_character: 255, bind:@LocationCell);
+				
+				button(identifier: "ChooseItem", action: @ChooseAction,
+						image: {normal: "SP_ColorGroups_Md_N.png", dark_normal: "SP_ColorGroups_Md_N_D.png"},
+                      			alt: "$$$/Package/Dialog/Choose=Choose Package Folder Location");
+
+			}
+			edit_text(identifier: "folderName",
+					bind: @FolderName,
+					horizontal: @align_fill,
+					set_default_focus: true,
+					name: "$$$/Package/Dialog/FolderName=&Folder name:",
+					characters: 31,
+					max_characters: 255);
+		}
+
+		group(identifier: "OptionsGroup",placement: @place_column,name:"$$$/Package/Dialog/Options=Options")
+        {
+              checkbox(name: "$$$/Package/Dialog/links=&Copy Links",
+                                                identifier: "links",bind: @Links, guide_mask: [@guide_label]);
+
+					checkbox(name: "$$$/Package/Dialog/collectlinks=Coll&ect links in separate folder",
+												bind: @CollectLinks,
+												indent:  gLargeSpacing,
+                                                identifier: "collectlinks", guide_mask: [@guide_label]);			
+  
+                    checkbox(name: "$$$/Package/Dialog/Relink=&Relink linked files to document",
+                                            indent:  gLargeSpacing,
+                                            identifier: "relink",
+											bind: @Relink,
+											guide_mask: [@guide_label]);
+
+					checkbox(name: "$$$/Package/Dialog/fontsOption=Copy Fonts &used in document (Except CJK & Typekit fonts)",
+                                                identifier: "fonts",
+												bind: @Fonts,
+												guide_mask: [@guide_label]);
+
+					checkbox(name: "$$$/Package/Dialog/create_report=Cre&ate Report",
+                                                identifier: "create",
+												bind: @Create,
+												guide_mask: [@guide_label]);
+            }
+
+
+		row(horizontal: @align_fill, child_horizontal: @align_right, spacing: @related_spacing, reverse: os == @mac)
+		{
+			button(identifier: "okButton",
+					commit_button: true,
+					name: "$$$/Package/Dialog/Package=Package");
+
+			button(identifier: "cancelButton",
+					commit_button: true,
+					name: "$$$/gCancel=Cancel");
+		}
+	}
+}

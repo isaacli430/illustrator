@@ -1,0 +1,10 @@
+sheet NavigatorPanel
+{
+	interface:
+		ShowThumbnail:false;
+		ShowHotNumber:false;
+		ZoomOut:true;
+		ZoomIn:true;
+		ZoomControl:100;
+		filterHotNumber: {min_value: 3.13, max_value: 6400};
+}

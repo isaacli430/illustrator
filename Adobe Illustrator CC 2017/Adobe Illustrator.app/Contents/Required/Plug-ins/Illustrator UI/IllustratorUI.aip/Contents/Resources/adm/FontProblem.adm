@@ -1,0 +1,13 @@
+sheet FontProblem
+{
+  interface:
+    fontProblemText: "$$$/_FontProblem/Dlg/FontProblem/prompt1FontProblem=The document ^[^0^] uses fonts or characters which are not available or are in a different format than originally specified.\n";
+    
+    openDocumentText: "$$$/_FontProblem/Dlg/FontProblem/prompt2FontProblem=Do you still wish to open this document?";
+    
+    openDocumentOverlay: 0;
+    
+    buttonOverlay: 0;
+	
+	warningList: "";
+}

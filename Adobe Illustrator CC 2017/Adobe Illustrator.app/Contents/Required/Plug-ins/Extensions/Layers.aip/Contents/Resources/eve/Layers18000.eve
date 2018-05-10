@@ -1,0 +1,40 @@
+layout ArtOptions
+{
+    view subview(identifier: "AIEveSubView",
+					layout_theme: @dialog_large,
+					placement: @place_column,
+					show_border: false,
+					spacing: @unrelated_spacing)
+    {
+        column(horizontal: @align_fill, child_horizontal: @align_fill)
+        {
+            edit_text(identifier: "Name",
+                      characters: 33,
+                      max_characters: 255,
+                      set_default_focus: true,
+                      name: "$$$/Layers/Dlg/ArtOptions/optDlgStaticName=&Name:");
+
+            row(horizontal: @align_left)
+            {
+                checkbox(identifier: "Show",
+                         name: "$$$/Layers/Dlg/ArtOptions/optDlgShowCheckbox=&Show");
+
+                checkbox(identifier: "Lock",
+                         name: "$$$/Layers/Dlg/ArtOptions/optDlgLockCheckbox=&Lock");
+            }
+        }
+
+        row(horizontal: @align_right, spacing: @related_spacing, reverse: os == @mac)
+        {
+            button(default: true,
+                   name: "$$$/gOK=OK",
+                   identifier: "okButton",
+                   commit_button: true);
+
+            button(cancel: true,
+                   name: "$$$/gCancel=Cancel",
+                   identifier: "cancelButton",
+                   commit_button: true);
+        }
+    }
+}

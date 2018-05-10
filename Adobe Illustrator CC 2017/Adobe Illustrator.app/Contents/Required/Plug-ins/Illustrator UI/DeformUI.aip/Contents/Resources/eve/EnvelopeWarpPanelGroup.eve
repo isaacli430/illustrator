@@ -1,0 +1,75 @@
+layout EnvelopeWarpPanelGroup
+{
+	view subview(identifier: "EnvelopeControlPanelGroupUI",					
+					show_border: false,
+					layout_theme:  @controlbar,
+					placement: @place_row,
+					child_vertical:  @align_center,
+					margin:0,
+					spacing: 5,
+					height:  31					
+				 )	
+	{													
+		optional(identifier: "EnvelopeWarpSubGroup", placement: @place_row, child_vertical: @align_center, margin : 0)
+		{
+			popup(identifier: "WarpStylePopupCG",
+						include_custom_item: false,
+						iconpopup_include_vertical_separator: false,
+						wants_focus: false,
+						items: @WarpStyleItems,
+						name: "$$$/Deform/WarpOptionsControlGroup/StylePopupLabel=Style:",
+						alt: "$$$/Deform/WarpOptionsControlGroup/StylePopupLabel/ToolTipStr=Select Warp Style");
+			radiogroup(placement: @place_row,
+							 show_border: false,
+							 margin: 0)
+				{
+					radio_button(identifier: "HorizontalRadioButtonCG",
+									horizontal: @align_left,
+									wants_focus: false,
+									name: "$$$/Deform/WarpOptionsControlGroup/HorizontalRadioButton=Horizontal",
+									alt: "$$$/Deform/WarpOptionsControlGroup/HorizontalRadioButton/ToolTipStr=Horizontal Warp");
+
+					radio_button(identifier: "VerticalRadioButtonCG",
+									horizontal: @align_right,
+									wants_focus: false,
+									name: "$$$/Deform/WarpOptionsControlGroup/VerticalRadioButton=Vertical",
+									alt: "$$$/Deform/WarpOptionsControlGroup/VerticalRadioButton/ToolTipStr=Vertical Warp");
+				}
+			unit_hot_number(identifier: "BendEditCG",
+					decimal_places: 2,
+					digits: 2,
+					min_value: -100, 
+					max_value: 100,
+					slider: true,
+					unit: 'NumberEditUnit_Percent',
+					name: "$$$/Deform/WarpOptionsControlGroup/BendComboSliderLabel=Bend:",
+					alt: "$$$/Deform/WarpOptionsControlGroup/BendComboSliderLabel/ToolTipStr=Select Bend");
+		}
+		optional(identifier: "DistortionSubGroup", placement: @place_row, child_vertical: @align_center, margin : 0)
+		{
+			row(spacing:@related_spacing){
+				static_text(identifier: "DistortionSTCG",
+						   name: "$$$/Deform/WarpOptionsControlGroup/DistortionGroupLabel=Distortion:");
+
+				unit_hot_number(identifier: "HorizontalDistortionCG",								
+								decimal_places: 2,
+								digits: 2,
+								min_value: -100, 
+								max_value: 100,
+								slider: true,
+								unit: 'NumberEditUnit_Percent',
+								name: "$$$/Deform/WarpOptionsControlGroup/HorizontalDistortionComboSliderLabel=H:",
+								alt:"$$$/Deform/WarpOptionsControlGroup/HorizontalDistortionToolTip=Select horizontal Distortion");
+			}
+			unit_hot_number(identifier: "VerticalDistortionCG",							
+							decimal_places: 2,
+							digits: 2,
+							min_value: -100, 
+							max_value: 100,		
+							slider: true,
+							unit: 'NumberEditUnit_Percent',								
+							name: "$$$/Deform/WarpOptionsControlGroup/VerticalDistortionComboSliderLabel=V:",
+							alt:"$$$/Deform/WarpOptionsControlGroup/VerticalDistortionToolTip=Select vertical Distortion");
+		}		
+	}
+}

@@ -1,0 +1,14 @@
+layout LearnPanel
+{
+     view subview(identifier: "LearnPanel",
+				 show_border: true,
+				 child_vertical: @align_center,
+				 placement: @place_row,
+				 layout_theme: @panel,
+				 margin:gPanelToolbarSubviewMargin,
+				 width:333,
+				 height:391)
+    {		
+				/*Learning Panel view will be loaded by extension. */
+    }
+}

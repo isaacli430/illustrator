@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+	<head>  
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<link rel="stylesheet" href="./fonts/adobe-clean.css">
+		<link rel="stylesheet" href="./css/coral.min.css">
+		<link rel="stylesheet" href="./style.css">
+
+		<script type="text/javascript" src="./lib/jquery-1.9.1.js"></script>	
+		<script type="text/javascript" src="./js/coral.js"></script>
+		<script type="text/javascript" src="./lib/CSInterface.js"></script>
+		<script type="text/javascript" src="./main.js"></script>
+	</head>
+
+	<body class="coral--dark">
+
+		<!-- video div -->
+		<div style="height:225px">
+			<div id="videoClip" style="text-align: center">
+			 	<img height="225px" id="videoSrc" class="row1Video" src="./offline/movie1.gif" />
+			</div>		
+		</div> <!-- End of video div -->
+
+		<!-- Row 1 -->
+		<div style="height:90px" class="row" id="row1" onmouseenter="row1Enter()">
+			<div class="content">
+				<div class="option">
+					<coral-checkbox id="SnapWhileDrawingStr"> 
+						<span data-locale="SnapWhileDrawing" class="textMainHeading"></span>
+					</coral-checkbox>
+				</div>
+				
+				<div class="description">
+					<span data-locale="SnapWhileDrawing_detail" class="textDetail"></span>
+				</div>
+			</div>
+		</div>
+
+		<!-- Row 2 -->
+		<div style="height:163px" class="row" id="row2" onmouseenter="row2Enter()">
+			<div class="content">
+				<div class="option">
+					<coral-checkbox id="SnapWhileMovingStr" onchange="UpdateSnapWhileMovingChildCheckBoxes()"> 
+						<span data-locale="SnapWhileMoving" class="textMainHeading"></span>
+					</coral-checkbox>
+				</div>
+				
+				<div class="description">
+					<div style="padding-bottom: 5px;">
+						<span data-locale="SnapWhileMoving_detail" class="textDetail"></span>
+					</div>
+
+					<table>
+						<tr>
+							<td>
+								<coral-checkbox id="SnapWhileMoving_pathsStr" onchange="UpdateSnapWhileMovingParentCheckBox()"> 
+								<span data-locale="SnapWhileMovingPaths" class="textDetail"></span>
+								</coral-checkbox>
+							</td>
+
+							<td>
+								<coral-checkbox id="SnapWhileMoving_segmentsStr" onchange="UpdateSnapWhileMovingParentCheckBox()">
+								<span data-locale="SnapWhileMovingSegments" class="textDetail"></span>
+					 			</coral-checkbox>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<coral-checkbox id="SnapWhileMoving_anchorPointsStr" onchange="UpdateSnapWhileMovingParentCheckBox()">
+								<span data-locale="SnapWhileMovingAnchors" class="textDetail"></span>
+					 			</coral-checkbox>
+							</td>
+						</tr>	
+				 	</table>
+				 	
+				</div>
+			</div>
+		</div>
+
+		<!-- Row 3 -->
+		<div style="height:85px; border-bottom: none" class="row" id="row3" onmouseenter="row3Enter()">
+			<div class="content">
+				<div class="option">
+					<coral-checkbox id="SnapWhileScalingStr">
+						<span data-locale="SnapWhileScaling" class="textMainHeading"></span>
+					</coral-checkbox>
+				</div>
+				
+				<div class="description">
+					<span data-locale="SnapWhileScaling_detail" class="textDetail"></span>
+				</div>
+			</div>		
+		</div>
+
+		<!-- Buttons -->
+		<div class="buttondiv">
+			<div class="content">
+				<button data-locale="CancelButtonText" class="stylebutton" is="coral-button" variant="primary" onclick="CancelButtonClicked()">
+			 	</button>
+
+				<button data-locale="OKButtonText" class="stylebutton" is="coral-button" variant="primary" onclick="OKButtonClicked()">
+				</button>
+			</div>
+		</div>
+
+	</body>
+</html>

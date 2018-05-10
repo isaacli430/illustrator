@@ -1,0 +1,5 @@
+sheet LayerPanelOptions
+{
+    interface:
+        RowSize: empty;
+}

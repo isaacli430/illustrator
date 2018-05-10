@@ -1,0 +1,53 @@
+layout TouchShapeToolOptionsPanel
+{
+    view subview(identifier: "ShapeTouchToolOptionsPanelSubview",
+                 show_border: false,
+                 child_horizontal: @align_center,
+				 layout_theme:@touch_tooloptions)
+
+    {
+                column()
+                {
+					toggle_button(identifier: "TouchShapeCenterButton",
+                            image: { normal: "SP_TouchDrawFromCenter_Md_N.png"
+							,dark_normal: "SP_TouchDrawFromCenter_Md_N_D.png"},
+							value_on: true, value_off: false, 
+                            wants_focus: false,
+							button_inner_bevel: false,
+							button_outer_bevel: false,
+							alt: "$$$/ShapeTool/Touch/ShapeCenterToolTipStr=Draw from Center",
+							inset_undrawn_space: false); 
+									
+					toggle_button(identifier: "TouchShapeConstrain",
+                        image: { normal: "SP_TouchConstrainedDrawing_Md_N.png" 
+						,dark_normal: "SP_TouchConstrainedDrawing_Md_N_D.png"},
+						value_on: true, value_off: false, 
+                        wants_focus: false,
+						button_inner_bevel: false,
+						button_outer_bevel: false,
+						alt: "$$$/ShapeTool/Touch/ShapeConstrainedToolTipStr=Draw Constraint Shape",
+						inset_undrawn_space: false); 
+                }
+                separator(orientation: @horizontal);
+				toggle_button(identifier: "TouchShapeStamper",
+					image: { normal: "SP_TouchShapeStamper_Md_N.png"
+					,dark_normal: "SP_TouchShapeStamper_Md_N_D.png"},
+					value_on: true, value_off: false, 
+					wants_focus: false,
+					button_inner_bevel: false,
+					button_outer_bevel: false,
+					alt: "$$$/ShapeTool/Touch/PlaceShapeToolTipStr=Place Shape",
+					inset_undrawn_space: false);
+					
+				button(identifier: "TouchShapeSettings",
+					image: { normal: "SP_TouchMoreSettings_Md_N.png"
+					,dark_normal: "SP_TouchMoreSettings_Md_N_D.png"},
+					value_on: true, value_off: false, 
+					wants_focus: false,
+					button_inner_bevel: false,
+					button_outer_bevel: false,
+					alt: "$$$/ShapeTool/Touch/SpecifyShapeToolTipStr=Specify Shape Dimension",
+					inset_undrawn_space: false); 
+                                      
+    }
+}

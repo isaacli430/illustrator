@@ -1,0 +1,8 @@
+sheet InnerGlowOptionsDialog
+{
+	interface:
+		PlacementRadioGp: "Edge";
+		BlendMode: 1;
+		EnablePreview:false;
+		unlink Preview:false <== EnablePreview == true? Preview : false;
+}

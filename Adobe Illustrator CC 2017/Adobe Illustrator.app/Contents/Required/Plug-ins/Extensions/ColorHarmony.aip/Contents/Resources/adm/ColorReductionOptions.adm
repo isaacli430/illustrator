@@ -1,0 +1,6 @@
+sheet ColorReductionOptions
+{
+	interface:
+	SortPopup: 0;
+	DefaultMap: 0;
+}

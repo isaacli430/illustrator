@@ -1,0 +1,37 @@
+layout SlicesPreference
+{
+	view subview(identifier: "SlicesPrefEveSubView",
+				 child_horizontal: @align_fill,
+				 placement: @place_column,
+				 show_border: false, 
+				 margin: [22,15,0,15],
+				 layout_theme: @dialog_large)
+	{
+		column(spacing: 0)
+		{
+		static_text(identifier: "SlPStaticTextCaption",
+					name: "$$$/PrefsDlg/SlPDlg/Caption=Slices"
+					);
+		
+		separator(identifier: "SlPTopSeparator");
+		}
+		
+		checkbox(identifier: "SlPCheckboxSliceNo", guide_mask: [ @guide_label ],
+					name: "$$$/PrefsDlg/SlPDlg/SlPCheckboxSliceNo=&Show Slice Numbers",
+					bind: @SlSliceNoCell
+				);
+			
+		row(child_vertical: @align_center)
+		{	
+		popup(identifier: "SlPPopupLineColor",
+					include_custom_item: false,
+					name: "$$$/PrefsDlg/SlPDlg/SlPPopupLineColor=&Line Color:",
+					items: gSmallColorPopupList,
+					bind: @SlColorPopupCell,
+					horizontal: @align_left
+					);
+		swatch(identifier: "SlPImageGridColor", border: @border_normal);
+		}
+	
+	}
+}

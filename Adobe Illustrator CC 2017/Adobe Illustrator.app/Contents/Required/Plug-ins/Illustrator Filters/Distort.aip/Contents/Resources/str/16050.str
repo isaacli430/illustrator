@@ -1,0 +1,24 @@
+/* [1] */
+!MEM
+/* [2] */
+$$$/Distort/Str/Error/Memory=The filter cannot complete because there isn't enough memory (RAM) available.
+/* [3] */
+-108
+/* [4] */
+$$$/Distort/Str/Error/Memory=The filter cannot complete because there isn't enough memory (RAM) available.
+/* [5] */
+271
+/* [6] */
+$$$/Distort/Str/Error/Memory=The filter cannot complete because there isn't enough memory (RAM) available.
+/* [7] */
+SEGM
+/* [8] */
+$$$/Distort/Str/Error/6=The filter cannot complete because a path has too many anchor points.
+/* [9] */
+!sel
+/* [10] */
+$$$/Distort/Str/Error/10/Mac=You must select a path first.
+/* [11] */
+<others>
+/* [12] */
+$$$/Distort/Str/Error/Unknown=The filter cannot complete because of an unknown error.

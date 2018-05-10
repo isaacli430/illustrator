@@ -1,0 +1,47 @@
+layout DocImportOptionsDlg
+{
+	view subview(identifier: "DocImportOptions",
+					layout_theme: @dialog_large,
+					placement: @place_column,
+					spacing: @unrelated_spacing,
+					show_border: false)
+	{
+		column(horizontal: @align_fill, spacing: @inter_group_spacing)
+		{
+			group(identifier: "MAROptions",
+					horizontal: @align_fill,
+					name: "$$$/sangamservice/Dlg/WORDImport/Cluster=Include",
+					placement: @align_column)
+			{
+				checkbox(identifier: "TOCText",
+							set_default_focus: true,
+							name: "$$$/sangamservice/Dlg/WORDImport/CheckBox/3=&Table of Contents Text");
+
+				checkbox(identifier: "FootEndNotes",
+							name: "$$$/sangamservice/Dlg/WORDImport/CheckBox/4=&Footnotes/Endnotes");
+
+				checkbox(identifier: "IndexText",
+							name: "$$$/sangamservice/Dlg/WORDImport/CheckBox/5=&Index Text");
+			}
+
+			checkbox(identifier: "RemTextFormat",
+						name: "$$$/sangamservice/Dlg/WORDImport/CheckBox/6=&Remove Text Formatting",
+						guide_mask: [@guide_label]);
+		}
+
+		row(horizontal: @align_right,
+			spacing: @related_spacing,
+			reverse: os == @mac)
+		{
+			button(default: true,
+					commit_button: true,
+					identifier: "okButton",
+					name: "$$$/gOK=OK");
+
+			button(cancel: true,
+					commit_button: true,
+					identifier: "cancelButton",
+					name: "$$$/gCancel=Cancel");
+		}
+	}
+}

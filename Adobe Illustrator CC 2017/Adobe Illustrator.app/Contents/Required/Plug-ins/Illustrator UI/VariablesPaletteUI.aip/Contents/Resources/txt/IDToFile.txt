@@ -1,0 +1,7 @@
+16000.adm                                         		VariablePanel.adm                                 
+16000.eve                                         		VariablePanel.eve                                 
+16000.mnu                                        		VariablePanel.mnu                                
+16001.adm                                         		VariablePropDialog.adm                            
+16001.eve                                         		VariablePropDialog.eve                            
+16003.adm                                         		VariablePaletteWarningDialog.adm                  
+16003.eve                                         		VariablePaletteWarningDialog.eve                  

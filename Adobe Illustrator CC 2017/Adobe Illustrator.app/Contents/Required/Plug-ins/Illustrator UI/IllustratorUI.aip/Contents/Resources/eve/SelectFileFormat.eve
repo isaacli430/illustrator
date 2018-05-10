@@ -1,0 +1,31 @@
+layout SelectFileFormat
+{
+	view subview(identifier: "SelectFile",
+						child_horizontal: @align_fill,
+						placement: @place_column,
+						show_border: false,
+						spacing: @unrelated_spacing,
+						layout_theme: @dialog_large)
+    {
+     	column(identifier: "radioButtonGpColumn")
+		{
+			static_text(identifier: "SelectFormatStaticText",
+	                     name: "$$$/SelectFileFormat/staticText/Name=Select a File Format to open file:");         
+		}
+
+    	row(horizontal: @align_right, reverse: os == @mac,
+			spacing: @related_spacing)
+		{ 
+			button( default: true,
+					identifier: "okButton",
+					commit_button: true,
+					name: "$$$/gOK=OK");
+		
+			button( cancel: true,
+					identifier: "cancelButton",
+					commit_button: true,
+					name: "$$$/gCancel=Cancel");       
+		}
+    }
+}
+

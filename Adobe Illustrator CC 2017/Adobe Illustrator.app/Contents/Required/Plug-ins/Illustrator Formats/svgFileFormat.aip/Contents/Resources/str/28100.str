@@ -1,0 +1,22 @@
+/* [1] */
+$$$/svgFileFormat/Str/WriteError=Write Error
+/* [2] */
+$$$/svgFileFormat/Str/NullGradient=Null Gradient
+/* [3] */
+$$$/svgFileFormat/Str/NotEnoughMemory=Not Enough Memory
+/* [4] */
+$$$/svgFileFormat/Str/TranslationError=Translation Error
+/* [5] */
+$$$/svgFileFormat/Str/CannotEmbed=One or more of the fonts could not be embedded.  Please check the output document and directory.
+/* [6] */
+$$$/svgFileFormat/Str/StackError=Stack Error
+/* [7] */
+$$$/svgFileFormat/Str/BadParameter=Bad Parameters
+/* [8] */
+$$$/svgFileFormat/Str/MustContainArtwork=The Document must contain artwork to export.
+/* [9] */
+$$$/svgFileFormat/Str/CEFFont=Some of the characters in the document can not be embedded because they are not included in Common English or Common Roman.
+/* [10] */
+$$$/svgFileFormat/Str/ProtectedFont=One or more of the fonts is protected and cannot be embedded.
+/* [11] */
+

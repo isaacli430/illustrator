@@ -1,0 +1,83 @@
+layout WSManageDialog
+{
+    view subview(child_horizontal: @align_fill,
+                 identifier: "AIEveSubView",
+                 layout_theme: @dialog_large,
+                 placement: @place_column,
+                 show_border: false,
+                 spacing: @unrelated_spacing)
+    {
+        column(child_horizontal: @align_fill)
+        {
+			list(height: 100,
+				 identifier: "wsNamesListBox",
+				 set_default_focus: true,
+				 width: 200);
+
+			column()
+			{
+				row(horizontal: @align_fill)
+				{
+					edit_text(horizontal: @align_fill,
+							  vertical: @align_center,
+							  identifier: "wsNameTextEdit",
+							  max_characters: 63);
+
+					row(horizontal: @align_right, spacing: @related_spacing)
+					{
+						button(identifier: "newButton",
+							   image:{normal:"SP_NewItem_Sm_N.png", dark_normal:"SP_NewItem_Sm_N_D.png"},
+							   alt: "$$$/Workspace/Str/NewWorkspace=New Workspace");
+
+						button(identifier: "deleteButton",
+							   image:{normal: "SP_Delete_Sm_N.png", dark_normal:"SP_Delete_Sm_N_D.png"},
+							   alt: "$$$/Workspace/Str/DeleteWorkspace=Delete Workspace");
+					}
+				}
+				row(child_horizontal: @align_center, spacing: @related_spacing)
+				{
+					row(spacing: 0)
+					{
+						guide_consumer(consume_horizontal: 1);
+						panel(bind: @showWarning, value: true, margin: 0)
+						{
+							info_icon(icontype: "warning", size: "small");
+						}
+					}
+					overlay(vertical: @align_bottom)
+					{
+						panel(bind: @errorString, value: "reservedNameErr", margin: 0)
+						{
+							static_text(name: "$$$/Workspace/Error/WorkspaceNameIsReserved=Workspace name is reserved", theme_font_size:@small);
+						}
+						panel(bind: @errorString, value: "duplicateNameErr", margin: 0)
+						{
+							static_text(name: "$$$/Workspace/Error/WorkspaceNameAlreadyExists=Workspace name already exists", theme_font_size:@small);
+						}
+						panel(bind: @errorString, value: "emptyNameErr", margin: 0)
+						{
+							static_text(name: "$$$/Workspace/Error/WorkspaceNameCannotBeEmpty=Workspace name cannot be empty", theme_font_size:@small);
+						}
+						panel(bind: @errorString, value: "illegalNameErr", margin: 0)
+						{
+							static_text(name: "$$$/Workspace/Error/RemoveIllegalCharacters=Remove Illegal characters:\\./:*?#{quot}<>|[]", theme_font_size:@small);
+						}
+					}
+				}
+			}
+		}
+		row(horizontal: @align_right, spacing: @related_spacing, reverse: os == @mac)
+		{
+			button(default: true,
+					bind: @result,
+				   identifier: "okButton",
+				   name: "$$$/gOK=OK",
+				   commit_button: true);
+
+			button(cancel: true,
+				   identifier: "cancelButton",
+				   name: "$$$/gCancel=Cancel",
+				   commit_button: true);
+		}		
+    }
+}

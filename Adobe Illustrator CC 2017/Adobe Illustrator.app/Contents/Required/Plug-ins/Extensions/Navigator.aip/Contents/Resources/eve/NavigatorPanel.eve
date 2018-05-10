@@ -1,0 +1,48 @@
+layout NavigatorPanel
+{
+    view subview(identifier: "NavigatorPanelSubView",
+				 layout_theme: @panel, margin: 0,
+				 show_border: false,
+				 child_horizontal: @align_left)
+    {		
+		image(
+					identifier: "ArtThumbnail",
+					bind:@ShowThumbnail,
+					alt: "$$$/Navigator/Str/Tip/ProxyPreview=Proxy Preview Area",
+					width: gStandardMinPanelWidth,
+					height: 90,
+					show_border: false,
+					horizontal: @align_fill,
+					vertical: @align_fill
+				);
+		
+		row(horizontal: @align_fill)
+		{
+			row(vertical: @align_centre, horizontal: @align_left, spacing: 1)
+			{
+			button(
+				identifier: "ZoomOut",
+				alt: "$$$/Navigator/Str/Tip/ZoomOut=Zoom Out",
+				image: {normal:"SP_ZoomOut_Wi_N.png", dark_normal: "SP_ZoomOut_Wi_N_D.png"}
+				);
+			unit_hot_number(
+				identifier: "ZoomControl",
+				decimal_places: 2,
+				popuplist: true,
+				digits: 3,
+				min_max_filter: @filterHotNumber,
+				unit: 'NumberEditUnit_Percent',
+				bind:@ZoomControl,
+				vertical: @align_center				
+				);
+			button(
+				identifier: "ZoomIn",
+				alt: "$$$/Navigator/Str/Tip/ZoomIn=Zoom In",
+				image: {normal:"SP_ZoomIn_Wi_N.png", dark_normal: "SP_ZoomIn_Wi_N_D.png"}
+				);
+			}				
+				resize_gripper_gap(horizontal: @align_right);
+		}
+    }
+}
+

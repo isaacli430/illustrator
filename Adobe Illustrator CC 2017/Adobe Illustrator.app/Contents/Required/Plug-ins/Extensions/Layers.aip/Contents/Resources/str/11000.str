@@ -1,0 +1,122 @@
+/* [1] */
+
+/* [2] */
+$$$/Layers/Str/Action/newLayer=New Layer
+/* [3] */
+$$$/Layers/Str/Action/newLayerAbove=New Layer Above
+/* [4] */
+$$$/Layers/Str/Action/newLayerBelow=New Layer Below
+/* [5] */
+$$$/Layers/Str/Action/newTopLayer=New Top Layer
+/* [6] */
+$$$/Layers/Str/Action/newLayerInside=New Sublayer
+/* [7] */
+$$$/Layers/Str/Action/newLayerInsideOnBottom=New Sublayer on Bottom
+/* [8] */
+
+/* [9] */
+
+/* [10] */
+$$$/Layers/Str/Action/deleteSel=Delete Selection
+/* [11] */
+
+/* [12] */
+
+/* [13] */
+$$$/Layers/Str/Action/duplicateSel=Duplicate Selection
+/* [14] */
+$$$/Layers/Str/Action/options=Layers Panel Options
+/* [15] */
+
+/* [16] */
+
+/* [17] */
+$$$/Layers/Str/Action/showAllLayers=Show All Layers
+/* [18] */
+$$$/Layers/Str/Action/hideAllLayers=Hide All Layers
+/* [19] */
+$$$/Layers/Str/Action/artworkAllLayers=Outline All Layers
+/* [20] */
+$$$/Layers/Str/Action/previewAllLayers=Preview All Layers
+/* [21] */
+$$$/Layers/Str/Action/lockAllLayers=Lock All Layers
+/* [22] */
+$$$/Layers/Str/Action/unlockAllLayers=Unlock All Layers
+/* [23] */
+$$$/Layers/Str/Action/hideOthers=Hide Others
+/* [24] */
+$$$/Layers/Str/Action/artworkOthers=Outline Others
+/* [25] */
+$$$/Layers/Str/Action/lockOthers=Lock Others
+/* [26] */
+
+/* [27] */
+
+/* [28] */
+
+/* [29] */
+
+/* [30] */
+
+/* [31] */
+
+/* [32] */
+
+/* [33] */
+$$$/Layers/Str/Action/layerMerger=Merge Selected
+/* [34] */
+$$$/Layers/Str/Action/layerFlattening=Flatten Artwork
+/* [35] */
+
+/* [36] */
+
+/* [37] */
+$$$/Layers/Str/Action/template=Template
+/* [38] */
+$$$/Layers/Str/Action/pasteRemembers=Paste Remembers
+/* [39] */
+$$$/Layers/Str/Action/collectInNew=Collect in New Layer
+/* [40] */
+$$$/Layers/Str/Action/reverseOrder=Reverse Order
+/* [41] */
+$$$/Layers/Str/Action/locateObject=Locate Object
+/* [42] */
+$$$/Layers/Str/Action/locateLayer=Locate Layer
+/* [43] */
+
+/* [44] */
+
+/* [45] */
+$$$/Layers/Str/Action/makeReleaseClip=Make/Release Clipping Mask
+/* [46] */
+unused
+/* [47] */
+$$$/Layers/Str/Action/releaseToLayersSeq=Release to Layers (Sequence)
+/* [48] */
+$$$/Layers/Str/Action/releaseToLayersBld=Release to Layers (Build)
+/* [49] */
+
+/* [50] */
+
+/* [51] */
+
+/* [52] */
+
+/* [53] */
+$$$/Layers/Str/Action/actTxtLayer=Layer
+/* [54] */
+$$$/Layers/Str/Action/actTxtName=Name: 
+/* [55] */
+$$$/Layers/Str/Action/actTxtShow=Show: 
+/* [56] */
+$$$/Layers/Str/Action/actTxtPreview=Preview: 
+/* [57] */
+$$$/Layers/Str/Action/actTxtLock=Lock: 
+/* [58] */
+$$$/Layers/Str/Action/actTxtPrint=Print: 
+/* [59] */
+$$$/Layers/Str/Action/actTxtDimImg=Dim Image: 
+/* [60] */
+$$$/Layers/Str/Action/actTxtDimPct=Dim Percent: 
+/* [61] */
+$$$/Layers/Str/Action/actTxtTmpl8=Template: 

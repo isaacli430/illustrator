@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE ThemeColors [
+  <!-- Inline DTD for Drover Color Theme files -->
+  <!-- defines entities for the color names -->
+
+  <!-- Generated automatically using //dva/main/adobe/tools/generate_xml_entities_from_enum.py -->
+  <!ENTITY kColor_AppBackground "0">
+  <!ENTITY kColor_TabBackground "1">
+  <!ENTITY kColor_TabContent "2">
+  <!ENTITY kColor_TabContentShadowStart "3">
+  <!ENTITY kColor_TabContentShadowEnd "4">
+  <!ENTITY kColor_TextRegular "5">
+  <!ENTITY kColor_TabNormalStroke "6">
+  <!ENTITY kColor_TabNormalStartGradient "7">
+  <!ENTITY kColor_TabNormalEndGradient "8">
+  <!ENTITY kColor_TabDeactiveStroke "9">
+  <!ENTITY kColor_TabDeactiveStartGradient "10">
+  <!ENTITY kColor_TabDeactiveEndGradient "11">
+  <!ENTITY kColor_TabFocusedStroke "12">
+  <!ENTITY kColor_TabWellStartGradient "13">
+  <!ENTITY kColor_TabWellEndGradient "14">
+  <!ENTITY kColor_ButtonNormalUpStartGradient "15">
+  <!ENTITY kColor_ButtonNormalUpEndGradient "16">
+  <!ENTITY kColor_ButtonNormalDownStartGradient "17">
+  <!ENTITY kColor_ButtonNormalDownEndGradient "18">
+  <!ENTITY kColor_ButtonNormalText "19">
+  <!ENTITY kColor_ButtonNormalStroke "20">
+  <!ENTITY kColor_ButtonRolloverUpStartGradient "21">
+  <!ENTITY kColor_ButtonRolloverUpEndGradient "22">
+  <!ENTITY kColor_ButtonRolloverDownStartGradient "23">
+  <!ENTITY kColor_ButtonRolloverDownEndGradient "24">
+  <!ENTITY kColor_ButtonRolloverText "25">
+  <!ENTITY kColor_ButtonRolloverStroke "26">
+  <!ENTITY kColor_ButtonDisableUpStartGradient "27">
+  <!ENTITY kColor_ButtonDisableUpEndGradient "28">
+  <!ENTITY kColor_ButtonDisableDownStartGradient "29">
+  <!ENTITY kColor_ButtonDisableDownEndGradient "30">
+  <!ENTITY kColor_ButtonDisableText "31">
+  <!ENTITY kColor_ButtonDisableStroke "32">
+  <!ENTITY kColor_ButtonFocusStroke "33">
+  <!ENTITY kColor_ButtonDefaultStroke "34">
+  <!ENTITY kColor_DividerNormalStartGradient "35">
+  <!ENTITY kColor_DividerNormalEndGradient "36">
+  <!ENTITY kColor_HotTextDisableText "37">
+  <!ENTITY kColor_HotTextNormalText "38">
+  <!ENTITY kColor_HotTextRolloverText "39">
+  <!ENTITY kColor_HotTextDownText "40">
+  <!ENTITY kColor_HotTextLabelDisableText "41">
+  <!ENTITY kColor_HotTextLabelNormalText "42">
+  <!ENTITY kColor_HotTextLabelRolloverText "43">
+  <!ENTITY kColor_HotTextLabelDownText "44">
+  <!ENTITY kColor_TextEditNormalText "45">
+  <!ENTITY kColor_TextEditNormalBackground "46">
+  <!ENTITY kColor_TextEditDisableText "47">
+  <!ENTITY kColor_TextEditDisableBackground "48">
+  <!ENTITY kColor_ScrollBarNormalStartGradient "49">
+  <!ENTITY kColor_ScrollBarNormalEndGradient "50">
+  <!ENTITY kColor_ScrollBarDisableStartGradient "51">
+  <!ENTITY kColor_ScrollBarDisableEndGradient "52">
+  <!ENTITY kColor_ToolBarWellStartGradient "53">
+  <!ENTITY kColor_ToolBarWellEndGradient "54">
+  <!ENTITY kColor_ToolBarContentStartGradient "55">
+  <!ENTITY kColor_ToolBarContentEndGradient "56">
+  <!ENTITY kColor_TextRegularInverted "57">
+  <!ENTITY kColor_GroupBox1TopStroke "58">
+  <!ENTITY kColor_GroupBox1BottomStroke "59">
+  <!ENTITY kColor_GroupBox2CaptionFill "60">
+  <!ENTITY kColor_GroupBox2ContentFill "61">
+  <!ENTITY kColor_ProgressBarEmpty "62">
+  <!ENTITY kColor_ProgressBarFill "63">
+  <!ENTITY kColor_ProgressBarStroke "64">
+  <!ENTITY kColor_ListBoxHeaderNormalGradientStart "65">
+  <!ENTITY kColor_ListBoxHeaderNormalGradientEnd "66">
+  <!ENTITY kColor_ListBoxHeaderOverGradientStart "67">
+  <!ENTITY kColor_ListBoxHeaderOverGradientEnd "68">
+  <!ENTITY kColor_ListBoxHeaderDownGradientStart "69">
+  <!ENTITY kColor_ListBoxHeaderDownGradientEnd "70">
+  <!ENTITY kColor_ListBoxSelectedLine "71">
+  <!ENTITY kColor_ListBoxDividerStroke "72">
+  <!ENTITY kColor_ListBoxButtonEdgeHighlight "73">
+  <!ENTITY kColor_ListBoxContentNormal "74">
+  <!ENTITY kColor_ListBoxContentSelected "75">
+  <!ENTITY kColor_ListBoxContentDivider "76">
+  <!ENTITY kColor_ListBoxContentBorder "77">
+  <!ENTITY kColor_ListBoxContentShadowStart "78">
+  <!ENTITY kColor_ListBoxContentShadowEnd "79">
+  <!ENTITY kColor_TextLabel "80">
+  <!ENTITY kColor_StaticTextNormalText "81">
+  <!ENTITY kColor_StaticTextDisableText "82">
+  <!ENTITY kColor_ScrollBarRolloverUpStartGradient "83">
+  <!ENTITY kColor_ScrollBarRolloverUpEndGradient "84">
+  <!ENTITY kColor_KnobNormalInnerStartGradient "85">
+  <!ENTITY kColor_KnobNormalInnerEndGradient "86">
+  <!ENTITY kColor_KnobNormalOuterStartGradient "87">
+  <!ENTITY kColor_KnobNormalOuterEndGradient "88">
+  <!ENTITY kColor_KnobDisabledInnerStartGradient "89">
+  <!ENTITY kColor_KnobDisabledInnerEndGradient "90">
+  <!ENTITY kColor_KnobDisabledOuterStartGradient "91">
+  <!ENTITY kColor_KnobDisabledOuterEndGradient "92">
+  <!ENTITY kColor_ScrollButtonNormalArrow "93">
+  <!ENTITY kColor_ScrollButtonDisableArrow "94">
+  <!ENTITY kColor_SliderThumbNormalStartGradient "95">
+  <!ENTITY kColor_SliderThumbNormalEndGradient "96">
+  <!ENTITY kColor_SliderThumbRolloverStartGradient "97">
+  <!ENTITY kColor_SliderThumbRolloverEndGradient "98">
+  <!ENTITY kColor_SliderThumbDisableStartGradient "99">
+  <!ENTITY kColor_SliderThumbDisableEndGradient "100">
+  <!ENTITY kColor_SliderThumbNormalStroke "101">
+  <!ENTITY kColor_SliderThumbFocusStroke "102">
+  <!ENTITY kColor_SliderThumbRolloverStroke "103">
+  <!ENTITY kColor_SliderThumbDisabledStroke "104">
+  <!ENTITY kColor_SliderBarNormalStartGradient "105">
+  <!ENTITY kColor_SliderBarNormalEndGradient "106">
+  <!ENTITY kColor_SliderBarDisableStartGradient "107">
+  <!ENTITY kColor_SliderBarDisableEndGradient "108">
+  <!ENTITY kColor_TextOnDarkBackground "109">
+  <!ENTITY kColor_PopupEditableNormalText "110">
+  <!ENTITY kColor_PopupEditableDisableText "111">
+  <!ENTITY kColor_ProgressBarEmptyStartGradient "112">
+  <!ENTITY kColor_ProgressBarFillStartGradient "113">
+  <!ENTITY kColor_ListBoxContentHighlighted "114">
+  <!ENTITY kColor_LevelMeterStroke "115">
+  <!ENTITY kColor_LevelMeterEmptyStartGradient "116">
+  <!ENTITY kColor_LevelMeterEmpty "117">
+  <!ENTITY kColor_LevelMeterFillStartGradient "118">
+  <!ENTITY kColor_LevelMeterFill "119">
+  <!ENTITY kColor_LevelMeterClipIndicator "120">
+  <!ENTITY kColor_LevelMeterFillStartShadeGradient "121">
+  <!ENTITY kColor_LevelMeterFillShade "122">
+  <!ENTITY kColor_LevelMeterCautionStartGradient "123">
+  <!ENTITY kColor_LevelMeterCaution "124">
+  <!ENTITY kColor_LevelMeterWarningStartGradient "125">
+  <!ENTITY kColor_LevelMeterWarning "126">
+  <!ENTITY kColor_ListBoxDragInsert "127">
+  <!ENTITY kColor_ListBoxDragBorderHighlightFill "128">
+  <!ENTITY kColor_ListBoxDragBorderHighlightShadow "129">
+  <!ENTITY kColor_RulerBackground "130">
+  <!ENTITY kColor_RulerText "131">
+  <!ENTITY kColor_RulerSel "132">
+
+
+  <!-- Entity definitions for specific color themes, representing a predefined 't' value -->
+  <!ENTITY Dark "0.0">
+  <!ENTITY MediumDark "0.33">
+  <!ENTITY Medium "0.5" >
+  <!ENTITY MediumLight "0.66">
+  <!ENTITY Light "1.0">
+
+  <!ENTITY kCSTextFlipT "0.29">
+
+  <!-- Definitions of objects in this file, for validating parsers and editors -->
+  <!ELEMENT ThemeColors (Theme | KeyFrame)*>
+  <!ATTLIST ThemeColors>
+  <!ELEMENT Theme (KeyFrame)+>
+  <!ATTLIST Theme
+	t CDATA #REQUIRED
+>
+  <!ELEMENT KeyFrame EMPTY>
+  <!ATTLIST KeyFrame
+	name CDATA #REQUIRED
+	t CDATA #IMPLIED
+	v CDATA #REQUIRED
+	h CDATA #IMPLIED
+	s CDATA #IMPLIED
+	a CDATA #IMPLIED
+	hold (true | false) "false"
+>
+
+]>
+
+<ThemeColors>
+
+  <Theme t="&Light;" >
+    <!-- a set of related KeyFrame elements, all sharing the same value of 't' -->
+    <KeyFrame name="&kColor_AppBackground;"						v="0.47" />
+    <KeyFrame name="&kColor_TabBackground;"						v="0.86" />
+    <KeyFrame name="&kColor_TabContent;"						v="0.92"	/>
+    <KeyFrame name="&kColor_TabContentShadowStart;"				v="0.48"	/>
+    <KeyFrame name="&kColor_TabContentShadowEnd;"				v="0.92 "	/>
+    <KeyFrame name="&kColor_TextRegular;"						v="0.0"			hold="false" />
+    <KeyFrame name="&kColor_TabNormalStroke;"					v="0.92" />
+    <KeyFrame name="&kColor_TabNormalStartGradient;"			v="0.91" />
+    <KeyFrame name="&kColor_TabNormalEndGradient;"				v="0.86" />
+    <KeyFrame name="&kColor_TabDeactiveStroke;"					v="0.60" />
+    <KeyFrame name="&kColor_TabDeactiveStartGradient;"			v="0.79" />
+    <KeyFrame name="&kColor_TabDeactiveEndGradient;"			v="0.77" />
+    <KeyFrame name="&kColor_TabFocusedStroke;"					v=".99"			h="40" s="0.70" />
+    <KeyFrame name="&kColor_TabWellStartGradient;"				v="0.79" />
+    <KeyFrame name="&kColor_TabWellEndGradient;"				v="0.47" />
+
+    <KeyFrame name="&kColor_ButtonNormalUpStartGradient;"		v="0.92" />
+    <KeyFrame name="&kColor_ButtonNormalUpEndGradient;"			v="0.76" />
+    <KeyFrame name="&kColor_ButtonNormalDownStartGradient;"		v="0.57" />
+    <KeyFrame name="&kColor_ButtonNormalDownEndGradient;"		v="0.65" />
+    <KeyFrame name="&kColor_ButtonNormalStroke;"				v="0.48" />
+    <KeyFrame name="&kColor_ButtonRolloverUpStartGradient;"		v="0.99" />
+    <KeyFrame name="&kColor_ButtonRolloverUpEndGradient;"		v="0.76" />
+    <KeyFrame name="&kColor_ButtonRolloverDownStartGradient;"	v="0.57" />
+    <KeyFrame name="&kColor_ButtonRolloverDownEndGradient;" 	v="0.67" />
+    <KeyFrame name="&kColor_ButtonRolloverText;" 				v="0.0" />
+    <KeyFrame name="&kColor_ButtonRolloverStroke;" 				v="0.49" />
+    <KeyFrame name="&kColor_ButtonDisableUpStartGradient;"		v="0.86" />
+    <KeyFrame name="&kColor_ButtonDisableUpEndGradient;" 		v="0.80" />
+    <KeyFrame name="&kColor_ButtonDisableDownStartGradient;" 	v="0.27" />
+    <KeyFrame name="&kColor_ButtonDisableDownEndGradient;" 		v="0.22" />
+    <KeyFrame name="&kColor_ButtonDisableStroke;" 				v="0.75" />
+    <KeyFrame name="&kColor_ButtonFocusStroke;" 				v="0.75"			h="195" s="0.55" />
+    <KeyFrame name="&kColor_ButtonDefaultStroke;" 				v="0.0"	 />
+
+    <!-- Some of the hot text colors are theme-indpendent and appear at the end of this file. -->
+    <KeyFrame name="&kColor_HotTextLabelRolloverText;"			v="0.0"	 />
+    <KeyFrame name="&kColor_HotTextLabelDownText;"				v="0.0"	 />
+
+    <KeyFrame name="&kColor_TextEditNormalText;"				v="0.0"	 />
+    <KeyFrame name="&kColor_TextEditDisableText;"				v="0.30"	 />
+    <KeyFrame name="&kColor_TextEditNormalBackground;"				v="0.98"	 />
+    <KeyFrame name="&kColor_TextEditDisableBackground;"				v="0.88"	 />
+
+    <KeyFrame name="&kColor_DividerNormalStartGradient;"				v="0.60"	 />
+    <KeyFrame name="&kColor_DividerNormalEndGradient;"				v="0.95"	 />
+
+    <KeyFrame name="&kColor_ScrollBarNormalStartGradient;"				v="0.62"	 />
+    <KeyFrame name="&kColor_ScrollBarNormalEndGradient;"				v="0.67"	 />
+    <KeyFrame name="&kColor_ScrollBarDisableStartGradient;"				v="0.76"	 />
+    <KeyFrame name="&kColor_ScrollBarDisableEndGradient;"				v="0.78"	 />
+
+    <KeyFrame name="&kColor_ToolBarWellStartGradient;"				v="0.75"	 />
+    <KeyFrame name="&kColor_ToolBarWellEndGradient;"				v="0.57"	 />
+    <KeyFrame name="&kColor_ToolBarContentStartGradient;"				v="0.996"	 />
+    <KeyFrame name="&kColor_ToolBarContentEndGradient;"				v="0.86"	 />
+
+    <KeyFrame name="&kColor_GroupBox1TopStroke;"				v="0.57"	 />
+    <KeyFrame name="&kColor_GroupBox1BottomStroke;"				v="0.84"	 />
+    <KeyFrame name="&kColor_GroupBox2CaptionFill;"				v="0.48"	 />
+    <KeyFrame name="&kColor_GroupBox2ContentFill;"				v="0.84"	 />
+
+    <KeyFrame name="&kColor_ProgressBarEmpty;"				v="0.92"	 />
+    <KeyFrame name="&kColor_ProgressBarStroke;"				v="0.38"	 />
+    <KeyFrame name="&kColor_ProgressBarFill;"				v="0.81"			h="213" s="0.63"  />
+    <KeyFrame name="&kColor_ProgressBarEmptyStartGradient;"	v="0.51"	 />
+    <KeyFrame name="&kColor_ProgressBarFillStartGradient;"	v="0.57"			h="218" s="0.55"  />
+
+    <KeyFrame name="&kColor_ListBoxHeaderNormalGradientStart;"					v="0.86"/>
+    <KeyFrame name="&kColor_ListBoxHeaderNormalGradientEnd;"						v="0.75"/>
+    <KeyFrame name="&kColor_ListBoxHeaderOverGradientStart;"						v="0.75" />
+    <KeyFrame name="&kColor_ListBoxHeaderOverGradientEnd;"						v="0.64" />
+    <KeyFrame name="&kColor_ListBoxHeaderDownGradientStart;"						v="0.47" />
+    <KeyFrame name="&kColor_ListBoxHeaderDownGradientEnd;"						v="0.58" />
+
+    <!-- kColor_ListBoxSelectedLine is used when drag reordering the items in a a list box header -->
+    <KeyFrame name="&kColor_ListBoxSelectedLine;"											v="0.576" h="179" s="0.71" />
+
+    <!-- these two values are used to describe the vertical divider between list sort panes and the edging -->
+    <KeyFrame name="&kColor_ListBoxDividerStroke;"											v="0.62" />
+    <KeyFrame name="&kColor_ListBoxButtonEdgeHighlight;"								v="0.93" />
+    <KeyFrame name="&kColor_ListBoxContentNormal;"						v="0.92" />
+    <KeyFrame name="&kColor_ListBoxContentSelected;"						v="0.70" />
+    <KeyFrame name="&kColor_ListBoxContentHighlighted;"						v="0.70" h = "218" s = "1.0" />
+    <KeyFrame name="&kColor_ListBoxContentDivider;"						v="0.80" />
+    <KeyFrame name="&kColor_ListBoxContentBorder;"						v="0.57" />
+    <KeyFrame name="&kColor_ListBoxContentShadowStart;"					v="0.48" a="0.4"/>
+    <KeyFrame name="&kColor_ListBoxContentShadowEnd;"						v="0.37" a="0.0"/>
+    <!-- list box fallow grey is the tab content color -->
+
+
+    <KeyFrame name="&kColor_StaticTextNormalText;"				v="0.0" />
+    <KeyFrame name="&kColor_StaticTextDisableText;"				v="0.48" />
+    <KeyFrame name="&kColor_ScrollBarRolloverUpStartGradient;"	v="0.92" />
+    <KeyFrame name="&kColor_ScrollBarRolloverUpEndGradient;"	v="0.67" />
+
+    <KeyFrame name="&kColor_KnobNormalInnerStartGradient;"		v="0.92" />
+    <KeyFrame name="&kColor_KnobNormalInnerEndGradient;"		v="0.77" />
+    <KeyFrame name="&kColor_KnobNormalOuterStartGradient;"		v="0.57" />
+    <KeyFrame name="&kColor_KnobNormalOuterEndGradient;"		v="0.92"  />
+
+    <KeyFrame name="&kColor_KnobDisabledInnerStartGradient;"	v="0.92" />
+    <KeyFrame name="&kColor_KnobDisabledInnerEndGradient;"		v="0.86" />
+    <KeyFrame name="&kColor_KnobDisabledOuterStartGradient;"	v="0.86" />
+    <KeyFrame name="&kColor_KnobDisabledOuterEndGradient;"		v="0.92" />
+
+    <KeyFrame name="&kColor_SliderThumbNormalStartGradient;" 			v="0.80" />
+    <KeyFrame name="&kColor_SliderThumbNormalEndGradient;" 			v="0.50" />
+    <KeyFrame name="&kColor_SliderThumbRolloverStartGradient;" 			v="0.70" />
+    <KeyFrame name="&kColor_SliderThumbRolloverEndGradient;" 			v="0.55" />
+    <KeyFrame name="&kColor_SliderThumbDisableStartGradient;" 			v="0.84" />
+    <KeyFrame name="&kColor_SliderThumbDisableEndGradient;" 			v="0.74" />
+    <KeyFrame name="&kColor_SliderThumbNormalStroke;" 			v="0.15" />
+    <KeyFrame name="&kColor_SliderThumbFocusStroke;" 			v="0.55"			h="218" s="1.0" />
+    <KeyFrame name="&kColor_SliderThumbRolloverStroke;" 			v="0.20" />
+    <KeyFrame name="&kColor_SliderThumbDisabledStroke;" 			v="0.65" />
+
+    <KeyFrame name="&kColor_SliderBarNormalStartGradient;" 			v="0.60" />
+    <KeyFrame name="&kColor_SliderBarNormalEndGradient;" 			v="0.80" />
+    <KeyFrame name="&kColor_SliderBarDisableStartGradient;" 			v="0.69" />
+    <KeyFrame name="&kColor_SliderBarDisableEndGradient;" 			v="0.77" />
+
+    <KeyFrame name="&kColor_LevelMeterStroke;"				v="0.38" />
+    <KeyFrame name="&kColor_LevelMeterEmptyStartGradient;"		v="0.41" />
+    <KeyFrame name="&kColor_LevelMeterEmpty;"					v="0.65" />
+    <KeyFrame name="&kColor_LevelMeterFillStartGradient;"			v="1.0" h="120" s="1.0"/>
+    <KeyFrame name="&kColor_LevelMeterFill;"					v="0.2" h="120" s="1.0"/>
+    <KeyFrame name="&kColor_LevelMeterClipIndicator;"			v="1.0" h="0" s="1.0" />
+    <KeyFrame name="&kColor_LevelMeterFillStartShadeGradient;"		v="0.2" a="0.5"/>
+    <KeyFrame name="&kColor_LevelMeterFillShade;"				v="1.0" a="0.0"/>
+    <KeyFrame name="&kColor_LevelMeterCautionStartGradient;"		v="1.0" h="60" s="1.0"/>
+    <KeyFrame name="&kColor_LevelMeterCaution;"				v="0.20" h="60" s="1.0"/>
+    <KeyFrame name="&kColor_LevelMeterWarningStartGradient;"		v="1.0" h="0" s="1.0"/>
+    <KeyFrame name="&kColor_LevelMeterWarning;"				v="0.2" h="0" s="1.0"/>
+
+    <KeyFrame name="&kColor_RulerBackground;"					v="0.40" />
+    <KeyFrame name="&kColor_RulerSel;"							v="0.77" />
+    <KeyFrame name="&kColor_RulerText;"							v="0.98" />
+
+
+  </Theme>
+
+  <Theme t="&Medium;" >
+    <!-- a set of related KeyFrame elements, all sharing the same value of 't' -->
+    <KeyFrame name="&kColor_AppBackground;"						v="0.38" />
+    <KeyFrame name="&kColor_TabBackground;"						v="0.65" />
+    <KeyFrame name="&kColor_TabContent;"						v="0.76"	/>
+    <KeyFrame name="&kColor_TabContentShadowStart;"				v="0.48"	/>
+    <KeyFrame name="&kColor_TabContentShadowEnd;"				v="0.76"	/>
+    <KeyFrame name="&kColor_TextRegular;"						v="0.0"			hold="false" />
+    <KeyFrame name="&kColor_TabNormalStroke;"					v="0.84" />
+    <KeyFrame name="&kColor_TabNormalStartGradient;"			v="0.76" />
+    <KeyFrame name="&kColor_TabNormalEndGradient;"				v="0.65" />
+    <KeyFrame name="&kColor_TabDeactiveStroke;"					v="0.38" />
+    <KeyFrame name="&kColor_TabDeactiveStartGradient;"			v="0.65" />
+    <KeyFrame name="&kColor_TabDeactiveEndGradient;"			v="0.57" />
+    <KeyFrame name="&kColor_TabFocusedStroke;"					v="1.0"			h="44" s="1.0" />
+    <KeyFrame name="&kColor_TabWellStartGradient;"				v="0.57" />
+    <KeyFrame name="&kColor_TabWellEndGradient;"				v="0.38" />
+
+    <KeyFrame name="&kColor_ButtonNormalUpStartGradient;"		v="0.76" />
+    <KeyFrame name="&kColor_ButtonNormalUpEndGradient;"			v="0.57" />
+    <KeyFrame name="&kColor_ButtonNormalDownStartGradient;"		v="0.84" />
+    <KeyFrame name="&kColor_ButtonNormalDownEndGradient;"		v="0.92" />
+    <KeyFrame name="&kColor_ButtonNormalText;"					v="0.0" />
+    <KeyFrame name="&kColor_ButtonNormalStroke;"				v="0.38" />
+    <KeyFrame name="&kColor_ButtonRolloverUpStartGradient;"		v="0.85" />
+    <KeyFrame name="&kColor_ButtonRolloverUpEndGradient;"		v="0.57" />
+    <KeyFrame name="&kColor_ButtonRolloverDownStartGradient;"	v="0.84" />
+    <KeyFrame name="&kColor_ButtonRolloverDownEndGradient;" 	v="0.92" />
+    <KeyFrame name="&kColor_ButtonRolloverText;" 				v="0.0" />
+    <KeyFrame name="&kColor_ButtonRolloverStroke;" 				v="0.38" />
+    <KeyFrame name="&kColor_ButtonDisableUpStartGradient;"		v="0.76" />
+    <KeyFrame name="&kColor_ButtonDisableUpEndGradient;" 		v="0.65" />
+    <KeyFrame name="&kColor_ButtonDisableDownStartGradient;" 	v="0.57" />
+    <KeyFrame name="&kColor_ButtonDisableDownEndGradient;" 		v="0.76" />
+    <KeyFrame name="&kColor_ButtonDisableStroke;" 				v="0.57" />
+    <KeyFrame name="&kColor_ButtonFocusStroke;" 				v="0.75"			h="218" s="1.0" />
+    <KeyFrame name="&kColor_ButtonDefaultStroke;" 				v="0.0"	 />
+
+    <!-- Some of the hot text colors are theme-indpendent and appear at the end of this file. -->
+    <KeyFrame name="&kColor_HotTextLabelRolloverText;"			v="0.0"	 />
+    <KeyFrame name="&kColor_HotTextLabelDownText;"				v="0.0"	 />
+    <KeyFrame name="&kColor_TextEditNormalBackground;"				v="0.92"	 />
+    <KeyFrame name="&kColor_TextEditDisableBackground;"				v="0.76"	 />
+
+    <KeyFrame name="&kColor_DividerNormalStartGradient;"		v="0.38"	 />
+    <KeyFrame name="&kColor_DividerNormalEndGradient;"			v="0.84"	 />
+
+    <KeyFrame name="&kColor_ScrollBarNormalStartGradient;"				v="0.38"	 />
+    <KeyFrame name="&kColor_ScrollBarNormalEndGradient;"				v="0.48"	 />
+    <KeyFrame name="&kColor_ScrollBarRolloverUpStartGradient;"			v="0.79" />
+    <KeyFrame name="&kColor_ScrollBarRolloverUpEndGradient;"			v="0.53" />
+    <KeyFrame name="&kColor_ScrollBarDisableStartGradient;"				v="0.57"	 />
+    <KeyFrame name="&kColor_ScrollBarDisableEndGradient;"				v="0.57"	 />
+
+    <KeyFrame name="&kColor_ToolBarWellStartGradient;"				v="0.65"	 />
+    <KeyFrame name="&kColor_ToolBarWellEndGradient;"				v="0.48"	 />
+    <KeyFrame name="&kColor_ToolBarContentStartGradient;"				v="0.86"	 />
+    <KeyFrame name="&kColor_ToolBarContentEndGradient;"				v="0.65"	 />
+
+    <KeyFrame name="&kColor_GroupBox1TopStroke;"				v="0.57"	 />
+    <KeyFrame name="&kColor_GroupBox1BottomStroke;"				v="0.84"	 />
+    <KeyFrame name="&kColor_GroupBox2CaptionFill;"				v="0.48"	 />
+    <KeyFrame name="&kColor_GroupBox2ContentFill;"				v="0.84"	 />
+
+    <KeyFrame name="&kColor_ProgressBarEmpty;"				v="0.92"	 />
+    <KeyFrame name="&kColor_ProgressBarStroke;"				v="0.38"	 />
+    <KeyFrame name="&kColor_ProgressBarFill;"				v="0.81"			h="213" s="0.63"  />
+    <KeyFrame name="&kColor_ProgressBarEmptyStartGradient;"	v="0.51"	 />
+    <KeyFrame name="&kColor_ProgressBarFillStartGradient;"	v="0.57"			h="218" s="0.55"  />
+
+    <KeyFrame name="&kColor_ListBoxHeaderNormalGradientStart;"					v="0.76"/>
+    <KeyFrame name="&kColor_ListBoxHeaderNormalGradientEnd;"						v="0.65"/>
+    <KeyFrame name="&kColor_ListBoxHeaderOverGradientStart;"						v="0.92" />
+    <KeyFrame name="&kColor_ListBoxHeaderOverGradientEnd;"						v="0.76" />
+    <KeyFrame name="&kColor_ListBoxHeaderDownGradientStart;"						v="0.52" />
+    <KeyFrame name="&kColor_ListBoxHeaderDownGradientEnd;"						v="0.70" />
+
+    <KeyFrame name="&kColor_ListBoxDividerStroke;"											v="0.48" />
+    <KeyFrame name="&kColor_ListBoxButtonEdgeHighlight;"								v="0.84" />
+    <KeyFrame name="&kColor_ListBoxContentNormal;"						v="0.76" />
+    <KeyFrame name="&kColor_ListBoxContentSelected;"						v="0.57" />
+    <KeyFrame name="&kColor_ListBoxContentHighlighted;"						v="0.57" h = "218" s = "1.0" />
+    <KeyFrame name="&kColor_ListBoxContentDivider;"						v="0.84" />
+    <KeyFrame name="&kColor_ListBoxContentBorder;"						v="0.48" />
+    <KeyFrame name="&kColor_ListBoxContentShadowStart;"					v="0.37" a="0.4"/>
+    <KeyFrame name="&kColor_ListBoxContentShadowEnd;"						v="0.37" a="0.0"/>
+
+    <KeyFrame name="&kColor_StaticTextNormalText;"					v="0.0" />
+    <KeyFrame name="&kColor_StaticTextDisableText;"				v="0.48" />
+    <KeyFrame name="&kColor_ScrollButtonNormalArrow;"			v="0.19" />
+    <KeyFrame name="&kColor_ScrollButtonDisableArrow;" 			v="0.57" />
+
+    <KeyFrame name="&kColor_SliderThumbNormalStartGradient;" 			v="0.90" />
+    <KeyFrame name="&kColor_SliderThumbNormalEndGradient;" 			v="0.50" />
+    <KeyFrame name="&kColor_SliderThumbRolloverStartGradient;" 			v="0.90" />
+    <KeyFrame name="&kColor_SliderThumbRolloverEndGradient;" 			v="0.75" />
+    <KeyFrame name="&kColor_SliderThumbDisableStartGradient;" 			v="0.60" />
+    <KeyFrame name="&kColor_SliderThumbDisableEndGradient;" 			v="0.70" />
+
+    <KeyFrame name="&kColor_SliderThumbNormalStroke;" 			v="0.30" />
+    <KeyFrame name="&kColor_SliderThumbFocusStroke;" 			v="0.75"			h="218" s="1.0" />
+    <KeyFrame name="&kColor_SliderThumbRolloverStroke;" 			v="0.30" />
+    <KeyFrame name="&kColor_SliderThumbDisabledStroke;" 			v="0.50" />
+
+    <KeyFrame name="&kColor_SliderBarNormalStartGradient;" 			v="0.33" />
+    <KeyFrame name="&kColor_SliderBarNormalEndGradient;" 			v="0.75" />
+    <KeyFrame name="&kColor_SliderBarDisableStartGradient;" 			v="0.50" />
+    <KeyFrame name="&kColor_SliderBarDisableEndGradient;" 			v="0.70" />
+
+    <KeyFrame name="&kColor_PopupEditableNormalText;"				v="0.0" />
+
+    <KeyFrame name="&kColor_LevelMeterStroke;"				v="0.38" />
+    <KeyFrame name="&kColor_LevelMeterEmptyStartGradient;"		v="0.41" />
+    <KeyFrame name="&kColor_LevelMeterEmpty;"					v="0.65" />
+    <KeyFrame name="&kColor_LevelMeterFillStartGradient;"			v="1.0" h="120" s="1.0"/>
+    <KeyFrame name="&kColor_LevelMeterFill;"					v="0.2" h="120" s="1.0"/>
+    <KeyFrame name="&kColor_LevelMeterClipIndicator;"			v="1.0" h="0" s="1.0" />
+    <KeyFrame name="&kColor_LevelMeterFillStartShadeGradient;"		v="0.2" a="0.5"/>
+    <KeyFrame name="&kColor_LevelMeterFillShade;"				v="1.0" a="0.0"/>
+    <KeyFrame name="&kColor_LevelMeterCautionStartGradient;"		v="1.0" h="60" s="1.0"/>
+    <KeyFrame name="&kColor_LevelMeterCaution;"				v="0.20" h="60" s="1.0"/>
+    <KeyFrame name="&kColor_LevelMeterWarningStartGradient;"		v="1.0" h="0" s="1.0"/>
+    <KeyFrame name="&kColor_LevelMeterWarning;"				v="0.2" h="0" s="1.0"/>
+
+    <KeyFrame name="&kColor_RulerBackground;"					v="0.30" />
+    <KeyFrame name="&kColor_RulerSel;"							v="0.66" />
+    <KeyFrame name="&kColor_RulerText;"							v="0.88" />
+
+    <!--  reskin -->
+    <!--  reskin - radiobutton -->
+
+  </Theme>
+
+  <Theme t="&Dark;" >
+    <!-- a set of related KeyFrame elements, all sharing the same value of 't' -->
+    <KeyFrame name="&kColor_AppBackground;"					v="0.14" />
+    <KeyFrame name="&kColor_TabBackground;"					v="0.28" />
+    <KeyFrame name="&kColor_TabContent;"						v="0.38"	/>
+    <KeyFrame name="&kColor_TabContentShadowStart;"			v="0.01"	/>
+    <KeyFrame name="&kColor_TabContentShadowEnd;"				v="0.84"	/>
+    <KeyFrame name="&kColor_TextRegular;"						v="0.0"			hold="false" />
+    <KeyFrame name="&kColor_TabNormalStroke;"					v="0.48" />
+    <KeyFrame name="&kColor_TabNormalStartGradient;"			v="0.38" />
+    <KeyFrame name="&kColor_TabNormalEndGradient;"				v="0.28" />
+    <KeyFrame name="&kColor_TabDeactiveStroke;"				v="0.38" />
+    <KeyFrame name="&kColor_TabDeactiveStartGradient;"			v="0.27" />
+    <KeyFrame name="&kColor_TabDeactiveEndGradient;"			v="0.14" />
+    <KeyFrame name="&kColor_TabFocusedStroke;"					v=".75"			h="44" s="1.0" />
+    <KeyFrame name="&kColor_TabWellStartGradient;"				v="0.38" />
+    <KeyFrame name="&kColor_TabWellEndGradient;"				v="0.14" />
+    <KeyFrame name="&kColor_ButtonNormalUpStartGradient;"		v="0.38" />
+    <KeyFrame name="&kColor_ButtonNormalUpEndGradient;"		v="0.27" />
+    <KeyFrame name="&kColor_ButtonNormalDownStartGradient;"	v="0.57" />
+    <KeyFrame name="&kColor_ButtonNormalDownEndGradient;"		v="0.65" />
+    <KeyFrame name="&kColor_ButtonNormalStroke;"				v="0.14" />
+    <KeyFrame name="&kColor_ButtonRolloverUpStartGradient;"	v="0.48" />
+    <KeyFrame name="&kColor_ButtonRolloverUpEndGradient;"		v="0.27" />
+    <KeyFrame name="&kColor_ButtonRolloverDownStartGradient;"	v="0.57" />
+    <KeyFrame name="&kColor_ButtonRolloverDownEndGradient;" 	v="0.65" />
+    <KeyFrame name="&kColor_ButtonRolloverText;" 				v="0.0" />
+    <KeyFrame name="&kColor_ButtonRolloverStroke;" 			v="0.14" />
+    <KeyFrame name="&kColor_ButtonDisableUpStartGradient;"		v="0.27" />
+    <KeyFrame name="&kColor_ButtonDisableUpEndGradient;" 		v="0.27" />
+    <KeyFrame name="&kColor_ButtonDisableDownStartGradient;" 	v="0.27" />
+    <KeyFrame name="&kColor_ButtonDisableDownEndGradient;" 	v="0.22" />
+    <KeyFrame name="&kColor_ButtonDisableStroke;" 				v="0.20" />
+    <KeyFrame name="&kColor_ButtonFocusStroke;" 				v="0.75"			h="195" s="0.55" />
+    <KeyFrame name="&kColor_ButtonDefaultStroke;" 				v="0.0"	 />
+
+    <!-- Some of the hot text colors are theme-indpendent and appear at the end of this file. -->
+    <KeyFrame name="&kColor_HotTextLabelRolloverText;"			v="0.0"	 />
+    <KeyFrame name="&kColor_HotTextLabelDownText;"				v="0.0"	 />
+
+    <KeyFrame name="&kColor_TextEditNormalText;"				v="0.0"	 />
+    <KeyFrame name="&kColor_TextEditDisableText;"				v="0.30"	 />
+    <KeyFrame name="&kColor_TextEditNormalBackground;"				v="0.38"	 />
+    <KeyFrame name="&kColor_TextEditDisableBackground;"				v="0.48"	 />
+
+    <KeyFrame name="&kColor_DividerNormalStartGradient;"		v="0.14"	 />
+    <KeyFrame name="&kColor_DividerNormalEndGradient;"			v="0.38"	 />
+
+    <KeyFrame name="&kColor_ScrollBarNormalStartGradient;"				v="0.18"	 />
+    <KeyFrame name="&kColor_ScrollBarNormalEndGradient;"				v="0.38"	 />
+    <KeyFrame name="&kColor_ScrollBarDisableStartGradient;"				v="0.22"	 />
+    <KeyFrame name="&kColor_ScrollBarDisableEndGradient;"				v="0.20"	 />
+
+    <KeyFrame name="&kColor_ToolBarWellStartGradient;"				v="0.45"	 />
+    <KeyFrame name="&kColor_ToolBarWellEndGradient;"				v="0.27"	 />
+    <KeyFrame name="&kColor_ToolBarContentStartGradient;"				v="0.57"	 />
+    <KeyFrame name="&kColor_ToolBarContentEndGradient;"				v="0.38"	 />
+
+    <KeyFrame name="&kColor_GroupBox1TopStroke;"				v="0.0"	 />
+    <KeyFrame name="&kColor_GroupBox1BottomStroke;"			v="0.0"	 />
+    <KeyFrame name="&kColor_GroupBox2CaptionFill;"				v="0.18"	 />
+    <KeyFrame name="&kColor_GroupBox2ContentFill;"				v="0.38"	 />
+
+    <KeyFrame name="&kColor_ProgressBarEmpty;"				v="0.65"	 />
+    <KeyFrame name="&kColor_ProgressBarStroke;"				v="0.38"	 />
+    <KeyFrame name="&kColor_ProgressBarFill;"				v="0.81"			h="213" s="0.63"  />
+    <KeyFrame name="&kColor_ProgressBarEmptyStartGradient;"	v="0.36"	 />
+    <KeyFrame name="&kColor_ProgressBarFillStartGradient;"	v="0.57"			h="218" s="0.55"  />
+
+    <KeyFrame name="&kColor_ListBoxHeaderNormalGradientStart;"					v="0.34"/>
+    <KeyFrame name="&kColor_ListBoxHeaderNormalGradientEnd;"						v="0.27"/>
+    <KeyFrame name="&kColor_ListBoxHeaderOverGradientStart;"						v="0.48" />
+    <KeyFrame name="&kColor_ListBoxHeaderOverGradientEnd;"						v="0.38" />
+    <KeyFrame name="&kColor_ListBoxHeaderDownGradientStart;"						v="0.27" />
+    <KeyFrame name="&kColor_ListBoxHeaderDownGradientEnd;"						v="0.38" />
+
+    <!-- kColor_ListBoxSelectedLine is used when drag reordering the items in a a list box header -->
+    <KeyFrame name="&kColor_ListBoxSelectedLine;"						v="0.576" h="179" s="0.71" />
+
+    <!-- these two values are used to describe the vertical divider between list sort panes and the edging -->
+    <KeyFrame name="&kColor_ListBoxDividerStroke;"										v="0.14" />
+    <KeyFrame name="&kColor_ListBoxButtonEdgeHighlight;"								v="0.48" />
+
+    <KeyFrame name="&kColor_ListBoxContentNormal;"						v="0.38" />
+    <KeyFrame name="&kColor_ListBoxContentSelected;"						v="0.20" />
+    <KeyFrame name="&kColor_ListBoxContentHighlighted;"						v="0.20" h = "218" s = "1.0" />
+    <KeyFrame name="&kColor_ListBoxContentDivider;"						v="0.48" />
+    <KeyFrame name="&kColor_ListBoxContentBorder;"						v="0.27" />
+    <KeyFrame name="&kColor_ListBoxContentShadowStart;"					v="0.0" a="0.4"/>
+    <KeyFrame name="&kColor_ListBoxContentShadowEnd;"						v="0.0" a="0.0"/>
+    <!-- list box fallow grey is the tab content color -->
+
+    <KeyFrame name="&kColor_StaticTextNormalText;"				v="0.0" />
+    <KeyFrame name="&kColor_StaticTextDisableText;"				v="0.48" />
+    <KeyFrame name="&kColor_ScrollBarRolloverUpStartGradient;"	v="0.48" />
+    <KeyFrame name="&kColor_ScrollBarRolloverUpEndGradient;"	v="0.27" />
+
+    <KeyFrame name="&kColor_KnobNormalInnerStartGradient;"		v="0.65" />
+    <KeyFrame name="&kColor_KnobNormalInnerEndGradient;"		v="0.38" />
+    <KeyFrame name="&kColor_KnobNormalOuterStartGradient;"		v="0.14" />
+    <KeyFrame name="&kColor_KnobNormalOuterEndGradient;"		v="0.57" />
+
+    <KeyFrame name="&kColor_KnobDisabledInnerStartGradient;"	v="0.76" />
+    <KeyFrame name="&kColor_KnobDisabledInnerEndGradient;"		v="0.57" />
+    <KeyFrame name="&kColor_KnobDisabledOuterStartGradient;"	v="0.57" />
+    <KeyFrame name="&kColor_KnobDisabledOuterEndGradient;"		v="0.76" />
+
+    <KeyFrame name="&kColor_SliderThumbNormalStartGradient;" 			v="0.70" />
+    <KeyFrame name="&kColor_SliderThumbNormalEndGradient;" 			v="0.30" />
+    <KeyFrame name="&kColor_SliderThumbRolloverStartGradient;" 			v="0.70" />
+    <KeyFrame name="&kColor_SliderThumbRolloverEndGradient;" 			v="0.55" />
+    <KeyFrame name="&kColor_SliderThumbDisableStartGradient;" 			v="0.35" />
+    <KeyFrame name="&kColor_SliderThumbDisableEndGradient;" 			v="0.25" />
+
+    <KeyFrame name="&kColor_SliderThumbNormalStroke;" 			v="0.08" />
+    <KeyFrame name="&kColor_SliderThumbFocusStroke;" 			v="0.55"			h="218" s="1.0" />
+    <KeyFrame name="&kColor_SliderThumbRolloverStroke;" 			v="0.20" />
+    <KeyFrame name="&kColor_SliderThumbDisabledStroke;" 			v="0.19" />
+
+    <KeyFrame name="&kColor_SliderBarNormalStartGradient;" 			v="0.13" />
+    <KeyFrame name="&kColor_SliderBarNormalEndGradient;" 			v="0.55" />
+    <KeyFrame name="&kColor_SliderBarDisableStartGradient;" 			v="0.19" />
+    <KeyFrame name="&kColor_SliderBarDisableEndGradient;" 			v="0.30" />
+
+    <KeyFrame name="&kColor_LevelMeterStroke;"				v="0.18" />
+    <KeyFrame name="&kColor_LevelMeterEmptyStartGradient;"		v="0.21" />
+    <KeyFrame name="&kColor_LevelMeterEmpty;"					v="0.35" />
+    <KeyFrame name="&kColor_LevelMeterFillStartGradient;"			v="0.6" h="120" s="1.0"/>
+    <KeyFrame name="&kColor_LevelMeterFill;"					v="0.0" h="120" s="1.0"/>
+    <KeyFrame name="&kColor_LevelMeterClipIndicator;"			v="0.6" h="0" s="1.0" />
+    <KeyFrame name="&kColor_LevelMeterFillStartShadeGradient;"		v="0.2" a="0.5"/>
+    <KeyFrame name="&kColor_LevelMeterFillShade;"				v="0.6" a="0.0"/>
+    <KeyFrame name="&kColor_LevelMeterCautionStartGradient;"		v="0.6" h="60" s="1.0"/>
+    <KeyFrame name="&kColor_LevelMeterCaution;"				v="0.20" h="60" s="1.0"/>
+    <KeyFrame name="&kColor_LevelMeterWarningStartGradient;"		v="0.6" h="0" s="1.0"/>
+    <KeyFrame name="&kColor_LevelMeterWarning;"				v="0.2" h="0" s="1.0"/>
+
+    <KeyFrame name="&kColor_RulerBackground;"					v="0.12" />
+    <KeyFrame name="&kColor_RulerSel;"							v="0.40" />
+    <KeyFrame name="&kColor_RulerText;"							v="0.8" />
+
+    <!--  reskin -->
+    <!--  reskin - radiobutton -->
+
+  </Theme>
+
+
+
+  <!-- Some KeyFrame elements independent of a Theme element to allow for 
+		flipping the color of text between themes -->
+  <KeyFrame name="&kColor_ButtonNormalText;"			t="0.0"		v="0.76"	hold="true" />
+  <KeyFrame name="&kColor_ButtonNormalText;"			t="0.12"	v="0.0" 	hold="true" />
+  <KeyFrame name="&kColor_PopupEditableNormalText;"	t="0.0"		v="0.76"	hold="true" />
+  <KeyFrame name="&kColor_PopupEditableNormalText;"	t="0.12"	v="0.0" 	hold="true" />
+
+  <KeyFrame name="&kColor_ButtonRolloverText;"		t="0.0"		v="0.76"	hold="true" />
+  <KeyFrame name="&kColor_ButtonRolloverText;"		t="0.12"	v="0.0" 	hold="true" />
+  <KeyFrame name="&kColor_ButtonDisableText;"			t="0.0"		v="0.76"	a="0.3"				hold="true"/>
+  <KeyFrame name="&kColor_ButtonDisableText;"			t="0.12"	v="0.0"		a="0.4"				hold="true"/>
+  <KeyFrame name="&kColor_PopupEditableDisableText;"	t="0.0"		v="0.76"	a="0.3"				hold="true"/>
+  <KeyFrame name="&kColor_PopupEditableDisableText;"	t="0.12"	v="0.0"		a="0.4"				hold="true"/>
+
+  <KeyFrame name="&kColor_HotTextNormalText;"			t="0"		v="1.0"		h="44" s="1.0"  	hold="true"/>
+  <KeyFrame name="&kColor_HotTextNormalText;"			t="0.25"	v="0.75"	h="218" s="1.0"  	hold="true"/>
+
+  <KeyFrame name="&kColor_HotTextRolloverText;"		t="0.0"		v="1.0"		h="44" s=".7" 	 	hold="true"/>
+  <KeyFrame name="&kColor_HotTextRolloverText;"		t="0.25"	v="1.0"		h="218" s=".8"		hold="true"/>
+
+  <KeyFrame name="&kColor_HotTextDownText;"			t="0.0"		v="0.0"		h="0" s="1.0"  		hold="true"/>
+  <KeyFrame name="&kColor_HotTextDownText;"			t="0.25"	v="0.0"		h="0" s="1.0"  		hold="true"/>
+  <KeyFrame name="&kColor_HotTextDisableText;"		t="0.0"		v="0.76"	a="0.3"				hold="true"/>
+  <KeyFrame name="&kColor_HotTextDisableText;"		t="0.12"	v="0.0"		a="0.4"				hold="true"/>
+  <KeyFrame name="&kColor_HotTextLabelNormalText;"	t="0.0"		v="0.76"						hold="true"	/>
+  <KeyFrame name="&kColor_HotTextLabelNormalText;"	t="0.12"	v="0.0"							hold="true" />
+  <KeyFrame name="&kColor_HotTextLabelRolloverText;"	t="0.0"		v="0.76"						hold="true"	/>
+  <KeyFrame name="&kColor_HotTextLabelRolloverText;"	t="0.12"	v="0.0"							hold="true" />
+  <KeyFrame name="&kColor_HotTextLabelDownText;"		t="0.0"		v="0.76"						hold="true"	/>
+  <KeyFrame name="&kColor_HotTextLabelDownText;"		t="0.12"	v="0.0"							hold="true" />
+  <KeyFrame name="&kColor_HotTextLabelDisableText;"	t="0.0"		v="0.76"	a="0.3"				hold="true"/>
+  <KeyFrame name="&kColor_HotTextLabelDisableText;"	t="0.12"	v="0.0"		a="0.4"				hold="true"/>
+
+  <KeyFrame name="&kColor_StaticTextNormalText;"		t="0.0"		v="0.76"	hold="true" />
+  <KeyFrame name="&kColor_StaticTextNormalText;"		t="0.12"	v="0.0" 	hold="true" />
+
+  <KeyFrame name="&kColor_ScrollButtonNormalArrow;"	t="0.0"		v="0.76"	hold="true" />
+  <KeyFrame name="&kColor_ScrollButtonNormalArrow;"	t="0.12"	v="0.19" 	hold="true" />
+  <KeyFrame name="&kColor_ScrollButtonDisableArrow;"	t="0.0"		v="0.76"	a="0.3"				hold="true"/>
+  <KeyFrame name="&kColor_ScrollButtonDisableArrow;"	t="0.12"	v="0.25"	a="0.4"				hold="true"/>
+
+  <KeyFrame name="&kColor_TextRegular;"				t="0.0"		v="0.76"	hold="true" />
+  <KeyFrame name="&kColor_TextRegular;"				t="0.12"	v="0.0"		hold="true" />
+
+  <KeyFrame name="&kColor_TextRegularInverted;"		t="0.0"		v="0.0"		hold="true" />
+  <KeyFrame name="&kColor_TextRegularInverted;"		t="0.12"	v="0.945"	hold="true" />
+
+  <KeyFrame name="&kColor_TextLabel;"					t="0.0"		v="0.7"		hold="true" />
+
+  <KeyFrame name="&kColor_TextOnDarkBackground;"		t="0.0"		v="0.75"	hold="true" />
+  <KeyFrame name="&kColor_TextOnDarkBackground;"		t="0.12"	v="0.945"	hold="true" />
+
+
+  <KeyFrame name ="&kColor_ListBoxDragInsert;" h="0" s="0" v="0" />
+  <KeyFrame name ="&kColor_ListBoxDragBorderHighlightFill;" h="179" s="33" v="61" a="0.5"/>
+  <KeyFrame name ="&kColor_ListBoxDragBorderHighlightShadow;" h="0" s="0" v="84" a="0.5"/>
+
+
+</ThemeColors>
+
+

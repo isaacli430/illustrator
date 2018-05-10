@@ -1,0 +1,50 @@
+/* [1] */
+$$$/TransformPalett/Str/ToolTip/ProxyItem=Reference Point
+/* [2] */
+$$$/TransformPalett/Str/ToolTip/XLabelItem=X Value
+/* [3] */
+$$$/TransformPalett/Str/ToolTip/XTextItem=X Value
+/* [4] */
+$$$/TransformPalett/Str/ToolTip/YLabelItem=Y Value
+/* [5] */
+$$$/TransformPalett/Str/ToolTip/YTextItem=Y Value
+/* [6] */
+$$$/TransformPalett/Str/ToolTip/WidthLabelItem=W Value
+/* [7] */
+$$$/TransformPalett/Str/ToolTip/WidthTextItem=W Value
+/* [8] */
+$$$/TransformPalett/Str/ToolTip/HeightLabelItem=H Value
+/* [9] */
+$$$/TransformPalett/Str/ToolTip/HeightTextItem=H Value
+/* [10] */
+$$$/TransformPalett/Str/ToolTip/RotateLabelItem=Rotate
+/* [11] */
+$$$/TransformPalett/Str/ToolTip/RotateTextItem=Rotate
+/* [12] */
+$$$/TransformPalett/Str/ToolTip/ShearLabelItem=Shear
+/* [13] */
+$$$/TransformPalett/Str/ToolTip/ShearTextItem=Shear
+/* [14] */
+
+/* [15] */
+
+/* [16] */
+$$$/TransformPalett/Str/ToolTip/LinkItem=Constrain Width and Height Proportions
+/* [17] */
+
+/* [18] */
+
+/* [19] */
+
+/* [20] */
+$$$/TransformPalett/Str/ToolTip/Pixel=Set this option to align object boundary to pixel grid (prevents blurry lines)
+/* [21] */
+$$$/TransformPalett/Str/ToolTip/RegIconItem=Symbol Registration Point
+/* [22] */
+$$$/TransformPalett/Str/ToolTip/SymbolRegXLabelItem=Registration X Value
+/* [23] */
+$$$/TransformPalett/Str/ToolTip/SymbolRegXItem=Registration X Value
+/* [24] */
+$$$/TransformPalett/Str/ToolTip/SymbolRegYLabelItem=Registration Y Value
+/* [25] */
+$$$/TransformPalett/Str/ToolTip/SymbolRegYItem=Registration Y Value

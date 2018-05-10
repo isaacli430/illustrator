@@ -1,0 +1,28 @@
+/* [1] */
+OBJ1
+/* [2] */
+$$$/KnifeTool/Str/Error/SelectMultiple=The filter cannot complete because more than one object is selected.
+/* [3] */
+!MEM
+/* [4] */
+$$$/KnifeTool/Str/Error/2=The filter cannot complete because there isn't enough memory (RAM) available.
+/* [5] */
+271
+/* [6] */
+$$$/KnifeTool/Str/Error/4=The filter cannot complete because there isn't enough memory (RAM) available.
+/* [7] */
+SEGM
+/* [8] */
+$$$/KnifeTool/Str/Error/6=The filter cannot complete because a path has too many anchor points.
+/* [9] */
+NESS
+/* [10] */
+$$$/KnifeTool/Str/Error/8=The filter cannot complete because a layer is locked or invisible.
+/* [11] */
+!sel
+/* [12] */
+$$$/KnifeTool/Str/Error/12/Mac=You must select a path first.
+/* [13] */
+<others>
+/* [14] */
+$$$/KnifeTool/Str/Error/14=The filter cannot complete because of an unknown error.

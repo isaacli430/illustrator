@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+  <menuItem id="3" text="$$$/TransformPalett/Mnu/Transform/3=Flip &amp;Horizontal"></menuItem>
+  <menuItem id="4" text="$$$/TransformPalett/Mnu/Transform/4=Flip &amp;Vertical"></menuItem>
+  <separator></separator>
+  <menuItem id="6" text="$$$/TransformPalett/Mnu/Transform/6=&amp;Scale Strokes &amp;&amp; Effects"></menuItem>
+  <separator></separator>
+  <menuItem id="10" text="$$$/TransformPalett/Mnu/Transform/10=Transform &amp;Object Only"></menuItem>
+  <menuItem id="11" text="$$$/TransformPalett/Mnu/Transform/11=Transform &amp;Pattern Only"></menuItem>
+  <menuItem id="12" text="$$$/TransformPalett/Mnu/Transform/12=Transform &amp;Both"></menuItem>
+  <separator></separator>
+  <menuItem id="14" text="$$$/TransformPalett/Mnu/Transform/14=Use &amp;Registration Point for Symbol"></menuItem>
+</menu>

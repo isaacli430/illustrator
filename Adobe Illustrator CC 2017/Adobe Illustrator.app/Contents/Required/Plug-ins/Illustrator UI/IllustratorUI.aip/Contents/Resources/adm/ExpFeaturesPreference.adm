@@ -1,0 +1,6 @@
+sheet ExpFeaturesPreference
+{
+interface:
+	
+	EFPrefsEnableCharts: true;
+}

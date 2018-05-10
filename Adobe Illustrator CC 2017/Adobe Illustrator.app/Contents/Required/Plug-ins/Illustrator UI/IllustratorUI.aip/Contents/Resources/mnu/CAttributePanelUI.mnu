@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+  <menuItem id="1" text="$$$/_AttributePalette/Mnu/Attribute/1=&amp;Show Overprint Only"></menuItem>
+  <menuItem id="2" text="$$$/_AttributePalette/Mnu/Attribute/2=Show &amp;Note"></menuItem>
+</menu>

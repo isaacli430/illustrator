@@ -1,0 +1,19 @@
+layout StrokeWidthProfileControlGroup
+{
+     view subview(identifier: "StrokeWidthProfileCG",
+				 layout_theme: @controlbar,
+				 show_border: false,
+				 child_vertical: @align_center,
+				 placement: @place_row,
+				 margin:0,
+				 spacing:5,
+				 height:31)
+    {
+		optional(identifier: "StrokeWidthProfileSubGroup", child_vertical:@align_center, margin : 0)			
+		{
+			popup_panel_button(identifier:"VariableWidthImage", width:109,
+			alt: "$$$/PaintStyle/StrokeDlg/ToolTips/VariableWidthImagePopupBtnTip=Variable Width Profile");
+		}
+    }
+}
+

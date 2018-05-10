@@ -1,0 +1,30 @@
+layout hiddenTextMenu
+{
+	view menu( id: 54,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/HiddenText/PointSizeUp=Point Size Up", id:					65, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenText/PointSizeDown=Point Size Down", id:				66, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenText/FontSizeStepUp=Font Size Step Up", id:			105, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenText/FontSizeStepDown=Font Size Step Down", id:		106, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenText/KernLooser=Kern Looser", id:						67, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenText/KernTighter=Kern Tighter", id:					68, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenText/Tracking=Tracking", id:							60, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenText/ClearTracking=Clear Tracking", id:				108, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenText/Spacing=Spacing", id:								61, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenText/UniformType=Uniform Type", id:					107, help_id:0);
+		menu( text:  	"$$$/_MBAR/Mnu/HiddenText/HighlightFont=Highlight Font", id:				178, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenText/HighlightFontSecondary=Highlight Font (Secondary)", id:	179, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenText/LeftAlign=Left Align Text", id:					58, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenText/CenterAlign=Center Text", id:						213, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenText/RightAlign=Right Align Text", id:					214, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenText/Justify=Justify Text Left", id:					215, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenText/JustifyCenter=Justify Text Center", id:			210, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenText/JustifyRight=Justify Text Right", id:				211, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenText/JustifyAll=Justify All Lines", id:				216, help_id:0);	
+		menu( text: "$$$/_MBAR/Mnu/HiddenText/ToggleAutoHyphen=Toggle Auto Hyphenation", id:	72, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenText/ToggleLineComposer=Toggle Line Composer", id:		73, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenText/Subscript=Subscript", 						id:	387, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenText/Superscript=Superscript", 					id:	388, help_id:0);
+}
+}

@@ -1,0 +1,30 @@
+layout TouchColorModel
+{
+     view subview(identifier: "TouchColorModel",
+				 show_border: false,
+				 placement: @place_column,
+				 layout_theme:@touch_panel, margin: 0)
+    {
+		button_bar(identifier: "ModeSelection", horizontal: @align_center, vertical: @align_top,
+									items: [{name: "RGB", value: 0}, 
+											{name: "CMYK", value: 1},
+											{image:{normal: "SP_TouchLaunchLiveColor_Sm_N.png", dark_normal:"SP_TouchLaunchLiveColor_Sm_N_D.png"},alt: "$$$/PaintStyle/Str/ColorToolTip/ColorGuide=Color Guide", value: 2} ],wants_focus: false, bind:@ColorViewType);
+		column(margin:[5, 0, 5, 0], vertical: @align_fill, horizontal:@align_fill)
+		{
+			subview( identifier: "CustomView", vertical: @align_fill, horizontal:@align_fill,show_border: false);
+		}
+		column(margin: 0, spacing: 0, horizontal: @align_fill)
+		{
+			separator(orientation: @horizontal);
+			row(horizontal: @align_right)
+			{
+				button(	identifier: "Add Color",
+									 image: {normal: "SP_TouchNew_Sm_N.png", dark_normal:"SP_TouchNew_Sm_N_D.png"},
+									 wants_focus: false,
+									 alt:"$$$/PaintStyle/Str/ColorToolTip/AddColor=Add Swatch",
+									 height: 32, width: 32);
+			}
+			separator(orientation: @horizontal, vertical: @align_bottom);
+		}
+	}
+}

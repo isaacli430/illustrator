@@ -1,0 +1,23 @@
+sheet ArcSegmentTools
+{
+constant:
+	typeNames: ['$$$/SimpleTools/Mnu/Opened=Open',
+				  '$$$/SimpleTools/Mnu/Closed=Closed'];
+	baseNames : ['$$$/SimpleTools/Mnu/XAxis=X Axis',
+				 '$$$/SimpleTools/Mnu/YAxis=Y Axis'];
+	interface:
+        filter: {min_value: -100, max_value: 100};       
+        fillCell : false;
+        fourPointPinSelectorCell: 0;
+        lengthXAxisCell : 100;
+        lengthYAxisCell : 100;
+        typePopUp :1;
+        basePopUp : 1;
+        slopeCell : 0;
+        entriesType: [			{name: typeNames[0], value: 0},
+							{name: typeNames[1], value: 1}							
+						] ;
+		entriesBase: [			{name: baseNames[0], value: 0},
+						{name: baseNames[1], value: 1}							
+						] ;
+}

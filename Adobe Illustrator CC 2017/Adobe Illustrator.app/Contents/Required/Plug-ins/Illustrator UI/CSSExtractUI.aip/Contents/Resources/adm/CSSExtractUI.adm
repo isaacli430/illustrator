@@ -1,0 +1,5 @@
+sheet CSSExtractUI
+{
+	interface:
+	showWarning:0;
+}

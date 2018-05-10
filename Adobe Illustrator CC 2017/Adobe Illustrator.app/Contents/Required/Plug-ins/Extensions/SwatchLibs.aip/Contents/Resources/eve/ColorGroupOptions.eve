@@ -1,0 +1,77 @@
+layout ColorGroupOptions
+{
+    view subview(identifier: "AIEveSubView",
+                 layout_theme: @dialog_large,
+                 placement: @place_column,
+                 child_horizontal: @align_fill,
+				 show_border: false,
+				 spacing: @unrelated_spacing)
+    {
+            column()
+			{
+				row( child_vertical: @align_center, spacing: @related_spacing)
+				{
+					edit_text(characters: 15,
+							set_default_focus: true,
+							bind: @cgNameString, 
+							identifier: "ColorGroupNameTextEdit",
+							max_characters: 63,
+							name: "$$$/SwatchLibs/ColorGroupOptionsDlg/NameLabel=&Name:");
+					panel(bind: @showWarning, value: true, margin: 0)
+					{
+						info_icon(icontype: "warning", size: "small", alt: "$$$/SwatchLib/Errors/EmptyName=Please supply a name for the color group.");
+					}
+				}
+				optional(bind: @ShowOptions, value: true, margin:0)
+				{
+					column(identifier: "CreateFromGroup")
+					{
+						radiogroup(show_border: false)
+						{
+							radio_button(bind: @CreateFrom,
+								identifier: "SelectedSwatchesRadioButton",
+								name: "$$$/SwatchLibs/CGOptions/SelSwatches=Selected &Swatches",
+								value: @SelectedSwatches,
+								label: "$$$/SwatchLibs/ColorGroupOptionsDlg/CreateFromLabel=Create From:");
+
+							radio_button(bind: @CreateFrom,
+								identifier: "SelectedArtworkRadioButton",
+								name: "$$$/SwatchLibs/CGOptions/Extract=Selected &Artwork",
+								value: @SelectedArtwork);
+
+							row(margin:0)
+							{
+								guide_consumer(consume_horizontal: 1);
+								column(margin:0)
+								{
+									checkbox(identifier: "GlobalColorGroupCheckbox", indent: gIndent, guide_mask:[@guide_label],
+										name: "$$$/SwatchLibs/CGOptions/MakeGlobal=Convert Process to &Global");
+									checkbox(identifier: "TintsColorGroupCheckbox",	indent: gIndent, guide_mask:[@guide_label],								
+										name: "$$$/SwatchLibs/CGOptions/IncludeTints=Include Swatches for &Tints");
+								}
+							}
+					
+						}
+					}
+								
+				}
+
+			}
+        
+			row(horizontal: @align_right,
+				reverse: os == @mac, spacing: @related_spacing)
+			{
+				button(default: true,
+						bind: @result,
+						identifier: "okButton",
+						name: "$$$/gOK=OK",
+						commit_button: true);
+
+				button(cancel: true,
+					identifier: "cancelButton",
+					name: "$$$/gCancel=Cancel",
+					commit_button: true);
+			}
+  
+    }
+}

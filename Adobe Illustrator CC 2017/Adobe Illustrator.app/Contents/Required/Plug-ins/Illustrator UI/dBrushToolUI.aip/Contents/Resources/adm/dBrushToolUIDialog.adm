@@ -1,0 +1,24 @@
+sheet dBrushToolUIDialog
+{
+  interface:
+    show_name: true;
+    show_preview: false;
+    
+    filterSize: {min_value: 1, max_value: 10};
+    filterLength: {min_value: 25, max_value: 300};
+    filterDensity: {min_value: 1, max_value: 100};
+    filterThickness: {min_value: 1, max_value: 100};
+    filterOpacity: {min_value: 1, max_value: 100};
+    filterStiffness: {min_value: 1, max_value: 100};
+                        
+    name: "";
+	shape: "";
+	size: 5;
+    length: 150;
+    density: 50;
+    thickness: 50;
+    opacity: 50;
+    stiffness: 50;
+    
+    preview: false;
+}

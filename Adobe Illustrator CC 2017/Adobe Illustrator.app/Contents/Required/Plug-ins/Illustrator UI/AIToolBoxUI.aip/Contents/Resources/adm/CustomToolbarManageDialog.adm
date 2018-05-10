@@ -1,0 +1,16 @@
+sheet CustomToolbarManageDialog
+{
+	interface:
+		errorString: "noErr";
+		showWarning: false;
+	logic:
+		relate
+		{
+			errorString <== errorString;
+			showWarning <== errorString != "noErr";
+		}
+	invariant:
+		check_error <== showWarning == false;
+	output:
+		result <== {dummy: showWarning};
+}

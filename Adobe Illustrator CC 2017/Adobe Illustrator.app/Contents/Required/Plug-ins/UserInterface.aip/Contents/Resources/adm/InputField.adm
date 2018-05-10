@@ -1,0 +1,18 @@
+sheet InputField
+{
+	interface:
+		MessageText: "";
+		ShowMessage: false;
+		FieldLabel: "Name:";
+		FieldValue: "Type here...";
+		errorText: "Sample Error String";
+		isError: false;
+		IsInputValid: true;
+	
+	invariant:
+		check <== IsInputValid == true;
+		
+	output:
+		result <== {dummy1: FieldLabel, dummy2: FieldValue, dummy3: errorText, dummy4: IsInputValid};
+}
+

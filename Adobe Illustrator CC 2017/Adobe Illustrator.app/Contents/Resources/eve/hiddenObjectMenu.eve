@@ -1,0 +1,15 @@
+layout hiddenObjectMenu
+{
+	view menu( id: 55,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/HiddenObject/LockOthers=Lock Others", id:				208, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenObject/HideOthers=Hide Others", id:				209, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenObject/RepeatPathfinder=Repeat Pathfinder", id:	188, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenObject/AverageJoin=Average && Join", id:			212, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/symbol/BreakLink=Break Link to Symbol", id:				71, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/symbol/ResetTransformation=Reset Transformation", id:					321, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/context/Enter1=Isolate Selected Object", id:				286, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/context/Exit=Exit Isolation Mode", id:					287, help_id:0);
+}
+}

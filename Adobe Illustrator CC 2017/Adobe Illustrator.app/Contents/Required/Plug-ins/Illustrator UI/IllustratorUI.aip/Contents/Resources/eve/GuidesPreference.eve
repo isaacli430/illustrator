@@ -1,0 +1,102 @@
+layout GuidesPreference
+{
+	view subview(identifier: "GuidesPrefEveSubView",
+				 child_horizontal: @align_fill,
+				 placement: @place_column,
+				 show_border: false, 
+				 margin: [22,15,0,15],
+				 layout_theme: @dialog_large)
+	{
+		column(spacing: 0)
+		{
+		static_text(identifier: "GuPStaticTextCaption",
+					name: "$$$/PrefsDlg/GuPDlg/Caption=Guides & Grid"
+					);
+		
+		separator(identifier: "GuPTopSeparator");
+		}
+		
+		group(identifier: "GuPGuidesGrp",
+				name: "$$$/PrefsDlg/GuPDlg/GuPGuidesGrp=Guides",
+				placement: @place_row)
+		{
+			column(child_horizontal: @align_fill)
+			{
+				popup(identifier: "GuPPopupGuideColor",
+					include_custom_item: false,
+					name: "$$$/PrefsDlg/GuPDlg/GuPPopupGuideColor=&Color:",
+					items: gSmallColorPopupList
+					);
+              
+				popup(identifier: "GuPPopupGuideStyle",
+					include_custom_item: false,
+					name: "$$$/PrefsDlg/GuPDlg/GuPPopupGuideStyle=&Style:",
+					items: @GuPGuideStylePopupItems,
+					bind: @GuPGuideStyle
+					);
+			}
+			swatch(identifier: "GuPImageGuideColor", border: @border_normal);
+		}
+		
+		group(identifier: "GuPGridGrp",
+				name: "$$$/PrefsDlg/GuPDlg/GuPGridGrp=Grid",
+				placement: @place_column)
+		{
+		
+		row()
+		{
+			column(child_horizontal: @align_fill)
+			{
+				popup(identifier: "GuPPopupGridColor",
+						include_custom_item: false,
+						name: "$$$/PrefsDlg/GuPDlg/GuPPopupGridColor=Colo&r:",
+						items: gSmallColorPopupList
+						);
+						
+				popup(identifier: "GuPPopupGridStyle",
+					include_custom_item: false,
+					name: "$$$/PrefsDlg/GuPDlg/GuPPopupGridStyle=St&yle:",
+					items: @GuPGuideStylePopupItems,
+					bind: @GuPGridStyle
+					);
+			}
+			
+			swatch(identifier: "GuPImageGridColor" , border: @border_normal);
+		}
+			
+		
+		column()
+		{
+			unit_hot_number(identifier: "GuPEditNumberGE",
+									name: "$$$/PrefsDlg/GuPDlg/GuPEditNumberGE=Gridline &every:",
+									decimal_places: 2,
+									min_value: 0.01,
+									max_value: 1000,
+									digits: 4,
+									bind: @GuPGECell
+									);
+									
+			unit_hot_number(identifier: "GuPEditNumberSubdivision",
+									name: "$$$/PrefsDlg/GuPDlg/GuPEditNumberSubdivision=Sub&divisions:",
+									decimal_places: 2,
+									min_value: 1,
+									max_value: 1000,
+									digits: 4,
+									bind: @GuPTicksCell
+									);
+		}
+								
+		checkbox(identifier: "GuPCheckboxBackGrid",
+								name: "$$$/PrefsDlg/GuPDlg/GuPCheckboxBackGrid=Grids In &Back",
+								bind: @GuPGridBackCell
+								);
+								
+		checkbox(identifier: "GuPCheckboxShowPixelGrid",
+								name: "$$$/PrefsDlg/GuPDlg/GuPCheckboxShowPixelGrid=Show &Pixel Grid (Above 600% Zoom)",
+								bind: @GuPShowPixelGrid
+								);
+		
+		}
+	
+	}
+}

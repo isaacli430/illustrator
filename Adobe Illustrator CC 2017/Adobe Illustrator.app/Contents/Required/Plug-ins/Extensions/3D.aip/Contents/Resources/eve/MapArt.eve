@@ -1,0 +1,87 @@
+layout MapArt
+{
+    view subview(identifier: "AIEveSubView",
+				 layout_theme: @dialog,
+				 placement: @place_column, 
+				 spacing: @unrelated_spacing,
+				 show_border: false)
+    {
+
+		row()
+		{
+				popup(identifier: "SymbolPopup",
+					include_custom_item: false,
+					name: "$$$/3D/3DMapping/Symbol=Symbol:",
+					alt: "$$$/3D/ToolTip/MappingDlg/Symbol=Select art to be mapped",
+					set_default_focus: true, popup_maximum_width_chars: 10, popup_minimum_width_chars: 10);
+				
+				row(spacing: @connected_spacing)
+				{
+				static_text(name: "$$$/3D/3DMapping/SurfaceNum=Surface:");					
+			
+				button(identifier: "FirstSurfaceButton", image: {normal:"SP_FirstPage_Sm_N.png",dark_normal:"SP_FirstPage_Sm_N_D.png"}, alt: "$$$/3D/ToolTip/MappingDlg/FirstSurface=First Surface", wants_focus: false);
+				button(identifier: "PreviousSurfaceButton", image: {normal:"SP_PreviousPage_Sm_N.png",dark_normal:"SP_PreviousPage_Sm_N_D.png"}, alt: "$$$/3D/ToolTip/MappingDlg/PreviousSurface=Previous Surface", wants_focus: false);											
+				
+				edit_text(identifier: "SurfaceNumberEditText",
+							characters: 10,
+							max_characters: 50,
+							name: "",
+							alt: "$$$/3D/ToolTip/MappingDlg/Surface=Specify which surface to map to");
+
+				button(identifier: "NextSurfaceButton", image: {normal:"SP_NextPage_Sm_N.png",dark_normal:"SP_NextPage_Sm_N_D.png"}, alt: "$$$/3D/ToolTip/MappingDlg/NextSurface=Next Surface", wants_focus: false);
+				button(identifier: "LastSurfaceButton", image: {normal:"SP_LastPage_Sm_N.png",dark_normal:"SP_LastPage_Sm_N_D.png"}, alt: "$$$/3D/ToolTip/MappingDlg/LastSurface=Last Surface", wants_focus: false);
+				}
+		
+		}
+		
+		row()
+		{
+			info_icon(identifier: "InfoIcon", icontype: "note", size: "small");
+			static_text(theme_font_size: @small, name: "$$$/3D/Mapping/maphint=To create and edit these symbols, use the Symbols panel.");		
+		}
+		
+		image(identifier: "SymbolMapArea", width: 300, height: 200,  guide_mask: [ @guide_label ], horizontal: @align_fill, vertical: @align_fill);
+		
+				
+		row(child_vertical: @align_center)
+		{
+			button(identifier: "ScaleToFitButton", 
+				alt: "$$$/3D/ToolTip/MappingDlg/ScaleToFit=Scale symbol to fit current surface",
+				name: "$$$/3D/3DOptions/fit=Scale to &Fit");
+				
+			button(identifier: "ClearButton", 
+				alt: "$$$/3D/ToolTip/MappingDlg/Clear=Delete symbol from current surface ",
+				name: "$$$/3D/3DOptions/clear=&Clear");
+				
+			button(identifier: "ClearAllButton", 
+				alt: "$$$/3D/ToolTip/MappingDlg/ClearAllMaps=Delete mapped symbols from all surfaces",
+				name: "$$$/3D/3DOptions/clearall=Clear &All");
+			
+			checkbox(identifier: "ShadeArtwork", guide_mask: [ @guide_label ],
+					alt: "$$$/3D/ToolTip/MappingDlg/ShadeSurfaces=Mapped art exhibits same shading as object",
+					name: "$$$/3D/3DOptions/shade=S&hade Artwork (slower)");		
+			
+			checkbox(identifier: "InvisibleGeometry", guide_mask: [ @guide_label ],
+					name: "$$$/3D/3DOptions/invisiblegeo=Invisible Geometry");					
+				
+		}
+	
+		row(horizontal: @align_fill, child_vertical: @align_center,spacing: @separated_spacing)
+		{
+			checkbox(identifier: "MapArtPreview", guide_mask: [ @guide_label ],
+					name: "$$$/3D/3DOptions/Preview=&Preview");		
+			
+			row(reverse: os == @mac, horizontal: @align_right, spacing: @related_spacing)
+			{
+				button(default: true,
+				identifier: "okButton", commit_button: true,
+				name: "$$$/3D/3DOptions/OK=OK");
+
+				button(cancel: true,
+				identifier: "cancelButton",commit_button: true,
+				name: "$$$/3D/3DOptions/Cancel=Cancel");
+			}		
+		}
+	
+	}
+}

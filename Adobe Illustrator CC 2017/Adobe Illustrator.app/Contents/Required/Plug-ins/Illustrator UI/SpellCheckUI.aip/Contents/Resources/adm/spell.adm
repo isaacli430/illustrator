@@ -1,0 +1,14 @@
+sheet SpellDialog
+{
+	interface:
+	SuggestionText: "$$$/SpellCheck/Text/nosuggestion=No Suggestions";
+	show_advanced_options: false;
+	RepeatedCheckbox: false;
+	UncapitalizeCheckbox: false;
+	UCCheckbox: false;
+	RomanCheckbox: false;
+	NumberCheckbox: false;
+	Align: true;
+	
+	
+}

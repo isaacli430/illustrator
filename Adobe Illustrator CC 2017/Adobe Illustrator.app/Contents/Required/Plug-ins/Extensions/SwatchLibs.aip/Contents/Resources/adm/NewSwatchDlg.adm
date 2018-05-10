@@ -1,0 +1,48 @@
+sheet NewSwatchDialog
+{
+interface: 
+	ColorModePopupItemsNoBookColor:[{name:"$$$/SwatchLibs/Mnu/16603/1=Grayscale",value: 3},
+									{name:"$$$/SwatchLibs/Mnu/16603/2=RGB",value: 4},
+									{name:"$$$/SwatchLibs/Mnu/16603/3=HSB",value: 5},
+									{name:"$$$/SwatchLibs/Mnu/16603/4=CMYK",value: 6},
+									{name:"$$$/SwatchLibs/Mnu/16603/6=Lab",value: 7},
+									{name:"$$$/SwatchLibs/Mnu/16603/5=Web Safe RGB",value: 8}];
+	ColorModePopupItemsMixed :[ {name:"$$$/SwatchLibs/Mnu/16603/1=Grayscale",value: 3},
+								{name:"$$$/SwatchLibs/Mnu/16603/2=RGB",value: 4},
+								{name:"$$$/SwatchLibs/Mnu/16603/3=HSB",value: 5},
+								{name:"$$$/SwatchLibs/Mnu/16603/4=CMYK",value: 6},
+								{name:"$$$/SwatchLibs/Mnu/16603/6=Lab",value: 7},
+								{name:"$$$/SwatchLibs/Mnu/16603/5=Web Safe RGB",value: 8},
+								{ name: " ", value: -1 }];
+	ColorModePopupItemsWithBookColor:  [{name:"$$$/SwatchLibs/Mnu/16603/1=Grayscale",value: 3},
+										{name:"$$$/SwatchLibs/Mnu/16603/2=RGB",value: 4},
+										{name:"$$$/SwatchLibs/Mnu/16603/3=HSB",value: 5},
+										{name:"$$$/SwatchLibs/Mnu/16603/4=CMYK",value: 6},
+										{name:"$$$/SwatchLibs/Mnu/16603/6=Lab",value: 7},
+										{name:"$$$/SwatchLibs/Mnu/16603/5=Web Safe RGB",value: 8},
+										{name:"-",value: 0},
+										{name:"$$$/SwatchLibs/Str/BookColorMenuItem=Book Color",value: 9}];
+	ColorTypeItemsSpotProcess:	[{ name: "$$$/SwatchLibs/Mnu/16602/1=Process Color", value: 1 },
+								 { name: "$$$/SwatchLibs/Mnu/16602/2=Spot Color", value: 2 }];
+	ColorTypeItemsMixed:[	{ name: "$$$/SwatchLibs/Mnu/16602/1=Process Color", value: 1 },
+							{ name: "$$$/SwatchLibs/Mnu/16602/2=Spot Color", value: 2 },
+							{ name: " ", value: -1 }];
+	ShowMixedMode: false;
+	ColorTypeItems: ColorTypeItemsSpotProcess <== (ShowMixedMode) ? ColorTypeItemsMixed : ColorTypeItemsSpotProcess;							
+	ShowBookColor: false;
+	ShowMixedType: false;
+	ColorModePopupItems: ColorModePopupItemsNoBookColor <== (ShowBookColor) ? ColorModePopupItemsWithBookColor : (ShowMixedType ? ColorModePopupItemsMixed : ColorModePopupItemsNoBookColor);
+	MultipleSwatchOptions: false;
+	ShowPreview: false;
+	EnablePreview: true;
+	Preview: false <== (EnablePreview == true) ? Preview : false;
+	DisableColorType: false;
+	DisableSwatchName: false;
+	unlink SwatchName: "" <== (ColorModel == 9 || DisableSwatchName == true) ? BookSwatchName : SwatchName;
+	BookSwatchName: "" <== (ColorModel == 9 || DisableSwatchName == true) ? BookSwatchName : SwatchName;
+	unlink ColorType: 1 <== (DisableColorType == true) ? 2 : ((ColorModel != 9) ? ColorType : 2);
+	Global: false <== (ColorType == 1) ? Global : true;
+	ColorModel: 1;
+	IsCCLibraryEnabled: true;
+	
+}

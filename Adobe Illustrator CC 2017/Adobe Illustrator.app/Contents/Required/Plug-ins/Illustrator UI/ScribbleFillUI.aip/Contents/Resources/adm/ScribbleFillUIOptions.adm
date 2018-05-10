@@ -1,0 +1,189 @@
+sheet ScribbleFillUI
+{
+constant:
+	PresetNames: ['$$$/ScribbleFill/Presets/PresetDefault=Default',
+				  '$$$/ScribbleFill/Presets/Preset1=Childlike',
+				  '$$$/ScribbleFill/Presets/Preset2=Dense',
+				  '$$$/ScribbleFill/Presets/Preset3=Loose',
+				  '$$$/ScribbleFill/Presets/Preset4=Moir#{eacute}',
+				  '$$$/ScribbleFill/Presets/Preset5=Sharp',
+				  '$$$/ScribbleFill/Presets/Preset6=Sketch',
+				  '$$$/ScribbleFill/Presets/Preset7=Snarl',
+				  '$$$/ScribbleFill/Presets/Preset8=Swash',
+				  '$$$/ScribbleFill/Presets/Preset10=Tight',
+				  '$$$/ScribbleFill/Presets/Preset9=Zig-zag',
+				  '$$$/ScribbleFill/MiscStr/CustomMenu=Custom'];
+				  
+	g_default : {	angle: 30,	path:0,	pathvariation: 5,	stroke: 3 ,	spacing:5,	spacingvar: 0.5,	curviness: 5,		curvinessvar: 1};
+  	g_childlike : { angle:-10,	path:0,	pathvariation: 10,	stroke: 5 ,	spacing:10,	spacingvar: 20,		curviness: 15,	curvinessvar: 15 };
+  	g_dense:{		angle:45,	path:0,	pathvariation: 2,	stroke: 4 ,	spacing:7,	spacingvar: 0.2,	curviness: 2,	curvinessvar: 1 };
+  	g_loose: {		angle:-20,	path:0,	pathvariation: 5,	stroke: 3,	spacing:20,	spacingvar: 8,		curviness: 7,	curvinessvar: 0 };  	
+  	g_moir:{		angle:-45,	path:0,	pathvariation: 0,	stroke: 2 ,	spacing:4,	spacingvar: 0,		curviness: 10,	curvinessvar: 0 };
+  	g_sharp:{		angle:30,	path:0,	pathvariation: 4,	stroke: 3 ,	spacing:3,	spacingvar:1,		curviness: 0,		curvinessvar: 0};
+  	g_sketch:{		angle:-30,	path:0,	pathvariation: 4,	stroke: 5 ,	spacing:10,	spacingvar:1,		curviness: 3,	curvinessvar: 3 };
+  	g_snarl:{		angle:60,	path:0,	pathvariation: 10,	stroke: 1 ,	spacing:3,	spacingvar: 1,		curviness: 50,		curvinessvar: 50 };  	
+  	g_swash:{		angle:0,	path:0,	pathvariation: 0,	stroke: 2 ,	spacing:6,	spacingvar: 0.2,	curviness: 35,	curvinessvar: 5 };  	
+  	g_tight:{		angle:30,	path:0,	pathvariation: 0,	stroke: 1 ,	spacing:1.5,spacingvar: 0.5,	curviness: 0,		curvinessvar: 0 };  	
+  	g_zigzag:{		angle:-20,	path:0,	pathvariation: 0,	stroke: 2 ,	spacing:8,	spacingvar: 0,		curviness: 0,		curvinessvar: 0 };
+	
+ interface:	
+		showPreview: false;
+		valuePreset :0;
+		angle: 30;	
+		path	: 0;
+		pathvariation: 5;
+		stroke: 3;
+		curviness: 5;
+		curvinessvar: 1;
+		spacing: 5;
+		spacingvar: 0.5;
+	    filterPath: {min_value: -1000, max_value: 1000};
+		filterPathVar: {min_value: 0, max_value: 1000};
+		filterStroke: {min_value:0.01, max_value: 1000};
+		filterCurviness: {min_value:0, max_value: 100};
+		disabled_items: [0] <== valuePreset == 0? [] : [0];
+		unlink Preview: false <== showPreview == false ? false : Preview;
+ 	g : {angle: angle,
+ 		 path:path,
+ 		 pathvariation: pathvariation,
+ 		 stroke: stroke,
+ 		 spacing: spacing,
+ 		 spacingvar: spacingvar,
+ 		 curviness: curviness,
+ 		 curvinessvar: curvinessvar};
+
+ 		 entries: [			{name: PresetNames[11], value: 0},
+							{ name: "", value: @bgSeparator1},
+							{name: PresetNames[0], value: 1},
+							{name: PresetNames[1], value: 2},
+							{name: PresetNames[2], value: 3},
+							{name: PresetNames[3], value: 4},
+							{name: PresetNames[4], value: 5},
+							{name: PresetNames[5], value: 6},
+							{name: PresetNames[6], value: 7},
+							{name: PresetNames[7], value: 8},
+							{name: PresetNames[8], value: 9},
+							{name: PresetNames[9], value: 10},
+							{name: PresetNames[10], value: 11}
+				] ;
+logic:
+	relate
+	{
+		valuePreset <== g == g_default ? 1 : g == g_childlike ? 2 : g == g_dense ? 3 : g == g_loose ? 4 : g == g_moir ? 5 : g == g_sharp ? 6 : g == g_sketch ? 7 : g == g_snarl ? 8 : g == g_swash ? 9 : g == g_tight ? 10 : g == g_zigzag ? 11 : 0;
+		g <==  valuePreset == 1 ? g_default : valuePreset == 2 ? g_childlike : valuePreset == 3 ? g_dense : valuePreset == 4 ? g_loose : valuePreset == 5 ? g_moir : valuePreset == 6 ? g_sharp : valuePreset == 7 ? g_sketch : valuePreset == 8 ? g_snarl : valuePreset == 9 ? g_swash : valuePreset == 10 ? g_tight : valuePreset == 11 ? g_zigzag : g;
+	}	
+	
+	relate
+	{
+		angle <== g.angle;																				
+		g <== {																							
+				angle: angle,																			
+				path: g.path,																			
+				pathvariation :g.pathvariation,															
+				stroke: g.stroke,																		
+				spacing: g.spacing,																		 
+				spacingvar: g.spacingvar,
+				curviness: g.curviness,
+				curvinessvar: g.curvinessvar
+				}; 
+	}
+
+	relate 
+	{ 
+		path <== g.path; 
+		g <== { 
+				angle: g.angle, 
+				path: path, 
+				pathvariation :g.pathvariation,
+				stroke: g.stroke, 
+				spacing: g.spacing,
+				spacingvar: g.spacingvar,
+				curviness: g.curviness,
+				curvinessvar: g.curvinessvar
+				}; 
+	}
+	relate 
+	{ 
+		pathvariation <== g.pathvariation; 
+		g <== { 
+				angle: g.angle, 
+				path: g.path, 
+				pathvariation : pathvariation,
+				stroke: g.stroke, 
+				spacing: g.spacing,
+				spacingvar: g.spacingvar,
+				curviness: g.curviness,
+				curvinessvar: g.curvinessvar
+				}; 
+	}
+	relate 
+	{ 
+		stroke <== g.stroke; 
+		g <== { 
+				angle: g.angle, 
+				path: g.path, 
+				pathvariation :g.pathvariation,
+				stroke: stroke, 
+				spacing: g.spacing,
+				spacingvar: g.spacingvar,
+				curviness: g.curviness,
+				curvinessvar: g.curvinessvar
+				}; 
+	}
+	relate 
+	{ 
+		spacing <== g.spacing; 
+		g <== { 
+				angle: g.angle, 
+				path: g.path, 
+				pathvariation :g.pathvariation,
+				stroke: g.stroke, 
+				spacing: spacing,
+				spacingvar: g.spacingvar,
+				curviness: g.curviness,
+				curvinessvar: g.curvinessvar
+				}; 
+	}
+	relate 
+	{ 
+		spacingvar <== g.spacingvar; 
+		g <== { 
+				angle: g.angle, 
+				path: g.path, 
+				pathvariation :g.pathvariation,
+				stroke: g.stroke, 
+				spacing: g.spacing,
+				spacingvar: spacingvar,
+				curviness: g.curviness,
+				curvinessvar: g.curvinessvar
+				}; 
+	}
+	relate 
+	{ 
+		curviness<== g.curviness; 
+		g <== { 
+				angle: g.angle, 
+				path: g.path, 
+				pathvariation :g.pathvariation,
+				stroke: g.stroke, 
+				spacing: g.spacing,
+				spacingvar: g.spacingvar,
+				curviness: curviness,
+				curvinessvar: g.curvinessvar
+				}; 
+	}
+	relate 
+	{ 
+		curvinessvar <== g.curvinessvar; 
+		g <== { 
+				angle: g.angle, 
+				path: g.path, 
+				pathvariation :g.pathvariation,
+				stroke: g.stroke, 
+				spacing: g.spacing,
+				spacingvar: g.spacingvar,
+				curviness: g.curviness,
+				curvinessvar: curvinessvar
+				}; 
+	}		
+}

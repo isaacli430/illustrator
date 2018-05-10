@@ -1,0 +1,49 @@
+layout RectUI
+{
+    view subview(child_horizontal: @align_fill,horizontal: @align_fill,
+                 identifier: "InfoGraphicToolOptions",
+                 layout_theme: @dialog_large,
+                 placement: @place_column,
+				 show_border: false,
+				 spacing: @unrelated_spacing)
+    {
+		row(child_horizontal: @align_fill)
+		{		
+			row(child_vertical: @align_center,child_horizontal: @align_fill)
+			{
+				column()
+				{
+					unit_hot_number(name: "$$$/InfoGraphicTool/Dlg/Oval/OvalWidthText=&Width:",
+								set_default_focus: true,
+								bind: @Width, 
+								decimal_places: 4,
+								identifier: "width_editNumber");
+
+					unit_hot_number(name: "$$$/InfoGraphicTool/Dlg/Oval/OvalHeightText=&Height:",
+								bind: @Height, 
+								decimal_places: 4,
+								identifier: "height_editNumber");
+				}
+				toggle_button(identifier: "NoConstrainIcon", 
+									image: {normal: "NoConstrainIcon.png", dark_normal:"NoConstrainIconDark.png", down: "LinkOnConstrainIcon.png", dark_down:"LinkOnConstrainIconDark.png"}, 
+									alt: "$$$/InfoGraphicTool/Dlg/Oval/OvalNoConstrainToolTipText=Constrain Width and Height Proportions",
+									value_on: true, value_off: false, 
+									action: @constrain_action, 
+									bind: @showConstrainIcon, 
+									vertical: @align_center,
+									wants_focus: false);
+		}
+	}
+		row(horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+		{	
+			button(commit_button: true,
+				   identifier: "okButton",
+				   name: "$$$/gOK=OK");
+
+			button(identifier: "cancelButton",
+				   commit_button: true,
+				   name: "$$$/gCancel=Cancel");
+		}
+    }
+}
+

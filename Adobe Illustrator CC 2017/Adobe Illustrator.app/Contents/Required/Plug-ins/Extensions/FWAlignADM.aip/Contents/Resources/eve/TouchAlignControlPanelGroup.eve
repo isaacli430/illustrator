@@ -1,0 +1,15 @@
+layout TouchAlignControlPanelGroup
+{
+    view subview(identifier: "TouchAlignControlPanelGroup",
+				 show_border: false,
+				 margin:0)
+    {					
+		button(identifier: "ShowTouchAlignPanel",
+					image: {normal: "SP_PL_TouchAlign_N.png", dark_normal: "SP_PL_TouchAlign_N_D.png"},
+					alt: "$$$/FWAlignADM/Str/TouchAlignPalette=Align",
+					horizontal:@align_fill,
+					vertical:@align_fill,
+					wants_focus: false);
+	}
+}
+

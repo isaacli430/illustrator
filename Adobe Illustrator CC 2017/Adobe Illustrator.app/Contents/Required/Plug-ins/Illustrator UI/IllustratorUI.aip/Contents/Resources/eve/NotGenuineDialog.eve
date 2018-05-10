@@ -1,0 +1,60 @@
+layout NotGenuineDialog
+{
+     view subview(
+                 identifier: "NotGenuineDialog",
+				 layout_theme:  @dialog_large,
+                 show_border: false,
+				 margin:[20,20,20,20],
+				 spacing:@unrelated_spacing
+				 )
+    {   
+		column ()
+		{
+				panel()
+				{
+					row()
+					{
+						column(child_horizontal: @align_left,
+							child_vertical :@align_top, vertical : @align_fill)
+						{
+							
+							image
+								(
+									identifier: "WarningImage",
+									image: {normal:"S_AppWarningAi_48_N.png", dark_normal:"S_AppWarningAi_48_N_D.png"}
+								);
+						}
+						column(child_horizontal: @align_fill, margin:[0,15,0,0], spacing:5)
+						{
+							row()
+							{	
+								static_text(identifier: "NotGenuineStaticTextHeading", font_size: 13, bold:true, use_style_for_height_calc:true, characters:1, horizontal:@align_fill,
+									name: "$$$/PiracyConversion/Dlg/Heading=WARNING: This is a non-genuine software!",  adjust_baseline_for_single_line_text: false);
+								
+							}
+				
+							row()
+							{
+								static_text(identifier: "NotGenuineStaticTextDescription", characters: 26, adjust_baseline_for_single_line_text: false,
+										name: @description);
+							}
+						}		
+					}
+					row(horizontal: @align_right, child_vertical: @align_bottom, reverse: os==@mac, spacing: @related_spacing, margin:[5,0,0,0])
+					{	
+						button(identifier: "okButton",
+							name: "$$$/PiracyConversion/Dlg/KnowMore=Know More",
+							set_default_focus: true,
+							commit_button: true);
+								
+						optional(margin:0, bind: @showCancelButton, value: true)
+							{	
+								button(identifier: "cancelButton",
+								name: "$$$/PiracyConversion/Dlg/Continue=Continue",
+								commit_button: true);
+							}
+					}
+				}
+		}
+	}					
+}

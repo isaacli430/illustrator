@@ -1,0 +1,50 @@
+layout LineSegmentToolsUI
+{
+ 	view subview( layout_theme : @dialog_large,
+				placement: @place_column,
+				show_border: false,
+				spacing: @unrelated_spacing)
+	{
+		column(horizontal: @align_fill, child_horizontal: @align_fill)
+		{
+			unit_hot_number(identifier: "lengthNumberEdit", min_value: 1, max_value: 16383,
+						name: "$$$/SegmentTools/DITL/17100/7=&Length:",
+						bind: @length,
+						decimal_places: 2,
+						digits: 8,
+						set_default_focus: true,
+						unit: 'CurrentDocumentUnit');
+
+			angle_picker(identifier: "anglePicker",	
+						name: "$$$/SegmentTools/DITL/17100/8=&Angle:",
+						value_range: {min_value: 0, max_value: 360},
+						bind: @angle,
+						show_editbox: true);
+			row(child_horizontal: @align_fill)
+			{
+				checkbox(identifier: "fillCheckBox",
+						name: "$$$/SegmentTools/DITL/17100/6=&Fill Line",
+						guide_mask: [ @guide_label ],
+						bind: @fill);
+				panel(bind: @hiddenText, value: 1)
+				{
+					static_text(name: "$$$/SegmentTools/DLOG/17100/DummyStringForBug=x");
+				}
+			}
+		}
+
+		row(horizontal: @align_right, spacing: @related_spacing, reverse: os == @mac)
+		{
+			button(default: true,
+				identifier: "okButton",
+				name: "$$$/gOK=OK",
+				action: @ok,
+				commit_button: true);
+				
+			button(identifier: "cancel_ResetButton",
+                   items: [{name: "$$$/gCancel=Cancel", action: @cancel},
+						   {name: "$$$/gReset=Reset", action: @reset, modifiers: @opt}],
+						   commit_button: true);
+		}
+	}
+}

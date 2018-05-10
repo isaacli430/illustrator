@@ -1,0 +1,7 @@
+sheet PlaneOffset
+{
+	interface:
+		ObjectOptions: "DoNotMove";
+		ApplyToAll: true;
+		LocationValue: 0.0;
+}

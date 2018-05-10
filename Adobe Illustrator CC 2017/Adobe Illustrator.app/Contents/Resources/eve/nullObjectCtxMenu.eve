@@ -1,0 +1,24 @@
+layout nullObjectCtxMenu
+{
+	view menu( id: 29,
+				menubar: false )
+	{	
+		menu( text: "$$$/_MBAR/Mnu/context/Undo=Undo", id:				(os == @win) ? 1970168943 : 1970168943, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/context/Redo=Redo", id:				(os == @win) ? 1919247471 : 1919247471, help_id:0);
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/null/ZoomIn=Zoom In", id:			135, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/null/ZoomOut=Zoom Out", id:			136, help_id:0);
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/null/ShowRulers=Show Rulers", id:	37, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/null/ShowGrid=Show Grid", id:		159, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/null/HideGuides=Hide Guides", id:	154, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/null/LockGuides=Lock Guides", id:	155, help_id:0);
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/context/Select=Select", id:			79, help_id: 24 ) { separator();  }
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/null/Preview=Preview", id:			30, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/context/DL=Add to Library", id:		 0x51756C01, help_id:  0 ) ;
+		menu( text: "$$$/_MBAR/Mnu/context/SmartExport=Collect For Export", id: 			0x65697A10, help_id: 0 ) ;
+		menu( text: "$$$/_MBAR/Mnu/context/Export=Export Selection...", id:		 		 0x63697A00, help_id:  0 ) ;
+	}
+}

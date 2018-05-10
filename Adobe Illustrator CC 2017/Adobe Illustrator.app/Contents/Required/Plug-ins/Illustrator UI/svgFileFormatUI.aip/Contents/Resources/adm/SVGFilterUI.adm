@@ -1,0 +1,5 @@
+sheet SVGFilter
+{
+interface:
+	PreviewCell: false;
+}

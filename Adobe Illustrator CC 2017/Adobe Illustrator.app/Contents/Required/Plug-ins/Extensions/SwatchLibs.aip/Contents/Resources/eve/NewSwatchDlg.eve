@@ -1,0 +1,72 @@
+layout NewSwatchDialog
+{
+	view subview(identifier: "AIEveSubView", layout_theme: @dialog_large, spacing: @unrelated_spacing, placement: @place_column, show_border: false, horizontal: @align_fill)
+	{
+		column(horizontal: @align_fill)
+		{
+			optional(bind: @MultipleSwatchOptions, value: false, margin: 0, horizontal: @align_fill)
+			{
+				edit_text(set_default_focus: true, bind: @SwatchName, identifier: "SwatchNameIdentifier", max_characters: 31,
+					horizontal: @align_fill, name: "$$$/SwatchLibs/NewSwatchDlg/SwatchNameLabel=&Swatch Name:");
+			}
+			popup(identifier: "ColorTypeIdentifier", include_custom_item: false, bind: @ColorType, 
+						horizontal: @align_fill, name: "$$$/SwatchLibs/NewSwatchDlg/ColorTypeLabel=Color &Type:",
+						items: @ColorTypeItems);
+			checkbox(identifier: "GlobalCheckboxIdentifier", name: "$$$/SwatchLibs/NewSwatchDlg/GlobalCheckboxLabel=&Global", bind: @Global);
+			
+			overlay(margin: 0, horizontal: @align_fill)
+			{
+				optional(bind: @MultipleSwatchOptions, value: false, margin: 0)
+				{
+					group(identifier: "ColorEditorGroupIdentifier", horizontal: @align_fill, header: "popup(identifier: 'ColorModelPopupIdentifier',
+							include_custom_item: false, bind: @ColorModel, horizontal: @align_fill,
+							action: @ColorModelChangedAction,
+							items: @ColorModePopupItems,
+							name:'$$$/SwatchLibs/NewSwatchDlg/ColorModeLabel=Color &Mode:')")
+					{
+						color_editor(identifier: "ColorEditorIdentifier", width: 260);
+					}
+				}
+				optional(bind: @MultipleSwatchOptions, value: true, margin: 0)
+				{
+					popup(identifier: "ColorModelPopupIdentifier2", include_custom_item: false, bind: @ColorModel, 
+							horizontal: @align_fill, action: @ColorModelChangedAction,
+							items: @ColorModePopupItems,
+							name:"$$$/SwatchLibs/NewSwatchDlg/ColorModeLabel=Color &Mode:");
+				}
+			}
+		}
+
+		row(spacing: @unrelated_spacing, horizontal: @align_fill)
+      	{
+      		optional(bind: @IsCCLibraryEnabled, value: true, margin: 0, horizontal: @align_fill)
+      		{
+	      		row(horizontal: @align_fill)
+	      		{
+	      			checkbox(name: "$$$/SwatchLibs/NewSwatchDlg/AddToLibrary=&Add to my Library", 
+      					identifier: "AddToLibraryCB",
+      					guide_mask: [@guide_label], 
+      					horizontal: @align_left);
+	      			popup(identifier: "LibraryNamesPopup", 
+      					include_custom_item: true, 
+						popup_maximum_width_chars: 10,			  			
+      					horizontal: @align_fill);
+	      		}
+			}
+      		
+		}
+
+      	row(spacing: @unrelated_spacing, horizontal: @align_right)
+      	{
+      		optional(bind: @ShowPreview, value: true, margin: 0, horizontal: @align_left)
+      		{
+      			checkbox(name: "$$$/SwatchLibs/NewSwatchDlg/PreviewLabel=&Preview", guide_mask: [@guide_label], bind: @Preview, horizontal: @align_left);
+      		}
+      		row(child_horizontal: @align_right, horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+			{
+    			button(name: "$$$/gOK=OK", commit_button: true, identifier: "okButton");
+				button(name: "$$$/gCancel=Cancel", commit_button: true, identifier: "cancelButton");
+			}
+		}
+    }
+}

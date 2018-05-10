@@ -1,0 +1,57 @@
+layout ContextMenuTouch
+{
+    view subview(identifier: "AIEveSubView",
+				 layout_theme: @dialog,
+				 child_horizontal: @align_fill,
+				 placement: @place_row,
+				 show_border: false)
+    {
+        column(child_horizontal: @align_fill)
+        {
+            row(child_horizontal: @align_center,
+                child_vertical: @align_center)
+            {
+                static_text(horizontal: @align_left,
+                            identifier: "LowerStaticText",
+                            name: "$$$/private/ContextMenuTouch/Dlg/Lower=Lower");
+
+                edit_number(identifier: "dFactor",
+                            max_value: 200,
+                            min_value: -200,
+                            unit: "NumberEditUnit_Percent");
+
+                static_text(horizontal: @align_right,
+                            identifier: "UpperStaticText",
+                            name: "$$$/private/ContextMenuTouch/Dlg/Upper=Upper");
+            }
+
+            row()
+            {
+                slider(format: { first: -200,
+                                 interval: 1,
+                                 last: 200 },
+                       identifier: "dFactorSlider",
+                       minLength: 200,
+                       scale: 1,
+                       slider_point: @up);
+		       
+		button(identifier:"showText", name:"Show Text");
+            }
+        }
+
+        column(child_horizontal: @align_center)
+        {
+            button(default: true,
+                   identifier: "okButton",
+                   name: "$$$/gOK=OK");
+
+            button(cancel: true,
+                   identifier: "cancelButton",
+                   name: "$$$/gCancel=Cancel",
+		   image: {normal:"SP_Cancel_Sm_N.png", dark_normal:"SP_Cancel_Sm_N_D.png"});
+
+            checkbox(identifier: "previewButton",
+					 name: "$$$/private/ContextMenuTouch/Dlg/Preview=&Preview");
+        }
+    }
+}

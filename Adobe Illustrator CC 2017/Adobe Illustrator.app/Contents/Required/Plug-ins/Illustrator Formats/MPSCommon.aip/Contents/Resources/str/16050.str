@@ -1,0 +1,16 @@
+/* [1] */
+OERR
+/* [2] */
+$$$/MPSCommon/Str/16052=The plugin cannot complete because error occurred while opening file.
+/* [3] */
+!MEM
+/* [4] */
+$$$/MPSCommon/Str/16054=The plugin cannot complete because there isn't enough memory available.
+/* [5] */
+AETY
+/* [6] */
+$$$/MPSCommon/Str/16056=The document must contain artwork to export.
+/* [7] */
+<Others>
+/* [8] */
+$$$/MPSCommon/Str/16058=The plugin cannot complete because of an unknown error.

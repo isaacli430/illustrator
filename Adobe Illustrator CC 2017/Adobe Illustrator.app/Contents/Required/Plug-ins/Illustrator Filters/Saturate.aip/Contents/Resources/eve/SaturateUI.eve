@@ -1,0 +1,40 @@
+layout SaturateUI
+{
+    view subview(identifier: "AIEveSubView",
+				 layout_theme: @dialog_large,
+				 child_horizontal: @align_fill,
+				 placement: @place_row,
+				 show_border: false)
+    {
+    column(spacing: @unrelated_spacing, child_horizontal: @align_fill, placement: @place_col)
+    {
+	row()
+	{
+		combo_slider(identifier: "dFactorSlider", slider_point: @up, digits:5, decimal_places: 2, slider: true,  minLength: 200, 
+				min_max_filter: {min_value: -100, max_value: 100}, suffix: "$$$/gPercent=%", value: 35,
+				name: "$$$/SaturateUI/Dlg/Intensity=&Intensity:", set_default_focus: true, guide_mask: [@guide_label]);
+
+	}
+
+	row(vertical: @align_fill,child_vertical: @align_center,spacing: @separated_spacing)
+	{
+		checkbox(identifier: "previewButton", horizontal: @align_left,guide_mask: [@guide_label],
+					 name: "$$$/SaturateUI/Dlg/Preview=&Preview");
+		
+		row(horizontal: @align_right,
+ 				reverse: os == @mac, spacing: @related_spacing)
+		{
+
+			button(commit_button: true,
+                   		identifier: "okButton",
+                   		name: "$$$/gOK=OK");
+
+            		button(commit_button: true,
+                  	 	identifier: "cancelButton",
+                  	 	name: "$$$/gCancel=Cancel");
+		}
+            	
+        }
+    }
+    }
+}

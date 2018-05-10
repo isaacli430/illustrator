@@ -1,0 +1,82 @@
+layout SimplifyUI
+{
+    view subview(identifier: "AIEveSubView",
+				 layout_theme: @dialog_large,
+				 child_horizontal: @align_fill,
+				 show_border: false,spacing: @unrelated_spacing)
+    {
+       	
+	row(placement: @place_column,horizontal: @align_fill,spacing: @inter_group_spacing)
+	{
+		group(identifier: "SimplifyPathGrp",
+				placement: @place_column,
+				child_horizontal: @align_fill,
+				name: "$$$/SimplifyUI/Dlg/SimplifyPathGrp=Simplify Path",horizontal: @align_fill)				
+			{
+			combo_slider(identifier: "CurvePrecisionEdit",
+						bind: @CurvePrecisionCell, bind_final: true,
+						name: "$$$/SimplifyUI/Dlg/PrecisionStaticText=&Curve Precision:",
+						digits: 4,
+						decimal_places: 2,
+						minLength: 150,
+						min_max_filter: @CurvePrecisionFilter,
+						slider_point: @up,
+						unit: "NumberEditUnit_Percent",
+						set_default_focus: true);
+						
+			combo_slider(identifier: "AngleThresholdEdit",
+						bind: @AngleThresholdCell, bind_final: true,
+						name: "$$$/SimplifyUI/Dlg/ThresholdStaticText=&Angle Threshold:",
+        				digits: 4,
+						decimal_places: 2,
+        				minLength: 150,
+        				min_max_filter: @AngleThresholdFilter,
+        				slider_point: @up,
+						unit:"NumberEditUnit_Degree");
+								
+			static_text(horizontal: @align_fill,
+						identifier: "InfoText",                           
+						name: "Original: 8888888 pts    Current: 8888888 pts");
+			}
+
+		
+		group(identifier: "OptionsGrp",
+					placement: @place_row,
+					name: "$$$/SimplifyUI/Dlg/OptionsGrp=Options",
+					child_horizontal:@align_fill,horizontal: @align_fill)
+		{
+			checkbox(name: "$$$/SimplifyUI/Dlg/StraightLinesCheckBox=&Straight Lines",
+							 identifier: "StraightLinesCheckBox",
+							  guide_mask: [@guide_label],
+							  bind: @StraightLinesCheckBoxCell);
+
+			checkbox(name: "$$$/SimplifyUI/Dlg/ShowOriginalCheckBox=Show &Original",
+							 identifier: "ShowOriginalCheckBox",
+							  guide_mask: [@guide_label],
+							  bind: @ShowOriginalCheckBoxCell);
+		}
+	}	
+			
+	row(vertical: @align_fill,child_vertical: @align_center,spacing: @separated_spacing)
+		{
+			checkbox(identifier: "previewButton",
+					   horizontal: @align_left,
+					   guide_mask: [@guide_label],
+					   name: "$$$/Simplify/Dlg/Simplify/Preview=&Preview",
+					   bind: @PreviewCheckBoxCell);
+	                   
+			row(horizontal: @align_right, child_vertical: @align_center, reverse: os == @mac, spacing: @related_spacing)       
+			{
+					button(identifier: "okButton",
+						   name: "$$$/gOK=OK",
+						   commit_button: true);
+
+					button(identifier: "cancelButton",
+						   name: "$$$/gCancel=Cancel",
+						   commit_button: true);
+			}
+	  
+		}
+		
+    }
+}

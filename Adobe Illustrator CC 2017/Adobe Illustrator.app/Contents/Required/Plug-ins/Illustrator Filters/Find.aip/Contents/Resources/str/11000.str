@@ -1,0 +1,38 @@
+/* [1] */
+$$$/Find/Str/Action/kActionFind=Select: 
+/* [2] */
+$$$/Find/Str/Action/kActionFindPaintStyle=Same Fill & Stroke
+/* [3] */
+$$$/Find/Str/Action/kActionFindFillColor=Same Fill Color
+/* [4] */
+$$$/Find/Str/Action/kActionFindStrokeWidth=Same Stroke Weight
+/* [5] */
+$$$/Find/Str/Action/kActionFindStrokeColor=Same Stroke Color
+/* [6] */
+$$$/Find/Str/Action/kActionFindStrayPoints=Stray Points
+/* [7] */
+$$$/Find/Str/Action/kActionFindTextObjects=Text Objects
+/* [8] */
+$$$/Find/Str/Action/kActionFindOpacity=Same Opacity
+/* [9] */
+$$$/Find/Str/Action/kActionFindBlendingMode=Same Blending Mode
+/* [10] */
+$$$/Find/Str/Action/kActionFindGraphicStyle=Same Graphic Style
+/* [11] */
+$$$/Find/Str/Action/kActionFindSymbolInstance=Same Symbol Instance
+/* [12] */
+$$$/Find/Str/Action/kActionFindLinkBlockSeries=Same Link Block Series
+/* [13] */
+$$$/Find/Str/Action/kActionFindFillStrokeColor=Same Fill && Stroke Color
+/* [14] */
+$$$/Find/Str/Action/kActionFindAll=Same Fill, Stroke, Opacity && Graphic Style
+/* [15] */
+$$$/Find/Str/Action/kActionAppearance=Appearance
+/* [16] */
+$$$/Find/Str/Action/kActionFindAppearanceAttributes=Same Appearance Attribute
+/* [17] */
+$$$/Find/Str/Action/kActionFindSelectPointType=Point Text Objects
+/* [18] */
+$$$/Find/Str/Action/kActionFindSelectAreaType=Area Text Objects
+/* [19] */
+$$$/Find/Str/Action/kActionFindLiveShape=Same Shape

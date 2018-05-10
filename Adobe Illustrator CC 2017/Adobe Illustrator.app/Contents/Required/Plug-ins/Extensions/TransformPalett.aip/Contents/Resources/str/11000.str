@@ -1,0 +1,60 @@
+/* [1] */
+$$$/TransformPalett/Str/Action/1=Transform Panel
+/* [2] */
+$$$/TransformPalett/Str/Action/2=Flip horizontal
+/* [3] */
+$$$/TransformPalett/Str/Action/3=Flip vertical
+/* [4] */
+$$$/TransformPalett/Str/Action/4=Flip across axis
+/* [5] */
+$$$/TransformPalett/Str/Action/5=Move reference in X to:
+/* [6] */
+$$$/TransformPalett/Str/Action/6=Move reference in Y to:
+/* [7] */
+$$$/TransformPalett/Str/Action/7=Scale width to:
+/* [8] */
+$$$/TransformPalett/Str/Action/8=Scale height to:
+/* [9] */
+$$$/TransformPalett/Str/Action/9=Rotate:
+/* [10] */
+$$$/TransformPalett/Str/Action/10=Shear:
+/* [11] */
+$$$/TransformPalett/Str/Action/11=Axis
+/* [12] */
+$$$/TransformPalett/Str/Action/12=Distance
+/* [13] */
+$$$/TransformPalett/Str/Action/13=Scale line weight:
+/* [14] */
+$$$/TransformPalett/Str/Action/14=Transform patterns only:
+/* [15] */
+$$$/TransformPalett/Str/Action/15=Transform objects only:
+/* [16] */
+$$$/TransformPalett/Str/Action/16=Transform both:
+/* [17] */
+$$$/TransformPalett/Str/Action/17=Set Reference Point To: 
+/* [18] */
+$$$/TransformPalett/Str/Action/18=Top Left
+/* [19] */
+$$$/TransformPalett/Str/Action/19=Top Middle
+/* [20] */
+$$$/TransformPalett/Str/Action/20=Top Right
+/* [21] */
+$$$/TransformPalett/Str/Action/21=Middle Left
+/* [22] */
+$$$/TransformPalett/Str/Action/22=Center
+/* [23] */
+$$$/TransformPalett/Str/Action/23=Middle Right
+/* [24] */
+$$$/TransformPalett/Str/Action/24=Bottom Left
+/* [25] */
+$$$/TransformPalett/Str/Action/25=Bottom Middle
+/* [26] */
+$$$/TransformPalett/Str/Action/26=Bottom Right
+/* [27] */
+$$$/TransformPalett/Str/Action/27=Move symbol registration point in X to:
+/* [28] */
+$$$/TransformPalett/Str/Action/28=Move symbol registration point in Y to:
+/* [29] */
+$$$/TransformPalett/Str/Action/29=Align New Objects to Pixel Grid:
+/* [30] */
+$$$/TransformPalett/Str/Action/30=Use Registration Point for Symbol:

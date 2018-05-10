@@ -1,0 +1,9 @@
+sheet CreateMesh
+{
+    interface:
+		Rows: 4;
+		Columns: 4;
+		Highlight: 100;
+        Appearance: 0;
+        Preview: false;
+}

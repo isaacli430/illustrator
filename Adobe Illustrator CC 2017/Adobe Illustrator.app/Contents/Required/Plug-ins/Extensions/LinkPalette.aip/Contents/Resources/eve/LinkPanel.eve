@@ -1,0 +1,155 @@
+layout LinkPanel
+{
+    view subview(identifier: "AIEveSubView",
+				 placement: @place_column,
+				 layout_theme: @panel,
+				 show_border: false,
+				 child_horizontal: @align_fill,
+				 margin: gPanelToolbarSubviewMargin,
+				 spacing: gPanelToolbarTopSpacing)
+	{
+		multicolumn_tree(identifier: "MCT",
+							wants_focus: false,
+							vertical: @align_fill,
+							height:74,
+							width:228);
+		row()
+		{
+			column()
+			{
+				overlay()
+				{
+					panel(bind: @ShowLinkInfo, value: true, margin: 0)
+					{
+						buttongroup(spacing: gPanelToolbarIconSpacing, child_width: gPanelToolbarIconWidth, child_height: gPanelToolbarIconHeight)
+						{
+							button(identifier: "ShowLinkInfoBtn",
+								image: {normal: "SP_ArrowHeadRight_Wi_N.png", dark_normal:"SP_ArrowHeadRight_Wi_N_D.png"},
+								alt: "$$$/LinkPalette/Str/LinkPalette/ShowLinkInfoButton=Show Link Info",
+								wants_focus: false);
+						}						
+					}
+				 
+					panel(bind: @ShowLinkInfo, value: false, margin: 0)
+					{
+						buttongroup(spacing: gPanelToolbarIconSpacing, child_width: gPanelToolbarIconWidth, child_height: gPanelToolbarIconHeight)
+						{
+							button(identifier: "LinkInfoShownBtn",
+								image: {normal: "SP_ArrowHeadDown_Wi_N.png", dark_normal:"SP_ArrowHeadDown_Wi_N_D.png"},
+								alt: "$$$/LinkPalette/Str/LinkPalette/HideLinkInfoButton=Hide Link Info",
+								wants_focus: false);
+						}
+					}
+				}
+			}
+			column(horizontal: @align_right)
+			{
+				row()
+				{
+					buttongroup(spacing: gPanelToolbarIconSpacing, child_width: gPanelToolbarIconWidth, child_height: gPanelToolbarIconHeight)
+					{
+						button(identifier: "RelinkFromCC",
+								image: {normal: "SP_CCRelinkLibrary_Wi_N.png", dark_normal:"SP_CCRelinkLibrary_Wi_N_D.png"},
+								alt: "$$$/LinkPalette/Str/LinkPalette/RelinkfromCCLibraryButton=Relink from CC Libraries",
+								wants_focus: false);
+						button(identifier: "Relink",
+								image: {normal: "SP_LinkHori_Wi_N.png", dark_normal:"SP_LinkHori_Wi_N_D.png"},
+								alt: "$$$/LinkPalette/Str/LinkPalette/RelinkButton=Relink",
+								wants_focus: false);
+						
+								
+						button(identifier: "Gotolink",
+								image: {normal: "SP_GoToLink_Wi_N.png", dark_normal:"SP_GoToLink_Wi_N_D.png"},
+								alt: "$$$/LinkPalette/Str/LinkPalette/GoToButton=Go To Link",
+								wants_focus: false);
+
+						button(identifier: "Updatelink",
+								image: {normal: "SP_Refresh_Xs_N.png", dark_normal:"SP_Refresh_Xs_N_D.png"},
+								alt: "$$$/LinkPalette/Str/LinkPalette/UpdateButton=Update Link",
+								wants_focus: false);
+								
+						button(identifier: "Editlink",
+								image: {normal: "SP_Edit_Xs_N.png", dark_normal:"SP_Edit_Xs_N_D.png"},
+								alt: "$$$/LinkPalette/Str/LinkPalette/EditButton=Edit Original",
+								wants_focus: false);
+					}
+					resize_gripper_gap();
+				}
+			}
+		}
+		optional(bind : @LinkInfoVisible, spacing: 0, vertical: @align_bottom)
+		{
+			subview(identifier: "LinkInfoSubView", show_border: true, horizontal: @align_fill, vertical: @align_bottom)
+			{
+				row(horizontal: @align_fill)
+				{
+					column(child_horizontal: @align_right, guide_mask: [])
+					{
+						static_text(name: "$$$/LinkPalette/LinkInfo/NameStr=Name: ");
+						static_text(name: "$$$/LinkPalette/LinkInfo/FormatStr=Format: ");
+						static_text(name: "$$$/LinkPalette/LinkInfo/ColorSpaceStr=Color Space: ");
+						static_text(name: "$$$/LinkPalette/LinkInfo/LocationStr=Location: ");
+						static_text(name: "$$$/LinkPalette/LinkInfo/ResolutionStr=PPI: ");
+						static_text(name: "$$$/LinkPalette/LinkInfo/DimensionsStr=Dimensions: ");
+						static_text(name: "$$$/LinkPalette/LinkInfo/TransformStr=Scale: ");
+						static_text(name: "$$$/LinkPalette/LinkInfo/SizeStr=Size: ");
+						static_text(name: "$$$/LinkPalette/LinkInfo/CreatedStr=Created: ");
+						static_text(name: "$$$/LinkPalette/LinkInfo/ModifiedStr=Modified: ");
+						static_text(name: "$$$/LinkPalette/LinkInfo/TransparentStr=Transparent: "); 
+					}
+					column(guide_mask: [], horizontal: @align_fill)
+					{
+						row(horizontal: @align_fill)
+						{
+							static_text(identifier: "LinkName", name: @LinkNameCell, horizontal: @align_fill);
+						}
+						row(horizontal: @align_fill)
+						{
+							static_text(identifier: "Format", name: @FormatCell, horizontal: @align_fill);
+						}
+						row(horizontal: @align_fill)
+						{
+							static_text(identifier: "ColorSpaceProfile", name: @ColorSpaceProfileCell, horizontal: @align_fill);
+						}
+						row(horizontal: @align_fill)
+						{
+							link_button(identifier: "LinkLocation", name: @LinkLocationCell, horizontal: @align_fill);
+							
+						}
+						static_text(identifier: "Resolution", name: @ResolutionCell);
+						static_text(identifier: "Dimensions", name: @DimensionsCell);
+						row(horizontal: @align_fill)
+						{
+							static_text(identifier: "Scale", name: @ScaleCell, horizontal: @align_fill);
+						}
+						row(horizontal: @align_fill)
+						{
+							static_text(identifier: "Size", name: @SizeCell, horizontal: @align_fill);
+						}
+						row(horizontal: @align_fill)
+						{
+							static_text(identifier: "Created", name: @CreatedCell, horizontal: @align_fill);
+						}
+						row(horizontal: @align_fill)
+						{
+							static_text(identifier: "Modified", name: @ModifiedCell, horizontal: @align_fill);
+						}
+						static_text(identifier: "Transparent", name: @TransparentCell);
+					}
+				}				
+			}
+			buttongroup(horizontal: @align_center,vertical: @align_bottom, spacing: gPanelToolbarIconSpacing, child_width: gPanelToolbarIconWidth, child_height: gPanelToolbarIconHeight)
+			{
+				button(identifier: "Previous",
+						image: {normal: "SP_ArrowHeadLeft_Wi_N.png", dark_normal:"SP_ArrowHeadLeft_Wi_N_D.png"},
+						alt: "$$$/LinkPalette/Str/LinkPalette/PreviousButton=Previous",
+						wants_focus: false);
+						
+				button(identifier: "Next",
+						image: {normal: "SP_ArrowHeadRight_Wi_N.png", dark_normal:"SP_ArrowHeadRight_Wi_N_D.png"},
+						alt: "$$$/LinkPalette/Str/LinkPalette/NextButton=Next",
+						wants_focus: false);
+			}
+		}
+	}
+}

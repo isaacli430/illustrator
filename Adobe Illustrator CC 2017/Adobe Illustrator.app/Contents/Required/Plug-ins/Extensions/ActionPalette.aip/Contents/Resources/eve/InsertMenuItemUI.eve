@@ -1,0 +1,55 @@
+layout InsertMenuItemUI
+{
+    view subview(identifier: "AIEveSubView",
+				 layout_theme: @dialog_large,
+				 child_horizontal: @align_fill,
+				 placement: @place_column,
+				 show_border: false,
+				 spacing: @unrelated_spacing
+				 )
+    {
+		column(horizontal: @align_fill) 
+		{
+			row(horizontal: @align_fill, child_horizontal: @align_right)
+			{
+				column(horizontal: @align_fill)
+				{
+						static_text(identifier: "item_id_3_name", name: "$$$/ActionPalette/Dlg/17000/3=Menu Item:", horizontal: @align_right);
+						button(identifier: "buttonFind", 
+							name: "$$$/ActionPalette/Dlg/17000/5=Find:", horizontal: @align_right);
+				}
+				
+				column(horizontal: @align_fill)
+				{
+					static_text(identifier: "menuText", name: "$$$/ActionPalette/Dlg/17000/4=None Selected", horizontal: @align_fill);
+					edit_text(identifier: "editText",
+								characters: 30,
+								max_characters: 255,
+								set_default_focus: true,
+								name: "",bind: @menuItem, horizontal: @align_fill);
+				}
+			}
+		
+			row(horizontal: @align_fill, child_horizontal: @align_left)
+			{
+				static_text(identifier: "item_id_7", characters: 1, horizontal: @align_fill, name: "$$$/ActionPalette/Dlg/17000/7=To record a menu item, select a menu item using the mouse, or type a partial name and press the Find button.");
+			}
+		}
+
+		row(horizontal: @align_fill,
+			child_horizontal: @align_right,
+			child_vertical:@align_center,
+			reverse: os == @mac, spacing: @related_spacing)
+		{
+			button(default: true,
+					identifier: "okButton",
+					commit_button: true,
+					name: "$$$/gOK=OK");
+			button(cancel: true,
+					identifier: "cancelButton",
+					commit_button: true,
+					name: "$$$/gCancel=Cancel");
+		}		         
+    }
+}
+

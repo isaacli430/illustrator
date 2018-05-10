@@ -1,0 +1,50 @@
+sheet SVGSaveOptions
+{
+interface:
+		SvgProfilesCell: 0;
+		TypeCell: 0 <== ((SvgProfilesCell >= 2 && SvgProfilesCell <= 5) && (TypeCell == 0) ) ? 1 : TypeCell;
+		SubsettingRememberCell: 0;
+		SubsettingCell: SubsettingRememberCell <== (TypeCell == 2) ? SubsettingRememberCell :  SubsettingCell;
+ 
+		ImagesLocationCell: 0;
+		IncludePGFCell: false;
+
+		CSSPropertiesCell: 0 <== (SvgProfilesCell == 2 || SvgProfilesCell == 3 || SvgProfilesCell == 5) ? 0 : CSSPropertiesCell;
+		IncludeUnusedStylesCell: false <== (CSSPropertiesCell == 2 || CSSPropertiesCell == 3) ? IncludeUnusedStylesCell : false;
+		CoordinationPrecisionCell: 1;
+		EncodingCell: 0;
+
+		OptimizeCell: false;
+		VariableDataCell: false;
+		SlicingCell: false;
+		XMPCell: OptimizeCell <== (EncodingCell == 1) ? XMPCell : false;
+		
+		AutoKerningRememberCell: false;
+		AutoKerningCell: AutoKerningRememberCell <== ((SvgProfilesCell >= 2 && SvgProfilesCell <= 5) || TypeCell == 2) ? AutoKerningRememberCell : AutoKerningCell;
+		
+		UseSVGTextOnPathRememberCell: false;
+		UseSVGTextOnPathCell: false <== ((SvgProfilesCell >= 2 && SvgProfilesCell <= 5) || TypeCell == 2) ? UseSVGTextOnPathRememberCell : UseSVGTextOnPathCell;
+		ResponsiveSVGCell: false;
+		
+		SVGAdvanceOptionsCell: true;
+		DescriptionPanelCell: 0;
+		ShowSVGBanner: false;
+logic:
+			when (!(TypeCell == 2)) relate
+			{
+                SubsettingCell <== SubsettingRememberCell;
+                SubsettingRememberCell <== SubsettingCell;
+            }
+            
+            when (!((SvgProfilesCell >= 2 && SvgProfilesCell <= 5) || TypeCell == 2)) relate
+			{
+                AutoKerningCell <== AutoKerningRememberCell;
+                AutoKerningRememberCell <== AutoKerningCell;
+            }
+            
+            when (!((SvgProfilesCell >= 2 && SvgProfilesCell <= 5) || TypeCell == 2)) relate
+			{
+                UseSVGTextOnPathCell <== UseSVGTextOnPathRememberCell;
+                UseSVGTextOnPathRememberCell <== UseSVGTextOnPathCell;
+            }
+}

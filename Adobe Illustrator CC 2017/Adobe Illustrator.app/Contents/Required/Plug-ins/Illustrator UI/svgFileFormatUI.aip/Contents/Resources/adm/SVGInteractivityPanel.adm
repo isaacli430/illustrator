@@ -1,0 +1,32 @@
+sheet SVGInteractivityPanel
+{
+interface:
+
+	popupItems:
+	[
+		{name: "onfocusin", value: 0},
+		{name: "onfocusout", value: 1},
+		{name: "onactivate", value: 2},
+		{name: "onmousedown", value: 3},
+		{name: "onmouseup", value: 4},
+		{name: "onclick", value: 5},
+		{name: "onmouseover", value: 6},
+		{name: "onmousemove", value: 7},
+		{name: "onmouseout", value: 8},
+		{name: "-", value: 9},
+		{name: "onkeydown", value: 10},
+		{name: "onkeypress", value: 11},
+		{name: "onkeyup", value: 12},
+		{name: "-", value: 13},
+		{name: "onload", value: 14},
+		{name: "onerror", value: 15},
+		{name: "onabort", value: 16},
+		{name: "onunload", value: 17},
+		{name: "onzoom", value: 18},
+		{name: "onresize", value: 19},
+		{name: "onscroll", value: 20}
+	];
+	
+	eventPopupValue: 0;
+	eventJSTextValue: "";
+}

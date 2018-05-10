@@ -1,0 +1,43 @@
+{
+$$$/slicingAttributes/Str/UndoSlice=Undo New Slice
+$$$/slicingAttributes/Str/RedoSlice=Redo New Slice
+
+$$$/slicingAttributes/Str/UndoMakeSlice=Undo Make Slice
+$$$/slicingAttributes/Str/RedoMakeSlice=Redo Make Slice
+
+$$$/slicingAttributes/Str/UndoReleaseSlice=Undo Release Slice
+$$$/slicingAttributes/Str/RedoReleaseSlice=Redo Release Slice
+
+$$$/slicingAttributes/Str/UndoCreateSlice=Undo Create Slice
+$$$/slicingAttributes/Str/RedoCreateSlice=Redo Create Slice
+
+$$$/slicingAttributes/Str/UndoDuplicateSlice=Undo Duplicate Slice
+$$$/slicingAttributes/Str/RedoDuplicateSlice=Redo Duplicate Slice
+
+$$$/slicingAttributes/Str/UndoCombineSlice=Undo Combine Slice
+$$$/slicingAttributes/Str/RedoCombineSlice=Redo Combine Slice
+
+$$$/slicingAttributes/Str/UndoDivideSlice=Undo Divide Slice
+$$$/slicingAttributes/Str/RedoDivideSlice=Redo Divide Slice
+
+$$$/slicingAttributes/Str/UndoDeleteSlice=Undo Delete Slice
+$$$/slicingAttributes/Str/RedoDeleteSlice=Redo Delete Slice
+
+$$$/slicingAttributes/Str/UndoSliceOptions=Undo Slice Options
+$$$/slicingAttributes/Str/RedoSliceOptions=Redo Slice Options
+
+$$$/slicingAttributes/Str/UndoSliceClip=Undo Slice Clip To Artboard
+$$$/slicingAttributes/Str/RedoSliceClip=Redo Slice Clip To Artboard
+
+$$$/slicingAttributes/Str/UndoLockSlices=Undo Lock Slices
+$$$/slicingAttributes/Str/RedoLockSlices=Redo Lock Slices
+
+$$$/slicingAttributes/Str/UndoScaleSlice=Undo Scale
+$$$/slicingAttributes/Str/RedoScaleSlices=Redo Scale
+
+$$$/slicingAttributes/Str/UndoMoveSlice=Undo Move
+$$$/slicingAttributes/Str/RedoMoveSlices=Redo Move
+
+$$$/slicingAttributes/Str/UndoCopySlice=Undo Copy
+$$$/slicingAttributes/Str/RedoCopySlices=Redo Copy
+~"	

@@ -1,0 +1,20 @@
+sheet PreferenceUI
+{
+interface:
+	showHiddenList: false;
+	PreferenceListItems: [
+						{ name: "$$$/Preferences/General=General", value: 1 },
+						{ name: "$$$/Preferences/SelectionAndAnchorDisplay=Selection & Anchor Display", value: 2 },
+						{ name: "$$$/Preferences/Type=Type", value: 3 },
+						{ name: "$$$/Preferences/UnitsAndDisplayPerformance=Units", value: 4 },
+						{ name: "$$$/Preferences/GuidesAndGrid=Guides & Grid", value: 5 },
+						{ name: "$$$/Preferences/SmartGuides=Smart Guides", value: 6 },
+						{ name: "$$$/Preferences/Slices=Slices", value: 7 },
+						{ name: "$$$/Preferences/DictionaryHyphenation=Dictionary & Hyphenation", value: 8 },
+						{ name: "$$$/Preferences/PluginsAndScratchDisks=Plug-ins & Scratch Disks", value: 9 },
+						{ name: "$$$/Preferences/UserInterface=User Interface", value: 10 },
+						{ name: "$$$/fileclipboardpref/Str/25001=File Handling & Clipboard", value: 11 },
+						{ name: "$$$/BlackPreservation/Dialog/PanelName=Appearance of Black", value: 12 }
+				   ];
+
+}

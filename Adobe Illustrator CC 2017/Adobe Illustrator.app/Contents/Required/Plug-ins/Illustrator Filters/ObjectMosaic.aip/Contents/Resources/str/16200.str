@@ -1,0 +1,16 @@
+/* [1] */
+$$$/ObjectMosaic/Str/Error/1=There is not enough memory to execute this filter.
+/* [2] */
+$$$/ObjectMosaic/Str/Error/2=There is not enough memory to completely execute this filter.
+/* [3] */
+$$$/ObjectMosaic/Str/Error/3=Bad Value: ^0
+/* [4] */
+$$$/ObjectMosaic/Str/Error/4=You must select a raster image first.
+/* [5] */
+$$$/ObjectMosaic/Str/Error/5=The number of tiles must be greater than 0.
+/* [6] */
+$$$/ObjectMosaic/Str/Error/6=Tile spacing must be greater than or equal to 0.
+/* [7] */
+$$$/ObjectMosaic/Str/Error/7=Tile spacing can't be greater than the number of tiles minus 2.
+/* [8] */
+$$$/ObjectMosaic/Str/Error/8=The size must be greater than 0.

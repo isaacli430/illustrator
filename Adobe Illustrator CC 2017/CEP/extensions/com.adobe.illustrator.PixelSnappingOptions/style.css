@@ -1,0 +1,62 @@
+.coral--dark .row {
+	border-bottom: 1px solid #686868;
+}
+
+.coral--light .row {
+	border-bottom: 1px solid #D5D5D5;
+}
+
+.coral--dark .updateBG {
+	background-color: #404040;
+}
+
+.coral--light .updateBG {
+	background-color: #E5E5E5;
+}
+
+.description {
+	padding-left: 35px;
+    padding-right: 15px;		
+}
+
+.option {
+	padding: 5px 15px 0px 15px;
+}
+
+body {
+	overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.coral--dark .textMainHeading {
+	color: #EAEAEA;
+	font-size: 14px;
+}
+
+.coral--light .textMainHeading {
+	color: black;
+	font-size: 14px;
+}
+
+.textDetail {
+	font-size: 13px;
+}
+
+.stylebutton {
+	min-width: 100px;
+}
+
+.buttondiv {
+	align: right;
+	padding: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+td {
+	padding-right: 40px;
+}

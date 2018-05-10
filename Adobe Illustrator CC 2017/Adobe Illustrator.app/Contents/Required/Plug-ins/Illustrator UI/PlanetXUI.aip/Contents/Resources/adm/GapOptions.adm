@@ -1,0 +1,40 @@
+sheet LivePaintGapOptionsDialog
+{
+	interface:		
+
+		GapDetectionStatus: 1 ;	//Gap detection checkbox
+		
+		GapSizePopupUnknownState: false;		//This cell is set when GapSize pop-up is in unknown state. It is used for showing the gap size icon.
+		unlink GapSizePopup: 3 <==  (GapDetectionStatus != 1) ? LastGapSizeSelection : GapSizePopup;	//Gap size popup
+		LastGapSizeSelection : 3 <== (GapDetectionStatus == 1) ? GapSizePopup : LastGapSizeSelection;
+
+		ColorPopupCell: 9;
+		
+		GapSizePopupCustom: false <==(GapSizePopup == 3 || GapSizePopup == 6 || GapSizePopup == 12) ? false : true;
+		
+		CustomGapEditUnknownState: false;		//This cell sets the unknown state for the custom number edit.
+		CustomGapEditValue: 0 <== (GapDetectionStatus == 0) ? CustomGapEditValueLast : ( (GapSizePopupCustom == false) ? GapSizePopup: CustomGapEditValue);	//Gap size number edit
+		CustomGapEditValueLast: 0 <== (GapDetectionStatus != 0) ? CustomGapEditValue : CustomGapEditValueLast;
+		
+		
+		StopGapMenuItems: [ { name: "$$$/PlanetX/Str/GapSmall=Small Gaps", value: 3 },
+							{ name: "$$$/PlanetX/Str/GapMedium=Medium Gaps", value: 6 },
+							{ name: "$$$/PlanetX/Str/GapLarge=Large Gaps", value: 12},
+							{ name: "$$$/PlanetX/Dialog/GapDetection/Custom=Custom Gaps", value: 0}];					
+		
+		ShowSetDefaultButton: 0;
+		unlink ShowGapIcon: 0 <== (GapDetectionStatus == 1 && GapSizePopupUnknownState == false) ? GapSizePopup : -1;
+		NumGapsCell: "0";
+		
+		PreviewCell: false <== (ShowSetDefaultButton == 1) ? false : PreviewCell;
+		
+		DescString: (ShowSetDefaultButton == 1) ? 1 : 0;										//This cell value corresponds to the hover string to be displayed
+		
+				
+	invariant:
+		error <== (GapDetectionStatus == 1 && NumGapsCell != "0");
+
+	output:
+		result <== {GapDetectionStatus: GapDetectionStatus, GapSizePopup: GapSizePopup, CustomGapEditValue: CustomGapEditValue, ColorPopupCell: ColorPopupCell, 
+					ShowGapIcon: ShowGapIcon, PreviewCell: PreviewCell};
+}

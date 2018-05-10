@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <link rel="stylesheet" href="../../fonts/adobe-clean.css">
+        <link rel="stylesheet" href="./style.css">
+
+        <script type="text/javascript" src="../../js/CSInterface.js"></script>
+        <script type="text/javascript" src="./main.js"></script>
+    </head>
+
+    <body>
+        <div id="popupContainer" class="coach">
+            <div data-locale="MakePxPerfectCoachText" class="text"></div>  
+        </div>
+    </body>
+
+    <script type="text/javascript">
+        window.onload = function() {
+            var cs = new CSInterface();
+            var resourceBundle = cs.initResourceBundle();   
+            InformClientAboutPopupHeight("MakePixelPerfectCoachHeightUpdate");
+        }
+    </script>
+</html>

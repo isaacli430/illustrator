@@ -1,0 +1,35 @@
+layout AddJavaScriptFiles
+{
+   view subview(identifier: "AIEveSubView",
+				 placement: @place_column,
+				 show_border: false,
+				 spacing: @unrelated_spacing,
+				 layout_theme: @dialog_large)
+    {	
+		column()
+		{
+			row()
+			{
+				edit_text(identifier: "URLItem", name: "$$$/svgFileFormatUI/AddJavaScript/URL=URL:", 
+							set_default_focus: true, characters: 30, bind:@URLCell);
+				
+				button(identifier: "ChooseItem", action: @ChooseAction,
+						name: "$$$/svgFileFormatUI/AddJavaScript/Choose=Choose...");
+			}
+			
+			edit_text(identifier: "LanguageItem", name: "$$$/svgFileFormatUI/AddJavaScript/Language=Language:", 
+							characters: 20, bind:@LanguageCell);
+		}
+				
+		row(horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+		{
+			button(default: true, commit_button: true, 
+				   identifier: "okButton",
+				   name: "$$$/svgFileFormatUI/AddJavaScript/Ok=OK");
+
+			button(cancel: true, commit_button: true,
+				   identifier: "cancelButton",
+				   name: "$$$/svgFileFormatUI/AddJavaScript/Cancel=Cancel");
+		}
+    }
+}

@@ -1,0 +1,10 @@
+layout appMenu_Mac
+{
+	view menu( id: 2,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/About/About=&About Illustrator...", id:	1633841013, help_id:0);
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/Edit/Preferences=Prefere&nces", id:122, help_id:12){ separator(); }
+}
+}

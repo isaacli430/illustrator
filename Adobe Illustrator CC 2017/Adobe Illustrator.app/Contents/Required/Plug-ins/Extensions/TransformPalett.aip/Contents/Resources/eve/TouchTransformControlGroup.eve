@@ -1,0 +1,21 @@
+layout TouchTransformControlGroup
+{
+     view subview(identifier: "TouchTransformControlGroup",
+				 show_border: false,
+				 child_vertical: @align_center,
+				 placement: @place_row,
+				 margin : 0)
+    {		
+		optional(identifier: "TouchTransformControlCell",child_vertical:  @align_center, child_horizontal:  @align_center, margin : 0, spacing: 0, placement: @place_row)
+		{
+			
+			button(identifier: "TransformControlPanelButton",
+					   	image: { normal: "SP_PL_TouchTransform_N.png", dark_normal: "SP_PL_TouchTransform_N_D.png" },
+					   	alt: "$$$/TransformPalett/Str/TouchTransformPalette/Tooltip=Transform",
+						horizontal:@align_fill,
+						vertical:@align_fill,
+						wants_focus: false
+					   );
+		}
+    }
+}

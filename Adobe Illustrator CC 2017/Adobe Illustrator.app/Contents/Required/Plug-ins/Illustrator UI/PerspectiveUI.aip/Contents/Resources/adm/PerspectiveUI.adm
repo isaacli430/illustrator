@@ -1,0 +1,9 @@
+sheet PerspectiveUI
+{
+interface:
+lgridPopup: 1;
+rgridPopup: 1;
+hgridPopup: 1;
+filterOpacity: {min_value: 0, max_value: 100};
+
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+  <menuItem id="4" text="$$$/TransparencyPalette/Mnu/TransparencyPalette/3=&amp;Make Opacity Mask"></menuItem>
+  <menuItem id="5" text="$$$/TransparencyPalette/Mnu/TransparencyPalette/4=&amp;Release Opacity Mask"></menuItem>
+  <separator></separator>
+  <menuItem id="7" text="$$$/TransparencyPalette/Mnu/TransparencyPalette/5=Dis&amp;able Opacity Mask"></menuItem>
+  <menuItem id="8" text="$$$/TransparencyPalette/Mnu/TransparencyPalette/6=Un&amp;link Opacity Mask"></menuItem>
+  <separator></separator>
+  <menuItem id="10" text="$$$/TransparencyPalette/Mnu/TransparencyPalette/7=New Opacity Masks Are &amp;Clipping"></menuItem>
+  <menuItem id="11" text="$$$/TransparencyPalette/Mnu/TransparencyPalette/8=&amp;New Opacity Masks Are Inverted"></menuItem>
+  <separator></separator>
+  <menuItem id="13" text="$$$/TransparencyPalette/Mnu/TransparencyPalette/9=Page &amp;Isolated Blending"></menuItem>
+  <menuItem id="14" text="$$$/TransparencyPalette/Mnu/TransparencyPalette/10=Page &amp;Knockout Group"></menuItem>
+</menu>

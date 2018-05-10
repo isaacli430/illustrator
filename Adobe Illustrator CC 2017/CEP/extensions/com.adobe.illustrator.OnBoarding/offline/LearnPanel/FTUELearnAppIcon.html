@@ -1,0 +1,68 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" href="../../fonts/adobe-clean.css">
+    <link rel="stylesheet" href="./style.css">
+
+    <script type="text/javascript" src="../../js/CSInterface.js"></script>
+	<script src="../../js/lib/ResizeSensor.js"></script>
+    <script type="text/javascript" src="./main.js"></script>
+</head>
+
+<body>
+	<div id="popupContainer">
+		<div class="box" style="border:0">
+			<div class="coach">
+				<div class="right">
+						<div style="padding-right:10px">
+						<p id="div1" data-locale="LearnAppIconCoachText" class="text"></p>
+						</div>
+					   <div class="button" align="right" style="padding-left:180px">
+								<span data-locale="ButlerCardOkay" class="close" onclick="DismissClicked()"></span>
+						</div>
+				   </div>
+			</div>
+		</div>
+    </div>
+</body>
+
+<script type="text/javascript">
+		var resizeSensorCall = false;
+        window.onload = function() {
+            var cs = new CSInterface();
+            var resourceBundle = cs.initResourceBundle();
+			resizeSensorCall = true;
+        }
+
+        function DismissClicked()
+        {
+            var rsp_event = new CSEvent("AppIconOnBoardingEvent", "APPLICATION");
+            var jsonObj = {
+                "Data": '',
+                "Type": "LearnAppIconDismissClicked"
+            };
+            rsp_event.data = JSON.stringify(jsonObj);
+            CSLibrary.dispatchEvent(rsp_event);
+        }
+		function LearnMoreClicked()
+		{
+            var rsp_event = new CSEvent("AppIconOnBoardingEvent", "APPLICATION");
+            var jsonObj = {
+                "Data": '',
+                "Type": "LearnAppIconLearnMoreClicked"
+            };
+            rsp_event.data = JSON.stringify(jsonObj);
+            CSLibrary.dispatchEvent(rsp_event);
+        }
+		var element = document.getElementById('popupContainer');
+		new ResizeSensor(element, function() {
+			if(resizeSensorCall){
+            	InformClientAboutPopupHeight("LearnAppIconCoachHeightUpdate");
+				ResizeSensor.detach(element);
+				resizeSensorCall = false;
+			}
+        });
+</script>
+</html>

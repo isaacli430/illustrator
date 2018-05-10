@@ -1,0 +1,16 @@
+layout GraphCellStyle
+{
+	view subview(identifier: "AIEveSubView", placement: @place_column, show_border: false, layout_theme: @dialog_large, spacing: @unrelated_spacing, child_horizontal: @align_right)
+	{
+		column()
+		{
+			unit_hot_number(identifier: "NumberDecimals", min_value: 0, max_value: 10, digits: 4, name: "$$$/Illustrator/Graphs/Dialog/GraphCellStyle/decimal=&Number of decimals:", suffix: "$$$/Illustrator/Graphs/Dialog/GraphCellStyle/digits=digits", bind: @NumDecimals, decimal_places: 0, set_default_focus: true);
+			unit_hot_number(identifier: "ColumnWidth", min_value: 0, max_value: 20, digits: 4, name: "$$$/Illustrator/Graphs/Dialog/GraphCellStyle/colwidtht=&Column width:", bind: @CellWidth, suffix: "$$$/Illustrator/Graphs/Dialog/GraphCellStyle/digits=digits", decimal_places: 2);
+		}
+		row(reverse: os == @mac, horizontal: @align_right, spacing: @related_spacing)
+        {
+			button(default: true, identifier: "okButton", commit_button: true, name: "$$$/gOK=OK");
+			button(cancel: true, identifier: "cancelButton", commit_button: true, name: "$$$/gCancel=Cancel");
+        }
+    }
+}

@@ -1,0 +1,76 @@
+layout MapMethodOptions
+{
+
+	view subview(identifier: "MapMethodOptions",					
+					show_border: false,
+					layout_theme:  @controlbar,
+					placement: @place_row,
+					child_vertical:  @align_center,
+					margin: 3,
+					spacing: 5,
+					width:	225,
+					height:	140					
+				 )	
+	{	
+		column(horizontal: @align_fill, spacing: @related_spacing)
+		{
+			subview(identifier: "ColorHarmonyControlGroupUI",					
+					show_border: true,
+					placement: @place_row,
+					child_vertical:  @align_center,
+					horizontal: @align_fill,
+					margin:5)
+			{
+				column(horizontal: @align_fill,spacing: 0)
+				{
+					row(horizontal: @align_fill)
+					{
+						 toggle_button(identifier: "MapMethodExactToggle",			height: 26, value_on: false, value_off: true, wants_focus: false, horizontal: @align_fill);
+					}
+					row(horizontal: @align_fill)
+					{
+						 toggle_button(identifier: "MapMethodPreserveTintsToggle",	height: 26, value_on: false, value_off: true, wants_focus: false, horizontal: @align_fill);
+					}
+					row(horizontal: @align_fill)
+					{
+						 toggle_button(identifier: "MapMethodScaleTintsToggle",		height: 26, value_on: false, value_off: true, wants_focus: false, horizontal: @align_fill);
+					}
+					row(horizontal: @align_fill)
+					{
+						 toggle_button(identifier: "MapMethodTintsAndShadesToggle", height: 26, value_on: false, value_off: true, wants_focus: false, horizontal: @align_fill);
+					}
+					row(horizontal: @align_fill)
+					{
+						 toggle_button(identifier: "MapMethodHueShiftToggle",		height: 26, value_on: false, value_off: true, wants_focus: false, horizontal: @align_fill);
+					}
+				}
+			}
+		
+			row(horizontal: @align_fill, child_vertical: @align_center,spacing: @separated_spacing)
+			{
+				checkbox(identifier: "MapMethodApplyToAll",
+				name: "$$$/ColorHarmonies/MapMethodSelector/ApplyToAll=Apply To All");
+			}
+			row(horizontal: @align_fill, child_vertical: @align_center,spacing: @separated_spacing)
+			{
+				checkbox(identifier: "MapMethodPreserveSpots", 
+				name: "$$$/ColorHarmonies/MapMethodSelector/PreserveSpots=Preserve Spot Colors");
+			}
+		}
+	}
+
+}
+
+
+/*kListBoxWidth = 225;
+kListBoxHeight = 140;
+dialog(font_id: gADMPaletteFont, margin: 0, margin_bottom: -5, spacing: 0)
+{
+	listbox(bottom_outset: -10, font_id: gADMPaletteFont, height: kListBoxHeight, item_id: 1, width: kListBoxWidth);
+	group(margin_bottom: gSpace, margin_left: gSpace, spacing: 0)
+	{
+		checkbox(item_id: 2, name: '$$$/ColorHarmonies/MapMethodSelector/ApplyToAll=Apply To All');
+		checkbox(item_id: 3, name: '$$$/ColorHarmonies/MapMethodSelector/PreserveSpots=Preserve Spot Colors');
+	}
+}
+*/

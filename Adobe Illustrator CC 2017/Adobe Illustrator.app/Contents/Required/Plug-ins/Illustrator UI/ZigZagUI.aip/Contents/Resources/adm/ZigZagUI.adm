@@ -1,0 +1,6 @@
+sheet ZigZagUI
+{
+  interface:
+    SizeRadioGp: empty;
+    PointsRadioGp: empty;
+}

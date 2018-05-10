@@ -1,0 +1,6 @@
+sheet TouchPencilToolUI_
+{
+	interface:
+		withinPx: 6;
+		withinPx2: 12;
+}

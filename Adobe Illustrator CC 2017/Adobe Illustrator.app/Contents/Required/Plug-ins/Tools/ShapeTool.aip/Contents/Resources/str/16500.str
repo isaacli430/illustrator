@@ -1,0 +1,24 @@
+/* [1] */
+$$$/ShapeTool/Str/Undo/OvalUndo=Undo Ellipse
+/* [2] */
+$$$/ShapeTool/Str/Undo/OvalRedo=Redo Ellipse
+/* [3] */
+$$$/ShapeTool/Str/Undo/RectUndo=Undo Rectangle
+/* [4] */
+$$$/ShapeTool/Str/Undo/RectRedo=Redo Rectangle
+/* [5] */
+$$$/ShapeTool/Str/Undo/RoundRectUndo=Undo Rounded Rectangle
+/* [6] */
+$$$/ShapeTool/Str/Undo/RoundRectRedo=Redo Rounded Rectangle
+/* [7] */
+$$$/ShapeTool/Str/Undo/PolyUndo=Undo Polygon
+/* [8] */
+$$$/ShapeTool/Str/Undo/PolyRedo=Redo Polygon
+/* [9] */
+$$$/ShapeTool/Str/Undo/StarUndo=Undo Star
+/* [10] */
+$$$/ShapeTool/Str/Undo/StarRedo=Redo Star
+/* [11] */
+$$$/ShapeTool/Str/Undo/SpiralUndo=Undo Spiral
+/* [12] */
+$$$/ShapeTool/Str/Undo/SpiralRedo=Redo Spiral

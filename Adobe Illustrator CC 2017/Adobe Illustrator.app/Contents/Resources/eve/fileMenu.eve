@@ -1,0 +1,31 @@
+layout fileMenu
+{
+	view menu( id: 26,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/File/New=&New...", id:							(os == @win) ? 1852143392 : 1852143392, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/File/NewFromTemplate=New from &Template...", id:	20, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/File/Open=&Open...", id:							(os == @win) ? 1869636974 : 1869636974, help_id:0);		
+		menu( text: "$$$/_MBAR/Mnu/File/OpenRecent=Open Recent &Files", id:			171, help_id:  43 ) { separator();  }
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/File/Close=&Close", id:							1634296684, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/File/Save=&Save", id:							(os == @win) ? 1935767141 : 1935767141, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/File/SaveAs=Save &As...", id:					(os == @win) ? 1937138035 : 1937138035, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/File/SaveCopy=Save a Cop&y...", id:				95, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/File/SaveAsTemplate=Save as Template...", id:	48, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/File/Revert=Re&vert", id:						(os == @win) ? 1920365172 : 1920365172, help_id:0);
+		separator();
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/File/Export=&Export", 							id: 96, help_id: 79) { separator(); }
+		menu( text: "$$$/_MBAR/Mnu/File/ExportSelection=Export Selection...", id:	351, help_id:0);
+		/* separator added from code */
+		menu( text: "$$$/_MBAR/Mnu/File/DocSetup=&Document Setup...", id:			84, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/File/DocColorMode=Document Color &Mode", id:		190, help_id:  44 ) { separator();  }
+		separator();
+		if (condition: os == @win)
+		{
+			separator();
+			menu( text: "$$$/_MBAR/Mnu/File/Quit/Win=E&xit", id:						(os == @win) ? 1903520116 : 1903520116, help_id:0);
+		}
+	}
+}

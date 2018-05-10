@@ -1,0 +1,51 @@
+layout GradientColorStopPanel
+{
+    view subview(identifier: "GradientPanelColorStopSubView",
+				 child_horizontal: @align_fill,
+				 layout_theme: @panel, spacing: @related_spacing,
+				 show_border: false,
+				 child_vertical: @align_center)
+    {
+		row()
+		{
+			panel(bind:@ShowSwatchPanel,value:3,height:13,width:33)
+			{
+				radio_button(identifier:"Dummy",bind:@ShowSwatchPanel,value:3);
+			}
+			unit_hot_number(identifier: "GradientStopOpacityPopup", name: "$$$/PaintStyle/kGradientDlgID/Opacity=Opacity:", unit: 'NumberEditUnit_Percent', horizontal: @align_left,
+					digits: 2, decimal_places: 0, min_value: 0, max_value: 100, popuplist: true, include_custom_item: false, items: @GradientOpacityLocationPresets);
+			panel(bind:@ShowLocation,value:true, horizontal: @align_right)
+			{
+				unit_hot_number(identifier: "GradientStopLocationPopup", name: "$$$/PaintStyle/kGradientDlgID/Location=Location:", unit: 'NumberEditUnit_Percent', 
+						digits: 2, decimal_places: 2, min_value: 0, max_value: 100, popuplist: true, include_custom_item: false, items: @GradientOpacityLocationPresets);
+			}
+		}
+		row()
+		{
+			column(guide_mask:[@guide_label])
+			{
+				toggle_button(identifier:"ShowColor", toolbox_style: true, image:{normal:"SP_PL_Color_N.png",dark_normal:"SP_PL_Color_N_D.png"}, bind:@ShowSwatchPanel, value_on: 0, value_off: 1, wants_focus: false,
+						alt:"$$$/PaintStyle/Str/ColorToolTip/Color=Color");
+				toggle_button(identifier:"ShowSwatch", toolbox_style: true, image:{normal:"SP_PL_Swatches_N.png",dark_normal:"SP_PL_Swatches_N_D.png"},bind:@ShowSwatchPanel,value_on: 1, value_off: 0, wants_focus: false,
+						alt:"$$$/PaintStyle/Str/ColorToolTip/Swatches=Swatches");
+			}
+			column()
+			{
+				overlay()
+				{
+					panel(bind:@ShowSwatchPanel,value:1,height:167)
+					{
+						grid_view(identifier:"SwatchGrid",horizontal: @align_fill, vertical:@align_fill,width:240);
+					}
+					panel(bind:@ShowSwatchPanel,value:0,height:167)
+					{
+						group(horizontal: @align_fill, vertical:@align_fill)
+						{
+							static_text(identifier:"PlaceHolderText",name:"color Panel");
+						}
+					}
+				}
+			}
+		}
+	}
+}	

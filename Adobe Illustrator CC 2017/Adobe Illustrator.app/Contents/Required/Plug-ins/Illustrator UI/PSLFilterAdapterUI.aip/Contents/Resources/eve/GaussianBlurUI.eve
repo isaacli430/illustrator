@@ -1,0 +1,35 @@
+layout GaussianBlurUI
+{
+    view subview(identifier: "AIEveSubView",
+					layout_theme: @dialog_large,
+					show_border: false,
+					spacing: @unrelated_spacing)
+    {
+		row(horizontal: @align_fill)
+		{
+			slider( identifier: "raduisSlider", 
+						vertical: @align_center,
+						horizontal: @align_fill,
+						min_max_filter: @filter,
+						slider_point: @up,
+						set_default_focus: true,
+						name: "$$$/PSLFilterAdapterUI/Dlg/GaussianBlur/Radius=&Radius:",
+						digits: 5,				
+						decimal_places: 1,
+						snap_to_int:false); 
+
+			edit_number(identifier: "raduisEdit", digits: 5, bind_final: true,						
+						decimal_places: 1, min_value: 0.1, max_value:250, suffix: "$$$/PSLFilterAdapterUI/Dlg/GaussianBlur/Pixels=pixels");
+		}				 
+						
+		row(horizontal: @align_fill, child_vertical: @align_center)
+        {
+            checkbox(horizontal: @align_left, name: "$$$/PSLFilterAdapterUI/Dlg/GaussianBlur/Preview=&Preview", identifier: "previewChkBox", guide_mask: [ @guide_label ]);
+			row(horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+            {
+				button(default: true, identifier: "okButton", commit_button: true, name: "$$$/gOK=OK");
+				button(cancel: true, identifier: "cancelButton", commit_button: true, name: "$$$/gCancel=Cancel");
+			}            
+        }
+    }
+}

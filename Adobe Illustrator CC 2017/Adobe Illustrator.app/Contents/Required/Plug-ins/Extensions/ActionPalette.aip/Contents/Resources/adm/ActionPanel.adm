@@ -1,0 +1,7 @@
+sheet ActionsPanel
+{
+	interface:
+		showProxyRecord: 0;
+		showProxyPlay: 0;
+		showButtonMode: 1;
+}

@@ -1,0 +1,124 @@
+layout EllipsePropertiesUI
+{
+    view subview(identifier: "EllipsePropertiesUI",
+				 layout_theme: @panel,
+				 show_border: false)
+    {
+		optional(bind: @ShowEllipsePropertiesString, value: true)
+		{
+			static_text(identifier: "EllipsePropertiesLabel",
+						name: "$$$/ShapeCoreUI/EllipseProperties/Label/EllipseProperties=Ellipse Properties:");
+		}
+
+		row(horizontal: @align_fill,
+			child_vertical: @align_center)
+		{
+			unit_edit_number(identifier: "EllipseWidth",
+								alt: "$$$/ShapeCoreUI/EllipseProperties/ToolTip/EllipseWidth=Ellipse Width",
+								decimal_places: 3,
+								digits: 4,
+								unit:"CurrentDocumentUnit",
+								max_value: 16384,
+								min_value: 0.0,
+								label: "SP_Width_Md_N.png",
+								is_image_label: true);
+			
+			row(spacing: 0)
+			{
+				guide_consumer(consume_horizontal: 1);
+				
+				toggle_button(identifier: "ConstrainDimensions",
+								bind: @ConstrainDimensions,
+								value_on: true,
+								value_off: false,
+								image: { normal: "NoConstrainIcon.png", dark_normal: "NoConstrainIconDark.png", down: "LinkOnConstrainIcon.png", dark_down: "LinkOnConstrainIconDark.png" },
+								alt: "$$$/ShapeCoreUI/EllipseProperties/ToolTip/ConstrainDimensions=Constrain Width and Height Proportions",
+								wants_focus: false);
+			}
+							
+			row(spacing: @connected_spacing)
+			{
+				unit_edit_number(identifier: "EllipseHeight",
+									alt: "$$$/ShapeCoreUI/EllipseProperties/ToolTip/EllipseHeight=Ellipse Height",
+									decimal_places: 3,
+									digits: 4,
+									unit:"CurrentDocumentUnit",
+									max_value: 16384,
+									min_value: 0.0);
+									
+				image(identifier: "EllipseHeightImage",
+						alt: "$$$/ShapeCoreUI/EllipseProperties/ToolTip/EllipseHeight=Ellipse Height",
+						image: { normal: "SP_Height_Md_N.png", dark_normal: "SP_Height_Md_N_D.png" });
+			}
+		}
+		
+		unit_edit_number(identifier: "EllipseRotationAngle",
+							alt: "$$$/ShapeCoreUI/EllipseProperties/ToolTip/EllipseAngle=Ellipse Angle",
+							popuplist: true,
+							items: @AngleValues,
+							decimal_places: 2,
+							digits: 1,
+							unit:"NumberEditUnit_Degree",
+							label: "SP_RotateCCW_Md_N.png",
+							is_image_label: true);
+		
+		row(horizontal: @align_fill,
+			child_vertical: @align_center)
+		{
+			unit_edit_number(identifier: "EllipsePieStartAngle",
+								alt: "$$$/ShapeCoreUI/EllipseProperties/ToolTip/PieStartAngle=Pie Start Angle",
+								popuplist: true,
+								items: @AngleValues,
+								decimal_places: 2,
+								digits: 1,
+								unit:"NumberEditUnit_Degree",
+								label: "SP_EllipsePieStart_Md_N.png",
+								is_image_label: true);
+								
+			row(spacing: 0)
+			{
+				guide_consumer(consume_horizontal: 1);
+				
+				toggle_button(identifier: "ConstrainPieAngles",
+								bind: @ConstrainPieAngles,
+								value_on: true,
+								value_off: false,
+								image: { normal: "NoConstrainIcon.png", dark_normal: "NoConstrainIconDark.png", down: "LinkOnConstrainIcon.png", dark_down: "LinkOnConstrainIconDark.png" },
+								alt: "$$$/ShapeCoreUI/EllipseProperties/ToolTip/ConstrainPieAngles=Constrain Pie Angles",
+								wants_focus: false);
+			}
+
+			row(spacing: @connected_spacing)
+			{
+				unit_edit_number(identifier: "EllipsePieEndAngle",
+									alt: "$$$/ShapeCoreUI/EllipseProperties/ToolTip/PieEndAngle=Pie End Angle",
+									popuplist: true,
+									items: @AngleValues,
+									decimal_places: 2,
+									digits: 1,
+									unit:"NumberEditUnit_Degree");
+									
+				image(identifier: "EllipsePieEndAngleImage",
+						alt: "$$$/ShapeCoreUI/EllipseProperties/ToolTip/PieEndAngle=Pie End Angle",
+						image: { normal: "SP_EllipsePieEnd_Md_N.png", dark_normal: "SP_EllipsePieEnd_Md_N_D.png" });
+			}
+			
+		}
+
+		row(child_vertical: @align_center,
+			guide_mask: [@guide_label],
+			spacing: @connected_spacing)
+		{
+			image(identifier: "EllipseInvertPieLeftImage",
+					image: { normal: "SP_EllipsePieInvertLarge_Md_N.png", dark_normal: "SP_EllipsePieInvertLarge_Md_N_D.png" });
+
+			button(identifier:"EllipseInvertPie",
+					alt: "$$$/ShapeCoreUI/EllipseProperties/ToolTip/InvertPie=Invert Pie",
+					image: { normal:"SP_SwapArrowheads_Sm_N.png", dark_normal:"SP_SwapArrowheads_Sm_N_D.png" },
+					wants_focus: false);
+
+			image(identifier: "EllipseInvertPieRightImage",
+					image: { normal: "SP_EllipsePieInvertSmall_Md_N.png", dark_normal: "SP_EllipsePieInvertSmall_Md_N_D.png" });
+		}
+    }
+}

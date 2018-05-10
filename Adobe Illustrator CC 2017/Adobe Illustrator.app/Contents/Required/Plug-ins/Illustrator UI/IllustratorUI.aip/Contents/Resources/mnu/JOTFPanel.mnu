@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+  <menuItem id="1" text="$$$/_TextDlgs/Mnu/JOTFFlyOutMenu/1=Standard Ligatures"></menuItem>
+  <menuItem id="2" text="$$$/_TextDlgs/Mnu/JOTFFlyOutMenu/2=Contextual Alternates"></menuItem>
+  <menuItem id="3" text="$$$/_TextDlgs/Mnu/JOTFFlyOutMenu/3=Discretionary Ligatures"></menuItem>
+  <menuItem id="4" text="$$$/_TextDlgs/Mnu/JOTFFlyOutMenu/4=Swash"></menuItem>
+  <menuItem id="5" text="$$$/_TextDlgs/Mnu/JOTFFlyOutMenu/5=Stylistic Alternates"></menuItem>
+  <menuItem id="6" text="$$$/_TextDlgs/Mnu/JOTFFlyOutMenu/6=Titling Alternates"></menuItem>
+  <menuItem id="7" text="$$$/_TextDlgs/Mnu/JOTFFlyOutMenu/7=Ordinals"></menuItem>
+  <menuItem id="8" text="$$$/_TextDlgs/Mnu/JOTFFlyOutMenu/8=Fractions"></menuItem>
+  <separator></separator>
+  <menuItem id="14" text="$$$/_TextDlgs/Mnu/JOTFFlyOutMenu/14=Reset Panel"></menuItem>
+</menu>

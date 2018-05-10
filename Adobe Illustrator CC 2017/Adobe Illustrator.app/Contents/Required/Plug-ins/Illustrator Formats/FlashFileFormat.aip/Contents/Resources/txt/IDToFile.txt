@@ -1,0 +1,8 @@
+kEmbedFontEmbeddedIcon.png                        		P_EmbedFont_Md_N.png                              
+kEmbedFontNormalIcon.png                          		SP_EditCharacter_Md_N.png                         
+kEmbedFontNormalIcon.png                          		SP_EditCharacter_Md_N_D.png                       
+kSelectableTextIcon.png                           		P_SelectableText_notall_Md_N.png                  
+kShowBorderAroundTextIcon.png                     		SP_TextBorder_Md_N.png                            
+kShowBorderAroundTextIcon.png                     		SP_TextBorder_Md_N_D.png                          
+kWarningIcon.png                                  		SP_Alert_Sm_N.png                                 
+kWarningIcon_D.png                                		SP_Alert_Sm_N_D.png                               

@@ -1,0 +1,58 @@
+sheet NewActionUI
+{
+	interface:
+		actionName: "";
+		KeyItemSetMac: [	{	name:	"$$$/ActionPalette/Mnu/16601/1=None", value: 0},
+									{	name:	"", value: -1},
+									{	name:	"F1", value: 1},
+									{	name:	"F2", value: 2},
+									{	name:	"F3", value: 3},
+									{	name:	"F4", value: 4},
+									{	name:	"F5", value: 5},
+									{	name:	"F6", value: 6},
+									{	name:	"F7", value: 7},
+									{	name:	"F8", value: 8},
+									{	name:	"F9", value: 9},
+									{	name:	"F10", value: 10},
+									{	name:	"F11", value: 11},
+									{	name:	"F12", value: 12},
+									{	name:	"F13", value: 13},
+									{	name:	"F14", value: 14},
+									{	name:	"F15", value: 15}	];
+	
+		KeyItemSetWin: [	{	name:	"$$$/ActionPalette/Mnu/16601/1=None", value: 0},
+									{	name:	"", value: -1},
+									{	name:	"F2", value: 2},
+									{	name:	"F3", value: 3},
+									{	name:	"F4", value: 4},
+									{	name:	"F5", value: 5},
+									{	name:	"F6", value: 6},
+									{	name:	"F7", value: 7},
+									{	name:	"F8", value: 8},
+									{	name:	"F9", value: 9},
+									{	name:	"F10", value: 10},
+									{	name:	"F11", value: 11},
+									{	name:	"F12", value: 12}	];  	      	 
+
+
+		functionPopup: 0;
+		
+		unlink disableCheckboxes : false <== ( functionPopup == 0 ) ? true : disableCheckboxes;
+		
+		unlink shiftCheckbox : false <== ( disableCheckboxes == false ) ? shiftCheckbox : false;
+		
+		unlink commandCheckbox : false <== ( disableCheckboxes == false ) ? commandCheckbox : false;
+		
+		showRecordButton: 0;
+		
+		colorItems: [	{ name: "$$$/ActionPalette/Mnu/16602/1=None", value: 0, color:{r: 0.83, g: 0.83, b: 0.83}},
+						{ name: "", value: -1 },
+						{ name: "$$$/ActionPalette/Mnu/16602/3=Red", value: 1,  color:{r: 1.0, g: 0.6, b: 0.6}},
+						{ name: "$$$/ActionPalette/Mnu/16602/4=Orange", value: 2, color:{r: 1.0, g: 0.6, b: 0.4} },
+						{ name: "$$$/ActionPalette/Mnu/16602/5=Yellow", value: 3, color:{r: 1.0, g: 1.0, b: 0.4} },
+						{ name: "$$$/ActionPalette/Mnu/16602/6=Green", value: 4, color:{r: 0.6, g: 1.0, b: 0.6} },
+						{ name: "$$$/ActionPalette/Mnu/16602/7=Blue", value: 5, color:{r: 0.6, g: 0.8, b: 1.0} },
+						{ name: "$$$/ActionPalette/Mnu/16602/8=Violet", value: 6, color:{r: 0.8, g: 0.6, b: 1.0} },
+						{ name: "$$$/ActionPalette/Mnu/16602/9=Gray", value: 7, color:{r: 0.73, g: 0.73, b: 0.73} }	];
+		colorPopupCell: 0;
+}

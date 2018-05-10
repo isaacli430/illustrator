@@ -1,0 +1,83 @@
+layout MoveDialog
+{
+    view subview(show_border: false,
+                 layout_theme: @dialog_large,
+                 identifier: "MoveDialogSubView",
+                 child_horizontal: @align_fill,spacing: @unrelated_spacing)
+    {
+		column(child_horizontal: @align_fill,spacing: @inter_group_spacing)
+	{
+		group(name: "$$$/_TRANSFOR/Dlg/Move/movePositionGroupbox=Position")
+		{
+			unit_hot_number(set_default_focus: true,
+						name: "$$$/_TRANSFOR/Dlg/Move/hDistTitleMove=&Horizontal:",
+        					decimal_places: 4,
+        					unit: "CurrentDocumentUnit",                    			
+        					identifier: "horizontalEditNumber");
+                       
+			unit_hot_number(name: "$$$/_TRANSFOR/Dlg/Move/vDistTitleMove=&Vertical:",
+							decimal_places: 4,
+							unit: "CurrentDocumentUnit",
+							identifier: "verticalEditNumber");
+
+			separator();
+
+			unit_hot_number(name: "$$$/_TRANSFOR/Dlg/Move/distTitleMove=&Distance:",
+							unit: "CurrentDocumentUnit",
+							min_value: -12219,
+							max_value: 12219,
+							identifier: "distanceEditNumber",
+							decimal_places: 4);
+	
+ 			angle_picker(identifier: "AnglePicker",	
+							name: "$$$/_TRANSFOR/Dlg/Move/angleTitleMove=&Angle:",
+							value_range: {min_value:-360, max_value: 360},
+							show_editbox: true);
+		}
+
+		
+			group(name: "$$$/_TRANSFOR/Dlg/Move/moveOptionsGroupbox=Options",
+				  placement: @place_row,
+				  guide_mask: [ @guide_label])
+			{
+				checkbox(name: "$$$/_TRANSFOR/Dlg/Move/doObjectsMove=Transform &Objects",
+						  bind: @objectCheckBoxID,
+						  identifier: "ObjectCheckBox");
+						  
+				checkbox(name: "$$$/_TRANSFOR/Dlg/Move/doPatternsMove=Transform Pa&tterns",
+						bind: @patternCheckBoxID,
+						identifier: "PatternCheckBox");
+			}
+				checkbox(name: "$$$/_TRANSFOR/Dlg/Move/movePreview=&Preview",
+						  bind: @previewCheckBoxID,
+						  identifier: "PreviewCheckbox",
+						  child_vertical: @align_center,
+						  guide_mask: [ @guide_label],horizontal: @align_left);
+	   }
+			
+						  
+		row(spacing: @button_group_spacing,child_horizontal: @align_fill)
+			{
+				button(name: "$$$/_TRANSFOR/Dlg/Move/copyMove=&Copy",
+						identifier: "copyButton",
+						action: @copy,
+						horizontal: @align_left,
+						commit_button: true,
+						vertical: @align_fill);         	
+
+				row(reverse: os == @mac, spacing: @related_spacing,horizontal: @align_right)
+				{
+					button(name: "$$$/gOK=OK",
+							identifier: "okButton",
+							action: @ok,
+							commit_button: true);
+
+					button(identifier: "cancelButton",
+							name: "$$$/gCancel=Cancel",
+							action: @cancel,
+							commit_button: true);
+				}
+			}
+		   
+    }
+}

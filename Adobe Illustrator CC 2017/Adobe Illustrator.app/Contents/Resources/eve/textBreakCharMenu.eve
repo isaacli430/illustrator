@@ -1,0 +1,8 @@
+layout textBreakCharMenu
+{
+	view menu( id: 83,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/Type/ForcedLineBreak=Forced &Line Break", 	id:	386, help_id:  0 );
+	}
+}

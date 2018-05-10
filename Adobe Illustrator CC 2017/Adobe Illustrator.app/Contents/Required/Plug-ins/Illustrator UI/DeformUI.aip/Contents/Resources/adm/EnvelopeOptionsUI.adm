@@ -1,0 +1,15 @@
+sheet EnvelopeOptionsUI
+{
+interface:
+	antiAlias: false;
+	preserveShapesGp: 0;
+	fidelity: 0;
+	MinMaxFilter: {min_value: 0, max_value: 100};
+	distortAppearance: false;
+	unlink distortLinearGradients: false <== (distortAppearance == true) ? distortLinearGradients : rememberDistortLinearGradients;
+	rememberDistortLinearGradients: false <== (distortAppearance == true) ? distortLinearGradients : rememberDistortLinearGradients;
+	unlink distortPatternFills: false <== (distortAppearance == true) ? distortPatternFills : rememberDistortPatternFills;
+	rememberDistortPatternFills: false <== (distortAppearance == true) ? distortPatternFills : rememberDistortPatternFills;
+	allowPreview: true;
+	unlink preview: false <== (allowPreview == true) ? preview : false;
+}

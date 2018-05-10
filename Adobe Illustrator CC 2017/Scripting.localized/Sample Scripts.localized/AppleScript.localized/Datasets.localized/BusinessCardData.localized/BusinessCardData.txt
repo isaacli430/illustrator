@@ -1,0 +1,4 @@
+Name	Title	Company	Address1	Address2	Phone	Fax	Email	Web	Logo
+John Doe	Owner	World of Web Sites	123 Main Street	Anytown, IL 12345	(321) 555-1234	(321) 555-5678	jdoe@smallbusiness.com	www.smallbusiness.com	1.tiff
+Jane Smith	Manager	Big Toys	123 Main Stret	Anytown, IL 12345	(321) 555-1230	(321) 555-5678	jsmith@smallbusiness.com	www.smallbusiness.com	2.tiff
+Sam Jones	Staffperson	World of Web Sites	123 Main Stret	Anytown, IL 12345	(321) 555-1231	(321) 555-5678	sjones@smallbusiness.com	www.smallbusiness.com	1.tiff

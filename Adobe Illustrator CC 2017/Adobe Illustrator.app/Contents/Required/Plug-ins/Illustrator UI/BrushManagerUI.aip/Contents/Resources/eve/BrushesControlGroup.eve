@@ -1,0 +1,24 @@
+layout BrushesControlGroup
+{
+     view subview(identifier: "BrushesControlGroupSubView",
+				 layout_theme: @controlbar,
+				 show_border: false,
+				 child_vertical: @align_center,
+				 placement: @place_row,
+				 margin : 0,
+				 spacing: 5,
+				 height:  31)
+    {		
+		optional(identifier: "BrushesControlGroupSubGroup",
+					child_vertical: @align_center,
+					margin: 0,
+					placement: @place_row)
+		{
+			popup_panel_button(
+					identifier: "BrushesControlGroupWidget",
+					width: 106,
+					alt: "$$$/BrushManager/Str/BrushDefinition=Brush Definition");
+		}
+    }
+}
+

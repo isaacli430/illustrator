@@ -1,0 +1,73 @@
+layout customseteditor
+{
+	view subview(name: "$$$/CustomSetEditorDialog/Name/CustomSetEditorTitle=Custom Set Editor",
+                     show_border: false,
+                     placement: @place_column,
+                     layout_theme: @dialog_large)
+	{
+		row(horizontal:@align_fill)
+		{	
+			
+			group(identifier: "customsetGroup", 
+			  header: "popup(identifier: 'Set', horizontal: @align_left, name: '$$$/CustomSetEditorDialog/CustomSet=Custom Set:', include_custom_item: false, popup_minimum_width_chars: 11)",horizontal: @align_fill)
+			{
+				column(horizontal:@align_fill)
+				{
+					subview(identifier: "GridPanel", spacing: 0, show_border: false, width:473,  height:200, horizontal: @align_fill, margin: 0)
+					{
+						grid_view(horizontal: @align_fill,  vertical: @align_fill, identifier: "CustomSetGridView");				
+					}
+					
+					row(horizontal:@align_fill)
+					{
+						column(horizontal:@align_fill)
+						{
+							row(horizontal:@align_fill)
+							{
+								edit_text(identifier: "Character", horizontal:@align_left, characters: 5, set_default_focus: true, name: "$$$/CustomSetEditorDialog/Name/Character=Character:");
+								popup(identifier:"EntryMethod", include_custom_item: false, popup_minimum_width_chars: 6,
+									horizontal:@align_fill,
+									items: [{name: "$$$/AI/CF/DirectEntry=Direct Entry", value: 0}, 
+										{name: "$$$/AI/CF/ShiftJIS=Shift JIS", value: 1},
+										{name: "$$$/AI/CF/JIS=JIS", value: 2},
+										{name: "$$$/AI/CF/KutenCode=Kuten Code", value: 3},
+										{name: "$$$/AI/CF/Unicode=Unicode", value: 4}
+										]);
+							}
+							
+							popup(identifier:"Font", name:"$$$/CustomSetEditorDialog/Name/Font=Font:", horizontal:@align_fill	);
+							
+						}
+						column(horizontal:@align_right)
+						{
+							button( identifier: "Add", name: "$$$/AI/CF/Add=Add", horizontal:@align_fill);
+							popup(identifier:"Style", horizontal:@align_fill );
+						}
+					}
+				}
+			}
+		}
+		
+		row(horizontal: @align_fill, vertical:@align_fill)
+		{
+			column(horizontal: @align_fill, vertical:@align_fill)
+			{
+				row( child_horizontal: @align_left, vertical:@align_fill, spacing: @related_spacing,child_vertical: @align_fill)
+				{
+					button( identifier: "New", name: "$$$/CompositeFontDialog/New=New...",commit_button: true);
+					button(	identifier: "Save", name: "$$$/CompositeFontDialog/Save=Save",commit_button: true);
+					button(	identifier: "Delete", name: "$$$/AI/CF/Delete=Delete",commit_button: true);
+				}	
+			}
+			column(horizontal: @align_fill)
+			{
+				row(horizontal: @align_fill, reverse: os == @mac, child_horizontal: @align_right, spacing: @related_spacing)
+				{
+					button(identifier: "okButton", name:'$$$/gOK=OK', commit_button: true);
+					button(identifier: "cancelButton", name: '$$$/gCancel=Cancel', commit_button: true);
+				}
+			}
+		}
+	}
+}
+	

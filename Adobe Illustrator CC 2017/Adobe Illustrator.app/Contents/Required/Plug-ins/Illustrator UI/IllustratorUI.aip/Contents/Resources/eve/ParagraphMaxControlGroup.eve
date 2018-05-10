@@ -1,0 +1,58 @@
+layout ParagraphMaxControlGroup
+{
+     view subview(identifier: "ParagraphMaxControlGroup",
+				 layout_theme: @controlbar,
+				 show_border: false,
+				 child_vertical: @align_center,
+				 placement: @place_row,
+				 margin : 0,
+				 spacing: 5,
+				 height:  31)
+    {	
+		optional(identifier: "ParagraphHyperlinkSubGroup", child_vertical: @align_center, margin : 0, spacing: @related_spacing, placement: @place_row)
+		{
+			link_button(identifier: "ParagraphHyperlinkButton",
+							name: "$$$/ControlStrings/Code/Paragraph=Paragraph:",
+							alt: "$$$/_TextDlgs/ParagraphPaletteTip=Paragraph Panel");
+
+			overlay()
+			{
+				optional(child_vertical:  @align_center, margin : 0, bind: @Orientation, value: 0, placement: @place_row, child_horizontal: @align_fill)
+				{	
+					button_bar(identifier: "AlignmentButtonBar", 
+								items: [
+									{image: {normal: "SP_TextAlignLeft_Md_N.png", dark_normal: "SP_TextAlignLeft_Md_N_D.png"}, show_border: false, value: 4, 
+										alt: "$$$/_ParagraphPalette/Str/5303=Align Left"},
+									{image: {normal: "SP_TextAlignCenter_Md_N.png", dark_normal: "SP_TextAlignCenter_Md_N_D.png"}, show_border: false, value: 5, 
+										alt: "$$$/_ParagraphPalette/Str/5304=Align Center"},
+									{image: {normal: "SP_TextAlignRight_Md_N.png", dark_normal: "SP_TextAlignRight_Md_N_D.png"}, show_border: false, value: 6, 
+										alt: "$$$/_ParagraphPalette/Str/5305=Align Right"}]
+						);
+				}
+				optional(child_vertical:  @align_center, margin : 0, bind: @Orientation, value: 1, placement: @place_row, child_horizontal: @align_fill)
+				{	
+					button_bar(identifier: "AlignmentButtonBarVertical", 
+								items: [
+									{image: {normal: "SP_VertAlignTop_Md_N.png", dark_normal: "SP_VertAlignTop_Md_N_D.png"}, show_border: false, value: 4, 
+										alt: "$$$/_TextDlgs/Str/5433/1=Align top"},
+									{image: {normal: "SP_VertAlignCenter_Md_N.png", dark_normal: "SP_VertAlignCenter_Md_N_D.png"}, show_border: false, value: 5, 
+										alt: "$$$/_ParagraphPalette/Str/5304=Align Center"},
+									{image: {normal: "SP_VertAlignBottom_Md_N.png", dark_normal: "SP_VertAlignBottom_Md_N_D.png"}, show_border: false, value: 6, 
+										alt: "$$$/_TextDlgs/Str/5433/3=Align bottom"}]
+						);
+				}
+			}
+		}
+		optional(identifier: "ParagraphDirectionButtonsSubGroup" , child_vertical:  @align_center, margin : 0, bind: @IsWorldReady , value :true ,placement: @place_row, child_horizontal: @align_fill )
+		{
+			button_bar(identifier: "ParaDirectionButtonBar", bind: @ParaDirection,
+									items: [
+										{image: {normal: "SP_JustificationLtoR_Md_N.png", dark_normal: "SP_JustificationLtoR_Md_N_D.png"}, show_border: false, value: 0, 
+											alt: "$$$/_ParagraphPalette/Dlg/paradirection/LTRDIR=Left-to-Right Paragraph Direction"},
+										{image: {normal: "SP_JustificationRtoL_Md_N.png", dark_normal: "SP_JustificationRtoL_Md_N_D.png"}, show_border: false, value: 1, 
+											alt: "$$$/_ParagraphPalette/Dlg/paradirection/RTLDIR=Right-to-Left Paragraph Direction"}]
+						);
+		}		
+    }
+}
+

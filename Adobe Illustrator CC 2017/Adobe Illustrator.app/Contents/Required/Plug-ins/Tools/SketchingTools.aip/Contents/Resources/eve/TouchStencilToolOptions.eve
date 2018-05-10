@@ -1,0 +1,22 @@
+layout TouchStencilOptionsPanel
+{
+    view subview(identifier: "TouchStencilOptionsPanel",
+				show_border: false,
+                child_horizontal: @align_center,
+				margin: 0,
+				layout_theme:@touch_tooloptions)
+    {	
+		multicolumn_tree(identifier: "MCT", horizontal: @align_fill, wants_focus: false);
+		
+		separator();
+		
+		toggle_button(identifier: "ToggleSnap",
+				alt: "$$$/SketchingTools/Stencil/Preferences/SnapToggle=Snap Ruler to Path End Point",
+				horizontal: @align_center,
+				wants_focus: false,
+				button_inner_bevel: false,
+				button_outer_bevel: false,
+				inset_undrawn_space: false,
+				image: {normal: "SP_TouchSnapToRuler_Md_N.png", dark_normal: "SP_TouchSnapToRuler_Md_N_D.png"});
+	}
+}

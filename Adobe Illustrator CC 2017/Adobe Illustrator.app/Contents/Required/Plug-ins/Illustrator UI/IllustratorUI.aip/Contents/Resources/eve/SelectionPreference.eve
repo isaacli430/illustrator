@@ -1,0 +1,155 @@
+layout SelectionPreference
+{
+	view subview(identifier: "SelectionPrefEveSubView",
+				 child_horizontal: @align_fill,
+				 placement: @place_column,
+				 show_border: false,
+				 margin: [22,15,0,15],
+				 layout_theme: @dialog_large)
+	{
+		column(spacing: 0)
+		{
+			static_text(identifier: "SPStaticTextCaption",
+							name: "$$$/PrefsDlg/SPDlg/Caption=Selection & Anchor Display"
+							);
+		
+			separator(identifier: "SPTopSeparator");
+		}
+		
+		group(identifier: "SPGrpSelection",
+				name: "$$$/PrefsDlg/SPDlg/SPGrpSelection=Selection",
+				placement: @place_column)
+		{
+			unit_hot_number(identifier: "SPEditNumberTolerance",
+								name: "$$$/PrefsDlg/SPDlg/SPEditNumberTolerance=&Tolerance:",
+								suffix: "$$$/PrefsDlg/SPDlg/NumberSuffix=px",
+								decimal_places: 2,
+								min_value: 1,
+								max_value: 8,
+								digits: 2,
+								bind: @SPToleranceCell
+								);
+								
+			checkbox(identifier: "SPCheckboxSelectionPath",
+						name: "$$$/PrefsDlg/SPDlg/SPCheckboxSelectionPath=Object &Selection by Path Only",
+						guide_mask: [ @guide_label ],
+						bind: @SPSelectPathCell
+						);
+			
+			row(spacing: @connected_spacing)
+			{
+				checkbox(identifier: "SPCheckboxSnapToPoint",
+							name: "$$$/PrefsDlg/SPDlg/SPCheckboxSnapToPoint=Sn&ap to Point",
+							bind: @SPSnapRadioState,
+							guide_mask: [ @guide_label ]
+							);
+				
+				unit_hot_number(identifier: "SPEditNumberSnap",
+						suffix: "$$$/PrefsDlg/SPDlg/NumberSuffix=px",
+						decimal_places: 2,
+						min_value: 1,
+						max_value: 8,
+						digits: 2,
+						guide_mask: [ @guide_label ],
+						bind: @SPSnapNumberState
+						);
+			}
+	
+			checkbox(identifier: "SPCheckboxSelectBehind",
+						guide_mask: [ @guide_label ],
+						bind: @SPSelectBehindCell,
+						name: (os == @mac ? "$$$/PrefsDlg/SPDlg/SPCheckboxSelectBehind/Mac=Command Click to Select Objects Behind"
+							: "$$$/PrefsDlg/SPDlg/SPCheckboxSelectBehind/Win=Control Click to Select Objects &Behind")
+			);
+			
+			checkbox(identifier: "SPCheckboxConstrainPathDragging",
+						name: "$$$/PrefsDlg/SPDlg/SPCheckboxConstrainPathDragging=&Constrain Path Dragging on Segment Reshape",
+						alt: "$$$/PrefsDlg/SPDlg/SPCheckboxConstrainPathDraggingAlternate=Set this option to Constrain Direction Handles on Reshape",
+						bind: @SPConstrainPathDraggingCell,
+						guide_mask: [ @guide_label ]
+						);
+
+			checkbox(identifier: "SPCheckboxShowAnchorPointsInSelectionAndShapeTools",
+						name: "$$$/PrefsDlg/SPDlg/SPCheckboxShowAnchorPointsInSelectionToolAndShapeTools=Show A&nchor Points in Selection Tool and Shape Tools",
+						bind: @SPShowAnchorPointsInSelectionToolAndShapeToolsCell,
+						guide_mask: [ @guide_label ]
+						);
+		}
+		
+		group(identifier: "SPGrpAnchor",
+				name: "$$$/PrefsDlg/SPDlg/SPGrpAnchor=Anchor Point and Handle Display",
+				placement: @place_column)
+		{
+			row()
+			{			
+				button_bar(identifier: "AnchorDisplayBBar", bind: @SPAnchorRadioGp, name: "$$$/PrefsDlg/SPDlg/SPStaticTextAnchor=Anchors:",
+								items: [
+									{image: "SP_AnchorDisplay1_77x23_N.png", show_border: true, value: 1},
+									{image: "SP_AnchorDisplay2_77x23_N.png", show_border: true, value: 2},
+									{image: "SP_AnchorDisplay3_77x23_N.png", show_border: true, value: 3}
+								]
+							);
+			}
+			
+			row()
+			{				
+				button_bar(identifier: "SmHandleBBar", bind: @SPHandlesRadioGp, name: "$$$/PrefsDlg/SPDlg/SPStaticTextHandles=Handles:",
+								items: [
+									 {image: "SP_HandleDisplay1_77x23_N.png", show_border: true, value: 1},
+									 {image: "SP_HandleDisplay2_77x23_N.png", show_border: true, value: 2},
+									 {image: "SP_HandleDisplay3_77x23_N.png", show_border: true, value: 3}
+								]
+							);
+			}
+			
+			checkbox(identifier: "SPCheckboxAnchorHilite", guide_mask: [ @guide_label ],
+						name: "$$$/PrefsDlg/SPDlg/SPCheckboxAnchorHilite=H&ighlight anchors on mouse over",
+						bind: @SPHiliteCell
+					);
+					
+			checkbox(identifier: "SPCheckboxShowHandle", guide_mask: [ @guide_label ],
+						name: "$$$/PrefsDlg/SPDlg/SPCheckboxShowHandle=Sho&w handles when multiple anchors are selected",
+						bind: @SPHandleCell
+					);
+					
+			row(spacing: @connected_spacing)
+			{
+				checkbox(identifier: "SPDynamicCornersAngleLimit", guide_mask: [ @guide_label ],
+						name: "$$$/PrefsDlg/SPDlg/SPDynamicCornersAngleLimit=&Hide Corner Widget for angles greater than:",
+						guide_mask: [ @guide_label ],
+						bind: @SPCornerLimitCheckboxState
+					);
+					
+				unit_hot_number(identifier: "EditNumberLimit",
+									max_value: 177.0,
+									min_value: 3.0,
+									digits: 3,
+									guide_mask: [ @guide_label ],
+									unit: 'NumberEditUnit_Degree',
+									stepper: false,
+									popuplist: true,
+									set_default_focus: true,
+									bind: @SPCornerLimitNumberState,
+									items: @SPLimitValuesnum
+									);
+			}
+			row(spacing: @connected_spacing)
+			{
+				static_text(identifier: "SPEnableRubberBanding",
+							name: "$$$/PrefsDlg/SPDlg/SPCheckboxEnableRubberBanding=Enable Rubber Band for: ",
+							alt: "$$$/PrefsDlg/SPDlg/SPCheckboxEnableRubberBandingToolTip=Show Path Preview while Drawing"
+						);
+				checkbox(identifier: "SPCheckBoxEnableRubberBandingPen", guide_mask: [ @guide_label ],
+						name: "$$$/PrefsDlg/SPDlg/SPCheckboxEnableRubberBandPen=&Pen Tool ",
+						bind: @SPRubberBandPenCell,
+						alt: "$$$/PrefsDlg/SPDlg/SPCheckboxEnableRubberBandingToolTip=Show Path Preview while Drawing"
+					);
+				checkbox(identifier: "SPCheckBoxEnableRubberBandingCurvature", guide_mask: [ @guide_label ],
+						name: "$$$/PrefsDlg/SPDlg/SPCheckboxEnableRubberBandCurvature=C&urvature Tool ",
+						bind: @SPRubberBandCurvatureCell,
+						alt: "$$$/PrefsDlg/SPDlg/SPCheckboxEnableRubberBandingToolTip=Show Path Preview while Drawing"
+					);
+			}
+		}
+	}
+}

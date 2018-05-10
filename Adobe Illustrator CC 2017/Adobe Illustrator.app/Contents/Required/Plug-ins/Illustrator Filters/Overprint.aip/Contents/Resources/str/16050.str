@@ -1,0 +1,32 @@
+/* [1] */
+-108
+/* [2] */
+$$$/Overprint/Str/Error/2=The filter cannot complete because there isn't enough memory (RAM) available.
+/* [3] */
+271
+/* [4] */
+$$$/Overprint/Str/Error/4=The filter cannot complete because there isn't enough memory (RAM) available.
+/* [5] */
+SEGM
+/* [6] */
+$$$/OverprintBlack/STR/16050/6/Mac=The filter cannot complete because a path has too many anchor points.\n
+/* [7] */
+NESS
+/* [8] */
+$$$/Overprint/Str/Error/6=The filter cannot complete because a layer is locked or invisible.
+/* [9] */
+!sel
+/* [10] */
+$$$/Overprint/Str/Error/10/Mac=You must select a path first.\n
+/* [11] */
+noov
+/* [12] */
+$$$/Overprint/Str/Error/12=None of the selected objects are painted the specified percentage of black.
+/* [13] */
+<others>
+/* [14] */
+$$$/Overprint/Str/Error/14=The filter cannot complete because of an unknown error.
+/* [15] */
+!cmy
+/* [16] */
+$$$/Overprint/Str/Error/CMYK=Overprint was not applied to your selected non-CMYK objects. Convert these objects to CMYK then reapply this filter.

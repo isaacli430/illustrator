@@ -1,0 +1,29 @@
+layout PlanarObjectControlGroup
+{
+    view subview(identifier: "PlanarObjectControlGroup",
+				 placement: @place_row,
+				 layout_theme: @controlbar,
+				 show_border: false,
+				 child_vertical: @align_center,
+				 margin : 0,
+				 spacing: 5,
+				 height:  31
+				 )
+    {
+		optional(identifier: "PlanarObjectControlGroupSubGroup",
+				 placement: @place_row,
+				 child_vertical: @align_center,
+				 margin: 0)
+		{		
+				button(identifier: "ExpandButton",
+						name: "$$$/PlanarObject/Expand/Name=Expand",
+						wants_focus: false,
+						alt: "$$$/PlanarObject/Expand/ExpandTip=Converts the Live Paint groups into individual paths");
+				
+				button(identifier: "GapOptionsButton",
+						wants_focus: false,
+						image: {normal: "SP_ShowDialog_Md_N.png",dark_normal:"SP_ShowDialog_Md_N_D.png"},
+						alt: "$$$/PlanarObject/GapOptions/GapOptionsTip=Gap Options");
+		}
+	}
+}

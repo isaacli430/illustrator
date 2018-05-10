@@ -1,0 +1,26 @@
+/* [1] */
+$$$/ActionPalette/Str/16401=That name is already in use.  Please choose another.
+/* [2] */
+$$$/ActionPalette/Str/16402=Up to 10 paths can be recorded.
+/* [3] */
+$$$/ActionPalette/Str/16403=Up to 100 segments can be recorded.
+/* [4] */
+$$$/ActionPalette/Str/16404=Could not load the actions because the file is not compatible.
+/* [5] */
+$$$/ActionPalette/Str/16405=No menu item matching that name was found.
+/* [6] */
+$$$/ActionPalette/Str/16406=Could not complete the Record Again command because the action is recording.
+/* [7] */
+$$$/ActionPalette/Str/16407=Could not complete the Play command because the action is playing.
+/* [8] */
+$$$/ActionPalette/Str/16408=You must choose a source folder.
+/* [9] */
+$$$/ActionPalette/Str/16409=You must choose a destination folder.
+/* [10] */
+$$$/ActionPalette/Str/16410=You must choose an export folder.
+/* [11] */
+$$$/ActionPalette/Str/16411=You must specify a file to log errors to.
+/* [12] */
+$$$/ActionPalette/Str/16412=Due to unexpected error, batch process can't be completed.
+/* [13] */
+$$$/ActionPalette/Str/16413=Illustrator is running out of memory. Please save current document and quit.

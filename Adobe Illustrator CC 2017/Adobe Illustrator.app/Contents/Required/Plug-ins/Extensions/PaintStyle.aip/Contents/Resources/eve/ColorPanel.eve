@@ -1,0 +1,141 @@
+layout ColorPanel
+{
+	view subview(identifier: "ColorPanelEveSubView",
+			 child_horizontal: @align_fill,
+			 layout_theme: @panel,
+			 show_border: false,
+			 placement: @place_column,
+			 spacing: 0)	
+	{
+	row(vertical: @align_top)
+	{
+		optional(bind: @StateTwo, value: true, horizontal:@align_left, child_vertical: @align_center, child_horizontal: @align_left, placement: @place_row)
+		{
+				column(spacing:0)
+				{
+					overlay()
+					{
+						panel(	bind: @cellShowFillStroke,
+								value:true)
+						{
+							overlay() 
+							{
+								optional(bind: @cellIsPopupPanel,value: true)
+								{
+									stroke_fill(identifier:  "StrokeFillPopup", small_mode: true, has_default: false, allow_selector_mode_change: false, has_swap:false, ai_color_mode: true);	
+								}
+								optional(bind: @cellIsPopupPanel, value: false)
+								{
+									stroke_fill(identifier:  "StrokeFill", small_mode: true, has_default:true, has_swap:true, ai_color_mode: true);	
+								}
+							}
+						}
+				
+						panel(	bind: @cellShowFillStroke,
+								value:false)
+						{
+							 pattern_swatch( identifier: "StrokeFillSwatch",
+											 border: @border_normal,
+											 height:36,width:36,
+											 alt:"$$$/PaintStyle/Str/ColorToolTip/GradientStopColor=Gradient Stop Color (click to cancel)"				
+								);
+							panel(bind:@cellGradientStopPanel, value:false)
+							{
+									 image(	identifier:"GradientStopImageBtn",
+												width: 11, height:16,
+												vertical:@align_center,
+												horizontal:@align_center,
+												alt:"$$$/PaintStyle/Str/ColorToolTip/GradientStopColor=Gradient Stop Color (click to cancel)");						 
+							}
+						}
+					}			
+			
+					row(child_vertical:@align_center, spacing:0, margin:0)
+					{
+						button(	identifier: "OutWebClrImageBtn",
+								 image: {normal: "SP_WebSafe_Sm_N.png", dark_normal:"SP_WebSafe_Sm_N_D.png"},
+								 wants_focus: false,
+								 alt:"$$$/PaintStyle/Str/ColorToolTip/OutOfWeb=Out of Web Color Warning (click to correct)");
+				
+						pattern_swatch( identifier: "OutWebClrSwatch",
+										border: @border_normal,
+										height:15,width:15,
+										alt:"$$$/PaintStyle/Str/ColorToolTip/InWebColor=In Web Color (click to correct)"						
+								);
+					}
+					row(child_vertical:@align_center,spacing:0, margin:0)
+					{
+						overlay()
+						{
+							panel(bind:@cellGamutOrLastColor, value:1)
+							{
+								row(vertical:@align_center)
+								{
+									button(	identifier: "OutOfGamutImageBtn",
+										 image: {normal: "SP_WarningGrayscale_Sm_N.png", dark_normal:"SP_WarningGrayscale_Sm_N_D.png"},
+										 wants_focus: false,
+										 alt:"$$$/PaintStyle/Str/ColorToolTip/OutOfGamut=Out of Gamut Warning (click to correct)",
+										 vertical:@align_center
+										 );							 						
+								}
+							}
+							panel(bind:@cellGamutOrLastColor, value:2)
+							{
+								 row(vertical:@align_center)
+								 {
+									 button(	identifier:"LastColorImageBtn",
+												image: {normal: "SP_LastColor_Sm_N.png", dark_normal:"SP_LastColor_Sm_N_D.png"},
+												wants_focus: false,vertical:@align_center,
+												alt:"$$$/PaintStyle/Str/ColorToolTip/lastColor=Last Color(click to set)");						 
+								}			
+							}
+						}								
+						pattern_swatch(identifier: "OutOfGamutSwatch",
+											border: @border_normal,
+											height:15,width:15,
+											alt:"$$$/PaintStyle/Str/ColorToolTip/InGamutColor=In Gamut Color (click to correct)"							
+											);
+					}									
+				}		
+				color_editor(identifier: "ColorEditorIdentifier", small_mode:true, horizontal:@align_left);	   					
+			}
+		}
+		
+		optional(bind: @StateOne, value: true, child_horizontal: @align_fill, margin: 0,
+			vertical:@align_fill)
+		{	
+			row(horizontal:@align_fill, margin:0,child_vertical:@align_center)
+			{
+					row(spacing:-1)
+					{
+						optional(bind:@cellGradientStopPanel,value:false)
+						{
+							pattern_swatch(identifier: "NoneColorSwatch",
+											height:14,width:14,
+											alt:"$$$/PaintStyle/Str/FillStrokeToolTip/None=None "							
+											);
+						}
+						pattern_swatch(identifier: "BlackColorSwatch",
+											height:14,width:14
+											);
+						pattern_swatch(identifier: "WhiteColorSwatch",
+											height:14,width:14
+											);
+					}
+					row(horizontal: @align_right, margin:[0,0,0,11])
+					{
+						edit_text(identifier: "ColorHexEdit", max_characters:7, characters:7, name: "#");					
+					}
+				
+			}
+			
+			row(vertical: @align_fill, margin:[0,0,0,11])
+			{
+				image(		identifier: "ColorRampImage",
+							vertical: @align_fill,
+							horizontal:	@align_fill);										
+			}		
+		}			
+		
+    }
+}

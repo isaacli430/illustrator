@@ -1,0 +1,179 @@
+layout AlignPanel
+{
+    view subview(identifier: "AIEveSubView",
+				 child_horizontal: @align_fill, horizontal: @align_fill,
+				 placement: @place_column,
+				 layout_theme: @panel, width: gStandardMinPanelWidth,
+				 show_border: false,
+				 child_vertical: @align_center)
+    {
+		static_text(identifier: "AlignObjectsStaticText",
+					name: "$$$/FWAlignADM/Str/AlignObjects=Align Objects:");
+		
+		row(child_vertical: @align_center, horizontal: @align_fill)
+		{	
+			row(horizontal: @align_left,spacing: 10)
+			{		
+				button(identifier: "HorizontalAlignLeft",
+						image: {normal: "SP_AlignLeft_Md_N.png", dark_normal:"SP_AlignLeft_Md_N_D.png"},
+						alt: "$$$/FWAlignADM/Str/ToolTip/HAlignLeft=Horizontal Align Left",
+						wants_focus: false,
+						bind_output: @button,
+						value: 1);
+					
+				button(identifier: "HorizontalAlignCenter",
+						image: {normal: "SP_AlignCenter_Md_N.png",dark_normal:"SP_AlignCenter_Md_N_D.png"},
+						alt: "$$$/FWAlignADM/Str/ToolTip/HAlignCenter=Horizontal Align Center",
+						wants_focus: false,
+						bind_output: @button,
+						value: 2);
+
+				button(identifier: "HorizontalAlignRight",
+						image: {normal: "SP_AlignRight_Md_N.png", dark_normal:"SP_AlignRight_Md_N_D.png"},
+						alt: "$$$/FWAlignADM/Str/ToolTip/HAlignRight=Horizontal Align Right",
+						wants_focus: false,
+						bind_output: @button,
+						value: 3);
+			}
+			row(horizontal: @align_right,spacing: 10)
+			{			
+				button(identifier: "VerticalAlignTop",
+						image: {normal: "SP_AlignTop_Md_N.png", dark_normal:"SP_AlignTop_Md_N_D.png"},
+						alt: "$$$/FWAlignADM/Str/ToolTip/VAlignTop=Vertical Align Top",
+						wants_focus: false,
+						bind_output: @button,
+						value: 4);
+					
+				button(identifier: "VerticalAlignCenter",
+						image: {normal: "SP_AlignMiddle_Md_N.png",dark_normal:"SP_AlignMiddle_Md_N_D.png"},
+						alt: "$$$/FWAlignADM/Str/ToolTip/VAlignCenter=Vertical Align Center",
+						wants_focus: false,
+						bind_output: @button,
+						value: 5);
+					
+				button(identifier: "VerticalAlignBottom",
+						image: {normal: "SP_AlignBottom_Md_N.png", dark_normal:"SP_AlignBottom_Md_N_D.png"},
+						alt: "$$$/FWAlignADM/Str/ToolTip/VAlignBottom=Vertical Align Bottom",
+						wants_focus: false,
+						bind_output: @button,
+						value: 6);
+			}
+		}		
+			
+		separator(orientation: @horizontal, vertical: @align_center, horizontal: @align_fill);
+
+		static_text(identifier: "DistributeObjectsStaticText", name: "$$$/FWAlignADM/Str/DistributeObjects=Distribute Objects:");
+		
+		row(child_vertical: @align_center, horizontal: @align_fill)
+		{
+			row(horizontal: @align_left,spacing: 10)
+			{	
+				button(identifier: "DistributeEdgeTop",
+						image: {normal: "SP_DistributeTopEdge_Md_N.png",dark_normal:"SP_DistributeTopEdge_Md_N_D.png"},
+						alt: "$$$/FWAlignADM/Str/ToolTip/VDistributeTop=Vertical Distribute Top",
+						wants_focus: false,
+						bind_output: @button,
+						value: 7);
+					
+				button(identifier: "VerticalDistributeCenter",
+						image: {normal: "SP_DistributeVerticalCenter_Md_N.png",dark_normal:"SP_DistributeVerticalCenter_Md_N_D.png"},
+						alt: "$$$/FWAlignADM/Str/ToolTip/VDistributeCenter=Vertical Distribute Center",
+						wants_focus: false,
+						bind_output: @button,
+						value: 8);
+					
+				button(identifier: "DistributeEdgeBottom",
+						image: {normal: "SP_DistributeBottomEdge_Md_N.png",dark_normal:"SP_DistributeBottomEdge_Md_N_D.png"},
+						alt: "$$$/FWAlignADM/Str/ToolTip/VDistributeBottom=Vertical Distribute Bottom",
+						wants_focus: false,
+						bind_output: @button,
+						value: 9);
+			}
+			row(horizontal: @align_right,spacing: 10)
+			{	
+				button(identifier: "DistributeEdgeLeft",
+						image: {normal: "SP_DistributeLeftEdge_Md_N.png",dark_normal:"SP_DistributeLeftEdge_Md_N_D.png"},
+						alt: "$$$/FWAlignADM/Str/ToolTip/HDistributeLeft=Horizontal Distribute Left",
+						wants_focus: false,
+						bind_output: @button,
+						value: 10);
+					
+				button(identifier: "DistributeCenter",
+						image: {normal: "SP_DistributeHorizontalCenter_Md_N.png",dark_normal:"SP_DistributeHorizontalCenter_Md_N_D.png"},
+						alt: "$$$/FWAlignADM/Str/ToolTip/HDistributeCenter=Horizontal Distribute Center",
+						wants_focus: false,
+						bind_output: @button,
+						value: 11);
+					
+				button(identifier: "DistributeEdgeRight",
+						image: {normal: "SP_DistributeRightEdge_Md_N.png",dark_normal:"SP_DistributeRightEdge_Md_N_D.png"},
+						alt: "$$$/FWAlignADM/Str/ToolTip/HDistributeRight=Horizontal Distribute Right",
+						wants_focus: false,
+						bind_output: @button,
+						value: 12);
+			}
+		}
+		
+		optional(bind: @ShowOptions)
+		{
+			separator(orientation: @horizontal, vertical: @align_center, horizontal: @align_fill, identifier: "2Separator");
+			
+			row(child_vertical: @align_center, horizontal: @align_fill)
+			{
+				column(child_vertical: @align_center)
+				{
+					static_text(identifier: "DistributeSpacingStaticText",
+								name: "$$$/FWAlignADM/AlignPanel/Dlg/DistributeSpacingCaption=Distribute Spacing:");
+								
+					row(child_vertical: @align_center)
+					{
+						button(identifier: "DistributeVert",
+								image: {normal: "SP_DistributeSpaceVert_Md_N.png",dark_normal:"SP_DistributeSpaceVert_Md_N_D.png"},
+								alt: "$$$/FWAlignADM/Str/ToolTip/VDistributeSpace=Vertical Distribute Space",
+								wants_focus: false,
+								bind_output: @button,
+								value: 13);
+								
+						button(identifier: "DistributeHoriz",
+								image: {normal: "SP_DistributeSpaceHoriz_Md_N.png",dark_normal:"SP_DistributeSpaceHoriz_Md_N_D.png"},
+								alt: "$$$/FWAlignADM/Str/ToolTip/HDistributeSpace=Horizontal Distribute Space",
+								wants_focus: false,
+								bind_output: @button,
+								value: 14);
+								
+						unit_hot_number(identifier: "SpacingNumberEdit",
+										stepper: true,
+										digits: 4,
+										alt: "$$$/FWAlignADM/Str/ToolTip/Spacing=To specify spacing value, choose a key object by clicking on one of the selected objects.",
+										max_value: 16384,
+										min_value: -16384,
+										decimal_places: 2,
+										wants_focus: false,
+										bind: @spacingCell,
+										unknown: true,
+										units: 'CurrentDocumentUnit');
+					}
+				}
+				
+				separator(orientation: @vertical, horizontal: @align_center, vertical: @align_fill);
+					
+				column(child_vertical: @align_center)
+				{			
+					static_text(identifier: "AlignToStaticText",
+								name: "$$$/FWAlignADM/AlignPanel/Dlg/ArtboardCaption=Align To:",
+								horizontal: @align_right);
+							
+					popup(identifier: "AlignToPopUp",
+							include_custom_item: false,
+							items: [{name: "$$$/FWAlignADM/Str/ToolTip/SelectionAlign=Align to Selection", value: 0},
+									{name: "$$$/FWAlignADM/Str/ToolTip/KeyObjectAlign=Align to Key Object", value: 1},
+									{name: "$$$/FWAlignADM/Str/ToolTip/ArtboardAlign=Align to Artboard", value: 2}],
+							image: {normal: "SP_AlignToSelection_27x18_N.png",dark_normal:"SP_AlignToSelection_27x18_N_D.png"},
+							wants_focus: false,
+							bind: @popUpIndex);		
+				}
+			}
+		}
+    }
+}
+

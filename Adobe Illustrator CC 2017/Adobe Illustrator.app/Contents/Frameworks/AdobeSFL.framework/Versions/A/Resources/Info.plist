@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BuildDate</key>
+	<string>2016/02/24-01:09:44</string>
+	<key>BuildId</key>
+	<string>36043</string>
+	<key>BuildType</key>
+	<string>Release</string>
+	<key>BuildVersion</key>
+	<string>79.261765</string>
+	<key>CFBundleExecutable</key>
+	<string>AdobeSFL</string>
+	<key>CFBundleGetInfoString</key>
+	<string>AdobeSFL 1.1.0.36043, © 2000-2009 Adobe Systems Incorporated. All Rights Reserved.</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.adobe.AdobeSFL</string>
+	<key>CFBundleName</key>
+	<string>AdobeSFL</string>
+	<key>CFBundlePackageType</key>
+	<string>FMWK</string>
+	<key>CFBundleShortVersionString</key>
+	<string>AdobeSFL 1.1.0.36043</string>
+	<key>CFBundleSignature</key>
+	<string>Adbe</string>
+	<key>CFBundleVersion</key>
+	<string>1.1.0.36043</string>
+	<key>Configuration</key>
+	<string>AdobeSFL</string>
+</dict>
+</plist>

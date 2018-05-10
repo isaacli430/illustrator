@@ -1,0 +1,10 @@
+sheet TouchColorPanel
+{
+interface: 	
+	ColorViewModeRGBWithSliderAndCanvas: true;
+	ColorViewModeHSBWithSliderAndCanvas: false;
+	ColorViewModeRGBWithInpendentSliders: false;
+	ColorViewModeCMYKWithInpendentSliders: false;
+	ColorViewModeColorSwatches:false;
+	ColorViewModeMinimized:false;
+}

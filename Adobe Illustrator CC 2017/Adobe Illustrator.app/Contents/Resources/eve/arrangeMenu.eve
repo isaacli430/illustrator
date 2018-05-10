@@ -1,0 +1,11 @@
+layout arrangeMenu
+{
+	view menu( id: 47,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/Arrange/BringFront=Bring to &Front", id:		42, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Arrange/BringForward=Bring F&orward", id:	100, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Arrange/SendBackward=Send &Backward", id:	101, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Arrange/SendBack=Send to B&ack", id:			43, help_id:0);
+}
+}

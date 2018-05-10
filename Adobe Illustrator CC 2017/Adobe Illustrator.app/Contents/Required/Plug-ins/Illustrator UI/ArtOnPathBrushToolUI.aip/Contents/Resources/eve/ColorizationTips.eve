@@ -1,0 +1,106 @@
+layout ArtOnPathBrushToolUI
+{
+    view subview(identifier: "AIEveSubView",
+                 horizontal: @align_fill,
+                 layout_theme: @dialog_large,
+				 show_border: false)
+    {
+        row(horizontal: @align_fill)
+        {
+            column(horizontal: @align_fill,
+                   child_horizontal: @align_fill)
+            {
+                static_text(characters: 1, adjust_baseline_for_single_line_text: false,
+							identifier: "ColorizationTipsStaticText1",
+                            name: "$$$/ArtOnPathBrushTool/Dlg/ColorizationTips/2=The colors your brush paints with depend on three things:");
+
+                static_text(characters: 1, adjust_baseline_for_single_line_text: false,
+							identifier: "ColorizationTipsStaticText2",
+                            name: "$$$/ArtOnPathBrushTool/Dlg/ColorizationTips/3=1. The colorization method you choose.");
+
+                static_text(characters: 1, adjust_baseline_for_single_line_text: false,
+							identifier: "ColorizationTipsStaticText3",
+                            name: "$$$/ArtOnPathBrushTool/Dlg/ColorizationTips/3a=2. The current stroke color, found in the Color Panel.");
+
+                static_text(characters: 1, adjust_baseline_for_single_line_text: false,
+							identifier: "ColorizationTipsStaticText4",
+                            name: "$$$/ArtOnPathBrushTool/Dlg/ColorizationTips/3b=3. For the Hue Shift colorization method, the ^[key color^] you select from the artwork with the Key Color Eyedropper.");
+            }
+
+        }
+
+        row(spacing: @unrelated_spacing,placement: @place_column)
+        {
+            group(child_vertical: @align_top,
+				  child_horizontal: @align_fill,
+                  horizontal: @align_fill,
+                  identifier: "ExamplesGroup",
+                  name: "$$$/ArtOnPathBrushTool/Dlg/ColorizationTips/4=Examples",
+                  spacing: 0)
+            {
+                row(child_horizontal: @align_right,
+                    child_vertical: @align_center)
+                {
+                    static_text(horizontal: @align_right,
+								identifier: "CurrentStrokeColorStaticText",
+                                name: "$$$/ArtOnPathBrushTool/Dlg/ColorizationTips/6=Current stroke color:");
+
+                    image(horizontal: @align_right,
+                          identifier: "ColorTipsImage1",
+                          image: "ColorTips1.png");
+                }
+
+                row(child_horizontal: @align_right,
+                    child_vertical: @align_center)
+                {
+                    static_text(horizontal: @align_right,
+								identifier: "NoneStaticText",
+                                name: "$$$/ArtOnPathBrushTool/Dlg/ColorizationTips/7=None:");
+
+                    image(horizontal: @align_right,
+                          identifier: "ColorTipsImage2",
+                          image: "ColorTips2.png");
+                }
+
+                row(child_horizontal: @align_right,
+                    child_vertical: @align_center)
+                {
+                    static_text(horizontal: @align_right,
+                                identifier: "TintsStaticText",
+                                name: "$$$/ArtOnPathBrushTool/Dlg/ColorizationTips/8=Tints:");
+
+                    image(horizontal: @align_right,
+                          identifier: "ColorTipsImage3",
+                          image: "ColorTips3.png");
+                }
+
+                row(child_horizontal: @align_right,
+                    child_vertical: @align_center)
+                {
+                    static_text(horizontal: @align_right,
+                                identifier: "TintsAndShadesStaticText",
+                                name: "$$$/ArtOnPathBrushTool/Dlg/ColorizationTips/9=Tints and Shades:");
+
+                    image(horizontal: @align_right,
+                          identifier: "ColorTipsImage4",
+                          image: "ColorTips4.png");
+                }
+
+                row(child_horizontal: @align_right,
+                    child_vertical: @align_center)
+                {
+                    static_text(horizontal: @align_right,
+								identifier: "HueShiftStaticText",
+                                name: "$$$/ArtOnPathBrushTool/Dlg/ColorizationTips/10=Hue Shift:");
+
+                    image(horizontal: @align_right,
+                          identifier: "ColorTipsImage5",
+                          image: "ColorTips5.png");
+                }
+            }
+
+        
+	button(identifier: "okButton", set_default_focus: true, name: "$$$/gOK=OK", commit_button: true,horizontal: @align_right);
+	}	
+    }
+}

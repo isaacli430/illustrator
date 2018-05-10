@@ -1,0 +1,31 @@
+sheet PDFImportDlg
+{
+interface:
+cropItems: [ {name: "$$$/PDFFormat/Menus/16911/Item1=Bounding Box", value:1},
+			 {name: "", value:2},
+			 {name: "$$$/PDFFormat/Menus/16911/Item2=Art", value:3},
+			 {name: "$$$/PDFFormat/Menus/16911/Item3=Crop", value:4},
+			 {name: "$$$/PDFFormat/Menus/16911/Item4=Trim", value:5},
+			 {name: "$$$/PDFFormat/Menus/16911/Item5=Bleed", value:6},
+			 {name: "$$$/PDFFormat/Menus/16911/Item6=Media", value:7}
+			];
+cropCell: 1;
+showPreviewField: true;
+preview: true;		
+
+enablePrevious: true;
+enableNext: false;
+isPlace: false;
+showPlaceInfo: false;
+unlink isOpen: false <== !isPlace;
+
+
+invariant:
+		check_error_prev <== (enablePrevious == true);
+		check_error_next <== (enableNext == true);
+output:
+		result_prev <== {enablePreviousd: enablePrevious};
+		result_next <== {enableNextd: enableNext};
+result_dummy <== {cropCelld: cropCell, showPreviewFieldd:showPreviewField, previewd:preview, cropItemsd:cropItems};
+		
+}

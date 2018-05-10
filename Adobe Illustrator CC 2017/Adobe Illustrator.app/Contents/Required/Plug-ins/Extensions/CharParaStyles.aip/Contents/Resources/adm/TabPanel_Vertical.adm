@@ -1,0 +1,12 @@
+sheet TabPanel
+{
+  interface:
+  	
+  	TabJustRadioGp: 0;
+ 	TabXValue: 0;
+ 	TabLeaderStr: "";
+   	
+   	unlink TabAlignOnStr: "." <== (3 != TabJustRadioGp)? lastAlignVal : TabAlignOnStr;
+  	lastAlignVal: "." <== (3 == TabJustRadioGp) ? TabAlignOnStr : lastAlignVal;
+}
+

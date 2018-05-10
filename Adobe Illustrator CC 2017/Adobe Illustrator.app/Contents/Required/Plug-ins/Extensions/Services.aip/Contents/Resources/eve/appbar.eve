@@ -1,0 +1,7 @@
+layout app_bar
+{		
+    view subview(name:'AIAppBarSearchView', vertical: @align_center, show_border: false, wants_focus: false, placement: @place_row)
+    {
+
+    } 
+}

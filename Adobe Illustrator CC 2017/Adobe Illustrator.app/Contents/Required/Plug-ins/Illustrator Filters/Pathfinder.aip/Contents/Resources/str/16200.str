@@ -1,0 +1,26 @@
+/* [1] */
+$$$/Pathfinder/Str/ToolTip/1/Mac=Unite (Option-click to create a Compound Shape and add to shape area)
+/* [2] */
+$$$/Pathfinder/Str/ToolTip/2/Mac=Minus Front (Option-click to create a Compound Shape and subtract from shape area)
+/* [3] */
+$$$/Pathfinder/Str/ToolTip/3/Mac=Intersect (Option-click to create a Compound Shape and intersect shape area)
+/* [4] */
+$$$/Pathfinder/Str/ToolTip/4/Mac=Exclude (Option-click to create a Compound Shape and exclude overlapping shape areas)
+/* [5] */
+$$$/Pathfinder/Str/ToolTip/5=Minus Back
+/* [6] */
+$$$/Pathfinder/Str/ToolTip/6=Divide
+/* [7] */
+$$$/Pathfinder/Str/ToolTip/7=Trim
+/* [8] */
+$$$/Pathfinder/Str/ToolTip/8=Merge
+/* [9] */
+$$$/Pathfinder/Str/ToolTip/9=Crop
+/* [10] */
+$$$/Pathfinder/Str/ToolTip/10=Outline
+/* [11] */
+
+/* [12] */
+
+/* [13] */
+$$$/Pathfinder/Str/ToolTip/13=Expand Compound Shape

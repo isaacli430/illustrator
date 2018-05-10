@@ -1,0 +1,7 @@
+sheet EditFilter
+{
+interface:
+	SVGFilterText: "";
+	warningText: "";
+	showWarning: false;
+}

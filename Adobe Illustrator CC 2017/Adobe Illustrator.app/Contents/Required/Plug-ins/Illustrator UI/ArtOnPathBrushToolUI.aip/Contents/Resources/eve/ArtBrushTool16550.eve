@@ -1,0 +1,140 @@
+layout ArtBrushToolOptions
+{
+    view subview(identifier: "AIEveSubView", layout_theme: @dialog_large, placement: @place_column,spacing: @unrelated_spacing,child_horizontal: @align_fill)
+    {
+	column(child_horizontal: @align_fill,spacing: @inter_group_spacing)
+	{
+		group(identifier: "SizeGroup", placement: @place_column, guide_mask: [@guide_label], horizontal: @align_fill)
+		{
+			row()
+			{
+				column()
+				{
+					popup(identifier: "DependingOnPopup", name: "$$$/ArtOnPathBrushToolUI/Dlg/Size=Size:",
+						unknown: false, bind: @pattern_popup_value, include_custom_item: false, disabled_items: @DisabledList,
+						items: [{ name: '$$$/ArtOnPathBrushToolUI/Menu/ArtOnPathOptions/Colorize/1=Fixed', value: 0 },
+						{ name: '$$$/ArtOnPathBrushToolUI/Menu/ArtOnPathOptions/Colorize/2=Width Points/Profile', value: 1 },
+						{ name: '$$$/ArtOnPathBrushToolUI/Menu/ArtOnPathOptions/Colorize/3=Pressure', value:  2},
+						{ name: '$$$/ArtOnPathBrushToolUI/Menu/ArtOnPathOptions/Colorize/4=Stylus Wheel', value: 3 }, 
+						{ name: '$$$/ArtOnPathBrushToolUI/Menu/ArtOnPathOptions/Colorize/5=Tilt', value: 4 },
+						{ name: '$$$/ArtOnPathBrushToolUI/Menu/ArtOnPathOptions/Colorize/6=Bearing', value: 5 }, 
+						{ name: '$$$/ArtOnPathBrushToolUI/Menu/ArtOnPathOptions/Colorize/7=Rotation', value: 6}]);
+				
+					checkbox(identifier: "ProportionalCheckBoxID", bind: @Proportional, name: "$$$/ArtOnPathBrushTool/Dlg/Proportional=&Proportional"); 		
+				}
+
+				row(spacing: @connected_spacing)
+				{
+					overlay()
+					{
+						panel(bind: @min_max, value: 1)
+						{
+							image(alt: "$$$/ArtOnPathBrushToolUI/Dlg/MinTips=Minimum",image: { normal: "SP_MinValue_Sm_N.png", dark_normal: "SP_MinValue_Sm_N_D.png" });
+						}
+						panel(bind: @min_max, value: 0)
+						{
+							image(alt: "$$$/ArtOnPathBrushToolUI/Dlg/MaxTips=Maximum",image: { normal: "SP_MaxValue_Sm_N.png", dark_normal: "SP_MaxValue_Sm_N_D.png" });
+						}
+					}
+
+					combo_slider(min_max_filter: @filter,
+									bind: @Width, bind_final: true,
+									minLength: 120,
+									identifier: "ArtBrushOptionsSizeWidth",
+									slider_point: @up,
+									unknown: false, 
+									unit: @UnitPercent,
+									showUnits: true, 
+									segments: [[0, 1], [0.50, 100], [0.51, 102], [0.70, 200], [1, 1000]],
+									center_tick: true,
+									digits: 4,
+									set_default_focus: true, 
+									decimal_places: 0);
+				}
+						 
+				row(spacing: @connected_spacing)
+				{
+					overlay()
+					{
+						panel(bind: @min_max, value: 0)
+						{
+							image(alt: "$$$/ArtOnPathBrushToolUI/Dlg/MinTips=Minimum",image: { normal: "SP_MinValue_Sm_N.png", dark_normal: "SP_MinValue_Sm_N_D.png" });
+						}
+						panel(bind: @min_max, value: 1)
+						{
+							image(alt: "$$$/ArtOnPathBrushToolUI/Dlg/MaxTips=Maximum",image: { normal: "SP_MaxValue_Sm_N.png", dark_normal: "SP_MaxValue_Sm_N_D.png" });
+						}
+					}
+
+					combo_slider(min_max_filter: @filter,
+									bind: @Variation, bind_final: true,
+									minLength: 120,
+									identifier: "ArtBrushOptionsSizeVariation",
+									slider_point: @up,
+									unknown: false, 
+									unit: @UnitPercent,
+									showUnits: true, 
+									segments: [[0, 1], [0.50, 100], [0.51, 102], [0.70, 200], [1, 1000]],
+									center_tick: true,
+									digits: 4,
+									decimal_places: 0);
+				}
+			}
+		}
+
+		row(horizontal: @align_fill)
+		{
+			group(horizontal: @align_fill, vertical: @align_fill, name: "$$$/ArtOnPathBrushTool/Dlg/Flip=Flip", placement: @place_column, identifier: "flipGroup")
+			{
+				row(child_vertical: @align_center)
+				{
+					checkbox(identifier: "FlipAlongCheckBoxID", bind:@flip_along_value, name: "$$$/ArtOnPathBrushTool/Dlg/FlipAlong=&Flip Along");
+					guide_consumer();
+					image(identifier: "FlipAlongImageID", image: {normal:"SP_Reflect_Lg_N.png",dark_normal:"SP_Reflect_Lg_N_D.png"});
+				}
+				row(child_vertical: @align_center)
+				{
+					checkbox(identifier: "FlipAcrossCheckBoxID", bind:@flip_across_value, name: "$$$/ArtOnPathBrushTool/Dlg/FlipAcross=Flip A&cross");
+					guide_consumer();
+					image(identifier: "FlipAcrossImageID", image: {normal:"SP_ReflectVertical_Lg_N.png",dark_normal:"SP_ReflectVertical_Lg_N_D.png"});
+				}
+			}
+
+			group(name: "$$$/ArtOnPathBrushTool/Dlg/Options=Options", identifier: "OptionsGroup", placement: @place_column)
+			{
+				row(child_vertical: @align_center)
+				{
+					popup(identifier: "ColorizationPopupID", bind: @colorization_item_value, include_custom_item: false, name: "$$$/ArtOnPathBrushToolUI/Dlg/Method=Colorization &Method:",
+							items: [ { name: "$$$/ArtOnPathBrushTool/Mnu/Colorize/1=None", value: 0 },
+								   { name: "$$$/ArtOnPathBrushTool/Mnu/Colorize/2=Tints", value: 1 },
+								   { name: "$$$/ArtOnPathBrushTool/Mnu/Colorize/3=Tints and Shades", value: 2 },
+								   { name: "$$$/ArtOnPathBrushTool/Mnu/Colorize/4=Hue Shift", value: 3 }]);
+						button(identifier: "ColorizeTipsPictureButtonID",
+								image: { normal: "SP_Tips_Md_N.png", dark_normal: "SP_Tips_Md_N_D.png" },
+								alt: "$$$/ArtOnPathBrushTool/Str/Tips=Tips",
+								wants_focus: false,
+								action: @colorize_tips_action);
+				}
+				row(child_vertical: @align_center)
+				{
+					button_bar(identifier: "FoldAdjust", bind: @OverlapFoldAdjustDefaultValue, name: "$$$/ArtOnPathBrushTool/Dlg/Overlap=Overlap:", horizontal: @align_fill, 
+					items: [
+					{image: {normal: "OverlapNoAdjustN.png", dark_normal:"OverlapNoAdjustD.png"}, alt: "$$$/ArtOnPathBrushTool/Overlap/noadjust=Do not adjust corners and folds", value: 1},
+					{image: {normal: "OverlapAdjustN.png", dark_normal: "OverlapAdjustD.png"}, alt: "$$$/ArtOnPathBrushTool/Overlap/adjust=Adjust corners and folds to prevent overlaps", value: 0}
+					]
+					);
+				}		  
+			}
+		}
+	}
+		row(horizontal: @align_fill,child_vertical: @align_center,spacing: @separated_spacing)
+		{
+			checkbox(horizontal: @align_left, guide_mask: [@guide_label], identifier: "PreviewCheckboxID", name: "$$$/ArtOnPathBrushToolOptions/Dlg/Preview=Pr&eview", bind:@preview_checkbox_checked);
+			row(horizontal: @align_right,child_horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+			{
+				button(identifier: "okButton", name: "$$$/gOK=OK", commit_button: true);
+				button(identifier: "cancelButton", name: "$$$/gCancel=Cancel", commit_button: true);
+			}		
+		}
+    }
+}

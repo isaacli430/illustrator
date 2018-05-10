@@ -1,0 +1,31 @@
+layout TouchLinePropertiesUI
+{
+     view subview(identifier: "TouchLinePropertiesUI",
+				 layout_theme:@touch_panel,
+				 show_border: false,
+				 margin : 0
+				 )
+    {
+		static_text(identifier: "LinePropertiesLabel",
+					name: "$$$/ShapeCoreUI/LineProperties/Label/LineProperties=Line Properties:");
+					
+		unit_scrubby_number(identifier: "LineLength",
+							alt: "$$$/ShapeCoreUI/LineProperties/ToolTip/LineLength=Line Length",
+							decimal_places: 3,
+							digits: 2,
+							unit:"CurrentDocumentUnit",
+							max_value: 16384,
+							min_value: 0.0,
+							label: "SP_TouchWidth_Sm_N.png",
+							is_image_label: true);
+
+	
+		unit_scrubby_number(identifier: "LineAngle",
+							alt: "$$$/ShapeCoreUI/LineProperties/ToolTip/LineAngle=Line Angle",
+							decimal_places: 2,
+							digits: 2,
+							unit:"NumberEditUnit_Degree",
+							label: "SP_TouchRotateCCW_Sm_N.png",
+							is_image_label: true);
+    }
+}

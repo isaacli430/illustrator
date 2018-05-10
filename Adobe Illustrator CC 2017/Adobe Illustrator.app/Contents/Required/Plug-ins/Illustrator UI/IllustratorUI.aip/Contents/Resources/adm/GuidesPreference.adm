@@ -1,0 +1,31 @@
+sheet GuidesPreference
+{
+interface:
+GuPGuideStyle: 1;
+
+GuPGridStyle: 1;
+GuPGECell: 1;
+GuPTicksCell: 1;
+
+GuPGridBackCell: false;
+GuPShowPixelGrid: false;
+
+						
+GuPGuideColorPopupItems: [
+						{ name: "$$$/PerspectiveUI/PresetDlg/Scale/CustomScale=Custom...", value: 10 },
+						{ name: "", value: 11 }, 
+						{ name: "$$$/Preferences/GridStyle/LightBlue=Light Blue", value: 1, color: {r: 0.31, g: 0.50,	b: 1.0} },
+						{ name: "$$$/Preferences/GridStyle/LightRed=Light Red", value: 2, color: {r: 1.0, g: 0.31,	b: 0.31	} },
+						{ name: "$$$/Preferences/GridStyle/Green=Green", value: 3, color:{	r: 0.31, g: 1.0,	b: 0.31	}  },
+						{ name: "$$$/Preferences/GridStyle/MediumBlue=Medium Blue", value: 4, color:{	r: 0.31, g: 0.31,	b: 1.0	}  },
+						{ name: "$$$/Preferences/GridStyle/Yellow=Yellow", value: 5, color:{	r: 1.0, g: 	1.0,b: 0.31	}  },
+						{ name: "$$$/Preferences/GridStyle/Magenta=Magenta", value: 6, color:{	r: 1.0, g: 	0.31,	b: 1.0	}  },
+						{ name: "$$$/Preferences/GridStyle/Cyan=Cyan", value: 7, color:{	r: 0.31, g: 1.0,	b: 1.0	}  },
+						{ name: "$$$/Preferences/GridStyle/LightGray=Light Gray", value: 8, color:{	r: 0.50, g: 0.50,	b: 0.50	}  },
+						{ name: "$$$/Preferences/GridStyle/Black=Black", value: 9, color:{	r: 0.0, g: 0.0, b: 0.0	}  }
+						];
+GuPGuideStylePopupItems: [
+						{ name: "$$$/Preferences/GridStyle/Lines=Lines", value: 1 },
+						{ name: "$$$/Preferences/GridStyle/Dots=Dots", value: 2 }
+						];
+}

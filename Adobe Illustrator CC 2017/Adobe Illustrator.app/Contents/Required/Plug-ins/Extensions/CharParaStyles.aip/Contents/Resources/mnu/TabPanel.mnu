@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+  <menuItem id="1" text="$$$/_TabDlgs/Mnu/tabPalCmd/1=Clear All Tabs"></menuItem>
+  <menuItem id="2" text="$$$/_TabDlgs/Mnu/tabPalCmd/2=Repeat Tab"></menuItem>
+  <menuItem id="3" text="$$$/_TabDlgs/Mnu/tabPalCmd/3=Delete Tab"></menuItem>
+  <separator></separator>
+  <menuItem id="5" text="$$$/_TabDlgs/Mnu/tabPalCmd/4=Snap to Unit"></menuItem>
+</menu>

@@ -1,0 +1,45 @@
+layout SVGInteractivityPanel
+{
+    view subview(identifier: "SVGInteractivityPanel",
+				 layout_theme: @panel,
+				 show_border: false,
+				 margin: gPanelToolbarSubviewMargin,
+				 spacing: gPanelToolbarTopSpacing)
+		{	
+			column(horizontal: @align_fill, vertical: @align_fill)
+			{
+ 				popup(identifier: "eventPopup",
+                  		 include_custom_item: false,
+                  		 horizontal: @align_fill,
+                  		 items: @popupItems,
+                  		 bind: @eventPopupValue,
+						 name: "$$$/svgFileFormat/17000/Lbl1=Event:");
+ 				edit_text(characters: 28,
+			                max_characters: 255,
+		                      identifier: "jsEditText",
+		                      bind: @eventJSTextValue,
+		                      bind_final: true,
+							  wants_focus: true,
+	                          set_default_focus: true,
+	                          horizontal: @align_fill,
+					    name: "$$$/svgFileFormat/17000/Lb2=JavaScript:");
+				list(identifier: "SVGList",
+							guide_mask: [@guide_label],							
+							theme_font_size: @small,
+							orientation: "vertical",							
+							vertical: @align_fill,
+							horizontal: @align_fill);
+			}
+			buttongroup(horizontal: @align_right, spacing: gPanelToolbarIconSpacing, child_width: gPanelToolbarIconWidth, child_height: gPanelToolbarIconHeight)
+			{
+				button(identifier: "linkJSFileButton",
+                        		image: {normal: "SP_Folder_Wi_N.png", dark_normal: "SP_Folder_Wi_N_D.png"},
+                      			alt: "$$$/svgFileFormat/Str/LinkJavaScriptFile=Link JavaScript Files");
+				button(identifier: "deleteButton",
+                    				image: {normal: "DeleteSVGFilter_N.png", dark_normal:"DeleteSVGFilter_D.png"},
+                         		alt: "$$$/svgFileFormat/Str/RemoveEntry=Remove Selected Entry");
+				resize_gripper_gap();	
+   			}
+		}
+}
+

@@ -1,0 +1,32 @@
+/* [1] */
+$$$/Mojikumi/Str/kMojikumiStrings/Cple=Closing Parenthesis -> Line End
+/* [2] */
+$$$/Mojikumi/Str/kMojikumiStrings/Cle=Comma -> Line End
+/* [3] */
+$$$/Mojikumi/Str/kMojikumiStrings/Ple=Period -> Line End
+/* [4] */
+$$$/Mojikumi/Str/kMojikumiStrings/Ble=Bullets -> Line End
+/* [5] */
+$$$/Mojikumi/Str/kMojikumiStrings/Bpop=Begin Paragraph -> Opening Parenthesis
+/* [6] */
+$$$/Mojikumi/Str/kMojikumiStrings/Bpnp=Begin Paragraph -> Non-Punctuation
+/* [7] */
+$$$/Mojikumi/Str/kMojikumiStrings/Blop=Begin Line-> Opening Parenthesis
+/* [8] */
+$$$/Mojikumi/Str/kMojikumiStrings/Npop=Non-Punctuation -> Opening Parenthesis
+/* [9] */
+$$$/Mojikumi/Str/kMojikumiStrings/Cpop=Closing Parenthesis -> Non-Punctuation
+/* [10] */
+$$$/Mojikumi/Str/kMojikumiStrings/Cpnp=Closing Parenthesis -> Opening Parenthesis
+/* [11] */
+$$$/Mojikumi/Str/kMojikumiStrings/Cop=Comma -> Opening Parenthesis
+/* [12] */
+$$$/Mojikumi/Str/kMojikumiStrings/Cnp=Comma -> Non-Punctuation
+/* [13] */
+$$$/Mojikumi/Str/kMojikumiStrings/Pop=Periods -> Opening Parenthesis
+/* [14] */
+$$$/Mojikumi/Str/kMojikumiStrings/Pnp=Periods -> Non-Punctuation
+/* [15] */
+$$$/Mojikumi/Str/kMojikumiStrings/Baab=Before and After Bullets
+/* [16] */
+$$$/Mojikumi/Str/kMojikumiStrings/Npbaarahwn=Non-Punctuation before and after Roman and half-width numbers

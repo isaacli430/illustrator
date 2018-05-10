@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+ 	<menuItem id="1" text="$$$/VariablesPalette/Mnu/VariablesPalette/iDynamicObjectMnuOption=Make Object Dynamic"></menuItem>
+	<menuItem id="2" text="$$$/VariablesPalette/Mnu/VariablesPalette/iDynamicVisibilityMnuOption=Make Visibility Dynamic"></menuItem>
+	<separator></separator>
+	<menuItem id="4" text="$$$/VariablesPalette/Mnu/VariablesPalette/iNewVariableMnuOption=New Variable..."></menuItem>
+  <menuItem id="5" text="$$$/VariablesPalette/Mnu/VariablesPalette/iDeleteVariableMnuOption=Delete Variable"></menuItem>
+  <menuItem id="6" text="$$$/VariablesPalette/Mnu/VariablesPalette/iVariableSettingMnuOption=Variable Options..."></menuItem>
+	<separator></separator>
+	<menuItem id="8" text="$$$/VariablesPalette/Mnu/VariablesPalette/iImportVariableMnuOption=Load Variable Library..."></menuItem>
+	<menuItem id="9" text="$$$/VariablesPalette/Mnu/VariablesPalette/iExportVariableMnuOption=Save Variable Library..."></menuItem>
+  <separator></separator>
+  <menuItem id="11" text="$$$/VariablesPalette/Mnu/VariablesPalette/iDeleteEntryMnuOption=Unbind Variable"></menuItem>
+	<separator></separator>
+  <menuItem id="13" text="$$$/VariablesPalette/Mnu/VariablesPalette/iNewDataSetMnuOption=Capture Data Set"></menuItem>
+  <menuItem id="14" text="$$$/VariablesPalette/Mnu/VariablesPalette/iDeleteDataSetMnuOption=Delete Data Set"></menuItem>
+ 	<menuItem id="15" text="$$$/VariablesPalette/Mnu/VariablesPalette/iUpdateDataSetMnuOption=Update Data Set"></menuItem>
+  <menuItem id="16" text="$$$/VariablesPalette/Mnu/VariablesPalette/iRenameDataSetMnuOption=Rename Data Set..."></menuItem>
+  <separator></separator>
+ 	<menuItem id="18" text="$$$/VariablesPalette/Mnu/VariablesPalette/iPreviousDataSetMnuOption=Previous Data Set"></menuItem>
+	<menuItem id="19" text="$$$/VariablesPalette/Mnu/VariablesPalette/iNextDataSetMnuOption=Next Data Set"></menuItem>
+	<separator></separator>
+ 	<menuItem id="21" text="$$$/VariablesPalette/Mnu/VariablesPalette/iSelectBoundObjectMnuOption=Select Bound Object"></menuItem>
+	<menuItem id="22" text="$$$/VariablesPalette/Mnu/VariablesPalette/iSelectAllBoundObjectsMnuOption=Select All Bound Objects"></menuItem>
+</menu>

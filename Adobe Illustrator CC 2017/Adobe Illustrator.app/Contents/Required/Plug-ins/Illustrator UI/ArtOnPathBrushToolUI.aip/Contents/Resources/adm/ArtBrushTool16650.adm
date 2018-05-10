@@ -1,0 +1,14 @@
+sheet PatternOnPathOptionsUI
+{
+    constant:
+    text_Minimum: "$$$/ArtOnPathBrushTool/Dlg/TextMinimum=Mi&nimum: ";
+    text_Percentage: "$$$/ArtOnPathBrushTool/Dlg/Percentage=Perce&ntage: ";
+    interface:
+        FitRadioGp: empty;	
+        scaleitem : 0;
+        edit_minimum : 1;
+		min_max: 1;
+        unlink edit_maximum : 100 <== (scaleitem != 0 ) ? edit_maximum : 100;
+        filter: {min_value: 1, max_value: 1000};
+        min_name: text_Minimum <== (scaleitem != 0 ) ? text_Minimum : text_Percentage;
+}

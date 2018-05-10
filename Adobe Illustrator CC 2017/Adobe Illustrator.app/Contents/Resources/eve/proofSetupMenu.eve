@@ -1,0 +1,17 @@
+layout proofSetupMenu
+{
+	view menu( id: 46,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/Proof/Document=&Document CMYK: ", id:	225, help_id:0);
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/Proof/Mac=&Legacy Macintosh RGB (Gamma 1.8)", id:	226, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Proof/Win=&Internet Standard RGB (sRGB)", id:		227, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Proof/Monitor=Monitor &RGB", id:	228, help_id:0);	
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/Proof/CBP=Color blindness - Protanopia-type", id: 296, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Proof/CBD=Color blindness - Deuteranopia-type", id: 297, help_id:0);
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/Proof/Custom=&Customize...", id:	284, help_id:0);
+}
+}

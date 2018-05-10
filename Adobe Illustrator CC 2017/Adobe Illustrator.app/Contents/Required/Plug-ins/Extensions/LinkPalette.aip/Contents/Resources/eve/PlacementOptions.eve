@@ -1,0 +1,147 @@
+layout PlacementOptions
+{
+    view subview(identifier: "AIEveSubView",
+				 placement: @place_column,
+				 show_border: false,
+				 child_horizontal: @align_left,
+				 layout_theme: @dialog_large)
+    {			
+		column()
+		{
+			popup(identifier: "Preserve_Attributes",
+								name: "$$$/LinkPalette/Dlg/PlacementOptions/PreserveTxt=&Preserve:",
+								include_custom_item: false, set_default_focus: true, bind:@AV_Preserve_Attributes,
+								items: [
+									{name:"$$$/LinkPalette/Mnu/PlcOptMethodItems/AsIs=File Dimensions",		value:	0},
+									{name:"$$$/LinkPalette/Mnu/PlcOptMethodItems/Fill=Proportions (Fill)",	value:	1},
+									{name:"$$$/LinkPalette/Mnu/PlcOptMethodItems/Fit=Proportions (Fit)",	value:	2},
+									{name:"$$$/LinkPalette/Mnu/PlcOptMethodItems/Conform=Bounds",			value:	3},
+									{name:"$$$/LinkPalette/Mnu/PlcOptMethodItems/Reset=Transforms",			value:	4}
+									]);
+			pin_selector(identifier: "alignment_ninePointPinSelector", label: "$$$/LinkPalette/Dlg/PlacementOptions/AlignmentTxt=Alignment:", 
+						wants_focus: false, bind: @AV_alignment_ninePointPinSelector, guide_mask: [@guide_label]);
+		}								
+		checkbox(identifier: "clip", bind: @AV_clip, name: "$$$/LinkPalette/Dlg/PlacementOptions/ClipBox=&Clip To Bounding Box", guide_mask: [@guide_label]);
+		
+column(spacing: @unrelated_spacing, placement: @place_col)
+{
+		group(identifier: "Preserve_Attributes_Illustration", placement: @place_column)
+		{
+			
+				
+				overlay(guide_mask: [@guide_label])
+				{
+					panel(value: 0, bind: @AV_Preserve_Attributes,margin: 0)
+					{
+						row()
+						{
+							column()
+							{
+								image(image:{normal:"SP_VarPlacement_InitialStep_N_128x74_N.png",dark_normal:"SP_VarPlacement_InitialStep_N_128x74_N_D.png"} );
+							}
+							column()
+							{
+								image(image:{normal:"SP_VarPlacement_AsIs_N_128x74_N.png",dark_normal:"SP_VarPlacement_AsIs_N_128x74_N_D.png"});
+						
+							}
+						}
+						row()
+						{
+							static_text(theme_font_size: @small,characters: 21, name: "$$$/LinkPalette/Str/Placement/1/kkAsIs=Preserve File Dimensions\nPreserve original linked file dimensions regardless of bounding box size and transformations.",horizontal:@align_center);
+						}
+					}
+					panel(value: 1, bind: @AV_Preserve_Attributes,margin: 0)
+					{
+						row()
+						{
+							column()
+							{
+								image(image:{normal:"SP_VarPlacement_InitialStep_N_128x74_N.png",dark_normal:"SP_VarPlacement_InitialStep_N_128x74_N_D.png"} );
+							}
+							column()
+							{
+							image(image:{normal:"SP_VarPlacement_Fill_N_128x74_N.png",dark_normal:"SP_VarPlacement_Fill_N_128x74_N_D.png"});
+						
+							}
+						}
+						row()
+						{
+							static_text(theme_font_size: @small,characters: 21, name: "$$$/LinkPalette/Str/Placement/1/kkFill=Preserve Proportions (Fill)\nFill bounding box while preserving proportions. May overlap edges in one dimension.",horizontal:@align_center);
+						}
+					}
+					panel(value: 2, bind: @AV_Preserve_Attributes,margin: 0)
+					{
+						row()
+						{
+							column()
+							{
+								image(image:{normal:"SP_VarPlacement_InitialStep_N_128x74_N.png",dark_normal:"SP_VarPlacement_InitialStep_N_128x74_N_D.png"} );
+							}
+							column()
+							{
+							image(image:{normal:"SP_VarPlacement_Fit_N_128x74_N.png",dark_normal:"SP_VarPlacement_Fit_N_128x74_N_D.png"});
+						
+							}
+						}
+						row()
+						{
+							static_text(theme_font_size: @small,characters: 21, name: "$$$/LinkPalette/Str/Placement/1/kkFit=Preserve Proportions (Fit)\nFit linked file fully inside bounding box while preserving proportions.",horizontal:@align_center);
+						}
+					}
+					panel(value: 3, bind: @AV_Preserve_Attributes,margin: 0)
+					{
+						row()
+						{
+							column()
+							{
+								image(image:{normal:"SP_VarPlacement_InitialStep_N_128x74_N.png",dark_normal:"SP_VarPlacement_InitialStep_N_128x74_N_D.png"} );
+							}
+							column()
+							{
+							image(image:{normal:"SP_VarPlacement_AsConform_N_128x74_N.png",dark_normal:"SP_VarPlacement_AsConform_N_128x74_N_D.png"});
+						
+							}
+						}
+						row()
+						{
+							static_text(theme_font_size: @small,characters: 21, name: "$$$/LinkPalette/Str/Placement/1/kkConform=Preserve Bounds\nFit linked file to bounding box. Replaced file will preserve bounds but not proportions.",horizontal:@align_center);
+						}
+					}
+				
+					panel(value: 4, bind: @AV_Preserve_Attributes,margin: 0)
+					{
+						row()
+						{
+							column()
+							{
+								image(image:{normal:"SP_VarPlacement_InitialStep_N_128x74_N.png",dark_normal:"SP_VarPlacement_InitialStep_N_128x74_N_D.png"} );
+							}
+							column()
+							{
+							image(image:{normal:"SP_VarPlacement_Reconform_N_128x74_N.png",dark_normal:"SP_VarPlacement_Reconform_N_128x74_N_D.png"} );
+						
+							}
+						}
+						row()
+						{
+							static_text(theme_font_size: @small,characters: 21, name: "$$$/LinkPalette/Str/Placement/1/kkReconform=Preserve Transforms\nFit linked file to bounding box. Replaced file will preserve transformations but not bounds.",horizontal:@align_center);
+						}
+					
+					}
+				
+			}
+		}
+		row(horizontal: @align_right,
+					reverse: os == @mac, spacing: @related_spacing)
+		{
+				button(commit_button: true,
+					   identifier: "okButton",
+					   name: "$$$/gOK=OK");
+
+				button(commit_button: true,
+					   identifier: "cancelButton",
+					   name: "$$$/gCancel=Cancel");
+		}
+}
+    }
+}

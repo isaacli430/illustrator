@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+	<menuItem id="1" text="$$$/SymbolPalette/Mnu/16700/Add=&amp;Add to Symbols"></menuItem>
+	<separator></separator>
+	<menuItem id="3" text="$$$/SymbolPalette/Mnu/16700/Thumb=&amp;Thumbnail View"></menuItem>
+	<menuItem id="4" text="$$$/SymbolPalette/Mnu/16700/Small=&amp;Small List View"></menuItem>
+	<menuItem id="5" text="$$$/SymbolPalette/Mnu/16700/Large=&amp;Large List View"></menuItem>
+	<separator></separator>
+	<menuItem id="7" text="$$$/SymbolPalette/Mnu/16700/Keep=&amp;Persistent"></menuItem>
+</menu>

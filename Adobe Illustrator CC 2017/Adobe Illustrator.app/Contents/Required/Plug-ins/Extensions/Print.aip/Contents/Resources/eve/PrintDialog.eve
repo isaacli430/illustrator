@@ -1,0 +1,504 @@
+layout PrintDialog
+{
+    view subview(name: "Print", placement: @place_column, layout_theme: @dialog_large,spacing:@unrelated_spacing)
+    {
+		row(spacing:6)
+		{
+			column(horizontal: @align_fill,child_horizontal: @align_fill)
+			{
+				overlay()
+				{
+					panel(bind:@editMode,value:false,margin:0)
+					{
+						popup(identifier: "PrintPreset",popup_maximum_width_chars: 20, popup_minimum_width_chars: 20, name: '$$$/Print/Options/PrinterStyle=Print Pre&set:',include_custom_item: false,horizontal: @align_fill);
+					}
+					panel(bind:@editMode,value:true,margin:0)
+					{
+						edit_text(identifier:"PrintPresetEdit",name: '$$$/Print/Options/PrinterStyle=Print Pre&set:',horizontal: @align_fill,max_characters: 127);
+					}
+				}
+				popup(identifier: "PrinterPopup",popup_maximum_width_chars: 20, popup_minimum_width_chars: 20,name: '$$$/Print/Options/Printer=&Printer:',include_custom_item: false);
+				popup(identifier: "PPD",popup_maximum_width_chars: 20, popup_minimum_width_chars: 20,name: '$$$/Print/Options/PPD=PP&D:',include_custom_item: false);
+			}
+			column()
+			{
+				panel(placement: @place_row, bind:@editMode,value:false,margin:0)
+				{
+					button(identifier:"SavePreset",image:{normal: "SP_Save_Sm_N.png",dark_normal:"SP_Save_Sm_N_D.png"},wants_focus: false,
+					horizontal:@align_left,vertical:@align_top);
+				}
+			}
+		}
+		row()
+		{
+			column(guide_mask: [ @guide_baseline,@guide_label],spacing:6)
+			{
+				list(identifier: "PanelList", items: @iPresets, width: 200,height:120, bind: @valuePresets);
+				group(identifier: "PreviewGroup",horizontal:@align_fill,child_horizontal:@align_fill,margin:[2,2,4,2], spacing:@related_spacing)
+				{
+					image(identifier: "Preview", height: 250, width: 200);
+					row(spacing:0,guide_mask: [ @guide_baseline,@guide_label],horizontal:@align_fill)
+					{
+						button(identifier:"PreviewFirstPage",image:{normal:"SP_Firstpage_Xs_N.png",dark_normal:"SP_Firstpage_Xs_N_D.png"});
+						button(identifier:"PreviewPrevPage",image:{normal:"SP_PNbackward_Xs_N.png",dark_normal:"SP_PNbackward_Xs_N_D.png"});
+						edit_text(identifier:"PreviewRangeEdit",horizontal:@align_fill);
+						button(identifier:"PreviewNextPage",image:{normal:"SP_PNforward_Xs_N.png",dark_normal:"SP_PNforward_Xs_N_D.png"});
+						button(identifier:"PreviewLastPage",image:{normal:"SP_Lastpage_Xs_N.png",dark_normal:"SP_Lastpage_Xs_N_D.png"});
+					}
+					row(margin:0,horizontal:@align_center)
+					{
+						panel(bind:@ShowPreviewInfo, value:true,horizontal:@align_center,margin:0)
+						{
+							overlay()
+							{
+								panel(bind:@ShowScaleInfo,value:false,horizontal:@align_center,margin:0)
+								{
+									subview(theme_name: "AI Panel default",show_border:false,margin:0,spacing: 0)
+									{
+										display_text(identifier:"DocumentSize",theme_font_size: @small,value: @DocumentSize,
+											name: '$$$/Print/Options/Thumbnail/EXVW/DocumentSizeLabel= Document:');
+										display_text(identifier:"PaperSize",theme_font_size: @small,value: @PaperSize,
+											name: '$$$/Print/Options/Thumbnail/EXVW/PaperSizeLabel= Media:');
+									}
+								}
+								panel(bind:@ShowScaleInfo,value:true,horizontal:@align_center,margin:0)
+								{
+									static_text(identifier:"ScaleDisplay",theme_font_size: @small,
+											name: '$$$/Print/Options/Thumbnail/EXVW/Zoom= Scale:999.99 %');
+								}
+							}
+						}
+					}
+				}
+			}
+			column()
+			{
+				column(spacing:0,margin:0,horizontal:@align_fill)
+				{
+					display_text(identifier: "OverlayName",bind: @valueOverlayName);
+					separator(identifier: "separator1");
+				}
+				overlay()
+				{
+					panel(bind: @valuePresets, value: 1, placement: @place_column, child_horizontal: @align_fill,guide_mask: [ @guide_baseline],spacing: 12)
+					{
+						row(horizontal: @align_left)
+						{
+							column(child_horizontal: @align_left)
+							{
+								row(child_horizontal: @align_left)
+								{
+									edit_number(identifier:"Copies", name: '$$$/Print/Options/General/Copies=Cop&ies:',
+									digits:3,min_value:1,max_value:999,decimal_places: 0, set_default_focus: true, bind:@Copies);
+									checkbox(identifier:"Collate", name: '$$$/Print/Options/General/Collate=Co&llate', guide_mask: [ @guide_label ], bind:@Collate);
+									checkbox(identifier:"ReverseOrder", name: '$$$/Print/Options/General/Reverse=Reverse &Order', bind:@ReverseOrder);
+								}
+
+								row(horizontal: @align_fill, spacing:@separated_spacing)
+								{
+									radio_button(identifier:"AllPages", name: '$$$/Print/Options/General/All=&All', label:'$$$/Print/Options/General/Artboards=Artboards:', bind: @valueSelectedPages, value: 1);
+									row(horizontal: @align_fill, spacing: @label_widget_spacing)
+									{
+										radio_button(identifier:"PageRange", name: '$$$/Print/Options/General/Range=&Range:', bind: @valueSelectedPages, value: 0, guide_mask: [ @guide_label ]);
+										edit_text(identifier:"PageRangeValue", horizontal: @align_fill, bind: @valuePageRange, guide_mask: [ @guide_label ]);
+									}
+								}
+								row()
+								{
+									
+									checkbox(identifier:"IgnoreArtboards", name: '$$$/Print/Options/General/IgnoreArtboards=Ignore Art&boards', bind: @valueIgnoreArtboards);
+									checkbox(identifier:"SkipBlank", name: '$$$/Print/Options/General/Skip=S&kip Blank Artboards',bind:@SkipBlank);
+								}
+							}
+						}
+						group(name: 'Media', header: "popup(identifier: 'PaperPopup',
+							name: '$$$/Print/Options/General/MediaSize=Media Si&ze:',
+							include_custom_item: false,
+							items: [{name:'$$$/Print/Options/PaperSizeDriver=Defined by Driver'}]
+							)",
+							placement: @place_column)
+						{
+							column(margin:0)
+							{
+								row(horizontal:@align_fill)
+								{
+									edit_number(identifier:"PaperWidth", name: '$$$/Print/Options/General/Width=&Width:', 
+									unit:"CurrentDocumentUnit",digits:7,decimal_places: 4);
+									edit_number(identifier:"PaperHeight", name: '$$$/Print/Options/General/Height=&Height:',
+									guide_mask: [ @guide_label ], unit:"CurrentDocumentUnit",digits:7,decimal_places: 4,horizontal:@align_right);
+								}
+								row(vertical: @align_fill,horizontal:@align_fill)
+								{
+									checkbox(identifier:"AutoRotate", name: '$$$/Print/Options/General/AutoRotate=Auto-Rotat&e',label:'$$$/Print/Options/General/Orient=Orientation:',bind:@AutoRotate);
+									button_bar(identifier:"Orientation",bind: @orientation,horizontal:@align_right,
+									items: [ 
+									{ image:{normal:"SP_Portrait_Md_N.png", dark_normal:"SP_Portrait_Md_N_D.png"},
+									value: 1 },
+									{ image:{normal:"SP_Landscape_Md_N.png", dark_normal:"SP_Landscape_Md_N_D.png"},
+									value: 2 },
+									{ image:{normal:"SP_PortraitSwitched_Md_N.png", dark_normal:"SP_PortraitSwitched_Md_N_D.png"},
+									value: 3 },
+									{ image:{normal:"SP_LandscapeSwitched_Md_N.png", dark_normal:"SP_LandscapeSwitched_Md_N_D.png"},
+									value: 4 }
+									]);
+								}
+							}
+							row()
+							{
+								checkbox(identifier:"Trans",name: '$$$/Print/Options/General/Trans=Trans&verse', vertical: @align_top,bind:@Transverse);	
+							}
+						}
+						group(name: '$$$/Print/Options/General/Options=Options', placement: @place_column, guide_mask: [ @guide_label], spacing:4)
+						{
+							row()
+							{
+								column(child_horizontal:@align_fill,guide_mask:[])
+								{
+									column()
+									{
+										popup(identifier:"LayersOption", name: '$$$/Print/Options/General/Layers=Print La&yers:',include_custom_item: false,
+										bind: @valueLayers, items: @iLayers, horizontal: @align_fill);
+										row(child_vertical: @align_center)
+										{
+											pin_selector(identifier:"PlacementPin",label: '$$$/Print/Options/Setup/Place=Placement:');
+											edit_number(identifier: "PositionX", name: '$$$/Print/Options/Setup/X=&X:',
+												digits:5,decimal_places:2,
+												guide_mask: [ @guide_label ], unit:"CurrentDocumentUnit");
+											edit_number(identifier: "PositionY", name: '$$$/Print/Options/208/Y=&Y:',
+												digits:5,decimal_places:2,
+												guide_mask: [ @guide_label ], unit:"CurrentDocumentUnit");
+										}
+									}
+									column(guide_mask:[],spacing:0)
+									{		
+										popup(identifier: "PageScaling", name:'$$$/Print/Options/Setup/Scaling=Scaling:',bind: @valuePageScaling,
+											include_custom_item: false,
+											items: @iPageScalingOptions,horizontal: @align_fill);
+									}
+									column(guide_mask:[])
+									{
+										row(horizontal:@align_fill, guide_mask:[])
+										{
+											column(guide_mask:[])
+											{
+												display_text(identifier:"TileScale", name:" ", value: '$$$/Print/Options/General/TileScale=Scale:');
+											}
+											column(horizontal:@align_right,guide_mask:[])
+											{
+												row(guide_mask:[])
+												{
+													edit_number(identifier:"wScale", name: '$$$/Print/Options/General/wScale=&W:', bind: @ScalingWidth,bind_final: true,
+													min_value:1,max_value:1000,digits:7,decimal_places:2);
+
+													toggle_button(identifier: "NoConstrainIconScale", 
+															image: {normal: "NoConstrainIcon.png", dark_normal:"NoConstrainIconDark.png", down: "LinkOnConstrainIcon.png", dark_down:"LinkOnConstrainIconDark.png"},
+															alt: "$$$/SwatchLibs/ToolTips/SpacingConstrainOff=Maintain Spacing Proportions",
+															value_on: true, value_off: false, 
+															bind: @ConstrainScale, 
+															vertical: @align_center,
+															wants_focus: false,
+															horizontal: @align_right);
+												}
+											}
+										}
+									}
+								}
+								column(guide_mask:[@guide_label],child_horizontal:@align_fill)
+								{
+										edit_number(identifier:"Overlap", name: '$$$/Print/Options/Setup/Overlap=&Overlap:', stepper: true,bind_final: true,
+										unit:"CurrentDocumentUnit", bind:@valueOverlap, min_value:@minOverlap,max_value:@maxOverlap,
+										digits:5,decimal_places:2);
+										edit_number(identifier:"hScale", name: '$$$/Print/Options/General/hScale=&H:', bind: @ScalingHeight,bind_final: true,
+										min_value:1,max_value:1000,	digits:7,decimal_places:2);
+								}
+							}
+							row(child_horizontal:@align_fill,spacing: @label_widget_spacing)
+							{
+									checkbox(identifier:"UseTileRange", name: '$$$/Print/Options/General/TileRange=Tile Ran&ge:',bind:@UseTileRange);
+									edit_text(identifier:"TileRangeValue", name:"",horizontal: @align_fill,guide_mask: [ @guide_label ],bind:@TileRangeValue,characters:12);
+							}
+						}
+					}
+					panel(bind: @valuePresets, value: 2, child_horizontal: @align_fill,guide_mask: [ @guide_baseline],spacing:@inter_group_spacing)
+					{
+						group(name: "$$$/Print/Options/Marks/Marks=Marks", child_horizontal: @align_fill)
+						{
+							checkbox(identifier:"AllMarks",name: "$$$/Print/Options/Marks/All=&All Printer^}s Marks", guide_mask: [ @guide_label ]);
+							row()
+							{
+								column(horizontal: @align_left)
+								{
+									checkbox(identifier:"TrimMarks",name: "$$$/Print/Options/Marks/Trim=Trim Mar&ks",indent: gIndent, guide_mask: [ @guide_label ]);
+									checkbox(identifier:"RegistrationMarks",name: "$$$/Print/Options/Marks/Reg=Registration &Marks",indent: gIndent, guide_mask: [ @guide_label ]);
+									checkbox(identifier:"ColorBars",name: "$$$/Print/Options/Marks/Bar=Colo&r Bars",indent: gIndent, guide_mask: [ @guide_label ]);
+									checkbox(identifier:"PageInfo",name: "$$$/Print/Options/Marks/Info=Pa&ge Information",indent: gIndent, guide_mask: [ @guide_label ]);
+								}
+								column(horizontal: @align_right,child_horizontal: @align_fill)
+								{
+									popup(identifier:"MarkType",name: "$$$/Print/Options/Marks/Type=Pr&inter Mark Type:", include_custom_item: false,
+											items:[{name:"$$$/Print/Str/1401=Roman",value:1},
+													{name:"$$$/Print/Str/1402=Japanese",value:2}
+											], bind:@MarkType);
+									popup(identifier:"MarkWeight",name: "$$$/Print/Options/Marks/Weight=Trim Mark &Weight:", include_custom_item: false,
+										items:[{name:"$$$/Print/TrimWeight/1=0.125 pt",value:0},
+											{name:"$$$/Print/TrimWeight/2=0.25 pt",value:1},
+											{name:"$$$/Print/TrimWeight/3=0.5 pt",value:2}
+											], bind:@MarkWeight);
+									edit_number(identifier:"MarkOffset", bind:@MarkOffset,bind_final:true,
+												name: "$$$/Print/Options/Marks/Offset=O&ffset:", stepper: true, unit:"CurrentDocumentUnit",
+												digits:7,decimal_places:2,min_value:0,max_value:72);
+								}
+							}
+						}
+						group(name: "$$$/Print/Options/Marks/Bleeds=Bleeds", child_horizontal: @align_fill, placement: @place_column)
+						{
+							checkbox(identifier: "UseDocBleeds", name: "$$$/Print/Options/DocumentBleed=Use Document Bleed Settings", guide_mask: [ @guide_label ]);
+							row(horizontal: @align_left, guide_mask: [ @guide_label ])
+							{
+								column()
+								{
+									edit_number(identifier: "BleedTop",name: "$$$/Print/Options/Marks/Top=&Top:", stepper: true, decimal_places:4, unit:"CurrentDocumentUnit");
+									edit_number(identifier: "BleedBottom",name: "$$$/Print/Options/Marks/Bottom=&Bottom:", stepper: true, decimal_places:4, unit:"CurrentDocumentUnit");
+								}
+								column(vertical:@align_center)
+								{
+									toggle_button(identifier: "BleedNoConstrainIcon", 
+															image: {normal: "NoConstrainIcon.png", dark_normal:"NoConstrainIconDark.png", down: "LinkOnConstrainIcon.png", dark_down:"LinkOnConstrainIconDark.png"},
+															alt: "$$$/_NewArtworkDlg/Dlg/ArtworkNew/zLockBleedString=Make all settings the same",
+															value_on: true, value_off: false, 
+															bind: @bleed_values_locked, 
+															vertical: @align_center,
+															wants_focus: false);
+									
+								}
+								column()
+								{
+									edit_number(identifier: "BleedLeft",name: "$$$/Print/Options/Marks/Left=&Left:", stepper: true,decimal_places:4, unit:"CurrentDocumentUnit");
+									edit_number(identifier: "BleedRight",name: "$$$/Print/Options/Marks/Right=Rig&ht:", stepper: true,decimal_places:4, unit:"CurrentDocumentUnit");
+								}
+							}
+						}
+					}
+					panel(bind: @valuePresets, value: 3,guide_mask: [ @guide_baseline])
+					{
+						column(child_horizontal: @align_fill,guide_mask: [ @guide_baseline,@guide_label])
+						{
+							popup(identifier:"ModePopup",name: '$$$/Print/Options/Out/Mode=&Mode:',include_custom_item: false, items: @iMode, bind: @valueMode);
+							popup(identifier:"Emul",name: '$$$/Print/Options/Out/Emul=Emu&lsion:',include_custom_item: false, items: @iEmulsion, bind: @valueEmulsion);
+							popup(identifier:"ImgOption",name: '$$$/Print/Options/Out/Img=&Image:',include_custom_item: false, items: @iImageOptions, bind: @valueImage);
+							popup(identifier:"PrinterRes",name: '$$$/Print/Options/Out/Res=Printer &Resolution:',include_custom_item: false);
+						}
+						column(horizontal: @align_fill,child_horizontal: @align_fill)
+						{
+							checkbox(identifier:"ConvertAllSpot", name: '$$$/Print/Options/Out/Convert=&Convert All Spot Colors to Process', guide_mask: [ @guide_label ],bind:@ConvertAllSpot);
+							checkbox(identifier:"OPB",name: '$$$/Print/Options/Out/OPB=&Overprint Black', guide_mask: [ @guide_label ],bind:@OverPrintBlack);
+							row()
+							{
+								static_text(horizontal: @align_left, name: '$$$/Print/Options/Out/Inks=Document Ink Options', vertical: @align_top);
+								button(identifier:"ResetInks",horizontal: @align_right, name: '$$$/Print/Options/Out/ResetInks=Reset to De&faults', vertical: @align_top);
+							}
+							multicolumn_tree(identifier:"InkList",height: 164, vertical: @align_top, guide_mask: [ @guide_label ]);
+						}
+					}
+					panel(bind: @valuePresets, value: 4, child_horizontal: @align_fill,guide_mask: [ @guide_baseline],spacing:@inter_group_spacing)
+					{
+						group(name: '$$$/Print/Options/Graph/Paths=Paths', child_horizontal: @align_fill)
+						{
+							row(child_horizontal: @align_fill, spacing: @label_widget_spacing)
+							{
+								column()
+								{
+									static_text(horizontal: @align_right, name: '$$$/Print/Options/Graph/Flatness=Flatness:');
+								}
+								column(child_horizontal: @align_fill,spacing:0)
+								{
+									row(child_horizontal: @align_fill)
+									{
+									slider(identifier:"Flatness",vertical: @align_top, width: 200,
+									ticks_pos: [0,1/9,2/9,3/9,4/9,5/9,6/9,7/9,8/9,1],
+ 									show_ticks: true,
+									snap_on_ticks: false,
+									interval:0.1,
+									slider_point: @up,
+									bind: @valueFlatness, min_max_filter: @rangeFlatness);
+									}
+									row()
+									{
+										static_text(horizontal: @align_left, name: '$$$/Print/Options/Graph/Quality=Quality',theme_font_size: @small);
+										static_text(horizontal: @align_right, name: '$$$/Print/Options/Graph/Speed=Speed',theme_font_size: @small);
+									}
+								}
+								column()
+								{
+									checkbox(identifier:"AutoFlat", name: '$$$/Print/Options/Graph/Auto=&Automatic', bind: @valueAutoFlat,guide_mask: [ @guide_label ],
+									alt:"$$$/Print/Str/AutoFlatness=Automatically choose device optimal flatness");
+								}
+							}
+						}
+						group(name: '$$$/Print/Options/Graph/Fonts=Fonts') 
+						{
+							popup(identifier:"Download",name: '$$$/Print/Options/Graph/Download=D&ownload:',include_custom_item: false, 
+								items:[{name:"$$$/Print/Str/1901=None", value:1},
+										{name:"$$$/Print/Str/1902=Subset", value:2},
+										{name:"$$$/Print/Str/1903=Complete", value:3}],
+								bind:@FontsDownload,
+								vertical: @align_center);
+						}
+						group(name: '$$$/Print/Options/Graph/Opt=Options') 
+						{
+							column(child_horizontal: @align_fill)
+							{
+								popup(identifier:"PSLevel",name: '$$$/Print/Options/Graph/Level=PostS&cript^R:',include_custom_item: false,
+									items:[{name:"$$$/Print/Str/2001=LanguageLevel 2", value:2},
+											{name:"$$$/Print/Str/2002=LanguageLevel 3", value:3}],
+									bind:@PSLevel);
+								popup(identifier:"PSFormat",name: '$$$/Print/Options/Graph/Format=Data &Format:',include_custom_item: false,
+									items:[{name:"$$$/Print/Str/2101=Binary", value:1},
+										{name:"$$$/Print/Str/2102=ASCII", value:2}],
+									bind:@PSFormat);
+							}
+							checkbox(identifier:"L1Grad",name: '$$$/Print/Options/Graph/L1Grad=Compatible &Gradient and Gradient Mesh Printing', guide_mask: [ @guide_label ],bind:@L1Grad);
+							display_text(name: '$$$/Print/Options/Graph/RasEff=Document Raster Effects Resolution:',bind:@DRES,guide_mask: [ @guide_label]);
+							row(spacing:@related_spacing)
+							{
+								info_icon(identifier:"info_DRESicon" ,icontype: "note", size: "small");
+								static_text(identifier:"info_DREStext", name: "$$$/Print/Options/Graph/RasEffWarn=This value can be edited from Effect > Document Raster Effects Settings.",
+								theme_font_size: @small);
+							}
+						}
+					}
+					panel(bind: @valuePresets, value: 5, child_horizontal: @align_fill,guide_mask: [ @guide_baseline],spacing:@inter_group_spacing)
+					{
+						group(name: '$$$/Print/Options/Color/Print=Print Method', guide_mask: [ @guide_label]) 
+						{
+							display_text(identifier:"DocumentProfile", name: "$$$/Print/Options/Color/Document=Document Profile:",
+								bind:@DocProfile,horizontal: @align_fill);
+							row(horizontal: @align_fill, child_horizontal: @align_fill)
+							{
+								column(child_horizontal: @align_fill)
+								{
+									popup(identifier:"ColorHandling", name: '$$$/Print/Options/Color/Handling=&Color Handling:',include_custom_item: false,bind:@ColorHandling,
+										items:[{name:"$$$/Print/Str/2301=Let Illustrator determine colors", value:1},
+											{name:"$$$/Print/Str/2302=Let PostScript^R printer determine colors", value:2}],
+											popup_maximum_width_chars: 20);
+									popup(identifier:"PrinterProfile", name: '$$$/Print/Options/Color/Printer=Printer Pro&file:',include_custom_item: false, popup_maximum_width_chars: 20);
+									popup(identifier:"RenderingIntent", name: '$$$/Print/Options/Color/Intent=Rendering &Intent:',include_custom_item: false,bind:@RenderingIntent,
+										items:[{name:"$$$/Print/Str/2401=Perceptual", value:1},
+											{name:"$$$/Print/Str/2402=Saturation", value:2},
+											{name:"$$$/Print/Str/2403=Relative Colorimetric", value:3},
+											{name:"$$$/Print/Str/2404=Absolute Colorimetric", value:4}],
+											popup_maximum_width_chars: 20);
+								}
+								column(child_vertical: @align_top)
+								{
+									panel(bind:@ShowColorWarning,value:true,margin:0)
+									{
+										info_icon(identifier:"ColorWarning",icontype: "note", size: "small");
+									}
+								}
+							}
+							row(child_vertical:@align_center)
+							{
+								overlay()
+								{
+									panel(bind:@DocColorModel,value:1,margin:0)
+									{
+										checkbox(identifier:"PreserveCMYK", name: "$$$/Print/Str/PreserveCMYK=Preserve CMYK Nu&mbers",bind:@PreserveNumbers);	
+									}
+									panel(bind:@DocColorModel,value:2,margin:0)
+									{
+										checkbox(identifier:"PreserveRGB", name: "$$$/Print/Str/PreserveRGB=Preserve RGB Nu&mbers",bind:@PreserveNumbers);	
+									}
+									panel(bind:@DocColorModel,value:0,margin:0)
+									{
+										checkbox(identifier:"PreserveColor", name: "$$$/Print/Str/PreserveColor=Preserve Color Nu&mbers",bind:@PreserveNumbers);	
+									}
+								}
+								panel(bind:@ShowPreservationWarning,value:true,margin:0)
+								{
+									info_icon(identifier:"ColorPreserveWarning",icontype: "warning", size: "small");
+								}
+							}
+						}
+						group(horizontal: @align_fill,child_horizontal: @align_fill, header:'display_text(identifier:"DescHeader",value:@ValueColorDescriptionLabel)', vertical: @align_top,height:50)
+						{
+							row(spacing:@related_spacing)
+							{
+								overlay()
+								{
+									panel(bind:@ColorDescriptionLabelIndex,value:2)
+									{
+										info_icon(identifier:"DescNote",icontype: "note", size: "small");
+									}
+									panel(bind:@ColorDescriptionLabelIndex,value:1)
+									{
+										info_icon(identifier:"DescWarning",icontype: "Warning", size: "small");
+									}
+								}
+								static_text(name:@ColorDescription,characters:1,horizontal: @align_fill,theme_font_size:@small);
+							}
+						}
+					}
+					panel(bind: @valuePresets, value: 6, child_horizontal: @align_fill,guide_mask: [ @guide_baseline],spacing:@inter_group_spacing)
+					{
+						checkbox(identifier:"PrintAsBitmap", bind:@BitMapPrinting, name: '$$$/Print/Options/Advanced/Bitmap=Print as &Bitmap', guide_mask: [ @guide_label ]);
+						group(name: '$$$/Print/Options/Advanced/Trans=Overprint and Transparency Flattener Options', child_horizontal: @align_fill) 
+						{
+							row(child_horizontal: @align_fill)
+							{
+								column(child_horizontal: @align_fill, horizontal: @align_fill)
+								{
+									popup(identifier:"OverPrints",bind:@OverPrints, name: '$$$/Print/Options/Advanced/OP=&Overprints:',include_custom_item: false,
+									items:[{name:"$$$/Print/Str/2601=Preserve", value:0},
+											{name:"$$$/Print/Str/2602=Discard", value:1},
+											{name:"$$$/Print/Str/2603=Simulate", value:2}]);
+									
+									checkbox(identifier:"SuppressWhiteOverprint", bind:@SuppressWhiteOverprint, name: '$$$/Print/Options/Advanced/DiscardWhiteOverprint=Discard &White Overprint');
+									
+									popup(identifier:"FlatPreset", name: '$$$/Print/Options/Advanced/Style=Prese&t:', popup_maximum_width_chars: 12);
+								}
+								column(vertical: @align_bottom)
+								{
+									button(identifier:"FlatCustom", name: '$$$/Print/Options/FlatStyleCustom= &Custom... ');
+								}
+							}
+						}
+					}
+					panel(bind: @valuePresets, value: 7, child_horizontal: @align_fill,guide_mask: [ @guide_label,@guide_baseline],spacing:@inter_group_spacing)
+					{
+						multicolumn_tree(identifier:"SummaryList", height: 260, width: 300, name:'$$$/Print/Options/Summary/Opt=Options:');
+						multicolumn_tree(identifier:"Warnings", height: 80, width: 300, name:'$$$/Print/Options/Summary/Warn=Warnings:');
+						row(spacing: 0)
+						{
+							guide_consumer(consume_horizontal: 1);
+							button(identifier:"SaveSummary", name: '$$$/Print/Options/Summary/Save=S&ave Summary...', vertical: @align_top, horizontal:@align_left);
+						}
+					}
+				}
+			}
+		}
+		row(horizontal: @align_fill,guide_mask: [ @guide_baseline,@guide_label],spacing:@separated_spacing)
+		{
+			row(horizontal: @align_left)
+			{
+				optional(bind: @isMac,value:true)
+				{
+					button(name: '$$$/Print/Options/Setup=Page Set&up...', identifier: "setupButton", commit_button: true);
+				}
+				button(name: @PrinterString,identifier: "printerButton", commit_button: true);
+			}
+			row(spacing: @button_group_spacing, horizontal: @align_right)
+			{
+				optional(bind: @editMode,value:false)
+				{
+					button(name: '$$$/Print/Options/Apply=Do&ne',identifier: "doneButton",commit_button: true);
+				}
+				row(reverse: os==@mac,spacing: @related_spacing)
+				{
+					button(name: '$$$/Print/Options/Print=Print',identifier: "okButton",commit_button: true);
+					button(name: '$$$/Print/Options/Cancel=Cancel',identifier: "cancelButton",commit_button: true);
+				}
+			}
+		}
+    }
+}

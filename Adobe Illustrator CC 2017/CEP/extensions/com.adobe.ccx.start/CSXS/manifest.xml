@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionManifest Version="6.0" ExtensionBundleId="com.adobe.ccx.start" ExtensionBundleVersion="1.5.0.034"
+		ExtensionBundleName="CCX Start" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SHA="2723ccc">
+	<ExtensionList>
+		<Extension Id="com.adobe.ccx.start" Version="1.5.0.034" />
+		<Extension Id="com.adobe.ccx.open" Version="1.5.0.034" />
+		<Extension Id="com.adobe.ccx.fnft" Version="1.5.0.034" />
+	</ExtensionList>
+	<ExecutionEnvironment>
+		<HostList>
+			<Host Name="AEFT" Version="[14.0,99.9]" />
+			<Host Name="IDSN" Version="[12.1,99.9]" />
+			<Host Name="ILST" Version="[21.1,99.9]" />
+			<Host Name="PHXS" Version="[18.0,99.9]" />
+			<Host Name="PPRO" Version="[11.0,99.9]" />
+			<Host Name="MUSE" Version="[2017.0,2099.9]" />
+			<Host Name="DRWV" Version="[16.6,99.9]" />
+		</HostList>
+		<LocaleList>
+			<Locale Code="All" />
+		</LocaleList>
+		<RequiredRuntimeList>
+			<RequiredRuntime Name="CSXS" Version="6.0" />
+		</RequiredRuntimeList>
+	</ExecutionEnvironment>
+	<DispatchInfoList>
+		<Extension Id="com.adobe.ccx.start">
+			<DispatchInfo >
+				<Resources>
+                    <MainPath>./index.html</MainPath>
+                    <ScriptPath>./ccx-start.jsx</ScriptPath>
+                    <CEFCommandLine>
+						<Parameter>--nodejs-disabled</Parameter>
+						<Parameter>--high-dpi-support=1</Parameter>
+						<Parameter>--disable-pinch</Parameter>
+                    </CEFCommandLine>
+				</Resources>
+				<Lifecycle>
+					<AutoVisible>true</AutoVisible>
+				</Lifecycle>
+				<UI>
+					<Type>Dashboard</Type>
+					<Menu>%CCX_START_PANEL_NAME</Menu>
+					<Geometry>
+						<Size>
+							<Height>788</Height>
+							<Width>881</Width>
+						</Size>
+						<MaxSize>
+							<Height>1010</Height>
+							<Width>1406</Width>
+						</MaxSize>
+						<MinSize>
+							<Height>788</Height>
+							<Width>881</Width>
+						</MinSize>
+					</Geometry>
+				</UI>
+			</DispatchInfo>
+			<DispatchInfo Host="PPRO">
+				<UI>
+					<Type>Modeless</Type>
+				</UI>
+			</DispatchInfo>
+			<DispatchInfo Host="AEFT">
+				<UI>
+					<Type>Modeless</Type>
+				</UI>
+			</DispatchInfo>
+		</Extension>
+		<Extension Id="com.adobe.ccx.open">
+			<DispatchInfo >
+				<HostList>
+					<Host Name="AEFT" />
+					<Host Name="IDSN" />
+		            <Host Name="ILST" />
+					<Host Name="PHXS" />
+					<Host Name="PPRO" />
+				</HostList>
+				<Resources>
+                    <MainPath>./index.html</MainPath>
+                    <ScriptPath>./ccx-start.jsx</ScriptPath>
+                    <CEFCommandLine>
+						<Parameter>--nodejs-disabled</Parameter>
+						<Parameter>--high-dpi-support=1</Parameter>
+						<Parameter>--disable-pinch</Parameter>
+                    </CEFCommandLine>
+				</Resources>
+				<Lifecycle>
+					<AutoVisible>true</AutoVisible>
+				</Lifecycle>
+				<UI>
+					<Type>Panel</Type>
+					<Menu>%CCX_OPEN_PANEL_NAME</Menu>
+					<Geometry>
+						<Size>
+							<Height>688</Height>
+							<Width>425</Width>
+						</Size>
+						<MinSize>
+							<Height>100</Height>
+							<Width>100</Width>
+						</MinSize>
+					</Geometry>
+                    <Icons>
+						 <Icon Type="Normal">./images/SP_PL_RecentFiles_N.png</Icon>
+						 <Icon Type="RollOver">./images/SP_PL_RecentFiles_N.png</Icon>
+						 <Icon Type="DarkNormal">./images/SP_PL_RecentFiles_N_D.png</Icon>
+						 <Icon Type="DarkRollOver">./images/SP_PL_RecentFiles_N_D.png</Icon>
+                    </Icons>
+				</UI>
+			</DispatchInfo>
+		</Extension>
+		<Extension Id="com.adobe.ccx.fnft">
+			<DispatchInfo >
+				<HostList>
+					<Host Name="PHXS" />
+					<Host Name="ILST" />
+					<Host Name="IDSN" />
+				</HostList>
+				<Resources>
+                    <MainPath>./fnft.html</MainPath>
+                    <CEFCommandLine>
+						<Parameter>--nodejs-disabled</Parameter>
+						<Parameter>--high-dpi-support=1</Parameter>
+						<Parameter>--disable-pinch</Parameter>
+                    </CEFCommandLine>
+				</Resources>
+				<Lifecycle>
+					<AutoVisible>true</AutoVisible>
+				</Lifecycle>
+				<UI>
+					<Type>ModalDialog</Type>
+					<Menu>%CCX_FNFT_DIALOG_NAME</Menu>
+					<Geometry>
+						<Size>
+							<Height>615</Height>
+							<Width>1070</Width>
+						</Size>
+						<MaxSize>
+							<Height>1230</Height>
+							<Width>2140</Width>
+						</MaxSize>
+						<MinSize>
+							<Height>615</Height>
+							<Width>1070</Width>
+						</MinSize>
+					</Geometry>
+				</UI>
+			</DispatchInfo>
+			<DispatchInfo Host="ILST">
+				<Resources>
+					<ScriptPath>./jsx/xsdom-host-ILST.js</ScriptPath>
+				</Resources>
+			</DispatchInfo>
+			<DispatchInfo Host="PHXS">
+				<Resources>
+					<ScriptPath>./jsx/xsdom-host-PHXS.js</ScriptPath>
+				</Resources>
+			</DispatchInfo>
+			<DispatchInfo Host="IDSN">
+				<Resources>
+					<ScriptPath>./jsx/xsdom-host-IDSN.js</ScriptPath>
+				</Resources>
+			</DispatchInfo>
+		</Extension>
+	</DispatchInfoList>
+</ExtensionManifest>

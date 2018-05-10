@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+	<menuItem id="1" text="$$$/SwatchLibs/PatOptions/FlyoutMenu/MakePattern=&amp;Make Pattern"></menuItem>
+  <menuItem id="2" text="$$$/SwatchLibs/PatOptions/FlyoutMenu/EditPattern=&amp;Edit Pattern"></menuItem>
+  <menuItem id="3" text="$$$/SwatchLibs/PatOptions/FlyoutMenu/SaveACopy=&amp;Save a Copy"></menuItem>
+  <separator></separator>
+  <menuItem id="4" text="$$$/SwatchLibs/PatOptions/FlyoutMenu/TileEdgeColor=&amp;Tile Edge Color..."></menuItem>
+  <separator></separator>
+  <menuItem id="5" text="$$$/SwatchLibs/PatOptions/FlyoutMenu/AutoClose=&amp;Auto-Close on Exiting Edit Mode"></menuItem>
+  <menuItem id="6" text="$$$/SwatchLibs/PatOptions/FlyoutMenu/ExitPatternEditingMode=E&amp;xit Pattern Editing Mode"></menuItem>
+</menu>

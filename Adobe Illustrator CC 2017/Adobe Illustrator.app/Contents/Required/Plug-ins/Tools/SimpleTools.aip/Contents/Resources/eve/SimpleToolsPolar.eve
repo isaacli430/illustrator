@@ -1,0 +1,110 @@
+layout SimpleToolsPolar
+{
+    view subview(identifier: "AIEveSubView",
+                    placement: @place_column,
+                    show_border: false,
+					spacing: @unrelated_spacing,
+                    layout_theme: @dialog_large)
+    {
+        
+		row(child_horizontal: @align_fill,spacing: @unrelated_spacing)
+{
+		column(child_horizontal: @align_fill,
+                child_vertical: @align_fill,spacing: @inter_group_spacing)
+        {
+            group(name: "$$$/SegmentTools/DITL/17103/24=Default Size",
+                    identifier: "defaultSize")
+            {
+                row ()
+                {
+                    unit_hot_number(identifier: "width", min_value:1, max_value: 16383,
+									name: "$$$/SegmentTools/DITL/17103/14=&Width:",
+									decimal_places: 2,
+									set_default_focus: true,
+									digits: 5,
+									bind: @widthAdmCell);
+                    pin_selector(identifier: "4PointPinSelector",
+                                    selector_type: "PinSelector_FourPinType",
+                                    wants_focus: false,
+									bind: @fourPointPinSelectorAdmCell);
+                }
+                unit_hot_number(identifier: "height",min_value:1, max_value: 16383,
+								name: "$$$/SegmentTools/DITL/17103/15=&Height:",
+								decimal_places: 2,
+								digits: 5,
+								bind: @heightAdmCell);
+            }
+            group(name: "$$$/SegmentTools/DITL/17103/25=Concentric Dividers",
+                    identifier: "dividers")
+            {
+                unit_hot_number(identifier: "number", min_value:0, max_value: 999,
+								name: "$$$/SegmentTools/DITL/17103/16=Nu&mber:",
+								decimal_places: 0,
+								digits: 3,
+								bind: @numberAdmCell);
+                row ()
+                {
+                    combo_slider(identifier: "skew",
+                                    slider_point: @up,
+                                    min_max_filter: @combo_slider_filter,
+                                    name: "$$$/SegmentTools/DITL/17103/18=&Skew:",
+                                    decimal_places: 2,
+                                    digits: 4, minLength: 170,
+                                    left_mini_label: "$$$/SegmentTools/DITL/17103/17=In",
+                                    right_mini_label: "$$$/SegmentTools/DITL/17103/19=Out",
+                                    unit: "NumberEditUnit_Percent",
+									bind: @skewAdmCell);
+                }
+            }
+            group(name: "$$$/SegmentTools/DITL/17103/26=Radial Dividers",
+                    identifier: "dividers1")
+            {
+                unit_hot_number(identifier: "number1",min_value:0, max_value: 999,
+								name: "$$$/SegmentTools/DITL/17103/20=Num&ber:",
+								decimal_places: 0,
+								digits: 3,
+								bind: @number1AdmCell);
+                row()
+                {
+                    combo_slider(identifier: "skew1",
+                                    slider_point: @up,
+                                    min_max_filter: @combo_slider_filter,
+                                    name: "$$$/SegmentTools/DITL/17103/22=S&kew:",
+                                    decimal_places: 2, minLength: 170,
+                                    digits: 4,
+                                    left_mini_label: "$$$/SegmentTools/DITL/17103/21=Bottom",
+                                    right_mini_label: "$$$/SegmentTools/DITL/17103/23=Top",
+                                    unit: "NumberEditUnit_Percent",
+									bind: @skew1AdmCell);
+                }
+            }
+        }    
+}		
+	row(placement: @place_column)
+	{
+		checkbox(identifier: "checkBox",
+                        name: "$$$/SegmentTools/DITL/17103/11=&Create Compound Path From Ellipses",
+                        bind: @checkBoxAdmCell,
+                        guide_mask: [@guide_label]);
+            checkbox(identifier: "fill",
+                        name: "$$$/SegmentTools/DITL/17103/12=&Fill Grid",
+                        bind: @fillAdmCell,
+                        guide_mask: [@guide_label]);
+        }
+        
+
+row(horizontal: @align_right,
+			spacing: @related_spacing,
+                 reverse: os == @mac)
+        {
+            button(default: true,
+                    identifier: "okButton",
+                    commit_button: true,
+                    name: "$$$/gOK=OK");
+            button(identifier: "cancel_ResetButton",
+					commit_button: true,
+                    items: [{name: "$$$/gCancel=Cancel", action: @cancel},
+							{name: "$$$/gReset=Reset", action: @reset, modifiers: @opt}]);
+		}
+	}
+}

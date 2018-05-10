@@ -1,0 +1,73 @@
+layout InnerGlowOptionsDialog
+{
+	view subview(identifier: "AIEveSubView",
+					placement: @place_column,
+					show_border: false,
+					layout_theme: @dialog_large,
+					child_horizontal: @align_fill,spacing:@unrelated_spacing)
+	{
+		column(child_horizontal: @align_fill)
+		{
+			
+				row(child_vertical:@align_center)
+				{
+					popup(identifier: "mode", name:"$$$/DropShadow/Dlg/InnerGlow/BlendModeText=&Mode:",
+						set_default_focus: true,
+						include_custom_item: false, bind: @BlendMode,
+						items: [{name:"$$$/DropShadow/Mnu/16000/1=Normal",		value: 0},
+							{name:"-"},
+							{name:"$$$/DropShadow/Mnu/16000/2=Multiply",	value: 1},
+							{name:"$$$/DropShadow/Mnu/16000/3=Screen",		value: 2},
+							{name:"$$$/DropShadow/Mnu/16000/4=Overlay",		value: 3},
+							{name:"$$$/DropShadow/Mnu/16000/5=Soft Light",	value: 4},
+							{name:"$$$/DropShadow/Mnu/16000/6=Hard Light",	value: 5},
+							{name:"-"},
+							{name:"$$$/DropShadow/Mnu/16000/7=Color Dodge",	value: 6},
+							{name:"$$$/DropShadow/Mnu/16000/8=Color Burn",	value: 7},
+							{name:"-"},
+							{name:"$$$/DropShadow/Mnu/16000/9=Darken",		value: 8},
+							{name:"$$$/DropShadow/Mnu/16000/10=Lighten",	value: 9},
+							{name:"$$$/DropShadow/Mnu/16000/11=Difference",	value: 10},
+							{name:"$$$/DropShadow/Mnu/16000/12=Exclusion",	value: 11},
+							{name:"-"},
+							{name:"$$$/DropShadow/Mnu/16000/17=Hue",		value: 12},
+							{name:"$$$/DropShadow/Mnu/16000/18=Saturation",	value: 13},
+							{name:"$$$/DropShadow/Mnu/16000/19=Color",		value: 14},
+							{name:"$$$/DropShadow/Mnu/16000/20=Luminosity",	value: 15}
+							]
+					);
+					swatch(identifier: "SelectedColorWell");
+				}
+				unit_hot_number(identifier: "opacity",
+								name: "$$$/DropShadow/Dlg/InnerGlow/OpacityText=&Opacity:",
+								digits:6,decimal_places: 0,
+								stepper:true, min_value:0, max_value:100,
+								unit: "NumberEditUnit_Percent"); 
+				unit_hot_number(identifier: "blur",
+							name: "$$$/DropShadow/Dlg/InnerGlow/BlurText=&Blur:",
+							digits:6,decimal_places: 2,
+							stepper:true, min_value:0, max_value:144,
+							unit:"CurrentDocumentUnit");
+				radiogroup(identifier: "Position",child_horizonatal:@align_right,margin:0,show_border:false,placement:@place_row)
+				{
+					radio_button(identifier: "Center", bind: @PlacementRadioGp, value:"Center", name: "$$$/DropShadow/Dlg/InnerGlow/GlowCenter=&Center");
+					radio_button(identifier: "Edge", bind: @PlacementRadioGp, value:"Edge", name: "$$$/DropShadow/Dlg/InnerGlow/GlowEdge=&Edge");
+				}
+			
+		  }
+		row(spacing:@separated_spacing,child_vertical:@align_center)
+		{
+				checkbox(name: "$$$/DropShadow/Dlg/InnerGlow/Preview=&Preview",
+				identifier: "previewButton", bind:@Preview,horizontal: @align_left,guide_mask: [@guide_label]);
+				row(reverse:os==@mac,horizontal: @align_right,spacing:@related_spacing)
+				{
+					button(name: "$$$/gOK=OK",
+						identifier: "okButton",
+							commit_button: true);
+					button(name: "$$$/gCancel=Cancel",
+						identifier: "cancelButton",
+							commit_button: true);
+				}
+		}
+	 }
+}

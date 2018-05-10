@@ -1,0 +1,36 @@
+layout JavaScriptFiles
+{
+   view subview(identifier: "AIEveSubView",
+				 placement: @place_column, child_horizontal:@align_fill,
+				 spacing: @unrelated_spacing,
+				 show_border: false,
+				 layout_theme: @dialog_large)
+    {	
+		column(horizontal: @align_fill)
+		{
+			static_text(identifier: "staticTextItem", name: "$$$/svgFileFormatUI/JavaScriptFiles/staticText=JavaScript/SVG/HTML Files Associated with Document:");
+
+			list(identifier: "listBoxItem", set_default_focus: true,
+				height: 150, width: 445,horizontal: @align_fill);
+		}
+				
+		row(spacing: @separated_spacing,child_vertical: @align_fill)
+		{
+			row(child_horizontal:@align_left)
+			{
+			button(identifier: "AddItem", action: @AddAction, vertical: @align_fill,
+				name: "$$$/svgFileFormatUI/JavaScriptFiles/Add=&Add...",commit_button: true);
+
+			button(identifier: "RemoveItem", action: @RemoveAction, vertical: @align_fill,
+				name: "$$$/svgFileFormatUI/JavaScriptFiles/Remove=&Remove",commit_button: true);
+
+			button(identifier: "ClearItem", action: @ClearAction, vertical: @align_fill, 
+				name: "$$$/svgFileFormatUI/JavaScriptFiles/Clear=&Clear",commit_button: true );
+			}
+			
+
+				button(identifier: "okButton", commit_button: true,
+					name: "$$$/svgFileFormatUI/JavaScriptFiles/Done=&Done", horizontal: @align_right);
+		}
+    }
+}

@@ -1,0 +1,62 @@
+* {
+	margin:0;
+	padding:0;
+}
+html, body {
+    margin:0;
+    padding:0;
+	font-family:'Adobe Clean', sans-serif;
+}
+.content {
+	display:block;
+	position: relative;
+    background-color: #E1951D;
+    width: auto;
+	height: 36px;
+}
+.center {
+	text-align: center;
+	width: 100%;
+	font-size: 12px;
+	padding: 8px 0px 0px 0px;
+	color: #ffffff;
+}
+label {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+}
+button label {
+    position: relative;
+    top: -1px;
+}
+button {
+    background: transparent;
+    border: 2px solid rgb(75, 75, 75);
+	font-family:'Adobe Clean', sans-serif;
+    border-radius: 16px;
+    color: #ffffff;
+    padding: 0 14px;
+    font-size: 12px;
+    height: 21px;
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+	margin-right:12px;
+}
+.action {
+    border-color: #ffffff;
+    color: #ffffff;
+	float:right;
+}
+button:hover {
+    background-color: #ffffff;;
+    color: #006cec;
+    border-color: transparent;
+}
+.close {
+    cursor: pointer;
+	padding: 4px 12px 0 0;
+	float:right;
+    background: transparent;
+}

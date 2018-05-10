@@ -1,0 +1,33 @@
+layout DocumentControlGroup
+{
+    view subview(identifier: "DocumentControlGroup"
+				, placement: @place_row
+				, layout_theme: @controlbar
+				, show_border: false
+				, child_vertical: @align_center
+				, margin: 0
+				, spacing: 5
+				, height: 31)
+    {
+		optional(identifier: "DocumentControlGroupSubGroup"
+				, placement: @place_row
+				, child_vertical: @align_center
+				, margin: 0
+				, spacing: 5)
+		{
+			subview(margin:0, show_border: false, height: 25 , child_vertical:@align_center)
+			{
+				separator(orientation: @vertical, vertical: @align_fill);
+			}
+			button(identifier: "DocumentSetupButton"
+					, action: @DocumentSetupButtonAction
+					, name: "$$$/_ARTWORKD/Cap/Artwork=Document Setup"
+					, wants_focus: false);
+					
+			button(identifier: "PreferencesButton"
+					, action: @PreferencesButtonAction
+					, name: "$$$/DocuementControlGroup/Strs/Prefs=Preferences"
+					, wants_focus: false);
+		}
+	}
+}

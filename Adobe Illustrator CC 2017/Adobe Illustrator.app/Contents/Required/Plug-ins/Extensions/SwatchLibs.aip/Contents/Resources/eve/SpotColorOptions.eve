@@ -1,0 +1,62 @@
+layout SpotColorOptionsDialog
+{
+	view subview(identifier: "AIEveSubView",
+					layout_theme: @dialog_large,
+					spacing: @unrelated_spacing,
+					placement: @place_column,
+					show_border: false
+				)
+	{
+		column(horizontal: @align_fill,spacing: @inter_group_spacing)
+		{
+			group(identifier: "ChoiceClusterGroup",horizontal: @align_fill,					
+									name: '$$$/SwatchLibs/Dialog/SpotColorOptions/ChoiceCluster=Choose color definitions for manufacturer supplied spot colors',
+									child_horizontal: @align_fill)
+			{
+				radiogroup(identifier: "ChoiceClusterRadioGroup", show_border: false)
+				{
+					radio_button(bind: @ChoiceCluster,
+                         identifier: "StandardRadioButton",
+                         name: "$$$/SwatchLibs/Dialog/SpotColorOptions/Standard=Use &Lab values specified by the book manufacturer.",
+                         value: @Standard);
+
+            		radio_button(bind: @ChoiceCluster,
+                         identifier: "LegacyRadioButton",
+                         name: "$$$/SwatchLibs/Dialog/SpotColorOptions/Legacy=Use &CMYK values from the manufacturer^}s process books.",
+                         value: @Legacy);
+				} 
+			}
+
+			group(identifier: "DescClusterGroup",horizontal: @align_fill,						
+									name: '$$$/SwatchLibs/Dialog/SpotColorOptions/DescCluster=Description')
+			{
+				overlay(identifier: "overlay_group", horizontal: @align_fill)
+				{
+					panel()
+					{
+						static_text(characters: 1,  theme_font_size: @small, identifier: "DescTextNone",horizontal: @align_fill,
+	                        	  name: "$$$/SwatchLibs/Dialog/SpotColorOptions/DescTextNone=Move the cursor over the item you want described.");
+					}
+					panel()
+					{
+						static_text(characters: 1,  theme_font_size: @small, identifier: "DescTextLab",horizontal: @align_fill,
+	                        	  name: "$$$/SwatchLibs/Dialog/SpotColorOptions/DescTextLab=Use this to get the best possible match to the actual spot ink when spot colors are converted to process as part of a color-calibrated workflow.");
+					}
+					panel()
+					{
+						static_text(characters: 1,  theme_font_size: @small, identifier: "DescTextCMYK",horizontal: @align_fill,
+	                        	  name: "$$$/SwatchLibs/Dialog/SpotColorOptions/DescTextCMYK=Use this to get the manufacturer's recommended conversion of spot inks to process. The results will only give a reasonable match to the actual inks if printing under the conditions recommended by the manufacturer.");
+					}
+				}
+			}
+      	}
+      	  
+      	row(horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+		{
+    		button(name: "$$$/gOK=OK", commit_button: true,
+        	   identifier: "okButton");
+			button(name: "$$$/gCancel=Cancel", commit_button: true,
+    		   identifier: "cancelButton");
+		}
+    }
+}

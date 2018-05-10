@@ -1,0 +1,13 @@
+sheet LinkInformation
+{
+interface:
+	
+	AV_name			:"";
+	AV_location		:"";
+	AV_size			:"";
+	AV_kind			:"";
+	AV_created		:"";
+	AV_modified		:"";
+	AV_transform	:"";
+	AV_URL			:"";
+}

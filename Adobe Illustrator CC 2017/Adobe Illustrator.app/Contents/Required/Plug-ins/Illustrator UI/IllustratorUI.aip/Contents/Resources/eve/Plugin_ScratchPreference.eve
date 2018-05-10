@@ -1,0 +1,64 @@
+layout PluginScratchPreference
+{
+	view subview(identifier: "PluginScratchEveSubView",
+				 child_horizontal: @align_fill,
+				 placement: @place_column,
+				 show_border: false, 
+				 margin: [22,15,0,15],
+				 layout_theme: @dialog_large)
+	{
+		column(spacing: 0)
+		{
+		static_text(identifier: "PSPStaticTextCaption",
+					name: "$$$/Preferences/PluginsAndScratchDisks/Caption=Plug-ins & Scratch Disks"
+					);
+		
+		separator(identifier: "PSPTopSeparator");
+		}
+		
+		group(	identifier: "PSPPluginGrp",
+				placement:@place_row,
+				header: "checkbox(identifier: 'PSPCheckboxPlugins', bind: @AddlPluginCell, horizontal: @align_left,
+						name: '$$$/PrefsDlg/PSPDlg/PSPCheckboxPlugins=&Additional Plug-ins Folder')"
+				)
+		{
+			static_text(identifier: "PSPStaticTextPlugin",
+					name: "$$$/PrefsDlg/PSPDlg/PSPStaticTextPlugin=Additional Plugins Folder directories Placeholder: Additional Plugins Folder directories are displayed here",
+					characters: 20,theme_font_size: @small
+					);
+					
+					
+			button(identifier: "PSPButtonPluginChoose",
+					name: "$$$/PrefsDlg/PSPDlg/PSPButtonPluginChoose=&Choose...",
+					horizontal: @align_right,
+					bind: @result
+					);
+		}
+		
+		group(identifier: "PSPDiskGrp", name: "$$$/PrefsDlg/PSPDlg/PSPDiskGrp=Scratch Disks")
+		{
+			popup(	identifier: "PSPopupPrimary", popup_maximum_width_chars: 8,
+					include_custom_item: false,
+					items: [ { name: "Dummy Placeholder text", value: 0 } ],
+					name: "$$$/PrefsDlg/PSPDlg/PSPopupPrimary=P&rimary:"
+					);
+					
+			popup(	identifier: "PSPopupSecondary", popup_maximum_width_chars: 8,
+					include_custom_item: false,
+					items: [ { name: "Dummy Placeholder text", value: 0 } ],					
+					name: "$$$/PrefsDlg/PSPDlg/PSPopupSecondary=&Secondary:"
+					);
+		}
+		
+		optional(horizontal: @align_left, placement: @place_row, margin: 0, value: true, bind: @showAlert)
+		{
+			info_icon(icontype: "warning", size: "small");
+			
+			static_text(identifier: "PSPStaticTextWarn",
+					name: "$$$/PrefsDlg/PSPDlg/PSPStaticTextWarn=Note:  Changes will take effect the next time you start Illustrator.",
+					characters: 29,theme_font_size: @small,
+					adjust_baseline_for_single_line_text: false
+					);
+		}
+	}
+}

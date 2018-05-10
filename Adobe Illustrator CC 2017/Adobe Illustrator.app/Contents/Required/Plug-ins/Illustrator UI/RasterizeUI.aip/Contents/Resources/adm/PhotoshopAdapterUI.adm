@@ -1,0 +1,7 @@
+sheet PhotoshopAdapterUI
+{
+	interface:		              	   	               	      	 	
+		ResolutionPopup: 72;
+		OtherResolution: ResolutionPopup <== (ResolutionPopup == -1) ? OtherResolution : ResolutionPopup;
+		Antialias: 0;							
+}

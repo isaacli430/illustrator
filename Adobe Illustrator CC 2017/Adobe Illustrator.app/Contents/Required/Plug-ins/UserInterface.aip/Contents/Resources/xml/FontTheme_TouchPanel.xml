@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE ThemeParameters [
+
+  <!-- defines entities for the text ids -->
+  <!ENTITY kText_Main_Large "0"> <!-- default text id -->
+  <!ENTITY kText_Main_Small "1">
+  <!ENTITY kText_Title "2">
+  
+  <!-- entity definitions for the font size schemes -->
+  <!ENTITY kFontSizeSchemeSmall "0">
+  <!ENTITY kFontSizeSchemeMedium "1">
+  <!ENTITY kFontSizeSchemeLarge "2">
+]>
+
+<ThemeParameters>
+  <ThemeFonts>
+    <FontSize name="&kText_Main_Small;" size="8" scheme="&kFontSizeSchemeSmall;" />
+    <FontSize name="&kText_Main_Small;" size="8" scheme="&kFontSizeSchemeMedium;" />
+    <FontSize name="&kText_Main_Small;" size="8" scheme="&kFontSizeSchemeLarge;" />
+    <FontSize name="&kText_Main_Large;" size="10" scheme="&kFontSizeSchemeSmall;" />
+    <FontSize name="&kText_Main_Large;" size="10" scheme="&kFontSizeSchemeMedium;" />
+    <FontSize name="&kText_Main_Large;" size="10" scheme="&kFontSizeSchemeLarge;" />
+    <FontSize name="&kText_Title;" size="12" scheme="&kFontSizeSchemeSmall;" />
+    <FontSize name="&kText_Title;" size="12" scheme="&kFontSizeSchemeMedium;" />
+    <FontSize name="&kText_Title;" size="12" scheme="&kFontSizeSchemeLarge;" />
+  </ThemeFonts>
+</ThemeParameters>
+	

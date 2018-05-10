@@ -1,0 +1,5 @@
+sheet TxtSmartUI
+{
+  interface:
+    Size: 1;
+}

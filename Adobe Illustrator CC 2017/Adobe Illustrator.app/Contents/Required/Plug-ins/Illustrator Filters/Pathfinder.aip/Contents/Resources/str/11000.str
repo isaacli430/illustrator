@@ -1,0 +1,66 @@
+/* [1] */
+$$$/Pathfinder/Str/Action/1=Add
+/* [2] */
+$$$/Pathfinder/Str/Action/2=Intersect
+/* [3] */
+$$$/Pathfinder/Str/Action/3=Exclude
+/* [4] */
+$$$/Pathfinder/Str/Action/4=Subtract
+/* [5] */
+$$$/Pathfinder/Str/Action/5=Minus Back
+/* [6] */
+$$$/Pathfinder/Str/Action/6=Divide
+/* [7] */
+$$$/Pathfinder/Str/Action/7=Outline
+/* [8] */
+$$$/Pathfinder/Str/Action/8=Trim
+/* [9] */
+$$$/Pathfinder/Str/Action/9=Merge
+/* [10] */
+$$$/Pathfinder/Str/Action/10=Crop
+/* [11] */
+$$$/Pathfinder/Str/Action/11/Mac=Hard
+/* [12] */
+$$$/Pathfinder/Str/Action/12/Mac=Soft
+/* [13] */
+$$$/Pathfinder/Str/Action/13=Trap
+/* [14] */
+$$$/Pathfinder/Str/Action/14=Options
+/* [15] */
+$$$/Pathfinder/Str/Action/15=Repeat
+/* [16] */
+
+/* [17] */
+$$$/Pathfinder/Str/Action/17=Pathfinder Panel
+/* [18] */
+$$$/Pathfinder/Str/Action/18=Pathfinder
+/* [19] */
+
+/* [20] */
+$$$/Pathfinder/Str/Action/20=Mixing Rate: 
+/* [21] */
+$$$/Pathfinder/Str/Action/21=Thickness: 
+/* [22] */
+$$$/Pathfinder/Str/Action/22=Height/Width: 
+/* [23] */
+$$$/Pathfinder/Str/Action/23=Tint Reduction: 
+/* [24] */
+$$$/Pathfinder/Str/Action/24=Process Colors: 
+/* [25] */
+$$$/Pathfinder/Str/Action/25=Reverse Traps: 
+/* [26] */
+$$$/Pathfinder/Str/Action/26=Precision: 
+/* [27] */
+$$$/Pathfinder/Str/Action/27=Remove Redundant Points: 
+/* [28] */
+$$$/Pathfinder/Str/Action/28=Remove Unpainted Artwork: 
+/* [29] */
+
+/* [30] */
+$$$/Pathfinder/Str/Action/30=Make Compound Shape
+/* [31] */
+$$$/Pathfinder/Str/Action/31=Release Compound Shape
+/* [32] */
+$$$/Pathfinder/Str/Action/32=Expand Compound Shape
+/* [33] */
+$$$/Pathfinder/Str/Action/33=Compound Shape

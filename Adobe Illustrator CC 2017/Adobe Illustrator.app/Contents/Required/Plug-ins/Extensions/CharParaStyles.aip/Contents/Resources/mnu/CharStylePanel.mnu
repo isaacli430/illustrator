@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+	<menuItem id="1" text="$$$/CharParaStylesPlugin/Mnu/charPalette/New=New Character Style..."></menuItem>
+	<menuItem id="2" text="$$$/CharParaStylesPlugin/Mnu/charPalette/Duplicate=Duplicate Character Style"></menuItem>
+	<menuItem id="3" text="$$$/CharParaStylesPlugin/Mnu/charPalette/Delete=Delete Character Style"></menuItem>
+	<separator></separator>
+	<menuItem id="4" text="$$$/CharParaStylesPlugin/Mnu/charPalette/Unused=Select All Unused"></menuItem>
+	<separator></separator>
+	<menuItem id="5" text="$$$/CharParaStylesPlugin/Mnu/charPalette/Redefine=Redefine Character Style"></menuItem>
+	<menuItem id="6" text="$$$/CharParaStylesPlugin/Mnu/charPalette/Options=Character Style Options..."></menuItem>
+	<separator></separator>
+	<menuItem id="12" text="$$$/CharParaStylesPlugin/Mnu/charPalette/Clear=Clear Overrides"></menuItem>
+	<separator></separator>
+	<menuItem id="7" text="$$$/CharParaStylesPlugin/Mnu/charPalette/Load=Load Character Styles..."></menuItem>
+	<menuItem id="8" text="$$$/CharParaStylesPlugin/Mnu/charPalette/LoadAll=Load All Styles..."></menuItem>
+	<separator></separator>
+	<menuItem id="9" text="$$$/CharParaStylesPlugin/Mnu/charPalette/SmallList=Small List View"></menuItem>
+	<menuItem id="10" text="$$$/CharParaStylesPlugin/Mnu/charPalette/LargeList=Large List View"></menuItem>
+	<menuItem id="11" text="$$$/CharParaStylesPlugin/Mnu/charPalette/Reset=Reset Normal Character Style"></menuItem>
+</menu>

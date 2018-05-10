@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!--- Apple TechNote #2013 complaint section (upated to reflect values found in "Property List Key Reference")
+	http://developer.apple.com/documentation/MacOSX/Conceptual/BPRuntimeConfig/index.html	
+	--->
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>FMWK</string>
+	<key>CFBundleSignature</key>
+	<string>VCUI</string>
+	<key>CFBundleVersion</key>
+	<string>ARM_VERSION_MAJOR.ARM_VERSION_MINOR.ARM_VERSION_MAJORBUILD.ARM_VERSION_MINORBUILD</string>
+	<key>CFBundleShortVersionString</key>
+	<string>ARM_VERSION_MAJOR.ARM_VERSION_MINOR.ARM_VERSION_MAJORBUILD.ARM_VERSION_MINORBUILD</string>
+	<key>CFBundleGetInfoString</key>
+	<string>$(PRODUCT_NAME) ARM_VERSION_MAJOR.ARM_VERSION_MINOR.ARM_VERSION_MAJORBUILD.ARM_VERSION_MINORBUILD, Copyright © 1997-2007 Adobe Systems Incorporated. All rights reserved.</string>
+	<!--- end of Apple TechNote #2013 complaint section --->
+	
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundleGetInfoString</key>
+	<string>$(PRODUCT_NAME) ARM_VERSION_MAJOR.ARM_VERSION_MINOR.ARM_VERSION_MAJORBUILD.ARM_VERSION_MINORBUILD, Copyright © 1997-2007 Adobe Systems Incorporated. All rights reserved.</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.adobe.versioncueui</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+</dict>
+</plist>

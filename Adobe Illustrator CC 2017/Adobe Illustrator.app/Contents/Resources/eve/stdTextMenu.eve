@@ -1,0 +1,31 @@
+layout stdTextMenu
+{
+	view menu( id: 7,
+				menubar: false )
+	{
+		
+		menu( text: "$$$/_MBAR/Mnu/Type/Font=&Font", id:							129, help_id:  19 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/Type/RecentFonts=&Recent Fonts", id:				231, help_id:  58 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/Type/Size=Si&ze", id:							130, help_id:  20 ) { separator();  }
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/Type/TextTypeConversion=Text Type Conversion", id:		331, help_id:0) ;
+		menu( text: "$$$/_MBAR/Mnu/Type/AreaTypeOptions=&Area Type Options...", id:	34, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Type/PathType=Type on a &Path", id:				94, help_id:  11 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/Type/ThreadedType=&Threaded Text", id:			93, help_id:  27 ) { separator();  }
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/Type/FitHeadline=Fit &Headline", id:				87, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Type/CreateOutlines=Create &Outlines", id:		62, help_id:0);
+		
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/Type/SpecialCharacter=&Insert Special Character", 		id:		362, help_id:  81 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/Type/WhiteSpaceCharacter=Insert &WhiteSpace Character", 	id:		363, help_id:  82 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/Type/BreakCharacter=Insert &Break Character", 			id:		364, help_id:  83 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/Type/PlaceHolderText=Fill With PlaceHolder Text", 		id:		391, help_id:  0 );
+		
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/Type/ShowHidden=&Show Hidden Characters", id:	115, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Type/TypeOrientation=T&ype Orientation", id:		175, help_id:  25 ) { separator();  }
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/Type/ConvertLegacy=&Legacy Text", id:			273, help_id:  59 ) { separator();  }
+}
+}

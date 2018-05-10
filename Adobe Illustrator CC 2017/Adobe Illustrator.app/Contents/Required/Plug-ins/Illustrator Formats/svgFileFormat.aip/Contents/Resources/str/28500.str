@@ -1,0 +1,48 @@
+/* [1] */
+$$$/svgFileFormat/Str/NoMemory=No memory
+/* [2] */
+$$$/svgFileFormat/Str/SyntaxError=Syntax error
+/* [3] */
+$$$/svgFileFormat/Str/NoElements=No elements
+/* [4] */
+$$$/svgFileFormat/Str/InvalidToken=Invalid token
+/* [5] */
+$$$/svgFileFormat/Str/UnclosedToken=Unclosed token
+/* [6] */
+$$$/svgFileFormat/Str/PartialCharacter=Partial character
+/* [7] */
+$$$/svgFileFormat/Str/TagMismatch=Tag mismatch
+/* [8] */
+$$$/svgFileFormat/Str/DuplicateAttribute=Duplicate attribute
+/* [9] */
+$$$/svgFileFormat/Str/JunkAfter=Junk after document element
+/* [10] */
+$$$/svgFileFormat/Str/ParamEntryRef=Param entity reference
+/* [11] */
+$$$/svgFileFormat/Str/UndefinedEntry=Undefined entity
+/* [12] */
+$$$/svgFileFormat/Str/RecursiveEntryRef=Recursive entity reference
+/* [13] */
+$$$/svgFileFormat/Str/AsynchronosEntry=Asynchronos entity
+/* [14] */
+$$$/svgFileFormat/Str/BadCharRef=Bad character reference
+/* [15] */
+$$$/svgFileFormat/Str/BinaryEntryRef=Binary entity reference
+/* [16] */
+$$$/svgFileFormat/Str/AttributeExternal=Attribute external entity reference
+/* [17] */
+$$$/svgFileFormat/Str/Misplaced=Misplaced XML Pi
+/* [18] */
+$$$/svgFileFormat/Str/UnknownEncoding=Unknown encoding
+/* [19] */
+$$$/svgFileFormat/Str/IncorrectEncoding=Incorrect encoding
+/* [20] */
+$$$/svgFileFormat/Str/Unclosed=Unclosed CDATA section
+/* [21] */
+$$$/svgFileFormat/Str/ExternalEntryHandling=External entity handling
+/* [22] */
+$$$/svgFileFormat/Str/NotStandAlone=Not STANDALONE
+/* [23] */
+$$$/svgFileFormat/Str/DoctyleName=Unexpected Doctype name
+/* [24] */
+$$$/svgFileFormat/Str/UnknownError=Unknown error

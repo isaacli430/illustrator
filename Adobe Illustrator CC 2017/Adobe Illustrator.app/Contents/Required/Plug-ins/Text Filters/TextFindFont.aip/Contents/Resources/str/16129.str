@@ -1,0 +1,20 @@
+/* [1] */
+$$$/TextFindFont/Str/16130=Find Font could not allocate global storage record.
+/* [2] */
+$$$/TextFindFont/Str/16131=Find Font could not build the internal text list.
+/* [3] */
+$$$/TextFindFont/Str/16132=Find Font got an unknown item number in the main dialog.
+/* [4] */
+$$$/TextFindFont/Str/16133=Find Font could not complete the replace command.
+/* [5] */
+$$$/TextFindFont/Str/16134=Some text was on a locked layer and the font could not be replaced.
+/* [6] */
+$$$/TextFindFont/Str/16135=Find Font could not set Roman font for some Japanese text.
+/* [7] */
+$$$/TextFindFont/Str/16136=Find Font could not set Japanese font for some Roman text.
+/* [8] */
+$$$/TextFindFont/Str/16137=You can't replace %s with itself.
+/* [9] */
+$$$/TextFindFont/Str/16138=Save Font List As:
+/* [10] */
+$$$/TextFindFont/Str/16139/Mac=.list

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<views
+	xmlns="http://ns.adobe.com/metadata/ui/1.0/">
+	
+	<view
+		xmlns:xmpDM="http://ns.adobe.com/xmp/1.0/DynamicMedia/"
+		xmlns:stDim="http://ns.adobe.com/xap/1.0/sType/Dimensions#"
+		name="com.adobe.xmp.view.video"
+		label="Video Data"
+		description="Video Data"
+		version="1.0">
+		
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/VideoData1/VideoFrameRate=Frame Rate"
+			description="$$$/xmp/xmpDM/videoFrameRate_description=The video frame rate."
+			name="xmpDM:videoFrameRate"/>
+			
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/VideoData1/VideoCompressor=Compressor"
+			description="$$$/xmp/xmpDM/videoCompressor_description=Video compression used. For example, jpeg."
+			name="xmpDM:videoCompressor"/>
+			
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/VideoData1/VideoFieldOrder=Field Order"
+			description="$$$/xmp/xmpDM/videoFieldOrder_description=The field order for video."
+			name="xmpDM:videoFieldOrder"/>
+			
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/VideoData1/VideoAlphaMode=Alpha Mode"
+			description="$$$/xmp/xmpDM/videoAlphaMode_description=The alpha mode. "
+			name="xmpDM:videoAlphaMode"/>
+			
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/VideoData1/VideoFrameWidth=Video Frame Width"
+			description="$$$/xmp/xmpDM/videoFrameSize_description=The frame size. For example: w:720, h: 480, unit:pixels"
+			name="xmpDM:videoFrameSize/stDim:w"
+			format="@0 px"/>
+
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/VideoData1/VideoFrameHeight=Video Frame Height"
+			description="$$$/xmp/xmpDM/videoFrameSize_description=The frame size. For example: w:720, h: 480, unit:pixels"
+			name="xmpDM:videoFrameSize/stDim:h"
+			format="@0 px"/>
+
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/VideoData1/PixelAspectRatio=Pixel Aspect Ratio"
+			description="$$$/xmp/xmpDM/videoPixelAspectRatio_description=The aspect ratio, expressed as ht/wd. For example: ^[648/720^] = 0.9"
+			name="xmpDM:videoPixelAspectRatio" formatFunction="{calculatePAR}"/>
+			
+		<separator/>
+	
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/VideoData1/TapeName=Tape Name"
+			description="$$$/xmp/xmpDM/tapeName_description=The name of the tape from which the clip was captured, as set during the capture process."
+			name="xmpDM:tapeName"/>
+	
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/VideoData1/Scene=Scene"
+			description="$$$/xmp/xmpDM/scene_description=The name of the scene."
+			name="xmpDM:scene"/>
+	
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/VideoData1/ShotName=Shot/Take"
+			description="$$$/xmp/xmpDM/shotName_description=The name of the shot or take."
+			name="xmpDM:shotName"/>
+	
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/VideoData1/ShotDate=Date Shot"
+			description="$$$/xmp/xmpDM/shotDate_description=The date and time when the video was shot."
+			name="xmpDM:shotDate"/>
+	
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/VideoData1/LogComment=Log Comment"
+			description="$$$/xmp/xmpDM/logComment_description=User^}s log comments."
+			name="xmpDM:logComment"/>
+
+		<separator/>
+
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/VideoData2/AltTapeName=Alternate Tape Name"
+			description="$$$/xmp/xmpDM/altTapeName_description=An alternative tape name, set via the project window or timecode dialog in Premiere. If an alternative name has been set and has not been reverted, that name is displayed."
+			name="xmpDM:altTapeName"/>
+	
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/VideoData2/StartTimecode=Start Timecode"
+			description="$$$/xmp/xmpDM/startTimecode_description=The timecode of the first frame of video in the file, as obtained from the device control."
+			name="xmpDM:startTimecode/xmpDM:timeValue"/>
+	
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/VideoData2/AltTimecode=Alternate Timecode"
+			description="$$$/xmp/xmpDM/altTimecode_description=A timecode set by the user. When specified, it is used instead of the startTimecode."
+			name="xmpDM:altTimecode/xmpDM:timeValue"/>
+	</view>
+</views>

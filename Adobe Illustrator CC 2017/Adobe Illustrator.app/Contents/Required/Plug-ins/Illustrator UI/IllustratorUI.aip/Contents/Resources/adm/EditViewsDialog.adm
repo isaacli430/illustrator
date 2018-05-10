@@ -1,0 +1,11 @@
+sheet editViewsDialog
+{
+	invariant:
+		deleteCell <== (deleteEnableCell == true);
+		okCell <== (okEnableCell == true);
+	interface:
+		nameEnableCell: false;
+		deleteEnableCell: false;
+		okEnableCell: true;
+		unlink nameCell: "" <== (nameEnableCell == true) ? nameCell : "";
+}

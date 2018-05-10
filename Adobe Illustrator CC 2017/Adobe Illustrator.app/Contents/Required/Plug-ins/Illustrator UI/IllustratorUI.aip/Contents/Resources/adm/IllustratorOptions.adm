@@ -1,0 +1,66 @@
+sheet IllustratorOptions
+{
+  interface:
+  
+	documentHasTransparency: false; 
+	flatteningOptionPreservePaths: false;
+	
+	
+	versionPopupValue: 17;
+	IllustratorOptionsPopupItems: 
+    [ { name: "$$$/_FFILLUST/Mnu/11303/CS7=Illustrator CC", value: 17 },
+      { name: "", value: 1 },
+	{ name: "$$$/_FFILLUST/Mnu/11303/LegacyAIFormats=Legacy Formats", value: 2 },
+	{ name: "$$$/_FFILLUST/Mnu/11303/CS6=Illustrator CS6", value: 16 },
+      { name: "$$$/_FFILLUST/Mnu/11303/CS5=Illustrator CS5", value: 15 },
+      { name: "$$$/_FFILLUST/Mnu/11303/CS4=Illustrator CS4", value: 14 },
+      { name: "$$$/_FFILLUST/Mnu/11303/CS3=Illustrator CS3", value: 13 },
+      { name: "$$$/_FFILLUST/Mnu/11303/CS2=Illustrator CS2", value: 12 },
+      { name: "$$$/_FFILLUST/Mnu/11303/CS=Illustrator CS", value: 11 },
+      { name: "$$$/_FFILLUST/Mnu/11303/AI10=Illustrator 10", value: 10 },
+      { name: "$$$/_FFILLUST/Mnu/11303/AI9=Illustrator 9", value: 9 },
+      { name: "$$$/_FFILLUST/Mnu/11303/AI8=Illustrator 8", value: 8 },
+      { name: "$$$/_FFILLUST/Mnu/11303/AI3=Illustrator 3", value: 3 },
+      { name: "$$$/_FFILLUST/Mnu/11303/9=Japanese Illustrator 3", value: 4 }
+		];
+		
+		createPDFCompatibleFile : true <== (versionPopupValue >= 10) ? createPDFCompatibleFile : true;
+		compressionCheckBoxVal : true <== (versionPopupValue >= 10) ? compressionCheckBoxVal : true;
+
+		transparencyRadioSelect: (flatteningOptionPreservePaths == false) ? 1 : 2;
+   		unlink enableRadioButton: false <== (documentHasTransparency && versionPopupValue <= 8);
+   		unlink Transparency: transparencyRadioSelect <== enableRadioButton ? Transparency : 3;
+   		
+   		unlink PresetsPopupVal: 1 <== (Transparency == 2) ? PresetsPopupVal : 1;
+   		
+   		unlink embedICCProfile: true <== embedICCProfile;
+		
+		lessThanEditMem: 100.0;
+		showWarning: false <== (versionPopupValue != 17);
+				
+		dataHasPlacedVal: true;
+		unlink LinkedFilesCheckBoxVal : false <== (dataHasPlacedVal && versionPopupValue >= 7) ? LinkedFilesCheckBoxVal : false;
+		
+		enableArtboardsCheckBox: true;
+		ArtboardsCheckBoxVal: false <== (enableArtboardsCheckBox == true) ? ArtboardsCheckBoxVal : false;
+		ArtboardsMem: 1;
+		unlink Artboards : 1 <== (ArtboardsCheckBoxVal == true) ? Artboards : ArtboardsMem;
+		
+		RangeArtboardsEditTextValMem: "1";
+		unlink RangeArtboardsEditTextVal: "1" <== (ArtboardsCheckBoxVal == true && Artboards == 2) ? RangeArtboardsEditTextVal : RangeArtboardsEditTextValMem;
+		
+		lessThanEdit : 100.0 <== (createPDFCompatibleFile == true && versionPopupValue >= 9) ? lessThanEdit : lessThanEditMem;
+		ShowRangeWarning: 0;
+logic:
+	when(createPDFCompatibleFile == true && versionPopupValue >= 9) relate
+	{
+		lessThanEdit <== lessThanEditMem;
+		lessThanEditMem <== lessThanEdit;
+	}
+	
+	when(ArtboardsCheckBoxVal == true) relate
+	{
+		Artboards <== ArtboardsMem;
+		ArtboardsMem <== Artboards;
+	}
+}

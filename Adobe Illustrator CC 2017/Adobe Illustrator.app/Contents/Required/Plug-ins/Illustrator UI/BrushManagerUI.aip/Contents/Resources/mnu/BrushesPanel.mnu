@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+	<menuItem id="1" text="$$$/BrushManager/PanelFlyoutMenu/NewBrush=&amp;New Brush..."></menuItem>
+  <menuItem id="2" text="$$$/BrushManager/PanelFlyoutMenu/DuplicateBrush=&amp;Duplicate Brush"></menuItem>
+  <menuItem id="3" text="$$$/BrushManager/PanelFlyoutMenu/DeleteBrush=D&amp;elete Brush"></menuItem>
+  <separator></separator>
+  <menuItem id="5" text="$$$/BrushManager/PanelFlyoutMenu/RemoveBrushStroke=&amp;Remove Brush Stroke"></menuItem>
+  <separator></separator>
+	<menuItem id="7" text="$$$/BrushManager/PanelFlyoutMenu/SelectAllUnused=Select All &amp;Unused"></menuItem>
+  <separator id="100"></separator>
+  <separator id="200"></separator>
+  <menuItem id="10" text="$$$/BrushManager/PanelFlyoutMenu/ThumbnailView=&amp;Thumbnail View"></menuItem>
+  <menuItem id="11" text="$$$/BrushManager/PanelFlyoutMenu/ListView=Li&amp;st View"></menuItem>
+  <separator></separator>
+  <menuItem id="13" text="$$$/BrushManager/PanelFlyoutMenu/OptionsOfSelectedObject=&amp;Options of Selected Object..."></menuItem>
+  <menuItem id="14" text="$$$/BrushManager/PanelFlyoutMenu/BrushOptions=&amp;Brush Options..."></menuItem>
+  <separator></separator>
+  <subMenu id="16" text="$$$/BrushManager/PanelFlyoutMenu/OpenBrushLibrary=Open Brush &amp;Library">
+    <separator></separator>
+    <menuItem id="18" text="$$$/BrushManager/PanelFlyoutMenu/OtherLibrary=&amp;Other Library..."></menuItem>
+  </subMenu>
+  <menuItem id="19" text="$$$/BrushManager/PanelFlyoutMenu/SaveBrushLibrary=Save Brush Librar&amp;y..."></menuItem>
+</menu>

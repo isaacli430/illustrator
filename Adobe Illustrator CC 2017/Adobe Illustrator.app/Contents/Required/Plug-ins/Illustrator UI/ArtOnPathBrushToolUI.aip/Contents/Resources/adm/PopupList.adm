@@ -1,0 +1,6 @@
+sheet PopupListPanel
+{
+interface:
+		ShowAutoCornerCheckBox: false;
+		whichPopupView: 1;
+}

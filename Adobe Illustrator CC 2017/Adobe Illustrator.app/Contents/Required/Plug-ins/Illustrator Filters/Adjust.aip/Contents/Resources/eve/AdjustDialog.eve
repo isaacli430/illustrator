@@ -1,0 +1,165 @@
+layout AdjustDialog
+{
+	view subview(identifier: "AIEveSubView",
+					layout_theme: @dialog_large,
+					placement: @place_column,
+					child_horizontal: @align_fill,
+					spacing: @unrelated_spacing,
+					show_border: false
+				)
+	{
+		
+		column(child_horizontal: @align_fill,spacing: @inter_group_spacing)
+		{
+			group(identifier: "ColorModeGroup",						
+									header: "popup(identifier: 'ColorModePopup',
+									include_custom_item: false, horizontal: @align_left,
+									set_default_focus: true,
+									bind: @View,
+									items: [{name:'$$$/Adjust/Mnu/GrayScale=Grayscale',value: 'grayScale'},
+									  {name:'$$$/Adjust/Mnu/RGB=RGB',value: 'rgb'},
+									  {name:'$$$/Adjust/Mnu/CMYK=CMYK',value: 'cmyk'},
+									  {name:'$$$/Adjust/Mnu/Global=Global',value: 'global'}],
+									name: '$$$/Adjust/Dialog/ColorMode=Co&lor Mode:'
+								)"
+					)
+			{
+				checkbox(name: "$$$/Adjust/Dlg/Adjust/ConvertCheckBox=Con&vert", guide_mask: [ @guide_label ],
+        			   identifier: "Convert");
+        			   
+				overlay(identifier: "overlay_group")
+				{	   
+					panel(identifier: "GrayScaleView", bind: @View, value: "grayScale", margin: 0)
+					{
+						combo_slider(identifier: "GraySlider",
+									horizontal: @align_fill,
+									center_tick: true,
+									decimal_places: 2,
+									digits: 4,
+									min_max_filter: @MinMaxFilter,
+									slider_point: @up,
+									suffix: "$$$/gPercent=%",
+									minLength: 201,
+									name: "$$$/Adjust/Dlg/black=Blac&k:");
+					}
+					panel(identifier: "RGBView", bind: @View, value: "rgb", margin: 0)
+					{
+						combo_slider(identifier: "RedSlider",
+									horizontal: @align_fill,
+									center_tick: true,
+									decimal_places: 2,
+									digits: 4,
+									min_max_filter: @MinMaxFilter,
+									slider_point: @up,
+									suffix: "$$$/gPercent=%",
+									minLength: 201,
+									name: "$$$/Adjust/Dlg/red=&Red:");
+						combo_slider(identifier: "GreenSlider",
+									horizontal: @align_fill,
+									center_tick: true,
+									decimal_places: 2,
+									digits: 4,
+									min_max_filter: @MinMaxFilter,
+									slider_point: @up,
+									suffix: "$$$/gPercent=%",
+									minLength: 201,
+									name: "$$$/Adjust/Dlg/green=&Green:");
+						combo_slider(identifier: "BlueSlider",
+									horizontal: @align_fill,
+									center_tick: true,
+									decimal_places: 2,
+									digits: 4,
+									min_max_filter: @MinMaxFilter,
+									slider_point: @up,
+									suffix: "$$$/gPercent=%",
+									minLength: 201,
+									name: "$$$/Adjust/Dlg/blue=&Blue:");
+					}
+					panel(identifier: "CMYKView", bind: @View, value: "cmyk", margin: 0)
+					{
+						combo_slider(identifier: "CyanSlider",
+									horizontal: @align_fill,
+									center_tick: true,
+									decimal_places: 2,
+									digits: 4,
+									min_max_filter: @MinMaxFilter,
+									slider_point: @up,
+									suffix: "$$$/gPercent=%",
+									minLength: 201,
+									name: "$$$/Adjust/Dlg/cyan=&Cyan:");
+						combo_slider(identifier: "MagentaSlider",
+									horizontal: @align_fill,
+									center_tick: true,
+									decimal_places: 2,
+									digits: 4,
+									min_max_filter: @MinMaxFilter,
+									slider_point: @up,
+									suffix: "$$$/gPercent=%",
+									minLength: 201,
+									name: "$$$/Adjust/Dlg/magenta=&Magenta:");
+									
+						combo_slider(identifier: "YellowSlider",
+									horizontal: @align_fill,
+									center_tick: true,
+									decimal_places: 2,
+									digits: 4,
+									min_max_filter: @MinMaxFilter,
+									slider_point: @up,
+									suffix: "$$$/gPercent=%",
+									minLength: 201,
+									name: "$$$/Adjust/Dlg/yellow=&Yellow:");
+									
+						combo_slider(identifier: "BlackSlider",
+									horizontal: @align_fill,
+									center_tick: true,
+									decimal_places: 2,
+									digits: 4,
+									min_max_filter: @MinMaxFilter,
+									slider_point: @up,
+									suffix: "$$$/gPercent=%",
+									minLength: 201,
+									name: "$$$/Adjust/Dlg/black=Blac&k:");
+					}			
+					panel(identifier: "GlobalView", bind: @View, value: "global", margin: 0)
+					{
+						combo_slider(identifier: "TintSlider",
+									horizontal: @align_fill,
+									center_tick: true,
+									decimal_places: 2,
+									digits: 4,
+									min_max_filter: @MinMaxFilter,
+									slider_point: @up,
+									suffix: "$$$/gPercent=%",
+									minLength: 201,
+									name: "$$$/Adjust/Dlg/Tint=&Tint:");
+
+					}
+				}				
+			}
+
+			group(identifier: "adjustOptionsGroup",name:"$$$/Adjust/Dlg/Adjust/11=Adjust Options", placement: @place_row, child_horizontal: @align_fill)
+			{
+				checkbox(name: "$$$/Adjust/Dlg/Adjust/fillCheckBox=&Fill", guide_mask: [ @guide_label ],
+						identifier: "Fill");
+				checkbox(name: "$$$/Adjust/Dlg/Adjust/strokeCheckBox=&Stroke", guide_mask: [ @guide_label ],
+						identifier: "Stroke");
+			}
+		}
+		
+
+		row(child_horizontal: @align_fill)
+		{
+			checkbox(name: "$$$/Adjust/Dlg/Adjust/PreivewCheckBox=&Preview", guide_mask: [ @guide_label ], vertical: @align_center,
+        		   identifier: "Preview");
+
+			row(child_horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+			{
+				 button(name: "$$$/gOK=OK", commit_button: true,
+        		   identifier: "okButton");
+
+				button(name: "$$$/gCancel=Cancel", commit_button: true,
+        		   identifier: "cancelButton");
+			}
+		}
+	}
+}

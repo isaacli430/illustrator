@@ -1,0 +1,26 @@
+layout LiveShapesPopupPanel
+{
+	view subview(identifier: "LiveShapesPopupPanelSubView",
+			 layout_theme: @panel, width: (gStandardMinPanelWidth + 4),
+			 show_border: false,
+			 child_vertical: @align_center)
+	{
+		optional(identifier: "LiveShapesPopupPanelSubGroup", horizontal: @align_fill)
+		{
+			subview(identifier: "ShapePropertiesSubView", show_border: false, horizontal: @align_fill, height: 117);
+			
+			separator(orientation: @horizontal, vertical: @align_center, horizontal: @align_fill, identifier: "Separator");
+
+			column(vertical: @align_bottom)
+			{
+				checkbox(name: "$$$/Transform/Dlg/Transform/ScaleRadiiForShapesLabel=Scale Corners",
+						identifier: "ScaleCornerRadiiForShapesChkBx",
+						alt: "$$$/TransformPalett/Str/ToolTip/ScaleRadiiForShapes=Set this option to scale corner radii proportionally",
+						bind: @scaleCornerRadiiForShapes);
+				checkbox(name: "$$$/Transform/Dlg/Transform/ScaleStrokesEffectsLabel=Scale Strokes && Effects",
+						identifier: "ScaleStrokeAndEffectChkBx",
+						bind: @scaleStrokeAndEffect);
+			}
+		}
+    }
+}

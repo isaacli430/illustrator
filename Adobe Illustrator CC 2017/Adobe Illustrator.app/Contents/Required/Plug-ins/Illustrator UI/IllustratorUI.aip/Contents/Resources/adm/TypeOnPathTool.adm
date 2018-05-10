@@ -1,0 +1,34 @@
+sheet TypeOnPathTool
+{
+  interface:
+  EffectPopupItems:
+  [
+	{name: "$$$/_TextDlgs/Mnu/SLOTextOnAPathEffects/1=Rainbow", value: 0},
+	{name: "$$$/_TextDlgs/Mnu/SLOTextOnAPathEffects/2=Skew", value: 1},
+	{name: "$$$/_TextDlgs/Mnu/SLOTextOnAPathEffects/3=3D Ribbon", value: 2},
+	{name: "$$$/_TextDlgs/Mnu/SLOTextOnAPathEffects/4=Stair Step", value: 3},
+	{name: "$$$/_TextDlgs/Mnu/SLOTextOnAPathEffects/5=Gravity", value: 4}
+  ];
+  AlignToPathPopupItems:
+  [
+	{name: "$$$/_TextDlgs/Mnu/SLOTextOnAPathAlign/1=Ascender", value: 0},
+	{name: "$$$/_TextDlgs/Mnu/SLOTextOnAPathAlign/2=Descender", value: 1},
+	{name: "$$$/_TextDlgs/Mnu/SLOTextOnAPathAlign/3=Center", value: 2},
+	{name: "$$$/_TextDlgs/Mnu/SLOTextOnAPathAlign/4=Baseline", value: 3}
+  ];
+  
+  SpacingEditPopupItems:
+  ["$$$/_TextDlgs/Mnu/SLOTextOnAPath/Spacing/Auto=Auto",
+   "", "-36", "-30", "-24", "-18", "-15", "-12", "-9", "-7", "-6", "-5", "-4", "-3", "0",
+    "3", "4", "5", "6", "7", "9", "12", "15", "18", "24", "30", "36"
+	]; 
+  
+  EffectPopupVal: 0;  
+  AlignToPathPopupVal: 0;  
+  FlipCheckBoxVal: false;
+  SpacingEditPopupVal: 0;
+  PreviewCheckboxVal: false;
+  EffectUnknown: false;
+  AlignUnknown: false;
+  FlipUnknown: false;
+}

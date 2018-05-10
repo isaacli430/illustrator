@@ -1,0 +1,9 @@
+sheet SpiralToolOptionsDialog
+{
+	interface:
+		radius: 50;
+		max_radius: 8191.5; //Will be set later through code.
+		decay:	80;
+		num_segments: 10;
+		style: 0;
+}

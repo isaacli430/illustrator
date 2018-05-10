@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+	<menuItem id="1" text="$$$/CharParaStylesPlugin/Mnu/paraPalette/New=New Paragraph Style..."></menuItem>
+	<menuItem id="2" text="$$$/CharParaStylesPlugin/Mnu/paraPalette/Duplicate=Duplicate Paragraph Style"></menuItem>
+	<menuItem id="3" text="$$$/CharParaStylesPlugin/Mnu/paraPalette/Delete=Delete Paragraph Style"></menuItem>
+	<separator></separator>
+	<menuItem id="4" text="$$$/CharParaStylesPlugin/Mnu/paraPalette/Unused=Select All Unused"></menuItem>
+	<separator></separator>
+	<menuItem id="5" text="$$$/CharParaStylesPlugin/Mnu/paraPalette/Redefine=Redefine Paragraph Style"></menuItem>
+	<menuItem id="6" text="$$$/CharParaStylesPlugin/Mnu/paraPalette/Options=Paragraph Style Options..."></menuItem>
+	<separator></separator>
+	<menuItem id="12" text="$$$/CharParaStylesPlugin/Mnu/paraPalette/Clear=Clear Overrides"></menuItem>
+	<separator></separator>
+	<menuItem id="7" text="$$$/CharParaStylesPlugin/Mnu/paraPalette/Load=Load Paragraph Styles..."></menuItem>
+	<menuItem id="8" text="$$$/CharParaStylesPlugin/Mnu/paraPalette/LoadAll=Load All Styles..."></menuItem>
+	<separator></separator>
+	<menuItem id="9" text="$$$/CharParaStylesPlugin/Mnu/paraPalette/SmallList=Small List View"></menuItem>
+	<menuItem id="10" text="$$$/CharParaStylesPlugin/Mnu/paraPalette/LargeList=Large List View"></menuItem>
+	<separator></separator>
+	<menuItem id="11" text="$$$/CharParaStylesPlugin/Mnu/paraPalette/Reset=Reset Normal Paragraph Style"></menuItem>
+</menu>

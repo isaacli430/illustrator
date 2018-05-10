@@ -1,0 +1,11 @@
+sheet EllipseControlGroup
+{
+interface:
+	
+	MultipleSelection: false;
+
+	DontConstrain: false;
+
+	unlink ConstrainDimensions: true <== MultipleSelection ? DontConstrain : ConstrainDimensions;
+
+}

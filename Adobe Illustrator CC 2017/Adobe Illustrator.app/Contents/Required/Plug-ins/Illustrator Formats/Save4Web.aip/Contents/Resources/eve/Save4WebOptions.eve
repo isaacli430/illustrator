@@ -1,0 +1,775 @@
+layout Save4WebOptions
+{
+	view subview(identifier: "AIEveSubView",
+					layout_theme: @dialog_large,
+					placement: @place_column,
+					horizontal: @align_fill,
+					vertical: @align_fill,
+					show_border: false,
+					margin:[5, 10, 0, 0]
+					)
+	{
+		row(horizontal: @align_fill,
+			vertical: @align_fill, margin:[0, 0, 0, 0],
+			spacing: 5)
+		{
+			column(horizontal: @align_left, vertical: @align_fill, spacing: 5, margin: [8,0,0,0])
+			{
+				column(	horizontal: @align_fill,
+					spacing: @connected_spacing)
+				{
+					toggle_button(
+							identifier: "PanTool",
+							value_on: 1, value_off: 0,
+							bind: @S4WToolOption,
+							wants_focus: false,
+							image: {normal: "PanTool_N.png", dark_normal: "PanTool_N_D.png"},
+							alt:"$$$/SaveForWeb/MainDialog/ToolTips/HandTool=Hand Tool (H)");
+					
+					toggle_button(
+							identifier: "SliceTool",
+							value_on: 2, value_off: 0,
+							bind: @S4WToolOption,
+							wants_focus: false,
+							image: {normal: "SliceSelectTool_N.png", dark_normal: "SliceSelectTool_N_D.png"},
+							alt:"$$$/SaveForWeb/MainDialog/ToolTips/SliceSelectTool=Slice Select Tool (K)");
+							
+					toggle_button(
+							identifier: "ZoomTool",
+							value_on: 3, value_off: 0,
+							bind: @S4WToolOption,
+							wants_focus: false,
+							image: {normal: "MagnificationTool_N.png", dark_normal: "MagnificationTool_N_D.png"},
+							alt:"$$$/SaveForWeb/MainDialog/ToolTips/ZoomTool=Zoom Tool (Z)");
+					
+					toggle_button(
+							identifier: "EyeDropperTool",
+							value_on: 4, value_off: 0,
+							bind: @S4WToolOption,
+							wants_focus: false,
+							image: {normal: "EyeDropperTool_N.png", dark_normal: "EyeDropperTool_N_D.png"},
+							alt:"$$$/SaveForWeb/MainDialog/ToolTips/EyedropperTool=Eyedropper Tool (I)");
+				}
+				
+				separator(identifier: "S4WToolSeparator");
+				
+				swatch(identifier: "SelectedColor", border: @border_normal,
+						alt:"$$$/SaveForWeb/MainDialog/ToolTips/Swatch=EyeDropper Color", horizontal: @align_center);
+				
+				toggle_button(
+							identifier: "SliceVisibility",
+							value_on: 1, value_off: 0,
+							bind: @SliceVisibleOption,
+							wants_focus: false,
+							image: {normal: "SliceVisibility_N.png", dark_normal:"SliceVisibility_N_D.png"},
+							alt: "$$$/SaveForWeb/IllustratorUI/SliceVisibility=Toggle Slices Visibility (Q)");                                      
+			}
+			column(horizontal: @align_fill, vertical: @align_fill)
+			{
+				row(horizontal: @align_fill, vertical: @align_fill, spacing: 5)
+				{
+					column(horizontal: @align_fill, vertical: @align_fill, child_vertical: @align_fill)
+					{
+						row(horizontal: @align_fill, vertical: @align_fill)
+						{
+							group(identifier: "S4WArtFrame",
+									horizontal: @align_fill,
+									vertical: @align_fill,
+									margin:[5, 5, 5, 5],
+									header: "button_bar(bind: @artView,
+														identifier: 'ArtViewButton', 
+														horizontal: @align_center,
+														items: [{ name: '$$$/SaveForWeb/IllustratorUI/Original=Original', value: 0 },
+																{ name: '$$$/SaveForWeb/IllustratorUI/Optimized=Optimized', value: 1 },
+																{ name: '$$$/SaveForWeb/IllustratorUI/2Up=2-Up', value: 2 }])")
+							{
+								column(horizontal: @align_fill, vertical: @align_fill)
+								{
+									subview(identifier: "S4WArtSubView", placement: @place_row,	show_border: false, horizontal: @align_fill, vertical: @align_fill);
+								}
+							}
+						}
+						
+						row(horizontal: @align_fill, vertical: @align_bottom, guide_mask:[@guide_label], spacing: @unrelated_spacing, margin:[0, 0, 0, 0])
+						{
+							unit_hot_number(identifier: "Percent",
+									horizontal: @align_left,
+									popuplist: true,
+									max_value: 1600.0,
+									min_value: 1.0,
+									digits: 4,
+									decimal_places: 2,
+									items: @percentItems,
+									unit: "NumberEditUnit_Percent");
+
+							panel(optional: @showInfoPanel)
+							{						
+								row(horizontal: @align_left, vertical: @align_center, spacing: @related_spacing)
+								{
+									row(spacing: 1)
+									{
+										static_text(identifier: "RedLabel", theme_font_size: @small, name: "$$$/SaveForWeb/IllustratorUI/RedValStr=R: ");
+										static_text(identifier: "RedVal", theme_font_size: @small, name:"xxxx");					
+									}
+									
+									row (spacing: 1)
+									{
+										static_text(identifier: "GreenLabel", theme_font_size: @small, name: "$$$/SaveForWeb/IllustratorUI/GreenValStr=G: ");
+										static_text(identifier: "GreenVal", theme_font_size: @small, name:"xxxx");
+									}
+									row(spacing: 1)
+									{
+										static_text(identifier: "BlueLabel", theme_font_size: @small, name: "$$$/SaveForWeb/IllustratorUI/BlueValStr=B: ");													
+										static_text(identifier: "BlueVal", theme_font_size: @small, name:"xxxx");
+									}
+									row(spacing: 1)
+									{
+										static_text(identifier: "AlphaLabel", theme_font_size: @small, name: "$$$/SaveForWeb/IllustratorUI/AlphaValStr=Alpha: ");
+										static_text(identifier: "AlphaVal", theme_font_size: @small, name:"xxxx");
+									}
+									row(spacing: 1)
+									{
+										static_text(identifier: "HexLabel", theme_font_size: @small, name: "$$$/SaveForWeb/IllustratorUI/HexValStr=Hex: ");
+										static_text(identifier: "HexVal", theme_font_size: @small, name:"xxxxxxxx");
+									}
+									row(spacing: 1)
+									{
+										static_text(identifier: "IndexLabel", theme_font_size: @small, name: "$$$/SaveForWeb/IllustratorUI/IndexValStr=Index: ");
+										static_text(identifier: "IndexVal", theme_font_size: @small, name:"xxxx");												
+									}
+								}								
+							}
+							checkbox(identifier: "BrowserDither",
+										horizontal: @align_right,
+										name: "$$$/SaveForWeb/IllustratorUI/BrowserDither=Browser Dither");
+						}
+					}
+			
+					subview(layout_theme: @panel, theme_font_size: @small, theme_name: "AI Panel default", spacing: @related_spacing, show_border: false)
+					{
+						column(vertical: @align_fill, horizontal: @align_right)
+						{
+							group(identifier: "PresetFrame",
+									horizontal: @align_fill,
+									margin: [5,10,5,10],
+									name:"$$$/SaveForWeb/OptimizePanel/Name=Preset")
+							{
+								overlay()
+								{
+								panel(bind:@showNoSlicesSelectedItem, value:false, placement:@place_column)
+								{
+									row(child_vertical:@align_center)
+									{
+										popup
+										(
+											name:"$$$/SaveForWeb/OptimizePanel/OptNamesLabel=Name:", 
+											alt:"$$$/OptimizePalette/ToolTips/NamedSettings=Saved sets of optimization settings", 
+											identifier:"OptNamesItem", 
+											popup_maximum_width_chars:10, 
+											popup_minimum_width_chars:10
+										);
+											
+										button
+										(
+											identifier:"OptFlyoutMenu",
+											want_focus:false,
+											image:{normal: "SP_OptionFlyout_15x9_N.png", dark_normal:"SP_OptionFlyout_15x9_N_D.png"},
+											alt: "$$$/SaveForWeb/OptimizePalette/ToolTips/Flyout=Optimize Menu"
+										);
+									}
+								
+									panel(bind:@showOptimizeSettings, value:true)
+									{
+										row(spacing: @related_spacing)
+										{
+											column(horizontal:@align_left, guide_mask:[])
+											{
+												popup
+												(
+													identifier:"OptFormatItem",
+													alt:"$$$/OptimizePalette/ToolTips/FileFormat=Optimized file format", 
+													items: @OptFormatPopupItems, 
+													popup_maximum_width_chars: 5, 
+													popup_minimum_width_chars: 5,
+													include_custom_item: false
+												);
+												
+												overlay(child_horizontal:@align_right)
+												{
+												
+													panel(bind:@showOptGifAlgorithmItem, value:true, placement:@place_row, spacing:@label_widget_spacing)
+													{
+														/* Items and Handler added through code */
+														popup
+														(
+															identifier:"OptGifAlgorithmItem",
+															alt:"$$$/OptimizePalette/ToolTips/ReductionMethod=Color reduction algorithm",
+															popup_maximum_width_chars: 5, 
+															popup_minimum_width_chars: 5,
+															include_custom_item: false
+														);
+														
+														/* Sets tooltip from code */
+													}
+													
+													panel(bind:@showOptJPEGQualityMenuItem, value:true)
+													{
+														popup
+														(
+															identifier:"OptJPEGQualityMenuItem",
+															items:@OptJPEGQualityPopupItems,
+															alt:"$$$/OptimizePalette/ToolTips/JPEG/QualityPopup=Compression quality",
+															include_custom_item: false,
+															popup_maximum_width_chars: 5, 
+															popup_minimum_width_chars: 5,
+															bind:@OptJPEGQualityMenuItemValue
+														);
+													}
+													
+													panel(bind:@showOptPNG24TransparencyItem, value:true, guide_mask:[@guide_label])
+													{
+														checkbox
+														(
+															identifier:"OptPNG24TransparencyItem",
+															alt:"$$$/OptimizePalette/ToolTips/PNG24/Transparency=Includes transparency based on color opacity",
+															name:"$$$/SaveForWeb/OptimizePanel/TransparencyPNG24Label=Transparency",
+															bind:@Opt
+														);
+													}
+												}
+												
+												overlay(child_horizontal:@align_right)
+												{
+													panel(bind:@showOptGifDitherPatternItem, value:true)
+													{
+														popup
+														(
+															identifier:"OptGifDitherPatternItem",
+															alt:"$$$/OptimizePalette/ToolTips/DitherMethod=Specify the dither algorithm",
+															include_custom_item: false,
+															popup_maximum_width_chars: 5, 
+															popup_minimum_width_chars: 5								
+														);
+													}
+													
+													panel(bind:@showOptJPEGProgressiveItem, value:true, guide_mask:[@guide_label])
+													{
+														checkbox
+														(
+															identifier:"OptJPEGProgressiveItem",
+															name:"$$$/SaveForWeb/OptimizePanel/ProgressiveLabel=Progressive",
+															alt:"$$$/OptimizePalette/ToolTips/JPEG/Progressive=Download in multiple passes",
+															bind:@OptJPEGProgressiveItemValue
+														);
+													}
+													
+												}
+												
+												overlay(child_horizontal:@align_right)
+												{
+													panel(bind:@showOptGifTransparencyItem, value:true, guide_mask:[@guide_label])
+													{
+														checkbox
+														(
+															identifier:"OptGifTransparencyItem",
+															bind:@OptGifTransparencyItemValue,
+															alt:"$$$/SaveForWeb/OptimizePalette/ToolTips/GIF/Transparency=Includes transparency based on color opacity",
+															name:"$$$/SaveForWeb/OptimizePanel/TransparencyGIFLabel=Transparency"
+														);
+													}
+													
+													panel(bind:@showOptJPEGColorProfileItem, value:true, guide_mask:[@guide_label])
+													{
+														checkbox
+														(
+															identifier:"OptJPEGColorProfileItem",
+															name:"$$$/SaveForWeb/OptimizePanel/ICCProfileLabel=ICC Profile",
+															alt:"$$$/OptimizePalette/ToolTips/JPEG/NonPSIncludeColorProfile=Include an ICC profile based on color settings",
+															bind:@OptJPEGColorProfileItemValue
+														);
+													}
+												}
+												
+												panel(bind:@showOptTransparencyDitherPatternItem, value:true)
+												{
+													popup
+													(
+														identifier:"OptTransparencyDitherPatternItem",
+														alt:"$$$/OptimizePalette/ToolTips/TransparencyDitherMethod=Specify transparency dither algorithm",
+														include_custom_item: false,
+														popup_maximum_width_chars: 5, 
+														popup_minimum_width_chars: 5	
+													);
+												}
+												 
+												panel(bind:@showOptGifInterlacedItem, value:true, guide_mask:[@guide_label])
+												{
+													checkbox
+													(
+														identifier:"OptGifInterlacedItem",
+														name:"$$$/SaveForWeb/OptimizePanel/InterlacedLabel=Interlaced",
+														alt:"$$$/OptimizePalette/ToolTips/Interlaced=Download in multiple passes",
+														bind:@OptGifInterlacedItemValue
+													);
+												}
+											}
+											
+											column(horizontal:@align_right, guide_mask:[])
+											{
+												overlay(child_horizontal:@align_right)
+												{
+													panel(bind:@showOptGifLossItem, value:true, placement:@place_row, spacing:@label_widget_spacing)
+													{
+														unit_hot_number
+														(
+															identifier:"OptGifLossItem",
+															alt:"$$$/OptimizePalette/ToolTips/GIF/QualityLabel=Controls amount of lossiness allowed in GIF compression",
+															name:"$$$/SaveForWeb/OptimizePanel/LossyLabel=Lossy:",
+															slider:true, 
+															min_value:0, 
+															max_value:100,
+															digits:5,
+															bind:@OptGifLossItemValue
+														);
+														
+														/* Sets tooltip from code */
+														
+													}
+													
+													panel(bind:@showOptJPEGOptimizedItem, value:true)
+													{
+														checkbox
+														(
+															identifier:"OptJPEGOptimizedItem",
+															name:"$$$/SaveForWeb/OptimizePanel/JPEGOptimizedLabel=Optimized",
+															alt:"$$$/OptimizePalette/ToolTips/JPEG/Optimized=Creates smaller but less compatible files",
+															bind:@OptJPEGOptimizedItemValue
+														);
+													}
+													
+													panel(bind:@showOptPNGInterlacedItem, value:true)
+													{
+														checkbox
+														(
+															identifier:"OptPNGInterlacedItem",
+															name:"$$$/SaveForWeb/OptimizePanel/PNGInterlacedLabel=Interlaced",
+															alt:"$$$/OptimizePalette/ToolTips/Interlaced=Download in multiple passes",
+															bind:@OptPNGInterlacedItemValue
+														);
+													}
+												}
+												
+												overlay(child_horizontal:@align_right)
+												{
+													panel(bind:@showOptGifColorsItem, value:true)
+													{
+														unit_hot_number
+														(
+															identifier:"OptGifColorsItem",
+															name:"$$$/SaveForWeb/OptimizePanel/GIFColorsLabel=Colors:",
+															decimal_places:0,
+															digits:2,
+															stepper: true,
+															min_value:@OptGifColorsItemMinimum,
+															max_value:@OptGifColorsItemMaximum,
+															popupList:true,
+															items:@OptGifColorsPopupItems,
+															alt:"$$$/OptimizePalette/ToolTips/ColorsLabel=Maximum number of colors in Color Table",
+															bind:@OptGifColorsItemValue
+														);
+													}
+													
+													panel(bind:@showOptJPEGQualityNumItem, value:true, placement:@place_row, spacing:@label_widget_spacing)
+													{
+														unit_hot_number
+														(
+															identifier:"OptJPEGQualityNumItem",
+															decimal_places:0,
+															min_value:0,
+															max_value:100,
+															digits:2,
+															unit:"NumberEditUnit_Percent",
+															slider:true,
+															alt:"$$$/OptimizePalette/ToolTips/JPEG/IndexedQuality=Sacrifices image quality for better compression",
+															name:"$$$/SaveForWeb/OptimizePanel/QualityLabel=Quality:"
+														);
+														
+														/* Sets tooltip from code */
+														
+													}
+
+													panel(bind:@showOptPNG24MatteItem, value:true, spacing:@label_widget_spacing, placement:@place_row)
+													{
+														popup
+														(
+															identifier:"OptPNG24MatteItem",
+															alt:"$$$/OptimizePalette/ToolTips/PNG24/MatteLabel=Defines color to blend transparent pixels against",
+															popup_maximum_width_chars: 5, 
+															popup_minimum_width_chars: 5,
+															include_custom_item: false,
+															name:"$$$/SaveForWeb/OptimizePanel/MatteLabel=Matte:",
+															items:@OptGifMattePopupItems
+														);
+														
+														swatch(identifier: "OptPNG24MatteItemColor", vertical:@align_center, border:@border_normal, width:15, height:15);
+													}
+												}
+												
+												overlay(child_horizontal:@align_right)
+												{
+													panel(bind:@showOptGifDitherItem, value:true, placement:@place_row, spacing:@label_widget_spacing)
+													{
+														unit_hot_number
+														(
+															identifier:"OptGifDitherItem",
+															decimal_places:0,
+															min_value:0,
+															max_value:100,
+															slider:true,
+															digits:2,
+															stepper:true,
+															unit:"NumberEditUnit_Percent",
+															alt:"$$$/OptimizePalette/ToolTips/DitherSlider=Specify amount of dither",
+															bind:@OptGifDitherItemValue,
+															name:"$$$/SaveForWeb/OptimizePanel/DitherLabel=Dither:"
+														);
+														
+														/* Sets tooltip from code */
+													}
+													
+													panel(bind:@showOptJPEGBlurNumItem, value:true)
+													{
+														unit_hot_number
+														(
+															identifier:"OptJPEGBlurNumItem",
+															decimal_places:2,
+															min_value:0,
+															max_value:@OptJPEGBlurNumItemMaximum,
+															slider:true,
+															digits:1,
+															alt:"$$$/OptimizePalette/ToolTips/JPEG/BlurLabel=Applies blur to image to reduce artifacts",
+															bind:@OptJPEGBlurNumItemValue,
+															name:"$$$/SaveForWeb/OptimizePanel/BlurLabel=Blur:"
+														);
+													}
+												}
+												
+												panel(bind:@showOptGifMatteItem, value:true, spacing:@label_widget_spacing, placement:@place_row)
+												{
+													/* Items and Handler added through code */
+													popup
+													(
+														identifier:"OptGifMatteItem",
+														alt:"$$$/OptimizePalette/ToolTips/GIF/MatteLabel=Defines color to blend transparent pixels against",
+														popup_maximum_width_chars: 5, 
+														popup_minimum_width_chars: 5,
+														include_custom_item: false,
+														name:"$$$/SaveForWeb/OptimizePanel/GIFMatteLabel=Matte:",
+														items:@OptGifMattePopupItems
+													);
+													
+													swatch(identifier: "OptGifMatteItemColor", vertical:@align_center, border:@border_normal, width:15, height:15);
+												}
+											
+												panel(bind:@showTransparencyDitherItem, value:true)
+												{
+													unit_hot_number
+													(
+														identifier:"TransparencyDitherItem",
+														decimal_places:0,
+														min_value:0,
+														max_value:100,
+														digits:2,
+														unit:"NumberEditUnit_Percent",
+														slider:true,
+														alt:"$$$/OptimizePalette/ToolTips/TransparencyDitherSlider=Specify amount of transparency dither",
+														bind:@TransparencyDitherItemValue,
+														name:"$$$/SaveForWeb/OptimizePanel/AmountLabel=Amount:"
+													);
+												}
+												
+												panel(bind:@showOptGifWebSnapItem, value:true)
+												{
+													unit_hot_number
+													(
+														identifier:"OptGifWebSnapItem",
+														decimal_places:0,
+														min_value:0,
+														max_value:100,
+														digits:2,
+														unit:"NumberEditUnit_Percent",
+														slider:true,
+														alt:"$$$/OptimizePalette/ToolTips/GIF/WebSnapLabel=Snaps close colors to Web palette based on tolerance",
+														bind:@OptGifWebSnapItemValue,
+														name:"$$$/SaveForWeb/OptimizePanel/WebSnapLabel=Web Snap:"
+													);
+												}
+											}
+										}
+									}
+									}
+									panel(bind:@showNoSlicesSelectedItem, value:true)
+									{
+										static_text(identifier:"NoSlicesSelectedItem", name:"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", horizontal: @align_center);
+									}
+								}
+							}
+							
+
+							group(identifier: "ImageSizeFrame",
+							name: "$$$/SaveForWeb/IllustratorUI/ImageSizeStr=Image Size", placement:@place_column, horizontal:@align_fill, margin: [5,10,5,10])
+							{
+								row(horizontal:@align_fill)
+								{
+									column(horizontal: @align_left)
+									{
+										/* left edge padding */
+									}
+									
+									column(horizontal: @align_left, guide_mask:[@guide_label])
+									{	
+										row(spacing: 0, horizontal: @align_fill)
+										{
+											guide_consumer(consume_horizontal: 1);
+											static_text(identifier: "NewSize", name: "$$$/SaveForWeb/ImageSizePanel/NewSizeLabel=New Size:");
+										}
+										
+										row(child_vertical: @align_center)
+										{
+											column()
+											{
+												unit_hot_number
+												(
+													identifier: "NewWidthItem",
+													horizontal: @align_left,
+													alt: "$$$/SaveForWeb/ImageSizePanel/ToolTips/NewWidthItem=New image width",
+													name: "$$$/SaveForWeb/ImageSizePanel/WidthLabel=Width:",
+													digits: 4,
+													suffix: "$$$/SaveForWeb/SizePanel/OrigSizeFormatPx=px"
+												);
+												
+												unit_hot_number
+												(
+													identifier: "NewHeightItem",
+													horizontal: @align_left,
+													alt: "$$$/SaveForWeb/ImageSizePanel/ToolTips/NewHeightItem=New image height",
+													name: "$$$/SaveForWeb/ImageSizePanel/HeightLabel=Height:",
+													digits: 4,
+													suffix: "$$$/SaveForWeb/SizePanel/OrigSizeFormatPx=px"
+												);
+											}
+												
+											overlay() 
+											{
+												toggle_button
+												(
+													identifier: "proportionalButton",
+													image: {down: "SP_Link_Md_N.png", dark_down:"SP_Link_Md_N_D.png", normal: "NoConstrainIcon.png", dark_normal:"NoConstrainIconDark.png"},
+													value_on: true, 
+													value_off: false, 
+													alt: "$$$/SaveForWeb/ImageSizePanel/ToolTips/ContrainItem=Retains original image proportions",
+													wants_focus: false
+												);
+											}
+										}
+										
+										unit_hot_number
+										(
+											identifier: "PercentageItem",
+											horizontal: @align_left,
+											alt: "$$$/SaveForWeb/ImageSizePanel/ToolTips/NewPercentItem=Resize percentage",
+											name: "$$$/SaveForWeb/ImageSizePanel/PercentLabel=Percent:",
+											digits: 4
+										);
+									}
+									
+									column(horizontal: @align_right, spacing: @related_spacing)
+									{	
+										row()
+										{
+											static_text(identifier: "OrigSize", name: "$$$/SaveForWeb/ImageSizePanel/OriginalLabel=Original:");
+										}
+											
+										column(spacing: @separated_spacing)
+										{
+											row(spacing: @label_widget_spacing)
+											{
+												static_text(identifier: "OrigWidthItemLabel", name: "$$$/SaveForWeb/ImageSizePanel/WLabel=W:");
+												guide_consumer(consume_horizontal: 1);
+												static_text(identifier: "OrigWidthItemValue", name: "xxxxxxxxxxxx");
+											}
+
+											row(spacing: @label_widget_spacing)
+											{		
+												static_text(identifier: "OrigHeightItemLabel", name: "$$$/SaveForWeb/ImageSizePanel/HLabel=H:");
+												guide_consumer(consume_horizontal: 1);
+												static_text(identifier: "OrigHeightItemValue", name: "xxxxxxxxxxxx");
+											}
+										}
+									}
+									
+									column(horizontal: @align_right)
+									{
+										/* right edge padding */
+									}
+								}
+											
+								row(horizontal: @align_fill, guide_mask:[@guide_label])
+								{
+									column(horizontal: @align_left)
+									{
+										/* left edge padding */
+									}
+									
+									column(horizontal: @align_left)
+									{
+										popup
+										(
+											identifier: "AntiAliasItem",
+											horizontal: @align_left,
+											alt: "$$$/SaveForWeb/ImageSizePanel/ToolTips/AntiAliasItem=Applies anti-aliasing to edges of the artwork", 
+											include_custom_item: false,
+											items:@AntiAliasPopupItems
+										);
+									}
+											
+									column(horizontal: @align_right)
+									{
+										checkbox
+										(
+											identifier: "ClipToArtboardItem",
+											horizontal: @align_right,
+											name: "$$$/SaveForWeb/SizePanel/CheckBoxText=Clip to Artboard",
+											alt: "$$$/SaveForWeb/ImageSizePanel/ToolTips/ClipArtboardItem=Sets the clipping boundary to the artboard rather than the smallest enclosing box or clipping box"
+										);
+									}
+															
+									column(horizontal: @align_right)
+									{
+										/* right edge padding */
+									}
+								}
+							}
+							
+												
+							row()
+							{
+								column(horizontal: @align_fill)
+								{
+									row(horizontal: @align_fill)
+									{
+										static_text(name: "$$$/SaveForWeb/IllustratorUI/ColorTableStr=Color Table",horizontal: @align_left);
+										button
+										(
+											identifier:"ColorTableFlyoutMenu",
+											want_focus:false,
+											image:{normal: "SP_OptionFlyout_15x9_N.png", dark_normal:"SP_OptionFlyout_15x9_N_D.png"},
+											alt: "$$$/SaveForWeb/ColorPalette/ToolTips/Flyout=Color Palette Menu", horizontal: @align_right
+										);
+									}
+									grid_view(identifier: "ColorTableGrid", scrollable: false, width: 288, height: 158, horizontal: @align_fill);
+									subview(show_border: false, width: 285, margin : [0,0,0,0])
+									{
+										row(horizontal: @align_fill, child_vertical: @align_center)
+										{
+											static_text(identifier: "NoOfColorsText", horizontal: @align_left,
+															name: "xxxx",
+															alt: "$$$/SaveForWeb/IllustratorUIColorCaption=Number of colors in palette", bind: @NoOfColors);
+											buttongroup(horizontal: @align_fill, child_horizontal: @align_right, spacing: 0, margin: 0)
+											{
+												button(identifier: "LayerLockTransButton",
+														image: {normal: "SP_MapToTransparency_Wi_N.png", dark_normal: "SP_MapToTransparency_Wi_N_D.png"},
+														alt: "$$$/SaveForWeb/IllustratorUI/RemapButton=Maps selected colors to transparent");
+												button(identifier: "ShiftToWebButton",
+														image: {normal: "SP_WebSafe_Wi_N.png", dark_normal: "SP_WebSafe_Wi_N_D.png"},
+														alt: "$$$/SaveForWeb/IllustratorUI/WebShiftButton=Shifts/Unshifts selected colors to web palette");
+												button(identifier: "LayerLockButton",
+														image: {normal: "SP_LockAll_Wi_N.png", dark_normal: "SP_LockAll_Wi_N_D.png"},
+														alt: "$$$/SaveForWeb/IllustratorUI/LockButton=Locks selected colors to prohibit being dropped");
+												button(identifier: "NewButton",
+														image: {normal: "SP_New_Wi_N.png", dark_normal: "SP_New_Wi_N_D.png"},
+														alt: "$$$/SaveForWeb/IllustratorUI/AddButton=Adds eyedropper color to palette");
+												button(identifier: "TrashButton",
+														image: {normal: "SP_Delete_Wi_N.png", dark_normal: "SP_Delete_Wi_N_D.png"},
+														alt: "$$$/SaveForWeb/IllustratorUI/TrashButton=Deletes selected colors");
+											}
+										}
+									}
+								}
+																
+							}
+							row(horizontal: @align_fill, margin:[2, 0, 0, 0], guide_mask:[@guide_label])
+							{
+								popup(identifier: "SliceTypePopup",
+										include_custom_item: false,
+										name: "$$$/SaveForWeb/IllustratorUI/SliceType=Export:",
+										items: @SliceTypeItems,
+										bind:@SliceTypeValue);
+							}
+						}
+					}
+				}
+			
+				row(horizontal: @align_fill, vertical: @align_bottom, margin:[0, 0, 0, 0])
+				{
+					column(horizontal: @align_left, spacing: 0)
+					{
+						row()
+						{
+							button(identifier: "PreviewButton", commit_button: true, 
+									alt: "$$$/SaveForWeb/MainDialog/ToolTips/PreviewButton=Preview the optimized image in a browser",
+									name: "$$$/SaveForWeb/IllustratorUI/PreviewButtonStr=Preview...",vertical: @align_fill);
+								 
+							popup(identifier: "BrowserPopup",
+									bind: @BrowserPopUpCell,
+									alt:  "$$$/SaveForWeb/MainDialog/ToolTips/BrowserSelectionMenu=Select Browser Menu",
+									include_custom_item: false,
+									image: {normal:"SP_Browser_Md_N.png",dark_normal:"SP_Browser_Md_N_D.png"},
+									vertical: @align_fill);
+						}
+					}
+					column(horizontal: @align_right, spacing: @related_spacing)
+					{
+						row(reverse: os == @mac)
+						{
+							button(identifier: "okButton",
+								   set_default_focus: true,
+								   items:[
+								   {name: "$$$/SaveForWeb/IllustratorUI/SaveButtonStr=Save", action:@save}
+								   ],
+								   commit_button: true);
+
+							button(identifier:"cancelResetButton",
+									items:[
+										{name: "$$$/gCancel=Cancel", action: @cancel, alt:"$$$/SaveForWeb/MainDialog/ToolTips/Cancel=Reset settings and close dialog"},
+										{name:"$$$/SaveForWeb/MainDialog/ResetButton=Reset", action:@reset, modifiers:@opt, alt:"$$$/SaveForWeb/MainDialog/ToolTips/Reset=Reset settings to previously saved or remembered settings"}
+									],
+									commit_button: true);
+								   
+							button(identifier: "DoneButton",
+									items:[
+									   {name: "$$$/SaveForWeb/IllustratorUI/DoneButtonStr=Done", 
+										action:@done, 
+										alt:"$$$/SaveForWeb/MainDialog/ToolTips/Done=Remember current settings and close dialog"},
+									   {name:"$$$/SaveForWeb/MainDialog/RememberButton=Remember",
+										action:@remember, 
+										modifiers:@opt, 
+										alt:"$$$/SaveForWeb/MainDialog/ToolTips/Remember=Remember current settings"}
+									],
+								   commit_button: true);
+						}
+					}
+				}
+			}
+			column(horizontal: @align_right, vertical: @align_fill, margin: [0,0,0,0])
+			{
+				panel(margin: 0, value: 0, vertical: @align_fill, horizontal: @align_right, width: 5);
+			}
+		}
+		row(horizontal: @align_fill,
+			vertical: @align_bottom, margin:[0, 0, 0, 0])
+		{
+			image(identifier: "gripperImage",horizontal: @align_right, image: "SP_GripperIcon.png");
+		}
+	}
+}

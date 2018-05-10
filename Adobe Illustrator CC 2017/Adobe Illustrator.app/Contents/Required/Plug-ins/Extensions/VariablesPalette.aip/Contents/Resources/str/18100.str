@@ -1,0 +1,26 @@
+/* [1] */
+$$$/VariablesPalette/Str/Var=Variable
+/* [2] */
+$$$/VariablesPalette/Str/DataSet=Data Set
+/* [3] */
+$$$/VariablesPalette/Str/VarFile=variables.xml
+/* [4] */
+$$$/VariablesPalette/Str/VarWith=Variables with (no type) receive the type of the first object to which they are bound. Unbound variables can be set to any of the variable type options.
+/* [5] */
+$$$/VariablesPalette/Str/GrapthD=The value of a Graph Data variable can be modified by selecting the bound graph object, and editing the graph data through Object > Graph > Data.
+/* [6] */
+$$$/VariablesPalette/Str/Linked=The value of a Linked File variable can be modified by replacing the linked object with either the Replace command in the Links panel, or File > Place.
+/* [7] */
+$$$/VariablesPalette/Str/TextString=The value of a Text String variable can be modified by highlighting the related text object in the document, and entering new text.
+/* [8] */
+$$$/VariablesPalette/Str/Locating=The value of a Visibility variable can be modified by locating the related entry in the Layers panel, and clicking on the eyeball icon to toggle visibility.
+/* [9] */
+$$$/VariablesPalette/Str/NewDataSet=New Data Set
+/* [10] */
+$$$/VariablesPalette/Str/V=Variables
+/* [11] */
+$$$/VariablesPalette/Str/O=Objects
+/* [12] */
+$$$/VariablesPalette/Str/Export=Save Variable Library
+/* [13] */
+$$$/VariablesPalette/Str/Import=Load Variable Library

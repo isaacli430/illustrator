@@ -1,0 +1,16 @@
+sheet infographic_tool
+{
+interface:
+	showConstrainIcon: false;
+	dummyShowConstrainIcon:false;
+	Width: 150;
+	Height: 100;
+	constrain: 1;
+	logic:
+		when (dummyShowConstrainIcon) relate
+		{
+			Width <== Height * constrain;
+			Height <== Width / constrain;
+		}
+
+}

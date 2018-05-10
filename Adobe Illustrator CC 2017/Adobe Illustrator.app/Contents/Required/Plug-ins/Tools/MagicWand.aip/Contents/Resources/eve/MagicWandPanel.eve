@@ -1,0 +1,86 @@
+layout MagicWandPanel
+{
+    view subview(identifier: "AIEveSubView",
+				 placement: @place_column, width: gStandardMinPanelWidth, 
+				 layout_theme: @panel,
+				 show_border: false)
+    {
+		row(horizontal: @align_fill)
+		{		
+			checkbox( identifier: "FillColor",
+					 name: '$$$/MagicWand/kMagicWandDialogID/gp1/ChkB=Fill Color',
+					 bind:@FillColor);
+		
+			unit_hot_number(identifier: "FillColorTolerance", horizontal: @align_right,
+								name: '$$$/MagicWand/kMagicWandDialogID/gp1/Txt=Tolerance:',
+								max_value: @max_RGB_CMYK,
+								min_value: 0,
+								decimal_places: 2,
+								digits: 2,slider: true,
+								bind:@FillColorTolerance);		
+		}
+		
+		optional(bind: @ShowStrokeGroup, value: true, margin: 0)
+		{
+			separator( identifier:"FirstSeparator", horizontal:@align_fill );
+				
+			row(horizontal: @align_fill)
+			{		
+				checkbox( identifier: "StrokeColor",
+						 name: '$$$/MagicWand/kMagicWandDialogID/gp2/ChkB=Stroke Color',
+						 bind: @StrokeColor);
+			
+				unit_hot_number(identifier: "StrokeColorTolerance", horizontal: @align_right,
+									name: '$$$/MagicWand/kMagicWandDialogID/gp2/Txt=Tolerance:',
+									max_value: @max_RGB_CMYK,
+									min_value: 0,
+									decimal_places: 2,
+									digits: 2,slider: true,
+									bind:@StrokeColorTolerance);
+			}
+			
+			row(child_vertical: @align_center, horizontal: @align_fill, child_horizontal: @align_fill)
+			{	
+				checkbox( identifier: "StrokeWeight",
+						 name: '$$$/MagicWand/kMagicWandDialogID/gp3/ChkB=Stroke Weight',
+						 bind:@StrokeWeight);
+				
+				unit_hot_number(identifier: "StrokeWeightTolerance", horizontal: @align_right,
+									name: '$$$/MagicWand/kMagicWandDialogID/gp3/Txt=Tolerance:',
+									max_value: 1000,
+									min_value: 0,
+									decimal_places: 2,
+									digits: 2,slider: true,
+									unit: 'ApplicationStrokeUnit',
+									bind:@StrokeWeightTolerance);
+			}
+		}
+		
+		optional(bind: @ShowOpacityGroup, value: true, margin: 0)
+		{
+			separator( identifier:"SecondSeparator", horizontal:@align_fill);
+					
+			row(horizontal: @align_fill)
+			{									
+				checkbox( identifier: "Opacity",
+							 name: '$$$/MagicWand/kMagicWandDialogID/gp4/ChkB=Opacity',
+							 bind:@Opacity);
+				
+				unit_hot_number(identifier: "OpacityTolerance", horizontal: @align_right,
+									name: '$$$/MagicWand/kMagicWandDialogID/gp4/Txt=Tolerance:',
+									max_value: 100,
+									min_value: 0,
+									decimal_places: 2,
+									digits: 2,slider: true,
+									unit: 'NumberEditUnit_Percent',
+									bind:@OpacityTolerance);	
+			}
+			
+			checkbox( identifier: "BlendingMode",
+					 name: '$$$/MagicWand/kMagicWandDialogID/gp5/ChkB5=Blending Mode',
+					 bind:@BlendingMode);
+		}
+							
+	}
+	
+}

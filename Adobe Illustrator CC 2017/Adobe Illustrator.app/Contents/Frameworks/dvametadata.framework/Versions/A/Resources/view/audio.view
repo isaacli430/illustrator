@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<views xmlns="http://ns.adobe.com/metadata/ui/1.0/">
+
+	<!-- 
+		Audio View
+		Contains audio metadata properties.
+	-->	
+	<view 
+	    xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:xmpDM="http://ns.adobe.com/xmp/1.0/DynamicMedia/"
+		xmlns:xmp="http://ns.adobe.com/xap/1.0/"
+		name="com.adobe.xmp.view.audio"
+		label="$$$/metadataui/view/audio_label=Audio Data"
+		description="$$$/metadataui/view/audio_description=Contains audio metadata properties"
+		version="1.0">
+
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/AudioData1/Title=Title"
+			description="$$$/xmp/dc/title_description=The title of the document, or the name given to the resource. Typically, it will be a name by which the resource is formally known."
+			name="dc:title"/>
+	
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/AudioData1/Artist=Artist"
+			description="$$$/xmp/xmpDM/artist_description=The name of the artist or artists."
+			name="xmpDM:artist"/>
+	
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/AudioData1/Album=Album"
+			description="$$$/xmp/xmpDM/album_description=The name of the album."
+			name="xmpDM:album"/>
+
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/AudioData1/Track=Track Number"
+			description="$$$/xmp/xmpDM/trackNumber_description=A numeric value indicating the order of the audio file within its original recording."
+			name="xmpDM:trackNumber"/>
+		
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/AudioData1/Genre=Genre"
+			description="$$$/xmp/xmpDM/genre_description=The name of the genre."
+			name="xmpDM:genre"/>
+	
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/AudioData1/Composer=Composer"
+			description="$$$/xmp/xmpDM/composer_description=The composer^}s name."
+			name="xmpDM:composer"/>
+	
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/AudioData1/Engineer=Engineer"
+			description="$$$/xmp/xmpDM/engineer_description=The engineer^}s name."
+			name="xmpDM:engineer"/>
+	
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/AudioData1/ReleaseDate=Release Date"
+			description="$$$/xmp/xmpDM/releaseDate_description=The date the title was released."
+			name="xmpDM:releaseDate"/>
+	
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/AudioData1/CreationDate=Creation Date"
+				description="$$$/xmp/xmp/CreateDate_description=The date and time the resource was originally created."
+				name="xmp:CreateDate"/>
+	
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/AudioData1/Copyright=Copyright"
+			description="$$$/xmp/dc/rights_description=Information about rights held in and over the resource."
+			name="dc:rights"/>
+
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/AudioData1/SoftwarePackage=Software Package"
+			description="$$$/xmp/xmp/CreatorTool_description=The name of the tool used to create the resource."
+			name="xmp:CreatorTool"/>
+	
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/AudioData1/Comments=Comments"
+			description="$$$/xmp/xmpDM/logComment_description=User^}s log comments."
+			name="xmpDM:logComment"/>
+	
+		<separator/>
+	
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/AudioData2/AudioSampleRate=Sample Rate"
+			description="$$$/xmp/xmpDM/audioSampleRate_description=The audio sample rate. Can be any value, but commonly 32000, 41100, or 48000."
+			name="xmpDM:audioSampleRate"/>
+			
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/AudioData2/AudioSampleType=Audio Sample Type"
+			description="$$$/xmp/xmpDM/audioSampleType_description=The audio sample type. "
+			name="xmpDM:audioSampleType"/>
+			
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/AudioData2/AudioChannelType=Channels"
+			description="$$$/xmp/xmpDM/audioChannelType_description=The audio channel type. "
+			name="xmpDM:audioChannelType"/>
+
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/AudioData2/Duration=Duration"
+			description="$$$/xmp/xmpDM/duration_description=The duration of the media file."
+			name="xmpDM:duration"/>
+			
+		<!-- bugfix #2620548 (Deprecate xmpDM:relativeTimestamp in favor of new BWF Bext Schema)
+		<property label="$ $ $/AWS/FileInfoLib/Panels/DynamicMedia/AudioData2/Timestamp=BWF Time Reference"
+			description="$ $ $/xmp/xmpDM/relativeTimestamp_description=The start time of the media inside the audio project."
+			name="xmpDM:relativeTimestamp"/>
+		-->
+			
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/AudioData2/Format=Format"
+			description="$$$/xmp/xmpDM/audioCompressor_description=The audio compression used. For example, MP3."
+			name="xmpDM:audioCompressor"/>
+
+		<property label="$$$/AWS/FileInfoLib/Panels/DynamicMedia/AudioData2/Instrument=Instrument"
+			description="$$$/xmp/xmpDM/instrument_description=The musical instrument."
+			name="xmpDM:instrument"/>
+	</view>
+</views>

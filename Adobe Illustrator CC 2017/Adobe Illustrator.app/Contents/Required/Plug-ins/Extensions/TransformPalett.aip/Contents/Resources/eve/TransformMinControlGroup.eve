@@ -1,0 +1,23 @@
+layout TransformMinControlGroup
+{
+     view subview(identifier: "TransformMinControlGroup",
+				 layout_theme: @controlbar,
+				 show_border: false,
+				 child_vertical: @align_center,
+				 margin : 0,
+				 spacing: 5,
+				 height:  31)
+    {		
+		optional(identifier: "TransformHyperlinkSubGroup",child_vertical: @align_center, placement: @place_row, margin:0, spacing: 5)
+		{
+			subview(margin:0, show_border: false, height: 25 , child_vertical:@align_center)
+			{
+				separator(orientation: @vertical, vertical: @align_fill);
+			}
+			link_button(identifier: "TransformHyperlinkButton",
+							name: "$$$/TransformPalett/Mnu/TransformControlGroupName=Transform",
+							alt: "$$$/TransformPalett/Mnu/TransformPalette=Transform Panel");
+		}
+    }
+}
+

@@ -1,0 +1,143 @@
+layout PSImportDlg
+{
+    view subview(identifier: "AIEveSubView",
+					placement: @place_column,
+					show_border: false,
+					layout_theme: @dialog_large,
+					spacing: @unrelated_spacing)
+    {
+    	column(spacing: @inter_group_spacing)
+		{
+			group(identifier: "SizeGroup",
+					header: 'popup(identifier: "LayerComp",
+							name: "$$$/PhotoshopFileFormat/Dlg/16040/gLayerComp=&Layer Comp:",
+							include_custom_item: false,
+							items: @LayerCompChoices,
+							bind: @LayerCompType)',
+					horizontal: @align_fill,
+					placement: @place_column)
+			{
+				row(horizontal: @align_fill)
+				{
+					column(spacing: 0)
+					{
+						static_text(identifier: "psdPreviewText",
+									name: "$$$/PhotoshopFileFormat/Dlg/16040/gPreview=Preview");
+
+						image(identifier: "psdPreviewItem",
+								show_border: true,
+								guide_mask: [@guide_label],
+								height: 125,
+								width: 100);
+					}
+
+					column(spacing: 0,
+							horizontal: @align_fill,
+							vertical: @align_fill)
+					{
+						static_text(identifier: "commentText",
+									name: "$$$/gComments=Comments");
+
+						edit_text(characters: 22,
+									identifier: "commentBox",
+									lines: 5,
+									scrollable: true,
+									editable: false,
+									guide_mask: [@guide_label],
+									horizontal: @align_fill,
+									vertical: @align_fill,
+									readonly: true);
+					}
+				}
+
+				checkbox(identifier: "showPreview",
+							bind: @showPreviewVal,
+							guide_mask: [@guide_label],
+							name: "$$$/PhotoshopFileFormat/Dlg/16040/gShowPreview=Show &Preview");
+
+				popup(include_custom_item: false,
+						identifier: "LinkPopup",
+						horizontal: @align_fill,
+						name: "$$$/gWhenUpdatingLink=When &Updating Link:",
+						bind: @Links,
+						items: @LinkChoices);
+			}
+
+			group(horizontal: @align_fill,
+					placement: @place_column,
+					name: "$$$/gOptions=Options")
+			{
+				radiogroup( horizontal: @align_fill, show_border: false, margin: 0)
+				{
+				   column(spacing: gRelatedTextVerticalSpacing)
+				   {
+					radio_button(bind: @ConvertLayersOption,
+								value: true,
+								identifier: "ConvertLayersToObjectsRadio",
+								name: "$$$/PhotoshopFileFormat/Dlg/16040/3=&Convert Layers to Objects",
+								guide_mask: [@guide_label]);
+								
+					static_text(name: "$$$/PhotoshopFileFormat/Dlg/16040/3a=Make text editable where possible", indent:gIndent,theme_font_size: @small);
+				   }
+				   column(spacing: gRelatedTextVerticalSpacing)
+				   {  
+					radio_button(bind: @FlattenLayersOption,
+								value: true,
+								identifier: "FlattenLayersRadio",
+								name: "$$$/PhotoshopFileFormat/Dlg/16040/4=&Flatten Layers to a Single Image",
+								guide_mask: [@guide_label]);
+
+					static_text(name: "$$$/PhotoshopFileFormat/Dlg/16040/4a=Preserves text appearance", indent:gIndent,theme_font_size: @small);
+				   }
+				}
+
+				checkbox(name: "$$$/PhotoshopFileFormat/Dlg/16040/7=Import &Hidden Layers",
+							identifier: "ImportHiddenLayers",
+							guide_mask: [@guide_label],
+							bind: @ImportHiddenLayers);
+
+				checkbox(name: "$$$/PhotoshopFileFormat/Dlg/16040/6=Import &Slices",
+							identifier: "ImportSlices",
+							guide_mask: [@guide_label],
+							bind: @ImportSlice);
+			}
+
+			optional(bind: @ColorModeMismatch,
+						horizontal: @align_fill,
+						margin: 0,
+						value: true)
+			{
+				panel(bind: @ShowColorModeMismatchWarning,
+						child_vertical: @align_center,
+						horizontal: @align_fill,
+						placement: @place_row,
+						margin: 0,
+						value: true)
+				{
+					info_icon(icontype:"warning",
+								identifier: "WarningIcon",
+								size:"small");
+
+					static_text(name: "$$$/PhotoshopFileFormat/Dlg/16040/8=This file^}s color mode does not match that of the AI document. Any transparency effects between layers will yield different results.",
+								characters: 1,
+								identifier: "ColorModeMismatchWarningText",
+								horizontal: @align_fill);
+				}
+			}
+		}
+
+		row(horizontal: @align_right,
+			reverse: os == @mac, spacing: @related_spacing)
+		{
+		    button(default: true,
+					name: "$$$/gOK=OK",
+					identifier: "okButton",
+					commit_button: true);
+
+		    button(cancel: true,
+					name: "$$$/gCancel=Cancel",
+					identifier: "cancelButton",
+					commit_button: true);
+		}
+    }
+}

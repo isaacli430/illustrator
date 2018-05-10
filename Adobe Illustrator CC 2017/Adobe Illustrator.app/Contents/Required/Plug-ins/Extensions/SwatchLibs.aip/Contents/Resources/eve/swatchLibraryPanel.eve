@@ -1,0 +1,74 @@
+layout ActionsPanel
+{
+    view subview(identifier: "actions_panel_subview",
+				 layout_theme: @panel,
+				 margin: gPanelToolbarSubviewMargin,
+				 show_border: false)
+	{
+		optional(bind: @showFindOptions, value: true, horizontal: @align_fill, vertical:@align_top)
+			{
+				subview(identifier: "SearchContainer", horizontal:@align_fill, show_border:false, margin:0, width: 20, height: 21);
+			}
+		
+		column(horizontal: @align_fill,vertical: @align_fill,spacing: gPanelToolbarTopSpacing)
+		{
+			overlay(vertical: @align_fill, horizontal: @align_fill)
+			{
+				panel(margin: 0, bind: @showListMode, value: true, vertical: @align_fill, horizontal: @align_fill)
+				{
+					multicolumn_tree(identifier: "multicolumntree",
+									wants_focus: false,
+									height: 90,
+									width: 216,
+									horizontal: @align_fill,
+									vertical: @align_fill);
+				}
+
+				panel(margin: 0, bind: @showListMode, value: false, vertical: @align_fill, horizontal: @align_fill)
+				{
+					grid_view(identifier: "gridView",
+							height: 90,
+							width: 216,
+							horizontal: @align_fill,
+							vertical: @align_fill);
+				}
+			}
+	
+		buttongroup(child_vertical: @align_bottom, horizontal: @align_fill, child_horizontal: @align_left,
+						spacing: 0, child_vertical: @align_fill,spacing: gPanelToolbarIconSpacing, child_width: gPanelToolbarIconWidth, child_height: gPanelToolbarIconHeight)
+		{
+			button
+			(
+				identifier: "LibMenuButton",
+				action: @Libraries,
+				wants_focus: false,
+				alt: "$$$/SwatchLibs/Str/16916=Swatch Libraries menu",
+				image: {normal:"SP_LibraryTri_Wi_N.png", dark_normal:"SP_LibraryTri_Wi_N_D.png"}
+			);
+			button
+			(
+				identifier: "PreviousButton",
+				action: @PrevLibrary,
+				wants_focus: false,
+				alt: "$$$/SwatchLibs/Str/16918=Load previous Swatch Library",
+				image: {normal:"SP_PreviousPage_Sm_N.png", dark_normal:"SP_PreviousPage_Sm_N_D.png"}
+			);
+			button
+			(
+				identifier: "NextButton",
+				action: @NextLibrary,
+				wants_focus: false,
+				alt: "$$$/SwatchLibs/Str/16919=Load next Swatch Library",
+				image: {normal:"SP_NextPage_Sm_N.png", dark_normal:"SP_NextPage_Sm_N_D.png"}
+			);
+			image
+			(
+				wants_focus: false,
+				image: {normal:"SP_NoEdit_Xs_N.png", dark_normal:"SP_NoEdit_Xs_N_D.png"},
+				horizontal: @align_right
+			);
+			resize_gripper_gap(horizontal: @align_right);
+		}
+	  }
+	}
+}

@@ -1,0 +1,40 @@
+layout SmartExportSettingRowUI
+{
+	view subview(identifier: "ExportSettingsRow",spacing: 0,
+                 show_border: false)
+	{                    
+		row(horizontal:@align_fill,spacing: 0)
+		{
+			         
+          	edit_text(identifier: 'ScaleEditBox', characters: 7); 
+          	overlay(margin:[0,0,0,2])
+          	{ 
+            	popup(identifier: "Scale",
+	                  image:{normal:"SP_dropdown_N.png",dark_normal:"SP_dropdown_N_D.png"},	                          
+	                  alt: '$$$/SmartExportUI/SmartExportDialog/ScaleDesc=Select or specify the scale of the exported image. For example, 1x, 2x, 1.5x',
+	                  include_custom_item: false,
+	                  bind: @PresetScaleValue,
+	                  wants_focus: false,    
+	                  allow_mouse_scroll: false,
+	                  items: @ScaleItems);
+          	} 
+
+			panel(horizontal:@align_fill,spacing: 0,margin:[0,0,0,1]) { 
+				edit_text(identifier: 'SuffixEditBox',bind:@SuffixValue,characters: 4, horizontal:@align_fill,
+			 		alt : '$$$/SmartExportUI/SmartExportDialog/SuffixDesc=Text added at the end of the file name');
+	 		}
+			popup(identifier: 'Format',
+				 items: @FormatItems,
+				 include_custom_item: false,
+				 bind: @FormatValue,
+               	 popup_maximum_width_chars: 5,   
+ 				 allow_mouse_scroll: false,
+				 alt: '$$$/SmartExportUI/SmartExportDialog/FormatDesc=Choose the type of file you need');
+	 
+			button(image:{normal:"SP_CloseCancel_Xs_N.png",dark_normal:"SP_CloseCancel_Xs_N_D.png"} ,
+                identifier: 'DeleteButton',bind_output:@DeleteValue,
+                value :1,
+                name: 'Image');
+		}
+	}
+}

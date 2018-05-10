@@ -1,0 +1,36 @@
+/* [1] */
+$$$/Pathfinder/Str/Redo/1=Redo Add
+/* [2] */
+$$$/Pathfinder/Str/Redo/2=Redo Intersect
+/* [3] */
+$$$/Pathfinder/Str/Redo/3=Redo Exclude
+/* [4] */
+$$$/Pathfinder/Str/Redo/4=Redo Subtract
+/* [5] */
+$$$/Pathfinder/Str/Redo/5=Redo Minus Back
+/* [6] */
+$$$/Pathfinder/Str/Redo/6=Redo Divide
+/* [7] */
+$$$/Pathfinder/Str/Redo/7=Redo Outline
+/* [8] */
+$$$/Pathfinder/Str/Redo/8=Redo Trim
+/* [9] */
+$$$/Pathfinder/Str/Redo/9=Redo Merge
+/* [10] */
+$$$/Pathfinder/Str/Redo/10=Redo Crop
+/* [11] */
+$$$/Pathfinder/Str/Redo/11=Redo Hard Mix
+/* [12] */
+$$$/Pathfinder/Str/Redo/12=Redo Soft Mix
+/* [13] */
+$$$/Pathfinder/Str/Redo/13=Redo Trap
+/* [14] */
+$$$/Pathfinder/Str/Redo/14=Redo Options
+/* [15] */
+
+/* [16] */
+$$$/Pathfinder/Str/Redo/16=Redo Make Compound Shape
+/* [17] */
+$$$/Pathfinder/Str/Redo/17=Redo Release Compound Shape
+/* [18] */
+$$$/Pathfinder/Str/Redo/18=Redo Expand Compound Shape

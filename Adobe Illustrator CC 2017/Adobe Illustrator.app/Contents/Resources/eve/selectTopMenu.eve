@@ -1,0 +1,10 @@
+layout selectTopMenu
+{
+	view menu( id: 50,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/Select/All=&All", id:			(os == @win) ? 1935764588 : 1935764588, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Select/AllInArtboard=A&ll on Active Artboard", id:	1934727834, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Select/Deselect=&Deselect", id:	142, help_id:0);
+}
+}

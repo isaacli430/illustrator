@@ -1,0 +1,90 @@
+layout RectangleLiveShapeControlGroup
+{
+     view subview(identifier: "RectangleControlGroup",
+				 layout_theme: @controlbar,
+				 show_border: false,
+				 child_vertical: @align_center,
+				 placement: @place_row,
+				 margin : 0,
+				 spacing: 5,
+				 height:  31)
+    {		
+		optional(identifier: "RectangleControlGroupSubGroup", child_vertical:  @align_center, margin : 0,spacing: @related_spacing, placement: @place_row)			
+		{
+			unit_edit_number(identifier: "RectangleWidth",
+								alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/RectangleWidth=Rectangle Width",
+								decimal_places: 3,
+								digits: 5,
+								unit:"CurrentDocumentUnit",
+								max_value: 16384,
+								min_value: 0.0,
+								label: "SP_Width_Md_N.png",
+								is_image_label: true);
+								
+			toggle_button(identifier: "ConstrainDimensions",
+							bind: @ConstrainDimensions,
+							value_on: true,
+							value_off: false,
+							image: { normal: "NoConstrainIcon.png", dark_normal: "NoConstrainIconDark.png", down: "LinkOnConstrainIcon.png", dark_down: "LinkOnConstrainIconDark.png" },
+							alt: "$$$/LiveShapes/str/ControlGroup/ToolTip/ConstrainDimensions=Constrain Width and Height Proportions",
+							vertical: @align_center,
+							wants_focus: false);
+							
+			unit_edit_number(identifier: "RectangleHeight",
+								alt: "$$$/LiveShapes/str/ControlGroup/ToolTip/RectangleHeight=Rectangle Height",
+								decimal_places: 3,
+								digits: 5,
+								unit:"CurrentDocumentUnit",
+								max_value: 16384,
+								min_value: 0.0);
+
+			image(identifier: "RectangleHeightImage",
+					alt: "$$$/LiveShapes/str/ControlGroup/ToolTip/RectangleHeight=Rectangle Height",
+					image: { normal: "SP_Height_Md_N.png", dark_normal: "SP_Height_Md_N_D.png" });
+					
+			overlay()
+					{
+						panel(margin: 0, bind: @RectangleCornerType, value: 0)
+						{
+							button(identifier: "RectangleCornerTypeInvalid",
+									image: { normal: "SP_MixedCornerLTPopup_Md_N.png", dark_normal: "SP_MixedCornerLTPopup_Md_N_D.png" },
+									alt: "$$$/LiveShapes/str/ControlGroup/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+						panel(margin: 0, bind: @RectangleCornerType, value: 1)
+						{
+							button(identifier: "RectangleCornerTypeNormal",
+									image: { normal: "SP_NormalRoundingLTPopup_Md_N.png", dark_normal: "SP_NormalRoundingLTPopup_Md_N_D.png" },
+									alt: "$$$/LiveShapes/str/ControlGroup/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+						panel(margin: 0, bind: @RectangleCornerType, value: 2)
+						{
+							button(identifier: "RectangleCornerTypeInverted",
+									image: { normal: "SP_InverseRoundingLTPopup_Md_N.png", dark_normal: "SP_InverseRoundingLTPopup_Md_N_D.png" },
+									alt: "$$$/LiveShapes/str/ControlGroup/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+						panel(margin: 0, bind: @RectangleCornerType, value: 3)
+						{
+							button(identifier: "RectangleCornerTypeChamfer",
+									image: { normal: "SP_ChamferLTPopup_Md_N.png", dark_normal: "SP_ChamferLTPopup_Md_N_D.png" },
+									alt: "$$$/LiveShapes/str/ControlGroup/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+					}
+									
+			edit_number(identifier: "RectangleCornerRadius",
+						min_value: 0,
+						decimal_places: 2,
+						digits: 3,
+						unit:"CurrentDocumentUnit",
+						stepper: true,
+						alt: "$$$/LiveShapes/str/ControlGroup/ToolTip/Radius=Corner Radius",
+						popuplist: false,
+						set_default_focus: true
+						);
+		}					
+    }
+}
+

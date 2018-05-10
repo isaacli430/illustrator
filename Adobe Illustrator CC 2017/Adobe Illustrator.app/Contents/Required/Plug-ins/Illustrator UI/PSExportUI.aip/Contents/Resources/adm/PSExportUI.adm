@@ -1,0 +1,9 @@
+sheet PSExportUI
+{
+	interface:
+		Resolution: 72;
+		OptionExport: empty;
+		OtherResolution	: Resolution <== (Resolution == -1) ? OtherResolution : Resolution;
+		Antialias: 3;
+		ShowInfo: true <== (Antialias == 1) ? false : true;
+}

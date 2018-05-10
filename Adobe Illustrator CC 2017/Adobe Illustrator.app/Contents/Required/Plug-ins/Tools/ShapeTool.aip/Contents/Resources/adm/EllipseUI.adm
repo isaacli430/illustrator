@@ -1,0 +1,17 @@
+sheet ellipse_tool
+{
+interface:
+	showAngleFields: false;
+	showConstrainIcon: false;
+	dummyShowConstrainIcon:false;
+	Width: 0;
+	Height: 0;
+	constrain: 1;
+
+logic:
+		when (dummyShowConstrainIcon) relate
+		{
+			Width <== Height * constrain;
+			Height <== Width / constrain;
+		}
+}

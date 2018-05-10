@@ -1,0 +1,14 @@
+sheet SimpleToolsPolar
+{
+    interface:
+        combo_slider_filter: {min_value: -500, max_value: 500};
+		widthAdmCell: 100;
+		heightAdmCell: 100;
+		numberAdmCell: 5;
+		skewAdmCell: 0;
+		number1AdmCell: 5;
+		skew1AdmCell: 0;
+		checkBoxAdmCell: 0;
+		fillAdmCell: 1;
+		fourPointPinSelectorAdmCell: 3;
+}

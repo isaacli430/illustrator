@@ -1,0 +1,91 @@
+layout ShearDialog
+{
+    view subview(show_border: false,
+                 layout_theme: @dialog_large,
+                 identifier: "shearDialogSubView",child_horizontal: @align_fill,spacing: @unrelated_spacing)
+    {
+		column(spacing: @inter_group_spacing,child_horizontal: @align_fill)
+		{
+			angle_picker(identifier: "ShearAnglePicker",	
+							name: "$$$/_TRANSFOR/Dlg/Shear/titleShear=&Shear Angle:",
+							value_range: {min_value:-360, max_value: 360},
+							bind: @ShearAngleEditNumberCell,
+							set_default_focus: true,
+							show_editbox: true);
+		
+		group(name: "$$$/_TRANSFOR/Dlg/Shear/shearAxisGroupbox=Axis",
+			  guide_mask: [ @guide_label]
+			  )
+		{
+			radiogroup()
+			{
+				radio_button(name: "$$$/_TRANSFOR/Dlg/Shear/horizontalShear=&Horizontal",
+							 identifier: "HorizontalRadioButton",
+							 bind: @AxisRadioGp,
+							 value: 0);
+				
+				radio_button(name: "$$$/_TRANSFOR/Dlg/Shear/verticalShear=&Vertical",
+							 identifier: "VerticalRadioButton",
+							 bind: @AxisRadioGp,
+							 value: 1);
+						 
+				row(child_vertical: @align_center, spacing: @label_widget_spacing)
+				{
+					radio_button(bind: @AxisRadioGp,
+								 identifier: "AngleRadioButton",
+								 name: "$$$/_TRANSFOR/Dlg/Shear/angleShear=&Angle:",
+								 value: 2);
+								 
+					angle_picker(identifier: "AnglePicker",	
+									value_range: {min_value:-360, max_value: 360},
+									bind: @AngleEditNumberCell,
+									show_editbox: true);
+				}
+			}
+		}
+        
+        
+			group(name: "$$$/_TRANSFOR/Dlg/Shear/shearOptionsGroupbox=Options",
+					 guide_mask: [ @guide_label],
+					  placement: @place_row,horiontal: @align_fill)
+			{
+				checkbox(name: "$$$/_TRANSFOR/Dlg/Shear/doObjectsShear=Transform &Objects",
+							identifier: "objectsCheckBox",
+							bind: @ObjectCheckBoxCell);
+			
+				checkbox(name: "$$$/_TRANSFOR/Dlg/Shear/doPatternsShear=Transform Pa&tterns",
+							bind: @PatternCheckBoxCell,
+							identifier: "PatternCheckBox");
+			}
+				checkbox(name: "$$$/_TRANSFOR/Dlg/Shear/shearPreview=&Preview",
+						  bind: @PreviewCheckBoxCell,
+						  identifier: "PreviewCheckbox",
+						  guide_mask: [ @guide_label],horizontal: @align_left);
+
+		}
+
+		row(spacing: @button_group_spacing,horizontal: @align_right,child_vertical: @align_center)
+				{
+					button(name: "$$$/_TRANSFOR/Dlg/Shear/copyShear=&Copy",
+						   identifier: "copyButton",
+						   action: @copy,
+						   horizontal: @align_left,
+						   commit_button: true,
+						   vertical: @align_fill);  
+					
+					row(reverse: os == @mac, spacing: @related_spacing,horizontal: @align_right)
+					{
+    					button(name: "$$$/gOK=OK",
+           					   identifier: "okButton",
+           					   action: @ok,
+           					   commit_button: true);
+
+    					button(identifier: "cancelButton",
+								  name: "$$$/gCancel=Cancel",
+								  action: @cancel,
+								  commit_button: true);
+					 }
+				}
+		}
+    }
+}

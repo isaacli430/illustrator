@@ -1,0 +1,6 @@
+/* [1] */
+The filter cannot complete because of an error:
+/* [2] */
+The filter cannot complete because of a resource error:
+/* [3] */
+The filter cannot complete because there isn’t enough memory (RAM) available:

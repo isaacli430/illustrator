@@ -1,0 +1,11 @@
+sheet TouchEllipsePropertiesUI
+{
+interface:
+	MultipleSelection: false;
+
+	DontConstrain: false;
+
+	unlink ConstrainDimensions: true <== MultipleSelection ? DontConstrain : ConstrainDimensions;
+
+	unlink ConstrainPieAngles: false <== MultipleSelection ? DontConstrain : ConstrainPieAngles;
+}

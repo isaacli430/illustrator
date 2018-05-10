@@ -1,0 +1,34 @@
+/* [1] */
+$$$/TxtSmart/Str/16130=Smart Punctuation filter could not allocate global storage record.
+/* [2] */
+$$$/TxtSmart/Str/16131=Smart Punctuation filter could not build the internal text list.
+/* [3] */
+$$$/TxtSmart/Str/16132=Smart Punctuation filter got an unknown item number in the main dialog.
+/* [4] */
+$$$/TxtSmart/Str/16133=Smart Punctuation filter could not complete the replace command.
+/* [5] */
+$$$/TxtSmart/Str/16134=The Smart Punctuation filter is supposed to check only the text selection, but you don't have a text selection.
+/* [6] */
+$$$/TxtSmart/Str/16135=The file ^[^2^] is already open. If you are editing it in another application,  please close it and try this filter again.
+/* [7] */
+$$$/TxtSmart/Str/16136=  ligature
+/* [8] */
+$$$/TxtSmart/Str/16137=  ligatures
+/* [9] */
+$$$/TxtSmart/Str/16138=  quote
+/* [10] */
+$$$/TxtSmart/Str/16139=  quotes
+/* [11] */
+$$$/TxtSmart/Str/16140=  space
+/* [12] */
+$$$/TxtSmart/Str/16141=  spaces
+/* [13] */
+$$$/TxtSmart/Str/16142=  dash, dot, or fraction
+/* [14] */
+$$$/TxtSmart/Str/16143=  dashes, dots, or fractions
+/* [15] */
+$$$/TxtSmart/Str/16144=Changes made to selection only.\n\n
+/* [16] */
+$$$/TxtSmart/Str/16145=Changes made to entire document.\n\n
+/* [17] */
+$$$/TxtSmart/Str/16146= changed.\n

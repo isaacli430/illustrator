@@ -1,0 +1,134 @@
+layout warichuOptionsDialog
+{
+	view subview(identifier: "warichuOptionsDialog_subview",
+					layout_theme: @dialog_large,
+					spacing: @unrelated_spacing,
+					show_border: false)
+	{
+		column(horizontal: @align_fill,spacing: @inter_group_spacing)
+		{
+			group(identifier: "warichu_group",
+					header: "checkbox(identifier: 'warichu_checkbox', horizontal: @align_left,
+										name: '$$$/_WarichuSettings/Dlg/kSLOWariChuDialog/Warichu=Warichu',
+										value_off: 0,
+										value_on: 1,
+										set_default_focus: true,
+										bind: @warichu)",
+					guide_mask: [@guide_label],
+					horizontal: @align_fill,
+					child_horizontal: @align_fill)
+			{
+				column(horizontal: @align_fill,
+					child_horizontal: @align_fill)
+				{
+					row(vertical: @align_fill,
+							child_vertical: @align_fill)
+					{
+						unit_hot_number(identifier: "lines_editNumber",
+										name: "$$$/_WarichuSettings/Dlg/kSLOWariChuDialog/Lines=Lines:",
+										min_value: 2,
+										max_value: 5,
+										decimal_places: 0,
+										digits: 1,
+										items: @linesItems,
+										bind: @lines,
+										bind_final: true);
+						
+						unit_hot_number(identifier: "scale_editNumber",
+										name: "$$$/_WarichuSettings/Dlg/kSLOWariChuDialog/Scale=Scale:",
+										popuplist: true,
+										stepper: true,
+										min_value: 1,
+										max_value: 100,
+										decimal_places: 2,
+										digits: 4,
+										items: @scaleItems,
+										bind: @scale,
+										bind_final: true,
+										horizontal: @align_right,
+										vertical: @align_top,
+										unit: "NumberEditUnit_Percent");
+								
+						
+					}
+					row(vertical: @align_fill,
+							child_vertical: @align_fill)
+					{
+						unit_hot_number(identifier: "lineGap_editNumber",
+										name: "$$$/_WarichuSettings/Dlg/kSLOWariChuDialog/LineGap=Line Gap:",
+										stepper: true,
+										min_value: -14,
+										max_value: 1828,
+										digits: 4,
+										unit: "ApplicationAsianTextUnit",
+										decimal_places: 2,
+										bind: @lineGap,
+										bind_final: true);
+					}
+				}
+				
+				popup(identifier: "alignment_popup",
+						name: "$$$/_WarichuSettings/Dlg/kSLOWariChuDialog/Alignment=Alignment:",
+						include_custom_item: false,
+						items: @alignmentItems,
+						horizontal: @align_left,
+						bind: @alignment);
+			}
+			group(identifier: "lineBreakingOptions_group",
+					name: "$$$/_WarichuSettings/Dlg/kSLOWariChuDialog/LineBreakingOptions=Line Breaking Options",
+					horizontal: @align_fill,
+					child_horizontal: @align_fill)
+			{
+				column(vertical: @align_fill,
+						child_vertical: @align_fill)
+				{
+					unit_hot_number(identifier: "minNumOfCharOnFirstLine_editNumber",
+									name: "$$$/_WarichuSettings/Dlg/kSLOWariChuDialog/MinimumBeforeStatic=Minimum Number of Characters on First Line:",
+									min_value: 1,
+									max_value: 10,
+									decimal_places: 0,
+									digits: 2,
+									items: @minNumOfCharItems,
+									bind: @minNumOfCharOnFirstLine,
+									bind_final: true
+									);
+					unit_hot_number(identifier: "minNumOfCharOnLastLine_editNumber",
+									name: "$$$/_WarichuSettings/Dlg/kSLOWariChuDialog/MinimumAfterStatic=Minimum Number of Characters on Last Line:",
+									min_value: 1,
+									max_value: 10,
+									decimal_places: 0,
+									digits: 2,
+									items: @minNumOfCharItems,
+									bind: @minNumOfCharOnLastLine,
+									bind_final: true);
+				}
+			}
+		}
+		row(horizontal: @align_fill,
+			child_horizontal: @align_fill,
+			vertical: @align_fill,
+			child_vertical: @align_center,
+			spacing: @separated_spacing)
+		{
+			
+			checkbox(identifier: "preview_checkbox",
+						name: "$$$/_WarichuSettings/Dlg/kSLOWariChuDialog/Preview=Preview",
+						guide_mask: [@guide_label],
+						value_off: 0,
+						value_on: 1,
+						bind: @preview);
+			row(horizontal: @align_fill,
+				child_horizontal: @align_right,
+				spacing: @related_spacing,
+				reverse: os == @mac)
+			{
+				button(identifier: "okButton",
+						commit_button: true,
+						name: "$$$/gOK=OK");
+				button(identifier: "cancelButton",
+						commit_button: true,
+						name: "$$$/gCancel=Cancel");
+			}
+		}
+	}
+}

@@ -1,0 +1,60 @@
+{
+$$$/slicingAttributes/Str/MakeSlices=Make Slices
+$$$/slicingAttributes/Str/ReleaseSlices=Release Slices
+$$$/slicingAttributes/Str/CrateSlicesFromGuides=Create Slices from Guides
+$$$/slicingAttributes/Str/CreateSlicesFromSelection=Create Slices from Selection
+$$$/slicingAttributes/Str/CreateSlicesFromSelectedText=Create Slices from Selected Text
+$$$/slicingAttributes/Str/NewSlice=New Slice
+$$$/slicingAttributes/Str/Left=Left:
+$$$/slicingAttributes/Str/Bottom=Bottom
+$$$/slicingAttributes/Str/Right=Right:
+$$$/slicingAttributes/Str/Top=Top:
+$$$/slicingAttributes/Str/SelectSlice=Select Slice
+$$$/slicingAttributes/Str/LlickLocationX=Click Location X:
+$$$/slicingAttributes/Str/ClickLocationY=Click Location Y:
+$$$/slicingAttributes/Str/AddToSelection=Add to Selection:
+$$$/slicingAttributes/Str/DuplicateSelectedSlices=Duplicate Slices
+$$$/slicingAttributes/Str/CombineSelectedSlices=Combine Slices
+$$$/slicingAttributes/Str/DeleteSelectedSlices=Delete Slices
+$$$/slicingAttributes/Str/DivideSelectedSlices=Divide Slices
+$$$/slicingAttributes/Str/DivideHorizontally=Divide Horizontally:
+$$$/slicingAttributes/Str/DivideVertically=Divide Vertically:
+$$$/slicingAttributes/Str/NumberOfSlices=Number of Slices:
+$$$/slicingAttributes/Str/NumberOfSlices2=Number of Slices:
+$$$/slicingAttributes/Str/SliceHeight=Slice Height:
+$$$/slicingAttributes/Str/SliceWidth=Slice Width:
+$$$/slicingAttributes/Str/SliceOptions2=Slice Options
+$$$/slicingAttributes/Str/Type=Type:
+$$$/slicingAttributes/Str/Image=Image",					// type enum
+$$$/slicingAttributes/Str/NoImage=No Image",					// type enum
+$$$/slicingAttributes/Str/LinkedHTMLText=Linked HTML Text",			// type enum
+$$$/slicingAttributes/Str/BGColorType=BG Color Type
+$$$/slicingAttributes/Str/None=None",						// bg type enum
+$$$/slicingAttributes/Str/Color=Color",					// bg type enum
+$$$/slicingAttributes/Str/Matte=Matte",				 	// bg type enum
+$$$/slicingAttributes/Str/BGColorRed=BG Color Red:
+$$$/slicingAttributes/Str/BGColorBlue=BG Color Blue:
+$$$/slicingAttributes/Str/BGColorGreen=BG Color Green:
+$$$/slicingAttributes/Str/CellText=Cell Text:
+$$$/slicingAttributes/Str/Name=Name:
+$$$/slicingAttributes/Str/URL=URL:
+$$$/slicingAttributes/Str/Target=Target:
+$$$/slicingAttributes/Str/Message=Message:
+$$$/slicingAttributes/Str/AltTag=Alt Tag:
+$$$/slicingAttributes/Str/HOrizAlign=Horiz Align:
+$$$/slicingAttributes/Str/Left2=Left",						// align enum
+$$$/slicingAttributes/Str/Center=Center",					// align enum
+$$$/slicingAttributes/Str/Right2=Right",					// align enum
+$$$/slicingAttributes/Str/Default=Default",					// align enum
+$$$/slicingAttributes/Str/VertAlign=Vert Align:
+$$$/slicingAttributes/Str/Top2=Top",						// align enum
+$$$/slicingAttributes/Str/Center=Center",					// align enum
+$$$/slicingAttributes/Str/Bottom=Bottom",					// align enum
+$$$/slicingAttributes/Str/Default=Default",					// align enum
+$$$/slicingAttributes/Str/ClipToArtboard2=Clip to Artboard
+//	kActionSliceClipToArtboardOn,	
+//	kActionSliceClipToArtboardOff,	
+$$$/slicingAttributes/Str/LockSlices2=Lock Slices
+//	kActionSliceLockOn
+//	kActionSliceLockOff
+dummy

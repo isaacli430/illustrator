@@ -1,0 +1,68 @@
+layout tateChuYokoOptionsDialog
+{
+	view subview(identifier: "tateChuYokoOptionsDialog_subview",
+					layout_theme: @dialog_large,
+					spacing: @unrelated_spacing,
+					show_border: false)
+	{
+		group(identifier: "tateChuYoko_group",
+				header: "checkbox(identifier: 'tateChuYoko_checkbox', horizontal: @align_left,
+									name: '$$$/_SLOParagraph/Tatechuyoku/Tatechucheckbox=Tate-chu-yoko',
+									value_off: 0,
+									value_on: 1,
+									set_default_focus: true,
+									bind: @tateChuYoko)",
+				horizontal: @align_fill,
+				child_horizontal: @align_fill)
+		{
+			unit_hot_number(identifier: "upDown_editNumber",
+							name: "$$$/_SLOParagraph/Tatechuyoku/UpDown=Up/Down:",
+							unit: "ApplicationAsianTextUnit",
+							popuplist: true,
+							stepper: true,
+							decimal_places: 2,
+							digits: 6,
+							items: @upDownLeftRightItems,
+							bind: @upDown,
+							bind_final: true,
+							min_value: -32768,
+							max_value: 32767);
+			unit_hot_number(identifier: "leftRight_editNumber",
+							name: "$$$/_SLOParagraph/Tatechuyoku/LeftRight=Left/Right:",
+							unit: "ApplicationAsianTextUnit",
+							popuplist: true,
+							stepper: true,
+							decimal_places: 2,
+							digits: 6,
+							items: @upDownLeftRightItems,
+							bind: @leftRight,
+							bind_final: true,
+							min_value: -32768,
+							max_value: 32767);
+		}
+		row(horizontal: @align_fill,
+			child_horizontal: @align_fill,
+			vertical: @align_fill,
+			child_vertical: @align_center,spacing: @separated_spacing)
+		{
+			checkbox(identifier: "preview_checkbox",
+						name: "$$$/gPreview=&Preview",
+						guide_mask: [@guide_label],
+						value_off: 0,
+						value_on: 1,
+						bind: @preview);
+			row(horizontal: @align_fill,
+				child_horizontal: @align_right,
+				spacing: @related_spacing,
+				reverse: os == @mac)
+			{
+				button(identifier: "okButton",
+						commit_button: true,
+						name: "$$$/gOK=OK");
+				button(identifier: "cancelButton",
+						commit_button: true,
+						name: "$$$/gCancel=Cancel");
+			}
+		}
+	}
+}

@@ -1,0 +1,28 @@
+layout MetadataPreferencesDialog
+{
+	view dva_dialog(identifier: 'MetadataPreferencesDialog', name: '$$$/dvametadataui/dialogs/MetadataPreferencesDialog/Title=Metadata Display', spacing: 15, canResize: 'true', resizeChildren: 'true')
+	{
+		dva_arrangement(identifier: 'rootArrangement', arrangementType: 'column', horizontalSpacing: 10, verticalSpacing: 10, leftMargin: 10, rightMargin: 10, topMargin: 10, bottomMargin: 10, horizontalAlignment: 'right')
+		{
+			dva_search_box(identifier: 'search_box', minWidth: 80, bindRight:'true', setAsFocused:'true');
+			dva_arrangement(arrangementType: 'row', horizontalSpacing: 6, verticalSpacing: 6)
+			{
+				dva_multi_column_tree(identifier: 'properties', useCheckboxes: 'true', direction:'vertical', minWidth: 420, minHeight: 300, bindRight:'true', bindBottom:'true');
+				dva_arrangement(arrangementType: 'column', horizontalSpacing: 6, verticalSpacing: 6, horizontalAlignment: "right")
+	{
+					dva_arrangement(arrangementType: 'column', horizontalSpacing: 6, verticalSpacing: 6, horizontalAlignment: "right", verticalAlignment: "top")
+		{
+			dva_ok_cancel_column();
+		}
+					dva_arrangement(arrangementType: 'column', horizontalSpacing: 6, verticalSpacing: 6, horizontalAlignment: "right", topMargin: 50)
+					{
+						dva_popup(minWidth: 170, identifier: 'previous_settings_popup');
+						dva_button(minWidth: 170, identifier: 'save_settings_button', name: '$$$/dvametadataui/dialogs/MetadataPreferencesDialog/saveSettingsButtonTitle=Save Settings...');
+						dva_button(minWidth: 170, identifier: 'delete_settings_button', name: '$$$/dvametadataui/dialogs/MetadataPreferencesDialog/deleteSettingsButtonTitle=Delete Settings...');
+						dva_button(minWidth: 170, identifier: 'new_schema_button', name: '$$$/dvametadataui/dialogs/MetadataPreferencesDialog/newSchemaButtonTitle=New Schema...');
+					}
+				}
+			}
+		}
+	}
+}

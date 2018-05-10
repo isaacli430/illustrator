@@ -1,0 +1,28 @@
+/* [1] */
+!MEM
+/* [2] */
+$$$/AddAnchor/Str/Error/Memory=The filter cannot complete because there isn't enough memory (RAM) available.
+/* [3] */
+-108
+/* [4] */
+$$$/AddAnchor/Str/Error/Memory=The filter cannot complete because there isn't enough memory (RAM) available.
+/* [5] */
+271
+/* [6] */
+$$$/AddAnchor/Str/Error/Memory=The filter cannot complete because there isn't enough memory (RAM) available.
+/* [7] */
+SEGM
+/* [8] */
+$$$/AddAnchor/Str/Error/6=The filter cannot complete because a path has too many anchor points.
+/* [9] */
+NESS
+/* [10] */
+$$$/AddAnchor/Str/Error/8=The filter cannot complete because a layer is locked or invisible.
+/* [11] */
+!sel
+/* [12] */
+$$$/AddAnchor/Str/Error/10=You must select a path first.
+/* [13] */
+<others>
+/* [14] */
+$$$/AddAnchor/Str/Error/14=The filter cannot complete because of an unknown error.

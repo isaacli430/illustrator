@@ -1,0 +1,6 @@
+sheet BrushManagerUI
+{
+	interface:
+		   filterfidelity: {min_value: 0, max_value: 4};
+		   filterdistance: {min_value: 2, max_value: 20};
+}

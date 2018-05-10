@@ -1,0 +1,41 @@
+layout InputField
+{
+    view subview(	show_border: false, 
+					child_horizontal: @align_fill, 
+					identifier: "AIEveSubView", 
+					layout_theme: @dialog_large, 
+					placement: @place_column)
+    {
+		column(spacing: @related_spacing)
+		{
+			optional(bind: @ShowMessage, value: true, margin: 0)
+			{
+				row(spacing: 0, horizontal: @align_fill, child_horizontal: @align_fill)
+				{
+					static_text(identifier: "descriptionText", name: @MessageText, characters:1);
+				}
+			}
+
+			edit_text(identifier: "inputField_Text", bind: @FieldValue, characters: 30, set_default_focus: true, name: @FieldLabel);
+			panel(margin: 0, child_vertical: @align_top, bind: @isError, value: true, placement: @place_row)
+			{
+				row(spacing: 0)
+				{
+					guide_consumer(consume_horizontal: 1);
+					info_icon(size: "small", icontype: "warning", identifier: "infoIcon");
+				}
+				row(margin: [2, 0, 0, 0], horizontal: @align_fill, vertical: @align_fill)
+				{
+					static_text(name: @errorText, theme_font_size: @small, identifier: "infoString", characters: 1, horizontal: @align_fill, vertical: @align_fill, dialog_resize: @if_new_name_larger, adjust_baseline_for_single_line_text: false);
+				}
+			}
+		}
+		
+		row(horizontal: @align_right, child_vertical: @align_center, reverse: os == @mac, spacing: @related_spacing)
+		{
+			button(default: true, identifier: "okButton", name: "$$$/gOK=OK", commit_button: true, bind: @result);
+			button(cancel: true, identifier: "cancelButton", name: "$$$/gCancel=Cancel",  commit_button: true);
+		}
+	}
+}
+

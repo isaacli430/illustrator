@@ -1,0 +1,6 @@
+sheet AdjustDialog
+{
+interface: 
+	MinMaxFilter: {min_value: -100, max_value: 100};
+	View : "grayScale";
+}

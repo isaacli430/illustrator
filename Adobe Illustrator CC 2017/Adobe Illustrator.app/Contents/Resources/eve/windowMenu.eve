@@ -1,0 +1,16 @@
+layout windowMenu_Mac
+{
+	view menu( id: 10,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/Window/NewWindow=New &Window", id:			36, help_id:0);
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/Window/Arrange=&Arrange", id:		300, help_id:  70 ) { separator();  }
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/Window/ApplicationFrame=Application &Frame", id:		295, help_id:  0 );
+		menu( text: "$$$/_MBAR/Mnu/Window/ApplicationBar=A&pplication Bar", id:		304, help_id:  0 );
+
+
+
+}
+}

@@ -1,0 +1,32 @@
+sheet PNG8Dialog
+{
+	interface:
+		AntiAliasOption:1;
+		Colors: 128;
+		Transparent: false;
+		Interlace: true;
+		MattePopup: 3;
+
+		ColorsItemMinimum: 2;
+		ColorsItemMaximum: 256;
+
+		ColorsPopupItems:[
+			"$$$/OptimizePalette/2=2",
+			"$$$/OptimizePalette/4=4",
+			"$$$/OptimizePalette/8=8",
+			"$$$/OptimizePalette/16=16",
+			"$$$/OptimizePalette/32=32",
+			"$$$/OptimizePalette/64=64",
+			"$$$/OptimizePalette/128=128",
+			"$$$/OptimizePalette/256=256"
+		];
+		MattePopupItems: [
+			{name:"$$$/ColorPopupMenu/ColorNone=None", value:1},
+			{name:"-", value:-1},
+			{name:"$$$/ColorPopupMenu/ColorWhite=White", value:2},
+			{name:"$$$/ColorPopupMenu/ColorBlack=Black", value:3},
+			{name:"-", value:-2},
+			{name:"$$$/ColorPopupMenu/ColorOther=Other...", value:4}
+		];
+		ShowOkCancelButton: true;
+}

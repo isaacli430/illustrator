@@ -1,0 +1,42 @@
+/* [1] */
+not used
+/* [2] */
+$$$/VariablesPalette/Str/NewVariable=New Variable
+/* [3] */
+$$$/VariablesPalette/Str/DeleteVariable=Delete Variable
+/* [4] */
+$$$/VariablesPalette/Str/MakeObjectDynamic=Make Object Dynamic
+/* [5] */
+$$$/VariablesPalette/Str/VisibilityDynamic=Make Visibility Dynamic
+/* [6] */
+$$$/VariablesPalette/Str/PreviousDataSet=Previous Data Set
+/* [7] */
+$$$/VariablesPalette/Str/NextDataSet=Next Data Set
+/* [8] */
+$$$/VariablesPalette/Str/UpdateDataSet=Update Data Set
+/* [9] */
+$$$/VariablesPalette/Str/CaptureDataSet=Capture Data Set
+/* [10] */
+$$$/VariablesPalette/Str/DeleteDataSet=Delete Data Set
+/* [11] */
+$$$/VariablesPalette/Str/RenameDataSet=Rename Data Set
+/* [12] */
+$$$/VariablesPalette/Str/SortByTitle=Sort by Type
+/* [13] */
+$$$/VariablesPalette/Str/SortByVariable=Sort by Variable
+/* [14] */
+$$$/VariablesPalette/Str/SortByObject=Sort by Object
+/* [15] */
+$$$/VariablesPalette/Str/UnbindVariable=Unbind Variable
+/* [16] */
+$$$/VariablesPalette/Str/ResizeColumn=Resize Column
+/* [17] */
+$$$/VariablesPalette/Str/MakeTextDynamic=Make Text Dynamic
+/* [18] */
+$$$/VariablesPalette/Str/LinkedFileDynamic=Make Linked File Dynamic
+/* [19] */
+$$$/VariablesPalette/Str/MakeGraphDyanmic=Make Graph Dynamic
+/* [20] */
+$$$/VariablesPalette/Str/LockVariables=Lock Variables
+/* [21] */
+$$$/VariablesPalette/Str/UnlockVariables=Unlock Variables

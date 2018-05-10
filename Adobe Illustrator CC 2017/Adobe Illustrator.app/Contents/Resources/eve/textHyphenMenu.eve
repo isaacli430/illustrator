@@ -1,0 +1,11 @@
+layout textHyphenMenu
+{
+	view menu( id: 85,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/Type/EmDash=E&m Dash", 								id:			379, help_id:  0 );
+		menu( text: "$$$/_MBAR/Mnu/Type/EnDash=E&n Dash", 								id:			380, help_id:  0 ); 
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/Type/DiscretionaryHyphen=&Discretionary Hyphen", 		id:			381, help_id:  0); 
+	}
+}

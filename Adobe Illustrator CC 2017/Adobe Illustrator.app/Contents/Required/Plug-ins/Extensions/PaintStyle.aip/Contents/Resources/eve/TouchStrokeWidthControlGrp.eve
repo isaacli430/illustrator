@@ -1,0 +1,17 @@
+layout TouchSwatchControlGroup
+{
+	view subview(identifier: "TouchStrokeWidthControlGroup",
+				 show_border: false,
+				 margin: 0)
+    {	
+		optional(identifier: "TouchStrokeControlHyperLink", margin :0, placement: @place_column)
+		{
+			button(	identifier: "TouchStrokeButton",
+					image: {normal: "SP_PL_Stroke_N.png", dark_normal:"SP_PL_Stroke_N_D.png"},
+					wants_focus: false,
+					alt:"$$$/PaintStyle/Str/StrokeToolTip/StrokePanel=Stroke", 
+					horizontal: @align_fill,
+					vertical: @align_fill);
+		}	    
+	}		
+}

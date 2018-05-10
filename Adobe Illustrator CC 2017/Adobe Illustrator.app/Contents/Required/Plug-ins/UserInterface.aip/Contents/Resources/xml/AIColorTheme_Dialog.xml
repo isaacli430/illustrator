@@ -1,0 +1,444 @@
+<!DOCTYPE ThemeParameters [
+  <!-- Entity definitions for color Names. These map to individual color elements in a color theme -->
+  <!-- fill out an entity entry to match each entry in the enum in AIUIThemeColors.h
+  	  then add the corresponding value below -->
+  <!ENTITY 	kAIColor_RulerBackGroundFill "10000">
+  <!ENTITY 	kAIColor_RulerBackGroundFillInactive "10001">
+  <!ENTITY 	kAIColor_RulerMarkingColor "10002">
+  <!ENTITY 	kAIColor_RulerTextColor "10003">
+  <!ENTITY 	kAIColor_PopupPanelButtonOutlineNormalStart "10004">
+  <!ENTITY 	kAIColor_PopupPanelButtonOutlineNormalEnd "10005">
+  <!ENTITY 	kAIColor_ThumbnailViewItemBackground "10006">
+  <!ENTITY 	kAIColor_ThumbnailViewItemOutline "10007">
+  <!ENTITY 	kAIColor_ThumbnailViewItemDragLine "10008">
+  <!ENTITY 	kAIColor_ThumbnailViewItemSelectedOutline "10009">
+  <!ENTITY 	kAIColor_DottedForDefaultCanvas "10010">
+  <!ENTITY 	kAIColor_SolidForDefaultCanvas "10011">
+  <!ENTITY 	kAIColor_DottedForWhiteCanvas "10012">
+  <!ENTITY 	kAIColor_SolidForWhiteCanvas "10013">
+  <!ENTITY 	kAIColor_BorderForSelectedArtBoard "10014">
+  <!ENTITY 	kAIColor_ArtBoardThreeSidedShadow "10015">
+  <!ENTITY 	kAIColor_ArtBoardBottomOnePixelShadow "10016">
+  <!ENTITY 	kAIColor_GridViewChildBorder "10017">
+  <!ENTITY 	kAIColor_CanvasBackground "10018">
+  <!ENTITY 	kAIColor_GridViewInsertionFeedback "10019">
+  <!ENTITY 	kAIColor_LayerInsertionPointIndicator "10020">
+  <!ENTITY 	kAIColor_SoftMessageBackground "10021">
+  <!ENTITY 	kAIColor_StripGripperLinesColor "10022">
+  <!ENTITY 	kAIColor_StripGripperBGColor "10023">
+  <!ENTITY 	kAIColor_StripBGColor "10024">
+  <!ENTITY 	kAIColor_StripBorderColor "10025">
+  <!ENTITY 	kAIColor_SoftMessageStrokeColor "10026">
+  <!ENTITY 	kAIColor_TouchAlignControlStrokeColor "10027">
+  <!ENTITY 	kAIColor_TouchAlignControlFillColor "10028">
+  <!ENTITY 	kAIColor_TouchAlignControlAlignRectStrokeColor "10029">
+  <!ENTITY 	kAIColor_TouchAlignControlAlignRectFillColor "10030">
+  <!ENTITY 	kAIColor_TouchContextMenuSimpleModeColor "10031">
+  <!ENTITY 	kAIColor_TouchToolBarGripperStartGradient "10032">
+  <!ENTITY 	kAIColor_TouchToolBarGripperEndGradient "10033">
+  <!ENTITY 	kAIColor_TouchTabTitleRectFillColor "10034">
+  <!ENTITY	kAIColor_TouchPanelBorderColor "10035">
+  <!ENTITY 	kAIColor_TouchAlignControlCircleFillColor "10036">
+  <!ENTITY	kAIColor_TouchToolOptionGripperColor "10037">
+  <!ENTITY	kAIColor_TouchToolOptionBgColor "10038">
+  <!ENTITY	kAIColor_TouchToolOptionShadowColor "10039">
+  <!ENTITY	kAIColor_ContextMenuTriggerFillColor "10040">
+  <!ENTITY	kAIColor_ContextMenuTriggerStrokeColor "10041">
+  <!ENTITY	kAIColor_TouchBrushMaxSizeColor "10042">
+  <!ENTITY	kAIColor_TouchBrushCurrentSizeColor "10043">
+
+  <!ENTITY	kAIColor_FontFlyoutFilterMsgViewColor "10044">
+  <!ENTITY	kAIColor_FontFlyoutFilterMsgTextColor "10045">
+  
+  <!ENTITY	kAIColor_SymbolTextColor "10046">
+  <!ENTITY	kAIColor_ActionPaletteRed "10047">
+  <!ENTITY	kAIColor_ActionPaletteOrange "10048">
+  <!ENTITY	kAIColor_ActionPaletteYellow "10049">
+  <!ENTITY	kAIColor_ActionPaletteGreen "10050">
+  <!ENTITY	kAIColor_ActionPaletteBlue "10051">
+  <!ENTITY	kAIColor_ActionPaletteViolet "10052">
+  <!ENTITY	kAIColor_ActionPaletteGray "10053">
+  <!ENTITY	kAIColor_ActionPaletteNone "10054">
+  <!ENTITY	kAIColor_ActionPaletteButtonFocusColor "10055">
+  <!ENTITY	kAIColor_GridViewChildSelectedBackground "10056">
+
+  <!ENTITY kCSTextFlipT "0.5">
+  <!ENTITY kCSTextFlipT2 "0.501">
+
+  <!-- Dark line -->
+  <!ENTITY kDarkLine_LightV "0.39">
+  <!ENTITY kDarkLine_MediumV "0.32">
+  <!ENTITY kDarkLine_DarkV "0.18">
+  <!ENTITY kDarkLine_DefaultV "0.1">
+
+  <!-- Tab Background -->
+  <!ENTITY kTabBackground_LightV "0.84">
+  <!ENTITY kTabBackground_MediumV "0.68">
+  <!ENTITY kTabBackground_DarkV "0.33">
+  <!ENTITY kTabBackground_DefaultV "0.20">
+
+  <!-- Text Edit Background Shadow -->
+  <!ENTITY kTextEditBackgroundShadow_LightV "0.9">
+  <!ENTITY kTextEditBackgroundShadow_MediumV "0.9">
+  <!ENTITY kTextEditBackgroundShadow_DarkV "0.5">
+  <!ENTITY kTextEditBackgroundShadow_DefaultV "0.6">
+
+
+]>
+<ThemeParameters>
+  <ThemeColors>
+  
+
+    <!-- Document Ruler Background -->
+    <KeyFrame name="&kAIColor_RulerBackGroundFill;" t="0.0" v="0.1"  />
+    <KeyFrame name="&kAIColor_RulerBackGroundFill;" t="&kCSTextFlipT;" v="0.2"   hold="true" />
+    <KeyFrame name="&kAIColor_RulerBackGroundFill;" t="&kCSTextFlipT2;" v="0.85" />
+    <KeyFrame name="&kAIColor_RulerBackGroundFill;" t="1.0" v="0.95"  />
+
+    <!-- Document Ruler Background Inactive -->
+    <KeyFrame name="&kAIColor_RulerBackGroundFillInactive;" t="0.0" v="0.3"  />
+    <KeyFrame name="&kAIColor_RulerBackGroundFillInactive;" t="&kCSTextFlipT;" v="0.3" hold="true" />
+    <KeyFrame name="&kAIColor_RulerBackGroundFillInactive;" t="&kCSTextFlipT2;" v="0.6" />
+    <KeyFrame name="&kAIColor_RulerBackGroundFillInactive;" t="1.0" v="0.65" />
+
+    <!-- Document Ruler Markings -->
+    <KeyFrame name="&kAIColor_RulerMarkingColor;"	t="0.0" v="0.4" a="0.9"  />
+    <KeyFrame name="&kAIColor_RulerMarkingColor;" t="&kCSTextFlipT;" v="0.4" a="0.9" hold="true" />
+    <KeyFrame name="&kAIColor_RulerMarkingColor;" t="&kCSTextFlipT2;" v="0.4" a="0.9"  />
+    <KeyFrame name="&kAIColor_RulerMarkingColor;" t="1.0" v="0.3" a="0.9"  />
+
+    <!-- Document Ruler Text -->
+    <KeyFrame name="&kAIColor_RulerTextColor;"	t="0.0" v="0.65" a="0.9"  />
+    <KeyFrame name="&kAIColor_RulerTextColor;" t="&kCSTextFlipT;" v="0.70" a="0.9" hold="true" />
+    <KeyFrame name="&kAIColor_RulerTextColor;" t="&kCSTextFlipT2;" v="0.2" a="0.9"  />
+    <KeyFrame name="&kAIColor_RulerTextColor;" t="1.0" v="0.2" a="0.9"  />
+
+    <!-- Popup Panel Button Inner Shadow Top -->
+    <KeyFrame name="&kAIColor_PopupPanelButtonOutlineNormalStart;" t="0.0" v="&kTextEditBackgroundShadow_DefaultV;" />
+    <KeyFrame name="&kAIColor_PopupPanelButtonOutlineNormalStart;" t="&kCSTextFlipT;" v="&kTextEditBackgroundShadow_DarkV;" hold="true" />
+    <KeyFrame name="&kAIColor_PopupPanelButtonOutlineNormalStart;" t="&kCSTextFlipT2;" v="&kTextEditBackgroundShadow_MediumV;"  />
+    <KeyFrame name="&kAIColor_PopupPanelButtonOutlineNormalStart;" t="1.0" v="&kTextEditBackgroundShadow_LightV;" />
+
+    <!-- Popup Panel Button Inner Shadow Bot -->
+    <KeyFrame name="&kAIColor_PopupPanelButtonOutlineNormalEnd;" t="0.0" v="&kTextEditBackgroundShadow_DefaultV;" />
+    <KeyFrame name="&kAIColor_PopupPanelButtonOutlineNormalEnd;" t="&kCSTextFlipT;" v="&kTextEditBackgroundShadow_DarkV;" hold="true" />
+    <KeyFrame name="&kAIColor_PopupPanelButtonOutlineNormalEnd;" t="&kCSTextFlipT2;" v="&kTextEditBackgroundShadow_MediumV;"  />
+    <KeyFrame name="&kAIColor_PopupPanelButtonOutlineNormalEnd;" t="1.0" v="&kTextEditBackgroundShadow_LightV;" />
+
+    <!-- Thumbnail View Item Background Color -->
+    <KeyFrame name="&kAIColor_ThumbnailViewItemBackground;" t="0.0" v="0.89" />
+    <KeyFrame name="&kAIColor_ThumbnailViewItemBackground;" t="&kCSTextFlipT;" v="0.89" hold="true" />
+    <KeyFrame name="&kAIColor_ThumbnailViewItemBackground;" t="&kCSTextFlipT2;" v="1.0"/>
+    <KeyFrame name="&kAIColor_ThumbnailViewItemBackground;" t="1.0" v="1.0"/>
+
+    <!-- Thumbnail View Item Outline Color -->
+    <KeyFrame name="&kAIColor_ThumbnailViewItemOutline;" t="0.0" v="&kDarkLine_DefaultV;" />
+    <KeyFrame name="&kAIColor_ThumbnailViewItemOutline;" t="&kCSTextFlipT;" v="&kDarkLine_DarkV;" hold="true" />
+    <KeyFrame name="&kAIColor_ThumbnailViewItemOutline;" t="&kCSTextFlipT2;" v="&kDarkLine_MediumV;"  />
+    <KeyFrame name="&kAIColor_ThumbnailViewItemOutline;" t="1.0" v="&kDarkLine_LightV;" />
+
+    <!-- Thumbnail View Item Drag Outline Color -->
+    <KeyFrame name="&kAIColor_ThumbnailViewItemDragLine;" t="0.0" v="0.0" a="0.6"/>
+    <KeyFrame name="&kAIColor_ThumbnailViewItemDragLine;" t="&kCSTextFlipT;" v="0.0" a="0.8" hold="true"/>
+    <KeyFrame name="&kAIColor_ThumbnailViewItemDragLine;" t="&kCSTextFlipT2;" v="0.0" a="0.8" />
+    <KeyFrame name="&kAIColor_ThumbnailViewItemDragLine;" t="1.0" v="0.0" a="0.6" />
+
+    <!-- Thumbnail View Item Selected Outline Color -->
+    <KeyFrame name="&kAIColor_ThumbnailViewItemSelectedOutline;" t="0.0" v="1.0" a="0.6" />
+    <KeyFrame name="&kAIColor_ThumbnailViewItemSelectedOutline;" t="&kCSTextFlipT;" v="1.0" a="0.8" />
+    <KeyFrame name="&kAIColor_ThumbnailViewItemSelectedOutline;" t="&kCSTextFlipT2;" v="0.0" a="0.8" />
+    <KeyFrame name="&kAIColor_ThumbnailViewItemSelectedOutline;" t="1.0" v="0.0" a="0.6" />
+
+    <!-- Color For Dotted Lined Grid For Default Cnvas  -->
+    <KeyFrame name="&kAIColor_DottedForDefaultCanvas;" t="0.0" v="0.0" a="0.3"/>
+    <KeyFrame name="&kAIColor_DottedForDefaultCanvas;" t="&kCSTextFlipT;" v="0.0;" a="0.5"  />
+    <KeyFrame name="&kAIColor_DottedForDefaultCanvas;" t="&kCSTextFlipT2;" v="0.0" a="0.5"/>
+    <KeyFrame name="&kAIColor_DottedForDefaultCanvas;" t="1.0" v="0.0" a="0.8"/>
+
+    <!-- Color For Solid Lined Grid For Default Cnvas -->
+    <KeyFrame name="&kAIColor_SolidForDefaultCanvas;" t="0.0" v="0.0" a="0.3"/>
+    <KeyFrame name="&kAIColor_SolidForDefaultCanvas;" t="&kCSTextFlipT;" v="0.0" a="0.5"/>
+    <KeyFrame name="&kAIColor_SolidForDefaultCanvas;" t="&kCSTextFlipT2;" v="0.0" a="0.5"/>
+    <KeyFrame name="&kAIColor_SolidForDefaultCanvas;" t="1.0" v="0.0" a="0.8"/>
+
+    <!-- Color For Dotted Lined Grid For White Cnvas -->
+    <KeyFrame name="&kAIColor_DottedForWhiteCanvas;" t="0.0" v="0.0" a="0.3"/>
+    <KeyFrame name="&kAIColor_DottedForWhiteCanvas;" t="&kCSTextFlipT;" v="0.0" a="0.5" />
+    <KeyFrame name="&kAIColor_DottedForWhiteCanvas;" t="&kCSTextFlipT2;" v="0.0" a="0.5"/>
+    <KeyFrame name="&kAIColor_DottedForWhiteCanvas;" t="1.0" v="0.0" a="0.8"/>
+
+    <!-- Color For Solid Lined Grid For White Cnvas -->
+    <KeyFrame name="&kAIColor_SolidForWhiteCanvas;" t="0.0" v="0.0" a="0.4" />
+    <KeyFrame name="&kAIColor_SolidForWhiteCanvas;" t="&kCSTextFlipT;" v="0.0" a="0.5" />
+    <KeyFrame name="&kAIColor_SolidForWhiteCanvas;" t="&kCSTextFlipT2;" v="0.0" a="0.5"/>
+    <KeyFrame name="&kAIColor_SolidForWhiteCanvas;" t="1.0" v="0.0" a="0.7"/>
+
+
+    <!-- Color For Selected ArtBoard GreyBorder -->
+    <KeyFrame name="&kAIColor_BorderForSelectedArtBoard;" t="0.0" v="0.0" a="0.8" />
+    <KeyFrame name="&kAIColor_BorderForSelectedArtBoard;" t="&kCSTextFlipT;" v="0.0" a="0.6" />
+    <KeyFrame name="&kAIColor_BorderForSelectedArtBoard;" t="&kCSTextFlipT2;" v="0.0" a="0.6"/>
+    <KeyFrame name="&kAIColor_BorderForSelectedArtBoard;" t="1.0" v="0.0" a="0.4"/>
+
+
+    <!-- Color For Three Sided Shadow of ArtBoard -->
+    <KeyFrame name="&kAIColor_ArtBoardThreeSidedShadow;" t="0.0" v="0.0" a="0.2" />
+    <KeyFrame name="&kAIColor_ArtBoardThreeSidedShadow;" t="&kCSTextFlipT;" v="0.0" a="0.2" />
+    <KeyFrame name="&kAIColor_ArtBoardThreeSidedShadow;" t="&kCSTextFlipT2;" v="0.0" a="0.1"/>
+    <KeyFrame name="&kAIColor_ArtBoardThreeSidedShadow;" t="1.0" v="0.0" a="0.15"/>
+
+    <!-- Color For Bottom One Pixel Shadow Of ArtBoard -->
+    <KeyFrame name="&kAIColor_ArtBoardBottomOnePixelShadow;" t="0.0" v="0.0" a="0.1" />
+    <KeyFrame name="&kAIColor_ArtBoardBottomOnePixelShadow;" t="&kCSTextFlipT;" v="0.0" a="0.1" />
+    <KeyFrame name="&kAIColor_ArtBoardBottomOnePixelShadow;" t="&kCSTextFlipT2;" v="0.0" a="0.05"/>
+    <KeyFrame name="&kAIColor_ArtBoardBottomOnePixelShadow;" t="1.0" v="0.0" a="0.1"/>
+
+
+    <!-- Color For Child border of GridView children -->
+    <KeyFrame name="&kAIColor_GridViewChildBorder;" t="0.0" v="0.32" />
+    <KeyFrame name="&kAIColor_GridViewChildBorder;" t="&kCSTextFlipT;" v="0.40" />
+    <KeyFrame name="&kAIColor_GridViewChildBorder;" t="&kCSTextFlipT2;" v="0.60"/>
+    <KeyFrame name="&kAIColor_GridViewChildBorder;" t="1.0" v="0.70"/>
+
+    <!-- Canvas background -->
+    <KeyFrame name="&kAIColor_CanvasBackground;" t="0.0" v="0.219" />
+    <KeyFrame name="&kAIColor_CanvasBackground;" t="&kCSTextFlipT;" v="0.376" hold="true" />
+    <KeyFrame name="&kAIColor_CanvasBackground;" t="&kCSTextFlipT2;" v="0.48"/>
+    <KeyFrame name="&kAIColor_CanvasBackground;" t="1.0" v="0.65"/>
+
+
+    <!-- GridView Drag-drop Insertion indicator -->
+    <KeyFrame name="&kAIColor_GridViewInsertionFeedback;" t="0.0" h="228" s="1.0" v="1.0" />
+    <KeyFrame name="&kAIColor_GridViewInsertionFeedback;" t="&kCSTextFlipT;" h="228" s="1.0" v="1.0" />
+    <KeyFrame name="&kAIColor_GridViewInsertionFeedback;" t="&kCSTextFlipT2;" v="0.0" />
+    <KeyFrame name="&kAIColor_GridViewInsertionFeedback;" t="1.0" v="0.0" />
+
+    <!-- Layer Insertion point -->
+    <KeyFrame name="&kAIColor_LayerInsertionPointIndicator;" t="0.0" v="0.7" />
+    <KeyFrame name="&kAIColor_LayerInsertionPointIndicator;" t="&kCSTextFlipT;" v="0.8" />
+    <KeyFrame name="&kAIColor_LayerInsertionPointIndicator;" t="&kCSTextFlipT2;" v="0.15" />
+    <KeyFrame name="&kAIColor_LayerInsertionPointIndicator;" t="1.0" v="0.25" />
+
+    <!-- SoftMessage Background Color -->
+    <KeyFrame name="&kAIColor_SoftMessageBackground;" t="0.0" h="0.0" s="0.0" v="0.80" />
+    <KeyFrame name="&kAIColor_SoftMessageBackground;" t="&kCSTextFlipT;" h="0.0" s="0.0" v="0.80" />
+    <KeyFrame name="&kAIColor_SoftMessageBackground;" t="&kCSTextFlipT2;" h="0.0" s="0.0" v="0.80" />
+    <KeyFrame name="&kAIColor_SoftMessageBackground;" t="1.0"  h="0.0" s="0.0" v="0.80" />
+
+    <!-- Strip gripper line color-->
+    <KeyFrame name="&kAIColor_StripGripperLinesColor;" t="0.0"  h="0.0" s="0.0" v="0.153" />
+    <KeyFrame name="&kAIColor_StripGripperLinesColor;" t="&kCSTextFlipT;"  h="0.0" s="0.0" v="0.231" />
+    <KeyFrame name="&kAIColor_StripGripperLinesColor;" t="&kCSTextFlipT2;"  h="0.0" s="0.0" v="0.659" />
+    <KeyFrame name="&kAIColor_StripGripperLinesColor;" t="1.0"  h="0.0" s="0.0" v="0.737" />
+    
+    <!-- Strip gripper background color-->
+    <KeyFrame name="&kAIColor_StripGripperBGColor;" t="0.0"  h="0.0" s="0.0" v="0.149" />
+    <KeyFrame name="&kAIColor_StripGripperBGColor;" t="&kCSTextFlipT;"  h="0.0" s="0.0" v="0.25" />
+    <KeyFrame name="&kAIColor_StripGripperBGColor;" t="&kCSTextFlipT2;"  h="0.0" s="0.0" v="0.650" />
+    <KeyFrame name="&kAIColor_StripGripperBGColor;" t="1.0"  h="0.0" s="0.0" v="0.855" />
+	
+	  <!-- Strip background color-->
+    <KeyFrame name="&kAIColor_StripBGColor;" t="0.0"  h="0.0" s="0.0" v="0.1961" />
+    <KeyFrame name="&kAIColor_StripBGColor;" t="&kCSTextFlipT;"  h="0.0" s="0.0" v="0.325" />
+    <KeyFrame name="&kAIColor_StripBGColor;" t="&kCSTextFlipT2;"  h="0.0" s="0.0" v="0.72" />
+    <KeyFrame name="&kAIColor_StripBGColor;" t="1.0"  h="0.0" s="0.0" v="0.94" />
+	
+    <!-- Strip border color-->
+    <KeyFrame name="&kAIColor_StripBorderColor;" t="0.0"  h="0.0" s="0.0" v="0.129" />
+    <KeyFrame name="&kAIColor_StripBorderColor;" t="&kCSTextFlipT;"  h="0.0" s="0.0" v="0.188" />
+    <KeyFrame name="&kAIColor_StripBorderColor;" t="&kCSTextFlipT2;"  h="0.0" s="0.0" v="0.651" />
+    <KeyFrame name="&kAIColor_StripBorderColor;" t="1.0" v="0.796" />
+
+    <!-- Soft Messaage Stroke Color -->
+    <KeyFrame name="&kAIColor_SoftMessageStrokeColor;" t="0.0" h="0.0" s="0.0" v="0.80" />
+    <KeyFrame name="&kAIColor_SoftMessageStrokeColor;" t="&kCSTextFlipT;" h="0.0" s="0.0" v="0.80" />
+    <KeyFrame name="&kAIColor_SoftMessageStrokeColor;" t="&kCSTextFlipT2;"  h="0.0" s="0.0" v="0.80" />
+    <KeyFrame name="&kAIColor_SoftMessageStrokeColor;" t="1.0"  h="0.0" s="0.0" v="0.80" />
+
+    <!-- Touch Align Control Stroke Color -->
+    <KeyFrame name="&kAIColor_TouchAlignControlStrokeColor;" t="0.0" v="0.4" />
+    <KeyFrame name="&kAIColor_TouchAlignControlStrokeColor;" t="&kCSTextFlipT;" v="0.5" />
+    <KeyFrame name="&kAIColor_TouchAlignControlStrokeColor;" t="&kCSTextFlipT2;"  v="0.5" />
+    <KeyFrame name="&kAIColor_TouchAlignControlStrokeColor;" t="1.0" v="0.6" />
+
+    <!-- Touch Align Control Fill Color -->
+    <KeyFrame name="&kAIColor_TouchAlignControlFillColor;" t="0.0" v="0.15" />
+    <KeyFrame name="&kAIColor_TouchAlignControlFillColor;" t="&kCSTextFlipT;" v="0.26" />
+    <KeyFrame name="&kAIColor_TouchAlignControlFillColor;" t="&kCSTextFlipT2;"  v="0.62" />
+    <KeyFrame name="&kAIColor_TouchAlignControlFillColor;" t="1.0"  v="0.77" />
+    
+     <!-- Touch Align Control Circle Fill Color -->
+    <KeyFrame name="&kAIColor_TouchAlignControlCircleFillColor;" t="0.0" v="0.65" />
+    <KeyFrame name="&kAIColor_TouchAlignControlCircleFillColor;" t="&kCSTextFlipT;" v="0.5" />
+    <KeyFrame name="&kAIColor_TouchAlignControlCircleFillColor;" t="&kCSTextFlipT2;"  v="0.35" />
+    <KeyFrame name="&kAIColor_TouchAlignControlCircleFillColor;" t="1.0"  v="0.275" />
+
+    <!-- Touch Align Control Align Rect Stroke Color -->
+    <KeyFrame name="&kAIColor_TouchAlignControlAlignRectStrokeColor;" t="0.0" v="0.31" />
+    <KeyFrame name="&kAIColor_TouchAlignControlAlignRectStrokeColor;" t="&kCSTextFlipT;" v="0.2" />
+    <KeyFrame name="&kAIColor_TouchAlignControlAlignRectStrokeColor;" t="&kCSTextFlipT2;"  v="0.95" />
+    <KeyFrame name="&kAIColor_TouchAlignControlAlignRectStrokeColor;" t="1.0" v="0.85" />
+
+    <!-- Touch Align Control Align Rect Fill Color -->
+    <KeyFrame name="&kAIColor_TouchAlignControlAlignRectFillColor;" t="0.0" v="0.5" />
+    <KeyFrame name="&kAIColor_TouchAlignControlAlignRectFillColor;" t="&kCSTextFlipT;" v="0.4" />
+    <KeyFrame name="&kAIColor_TouchAlignControlAlignRectFillColor;" t="&kCSTextFlipT2;" v="0.75" />
+    <KeyFrame name="&kAIColor_TouchAlignControlAlignRectFillColor;" t="1.0" v="0.65" />
+
+    <!-- Touch Context Menu Simple Mode Rect Fill Color -->
+    <KeyFrame name="&kAIColor_TouchContextMenuSimpleModeColor;" t="0.0" v="0.2745" />
+    <KeyFrame name="&kAIColor_TouchContextMenuSimpleModeColor;" t="&kCSTextFlipT;" v="0.3922" />
+    <KeyFrame name="&kAIColor_TouchContextMenuSimpleModeColor;" t="&kCSTextFlipT2;" v="0.7843" />
+    <KeyFrame name="&kAIColor_TouchContextMenuSimpleModeColor;" t="1.0" v="0.9020" />
+	
+	 <!-- Touch Toolbar Gripper Start Gradient Color -->
+    <KeyFrame name="&kAIColor_TouchToolBarGripperStartGradient;" t="0.0" v="0.1333" />
+    <KeyFrame name="&kAIColor_TouchToolBarGripperStartGradient;" t="&kCSTextFlipT;" v="0.1922" />
+    <KeyFrame name="&kAIColor_TouchToolBarGripperStartGradient;" t="&kCSTextFlipT2;" v="0.5294" />
+    <KeyFrame name="&kAIColor_TouchToolBarGripperStartGradient;" t="1.0" v="0.5804" />
+	
+	 <!-- Touch Toolbar Gripper End Gradient Color -->
+    <KeyFrame name="&kAIColor_TouchToolBarGripperEndGradient;" t="0.0" v="0.0902" />
+    <KeyFrame name="&kAIColor_TouchToolBarGripperEndGradient;" t="&kCSTextFlipT;" v="0.1569" />
+    <KeyFrame name="&kAIColor_TouchToolBarGripperEndGradient;" t="&kCSTextFlipT2;" v="0.4549" />
+    <KeyFrame name="&kAIColor_TouchToolBarGripperEndGradient;" t="1.0" v="0.5059" />
+	
+	<!--          TOUCH PANEL COLOR          -->
+
+	<!-- Touch Panel Border Stroke Color -->
+    <KeyFrame name="&kAIColor_TouchPanelBorderColor;" t="0.0" v="0.4706" />
+    <KeyFrame name="&kAIColor_TouchPanelBorderColor;" t="&kCSTextFlipT;" v="0.5882" />
+    <KeyFrame name="&kAIColor_TouchPanelBorderColor;" t="&kCSTextFlipT2;" v="0.8627" />
+    <KeyFrame name="&kAIColor_TouchPanelBorderColor;" t="1.0" v="0.9412" />
+	
+	<!-- Touch Tab Title Rect Fill Color -->
+    <KeyFrame name="&kAIColor_TouchTabTitleRectFillColor;" t="0.0" v="0.1373" />
+    <KeyFrame name="&kAIColor_TouchTabTitleRectFillColor;" t="&kCSTextFlipT;" v="0.2353" />
+    <KeyFrame name="&kAIColor_TouchTabTitleRectFillColor;" t="&kCSTextFlipT2;" v="0.5882" />
+    <KeyFrame name="&kAIColor_TouchTabTitleRectFillColor;" t="1.0" v="0.7255" />
+	
+	<!--          TOUCH TOOL OPTIONS COLOR          -->
+
+	<!-- Touch Tool Option Gripper Color -->
+    <KeyFrame name="&kAIColor_TouchToolOptionGripperColor;" t="0.0" v="0.1961" />
+    <KeyFrame name="&kAIColor_TouchToolOptionGripperColor;" t="&kCSTextFlipT;" v="0.2353" />
+    <KeyFrame name="&kAIColor_TouchToolOptionGripperColor;" t="&kCSTextFlipT2;" v="0.5686" />
+    <KeyFrame name="&kAIColor_TouchToolOptionGripperColor;" t="1.0" v="0.6471" />
+	
+	<!-- Touch Tool Option Rect Fill Color -->
+    <KeyFrame name="&kAIColor_TouchToolOptionBgColor;" t="0.0" v="0.2745" />
+    <KeyFrame name="&kAIColor_TouchToolOptionBgColor;" t="&kCSTextFlipT;" v="0.3608" />
+    <KeyFrame name="&kAIColor_TouchToolOptionBgColor;" t="&kCSTextFlipT2;" v="0.7059" />
+    <KeyFrame name="&kAIColor_TouchToolOptionBgColor;" t="1.0" v="0.8235" />
+	
+	<!-- Touch Tool Option Rect Fill Color -->
+    <KeyFrame name="&kAIColor_TouchToolOptionShadowColor;" t="0.0" v="0.2549" />
+    <KeyFrame name="&kAIColor_TouchToolOptionShadowColor;" t="&kCSTextFlipT;" v="0.3137" />
+    <KeyFrame name="&kAIColor_TouchToolOptionShadowColor;" t="&kCSTextFlipT2;" v="0.6275" />
+    <KeyFrame name="&kAIColor_TouchToolOptionShadowColor;" t="1.0" v="0.7451" />
+	
+	<!-- Context Menu Trigger Fill Color -->
+    <KeyFrame name="&kAIColor_ContextMenuTriggerFillColor;" t="0.0" v="0.5" a="0.70" />
+    <KeyFrame name="&kAIColor_ContextMenuTriggerFillColor;" t="&kCSTextFlipT;" v="0.5" a="0.70"/>
+    <KeyFrame name="&kAIColor_ContextMenuTriggerFillColor;" t="&kCSTextFlipT2;" v="0.5" a="0.70"/>
+    <KeyFrame name="&kAIColor_ContextMenuTriggerFillColor;" t="1.0" v="0.5" a="0.70"/>
+	
+	<!-- Context Menu Trigger Stroke Color -->
+    <KeyFrame name="&kAIColor_ContextMenuTriggerStrokeColor;" t="0.0" v="1.0" />
+    <KeyFrame name="&kAIColor_ContextMenuTriggerStrokeColor;" t="&kCSTextFlipT;" v="1.0" />
+    <KeyFrame name="&kAIColor_ContextMenuTriggerStrokeColor;" t="&kCSTextFlipT2;" v="1.0" />
+    <KeyFrame name="&kAIColor_ContextMenuTriggerStrokeColor;" t="1.0" v="1.0" />
+
+	<!-- Touch Tool Option Brushes Max Size Color -->
+	<KeyFrame name="&kAIColor_TouchBrushMaxSizeColor;" t="0.0" v="0.3921" />
+    <KeyFrame name="&kAIColor_TouchBrushMaxSizeColor;" t="&kCSTextFlipT;" v="0.4705" />
+    <KeyFrame name="&kAIColor_TouchBrushMaxSizeColor;" t="&kCSTextFlipT2;" v="0.7843" />
+    <KeyFrame name="&kAIColor_TouchBrushMaxSizeColor;" t="1.0" v="0.9019" />
+	<!-- Touch Tool Option Brushes Current Size Color -->
+	<KeyFrame name="&kAIColor_TouchBrushCurrentSizeColor;" t="0.0" v="0.1568" />
+    <KeyFrame name="&kAIColor_TouchBrushCurrentSizeColor;" t="&kCSTextFlipT;" v="0.2745" />
+    <KeyFrame name="&kAIColor_TouchBrushCurrentSizeColor;" t="&kCSTextFlipT2;" v="0.3921" />
+    <KeyFrame name="&kAIColor_TouchBrushCurrentSizeColor;" t="1.0" v="0.5098" />
+	
+    <!-- Arrow Head Popup text Color -->
+	<KeyFrame name="&kAIColor_SymbolTextColor;" t="0.0" v="0.0" />
+    <KeyFrame name="&kAIColor_SymbolTextColor;" t="&kCSTextFlipT;" v="0.0" />
+    <KeyFrame name="&kAIColor_SymbolTextColor;" t="&kCSTextFlipT2;" v="0.0" />
+    <KeyFrame name="&kAIColor_SymbolTextColor;" t="1.0" v="0.0" />
+    
+    <!--          ACTION PALETTE BUTTON COLORS          -->
+    
+    <KeyFrame name="&kAIColor_ActionPaletteRed;" t="0.0" h="358.0" s="0.66" v="0.54" />
+    <KeyFrame name="&kAIColor_ActionPaletteRed;" t="&kCSTextFlipT;" h="359.0" s="0.61" v="0.68" />
+    <KeyFrame name="&kAIColor_ActionPaletteRed;" t="&kCSTextFlipT2;" h="2.0" s="0.52" v="0.91" />
+    <KeyFrame name="&kAIColor_ActionPaletteRed;" t="1.0" h="1.0" s="0.47" v="0.99" />
+    
+    <KeyFrame name="&kAIColor_ActionPaletteOrange;" t="0.0" h="29.0" s="0.88" v="0.57" />
+    <KeyFrame name="&kAIColor_ActionPaletteOrange;" t="&kCSTextFlipT;" h="31.0" s="0.83" v="0.64" />
+    <KeyFrame name="&kAIColor_ActionPaletteOrange;" t="&kCSTextFlipT2;" h="25.0" s="0.55" v="0.89" />
+    <KeyFrame name="&kAIColor_ActionPaletteOrange;" t="1.0" h="31.0" s="0.56" v="0.97" />
+    
+    <KeyFrame name="&kAIColor_ActionPaletteYellow;" t="0.0" h="46.0" s="0.83" v="0.58" />
+    <KeyFrame name="&kAIColor_ActionPaletteYellow;" t="&kCSTextFlipT;" h="45.0" s="0.8" v="0.66" />
+    <KeyFrame name="&kAIColor_ActionPaletteYellow;" t="&kCSTextFlipT2;" h="56.0" s="0.49" v="0.85"/>
+    <KeyFrame name="&kAIColor_ActionPaletteYellow;" t="1.0" h="55.0" s="0.42" v="0.91" />
+    
+    <KeyFrame name="&kAIColor_ActionPaletteGreen;" t="0.0" h="107.0" s="0.43" v="0.38" />
+    <KeyFrame name="&kAIColor_ActionPaletteGreen;" t="&kCSTextFlipT;" h="90.0" s="0.5" v="0.5" />
+    <KeyFrame name="&kAIColor_ActionPaletteGreen;" t="&kCSTextFlipT2;" h="94" s="0.45" v="0.77" />
+    <KeyFrame name="&kAIColor_ActionPaletteGreen;" t="1.0" h="91.0" s="0.39" v="0.85" />
+    
+    <KeyFrame name="&kAIColor_ActionPaletteBlue;" t="0.0" h="224.0" s="0.51" v="0.51" />
+    <KeyFrame name="&kAIColor_ActionPaletteBlue;" t="&kCSTextFlipT;" h="213.0" s="0.44" v="0.59" />
+    <KeyFrame name="&kAIColor_ActionPaletteBlue;" t="&kCSTextFlipT2;" h="221.0" s="0.33" v="0.83" />
+    <KeyFrame name="&kAIColor_ActionPaletteBlue;" t="1.0" h="220.0" s="0.3" v="0.94" />
+    
+    <KeyFrame name="&kAIColor_ActionPaletteViolet;" t="0.0" h="262.0" s="0.44" v="0.5" />
+    <KeyFrame name="&kAIColor_ActionPaletteViolet;" t="&kCSTextFlipT;" h="261.0" s="0.44" v="0.61" />
+    <KeyFrame name="&kAIColor_ActionPaletteViolet;" t="&kCSTextFlipT2;" h="256.0" s="0.32" v="0.78" />
+    <KeyFrame name="&kAIColor_ActionPaletteViolet;" t="1.0" h="258.0" s="0.27" v="0.86" />
+    
+    <KeyFrame name="&kAIColor_ActionPaletteGray;" t="0.0" h="258.0" v="0.32" />
+    <KeyFrame name="&kAIColor_ActionPaletteGray;" t="&kCSTextFlipT;" h="258.0" v="0.41" />
+    <KeyFrame name="&kAIColor_ActionPaletteGray;" t="&kCSTextFlipT2;" h="258.0" v="0.59" />
+    <KeyFrame name="&kAIColor_ActionPaletteGray;" t="1.0" h="258.0" v="0.67" />
+    
+    <KeyFrame name="&kAIColor_ActionPaletteNone;" t="0.0" v="0.2" />
+    <KeyFrame name="&kAIColor_ActionPaletteNone;" t="&kCSTextFlipT;" v="0.32" />
+    <KeyFrame name="&kAIColor_ActionPaletteNone;" t="&kCSTextFlipT2;" v="0.72" />
+    <KeyFrame name="&kAIColor_ActionPaletteNone;" t="1.0" v="0.83" />
+    
+    <!-- Action Palette Button Mode Button Focus Color -->
+    <KeyFrame name="&kAIColor_ActionPaletteButtonFocusColor;" t="0.0" h="11.0" s="0.78" v="0.93" />
+    <KeyFrame name="&kAIColor_ActionPaletteButtonFocusColor;" t="&kCSTextFlipT;" h="11.0" s="0.78" v="0.93" />
+    <KeyFrame name="&kAIColor_ActionPaletteButtonFocusColor;" t="&kCSTextFlipT2;" h="358.0" s="0.73" v="0.92" />
+    <KeyFrame name="&kAIColor_ActionPaletteButtonFocusColor;" t="1.0" h="358.0" s="0.73" v="0.92" />
+	
+	<!-- Glyph Panel Grid View Child Selected Background Color -->
+    <KeyFrame name="&kAIColor_GridViewChildSelectedBackground;" t="0.0" v="0.6000" />
+    <KeyFrame name="&kAIColor_GridViewChildSelectedBackground;" t="&kCSTextFlipT;" v="0.7804" />
+    <KeyFrame name="&kAIColor_GridViewChildSelectedBackground;" t="&kCSTextFlipT2;" v="0.7216" />
+    <KeyFrame name="&kAIColor_GridViewChildSelectedBackground;" t="1.0" v="0.8627" />
+    
+
+	<!-- Font Flyout Filter Message View Color -->
+	<KeyFrame name="&kAIColor_FontFlyoutFilterMsgViewColor;" t="0.0" v="0.3" />
+    <KeyFrame name="&kAIColor_FontFlyoutFilterMsgViewColor;" t="&kCSTextFlipT;" v="0.3" />
+    <KeyFrame name="&kAIColor_FontFlyoutFilterMsgViewColor;" t="&kCSTextFlipT2;" v="0.3" />
+    <KeyFrame name="&kAIColor_FontFlyoutFilterMsgViewColor;" t="1.0" v="0.3" />
+	<!-- Font Flyout Filter Message Text Color -->
+	<KeyFrame name="&kAIColor_FontFlyoutFilterMsgTextColor;" t="0.0" v="1.0" />
+    <KeyFrame name="&kAIColor_FontFlyoutFilterMsgTextColor;" t="&kCSTextFlipT;" v="1.0" />
+    <KeyFrame name="&kAIColor_FontFlyoutFilterMsgTextColor;" t="&kCSTextFlipT2;" v="1.0" />
+    <KeyFrame name="&kAIColor_FontFlyoutFilterMsgTextColor;" t="1.0" v="1.0" />
+	
+    <!--          WHAT ARE THESE STATES???          -->
+    <!--
+	      <KeyFrame name="&kColor_ListBoxDragInsert;" t="0.0" v="1.0" />
+	      <KeyFrame name ="&kColor_ListBoxDragBorderHighlightFill;" t="0.0" h="179" s="33" v="61" a="0.5"/>
+	      <KeyFrame name="&kColor_ListBoxDragBorderHighlightFill;" t="&kFocus_DarkS;" v="1.0" />-->
+
+
+
+  </ThemeColors>
+</ThemeParameters>

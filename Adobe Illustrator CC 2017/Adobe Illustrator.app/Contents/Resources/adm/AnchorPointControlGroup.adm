@@ -1,0 +1,8 @@
+sheet AnchorPointControlGroup
+{
+interface:
+	HandlesRadioButtonsCell: 0;
+	IsJoinAnchorsButtonEnabled: true;
+invariant:
+	JoinAnchorsButtonCell <== (IsJoinAnchorsButtonEnabled == true);
+}

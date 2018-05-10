@@ -1,0 +1,193 @@
+layout KulerColorThemePanel
+{
+    view subview(identifier: "kuler_panel_subview",
+				 layout_theme: @panel,
+				 margin: gPanelToolbarSubviewMargin,
+				 show_border: false)
+	{	
+			overlay(vertical: @align_fill, horizontal: @align_fill)
+			{
+				/* Alignment in panel() i.e. vertical: @align_center, horizontal: @align_center works to centrally allign the panel in the kuler_panel_subview declared above. 
+				child_vertical: @align_center, child_horizontal: @align_center works to align each child widget centrally in the panel. It is same as addding vertical: @align_center, horizontal: @align_center  to each widget individually.
+				*/
+				
+				panel(	margin: 0, bind: @showColorThemesList, value: 0, 
+						vertical: @align_center, horizontal: @align_center,
+						child_vertical: @align_center, child_horizontal: @align_center)
+				{
+					static_text(name: @EmailIdValue, dialog_resize: @never);
+
+					button
+					(
+						identifier: "SyncNow",
+						name: "$$$/SwatchLibs/KulerPanel/SyncNow/Str=Download my themes",
+						wants_focus: false,
+						alt: "$$$/SwatchLibs/KulerPanel/SyncNow/TooltipStr=Download my Adobe Color themes"
+					);
+
+					column(spacing:0, child_vertical: @align_center, child_horizontal: @align_center)
+					{
+						static_text(identifier: "DownloadText1", name: "$$$/SwatchLibs/KulerPanel/SyncThemesDisplayText/Str1=The Color Themes panel enables you");
+						static_text(identifier: "DownloadText2", name: "$$$/SwatchLibs/KulerPanel/SyncThemesDisplayText/Str2=to download color themes");
+						static_text(identifier: "DownloadText3", name: "$$$/SwatchLibs/KulerPanel/SyncThemesDisplayText/Str3=saved in your Adobe Color account.");
+					}
+				}
+				
+				panel(margin: 0, bind: @showColorThemesList, value: 1, vertical: @align_center, horizontal: @align_center)
+				{
+					subview(identifier: "ProgressRotatingAnimation", horizontal:@align_fill, show_border:false, margin:0, height: 90, width: 216);
+				}
+				
+				panel(margin: 0, bind: @showColorThemesList, value: 2, vertical: @align_fill, horizontal: @align_fill, spacing: gPanelToolbarTopSpacing)
+				{
+					optional(bind: @showSearchBar, value: true, horizontal: @align_fill, vertical:@align_top)
+					{
+						subview(identifier: "KulerSearchContainer",
+								horizontal:@align_fill, show_border:false, margin:0, width: 20, height: 23);
+					}
+					
+					optional(bind: @showMCT, value: true, horizontal: @align_fill, vertical:@align_fill)
+					{
+						multicolumn_tree(identifier: "MultiColumnTree",
+										wants_focus: false,
+											height: 111,
+											width: 230,
+										horizontal: @align_fill,
+										vertical: @align_fill);
+					}
+					
+					optional(bind: @KulerError, value: 3, horizontal: @align_center, vertical:@align_center,
+							vertical: @align_fill, horizontal:@align_fill,
+							child_vertical: @align_center, child_horizontal: @align_center)
+					{					
+						subview(identifier: "KulerErrorMessageSubview", vertical: @align_fill, horizontal:@align_fill,
+								child_vertical: @align_center, child_horizontal: @align_center, show_border:true,
+								height: 111, width: 230)
+						{
+							column(spacing:0, child_vertical: @align_center, child_horizontal: @align_center)
+							{
+								static_text(identifier: "TotalErrorText1", name: "$$$/SwatchLibs/KulerPanel/KulerNoThemesReadMessage/Str1=Color themes could not be loaded.");
+								static_text(identifier: "TotalErrorText2",name: "$$$/SwatchLibs/KulerPanel/KulerNoThemesReadMessage/Str2=Please try refreshing the panel.");
+							}
+						}
+					}
+					
+					optional(bind: @KulerError, value: 1, horizontal: @align_center, vertical:@align_center,
+							vertical: @align_fill, horizontal:@align_fill,
+							child_vertical: @align_center, child_horizontal: @align_center)
+					{
+						subview(identifier: "KulerAccountEmptyMessageSubview", vertical: @align_fill, horizontal:@align_fill,
+								child_vertical: @align_center, child_horizontal: @align_center, show_border:true,
+								height: 111, width: 230)
+						{
+							column(spacing:0, child_vertical: @align_center, child_horizontal: @align_center)
+							{
+								static_text(identifier: "KulerAccountEmptyText1", name: "$$$/SwatchLibs/KulerPanel/KulerAccountEmptyMessage/Str1=No themes available in the Adobe Color ");
+								row(spacing:1){
+									static_text(identifier: "KulerAccountEmptyText2", name: "$$$/SwatchLibs/KulerPanel/KulerAccountEmptyMessage/Str2=account:");
+									static_text(identifier: "KulerAccountEmptyText3", name: @EmailIdValue, dialog_resize: @never);
+								}
+							}
+						}
+					}
+					
+					buttongroup(child_vertical: @align_bottom, horizontal: @align_fill, child_horizontal: @align_left,
+						child_vertical: @align_fill,spacing: gPanelToolbarIconSpacing, child_width: gPanelToolbarIconWidth, child_height: gPanelToolbarIconHeight)
+					{
+						optional(bind: @KulerError, value: 2)
+						{
+							image
+							(
+								wants_focus: false,
+								image: {normal:"SP_Warning_Xs_N.png", dark_normal:"SP_Warning_Xs_N_D.png"},
+								alt: "$$$/SwatchLibs/KulerPanel/KulerThemesPartiallyLoadedError/TooltipStr=Only some color themes were loaded. Try refreshing.",
+								horizontal: @align_left
+							);
+						}
+						
+						optional(bind: @KulerError, value: 3)
+						{
+							image
+							(
+								wants_focus: false,
+								image: {normal:"SP_Warning_Xs_N.png", dark_normal:"SP_Warning_Xs_N_D.png"},
+								alt: "$$$/SwatchLibs/KulerPanel/KulerThemesNotLoadedError/TooltipStr=Failed to load Color Theme. Try refreshing.",
+								horizontal: @align_left
+							);
+						}
+						
+						button
+						(
+							identifier: "Refresh",
+							wants_focus: false,
+							alt: "$$$/SwatchLibs/Refresh/TooltipStr=Refresh",
+							image: {normal:"SP_Update_Wi_N.png", dark_normal:"SP_Update_Wi_N_D.png"},
+							horizontal: @align_right
+						);
+						
+						row(spacing:7, horizontal: @align_right)
+						{
+						button
+						(
+							identifier: "LaunchKulerWebsite",
+							wants_focus: false,
+							alt: "$$$/SwatchLibs/LaunchKulerWebsite/TooltipStr=Launch Adobe Color website",
+							image: {normal:"SP_GotoKulerWebSite_Wi_N.png", dark_normal:"SP_GotoKulerWebSite_Wi_N_D.png"},
+							horizontal: @align_right
+						);
+						
+						image
+						(
+								identifier: "NoEditImage",
+							wants_focus: false,
+							image: {normal:"SP_NoEdit_Xs_N.png", dark_normal:"SP_NoEdit_Xs_N_D.png"},
+							horizontal: @align_right
+						);
+						}	
+						resize_gripper_gap(horizontal: @align_right);
+					}
+				}
+				panel(	margin: 0, bind: @showColorThemesList, value: 3, vertical: @align_center, horizontal: @align_center, 
+						child_vertical: @align_center, child_horizontal: @align_center)
+				{
+					column(spacing:0, child_vertical: @align_center, child_horizontal: @align_center)
+					{
+						static_text(identifier: "NetworkErrorText1", name: "$$$/SwatchLibs/KulerPanel/SyncThemesErrorText/Str1=Unable to connect to the");
+						static_text(identifier: "NetworkErrorText2", name: "$$$/SwatchLibs/KulerPanel/SyncThemesErrorText/Str2=Adobe Color website. You are either");
+						static_text(identifier: "NetworkErrorText3", name: "$$$/SwatchLibs/KulerPanel/SyncThemesErrorText/Str3=offline, or the server is busy.");
+					}
+					button
+					(
+						identifier: "ErrorOkButton",
+						name: "$$$/SwatchLibs/KulerPanel/ErrorOkButton/Str=OK",
+						wants_focus: false,
+						alt: "$$$/SwatchLibs/KulerPanel/ErrorOkButton/TooltipStr=Return to previous state."
+					);
+				}
+				panel(	margin: 0, bind: @showColorThemesList, value: 4, vertical: @align_center, horizontal: @align_center, 
+						child_vertical: @align_center, child_horizontal: @align_center)
+				{
+					column(spacing:0, child_vertical: @align_center, child_horizontal: @align_center)
+					{
+						static_text(identifier: "InvalidAdobeIDText1", name: "$$$/SwatchLibs/KulerPanel/KulerPanelEnterpriseCustError/Str1=The Color Themes panel enables you to");
+						static_text(identifier: "InvalidAdobeIDText2", name: "$$$/SwatchLibs/KulerPanel/KulerPanelEnterpriseCustError/Str2=download color themes saved in");
+						static_text(identifier: "InvalidAdobeIDText3", name: "$$$/SwatchLibs/KulerPanel/KulerPanelEnterpriseCustError/Str3=your Adobe Color account. A valid Adobe");
+						static_text(identifier: "InvalidAdobeIDText4", name: "$$$/SwatchLibs/KulerPanel/KulerPanelEnterpriseCustError/Str4=ID is required to use this feature.");
+					}
+				}
+				panel(	margin: 0, bind: @showColorThemesList, value: 5, vertical: @align_fill, horizontal: @align_fill, 
+						child_vertical: @align_center, child_horizontal: @align_center)
+				{
+					column(spacing:0, child_vertical: @align_center, child_horizontal: @align_center)
+					{
+						static_text(identifier: "CCEError1", name: "$$$/EnterpriseIdServiceError/ErrorPrefix=You do not have access to this service.");
+						static_text(identifier: "CCEError2", name: "$$$/EnterpriseIdServiceError/ErrorSuffix=Contact your IT administrator to gain access or sign in with an Adobe ID.", characters: 15);
+						static_text(identifier: "dummy", name :" ");
+						static_text(identifier: "dummy1", name :" ");
+					}
+				}
+				
+			}
+		
+	}
+}

@@ -1,0 +1,804 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE ThemeParameters [
+  <!-- Inline DTD for Drover Theme files -->
+  
+  <!-- defines entities for the color names -->
+
+  <!-- Entity definitions for color Names. These map to individual color elements in a color theme -->
+  
+  <!ENTITY kColor_DividerLineStroke                     "3000000">
+  <!ENTITY kColor_DividerLineBevelStroke                "3000001">
+  
+  <!ENTITY kColor_ListBoxContentNormal                  "3000002">
+  <!ENTITY kColor_ListBoxContentSelected                "3000003">
+  <!ENTITY kColor_ListBoxContentHighlighted             "3000004">
+  <!ENTITY kColor_ListBoxContentDivider                 "3000005">
+  
+  <!ENTITY kColor_ListBoxDragInsert                     "3000006">
+  <!ENTITY kColor_ListBoxDragBorderHighlightFill        "3000007">
+  <!ENTITY kColor_ListBoxDragBorderHighlightShadow      "3000008">
+  
+  <!ENTITY kColor_ListBoxItemTextHighlighted            "3000009">
+  
+  <!ENTITY kColor_MultiTreeControlFrameDragFeedback     "3000010">
+  <!ENTITY kColor_MultiTreeControlFrameInnerGlow        "3000011">
+  <!ENTITY kColor_MultiTreeColumnDragFill               "3000012">
+  <!ENTITY kColor_MultiTreeColumnDragStroke             "3000013">
+  
+  <!ENTITY kColor_TabBackground                         "3000014">
+  
+  <!ENTITY kColor_TextEditNormalBackground              "3000015">
+  <!ENTITY kColor_TextEditDisableBackground             "3000016">
+  <!ENTITY kColor_TextEditNormalText                    "3000017">
+  <!ENTITY kColor_TextEditDisableText                   "3000018">
+  
+  <!ENTITY kColor_TabNormalStroke                       "3000019">
+  <!ENTITY kColor_TabNormalStartGradient                "3000020">
+  <!ENTITY kColor_TabNormalEndGradient                  "3000021">
+  <!ENTITY kColor_TabDeactiveStroke                     "3000022">
+  <!ENTITY kColor_TabDeactiveStartGradient              "3000023">
+  <!ENTITY kColor_TabDeactiveEndGradient                "3000024">
+  <!ENTITY kColor_TabFocusedStroke                      "3000025">
+  
+  <!ENTITY kColor_AppBackground                         "3000026">
+  <!ENTITY kColor_NonFrontmostTextAlpha                 "3000027">
+  <!ENTITY kColor_DisabledImageAlpha                    "3000028">
+
+	<!ENTITY kColor_MultiColumnTreeBackground             "3000029">
+  <!ENTITY kColor_MultiColumnTreeMarqueeFill            "3000030">
+  <!ENTITY kColor_MultiColumnTreeMarqueeStroke          "3000031">
+  <!ENTITY kColor_MultiColumnTreeDragOverRowFill        "3000032">
+  <!ENTITY kColor_MultiColumnTreeDragBetweenRowLine     "3000033">
+  
+  <!ENTITY kColor_TextEditOutlineError                  "3000034">
+  <!ENTITY kColor_DisclosureTriangleFocusFillNoRolloverAlpha  "3000035">
+  
+  <!ENTITY kColor_SliderThumbWhiteFill                  "3000036">
+  <!ENTITY kColor_SliderThumbBlackFill                  "3000037">
+  
+  <!ENTITY kColor_ModeSwitcherDropIndicatorFeedback     "3000038">
+  
+  <!ENTITY kColor_BrushShapePreviewOutline              "3000039">
+  <!ENTITY kColor_BrushShapePreviewBackground           "3000040">
+  <!ENTITY kColor_BrushShapePreviewFill                 "3000041">
+  <!ENTITY kColor_BrushShapePreviewVariationFill        "3000042">
+  
+  <!ENTITY kColor_ControlBorderNormal                   "3000043">
+  <!ENTITY kColor_ControlBorderDisabled                 "3000044">
+  <!ENTITY kColor_ControlFocus                          "3000045">
+  <!ENTITY kColor_ControlOuterBorderNormal              "3000046">
+  
+  <!ENTITY kColor_ControlInnerBorderNormal              "3000047">
+  <!ENTITY kColor_ControlInnerBorderOver                "3000048">
+  <!ENTITY kColor_ControlInnerBorderDisabled            "3000049">
+  
+  <!ENTITY kColor_ControlFillTopNormal                  "3000050">
+  <!ENTITY kColor_ControlFillBottomNormal               "3000051">
+  <!ENTITY kColor_ControlFillTopOver                    "3000052">
+  <!ENTITY kColor_ControlFillBottomOver                 "3000053">
+  <!ENTITY kColor_ControlFillTopDown                    "3000054">
+  <!ENTITY kColor_ControlFillBottomDown                 "3000055">
+  <!ENTITY kColor_ControlFillTopDisabled                "3000056">
+  <!ENTITY kColor_ControlFillBottomDisabled             "3000057">
+  <!ENTITY kColor_ControlFillTopSelectedOver            "3000058">
+  <!ENTITY kColor_ControlFillBottomSelectedOver         "3000059">
+  <!ENTITY kColor_ControlFillTopSelectedDisabled        "3000060">
+  <!ENTITY kColor_ControlFillBottomSelectedDisabled     "3000061">
+  
+  <!ENTITY kColor_ControlInnerGlowDown                  "3000062">
+  
+  <!ENTITY kColor_ButtonDefaultInnerBorderNormal        "3000063">
+  <!ENTITY kColor_ButtonDefaultInnerBorderOver          "3000064">
+  <!ENTITY kColor_ButtonDefaultFillTopNormal            "3000065">
+  <!ENTITY kColor_ButtonDefaultFillBottomNormal         "3000066">
+  <!ENTITY kColor_ButtonDefaultFillTopOver              "3000067">
+  <!ENTITY kColor_ButtonDefaultFillBottomOver           "3000068">
+  <!ENTITY kColor_ButtonDefaultFillTopDown              "3000069">
+  <!ENTITY kColor_ButtonDefaultFillBottomDown           "3000070">
+  
+  <!ENTITY kColor_TextEditFocusedBackground             "3000071">
+  <!ENTITY kColor_TextEditInnerGlow                     "3000072">
+  <!ENTITY kColor_TextEditFocusedText                   "3000073">
+  
+  <!ENTITY kColor_GenericIconNormal                     "3000074">
+  <!ENTITY kColor_GenericIconShadowNormal               "3000075">
+  <!ENTITY kColor_GenericIconDisabled                   "3000076">
+  <!ENTITY kColor_GenericIconShadowDisabled             "3000077">
+  
+  <!ENTITY kColor_ControlSolidBackground                "3000078">
+  <!ENTITY kColor_ControlSolidBackgroundDisabled        "3000079">
+  <!ENTITY kColor_ControlSolidBackgroundGlow            "3000080">
+  
+  <!ENTITY kColor_SliderShadow                          "3000081">
+  <!ENTITY kColor_SliderShadowDisabled                  "3000082">
+  
+  <!ENTITY kColor_ToolTipText                           "3000083">
+  <!ENTITY kColor_ToolTipBackground                     "3000084">
+  
+  <!ENTITY kColor_KnobIconNormal                        "3000085">
+  <!ENTITY kColor_KnobIconDisabled                      "3000086">
+  <!ENTITY kColor_KnobIconShadowNormal                  "3000087">
+  <!ENTITY kColor_KnobIconShadowDisabled                "3000088">
+  
+  <!ENTITY kColor_TabOverStroke                         "3000089">
+  <!ENTITY kColor_TabOverStartGradient                  "3000090">
+  <!ENTITY kColor_TabOverEndGradient                    "3000091">
+  
+  <!ENTITY kColor_TabContainerBorder                    "3000092">
+  
+  <!ENTITY kColor_TextNormal                            "3000093">
+  <!ENTITY kColor_TextDisabled                          "3000094">
+  <!ENTITY kColor_TextNormalShadow                      "3000095">
+  <!ENTITY kColor_TextDisabledShadow                    "3000096">
+  
+  <!ENTITY kColor_HotTextNormal                         "3000097">
+  <!ENTITY kColor_HotTextActive                         "3000098">
+  
+  <!ENTITY kColor_TabStopBackground                     "3000099">
+  <!ENTITY kColor_TabStopMarkings                       "3000100">
+  
+  <!ENTITY kColor_PinSelectorPinOutline                 "369">
+  <!ENTITY kColor_PinSelectorPinFill                    "370">
+  <!ENTITY kColor_PinSelectorSelectedPinFill            "371">
+  <!ENTITY kColor_PinSelectorDisabledPinOutline         "372">
+  <!ENTITY kColor_PinSelectorDisabledPinFill            "373">
+  <!ENTITY kColor_PinSelectorDisabledSelectedPinFill    "374">
+  
+  <!ENTITY kColor_StarRatingBorder                      "379">
+  <!ENTITY kColor_StarRatingGradientStart               "380">
+  <!ENTITY kColor_StarRatingGradientEnd                 "381">
+  <!ENTITY kColor_StarRatingUnselectedGradientStart     "382">
+  <!ENTITY kColor_StarRatingUnselectedGradientEnd       "383">
+  
+  <!ENTITY kColor_LevelMeterBackgroundFill              "259">
+  <!ENTITY kColor_LevelMeterShadow                      "260">
+  <!ENTITY kColor_LevelMeterHighlight                   "261">
+  <!ENTITY kColor_LevelMeterNormalGradientStart         "262">
+  <!ENTITY kColor_LevelMeterNormalGradientEnd           "263">
+  <!ENTITY kColor_LevelMeterWarningGradientStart        "264">
+  <!ENTITY kColor_LevelMeterWarningGradientEnd          "265">
+  <!ENTITY kColor_LevelMeterCautionFill                 "266">
+  
+  <!ENTITY kColor_ToolDragFeedback                      "384">
+  
+  <!-- theme colors -->
+  <!ENTITY Generic 	"0.0000">
+  <!ENTITY Darkest 	"0.0000">
+  <!ENTITY Dark 	"0.5000" >
+  <!ENTITY Light 	"0.5001">
+  <!ENTITY Lightest	"1.0000">
+  
+  <!-- defines entities for the text ids -->
+  
+  <!ENTITY kText_Main_Large "0"> <!-- default text id -->
+  <!ENTITY kText_Main_Small "1">
+  <!ENTITY kText_Title "2">
+  
+  <!-- entity definitions for the font size schemes -->
+  
+  <!ENTITY kFontSizeScheme_Small "0">
+  <!ENTITY kFontSizeScheme_Regular "1">	<!-- default font size scheme -->
+  <!ENTITY kFontSizeScheme_Large "2">
+
+  <!-- Definitions of objects in this file, for validating parsers and editors -->
+<!ELEMENT ThemeParameters (ThemeColors | ThemeFonts)>
+  <!ELEMENT ThemeColors (Theme | KeyFrame)*>
+  <!ATTLIST ThemeColors>
+  <!ELEMENT Theme (KeyFrame)+>
+  <!ATTLIST Theme
+	t CDATA #REQUIRED
+>
+  <!ELEMENT KeyFrame EMPTY>
+  <!ATTLIST KeyFrame
+	name CDATA #REQUIRED
+	t CDATA #IMPLIED
+	v CDATA #REQUIRED
+	h CDATA #IMPLIED
+	s CDATA #IMPLIED
+	a CDATA #IMPLIED
+	hold (true | false) "false"
+>
+  <!ELEMENT ThemeFonts (FontSize)>
+  <!ATTLIST ThemeFonts>
+  <!ELEMENT FontSize EMPTY>
+  <!ATTLIST FontSize
+	name CDATA #REQUIRED
+	size CDATA #REQUIRED
+	scheme CDATA #REQUIRED
+>
+
+]>
+
+<ThemeParameters>
+	
+	<ThemeFonts>
+		<FontSize name="&kText_Main_Small;" size="8" scheme="&kFontSizeScheme_Small;" />
+		<FontSize name="&kText_Main_Large;" size="9" scheme="&kFontSizeScheme_Small;" />
+		<FontSize name="&kText_Title;" size="11" scheme="&kFontSizeScheme_Small;" />
+		
+		<FontSize name="&kText_Main_Small;" size="9" scheme="&kFontSizeScheme_Regular;" />
+		<FontSize name="&kText_Main_Large;" size="11" scheme="&kFontSizeScheme_Regular;" />
+		<FontSize name="&kText_Title;" size="13" scheme="&kFontSizeScheme_Regular;" />
+		
+		<FontSize name="&kText_Main_Small;" size="13" scheme="&kFontSizeScheme_Large;" />
+		<FontSize name="&kText_Main_Large;" size="15" scheme="&kFontSizeScheme_Large;" />
+		<FontSize name="&kText_Title;" size="17" scheme="&kFontSizeScheme_Large;" />
+	</ThemeFonts>
+	
+	<ThemeColors>
+	
+    <Theme t="&Darkest;" >
+
+      <!-- TEXT -->
+      <KeyFrame name="&kColor_TextNormal;" v=".8667" />
+      <KeyFrame name="&kColor_TextDisabled;" v=".4078" />
+      <KeyFrame name="&kColor_TextNormalShadow;" v=".1569" />
+      <KeyFrame name="&kColor_TextDisabledShadow;" v=".1961" />
+      
+      <!-- CONTROL SKIN -->
+      <KeyFrame name="&kColor_ControlBorderNormal;" v=".0980" />
+      <KeyFrame name="&kColor_ControlBorderDisabled;" v=".1765" />
+      <KeyFrame name="&kColor_ControlFocus;" h="36.92" s=".8053" v=".8863" />
+      <KeyFrame name="&kColor_ControlOuterBorderNormal;" v=".2902" />
+      <KeyFrame name="&kColor_ControlSolidBackground;" v=".1922" />
+      <KeyFrame name="&kColor_ControlSolidBackgroundDisabled;" v=".2314" />
+      <KeyFrame name="&kColor_ControlSolidBackgroundGlow;" v=".0000" a="0.1000" />
+      <KeyFrame name="&kColor_ControlInnerBorderNormal;" v=".4078" />
+      <KeyFrame name="&kColor_ControlInnerBorderOver;" v=".4863" />
+      <KeyFrame name="&kColor_ControlInnerBorderDisabled;" v=".3294" />
+
+      <KeyFrame name="&kColor_ControlFillTopNormal;" v=".3686" />
+      <KeyFrame name="&kColor_ControlFillBottomNormal;" v=".2902" />
+      <KeyFrame name="&kColor_ControlFillTopOver;" v=".4471" />
+      <KeyFrame name="&kColor_ControlFillBottomOver;" v=".3686" />
+      <KeyFrame name="&kColor_ControlFillTopDown;" v=".2314" />
+      <KeyFrame name="&kColor_ControlFillBottomDown;" v=".1922" />
+      <KeyFrame name="&kColor_ControlFillTopDisabled;" v=".2902" />
+      <KeyFrame name="&kColor_ControlFillBottomDisabled;" v=".2510" />
+      <KeyFrame name="&kColor_ControlFillTopSelectedDisabled;" v=".2706" />
+      <KeyFrame name="&kColor_ControlFillBottomSelectedDisabled;" v=".2314" />
+      <KeyFrame name="&kColor_ControlFillTopSelectedOver;" v=".2902" />
+      <KeyFrame name="&kColor_ControlFillBottomSelectedOver;" v=".2501" />
+	  
+      <KeyFrame name="&kColor_ControlInnerGlowDown;" v=".0000" a="0.10" />
+
+	  <!-- DEFAULT BUTTON -->
+      <KeyFrame name="&kColor_ButtonDefaultInnerBorderNormal;" h="31.72" s=".6978" v=".8824" />
+      <KeyFrame name="&kColor_ButtonDefaultInnerBorderOver;" h="44.96" s=".9868" v=".8902" />
+      <KeyFrame name="&kColor_ButtonDefaultFillTopNormal;" h="29.80" s=".7123" v=".8314" />
+      <KeyFrame name="&kColor_ButtonDefaultFillBottomNormal;" h="35.17" s=".8657" v=".5255" />
+      <KeyFrame name="&kColor_ButtonDefaultFillTopOver;" h="35.76" s=".7123" v=".8314" />
+      <KeyFrame name="&kColor_ButtonDefaultFillBottomOver;" h="34.53" s=".8854" v=".6157" />
+      <KeyFrame name="&kColor_ButtonDefaultFillTopDown;" h="35.80" s="1.000" v=".4667" />
+      <KeyFrame name="&kColor_ButtonDefaultFillBottomDown;" h="18.41" s=".8302" v=".4157" />
+      
+      <!-- TEXT EDIT -->
+      <KeyFrame name="&kColor_TextEditNormalBackground;" v=".1922" />
+      <KeyFrame name="&kColor_TextEditFocusedBackground;" v=".8745" />
+      <KeyFrame name="&kColor_TextEditDisableBackground;" v=".2314" />
+      <KeyFrame name="&kColor_TextEditInnerGlow;" v=".0000" a=".1000" />
+
+      <KeyFrame name="&kColor_TextEditNormalText;" v=".9000" />
+      <KeyFrame name="&kColor_TextEditFocusedText;" v=".0000" />
+      <KeyFrame name="&kColor_TextEditDisableText;" v=".5000" />
+      
+      <!-- GENERIC ICONS -->
+      <KeyFrame name="&kColor_GenericIconNormal;" v="1.000" a="0.80" />
+      <KeyFrame name="&kColor_GenericIconShadowNormal;" v=".0000" a="0.30" />
+      <KeyFrame name="&kColor_GenericIconDisabled;" v=".3000" />
+      <KeyFrame name="&kColor_GenericIconShadowDisabled;" v=".15" />
+      
+      <!-- TOOLTIP -->
+      <KeyFrame name="&kColor_ToolTipText;" v="1.00" />
+      <KeyFrame name="&kColor_ToolTipBackground;" v="0.00" />
+      
+      <!-- TABS -->
+      <KeyFrame name="&kColor_TabBackground;" v=".2510" />
+      <KeyFrame name="&kColor_TabFocusedStroke;" h="36.92" s=".8053" v=".8863" />
+      <KeyFrame name="&kColor_TabContainerBorder;" v=".2902" />
+      <KeyFrame name="&kColor_NonFrontmostTextAlpha;" a="0.50" /> <!-- alpha applied to tab text -->
+      
+      <KeyFrame name="&kColor_TabNormalStroke;" v=".3686" />
+      <KeyFrame name="&kColor_TabNormalStartGradient;" v=".3294" />
+      <KeyFrame name="&kColor_TabNormalEndGradient;" v=".2510" />
+
+      <KeyFrame name="&kColor_TabOverStroke;" v=".4471" />
+      <KeyFrame name="&kColor_TabOverStartGradient;" v=".4078" />
+      <KeyFrame name="&kColor_TabOverEndGradient;" v=".3294" />
+      
+      <KeyFrame name="&kColor_TabDeactiveStroke;" v=".2353" />
+      <KeyFrame name="&kColor_TabDeactiveStartGradient;" v=".1961" />
+      <KeyFrame name="&kColor_TabDeactiveEndGradient;" v=".1765" />
+	  
+      <!-- DIVIDER -->
+      <KeyFrame name="&kColor_DividerLineStroke;" v=".0980" />
+      <KeyFrame name="&kColor_DividerLineBevelStroke;" v=".2902" />
+	  
+      <!-- LISTBOX -->
+      <KeyFrame name="&kColor_ListBoxContentDivider;" v="0.2353" />
+      <KeyFrame name="&kColor_ListBoxContentSelected;" v=".3294" />
+      <KeyFrame name="&kColor_ListBoxContentHighlighted;" h="36.92" s=".8053" v=".8863" />
+      <KeyFrame name="&kColor_ListBoxItemTextHighlighted;" v="0.0000" />
+
+      <!-- KNOB NEEDLE -->
+      <KeyFrame name="&kColor_KnobIconNormal;" v="1.000" />
+      <KeyFrame name="&kColor_KnobIconDisabled;" v="0.4863"  />
+      <KeyFrame name="&kColor_KnobIconShadowNormal;" v="0.0000" />
+      <KeyFrame name="&kColor_KnobIconShadowDisabled;" v="0.2222" />
+	  
+      <!-- TAB STOP -->
+      <KeyFrame name="&kColor_TabStopBackground;" v=".2510" />
+	  
+      <!-- HOT TEXT -->
+      <KeyFrame name="&kColor_HotTextNormal;" h="36.92" s=".8053" v=".8863" />
+      <KeyFrame name="&kColor_HotTextActive;" h="47.80" s=".8053" v=".8863" />
+	  
+      <!-- PIN SELECTOR -->
+      <KeyFrame name="&kColor_PinSelectorPinOutline;" v=".0980" />
+      <KeyFrame name="&kColor_PinSelectorPinFill;" v=".2510" />
+      <KeyFrame name="&kColor_PinSelectorSelectedPinFill;" v="1.000" a="0.80" />
+      <KeyFrame name="&kColor_PinSelectorDisabledPinOutline;" v=".1765" />
+      <KeyFrame name="&kColor_PinSelectorDisabledPinFill;" v=".2510" />
+      <KeyFrame name="&kColor_PinSelectorDisabledSelectedPinFill;" v=".3000" />
+	  
+    </Theme>
+
+    <Theme t="&Dark;" >
+
+      <!-- TEXT -->
+      <KeyFrame name="&kColor_TextNormal;" v=".8667" />
+      <KeyFrame name="&kColor_TextDisabled;" v=".6471" />
+      <KeyFrame name="&kColor_TextNormalShadow;" v=".2588" />
+      <KeyFrame name="&kColor_TextDisabledShadow;" v=".3020" />
+
+      <!-- CONTROL SKIN -->
+      <KeyFrame name="&kColor_ControlBorderNormal;" v=".1765" />
+      <KeyFrame name="&kColor_ControlBorderDisabled;" v=".3137" />
+      <KeyFrame name="&kColor_ControlFocus;" h="44.35" s=".8106" v=".8902" />
+      <KeyFrame name="&kColor_ControlOuterBorderNormal;" v=".5098" />
+      <KeyFrame name="&kColor_ControlSolidBackground;" v=".3451" />
+      <KeyFrame name="&kColor_ControlSolidBackgroundDisabled;" v=".4314" />
+      <KeyFrame name="&kColor_ControlSolidBackgroundGlow;" v=".0000" a="0.1000" />
+      <KeyFrame name="&kColor_ControlInnerBorderNormal;" v=".5882" />
+      <KeyFrame name="&kColor_ControlInnerBorderOver;" v=".6471" />
+      <KeyFrame name="&kColor_ControlInnerBorderDisabled;" v=".4902" />
+	  
+      <KeyFrame name="&kColor_ControlFillTopNormal;" v=".5098" />
+      <KeyFrame name="&kColor_ControlFillBottomNormal;" v=".4314" />
+      <KeyFrame name="&kColor_ControlFillTopOver;" v=".5686" />
+      <KeyFrame name="&kColor_ControlFillBottomOver;" v=".4706" />
+      <KeyFrame name="&kColor_ControlFillTopDown;" v=".4314" />
+      <KeyFrame name="&kColor_ControlFillBottomDown;" v=".3451" />
+      <KeyFrame name="&kColor_ControlFillTopDisabled;" v=".4314" />
+      <KeyFrame name="&kColor_ControlFillBottomDisabled;" v=".3910" />
+      <KeyFrame name="&kColor_ControlFillTopSelectedDisabled;" v=".4809" />
+      <KeyFrame name="&kColor_ControlFillBottomSelectedDisabled;" v=".4301" />
+      <KeyFrame name="&kColor_ControlFillTopSelectedOver;" v=".5098" />
+      <KeyFrame name="&kColor_ControlFillBottomSelectedOver;" v=".4501" />
+	  
+      <KeyFrame name="&kColor_ControlInnerGlowDown;" v=".0000" a="0.10" />
+	  
+      <!-- DEFAULT BUTTON -->
+      <KeyFrame name="&kColor_ButtonDefaultInnerBorderNormal;" h="37.84" s=".4531" v=".9608" />
+      <KeyFrame name="&kColor_ButtonDefaultInnerBorderOver;" h="41.62" s=".4531" v=".9608" />
+      <KeyFrame name="&kColor_ButtonDefaultFillTopNormal;" h="37.88" s=".6639" v=".9451" />
+      <KeyFrame name="&kColor_ButtonDefaultFillBottomNormal;" h="31.72" s=".6978" v=".8824" />
+      <KeyFrame name="&kColor_ButtonDefaultFillTopOver;" h="41.63" s=".6639" v=".9451" />
+      <KeyFrame name="&kColor_ButtonDefaultFillBottomOver;" h="35.54" s=".6978" v=".8824" />
+      <KeyFrame name="&kColor_ButtonDefaultFillTopDown;" h="31.72" s=".6978" v=".8824" />
+      <KeyFrame name="&kColor_ButtonDefaultFillBottomDown;" h="26.82" s=".6978" v=".8824" />
+
+      <!-- TEXT EDIT -->
+      <KeyFrame name="&kColor_TextEditNormalBackground;" v=".3451" />
+      <KeyFrame name="&kColor_TextEditFocusedBackground;" v=".8745" />
+      <KeyFrame name="&kColor_TextEditDisableBackground;" v=".4314" />
+      <KeyFrame name="&kColor_TextEditInnerGlow;" v=".0000" a=".075" />
+
+      <KeyFrame name="&kColor_TextEditNormalText;" v=".9000" />
+      <KeyFrame name="&kColor_TextEditFocusedText;" v=".0000" />
+      <KeyFrame name="&kColor_TextEditDisableText;" v=".6500" />
+
+      <!-- GENERIC ICONS -->
+      <KeyFrame name="&kColor_GenericIconNormal;" v="1.000" a="0.80" />
+      <KeyFrame name="&kColor_GenericIconShadowNormal;" v=".0000" a="0.30" />
+      <KeyFrame name="&kColor_GenericIconDisabled;" v=".6471" />
+      <KeyFrame name="&kColor_GenericIconShadowDisabled;" v=".4941" />
+      
+      <!-- TOOLTIP -->
+      <KeyFrame name="&kColor_ToolTipText;" v="1.00" />
+      <KeyFrame name="&kColor_ToolTipBackground;" v="0.00" />
+
+      <!-- TABS -->
+      <KeyFrame name="&kColor_TabBackground;" v=".4314" />
+      <KeyFrame name="&kColor_TabFocusedStroke;" h="44.35" s=".8106" v=".8902" />
+      <KeyFrame name="&kColor_TabContainerBorder;" v=".3600" />
+      <KeyFrame name="&kColor_NonFrontmostTextAlpha;" a="0.50" />
+      
+      <KeyFrame name="&kColor_TabNormalStroke;" v=".5098" />
+      <KeyFrame name="&kColor_TabNormalStartGradient;" v=".4902" />
+      <KeyFrame name="&kColor_TabNormalEndGradient;" v=".4314" />
+
+      <KeyFrame name="&kColor_TabOverStroke;" v=".5686" />
+      <KeyFrame name="&kColor_TabOverStartGradient;" v=".5882" />
+      <KeyFrame name="&kColor_TabOverEndGradient;" v=".4902" />
+
+      <KeyFrame name="&kColor_TabDeactiveStroke;" v=".3200" />
+      <KeyFrame name="&kColor_TabDeactiveStartGradient;" v=".2980" />
+      <KeyFrame name="&kColor_TabDeactiveEndGradient;" v=".2745" />
+	  
+      <!-- DIVIDER -->
+      <KeyFrame name="&kColor_DividerLineStroke;" v=".1765" />
+      <KeyFrame name="&kColor_DividerLineBevelStroke;" v=".5098" />
+	  
+      <!-- LISTBOX -->
+      <KeyFrame name="&kColor_ListBoxContentDivider;" v="0.3200" />
+      <KeyFrame name="&kColor_ListBoxContentSelected;" v=".4902" />
+      <KeyFrame name="&kColor_ListBoxContentHighlighted;" h="44.35" s=".8106" v=".8902" />
+      <KeyFrame name="&kColor_ListBoxItemTextHighlighted;" v=".2157" />
+      
+
+      <!-- KNOB NEEDLE -->
+      <KeyFrame name="&kColor_KnobIconNormal;" v="0.91" />
+      <KeyFrame name="&kColor_KnobIconDisabled;" v="0.65"  />
+      <KeyFrame name="&kColor_KnobIconShadowNormal;" v="0.33" />
+      <KeyFrame name="&kColor_KnobIconShadowDisabled;" v="0.35" />
+	  
+      <!-- TAB STOP -->
+      <KeyFrame name="&kColor_TabStopBackground;" v=".4314" />
+	  
+      <!-- HOT TEXT -->
+      <KeyFrame name="&kColor_HotTextNormal;" h="44.35" s=".8106" v=".8902" />
+      <KeyFrame name="&kColor_HotTextActive;" h="62.14" s=".8053" v=".8863" />
+
+      <!-- PIN SELECTOR -->
+      <KeyFrame name="&kColor_PinSelectorPinOutline;" v=".1765" />
+      <KeyFrame name="&kColor_PinSelectorPinFill;" v=".4314" />
+      <KeyFrame name="&kColor_PinSelectorSelectedPinFill;" v="1.000" a="0.80" />
+      <KeyFrame name="&kColor_PinSelectorDisabledPinOutline;" v=".3137" />
+      <KeyFrame name="&kColor_PinSelectorDisabledPinFill;" v=".4314" />
+      <KeyFrame name="&kColor_PinSelectorDisabledSelectedPinFill;" v=".6471" />
+	  
+    </Theme>
+    
+    <Theme t="&Light;">
+
+      <!-- TEXT -->
+      <KeyFrame name="&kColor_TextNormal;" v=".2157" />
+      <KeyFrame name="&kColor_TextDisabled;" v=".5098" />
+      <KeyFrame name="&kColor_TextNormalShadow;" v="1.000" a="0.30" />
+      <KeyFrame name="&kColor_TextDisabledShadow;" v="1.000" a="0.30" />
+
+      <!-- CONTROL SKIN -->
+      <KeyFrame name="&kColor_ControlBorderNormal;" v=".3490" />
+      <KeyFrame name="&kColor_ControlBorderDisabled;" v=".6000" />
+      <KeyFrame name="&kColor_ControlFocus;" h="204.95" s="1.000" v=".8392" />
+      <KeyFrame name="&kColor_ControlOuterBorderNormal;" v=".8235" />
+      <KeyFrame name="&kColor_ControlSolidBackground;" v=".6471" />
+      <KeyFrame name="&kColor_ControlSolidBackgroundDisabled;" v=".7412" />
+      <KeyFrame name="&kColor_ControlSolidBackgroundGlow;" v=".0000" a="0.05" />
+      <KeyFrame name="&kColor_ControlInnerBorderNormal;" v=".8980" />
+      <KeyFrame name="&kColor_ControlInnerBorderOver;" v=".8980" />
+      <KeyFrame name="&kColor_ControlInnerBorderDisabled;" v=".8039" />
+
+      <KeyFrame name="&kColor_ControlFillTopNormal;" v=".8196" />
+      <KeyFrame name="&kColor_ControlFillBottomNormal;" v=".7412" />
+      <KeyFrame name="&kColor_ControlFillTopOver;" v=".8588" />
+      <KeyFrame name="&kColor_ControlFillBottomOver;" v=".7804" />
+      <KeyFrame name="&kColor_ControlFillTopDown;" v=".7412" /> 
+      <KeyFrame name="&kColor_ControlFillBottomDown;" v=".6471" />
+      <KeyFrame name="&kColor_ControlFillTopDisabled;" v=".7412" />
+      <KeyFrame name="&kColor_ControlFillBottomDisabled;" v=".7014" />
+      <KeyFrame name="&kColor_ControlFillTopSelectedDisabled;" v=".7071" />
+      <KeyFrame name="&kColor_ControlFillBottomSelectedDisabled;" v=".6251" />
+      <KeyFrame name="&kColor_ControlFillTopSelectedOver;" v=".6821" />
+      <KeyFrame name="&kColor_ControlFillBottomSelectedOver;" v=".5540" />
+	  
+      <KeyFrame name="&kColor_ControlInnerGlowDown;" v=".0000" a="0.05" />
+
+      <!-- DEFAULT BUTTON -->
+      <KeyFrame name="&kColor_ButtonDefaultInnerBorderNormal;" h="202.22" s=".6778" v=".9373" />
+      <KeyFrame name="&kColor_ButtonDefaultInnerBorderOver;" h="199.63" s=".6778" v=".9373" />
+      <KeyFrame name="&kColor_ButtonDefaultFillTopNormal;" h="202.24" s="1.000" v=".9098" />
+      <KeyFrame name="&kColor_ButtonDefaultFillBottomNormal;" h="201.62" s="1.0000" v=".7725" />
+      <KeyFrame name="&kColor_ButtonDefaultFillTopOver;" h="199.66" s="1.000" v=".9098" />
+      <KeyFrame name="&kColor_ButtonDefaultFillBottomOver;" h="198.58" s="1.000" v=".7725" />
+      <KeyFrame name="&kColor_ButtonDefaultFillTopDown;" h="201.62" s="1.000" v=".7725" />
+      <KeyFrame name="&kColor_ButtonDefaultFillBottomDown;" h="198.62" s="1.000" v=".7025" />
+
+      <!-- TEXT EDIT -->
+      <KeyFrame name="&kColor_TextEditNormalBackground;" v=".9000" />
+      <KeyFrame name="&kColor_TextEditFocusedBackground;" v=".9000" />
+      <KeyFrame name="&kColor_TextEditDisableBackground;" v=".7412" />
+      <KeyFrame name="&kColor_TextEditInnerGlow;" v=".0000" a=".05" />
+
+      <KeyFrame name="&kColor_TextEditNormalText;" v=".0000" />
+      <KeyFrame name="&kColor_TextEditFocusedText;" v=".0000" />
+      <KeyFrame name="&kColor_TextEditDisableText;" v=".5098" />
+
+      <!-- GENERIC ICONS -->
+      <KeyFrame name="&kColor_GenericIconNormal;" v=".2157" />
+      <KeyFrame name="&kColor_GenericIconShadowNormal;" v="1.0000" a="0.80" />
+      <KeyFrame name="&kColor_GenericIconDisabled;" v=".5294" />
+      <KeyFrame name="&kColor_GenericIconShadowDisabled;" v="1.000" a="0.30" />
+
+      <!-- TOOLTIP -->
+      <KeyFrame name="&kColor_ToolTipText;" v="0.00" />
+      <KeyFrame name="&kColor_ToolTipBackground;" v="0.90" />
+
+      <!-- TABS -->
+      <KeyFrame name="&kColor_TabBackground;" v=".7412" />
+      <KeyFrame name="&kColor_TabFocusedStroke;" h="204.95" s="1.000" v=".8392" />
+      <KeyFrame name="&kColor_TabContainerBorder;" v=".8235" />
+      <KeyFrame name="&kColor_NonFrontmostTextAlpha;" a="0.50" />
+      
+      <KeyFrame name="&kColor_TabNormalStroke;" v=".8235" />
+      <KeyFrame name="&kColor_TabNormalStartGradient;" v=".8039" />
+      <KeyFrame name="&kColor_TabNormalEndGradient;" v=".7412" />
+
+      <KeyFrame name="&kColor_TabOverStroke;" v=".8588" />
+      <KeyFrame name="&kColor_TabOverStartGradient;" v=".8980" />
+      <KeyFrame name="&kColor_TabOverEndGradient;" v=".8039" />
+
+      <KeyFrame name="&kColor_TabDeactiveStroke;" v=".6400" />
+      <KeyFrame name="&kColor_TabDeactiveStartGradient;" v=".6000" />
+      <KeyFrame name="&kColor_TabDeactiveEndGradient;" v=".5490" />
+
+      <!-- DIVIDER -->
+      <KeyFrame name="&kColor_DividerLineStroke;" v=".3490" />
+      <KeyFrame name="&kColor_DividerLineBevelStroke;" v=".8235" />
+	  
+      <!-- LISTBOX -->
+      <KeyFrame name="&kColor_ListBoxContentDivider;" v="0.6400" />
+      <KeyFrame name="&kColor_ListBoxContentSelected;" v=".8039" />
+      <KeyFrame name="&kColor_ListBoxContentHighlighted;" h="204.95" s="1.000" v=".8392" />
+      <KeyFrame name="&kColor_ListBoxItemTextHighlighted;" v="1.000" />
+	  
+      <!-- KNOB NEEDLE -->
+      <KeyFrame name="&kColor_KnobIconNormal;" v="0.33" />
+      <KeyFrame name="&kColor_KnobIconDisabled;" v="0.53"  />
+      <KeyFrame name="&kColor_KnobIconShadowNormal;" v="0.83" />
+      <KeyFrame name="&kColor_KnobIconShadowDisabled;" v="0.77" />
+	  
+      <!-- TAB STOP -->
+      <KeyFrame name="&kColor_TabStopBackground;" v=".7412" />
+	  
+      <!-- HOT TEXT -->
+      <KeyFrame name="&kColor_HotTextNormal;" h="204.95" s="1.000" v=".8392" />
+      <KeyFrame name="&kColor_HotTextActive;" h="266.44" s=".8053" v=".8863" />
+
+      <!-- PIN SELECTOR -->
+      <KeyFrame name="&kColor_PinSelectorPinOutline;" v=".3490" />
+      <KeyFrame name="&kColor_PinSelectorPinFill;" v=".7412" />
+      <KeyFrame name="&kColor_PinSelectorSelectedPinFill;" v=".2157" />
+      <KeyFrame name="&kColor_PinSelectorDisabledPinOutline;" v=".6000" />
+      <KeyFrame name="&kColor_PinSelectorDisabledPinFill;" v=".7412" />
+      <KeyFrame name="&kColor_PinSelectorDisabledSelectedPinFill;" v=".5294" />
+	  
+    </Theme>
+
+    <Theme t="&Lightest;" >
+
+      <!-- TEXT -->
+      <KeyFrame name="&kColor_TextNormal;" v=".2157" />
+      <KeyFrame name="&kColor_TextDisabled;" v=".5490" />
+      <KeyFrame name="&kColor_TextNormalShadow;" v="1.000" a="0.50" />
+      <KeyFrame name="&kColor_TextDisabledShadow;" v="1.000" a="0.50" />
+
+      <!-- CONTROL SKIN -->
+      <KeyFrame name="&kColor_ControlBorderNormal;" v=".3922" />
+      <KeyFrame name="&kColor_ControlBorderDisabled;" v=".6000" />
+      <KeyFrame name="&kColor_ControlFocus;" h="204.95" s="1.000" v=".8392" />
+      <KeyFrame name="&kColor_ControlOuterBorderNormal;" v=".9020" />
+      <KeyFrame name="&kColor_ControlSolidBackground;" v=".7059" />
+      <KeyFrame name="&kColor_ControlSolidBackgroundDisabled;" v=".8392" />
+      <KeyFrame name="&kColor_ControlSolidBackgroundGlow;" v=".0000" a="0.05" />
+      <KeyFrame name="&kColor_ControlInnerBorderNormal;" h="0" s="0.0" v="1.0000" />
+      <KeyFrame name="&kColor_ControlInnerBorderOver;" v="1.0000" />
+      <KeyFrame name="&kColor_ControlInnerBorderDisabled;" v=".9020" />
+
+      <KeyFrame name="&kColor_ControlFillTopNormal;" v=".9076" />
+      <KeyFrame name="&kColor_ControlFillBottomNormal;" v=".8392" />
+      <KeyFrame name="&kColor_ControlFillTopOver;" v=".8588" />
+      <KeyFrame name="&kColor_ControlFillBottomOver;" v=".7804" />
+      <KeyFrame name="&kColor_ControlFillTopDown;" v=".8392" />
+      <KeyFrame name="&kColor_ControlFillBottomDown;" v=".7059" />
+      <KeyFrame name="&kColor_ControlFillTopDisabled;" v=".8392" />
+      <KeyFrame name="&kColor_ControlFillBottomDisabled;" v=".8102" />
+      <KeyFrame name="&kColor_ControlFillTopSelectedDisabled;" v=".7902" />
+      <KeyFrame name="&kColor_ControlFillBottomSelectedDisabled;" v=".7151" />
+      <KeyFrame name="&kColor_ControlFillTopSelectedOver;" v=".7721" />
+      <KeyFrame name="&kColor_ControlFillBottomSelectedOver;" v=".6440" />
+	  
+      <KeyFrame name="&kColor_ControlInnerGlowDown;" v=".0000" a="0.05" />
+
+      <!-- DEFAULT BUTTON -->
+      <KeyFrame name="&kColor_ButtonDefaultInnerBorderNormal;" h="202.24" s=".6864" v=".9255" />
+      <KeyFrame name="&kColor_ButtonDefaultInnerBorderOver;" h="199.63" s=".6864" v=".9255" />
+      <KeyFrame name="&kColor_ButtonDefaultFillTopNormal;" h="202.24" s="1.000" v=".9098" />
+      <KeyFrame name="&kColor_ButtonDefaultFillBottomNormal;" h="201.62" s="1.0000" v=".7725" />
+      <KeyFrame name="&kColor_ButtonDefaultFillTopOver;" h="199.66" s="1.000" v=".9098" />
+      <KeyFrame name="&kColor_ButtonDefaultFillBottomOver;" h="198.58" s="1.000" v=".7725" />
+      <KeyFrame name="&kColor_ButtonDefaultFillTopDown;" h="205.28" s="1.000" v=".7725" />
+      <KeyFrame name="&kColor_ButtonDefaultFillBottomDown;" h="202.28" s="1.000" v=".7025" />
+
+      <!-- TEXT EDIT -->
+      <KeyFrame name="&kColor_TextEditNormalBackground;" v=".9000" />
+      <KeyFrame name="&kColor_TextEditFocusedBackground;" v=".9000" />
+      <KeyFrame name="&kColor_TextEditDisableBackground;" v=".8392" />
+      <KeyFrame name="&kColor_TextEditInnerGlow;" v=".0000" a=".05" />
+
+      <KeyFrame name="&kColor_TextEditNormalText;" v=".0000" />
+      <KeyFrame name="&kColor_TextEditFocusedText;" v=".0000" />
+      <KeyFrame name="&kColor_TextEditDisableText;" v=".5490" />
+
+      <!-- GENERIC ICONS -->
+      <KeyFrame name="&kColor_GenericIconNormal;" v=".4745" />
+      <KeyFrame name="&kColor_GenericIconShadowNormal;" v="1.0000" a="0.50" />
+      <KeyFrame name="&kColor_GenericIconDisabled;" v=".5852" />
+      <KeyFrame name="&kColor_GenericIconShadowDisabled;" v="1.000" a="0.40" />
+
+      <!-- TOOLTIP -->
+      <KeyFrame name="&kColor_ToolTipText;" v="0.00" />
+      <KeyFrame name="&kColor_ToolTipBackground;" v="0.90" />
+
+      <!-- TABS -->
+      <KeyFrame name="&kColor_TabBackground;" v=".8392" />
+      <KeyFrame name="&kColor_TabFocusedStroke;" h="204.95" s="1.000" v=".8392" />
+      <KeyFrame name="&kColor_TabContainerBorder;" v=".8664" />
+      <KeyFrame name="&kColor_NonFrontmostTextAlpha;" a="0.50" />                         <!-- alpha color applied to tab text -->
+
+      <KeyFrame name="&kColor_TabNormalStroke;" v=".9020" />
+      <KeyFrame name="&kColor_TabNormalStartGradient;" v=".9020" />
+      <KeyFrame name="&kColor_TabNormalEndGradient;" v=".8392" />
+
+      <KeyFrame name="&kColor_TabOverStroke;" v=".8588" />
+      <KeyFrame name="&kColor_TabOverStartGradient;" v="1.000" />
+      <KeyFrame name="&kColor_TabOverEndGradient;" v=".9020" />
+      
+      <KeyFrame name="&kColor_TabDeactiveStroke;" v=".6800" />
+      <KeyFrame name="&kColor_TabDeactiveStartGradient;" v=".6471" />
+      <KeyFrame name="&kColor_TabDeactiveEndGradient;" v=".6078" />
+
+      <!-- DIVIDER -->
+      <KeyFrame name="&kColor_DividerLineStroke;" v=".3922" />
+      <KeyFrame name="&kColor_DividerLineBevelStroke;" v=".9020" />
+	  
+      <!-- LISTBOX -->
+      <KeyFrame name="&kColor_ListBoxContentDivider;" v="0.6800" />
+      <KeyFrame name="&kColor_ListBoxContentSelected;" v=".9020" />
+      <KeyFrame name="&kColor_ListBoxContentHighlighted;" h="204.95" s="1.000" v=".8392" />
+      <KeyFrame name="&kColor_ListBoxItemTextHighlighted;" v="1.000" />
+	  
+      <!-- KNOB NEEDLE -->
+      <KeyFrame name="&kColor_KnobIconNormal;" v="0.35" />
+      <KeyFrame name="&kColor_KnobIconDisabled;" v="0.59"  />
+      <KeyFrame name="&kColor_KnobIconShadowNormal;" v="0.90" />
+      <KeyFrame name="&kColor_KnobIconShadowDisabled;" v="0.86" />
+	  
+      <!-- TAB STOP -->
+      <KeyFrame name="&kColor_TabStopBackground;" v=".8392" />
+	  
+      <!-- HOT TEXT -->
+      <KeyFrame name="&kColor_HotTextNormal;" h="204.95" s="1.000" v=".8392" />
+      <KeyFrame name="&kColor_HotTextActive;" h="266.44" s=".8053" v=".8863" />
+	  
+      <!-- PIN SELECTOR -->
+      <KeyFrame name="&kColor_PinSelectorPinOutline;" v=".3922" />
+      <KeyFrame name="&kColor_PinSelectorPinFill;" v=".8392" />
+      <KeyFrame name="&kColor_PinSelectorSelectedPinFill;" v=".4745" />
+      <KeyFrame name="&kColor_PinSelectorDisabledPinOutline;" v=".6000" />
+      <KeyFrame name="&kColor_PinSelectorDisabledPinFill;" v=".8392" />
+      <KeyFrame name="&kColor_PinSelectorDisabledSelectedPinFill;" v=".5852" />
+
+    </Theme>
+    
+	
+	<!-- MISC -->
+    <KeyFrame t="&Generic;" hold="true" name="&kColor_AppBackground;" v="0.000" />
+    <KeyFrame t="&Generic;" hold="true" name="&kColor_TextEditOutlineError;" h=".0000" s="1.000" v="1.000" />
+    <KeyFrame t="&Generic;" hold="true" name="&kColor_ModeSwitcherDropIndicatorFeedback;" h="196.00" s="0.86" v="0.65" />
+    <KeyFrame t="&Generic;" hold="true" name="&kColor_DisclosureTriangleFocusFillNoRolloverAlpha;" v="0.00" a="0.80" />
+    <KeyFrame t="&Generic;" hold="true" name="&kColor_DisabledImageAlpha;" v="0.00" a="0.30" />
+    <KeyFrame t="&Generic;" hold="true" name="&kColor_TabStopMarkings;" v="0.00" a="1.00" />
+	
+	
+    <!-- SLIDER -->
+    <KeyFrame t="&Generic;" hold="true" name="&kColor_SliderShadow;" v="0.00" a="0.20" />
+    <KeyFrame t="&Generic;" hold="true" name="&kColor_SliderShadowDisabled;" v="0.00" a="0.10" />
+	
+	
+    <!-- CONSTANT: COLORRAMP -->
+    <KeyFrame t="&Generic;" hold="true" name="&kColor_SliderThumbWhiteFill;" v="1.0" />
+    <KeyFrame t="&Generic;" hold="true" name="&kColor_SliderThumbBlackFill;" v="0.0" />
+	
+	
+    <!-- LEVEL METER -->
+	  <KeyFrame name="&kColor_LevelMeterBackgroundFill;" t="&Darkest;"  v="0.13"  />
+	  <KeyFrame name="&kColor_LevelMeterBackgroundFill;" t="&Dark;"     v="0.25" hold="true" />
+	  <KeyFrame name="&kColor_LevelMeterBackgroundFill;" t="&Light;"    v="0.45"  /> 
+	  <KeyFrame name="&kColor_LevelMeterBackgroundFill;" t="&Lightest;" v="0.85"  /> 
+    
+    <KeyFrame t="&Generic;" hold="true" name="&kColor_LevelMeterShadow;" v="0.00" a="0.20" />
+    <KeyFrame t="&Generic;" hold="true" name="&kColor_LevelMeterHighlight;" v="0.00" a="0.20" />
+    <KeyFrame t="&Generic;" hold="true" name="&kColor_LevelMeterNormalGradientStart;" h="119.48" s="0.99" v="0.45" />
+    <KeyFrame t="&Generic;" hold="true" name="&kColor_LevelMeterNormalGradientEnd;"	h="119.63" s="0.99" v="0.64" />
+    <KeyFrame t="&Generic;" hold="true" name="&kColor_LevelMeterWarningGradientEnd;" h="0.00" s="0.89" v="1.00" />
+    <KeyFrame t="&Generic;" hold="true" name="&kColor_LevelMeterWarningGradientStart;" h="0.00" s="0.89" v="1.00" />
+    <KeyFrame t="&Generic;" hold="true" name="&kColor_LevelMeterCautionFill;" h="51.00" s="1.00" v="1.00" />
+	
+  
+	  <!-- StarRating Border -->
+	  <KeyFrame name="&kColor_StarRatingBorder;" t="&Darkest;"  v=".0980" /> 
+	  <KeyFrame name="&kColor_StarRatingBorder;" t="&Dark;"     v=".1765" />
+	  <KeyFrame name="&kColor_StarRatingBorder;" t="&Light;"    v=".3490"  /> 
+	  <KeyFrame name="&kColor_StarRatingBorder;" t="&Lightest;" v=".3922" /> 
+
+	  <!-- StarRating Gradient Start -->
+	  <KeyFrame name="&kColor_StarRatingGradientStart;" t="&Darkest;"   h="36.92" s=".8053" v=".8863" />
+	  <KeyFrame name="&kColor_StarRatingGradientStart;" t="&Dark;"      h="44.35" s=".8106" v=".8902" />
+	  <KeyFrame name="&kColor_StarRatingGradientStart;" t="&Light;"     h="204.95" s="1.000" v=".8392"/>
+	  <KeyFrame name="&kColor_StarRatingGradientStart;" t="&Lightest;"  h="204.95" s="1.000" v=".8392"/>
+
+	  <!-- StarRating Gradient End -->
+	  <KeyFrame name="&kColor_StarRatingGradientEnd;" t="&Darkest;"     h="36.92" s=".8053" v=".8863" />
+	  <KeyFrame name="&kColor_StarRatingGradientEnd;" t="&Dark;"        h="44.35" s=".8106" v=".8902" />
+	  <KeyFrame name="&kColor_StarRatingGradientEnd;" t="&Light;"       h="204.95" s="1.000" v=".8392"/>
+	  <KeyFrame name="&kColor_StarRatingGradientEnd;" t="&Lightest;"    h="204.95" s="1.000" v=".8392"/>
+
+	  <!-- StarRating Unselected Gradient Start -->
+	  <KeyFrame name="&kColor_StarRatingUnselectedGradientStart;" t="&Darkest;"   v=".1922" /> 
+	  <KeyFrame name="&kColor_StarRatingUnselectedGradientStart;" t="&Dark;"      v=".3451" />
+	  <KeyFrame name="&kColor_StarRatingUnselectedGradientStart;" t="&Light;"     v=".6471"  /> 
+	  <KeyFrame name="&kColor_StarRatingUnselectedGradientStart;" t="&Lightest;"  v=".7059" /> 
+
+	  <!-- StarRating Unselected Gradient End -->
+	  <KeyFrame name="&kColor_StarRatingUnselectedGradientEnd;" t="&Darkest;"   v=".1922" /> 
+	  <KeyFrame name="&kColor_StarRatingUnselectedGradientEnd;" t="&Dark;"      v=".3451" />
+	  <KeyFrame name="&kColor_StarRatingUnselectedGradientEnd;" t="&Light;"     v=".6471"  /> 
+	  <KeyFrame name="&kColor_StarRatingUnselectedGradientEnd;" t="&Lightest;"  v=".7059" />
+  
+  
+	  <!-- UIToolboxItem Tool Drag Feedback Color -->
+	  <KeyFrame name="&kColor_ToolDragFeedback;" t="&Darkest;" h="205.8" s="0.64" v="0.83" />
+	  <KeyFrame name="&kColor_ToolDragFeedback;" t="&Dark;" h="205.8" s="0.64" v="0.83" />
+	  <KeyFrame name="&kColor_ToolDragFeedback;" t="&Light;" h="205.8" s="0.64" v="0.83" />
+	  <KeyFrame name="&kColor_ToolDragFeedback;" t="&Lightest;" h="205.8" s="0.64" v="0.83" />
+    
+    <!-- UI_MultiColumnTree Drag Feedback Colors -->
+	  <KeyFrame name="&kColor_MultiColumnTreeDragOverRowFill;" t="&Darkest;"    v="0.45" />
+	  <KeyFrame name="&kColor_MultiColumnTreeDragOverRowFill;" t="&Dark;"       v="0.65" />
+	  <KeyFrame name="&kColor_MultiColumnTreeDragOverRowFill;" t="&Light;"      v="0.90" />
+	  <KeyFrame name="&kColor_MultiColumnTreeDragOverRowFill;" t="&Lightest;"   v="0.95" />
+    
+	  <KeyFrame name="&kColor_MultiTreeControlFrameDragFeedback;" t="&Darkest;"   h="36.92"   s=".8053" v=".8863" />
+	  <KeyFrame name="&kColor_MultiTreeControlFrameDragFeedback;" t="&Dark;"      h="44.35"   s=".8106" v=".8902" />
+	  <KeyFrame name="&kColor_MultiTreeControlFrameDragFeedback;" t="&Light;"     h="204.95"  s="1.000" v=".8392" />
+	  <KeyFrame name="&kColor_MultiTreeControlFrameDragFeedback;" t="&Lightest;"  h="204.95"  s="1.000" v=".8392" />
+    
+	  <KeyFrame name="&kColor_MultiTreeControlFrameInnerGlow;" t="&Darkest;"   h="36.92"   s=".8053" v=".8863" />
+	  <KeyFrame name="&kColor_MultiTreeControlFrameInnerGlow;" t="&Dark;"      h="44.35"   s=".8106" v=".8902" />
+	  <KeyFrame name="&kColor_MultiTreeControlFrameInnerGlow;" t="&Light;"     h="204.95"  s="1.000" v=".8392" />
+	  <KeyFrame name="&kColor_MultiTreeControlFrameInnerGlow;" t="&Lightest;"  h="204.95"  s="1.000" v=".8392" />
+    
+  
+<!-- WORK IN PROGRESS -->
+<Theme t="&Generic;" >
+
+      <!-- KNOWN DRAGGING/DRAG&DROP STUFF -->
+      <KeyFrame name="&kColor_MultiTreeColumnDragStroke;" h="0.00" s="0.000" v="0.000" a=".30"/>                <!-- little mark to determine where a dragged column will end up -->
+      <KeyFrame name="&kColor_MultiTreeColumnDragFill;" h="0.00" s="0.000" v="0.000" a=".30"/>                  <!-- little mark to determine where a dragged column will end up -->
+      <KeyFrame name="&kColor_MultiColumnTreeMarqueeFill;"  v="0.52" a="0.5" />                                 <!-- tree selection overlay rectangle -->
+      <KeyFrame name="&kColor_MultiColumnTreeMarqueeStroke;" v="0.84" a="0.5" />                                <!-- tree selection overlay rectangle -->
+      <KeyFrame name="&kColor_MultiColumnTreeDragBetweenRowLine;" v="0.000" />                                  <!-- drop indicator when moving rows -->
+      
+      <!-- UNKNOWN DRAGGING/DRAG&DROP STUFF (purple) -->
+      <KeyFrame name="&kColor_ListBoxDragInsert;" h="280" s="1.000" v="1.000" />                <!-- TreeControlBase -->
+      <KeyFrame name="&kColor_ListBoxDragBorderHighlightFill;" h="280" s="1.000" v="1.000" />   <!-- TreeControlBase -->
+      <KeyFrame name="&kColor_ListBoxDragBorderHighlightShadow;" h="280" s="1.000" v="1.000" /> <!-- TreeControlBase -->
+
+</Theme>
+
+	</ThemeColors>
+	
+</ThemeParameters>

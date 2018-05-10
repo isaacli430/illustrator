@@ -1,0 +1,19 @@
+sheet ColorProfileMismatchWarning
+{
+interface:
+ warningTextIndex: 0;
+ showEmbeddedProfileStaticText: true;
+ showSourceProfileStaticText: true;
+ showDestinationProfileText: true;
+ showWorkingProfileStaticText: true;
+ showRadioOptions: true;
+ radiobuttonIndex: 0;
+ showEmbedded :false;
+ showConvertToWorkingSpace :false;
+ showConvertPreserveAppearance :false;
+ showDontConvertAppearance :false;
+ showDiscardEmbed :false;
+ showDontShowAgain : true;
+ dontShowAgain : true;
+ 
+}

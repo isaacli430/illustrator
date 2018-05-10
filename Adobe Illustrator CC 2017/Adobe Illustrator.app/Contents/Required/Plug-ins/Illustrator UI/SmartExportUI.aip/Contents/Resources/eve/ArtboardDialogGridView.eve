@@ -1,0 +1,46 @@
+layout SmartExportUI
+{
+    view subview(identifier: "ArtboardDialogGridItem",
+                 layout_theme: @panel,width: 118,height: 140,
+                 show_border: false)
+    {      
+    	column(margin: [8, 0, 8, 0],horizontal: @align_center) 
+    	{
+			row(horizontal: @align_fill,vertical: @align_top)
+	        {
+	            image(
+	                identifier: 'ViewThumbnail',
+	                horizontal:@align_center,
+	                vertical:@align_center,
+	                width: 86,
+	                height: 86,
+	                name: 'Image');
+	        }
+	        row(horizontal: @align_fill,vertical: @align_top,margin: [0, 2, 0, 0],placement: @place_overlay)
+	        {   
+
+                panel(bind:@showStaticText, vertical: @align_center,horizontal: @align_fill,spacing:1,placement: @place_row) 
+                {
+                	static_text(identifier: 'Index',
+                	horizontal: @align_left,
+                    name: '001',
+   					display_disable:true,
+                    vertical: @align_center,
+                    theme_font_size: @small); 
+
+                    static_text(identifier: 'Name',
+                    horizontal: @align_fill,
+                    name: ' ',
+                    vertical: @align_center,
+                    theme_font_size: @small); 
+                }
+                panel(bind:@inEditMode,horizontal: @align_fill) 
+                {
+                    edit_text(identifier: 'NameEditField', horizontal: @align_fill,
+                    name: '',vertical: @align_center,
+                    theme_font_size: @small);
+                }                    
+	        }
+    	}
+    }
+}

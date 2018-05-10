@@ -1,0 +1,165 @@
+layout CreativeCloud
+{
+	view subview(identifier: "CreativeCloudEveSubView",
+				 child_horizontal: @align_fill,
+				 placement: @place_column,
+				 show_border: false, 
+				 margin: [22,15,0,15],
+				 layout_theme: @dialog_large)
+	{
+		
+		column(spacing: 0)
+		{
+		static_text(identifier: "CCStaticTextCaption",
+					name: "$$$/PrefsDlg/CCDlg/DCaption=Sync Settings"
+					);
+		
+		separator();
+		}
+		
+		row(horizontal: @align_fill, child_horizontal: @align_fill, child_vertical: @align_center )
+		{
+			overlay(vertical: @align_fill, horizontal: @align_fill)
+			{
+				optional(margin: 0, bind: @CCUserCCEError, value: true, horizontal: @align_left, child_horizontal: @align_left, spacing: 0)
+				{
+					static_text(identifier: "CCEError1", name: "$$$/EnterpriseIdServiceError/ErrorPrefix=You do not have access to this service.", horizontal: @align_left,theme_font_size: @small);
+					static_text(identifier: "CCEError2", name: "$$$/EnterpriseIdServiceError/ErrorSuffix=Contact your IT administrator to gain access or sign in with an Adobe ID."
+						, horizontal: @align_left,theme_font_size: @small);
+				}
+				optional(margin: 0, bind: @CCUserCCEError, value: false, horizontal: @align_fill, child_horizontal: @align_fill)
+				{
+					row(horizontal: @align_fill, child_horizontal: @align_fill, child_vertical: @align_center )
+					{
+						column(horizontal: @align_left)
+						{
+							static_text(identifier: "CCSignedinLabel", name: "$$$/PrefsDlg/CCDlg/CCStaticTextSignIn=Signed in as:", horizontal: @align_right,theme_font_size: @small);
+							static_text(identifier: "CCStatusLabel", name: @CCStatusLabelString, horizontal: @align_right,theme_font_size: @small);
+						}
+						column(horizontal: @align_fill)
+						{
+							static_text( name: @CCUserId, dialog_resize: @always,theme_font_size: @small,horizontal: @align_fill);
+							row(horizontal: @align_fill)
+							{
+								static_text( name: @CCStatusString, dialog_resize: @always,theme_font_size: @small,horizontal: @align_left);
+								
+								optional(margin: 0, bind: @CCShowToolTip, value: 1, horizontal: @align_left)
+								{
+									image(identifier: "ApplyToolTip",
+										image: {normal:"SP_Info_Sm_N.png",dark_normal:"SP_Info_Sm_N_D.png"},
+										alt: "$$$/PrefsDlg/CCDlg/ApplySettingsToolTip=To apply settings, click the 'Sync Settings' icon in the Status bar.");
+								}
+								optional(margin: 0, bind: @CCShowToolTip, value: 2, horizontal: @align_left)
+								{
+									image(identifier: "EnableToolTip",
+										image: {normal:"SP_Info_Sm_N.png",dark_normal:"SP_Info_Sm_N_D.png"},
+										alt: "$$$/PrefsDlg/CCDlg/EnableSettingsToolTip=To enable Sync, select 'All Settings' in the Sync dropdown below.");
+								}
+							}
+						}
+
+						column(horizontal: @align_right)
+						{
+							button(identifier: "CCButtonSyncSettings",	name: "$$$/PrefDialog/CreativeCloud/SyncNow=Sync Settings Now", horizontal: @align_right );//Never put a hot key string in a widget that changes value
+
+							button(identifier: "CCButtonManageAccount",	name: "$$$/PrefsDlg/CCDlg/CCButtonManageAccount=&Manage Account", horizontal: @align_right);
+						}
+					}
+				}
+			}
+			
+		}
+
+		group(identifier: "CCGrpSelection",
+				name: "$$$/PrefsDlg/CCDlg/CCGrpSelection=Sync Settings Options",
+				placement: @place_column)
+		{
+					row(child_horizontal: @align_left)
+					{
+						popup(identifier: "CCPopupSync",
+							  include_custom_item: false,
+							  guide_mask: [ @guide_label ],
+							  name: "$$$/PrefsDlg/CCDlg/CCPopupSync=Sy&nc:",
+							  items: @CCSyncPopupItems
+							  );
+					}
+
+					row(guide_mask: [ @guide_label ], horizontal: @align_fill, child_horizontal: @align_fill)
+					{
+						subview(margin:0, identifier: "CCCheckBoxGroup", show_border: false, placement: @place_row )
+						{
+							column()
+							{
+								checkbox(identifier: "CCCheckboxPreferences",
+											name: "$$$/PrefsDlg/CCDlg/CCCheckboxPreferences=&Preferences",
+											guide_mask: [ @guide_label ],
+											bind: @CCPreferencesBoolCell
+											);
+
+								checkbox(identifier: "CCCheckboxPresets",
+											name: "$$$/PrefsDlg/CCDlg/CCCheckboxPresets=P&resets",
+											guide_mask: [ @guide_label ],
+											bind: @CCPresetsBoolCell
+											);
+
+								checkbox(identifier: "CCCheckboxSwatches",
+											name: "$$$/PrefsDlg/CCDlg/CCCheckboxSwatches=Swa&tches",
+											guide_mask: [ @guide_label ],
+											bind: @CCSwatchesBoolCell
+											);
+
+								checkbox(identifier: "CCCheckboxBrushes",
+								name: "$$$/PrefsDlg/CCDlg/CCCheckboxBrushes=&Brushes",
+								guide_mask: [ @guide_label ],
+								bind: @CCBrushesBoolCell
+								);
+
+								checkbox(identifier: "CCCheckboxAsianSettings",
+								name: "$$$/PrefsDlg/CCDlg/CCCheckboxAsianSettings=&East Asian Settings",
+								guide_mask: [ @guide_label ],
+								bind: @CCAsianSettingsBoolCell
+								);
+							}
+
+							column()
+							{
+								checkbox(identifier: "CCCheckboxWorkspaces",
+										name: "$$$/PrefsDlg/CCDlg/CCCheckboxWorkspaces=&Workspaces",
+										guide_mask: [ @guide_label ],
+										bind: @CCWorkspacesBoolCell
+										);
+
+								checkbox(identifier: "CCCheckboxKBS",
+										name: "$$$/PrefsDlg/CCDlg/CCCheckboxKBS=&Keyboard Shortcuts",
+										guide_mask: [ @guide_label ],
+										bind: @CCKBSBoolCell
+										);
+
+								checkbox(identifier: "CCCheckboxSymbols",
+										name: "$$$/PrefsDlg/CCDlg/CCCheckboxSymbols=S&ymbols",
+										guide_mask: [ @guide_label ],
+										bind: @CCSymbolsBoolCell
+										);
+
+								checkbox(identifier: "CCCheckboxGraphicStyles",
+											name: "$$$/PrefsDlg/CCDlg/CCCheckboxGraphicStyles=&Graphic Styles",
+											guide_mask: [ @guide_label ],
+											bind: @CCGraphicStylesBoolCell
+											);
+							}
+						}
+					}
+					
+					row(child_horizontal: @align_left)
+					{
+						popup(identifier: "CCPopupConflictOccurs",
+							  include_custom_item: false,
+							  name: "$$$/PrefsDlg/CCDlg/CCPopupConflictOccurs=When &Conflict Occurs:",
+							  guide_mask: [ @guide_label ],
+							  items: @CCConflictPopupItems
+							  );
+					}
+				}
+		}
+	}
+}				

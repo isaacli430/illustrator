@@ -1,0 +1,68 @@
+layout RotateDialog
+{
+    view subview(show_border: false,
+                 layout_theme: @dialog_large,
+                 identifier: "RotateDialogSubViewID",
+                 child_horizontal: @align_fill,
+                 spacing: @unrelated_spacing)
+    {
+		column(child_horizontal: @align_fill )
+		{
+		 	group(identifier:"rotateGroup",
+					name: "$$$/Transform/Dlg/Transform/27=Rotate",
+					placement: @place_column,
+					child_vertical: @align_center)
+					{						
+							angle_picker(identifier: "AnglePicker",	
+								name: "$$$/_TRANSFOR/Dlg/Rotate/titleRotate=&Angle:",
+								value_range: {min_value:-360, max_value: 360},
+								bind: @angleEditNumber,
+								set_default_focus: true,
+								show_editbox: true);	
+						
+							row(child_horizontal: @align_fill)
+							{
+								checkbox(name: "$$$/_TRANSFOR/Dlg/Rotate/doObjectsRotate=Transform &Objects",
+									label: "$$$/_TRANSFOR/Dlg/Rotate/rotateOptionsGroupbox=Options:",
+									bind: @objectCheckBoxCell,
+									identifier: "objectsCheckBox");
+			
+								checkbox(name: "$$$/_TRANSFOR/Dlg/Rotate/doPatternsRotate=Transform Pa&tterns",
+									bind: @patternCheckBoxCell,
+									identifier: "patternsCheckBox");
+							}
+					}
+			row(child_vertical: @align_center)
+			{
+				checkbox(name: "$$$/_TRANSFOR/Dlg/Rotate/rotatePreview=&Preview",
+					  bind: @previewCheckBoxCell,
+					  identifier: "previewCheckBox",
+					  guide_mask: [ @guide_label]);	
+			}
+		}
+
+					  
+		row(spacing: @button_group_spacing,child_vertical: @align_center)
+		{
+			button(name: "$$$/_TRANSFOR/Dlg/Rotate/copyRotate=&Copy",
+					identifier: "copyButtonID",
+					action: @copy,
+					vertical: @align_fill,
+					commit_button: true,
+					horizontal: @align_left);         	
+
+			row(reverse: os == @mac, spacing: @related_spacing, horizontal: @align_right)
+			{
+				button(name: "$$$/gOK=OK",
+						identifier: "okButton",
+						action: @ok,
+						commit_button: true);
+
+				button(identifier: "cancelButton",
+						name: "$$$/gCancel=Cancel",
+						action: @cancel,
+						commit_button: true);
+			}
+		}
+    }
+}

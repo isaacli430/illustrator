@@ -1,0 +1,6 @@
+sheet SwatchPanel
+{
+	interface:
+		showListMode: true;
+		showFindOptions: true;
+}

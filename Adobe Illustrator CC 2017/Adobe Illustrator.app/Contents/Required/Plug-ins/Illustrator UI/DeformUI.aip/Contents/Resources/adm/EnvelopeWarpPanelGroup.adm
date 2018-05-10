@@ -1,0 +1,24 @@
+sheet EnvelopeWarpPanelGroup
+{
+interface:
+	WarpStyleItems:	[
+						{name: "$$$/Deform/WarpOptions/StyleItem/Arc=Arc",					value: 0,			icon: "arc"},
+						{name: "$$$/Deform/WarpOptions/StyleItem/ArcLower=Arc Lower",		value: 1,		icon: "arclower"},
+						{name: "$$$/Deform/WarpOptions/StyleItem/ArcUpper=Arc Upper",		value: 2,		icon: "arcupper"},
+						{name: "",															value: "",				icon: ""},
+						{name: "$$$/Deform/WarpOptions/StyleItem/Arch=Arch",				value: 3,			icon: "arch"},
+						{name: "$$$/Deform/WarpOptions/StyleItem/Bulge=Bulge",				value: 4,			icon: "bulge"},
+						{name: "$$$/Deform/WarpOptions/StyleItem/ShellLower=Shell Lower",	value: 5,	icon: "shelllower"},
+						{name: "$$$/Deform/WarpOptions/StyleItem/ShellUpper=Shell Upper",	value:6,	icon: "shellupper"},
+						{name: "",															value: "",				icon: ""},
+						{name: "$$$/Deform/WarpOptions/StyleItem/Flag=Flag",				value: 7,			icon: "flag"},
+						{name: "$$$/Deform/WarpOptions/StyleItem/Wave=Wave",				value: 8,			icon: "wave"},
+						{name: "$$$/Deform/WarpOptions/StyleItem/Fish=Fish",				value: 9,			icon: "fish"},
+						{name: "$$$/Deform/WarpOptions/StyleItem/Rise=Rise",				value: 10,			icon: "rise"},
+						{name: "",															value: "",				icon: ""},
+						{name: "$$$/Deform/WarpOptions/StyleItem/FishEye=FishEye",			value: 11,		icon: "fisheye"},
+						{name: "$$$/Deform/WarpOptions/StyleItem/Inflate=Inflate",			value: 12,		icon: "inflate"},
+						{name: "$$$/Deform/WarpOptions/StyleItem/Squeeze=Squeeze",			value: 13,		icon: "squeeze"},
+						{name: "$$$/Deform/WarpOptions/StyleItem/Twist=Twist",				value: 14,			icon: "twist"}
+					];
+}

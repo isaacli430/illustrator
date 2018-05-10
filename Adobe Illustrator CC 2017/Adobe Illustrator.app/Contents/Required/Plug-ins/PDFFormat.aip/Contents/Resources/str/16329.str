@@ -1,0 +1,26 @@
+/* [1] */
+$$$/PDFFileFormat/Str/PasswordNotConfirmed=Confirmation password does not match. Please start again by entering the password.
+/* [2] */
+$$$/PDFFileFormat/Str/CannotOpenOptionSet=Could not open the file.
+/* [3] */
+$$$/PDFFileFormat/Str/CannotSaveOptionSet=Could not save the file: 
+/* [4] */
+$$$/PDFFileFormat/Str/DataLoss=Saving this document with ^QPreserve Illustrator Editing Capabilities^Q unchecked may disable some editing features when the document is read back in. Do you want to continue?
+/* [5] */
+$$$/PDFFileFormat/Str/StyleCannotFound=Could not find the preset: 
+/* [6] */
+$$$/PDFFileFormat/Str/StyleNameDup=Preset name already in use. Please choose another.
+/* [7] */
+$$$/PDFFileFormat/Str/NoMemory=The operation cannot complete because there isn't enough memory (RAM) available.
+/* [8] */
+$$$/PDFFileFormat/Str/NoApp=Cannot find Adobe Acrobat application.
+/* [9] */
+$$$/PDFFileFormat/Str/UnknownErr=An unknown error has occurred.
+/* [10] */
+$$$/PDFFileFormat/Str/NotUniqueErr=The User and Master Passwords must be unique. Please enter a different password.
+/* [11] */
+$$$/PDFFileFormat/Str/NoUserErr=Please enter a Document Open Password.
+/* [12] */
+$$$/PDFFileFormat/Str/NoMasterErr=Please enter a Permissions Password in order to prevent others from changing these settings.
+/* [13] */
+$$$/PDFFileFormat/Str/NoHiAsciiErr=The password cannot contain upper ASCII characters. Please enter a different password.

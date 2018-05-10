@@ -1,0 +1,11 @@
+layout AITouchToolOptionBar
+{
+    view subview(identifier: "AIEveSubView",
+				 layout_theme: @dialog,
+				 child_horizontal: @align_fill,
+				 placement: @place_row,
+				 show_border: false,
+				 margin: [0,0,0,0])
+    {
+    }
+}

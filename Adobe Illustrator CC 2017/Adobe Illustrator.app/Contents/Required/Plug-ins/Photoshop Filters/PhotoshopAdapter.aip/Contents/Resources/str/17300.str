@@ -1,0 +1,11 @@
+$$$/PhotoshopAdapter/GenError1=an error has occurred
+$$$/PhotoshopAdapter/GenError2=there is not enough memory available
+$$$/PhotoshopAdapter/GenError3=the end of the file was reached
+$$$/PhotoshopAdapter/GenError4=the disk is full
+$$$/PhotoshopAdapter/GenError5=the image was too large
+$$$/PhotoshopAdapter/GenError6=the selected area was empty
+$$$/PhotoshopAdapter/GenError7=this plug-in does not support the current setup of the image
+$$$/PhotoshopAdapter/GenError8=this plug-in does not support images with layers
+$$$/PhotoshopAdapter/GenError9=this plug-in does not support images with a selection
+$$$/PhotoshopAdapter/GenError10=Photoshop filters can only be applied to one image at a time
+$$$/PhotoshopAdapter/GenError11=Photoshop filters require there to be a raster image in the selection

@@ -1,0 +1,1318 @@
+layout CharParaStylesUI
+{
+	view subview(identifier: "AIEveSubView",
+				 layout_theme: @dialog_large,
+				 show_border: false,
+				 placement: @place_row)
+    {
+    
+		column()
+		{
+			overlay()
+			{				
+				panel(value: true, bind:@StyleIsNormal, placement: @place_row)
+				{
+					display_text(name: "$$$/CharParaStylesUI/Dlg/StyleNameLabel=Style Name:",identifier: "StyleNameLabel", value: @StyleName, horizontal: @align_left);
+				}
+				panel(value: false, bind:@StyleIsNormal, placement: @place_row)
+				{
+					edit_text(name: "$$$/CharParaStylesUI/Dlg/_StyleNameLabel=Style &Name:",characters: 34, identifier: "StyleNameEdit", horizontal: @align_left);
+				}
+				
+			}
+			row()
+			{
+				column(vertical: @align_fill, child_vertical: @align_fill)
+				{
+					list(identifier: "PanelList",
+							items: @PanelListItems,
+							guide_mask: [@guide_label],
+							bind: @PanelSelection);
+				
+				}
+			row(spacing: 0)
+			{
+				guide_consumer(consume_horizontal: 1);
+				column()
+				{
+					overlay()
+					{
+		/*********************************************************************** General PANEL ***********************************************************************/
+						panel(margin: 0, bind: @PanelSelection, value: 0, guide_mask: [@guide_label, @guide_baseline])
+						{
+							static_text(name: "$$$/CharParaStylesUI/PanelList/General=General", horizontal: @align_left);
+							separator(orientation: @horizontal);
+							
+							column(horizontal: @align_fill, vertical: @align_fill)
+							{
+								display_text(name: "$$$/CharParaStylesUI/Dlg/General/StyleSettingsLabel=Style Settings:", value: @NormalStylePlus);
+							
+								multicolumn_tree(identifier: "StyleSettingsMCT", wants_focus: true, width: 100, height: 100, true_string: "$$$/CharParaStylesUI/MCTYesString=Yes", false_string: "$$$/CharParaStylesUI/MCTNoString=No", horizontal: @align_fill, vertical: @align_fill,
+											items: [
+												{	name: "$$$/CharParaStylesUI/PanelList/BasicCharFormats=Basic Character Formats",
+										 			children:
+										 			[ 
+														{name: "$$$/CharParaStylesUI/Dlg/BCF/FontFamilyLabel=Font Family:", value: @fontFamilyValue, hide: @hideFontFamily},
+														{name: "$$$/CharParaStylesUI/Dlg/BCF/FontStyleLabel=Font Style:", value: @fontStyleValue, hide: @hideFontFamily},
+														{name: "$$$/CharParaStylesUI/Dlg/BCF/FontSizeLabel=Size:", value: @dispFontSizeMenu, hide:@hideFontSize },
+														{name: "$$$/CharParaStylesUI/Dlg/BCF/LeadingLabel=Leading:", value: @dispLeadingMenu, hide: @hideLeadingEdit},
+														{name: "$$$/CharParaStylesUI/Dlg/BCF/KerningLabel=Kerning:", value: @dispKerningMenu, hide: @hideKerningMenu},
+														{name: "$$$/CharParaStylesUI/Dlg/BCF/TrackingLabel=Tracking:",value: @dispTrackingMenu, hide: @hideTrackingEdit},
+														{name: "$$$/CharParaStylesUI/Dlg/BCF/CaseLabel=Case:", value: @dispCaseMenu, hide: @hideCaseMenu},
+														{name: "$$$/CharParaStylesUI/Dlg/BCF/PositionLabel=Position:", value: @dispPositionMenu, hide: @hidePositionMenu},
+														{name: "$$$/CharParaStylesUI/Dlg/BCF/AlignmentLabel=Alignment:", value: @dispAlignmentMenu, hide: @hideAlignmentMenu},
+														{name: "$$$/CharParaStylesUI/Dlg/BCF/VertAlignCBLabel=Standard Vertical Roman Alignment:", value: @dispVertAlignCB, hide: @hideVertAlignCB},
+														{name: "$$$/CharParaStylesUI/Dlg/BCF/UnderlineCBLabel=Underline:", value: @dispUnderlineCB, hide: @hideUnderlineCB},
+														{name: "$$$/CharParaStylesUI/Dlg/BCF/StrikethruCBLabel=Strikethrough:", value: @dispStrikethruCB, hide: @hideStrikethruCB}
+													]
+												},
+												{	name: "$$$/CharParaStylesUI/PanelList/AdvCharFormats=Advanced Character Formats", 
+										 			children:
+										 			[ 
+														{name: "$$$/CharParaStylesPlugin/AdvancedPanel/1=Horizontal Scale:", value: @dispHorzScaleEditValue, hide:@hideHorzScaleEditValue},
+														{name: "$$$/CharParaStylesPlugin/AdvancedPanel/2=Vertical Scale:", value: @dispVertScaleEditValue, hide:@hideVertScaleEditValue},
+														{name: "$$$/CharParaStylesPlugin/AdvancedPanel/3=Baseline Shift:", value: @dispBaseShiftEditValue, hide:@hideBaseShiftEditValue},
+														{name: "$$$/CharParaStylesPlugin/AdvancedPanel/4=Character Rotation:", value: @dispCharRotEditValue, hide:@hideCharRotEditValue},
+														{name: "$$$/CharParaStylesPlugin/AdvancedPanel/10=Language:", value: @dispLanguageMenuSelection, hide:@hideLanguageMenuSelection},
+														{name: "$$$/CharParaStylesPlugin/AdvancedPanel/5=Tsume:", value: @dispTsumeEditValue, hide: @hideTsumeEditValue},
+														{name: "$$$/CharParaStylesPlugin/AdvancedPanel/6=Aki Before:", value: @dispAkiBeforeMenuSelection, hide:@hideAkiBeforeMenuSelection},
+														{name: "$$$/CharParaStylesPlugin/AdvancedPanel/7=Aki After:", value: @dispAkiAfterMenuSelection, hide:@hideAkiAfterMenuSelection},
+														{name: "$$$/CharParaStylesPlugin/AdvancedPanel/9=Alternate Glyphs:", value: @dispAltGlyphsMenuSelection, hide:@hideAltGlyphsMenuSelection}
+														]
+												},
+												{	name: "$$$/CharParaStylesUI/PanelList/MECharFormats=Middle East Character Formats", 
+													hide: @hideMiddleEast,
+										 			children:
+										 			[ 
+														{name: "$$$/CharParaStylesPlugin/MECharFormatsPanel/1=Digits:", value: @dispDigitsMenuSelection, hide:@hideDigitsMenuSelection},
+														{name: "$$$/CharParaStylesPlugin/MECharFormatsPanel/2=Kashidas:", value: @dispKashidasMenuSelection, hide:@hideKashidasMenuSelection},
+														{name: "$$$/CharParaStylesPlugin/MECharFormatsPanel/3=Character Direction:", value: @dispCharacterDirectionMenuSelection, hide:@hideCharacterDirectionMenuSelection},
+														{name: "$$$/CharParaStylesPlugin/MECharFormatsPanel/10=Horizontal:", value: @dispHorizontalEditValue, hide:@hidehorizontalEditValue},
+														{name: "$$$/CharParaStylesPlugin/MECharFormatsPanel/5=Vertical:", value: @dispVerticalEditValue, hide: @hideVerticalEditValue}
+														
+														]
+												},
+												
+												
+												{	name: "$$$/CharParaStylesUI/PanelList/Indents=Indents and Spacing",
+													hide:  @hideParaStyle, 
+										 			children:
+										 			[ 
+														{name: "$$$/CharParaStylesPlugin/IndAndSpacingPanel/1=Alignment:", value: @dispIASAlign, hide: @hideIASAlign},
+														{name: "$$$/CharParaStylesPlugin/IndAndSpacingPanel/7=Paragraph Direction:", value: @dispIASParaDirection, hide: @hideIASParaDirection},
+														{name: "$$$/CharParaStylesPlugin/IndAndSpacingPanel/8=Kashida Width:", value: @dispIASKashida, hide: @hideIASKashida},
+														{name: "$$$/CharParaStylesPlugin/IndAndSpacingPanel/2=Left Indent:", value: @dispLeftIndent, hide: @hideLeftIndent},
+														{name: "$$$/CharParaStylesPlugin/IndAndSpacingPanel/3=First Line Indent:", value: @dispFirstLineIndent, hide: @hideFirstLineIndent},
+														{name: "$$$/CharParaStylesPlugin/IndAndSpacingPanel/4=Right Indent:", value: @dispRightIndent, hide: @hideRightIndent},
+														{name: "$$$/CharParaStylesPlugin/IndAndSpacingPanel/5=Space Before:", value: @dispSpaceBefore, hide: @hideSpaceBefore},
+														{name: "$$$/CharParaStylesPlugin/IndAndSpacingPanel/6=Space After:", value: @dispSpaceAfter, hide: @hideSpaceAfter}
+
+
+													]
+												},
+												{	name: "$$$/CharParaStylesUI/PanelList/Tabs=Tabs", 
+													hide:  @hideParaStyle 
+												},
+												{	name: "$$$/CharParaStylesUI/PanelList/Composer=Composition",  
+													hide:  @hideParaStyle, 
+										 			children:
+										 			[ 
+														{name: "$$$/CharParaStylesPlugin/ComposerPanel/1=Composer:", value: @dispComposerMenu, hide: @hideComposerMenu},
+														{name: "$$$/CharParaStylesPlugin/ComposerPanel/2=Roman Hanging Punctuation", value: @dispPunctuationCB, hide: @hidePunctuationCB}
+
+													]
+												},
+												{	name: "$$$/CharParaStylesUI/PanelList/Hyphenation=Hyphenation", 
+													hide:  @hideParaStyle,  
+										 			children:
+										 			[ 
+														{name: "$$$/CharParaStylesUI/Dlg/Hyph/HyphenateCBLabel=Hyphenate: ", value: @dispHyphGpCB, hide: @hideHyphGpCB},
+														{name: "$$$/CharParaStylesPlugin/HyphenationPanel/1=Words Longer Than:", value: @dispWordsLongerThan, hide: @hideWordsLongerThan, precision: @precision0Cell},
+														{name: "$$$/CharParaStylesPlugin/HyphenationPanel/2=After First:", value:@dispAfterFirst, hide: @hideAfterFirst, precision: @precision0Cell},
+														{name: "$$$/CharParaStylesPlugin/HyphenationPanel/3=Before Last:", value: @dispBeforeLast, hide: @hideBeforeLast, precision: @precision0Cell},
+														{name: "$$$/CharParaStylesPlugin/HyphenationPanel/4=Hyphen Limit:", value: @dispHyphenLimit, hide: @hideHyphenLimit, precision: @ precision0Cell},
+														{name: "$$$/CharParaStylesPlugin/HyphenationPanel/5=Hyphenation Zone:", value: @dispHyphenZone, hide: @hideHyphenZone},
+														{name: "$$$/CharParaStylesUI/Dlg/Hyph/HyphCapCBLabel=Hyphenate Capitalized Words: ", value: @dispHyphCapCB, hide: @hideHyphCapCB}
+
+													]
+												},
+												{	name: "$$$/CharParaStylesUI/PanelList/Justification=Justification",  
+													hide:  @hideParaStyle, 
+										 			children:
+										 			[ 
+														{name: "$$$/CharParaStylesPlugin/JustificationPanel/1=Word Spacing:", value: @dispWordSpacing, hide: @hideWordSpacing},
+														{name: "$$$/CharParaStylesPlugin/JustificationPanel/2=Letter Spacing:", value: @dispLetterSpacing, hide: @hideLetterSpacing},
+														{name: "$$$/CharParaStylesPlugin/JustificationPanel/3=Glyph Spacing:", value: @dispGlyphSpacing, hide: @hideGlyphSpacing},
+														{name: "$$$/CharParaStylesPlugin/JustificationPanel/8=Single Word Justification:", value: @dispSingleWordJust, hide: @hideSingleWordJust},
+														{name: "$$$/CharParaStylesPlugin/JustificationPanel/7=Auto Leading:", value: @dispAutoLeading, hide: @hideAutoLeading}
+
+													]
+												},
+												{	name: "$$$/CharParaStylesUI/PanelList/CharColor=Character Color", 
+										 			children:
+										 			[ 
+														{name: "$$$/CharParaStylesPlugin/CharColorPanel/1=Fill Color:", value: @dispFillColor, hide: @hideFillColor},
+														{name: "$$$/CharParaStylesPlugin/CharColorPanel/2=Stroke Color:", value: @dispStrokeColor, hide: @hideStrokeColor},
+														{name: "$$$/CharParaStylesPlugin/CharColorPanel/3=Weight:", value: @dispCCWeight, hide: @hideCCWeight},
+														{name: "$$$/CharParaStylesPlugin/CharColorPanel/4=Overprint Fill:", value: @dispOPFill, hide: @hideOPFill},
+														{name: "$$$/CharParaStylesPlugin/CharColorPanel/5=Overprint Stroke:", value: @dispOPStroke, hide: @hideOPStroke}
+
+													]
+												},
+												{	name: "$$$/CharParaStylesUI/PanelList/OpenType=OpenType Features", 
+										 			children:
+										 			[ 
+														{name: "$$$/CharParaStylesPlugin/OpenTypePanel/FigureStyle=Figure:", value: @dispOTFFigure, hide: @hideOTFFigure},
+														{name: "$$$/CharParaStylesPlugin/OpenTypePanel/Position=Position:", value: @dispOTFPosition, hide: @hideOTFPosition},
+														{name: "$$$/CharParaStylesPlugin/OpenTypePanel/16=Standard Ligatures:", hide: @hideOTFStdLigaturesCB, value: @dispOTFStdLigaturesCB},
+														{name: "$$$/CharParaStylesPlugin/OpenTypePanel/1=Contextual Alternates:", hide: @hideOTFContextualAltCB, value: @dispOTFContextualAltCB},
+														{name: "$$$/CharParaStylesPlugin/OpenTypePanel/3=Discretionary Ligatures:", hide: @hideOTFDiscLigaturesCB, value: @dispOTFDiscLigaturesCB},
+														{name: "$$$/CharParaStylesPlugin/OpenTypePanel/5=Swash:", hide: @hideOTFSwashCB, value: @dispOTFSwashCB},
+														{name: "$$$/CharParaStylesPlugin/OpenTypePanel/7=Stylistic Alternates:", hide: @hideOTFStylisticAltCB, value: @dispOTFStylisticAltCB},
+														{name: "$$$/CharParaStylesPlugin/OpenTypePanel/9=Titling Alternates:", hide: @hideOTFTitlingAltCB, value: @dispOTFTitlingAltCB},
+														
+														{name: "$$$/CharParaStylesPlugin/OpenTypePanel/17=Overlap Swash:", hide: @hideOTFOverlapSwashCB, value: @dispOTFOverlapSwashCB},
+														{name: "$$$/CharParaStylesPlugin/OpenTypePanel/18=Justification Alternates:", hide: @hideOTFJustificationAltCB, value: @dispOTFJustificationAltCB},
+														{name: "$$$/CharParaStylesPlugin/OpenTypePanel/19=Stretched Alternates:", hide: @hideOTFStretchedAltCB, value: @dispOTFStretchedAltCB},
+														
+														{name: "$$$/CharParaStylesPlugin/OpenTypePanel/10=Ordinals:", hide: @hideOTFOrdinalsCB, value: @dispOTFOrdinalsCB},
+														{name: "$$$/CharParaStylesPlugin/OpenTypePanel/12=Fractions:", hide: @hideOTFFractionsCB, value: @dispOTFFractionsCB},
+														{name: "$$$/CharParaStylesPlugin/OpenTypePanel/13=Use Proportional Metrics:", hide: @hideOTFPropMetricsCB, value: @dispOTFPropMetricsCB},
+														{name: "$$$/CharParaStylesPlugin/OpenTypePanel/14=Roman Italics:", hide: @hideOTFHorVStyleCB, value: @dispOTFHorVStyleCB},
+														{name: "$$$/CharParaStylesPlugin/OpenTypePanel/15=Use H or V Style:", hide: @hideOTFRomanItalicsCB, value: @dispOTFRomanItalicsCB}
+
+
+													]
+												},
+												{	name: "$$$/CharParaStylesUI/PanelList/TateChuuYoko=Tate-chu-yoko", 
+													hide:  @hideAsianOption, 
+										 			children:
+										 			[ 
+														{name: "$$$/CharParaStylesPlugin/TateChuuYokoPanel/3=Tate-chu-yoko:", value: @dispTateChuYokoCB, hide: @hideTateChuYokoCB},
+														{name: "$$$/CharParaStylesPlugin/TateChuuYokoPanel/1=Up/Down:", value: @dispUpDownEdit, hide: @hideUpDownEdit},
+														{name: "$$$/CharParaStylesPlugin/TateChuuYokoPanel/2=Left/Right:", value: @dispLeftRightEdit, hide: @hideLeftRightEdit}
+													]
+												},
+												{	name: "$$$/CharParaStylesUI/PanelList/JCompositionSettings=Japanese Composition Settings",  
+													hide:  @hideParaAsianOption, 
+										 			children:
+										 			[ 
+														{name: "$$$/CharParaStylesPlugin/JCompositionSettingsPanel/1=Kinsoku Set:", value: @dispKinsokuSet, hide: @hideKinsokuSet},
+														{name: "$$$/CharParaStylesPlugin/JCompositionSettingsPanel/2=Kinsoku Type:", value: @dispKinsokuType, hide: @hideKinsokuType},
+														{name: "$$$/CharParaStylesPlugin/JCompositionSettingsPanel/3=Burasagari:", value: @dispBurasagari, hide: @hideBurasagari},
+														{name: "$$$/CharParaStylesPlugin/JCompositionSettingsPanel/6=Bunri-Kinshi:", value: @dispBunriKinshi, hide: @hideBunriKinshi},
+														{name: "$$$/CharParaStylesPlugin/JCompositionSettingsPanel/4=Mojikumi:", value: @dispMojikumi, hide: @hideMojikumi},
+														{name: "$$$/CharParaStylesPlugin/JCompositionSettingsPanel/5=Leading:", value: @dispJCSLeading, hide: @hideJCSLeading}
+													]
+												},
+												{	name: "$$$/CharParaStylesUI/PanelList/Wari_chuu=Warichu",  
+													hide:  @hideAsianOption, 
+										 			children:
+										 			[ 
+														{name: "$$$/CharParaStylesPlugin/Wari_chuuPanel/Warichuu=Warichu:", value: @dispWarichu, hide :@hideWarichu},
+														{name: "$$$/CharParaStylesPlugin/Wari_chuuPanel/1=Lines:", value: @dispWarichuLines, hide :@hideWarichuLines, precision: @precision0Cell},
+														{name: "$$$/CharParaStylesPlugin/Wari_chuuPanel/2=Line Gap:", value: @dispWarichuLineGap, hide :@hideWarichuLineGap},
+														{name: "$$$/CharParaStylesPlugin/Wari_chuuPanel/4=Size:", value: @dispWarichuSize, hide :@hideWarichuSize},
+														{name: "$$$/CharParaStylesPlugin/Wari_chuuPanel/3=Alignment:", value: @dispWarichuAlign, hide :@hideWarichuAlign},
+														{name: "$$$/CharParaStylesPlugin/Wari_chuuPanel/5=Minimum Number of Characters on First Line:", value: @dispMinCharsFirstLine, hide :@hideMinCharsFirstLine, precision: @precision0Cell},
+														{name: "$$$/CharParaStylesPlugin/Wari_chuuPanel/6=Minimum Number of Characters on Last Line:", value: @dispMinCharsLastLine, hide :@hideMinCharsLastLine, precision: @precision0Cell}
+													]
+												}
+
+											]
+											);
+							}
+						}
+						
+		/************************************************************************* Basic Character Formats PANEL *************************************************************************/
+						panel(margin: 0, bind: @PanelSelection, value: 1, guide_mask: [@guide_label, @guide_baseline])
+						{
+							static_text(name: "$$$/CharParaStylesUI/PanelList/BasicCharFormats=Basic Character Formats", horizontal: @align_left);
+							separator(orientation: @horizontal);
+							
+							row(child_horizontal: @align_fill)
+							{
+								column(child_horizontal: @align_fill)
+								{
+									popup(identifier: "FontFamilyPopup",
+											name: "$$$/CharParaStylesUI/Dlg/BCFPanel/FontFamilyLabel=&Font Family:",
+											popup_maximum_width_chars: 10);
+									popup(identifier: "FontStylePopup",
+											name: "$$$/CharParaStylesUI/Dlg/BCF/FontStyleLabel=Font Style:",
+											popup_maximum_width_chars: 10);
+									unit_hot_number(identifier: "FontSizeEdit",
+												stepper: true,
+												popuplist: true,
+												max_value: 1296,
+												min_value: 0.1,
+												decimal_places: 2,
+												max_digits: 10,
+												digits: 15,
+												horizontal: @align_fill,
+												name: "$$$/CharParaStylesUI/Dlg/BCFPanel/FontSizeLabel=&Size:",
+												unit: "ApplicationTextUnit",
+												bind: @FontSizeEditValue,
+												bind_final: true);
+									popup(identifier: "KerningPopup",
+											name: "$$$/CharParaStylesUI/Dlg/BCFPanel/KerningLabel=&Kerning:",
+											items: @KerningMenuItems,
+											include_custom_item: false,
+											bind: @KerningMenuSelection,
+											popup_maximum_width_chars: 10);
+								}
+								
+								column(child_horizontal: @align_fill, vertical: @align_fill, child_vertical: @align_fill, guide_mask: [])
+								{
+									checkbox(identifier: "UnderlineCheckbox",
+												name: "$$$/CharParaStylesUI/Dlg/BCFPanel/UnderlineCBLabel=Underline",
+												value_off: 0,
+												value_on: 1,
+												bind: @UnderlineCBValue,
+												tri_state: true);
+									checkbox(identifier: "StrikethruCheckbox",
+												name: "$$$/CharParaStylesUI/Dlg/BCFPanel/StrikethruCBLabel=Strikethrough",
+												value_off: 0,
+												value_on: 1,
+												bind: @StrikethruCBValue,
+												tri_state: true);
+									unit_hot_number(identifier: "LeadingEdit",
+												stepper: true,
+												popuplist: true,
+												max_value: 1296,
+												min_value: 0.1,
+												decimal_places: 2,
+												max_digits: 8,									
+												name: "$$$/CharParaStylesUI/Dlg/BCFPanel/LeadingLabel=&Leading:",
+												unit: "ApplicationAsianTextUnit",
+												bind: @LeadingEditValue,
+												bind_final: true);
+									unit_hot_number(identifier: "TrackingEdit",
+												stepper: true,
+												popuplist: true,
+												max_value: 10000,
+												min_value: -1000,
+												decimal_places: 2,
+												items: @TrackingMenuItems,
+												max_digits: 8,									
+												name: "$$$/CharParaStylesUI/Dlg/BCFPanel/TrackingLabel=&Tracking:",
+												bind: @TrackingEditValue,
+												bind_final: true);
+								}
+							}
+							
+							separator(orientation: @horizontal);
+							
+							row(child_horizontal: @align_fill, spacing: @label_widget_spacing)
+							{
+								column(child_horizontal: @align_fill)
+								{
+									popup(identifier: "CasePopup",
+											name: "$$$/CharParaStylesUI/Dlg/BCFPanel/CaseLabel=&Case:",
+											items: @CaseMenuItems,
+											include_custom_item: false,
+											bind: @CaseMenuSelection,
+											popup_maximum_width_chars: 10);
+											
+									panel(margin: 0, bind: @ShowAsianOptions, value: 1)
+									{
+										popup(identifier: "AlignmentPopup",
+												name: "$$$/CharParaStylesUI/Dlg/BCF/AlignmentLabel=Alignment:",
+												items: @AlignmentMenuItems,
+												include_custom_item: false,
+												bind: @AlignmentMenuSelection,
+												popup_maximum_width_chars: 10);
+									}
+									panel(margin: 0, bind: @ShowAsianOptions, value: 0)
+									{
+									}
+								}
+								column(child_horizontal: @align_fill)
+								{
+									popup(identifier: "PositionPopup",
+											name: "$$$/CharParaStylesUI/Dlg/BCFPanel/PositionLabel=Pos&ition:",
+											items: @PositionMenuItems,
+											include_custom_item: false,
+											bind: @PositionMenuSelection);
+									checkbox(identifier: "VertAlignCheckbox",
+												name: "$$$/CharParaStylesUI/Dlg/BCFPanel/VertAlignCBLabel=Standard Vertical Roman Alignment",
+												value_off: 0,
+												value_on: 1,
+												guide_mask: [@guide_label],	
+												bind: @VertAlignCBValue,
+												tri_state: true);
+								}
+							}
+						}
+		/************************************************************************* Advanced Character Formats PANEL *************************************************************************/
+						panel(margin: 0, bind: @PanelSelection, value: 2, guide_mask: [@guide_label, @guide_baseline])
+						{
+							static_text(name: "$$$/CharParaStylesUI/PanelList/AdvCharFormats=Advanced Character Formats", horizontal: @align_left);
+							separator(orientation: @horizontal);
+							
+							row()
+							{
+								column(child_horizontal: @align_fill)
+								{
+									unit_hot_number(identifier: "HorzScaleEdit",
+												stepper: true,
+												popuplist: true,
+												name: "$$$/CharParaStylesUI/Dlg/ACF/HorzScaleLabel=&Horizontal Scale:",
+												max_value: 10000,
+												min_value: 1,
+												decimal_places: 2,
+												unit: "NumberEditUnit_Percent",
+												items: @ScaleMenuItems,
+												bind: @HorzScaleEditValue);
+									unit_hot_number(identifier: "VertScaleEdit",
+												stepper: true,
+												popuplist: true,
+												name: "$$$/CharParaStylesUI/Dlg/ACF/VertScaleLabel=Ve&rtical Scale:",
+												max_value: 10000,
+												min_value: 1,
+												decimal_places: 2,
+												unit: "NumberEditUnit_Percent",
+												items: @ScaleMenuItems,
+												bind: @VertScaleEditValue);
+									unit_hot_number(identifier: "BaseShiftEdit",
+												stepper: true,
+												popuplist: true,
+												name: "$$$/CharParaStylesUI/Dlg/ACF/BaseShiftLabel=&Baseline Shift:",
+												min_value: -1296,
+												max_value: 1296,
+												decimal_places: 2,
+												unit: "NumberEditUnit_Point",
+												bind: @BaseShiftEditValue);
+									unit_hot_number(identifier: "CharRotEdit",
+												stepper: true,
+												popuplist: true,
+												name: "$$$/CharParaStylesUI/Dlg/ACF/CharRotLabel=&Character Rotation:",
+												unit: "NumberEditUnit_Degree",
+												min_value: -360,
+												max_value: 360,
+												decimal_places: 2,
+												items: @CharRotItems,
+												bind: @CharRotEditValue);
+								}
+								
+								panel(margin: 0,
+										bind: @ShowAsianOptions,
+										value: 1,
+										placement: @place_column,
+										child_horizontal: @align_fill)
+								{
+									unit_hot_number(identifier: "TsumeEdit",
+												stepper: true,
+												popuplist: true,
+												name: "$$$/CharParaStylesUI/Dlg/ACF/TsumeLabel=Tsume:",
+												max_value: 100,
+												min_value: 0,
+												decimal_places: 2,
+												unit: "NumberEditUnit_Percent",
+												items: @TSumeItems,
+												bind: @TsumeEditValue);
+									popup(identifier: "AkiBeforePopup",
+											popuplist: true,
+											name: "$$$/CharParaStylesUI/Dlg/ACF/AkiBeforeLabel=Aki Before:",
+											items: @AkiMenuItems,
+											include_custom_item: false,
+											popup_maximum_width_chars: 8,
+											bind: @AkiBeforeMenuSelection);
+									popup(identifier: "AkiAfterPopup",
+											popuplist: true,
+											name: "$$$/CharParaStylesUI/Dlg/ACF/AkiAfterLabel=Aki After:",
+											items: @AkiMenuItems,
+											popup_maximum_width_chars: 8,
+											include_custom_item: false,
+											bind: @AkiAfterMenuSelection);
+								}
+								
+								panel(margin: 0,
+										bind: @ShowAsianOptions,
+										value: 0)
+								{						
+								}
+							}
+							
+							separator(orientation: @horizontal);
+							
+							row(placement: @place_column, child_horizontal: @align_fill)
+							{
+								panel(margin: 0,
+										bind: @ShowAsianOptions,
+										value: 0)
+								{						
+								}
+								
+								panel(margin: 0,
+										bind: @ShowAsianOptions,
+										value: 1)
+								{						
+										popup(identifier: "AltGlyphsPopup",
+											name: "$$$/CharParaStylesUI/Dlg/ACF/AltGlyphsLabel=Alternate Glyphs:",
+											items: @AltGlyphsMenuItems,
+											include_custom_item: false,
+											bind: @AltGlyphsMenuSelection);
+								}
+
+								popup(identifier: "LanguagePopup",
+										include_custom_item: false,
+										name: "$$$/CharParaStylesUI/Dlg/ACF/LanguageLabel=Language:");
+							}
+						}
+						
+		/************************************************************************* Middle East Chaacter Formats PANEL *************************************************************************/
+		panel(margin: 0, bind: @PanelSelection, value: 13, guide_mask: [@guide_label, @guide_baseline])
+					{			
+							static_text(name: "$$$/CharParaStylesUI/PanelList/MECharacterFormats=Middle East Character Formats", horizontal: @align_left);
+							separator(orientation: @horizontal);
+							column(child_horizontal: @align_fill)
+						{
+								popup(identifier: "MEDigitsPopup",
+										name: "$$$/CharParaStylesUI/Dlg/MECF/MEdigits=&Digits:",
+										items: @MEDigitsMenuItems,
+										include_custom_item: false,
+										bind: @MEDigitsSelection);
+								popup(identifier: "MEKashidasPopup",
+										name: "$$$/CharParaStylesUI/Dlg/MECF/MEKashidas=&Kashidas:",
+										items: @MEKashidasMenuItems,
+										include_custom_item: false,
+										bind: @MEKashidasSelection);
+								popup(identifier: "MECharDirectionPopup",
+										name: "$$$/CharParaStylesUI/Dlg/MECF/MECharDirection=&Character Direction:",
+										items: @MECharDirectionMenuItems,
+										include_custom_item: false,
+										bind: @MECharDirectionSelection);
+							group(identifier: "DiacriticPosGroup", spacing: 0,
+							horizontal: @align_fill,							
+							name: "$$$/CharParaStylesUI/Dlg/MECF/MEDiaPosHeading=Diacritic Positioning",							
+									horizontal: @align_fill,
+									guide_mask: [@guide_label]
+									)
+							{
+								
+								column()
+								{
+											
+								unit_hot_number(identifier: "MEDiaPosAdditionalHorEdit",
+													name: "$$$/CharParaStylesUI/Dlg/MECF/MEDiacriticPosHor=Horizontal:",
+													stepper: true,
+													popuplist: true,
+													max_value: 200,
+													min_value: -200,
+													items: @MEDiaPosAdditionalHorItems,
+													decimal_places: 2,
+													digits: 3,
+													bind: @MEDiaPosAdditionalHorEditValue);
+										
+								unit_hot_number(identifier: "MEDiaPosAdditionalVerEdit",
+													name: "$$$/CharParaStylesUI/Dlg/MECF/MEDiacriticPosVer=Vertical:",
+													stepper: true,
+													popuplist: true,
+													max_value: 200,
+													min_value: -200,
+													items: @MEDiaPosAdditionalVerItems,
+													decimal_places: 2,
+													digits: 3,
+													bind: @MEDiaPosAdditionalVerEditValue);
+										
+								
+								
+								}
+							}
+								
+						}
+							
+							
+					}
+		/************************************************************************* Indents and Spacing PANEL *************************************************************************/
+						panel(margin: 0, bind: @PanelSelection, value: 3, guide_mask: [@guide_label, @guide_baseline])
+						{			
+							static_text(name: "$$$/CharParaStylesUI/PanelList/Indents=Indents and Spacing", horizontal: @align_left);
+							separator(orientation: @horizontal);
+							
+							column(child_horizontal: @align_fill)
+							{
+								popup(identifier: "IndentAlignPopup",
+										name: "$$$/CharParaStylesUI/Dlg/IaS/AlignmentLabel=&Alignment:",
+										items: @IASAlignmentMenuItems,
+										include_custom_item: false,
+										bind: @IASAlignMenuSelection);
+										
+								optional(bind : @IsWorldReady)
+								{
+								popup(identifier: "ParaDirectionPopup",
+										name: "$$$/CharParaStylesUI/Dlg/IaS/ParaDirectionLabel=&Paragraph Direction:",
+										items: @IASParaDirectionMenuItems,
+										include_custom_item: false,
+										bind: @IASParaDirectionMenuSelection);
+										
+								popup(identifier: "KashidaPopup",
+										name: "$$$/CharParaStylesUI/Dlg/IaS/KashidaWidthLabel=&Kashida Width:",
+										items: @IASKashidaMenuItems,
+										include_custom_item: false,
+										bind: @IASKashidaMenuSelection);
+								}
+								
+								unit_hot_number(identifier: "LeftIndentEdit",
+											stepper: true,
+											name: "$$$/CharParaStylesUI/Dlg/IaS/LeftIndentLabel=&Left Indent:",
+											unit: "ApplicationAsianTextUnit",
+											max_value: 8640,
+											min_value: -8640,
+											decimal_places: 3,
+											max_digits: 8,
+											bind: @LeftIndentValue);
+								unit_hot_number(identifier: "FirstLineIndentEdit",
+											stepper: true,
+											name: "$$$/CharParaStylesUI/Dlg/IaS/FirstLineIndentLabel=&First Line Indent:",
+											unit: "ApplicationAsianTextUnit",
+											max_value: 8640,
+											min_value: -8640,
+											decimal_places: 3,
+											max_digits: 8,
+											bind: @FirstLineIndentValue);
+								unit_hot_number(identifier: "RightIndentEdit",
+											stepper: true,
+											name: "$$$/CharParaStylesUI/Dlg/IaS/RightIndentLabel=&Right Indent:",
+											unit: "ApplicationAsianTextUnit",
+											max_value: 8640,
+											min_value: -8640,
+											decimal_places: 3,
+											max_digits: 8,
+											bind: @RightIndentValue);
+								unit_hot_number(identifier: "SpaceBeforeEdit",
+											stepper: true,
+											name: "$$$/CharParaStylesUI/Dlg/IaS/SpaceBeforeLabel=Space &Before:",
+											unit: "ApplicationAsianTextUnit",
+											max_value: 8640,
+											min_value: -8640,
+											decimal_places: 3,
+											max_digits: 8,
+											bind: @SpaceBeforeValue);
+								unit_hot_number(identifier: "SpaceAfterEdit",
+											stepper: true,
+											name: "$$$/CharParaStylesUI/Dlg/IaS/SpaceAfterLabel=Space Af&ter:",
+											unit: "ApplicationAsianTextUnit",
+											max_value: 8640,
+											min_value: -8640,
+											decimal_places: 3,
+											max_digits: 8,
+											bind: @SpaceAfterValue);
+							}
+						}
+						
+		/************************************************************************* Tabs PANEL *************************************************************************/
+						panel(margin: 0, bind: @PanelSelection, value: 4, guide_mask: [@guide_label, @guide_baseline])
+						{			
+							static_text(name: "$$$/CharParaStylesUI/PanelList/Tabs=Tabs", horizontal: @align_left);
+							separator(orientation: @horizontal);
+							
+							column(child_horizontal: @align_left)
+							{
+								row(guide_mask: [@guide_label])
+								{
+									toggle_button(bind: @TabJustRadioGp,
+														value_on: 0,
+														toolbox_style: true,
+														image:{normal:"SP_TabLeft_Sm_N.png",dark_normal:"SP_TabLeft_Sm_N_D.png"},
+														identifier: "LeftJustTab",
+														alt: "$$$/CharParaStylesUI/Dlg/Tab/LeftJustTab=Left-Justified Tab");
+
+									toggle_button(bind: @TabJustRadioGp,
+														value_on: 1,
+														toolbox_style: true,
+														image:{normal:"SP_TabCenter_Sm_N.png",dark_normal:"SP_TabCenter_Sm_N_D.png"},
+														identifier: "CenterJustTab",
+														alt: "$$$/CharParaStylesUI/Dlg/Tab/CenterJustTab=Center-Justified Tab");
+														
+									toggle_button(bind: @TabJustRadioGp,
+														value_on: 2,
+														toolbox_style: true,
+														image:{normal:"SP_TabRight_Sm_N.png",dark_normal:"SP_TabRight_Sm_N_D.png"},
+														identifier: "RightJustTab",
+														alt: "$$$/CharParaStylesUI/Dlg/Tab/RightJustTab=Right-Justified Tab");	
+														
+									toggle_button(bind: @TabJustRadioGp,
+														value_on: 3,
+														toolbox_style: true,
+														image:{normal:"SP_TabDecimal_Sm_N.png",dark_normal:"SP_TabDecimal_Sm_N_D.png"},
+														identifier: "DecimalJustTab",
+														alt: "$$$/CharParaStylesUI/Dlg/Tab/DecimalJustTab=Decimal-Justified Tab");	
+								}
+								row(placement: @place_column, guide_mask: [@guide_label])
+								{
+									panel(identifier: "TabWidgetPanel", spacing: 0, show_border: false, width: 400, height: 42, margin: 0, child_vertical: @align_top)
+									{
+										image(identifier: "TabDragWidget", width: 400, height: 12);
+										image(identifier: "TabRulerWidget", width: 400, height: 15);							
+									}						
+								}
+								row()
+								{
+									column()
+									{
+										unit_hot_number(identifier: "TabXEdit",
+													name: "$$$/CharParaStylesUI/Dlg/Tab/TabXLabel=&X:",
+													unit: "CurrentDocumentUnit",
+													bind: @TabXValue, bind_final: true, decimal_places: 2, max_value: 16383, min_value: 0);
+										edit_text(identifier: "TabLeaderEdit",
+													name: "$$$/CharParaStylesUI/Dlg/Tab/TabLeaderLabel=&Leader:",
+													bind: @TabLeaderStr,
+													max_characters:8
+													);
+										edit_text(identifier: "TabAlignOnEdit",
+													name: "$$$/CharParaStylesUI/Dlg/Tab/TabAlignOnLabel=&Align On:",
+													bind: @TabAlignOnStr);
+									}
+									
+									column(placement: @place_row)
+									{
+										button(identifier: "TabRepeatBtn",
+												name: "$$$/CharParaStylesUI/Dlg/Tab/TabRepeatLabel=&Repeat",
+												bind: @TabRepeatBtn,
+												action: @TabRepeatButtonClick);
+										button(identifier: "TabClearBtn",
+												name: "$$$/CharParaStylesUI/Dlg/Tab/ClearLabel=&Clear All",
+												bind: @TabClearBtn,
+												action: @TabClearButtonClick);
+									}
+								}
+							}
+						}
+						
+		/************************************************************************* Composition PANEL *************************************************************************/
+						panel(margin: 0, bind: @PanelSelection, value: 5, guide_mask: [@guide_label, @guide_baseline])
+						{
+							static_text(name: "$$$/CharParaStylesUI/PanelList/Composer=Composition", horizontal: @align_left);
+							separator(orientation: @horizontal);
+							
+							column(child_horizontal: @align_left)
+							{
+								row()
+								{
+									popup(identifier: "ComposerPopup",
+											name: "$$$/CharParaStylesUI/Dlg/Compose/ComposerLabel=Composer:",
+											items: @ComposerMenuItems,
+											bind: @ComposerMenuSelection,
+											include_custom_item: false);
+								}
+								
+								row(guide_mask: [@guide_label])
+								{
+									checkbox(identifier: "PunctuationCheckbox",
+												name: "$$$/CharParaStylesUI/Dlg/Compose/PunctuationCBLabel=Roman Hanging Punctuation",
+												value_off: 0,
+												value_on: 1,
+												bind: @PunctuationCBValue,
+												tri_state: true);
+								}
+							}
+						}
+						
+						/*** Hyphenation PANEL ***/
+						panel(margin: 0, bind: @PanelSelection, value: 6, guide_mask: [@guide_label, @guide_baseline])
+						{
+							static_text(name: "$$$/CharParaStylesUI/PanelList/Hyphenation=Hyphenation", horizontal: @align_left);
+							separator(orientation: @horizontal);
+							
+							group(identifier: "HyphenationGroup",
+									spacing: 0,
+									horizontal: @align_fill,
+									header: "checkbox(identifier: 'HyphCheckbox',
+														name: '$$$/CharParaStylesUI/Dlg/HyphPanel/HyphenateCBLabel=&Hyphenate',
+														value_on: 1,
+														value_off: 0,
+														horizontal: @align_left,
+														bind: @HyphGpCBValue,
+														tri_state: true)")
+							{
+								column()
+								{
+									unit_hot_number(identifier: "WordsLongerThanEdit",
+												stepper: true,
+												name: "$$$/CharParaStylesUI/Dlg/Hyph/WordsLongerThanLabel=&Words Longer Than:",
+												suffix: "$$$/CharParaStylesUI/Dlg/Hyph/LettersLabel=letters",
+												max_value: 25,
+												min_value: 3,
+												decimal_places: 0,
+												bind: @WordsLongerThanValue);
+
+									unit_hot_number(identifier: "AfterFirstEdit",
+												stepper: true,
+												name: "$$$/CharParaStylesUI/Dlg/Hyph/AfterFirstLabel=&After First:",
+												suffix: "$$$/CharParaStylesUI/Dlg/Hyph/LettersLabel=letters",
+												max_value: 15,
+												min_value: 1,
+												decimal_places: 0,
+												bind: @AfterFirstValue);
+												
+									unit_hot_number(identifier: "BeforeLastEdit",
+												stepper: true,
+												name: "$$$/CharParaStylesUI/Dlg/Hyph/BeforeLastLabel=&BeforeLast:",
+												suffix: "$$$/CharParaStylesUI/Dlg/Hyph/LettersLabel=letters",
+												max_value: 15,
+												min_value: 1,
+												decimal_places: 0,
+												bind: @BeforeLastValue);
+												
+									unit_hot_number(identifier: "HyphenLimitEdit",
+												stepper: true,
+												name: "$$$/CharParaStylesUI/Dlg/Hyph/HyphenLimitLabel=Hyphen &Limit:",
+												suffix: "$$$/CharParaStylesUI/Dlg/Hyph/HyphensLabel=hyphens",
+												max_value: 25,
+												min_value: 0,
+												decimal_places: 0,
+												bind: @HyphenLimitValue);
+									
+
+									unit_hot_number(identifier: "HyphZoneEdit",
+												stepper: true,
+												name: "$$$/CharParaStylesUI/Dlg/Hyph/HyphZoneLabel=Hyphenation &Zone:",
+												max_value: 8640,
+												min_value: 0,
+												decimal_places: 2,
+												max_digits: 8,
+												unit: "ApplicationAsianTextUnit",
+												bind: @HyphenZoneValue);
+									
+									row()
+									{
+										guide_consumer(consume_Horizontal: 1);
+										combo_slider(identifier: "SpacingHyphenSlider",
+											min_max_filter: @slider_filter,
+											slider_point: @up,
+											left_mini_label: "$$$/_Hyphenation/Dlg/kHyphenationDialog/BetterSpacing=Better Spacing",
+											right_mini_label: "$$$/_Hyphenation/Dlg/kHyphenationDialog/FewerHyphens=Fewer Hyphens",
+											minLength: 200,
+											show_editbox: false,
+											ticks_pos: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+											show_ticks: true,
+											snap_on_ticks: false,
+											bind: @SpacingSliderValue);
+									}
+									row()
+									{
+									guide_consumer(consume_Horizontal: 1);
+										checkbox(identifier: "HyphCapWordsCB",
+											name: "$$$/CharParaStylesUI/Dlg/HyphPanel/HyphCapCBLabel=Hyphenate &Capitalized Words",
+											value_on: 1,
+											value_off: 0,
+											bind: @HyphCapCBValue,
+											tri_state: true);
+									}
+								}
+							}
+						}
+						
+		/************************************************************************* Justification PANEL *************************************************************************/
+						panel(margin: 0, bind: @PanelSelection, value: 7, guide_mask: [@guide_label, @guide_baseline])
+						{
+							static_text(name: "$$$/CharParaStylesUI/PanelList/Justification=Justification", horizontal: @align_left);
+							separator(orientation: @horizontal);
+							
+							row(guide_mask: [@guide_label])
+							{
+								column()
+									{
+										row(horizontal: @align_fill, child_horizontal: @align_fill)
+										{
+											guide_consumer(consume_vertical: 1);
+											display_text(value: "$$$/CharParaStylesUI/Dlg/Just/MinLabel=Minimum", name:" ");
+											display_text(value: "$$$/CharParaStylesUI/Dlg/Just/DesiredLabel=Desired", name:" ");
+											display_text(value: "$$$/CharParaStylesUI/Dlg/Just/MaxLabel=Maximum", name:" ");
+										}
+										row(horizontal: @align_fill, child_horizontal: @align_fill)
+										{
+												unit_hot_number(identifier: "MinWordEdit",
+													name: "$$$/CharParaStylesUI/Dlg/Just/WordSpacingLabel=&Word Spacing:",
+													min_value: 0,
+													max_value: 1000,
+													decimal_places: 0,
+													unit: "NumberEditUnit_Percent", bind_final: true);
+												unit_hot_number(identifier: "DesiredWordEdit",
+													min_value: 0,
+													max_value: 1000,
+													decimal_places: 0,
+													unit: "NumberEditUnit_Percent", bind_final: true);
+												unit_hot_number(identifier: "MaxWordEdit",
+													min_value: 0,
+													max_value: 1000,
+													decimal_places: 0,
+													unit: "NumberEditUnit_Percent",bind_final: true);
+										}
+										row(horizontal: @align_fill, child_horizontal: @align_fill)
+										{
+									
+												unit_hot_number(identifier: "MinLetterEdit",
+													name: "$$$/CharParaStylesUI/Dlg/Just/LetterSpacingLabel=&Letter Spacing:",
+													min_value: -100,
+													max_value: 500,
+													decimal_places: 0,
+													unit: "NumberEditUnit_Percent",bind_final: true);
+												unit_hot_number(identifier: "DesiredLetterEdit",
+													min_value: -100,
+													max_value: 500,
+													decimal_places: 0,
+													unit: "NumberEditUnit_Percent",bind_final: true);
+												unit_hot_number(identifier: "MaxLetterEdit",
+													min_value: -100,
+													max_value: 500,
+													decimal_places: 0,
+													unit: "NumberEditUnit_Percent",bind_final: true);
+										
+										}
+								
+										row(horizontal: @align_fill, child_horizontal: @align_fill)
+										{
+												unit_hot_number(identifier: "MinGlyphEdit",
+													name: "$$$/CharParaStylesUI/Dlg/Just/GlyphSpacingLabel=&Glyph Spacing:",
+													min_value: 50,
+													max_value: 200,
+													decimal_places: 0,
+													unit: "NumberEditUnit_Percent",bind_final: true);
+												unit_hot_number(identifier: "DesiredGlyphEdit",
+													min_value: 50,
+													max_value: 200,
+													decimal_places: 0,
+													unit: "NumberEditUnit_Percent",bind_final: true);
+												unit_hot_number(identifier: "MaxGlyphEdit",
+													min_value: 50,
+													max_value: 200,
+													decimal_places: 0,
+													unit: "NumberEditUnit_Percent",bind_final: true);
+										
+										}
+									
+								
+									}					
+							}
+							
+							separator(orientation: @horizontal);
+							
+							column()
+							{
+								unit_hot_number(identifier: "AutoLeadingEdit",
+											name: "$$$/CharParaStylesUI/Dlg/Just/AutoLeadingLabel=&Auto Leading:",
+											min_value: 0,
+											max_value: 500,
+											decimal_places: 0,
+											unit: "NumberEditUnit_Percent",
+											bind: @AutoLeadingValue);
+								popup(identifier: "SingleWordJustPopup",
+										name: "$$$/CharParaStylesUI/Dlg/Just/SingleWordJustLabel=&Single Word Justification:",
+										items: @SingleWordJustMenuItems,
+										include_custom_item: false,
+										bind: @SingleWordJustSelection);
+							}					
+						}
+						
+		/************************************************************************* Character Color PANEL *************************************************************************/
+						panel(margin: 0, bind: @PanelSelection, value: 8, guide_mask: [@guide_label, @guide_baseline])
+						{
+							static_text(name: "$$$/CharParaStylesUI/PanelList/CharColor=Character Color", horizontal: @align_left);
+							separator(orientation: @horizontal);
+							
+							column()
+							{
+								row()
+								{
+									stroke_fill(identifier: "StrokeFill", height: 100, width:150, ai_color_mode: true);
+									multicolumn_tree(identifier: "SwatchList", height: 150, width:300, wants_focus: true);
+								}
+								
+								row()
+								{
+									edit_number(identifier: "EditNumberTint",
+											name: "$$$/CharParaStylesUI/Dlg/Color/TintLabel=&Tint:",
+											max_value: 100,
+											min_value: 0,
+											decimal_places: 2,
+											stepper: true,
+											unit: "NumberEditUnit_Percent",
+											items: @TintMenuItems,
+											popuplist: true);
+									checkbox(identifier: "OverprintFillCB",
+												name: "$$$/CharParaStylesUI/Dlg/Color/OverprintFillCBLabel=Overprint &Fill",
+												value_on: 1,
+												value_off: 0,
+												bind: @OverprintFillCBValue,
+												tri_state: true);
+								}
+								
+								row()
+								{
+									popup(identifier: "WeightPopup",
+											name: "$$$/CharParaStylesUI/Dlg/Color/WeightLabel=&Weight:",
+											items: @StrokeWeightMenuItems,
+											bind: @StrokeWeightMenuSelection,
+											include_custom_item: false,
+											unit: "ApplicationStrokeUnit");
+									checkbox(identifier: "OverprintStrokeCB",
+												name: "$$$/CharParaStylesUI/Dlg/Color/OverprintStrokeCBLabel=Overprint &Stroke",
+												value_on: 1,
+												value_off: 0,
+												bind: @OverprintStrokeCBValue,
+												tri_state: true);
+								}
+							}
+						}
+										
+		/************************************************************************* OpenType Features PANEL *************************************************************************/
+						panel(margin: 0, bind: @PanelSelection, value: 9, guide_mask: [@guide_label, @guide_baseline])
+						{
+							static_text(name: "$$$/CharParaStylesUI/PanelList/OpenType=OpenType Features", horizontal: @align_left);
+							separator(orientation: @horizontal);
+							
+							column(child_horizontal: @align_fill)
+							{
+								row(placement: @place_column, child_horizontal: @align_fill)
+								{
+									popup(identifier: "OTFFigurePopup",
+											name: "$$$/CharParaStylesUI/Dlg/OTF/FigureLabel=Fi&gure:",
+											items: @OTFFigureMenuItems,
+											include_custom_item: false,
+											bind: @OTFFigureSelection);
+									popup(identifier: "OTFPositionPopup",
+											name: "$$$/CharParaStylesUI/Dlg/OTF/PositionLabel=Position:",
+											items: @OTFPositionMenuItems,
+											include_custom_item: false,
+											bind: @OTFPositionSelection);
+								}
+								
+								row(guide_mask: [@guide_label])
+								{
+									column()
+									{
+										checkbox(identifier: "OTFStdLigaturesCB",
+													name: "$$$/CharParaStylesUI/Dlg/OTF/StdLigaturesCBLabel=Standard Ligatures",
+													value_on: 1,
+													value_off: 0,
+													bind: @OTFStdLigaturesCBValue,
+													tri_state: true);
+										checkbox(identifier: "OTFContextualAltCB",
+													name: "$$$/CharParaStylesUI/Dlg/OTF/ContextualAltCBLabel=Contextual Alternates",
+													value_on: 1,
+													value_off: 0,
+													bind: @OTFContextualAltCBValue,
+													tri_state: true);
+										checkbox(identifier: "OTFDiscLigaturesCB",
+													name: "$$$/CharParaStylesUI/Dlg/OTF/DiscLigaturesCBLabel=Discretionary Ligatures",
+													value_on: 1,
+													value_off: 0,
+													bind: @OTFDiscLigaturesCBValue,
+													tri_state: true);
+										checkbox(identifier: "OTFSwashCB",
+													name: "$$$/CharParaStylesUI/Dlg/OTF/SwashCBLabel=Swash",
+													value_on: 1,
+													value_off: 0,
+													bind: @OTFSwashCBValue,
+													tri_state: true);
+										checkbox(identifier: "OTFStylisticAltCB",
+													name: "$$$/CharParaStylesUI/Dlg/OTF/StylisticAltCBLabel=Stylistic Alternates",
+													value_on: 1,
+													value_off: 0,
+													bind: @OTFStylisticAltCBValue,
+													tri_state: true);
+										checkbox(identifier: "OTFTitlingAltCB",
+													name: "$$$/CharParaStylesUI/Dlg/OTF/TitlingAltCBLabel=Titling Alternates",
+													value_on: 1,
+													value_off: 0,
+													bind: @OTFTitlingAltCBValue,
+													tri_state: true);
+													
+										optional(bind: @IsWorldReady)
+										{
+										
+										checkbox(identifier: "OTFOverlapSwashCB",
+													name: "$$$/CharParaStylesUI/Dlg/OTF/OverlapSwashCBLabel=Overlap Swash",
+													value_on: 1,
+													value_off: 0,
+													bind: @OTFOverlapSwashCBValue,
+													tri_state: true);
+										checkbox(identifier: "OTFJustificationAltCB",
+													name: "$$$/CharParaStylesUI/Dlg/OTF/JustificationAltCBLabel=Justification Alternates",
+													value_on: 1,
+													value_off: 0,
+													bind: @OTFJustificationAltCBValue,
+													tri_state: true);
+										checkbox(identifier: "OTFStretchedAltCB",
+													name: "$$$/CharParaStylesUI/Dlg/OTF/StretchedAltCBLabel=Stretched Alternates",
+													value_on: 1,
+													value_off: 0,
+													bind: @OTFStretchedAltCBValue,
+													tri_state: true);
+										
+										}
+									}
+									column()
+									{
+										checkbox(identifier: "OTFOrdinalsCB",
+													name: "$$$/CharParaStylesUI/Dlg/OTF/OrdinalsCBLabel=Ordinals",
+													value_on: 1,
+													value_off: 0,
+													bind: @OTFOrdinalsCBValue,
+													tri_state: true);
+										checkbox(identifier: "OTFFractionsCB",
+													name: "$$$/CharParaStylesUI/Dlg/OTF/FractionsCBLabel=Fractions",
+													value_on: 1,
+													value_off: 0,
+													bind: @OTFFractionsCBValue,
+													tri_state: true);
+													
+										panel(margin: 0, bind: @ShowAsianOptions, value: 1)
+										{											
+											checkbox(identifier: "OTFPropMetricsCB",
+														name: "$$$/CharParaStylesUI/Dlg/OTF/PropMetricsCBLabel=Use Proportional Metrics",
+														value_on: 1,
+														value_off: 0,
+														bind: @OTFPropMetricsCBValue,
+														tri_state: true);
+											checkbox(identifier: "OTFHorVStyleCB",
+														name: "$$$/CharParaStylesUI/Dlg/OTF/HorVStyleCBLabel=Use H or V Style",
+														value_on: 1,
+														value_off: 0,
+														bind: @OTFHorVStyleCBValue,
+														tri_state: true);
+											checkbox(identifier: "OTFRomanItalicsCB",
+														name: "$$$/CharParaStylesUI/Dlg/OTF/RomanItalicsCBLabel=Roman Italics",
+														value_on: 1,
+														value_off: 0,
+														bind: @OTFRomanItalicsCBValue,
+														tri_state: true);
+										}
+										panel(margin: 0, bind: @ShowAsianOptions, value: 0)
+										{											
+										}								
+									}
+								}
+							}
+						}
+						
+			/************************************************************************* Tate-chu-yoko PANEL *************************************************************************/
+						panel(margin: 0, bind: @PanelSelection, value: 10, guide_mask: [@guide_label, @guide_baseline])
+						{
+							static_text(name: "$$$/CharParaStylesUI/PanelList/TateChuuYoko=Tate-chu-yoko", horizontal: @align_left);
+							separator(orientation: @horizontal);
+							
+							group(identifier: "TateChuYokoGroup", spacing: 0, 
+									header: "checkbox(identifier: 'TateChuYokoCheckbox',
+														name: '$$$/CharParaStylesUI/Dlg/TCY/TateChuYokoCBLabel=Tate-chu-yoko:',
+														value_on: 1,
+														value_off: 0,
+														bind: @TateChuYokoCBValue,
+														tri_state: true)",
+									guide_mask: [@guide_label],
+									horizontal: @align_fill)
+							{
+								column()
+								{
+									unit_hot_number(identifier: "UpDownEdit",
+												name: "$$$/CharParaStylesUI/Dlg/TCY/UpDownLabel=Up/Down:",
+												stepper: true,
+												popuplist: true,
+												max_value: 1000,
+												min_value: -1000,
+												max_digits: 8,
+												items: @TCYValues,
+												decimal_places: 2,
+												unit: "ApplicationAsianTextUnit",
+												bind: @UpDownEditValue);
+									unit_hot_number(identifier: "LeftRightEdit",
+												name: "$$$/CharParaStylesUI/Dlg/TCY/LeftRightLabel=Left/Right:",
+												stepper: true,
+												popuplist: true,
+												max_value: 1000,
+												min_value: -1000,
+												max_digits: 8,
+												decimal_places: 2,
+												items: @TCYValues,
+												unit: "ApplicationAsianTextUnit",
+												bind: @LeftRightEditValue);
+								}
+							}					
+						}
+						
+			/************************************************************************* Japanese Composition Settings PANEL *************************************************************************/
+						panel(margin: 0, bind: @PanelSelection, value: 11, guide_mask: [@guide_label, @guide_baseline])
+						{
+							static_text(name: "$$$/CharParaStylesUI/PanelList/JCompositionSettings=Japanese Composition Settings", horizontal: @align_left);
+							separator(orientation: @horizontal);
+							
+							column(child_horizontal: @align_fill)
+							{
+								popup(identifier: "KinsokuSetPopup",
+										name: "$$$/CharParaStylesUI/Dlg/JCS/KinsokuSetLabel=Kinsoku Set:",
+										items: @KinsokuSetMenuItems,
+										include_custom_item: false);
+								popup(identifier: "KinsokuTypePopup",
+										name: "$$$/CharParaStylesUI/Dlg/JCS/KinsokuTypeLabel=Kinsoku Type:",
+										items: @KinsokuTypeMenuItems,
+										include_custom_item: false,
+										bind: @KinsokuTypeMenuSelection);
+								popup(identifier: "BurasagariPopup",
+										name: "$$$/CharParaStylesUI/Dlg/JCS/BurasagariLabel=Burasagari:",
+										items: @BurasagariMenuItems,
+										include_custom_item: false,
+										bind: @BurasagariMenuSelection);
+								checkbox(identifier: "BunriKinshiCB",
+										name: "$$$/CharParaStylesUI/Dlg/JCS/BunriKinshiCBLabel=Bunri Kinshi",
+										value_on: 1,
+										value_off: 0,
+										bind: @BunriKinshiCBValue,
+										tri_state: true);
+								popup(identifier: "MojikumiPopup",
+										name: "$$$/CharParaStylesUI/Dlg/JCS/MojikumiLabel=Mojikumi:",
+										items: @MojikumiMenuItems,
+										include_custom_item: false);
+								popup(identifier: "JCSLeadingPopup",
+										name: "$$$/CharParaStylesUI/Dlg/JCS/LeadingLabel=Leading:",
+										items: @JCSLeadingMenuItems,
+										include_custom_item: false,
+										bind: @JCSLeadingMenuSelection);
+							}
+						}
+						
+						/************************************************************************* Warichu PANEL *************************************************************************/
+						panel(margin: 0, bind: @PanelSelection, value: 12, guide_mask: [@guide_label, @guide_baseline])
+						{
+							static_text(name: "$$$/CharParaStylesUI/PanelList/Wari_chuu=Warichu", horizontal: @align_left);
+							separator(orientation: @horizontal);
+							
+							group(identifier: "WarichuGroup", spacing: 0, 
+									header: "checkbox(identifier: 'WarichuCheckbox',
+														name: '$$$/CharParaStylesUI/Dlg/Warichu/WarichuCBLabel=Warichu',
+														value_on: 1,
+														value_off: 0,
+														bind: @WarichuCBValue,
+														tri_state: true)",
+									guide_mask: [@guide_label],
+									horizontal: @align_fill)
+							{
+								column(horizontal: @align_fill)
+								{
+									row()
+									{
+										unit_hot_number(identifier: "WarichuLinesEdit",
+													name: "$$$/CharParaStylesUI/Dlg/Warichu/LinesLabel=Lines:",
+													stepper: true,
+													popuplist: true,
+													max_value: 5,
+													min_value: 2,
+													items: @WarichuLinesItems,
+													decimal_places: 2,
+													digits: 3,
+													bind: @WarichuLinesEditValue);
+										unit_hot_number(identifier: "WarichuSizeEdit",
+													name: "$$$/CharParaStylesUI/Dlg/Warichu/SizeLabel=Size:",
+													stepper: true,
+													popuplist: true,
+													min_value: 30,
+													max_value: 70,
+													decimal_places: 2,
+													digits: 3,
+													items: @WarichuSizeItems,
+													unit: "NumberEditUnit_Percent",
+													bind: @WarichuSizeEditValue);								
+									}
+									
+									unit_hot_number(identifier: "WarichuLineGapEdit",
+												name: "$$$/CharParaStylesUI/Dlg/Warichu/LineGapLabel=Line Gap:",
+												stepper: true,
+												min_value: -10,
+												max_value: 1296,
+												decimal_places: 2,
+												digits: 6,
+												unit: "ApplicationAsianTextUnit",
+												bind: @WarichuLineGapEditValue);
+									popup(identifier: "WarichuAlignmentPopup",
+											name: "$$$/CharParaStylesUI/Dlg/Warichu/AlignmentLabel=Alignment:",
+											items: @WarichuAlignMenuItems,
+											bind: @WarichuAlignMenuSelection,
+											include_custom_item: false);
+								}
+							}
+							
+							group(child_vertical: @align_center, horizontal: @align_fill)
+							{
+								unit_hot_number(identifier: "MinCharsFirstLineEdit",
+											name: "$$$/CharParaStylesUI/Dlg/Warichu/MinCharsFirstLineLabel=Minimum Number of Characters on First Line:",
+											stepper: true,
+											popuplist: true,
+											min_value: 1,
+											max_value: 10,
+											decimal_places: 0,
+											items: @WarichuMinLinesItems,
+											bind: @MinCharsFirstLineEditValue);
+								unit_hot_number(identifier: "MinCharsLastLineEdit",
+											name: "$$$/CharParaStylesUI/Dlg/Warichu/MinCharsLastLineLabel=Minimum Number of Characters on Last Line:",
+											stepper: true,
+											popuplist: true,
+											min_value: 1,
+											max_value: 10,
+											decimal_places: 0,
+											items: @WarichuMinLinesItems,
+											bind: @MinCharsLastLineEditValue);
+							}					
+						}												
+					}	
+					}
+				}
+			}
+
+			row(vertical: @align_bottom,horizontal: @align_fill, spacing: @unrelated_spacing )
+			{
+				row(spacing: @unrelated_spacing, horizontal: @align_fill)
+			  	{
+			  		optional(bind: @IsCCLibraryEnabled, value: true, margin: 0, horizontal: @align_fill)
+			  		{
+			      		row(horizontal: @align_fill)
+			      		{
+			      			checkbox(name: "$$$/CharParaStylesUI/Dlg/AddToLibrary=&Add to my Library", 
+			  					identifier: "AddToLibraryCB",
+			  					guide_mask: [@guide_label], 
+			  					horizontal: @align_left);
+			      			popup(identifier: "LibraryNamesPopup", 
+			  					include_custom_item: true, 
+			  					popup_maximum_width_chars: 10,
+			  					popup_minimum_width_chars: 10);
+			      			}
+			      		
+			      	}
+			  		
+				}
+			}
+
+
+			row(vertical: @align_bottom,horizontal: @align_fill, spacing: @unrelated_spacing )
+			{
+				checkbox(identifier: "previewButton",
+							 name: "$$$/CharParaStylesUI/Dlg/Preview=&Preview",
+							 guide_mask: [@guide_label],
+							 bind: @previewValue,
+							 value_off: 0,
+							 value_on: 1,
+							 horizontal: @align_left);
+							 
+				row (horizontal: @align_fill, child_horizontal: @align_right, spacing: @button_group_spacing )
+				{
+							 
+					button(identifier: "ResetPanelButton",
+							   commit_button: true,
+							   name: "$$$/CharParaStylesUI/Dlg/ResetPanel=Reset Panel", action: @resetAction);
+
+					row(reverse: os == @mac, horizontal: @align_right, child_horizontal: @align_right, spacing: @related_spacing )
+					{
+						button(default: true,
+							   identifier: "okButton",
+							   commit_button: true,
+							   name: "$$$/gOK=OK");
+
+						button(identifier: "cancelButton",
+								commit_button: true,
+							   name: "$$$/gCancel=Cancel");
+					}
+				}
+			}
+		}
+    }
+}

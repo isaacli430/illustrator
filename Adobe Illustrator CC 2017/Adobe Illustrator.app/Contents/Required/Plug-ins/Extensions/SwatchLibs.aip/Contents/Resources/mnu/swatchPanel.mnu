@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+	<menuItem id="1" text="$$$/SwatchLibs/Mnu/16500/NewSw=&amp;New Swatch..."></menuItem>
+	<menuItem id="2" text="$$$/SwatchLibs/Mnu/16500/NewCG=New Color &amp;Group..."></menuItem>
+	<menuItem id="3" text="$$$/SwatchLibs/Mnu/16500/DupSw=&amp;Duplicate Swatch"></menuItem>
+	<menuItem id="4" text="$$$/SwatchLibs/Mnu/16500/Merge=M&amp;erge Swatches"></menuItem>
+	<menuItem id="5" text="$$$/SwatchLibs/Mnu/16500/DelSw=Dele&amp;te Swatch"></menuItem>
+	<menuItem id="6" text="$$$/SwatchLibs/Mnu/16500/Ungrp=Ungrou&amp;p Color Group"></menuItem>
+	<separator></separator>
+	<menuItem id="8" text="$$$/SwatchLibs/Mnu/16500/SU=Select All &amp;Unused"></menuItem>
+	<menuItem id="9" text="$$$/SwatchLibs/Mnu/16500/Add=&amp;Add Used Colors"></menuItem>
+	<separator></separator>
+	<menuItem id="11" text="$$$/SwatchLibs/Mnu/16500/ByName=So&amp;rt by Name"></menuItem>
+	<menuItem id="12" text="$$$/SwatchLibs/Mnu/16500/ByKind=Sort by &amp;Kind"></menuItem>
+	<menuItem id="13" text="$$$/SwatchLibs/Mnu/16500/Find=Show &amp;Find Field"></menuItem>
+	<separator></separator>
+	<menuItem id="15" text="$$$/SwatchLibs/Mnu/16500/Sm=&amp;Small Thumbnail View"></menuItem>
+	<menuItem id="16" text="$$$/SwatchLibs/Mnu/16500/Md=&amp;Medium Thumbnail View"></menuItem>
+	<menuItem id="17" text="$$$/SwatchLibs/Mnu/16500/Lg=&amp;Large Thumbnail View"></menuItem>
+	<menuItem id="18" text="$$$/SwatchLibs/Mnu/Lib/SmList=Small List V&amp;iew"></menuItem>
+	<menuItem id="19" text="$$$/SwatchLibs/Mnu/Lib/LgList=Large List Vie&amp;w"></menuItem>
+	<separator></separator>
+	<menuItem id="21" text="$$$/SwatchLibs/Mnu/16500/SwOpt=Swatch &amp;Options..."></menuItem>
+	<menuItem id="22" text="$$$/SwatchLibs/Mnu/16500/Spots=Spot &amp;Colors..."></menuItem>
+	<separator></separator>
+  <subMenu id="24" text="$$$/SwatchLibs/Mnu/16500/Open=Open Swatch Librar&amp;y">
+    <separator></separator>
+    <menuItem id="28" text="$$$/SwatchLibs/Mnu/16500/OtherLibrary=&amp;Other Library..."></menuItem>
+  </subMenu>
+  <menuItem id="25" text="$$$/SwatchLibs/Mnu/16500/Xch=Sa&amp;ve Swatch Library as ASE..."></menuItem>
+	<menuItem id="26" text="$$$/SwatchLibs/Mnu/16500/Save=Save Swatch Li&amp;brary as AI..."></menuItem>
+</menu>

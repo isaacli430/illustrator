@@ -1,0 +1,8 @@
+layout hideMenu
+{
+	view menu( id: 52,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/Hide/Selection=Selection", id:	50, help_id:0);
+}
+}

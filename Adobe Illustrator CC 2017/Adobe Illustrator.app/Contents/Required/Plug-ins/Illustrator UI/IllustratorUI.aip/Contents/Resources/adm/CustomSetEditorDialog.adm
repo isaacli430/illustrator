@@ -1,0 +1,11 @@
+sheet customseteditor
+{
+	interface:
+		columnwidth: 21;
+		numberofrows: 5;
+		numberofcolumns: 18;
+		pixelwidth: 1;
+		rowheight: 21;
+		windowwidth:  numberofcolumns * ( columnwidth) - 21 - 3;
+		windowheight: numberofrows * (rowheight + pixelwidth) + 1;
+}

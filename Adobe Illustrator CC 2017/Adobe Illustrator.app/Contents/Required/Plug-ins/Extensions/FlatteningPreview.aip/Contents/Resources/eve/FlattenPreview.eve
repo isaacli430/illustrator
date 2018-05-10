@@ -1,0 +1,112 @@
+layout FlattenPreviewPanel
+{
+    view subview(identifier: "AIEveSubView",
+				 placement: @place_column,
+				 layout_theme: @panel,
+				 show_border: false,
+				 margin: [15,15,0,15])
+    {
+		column(child_horizontal: @align_left, child_vertical: @align_top)
+		{
+			row(child_horizontal: @align_left, child_vertical: @align_top)
+			{		
+				button(identifier: "RefreshButton",
+						wants_focus: true, name: "$$$/FlatteningPreview/PreviewPalette/Refresh=Refresh");
+				popup(name: "$$$/FlatteningPreview/PreviewPalette/Highlight=Highlight:",
+					identifier: "HighlightPopup",
+					include_custom_item: false,
+					items: @HighlightPopupItems);
+			}				
+			separator();
+
+			optional(margin: 0, bind: @ShowOptionsPanel, value: 1)	
+		{
+			
+				popup(name: "$$$/FlatteningPreview/PreviewPalette/Overprints=Overprints:",
+					identifier: "OverprintPopup",
+					items: @OverprintPopupItems,
+					include_custom_item: false,
+					guide_mask: [ @guide_label ],
+					horizontal: @align_left);
+				
+				group(identifier: "FlattenOptionsGroup",
+					header: "popup(name: '$$$/FlatteningPreview/PreviewPalette/Preset=Preset:', 
+					popup_maximum_width_chars: 10, 
+					identifier: 'PresetPopup', items: @PresetPopupItems, horizontal: @align_left)",
+					horizontal: @align_fill)
+				{
+					combo_slider(identifier: "RasterVectorSlider",
+						min_max_filter: @filterSlider,
+						guide_mask: [ @guide_label ],
+						slider_point: @up,
+						left_mini_label: "$$$/FlatteningPreview/PreviewPalette/Rasters=Rasters",
+						right_mini_label: "$$$/FlatteningPreview/PreviewPalette/Vectors=Vectors",
+						minLength: 200,
+						ticks_pos: [0.0, 0.25, 0.50, 0.75, 1.0],
+                        show_ticks: true,
+						digits: 3,
+						decimal_places: 0,
+                        snap_on_ticks: false,
+						show_editbox: true,
+						horizontal: @align_left);
+					unit_hot_number(name: "$$$/FlatteningPreview/PreviewPalette/LineArtResolution=Line Art and Text Resolution:", 
+						identifier: "ArtEdit", 
+						popuplist: true,
+						max_value: 9600.0,
+                        min_value: 1.0,
+                        decimal_places: 3,
+						items: @ArtPopupItems,
+						suffix: "$$$/PixelsPerInch=ppi",
+						horizontal: @align_left);
+					unit_hot_number(name: "$$$/FlatteningPreview/PreviewPalette/SmoothColorResolution=Gradient and Mesh Resolution:",
+						identifier: "MeshEdit", 
+						popuplist: true,
+						max_value: 9600.0,
+                        min_value: 1.0,
+                        decimal_places: 3,
+						items: @MeshPopupItems,
+						suffix: "$$$/PixelsPerInch=ppi",
+						horizontal: @align_left);
+
+					checkbox(identifier: "TextToOutlinesCB", 
+							guide_mask: [ @guide_label ],
+							name: "$$$/FlatteningPreview/PreviewPalette/TextToOutlines=Convert All Text to Outlines");
+					checkbox(identifier: "StrokeToOutlinesCB", 
+							guide_mask: [ @guide_label ],
+							name: "$$$/FlatteningPreview/PreviewPalette/StrokesToOutlines=Convert All Strokes to Outlines");
+					checkbox(identifier: "ClipRegionsCB", 
+							guide_mask: [ @guide_label ],
+							name: "$$$/FlatteningPreview/PreviewPalette/ClipComplex=Clip Complex Regions");
+					checkbox(identifier: "AntialiasCB", 
+							guide_mask: [ @guide_label ],
+							name: "$$$/FlatteningPreview/PreviewPalette/Antialias=Anti-alias Rasters");
+				}
+				row()
+				{
+					image(identifier: "NoteImage", image: {normal: "SP_Info_Sm_N.png",dark_normal:"SP_Info_Sm_N_D.png"}, guide_mask: [ @guide_label ]);
+					static_text(identifier: "ResolutionWarningText",
+								horizontal: @align_fill, max_width: 200, 
+								guide_mask: [ @guide_label ],
+								lines: 2,
+								characters: 25,
+								name: '$$$/FlatteningPreview/PreviewPalette/ResolutionWarning=Resolution values are saved within presets, but will not be previewed in the panel.');
+				}
+				separator();
+			}
+			
+		
+		}
+		
+		image(identifier: "ArtBox",
+							wants_focus: true,
+							width: 450,
+							guide_mask: [ @guide_label ],
+							height: 50,
+							show_border: true,
+							horizontal: @align_fill,
+							vertical: @align_fill
+               				);	
+		resize_gripper_gap();
+    }
+}
+

@@ -1,0 +1,18 @@
+sheet LinePropertiesUI
+{
+interface:
+	ShowLinePropertiesString: true;
+	AngleValues: ["$$$/ShapeCoreUI/RotateAngles/0Degrees=0"
+							,"$$$/ShapeCoreUI/RotateAngles/30Degrees=30"
+							,"$$$/ShapeCoreUI/RotateAngles/45Degrees=45"
+							,"$$$/ShapeCoreUI/RotateAngles/60Degrees=60"
+							,"$$$/ShapeCoreUI/RotateAngles/90Degrees=90"
+							,"$$$/ShapeCoreUI/RotateAngles/120Degrees=120"
+							,"$$$/ShapeCoreUI/RotateAngles/150Degrees=150"
+							,"$$$/ShapeCoreUI/RotateAngles/180Degrees=180"
+							,"$$$/ShapeCoreUI/RotateAngles/210Degrees=210"
+							,"$$$/ShapeCoreUI/RotateAngles/240Degrees=240"
+							,"$$$/ShapeCoreUI/RotateAngles/270Degrees=270"
+							,"$$$/ShapeCoreUI/RotateAngles/300Degrees=300"
+							,"$$$/ShapeCoreUI/RotateAngles/330Degrees=330"];
+}

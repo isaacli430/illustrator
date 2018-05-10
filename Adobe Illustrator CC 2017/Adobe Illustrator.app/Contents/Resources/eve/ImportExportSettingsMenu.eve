@@ -1,0 +1,9 @@
+layout ImportExportSettingsMenu
+{
+	view menu( id: 77,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/ImportExportSettings/ExportSettings=Export Settings...", id: 339, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/ImportExportSettings/ImportSettings=Import Settings...", id: 340, help_id:0);
+	}
+}

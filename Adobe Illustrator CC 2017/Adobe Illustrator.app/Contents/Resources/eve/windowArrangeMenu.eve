@@ -1,0 +1,16 @@
+layout windowArrangeMenu
+{
+	view menu( id: 70,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/Window/Arrange/Cascade=&Cascade", id:			166, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Window/Arrange/Tile=&Tile", id:					168, help_id:0);
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/Window/Arrange/FloatInWindow=Float in &Window", id:	301, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Window/Arrange/FloatAllInWindows=Float &All in Windows", id:	302, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Window/Arrange/ConsolidateAllWindows=C&onsolidate All Windows", id:	303, help_id:0);
+		separator();
+		menu( text: "$$$/_STRList/STR/256/109=Minimize Window", id:	109, help_id:0);
+		menu( text: "$$$/_STRList/STR/256/110=Bring All to Front", id:	110, help_id:0);
+	}
+}

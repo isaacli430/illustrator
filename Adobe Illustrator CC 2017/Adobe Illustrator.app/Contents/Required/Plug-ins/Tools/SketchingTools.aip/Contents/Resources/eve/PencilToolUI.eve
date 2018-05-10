@@ -1,0 +1,90 @@
+layout PencilToolUI_
+{
+    view subview(identifier: "PencilToolOptions",
+                 layout_theme: @dialog_large,
+                 placement: @place_column, child_horizontal: @align_fill, 
+		spacing: @unrelated_spacing,show_border: false)
+    {
+        column(horizontal: @align_fill,spacing: @inter_group_spacing)
+        {
+			group(identifier: "ToleranceFrame",
+                  name: "$$$/BRSPencilTool/Dlg/PencilToolPreferences/FidelitySlider=Fidelity",horizontal: @align_fill)
+            {
+		    	combo_slider(slider_point: @up,
+							interval: 1,
+							show_editbox: false,
+							set_default_focus: true,
+							show_ticks: true,
+							horizontal: @align_fill,
+							guide_mask: [@guide_label],
+							left_mini_label: "$$$/BRSPencilTool/Dlg/PencilToolPreferences/Accurate=Accurate",
+							right_mini_label:  "$$$/BRSPencilTool/Dlg/PencilToolPreferences/Smooth=Smooth",
+							identifier: "fidelity_ComboSlider");
+            }
+		
+			group(identifier: "OptionsFrame",
+				  name: "$$$/BRSPencilTool/Dlg/PencilToolPreferences/Options=Options",horizontal: @align_fill)
+			{
+				checkbox(identifier: "fillStrokesCheckBox", guide_mask: [@guide_label],
+						name: "$$$/BRSPencilTool/Dlg/PencilToolPreferences/FillStrokes=Fill &new pencil strokes");
+
+				checkbox(identifier: "keepSelectedCheckBox", guide_mask: [@guide_label],
+						name: "$$$/BRSPencilTool/Dlg/PencilToolPreferences/KeepSelected=&Keep selected");
+
+				checkbox(identifier: "toggleSmoothCheckBox", guide_mask: [@guide_label],
+						name: (os == @win) ? "$$$/BRSPencilTool/Dlg/PencilToolPreferences/ToggleSmoothWin=Alt key &toggles to Smooth Tool" 
+											: "$$$/BRSPencilTool/Dlg/PencilToolPreferences/ToggleSmoothMac=Option key &toggles to Smooth Tool") ;
+										
+				row(horizontal: @align_fill)
+				{	
+					checkbox(identifier: "toggleAutoCloseCheckBox", guide_mask: [@guide_label],
+							name: "$$$/BRSPencilTool/Dlg/PencilToolPreferences/ToggleAutoClose=&Close paths when ends are within:");
+					edit_number(identifier: "editNumber2",
+								min_value: 0,
+								max_value: 20,
+								decimal_places: 0,
+								digits: 2);
+					static_text(name: "$$$/BRSPencilTool/Dlg/PencilToolPreferences/Within/pixels=pixels");
+				}
+		
+				checkbox(identifier: "editPathCheckBox", guide_mask: [@guide_label],
+						name: "$$$/BRSPencilTool/Dlg/PencilToolPreferences/EditSelectedPaths=&Edit selected paths");
+
+				row(horizontal: @align_fill)
+				{
+					combo_slider(
+						decimal_places: 2,
+						digits: 5,
+						show_editbox: false,
+						slider_point: @up,
+						guide_mask: [@guide_label],
+						horizontal: @align_fill,
+						name: "$$$/BRSPencilTool/Dlg/PencilToolPreferences/Within=&Within:",
+						identifier: "distance_ComboSlider");
+					
+					edit_number(identifier: "editNumber1",
+								min_value: 0,
+								max_value: 20,
+								decimal_places: 0,
+								digits: 2);
+					
+					static_text(name: "$$$/BRSPencilTool/Dlg/PencilToolPreferences/Within/pixels=pixels");	
+				}
+			}
+	    }
+		
+		row( horizontal: @align_fill,spacing: @separated_spacing)
+		{
+			button(identifier: "resetButton",
+				   name: "$$$/BRSPencilTool/Dlg/PencilToolPreferences/Reset=&Reset",vertical: @align_fill,commit_button: true);
+			
+			row(horizontal: @align_right,vertical: @align_fill,child_horizontal: @align_right,child_vertical: @align_fill, reverse: os == @mac, 
+				spacing: @related_spacing)
+			{
+				button(identifier: "okButton", name: "$$$/gOK=OK", set_default_focus: true, commit_button: true);
+				button(identifier: "cancelButton", name: "$$$/gCancel=Cancel", commit_button: true);
+			}	
+		}
+	}
+}
+

@@ -1,0 +1,18 @@
+sheet ReflectDialog
+{
+	interface:
+		AxisRadioGp: 0;
+		AngleNumberEditCell: 0;
+		PreviewCheckBoxCell: true;
+		dummyCell: true;
+		ObjectCheckBoxCell: true <== (dummyCell == true)? ObjectCheckBoxCell : true;
+		PatternCheckBoxCell: false <== ( dummyCell == true)? PatternCheckBoxCell : false ;
+
+	logic:
+	when (dummyCell) relate
+	{
+		ObjectCheckBoxCell <== (!PatternCheckBoxCell && !ObjectCheckBoxCell)? !PatternCheckBoxCell :ObjectCheckBoxCell;
+		PatternCheckBoxCell <== (!PatternCheckBoxCell && !ObjectCheckBoxCell)? !ObjectCheckBoxCell :PatternCheckBoxCell;
+		
+	}
+}

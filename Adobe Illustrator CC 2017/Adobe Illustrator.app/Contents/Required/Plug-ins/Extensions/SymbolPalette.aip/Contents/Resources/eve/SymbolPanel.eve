@@ -1,0 +1,117 @@
+layout SymbolPanel
+{
+    view subview(identifier: "SymbolPanelSubView"
+					, placement: @place_column
+					, layout_theme: @panel
+					, show_border: false,
+					margin: gPanelToolbarSubviewMargin,
+					spacing: gPanelToolbarTopSpacing
+					)
+	{
+		overlay(vertical: @align_fill
+				, horizontal: @align_fill)
+		{
+			panel(bind: @listMode
+					, value: true
+					, vertical: @align_fill
+					, horizontal: @align_fill)
+			{
+				multicolumn_tree(identifier: "SymbolsList"
+								, horizontal: @align_fill
+								, vertical: @align_fill
+								, height: 120
+							    , width: 200);
+			}
+			panel(bind: @listMode
+					, value: false
+					, vertical: @align_fill
+					, horizontal: @align_fill)
+			{
+				grid_view(horizontal: @align_fill
+							, vertical: @align_fill
+							, identifier: "SymbolsGrid"
+							, height: 120
+							, width: 200);
+			}
+		}
+		
+		optional(bind: @floatingPanel, margin: 0
+					, value: true
+					, vertical: @align_bottom
+					, horizontal: @align_fill)
+		{
+			row(vertical: @align_center, horizontal: @align_fill)
+			{
+				buttongroup(horizontal: @align_fill, vertical: @align_bottom, child_vertical: @align_fill,
+							spacing: gPanelToolbarIconSpacing, child_width: gPanelToolbarIconWidth, child_height: gPanelToolbarIconHeight)
+				{
+					button(identifier: "SymbolsLibMenu"
+						, image: {normal: "SP_LibraryTri_Wi_N.png", dark_normal: "SP_LibraryTri_Wi_N_D.png"}
+						, alt: "$$$/SymbolPalette/Str/16708=Symbol Libraries Menu"
+						, horizontal: @align_left, action: @SymbolsLibMenuAction);
+				
+				
+					overlay(horizontal: @align_fill, margin: 0)
+					{
+						optional(value: false, margin: 0, bind: @symbolLibLoaded, horizontal: @align_fill)
+						{
+							row(horizontal: @align_right, margin: 0)
+							{
+								buttongroup(vertical: @align_bottom, child_vertical: @align_fill,
+								spacing: gPanelToolbarIconSpacing, child_width: gPanelToolbarIconWidth, child_height: gPanelToolbarIconHeight)
+								{
+									button(identifier: "PlaceSymbolInstance"
+											, image: {normal: "SP_Place_Xs_N.png", dark_normal: "SP_Place_Xs_N_D.png"}
+											, alt: "$$$/SymbolPalette/Str/16706=Place Symbol Instance", action: @PlaceSymbolInstanceAction);
+											
+									button(identifier: "BreakLinkToSymbol"
+											, image: {normal: "SP_Unlink_Wi_N.png", dark_normal: "SP_Unlink_Wi_N_D.png"}
+											, alt: "$$$/SymbolPalette/Str/16704=Break Link to Symbol", action: @BreakLinkToSymbolAction);
+
+									button(identifier: "SymbolOptions"
+											, image: {normal: "SP_OptionsView_Xs_N.png", dark_normal: "SP_OptionsView_Xs_N_D.png"}
+											, alt: "$$$/SymbolPalette/Str/16707=Symbol Options", action: @SymbolOptionsAction);
+											
+									button(identifier: "NewSymbol"
+											, image: {normal: "SP_New_Wi_N.png", dark_normal: "SP_New_Wi_N_D.png"}
+											, alt: "$$$/SymbolPalette/Str/16702=New Symbol", action: @NewSymbolAction);
+											
+									button(identifier: "DeleteSymbol"
+											, image: {normal: "SP_Delete_Wi_N.png", dark_normal: "SP_Delete_Wi_N_D.png"}
+											, alt: "$$$/SymbolPalette/Str/16703=Delete Symbol", action:@DeleteSymbolAction);
+								}
+							}
+						}
+						optional(value: true, margin: 0, bind: @symbolLibLoaded, horizontal: @align_fill)
+						{
+							row(horizontal: @align_fill)
+							{
+								buttongroup(horizontal: @align_left,horizontal: @align_fill, vertical: @align_bottom, child_vertical: @align_fill, spacing: gPanelToolbarIconSpacing, child_width: gPanelToolbarIconWidth, child_height: gPanelToolbarIconHeight)
+								{
+									button(identifier: "LoadPrevSymbolLib"
+											, image: {normal: "SP_PreviousPage_Sm_N.png", dark_normal: "SP_PreviousPage_Sm_N_D.png"}
+											, alt: "$$$/SymbolPalette/Str/16709=Load Previous Symbol Library", action:@PreviousSymbolLibAction);
+									button(identifier: "LoadNextSymbolLib"
+											, image: {normal: "SP_NextPage_Sm_N.png", dark_normal: "SP_NextPage_Sm_N_D.png"}
+											, alt: "$$$/SymbolPalette/Str/16710=Load Next Symbol Library", action: @NextSymbolLibAction); 
+								}
+								image(wants_focus: false,
+											image: {normal:"SP_NoEdit_Xs_N.png", dark_normal:"SP_NoEdit_Xs_N_D.png"},
+											horizontal: @align_right);
+							}
+						}
+					}
+				}
+				resize_gripper_gap();
+			}
+		}
+		
+		optional(bind: @floatingPanel, margin: 0
+					, value: false
+					, vertical: @align_bottom
+					, horizontal: @align_fill)
+		{
+			subview(show_border:false, height: gPanelToolbarIconHeight);
+		}
+	}
+}

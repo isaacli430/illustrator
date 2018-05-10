@@ -1,0 +1,51 @@
+layout TouchStrokeWidthPanel
+{
+     view subview(	identifier: "TouchStrokeWidthPanelView",
+					show_border: false,
+					layout_theme:@touch_panel)
+    {
+		column(horizontal: @align_fill)
+		{
+			row(horizontal: @align_fill, vertical: @align_center)
+			{
+				static_text(identifier: "Weight", horizontal: @align_left, name:"$$$/PaintStyle/TouchStrokeWidthPanel/Weight=Weight", theme_font_size: @large);
+				edit_number(identifier: "EditNumberWeight",
+							max_value: 1000,
+							min_value: 0,
+							decimal_places: 3,
+							digits: 3,
+							stepper: false,
+							popuplist: true,
+							horizontal: @align_right,
+							set_default_focus: true,
+						    touch_control: true
+							);
+			}
+			subview(identifier: "WeightSlider",horizontal: @align_fill, height: 22, show_border: false);
+		}
+		static_text(identifier: "ProfileWidth", horizontal: @align_left, name:"$$$/PaintStyle/TouchStrokeWidthPanel/ProfileWidth=Profile:", theme_font_size: @large);
+		row(horizontal: @align_fill)
+		{
+			popup_panel_button(identifier:"TouchVariableWidthImage", height: gSmallTouchWidgetHeight, horizontal: @align_fill);
+			optional(bind :@ShowFlipButtons, value: 1, placement: @place_row, child_vertical: @align_center)
+			{
+				row(horizontal: @align_right, spacing:15, margin: 0)
+				{ 
+					button(	identifier: "FlipHorizontal",
+						image: {normal: "SP_FlipHorizontal_Sm_N.png", dark_normal:"SP_FlipHorizontal_Sm_N_D.png"},
+						wants_focus: false,
+						height:gSmallTouchWidgetHeight,
+						width:gSmallTouchWidgetWidth,
+						alt:"$$$/PaintStyle/Str/StrokeToolTip/FlipHorizontal=Flip Along", bind: @FlipAlongEnabled, action: @FlipAlongVariableWidth);
+					button(	identifier: "FlipAcross",
+						image: {normal: "SP_FlipVertical_Sm_N.png", dark_normal:"SP_FlipVertical_Sm_N_D.png"},
+						wants_focus: false,
+						height:gSmallTouchWidgetHeight,
+						width:gSmallTouchWidgetWidth,
+						alt:"$$$/PaintStyle/Str/StrokeToolTip/FlipVertical=Flip Across", bind: @FlipAcrossEnabled, action: @FlipAcrossVariableWidth);
+				}
+			}
+		}
+		
+	}
+}

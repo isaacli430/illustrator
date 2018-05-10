@@ -1,0 +1,66 @@
+layout expandUI
+{
+    view subview(identifier: "objectExpandOptions",
+                 child_horizontal: @align_fill,
+                 placement: @place_column,
+				show_border: false, 
+				layout_theme: @dialog_large, spacing:@unrelated_spacing
+				)
+    {
+        column(child_horizontal: @align_fill, spacing:@inter_group_spacing,horizontal: @align_fill)
+        {
+            group(identifier: "expandFrame",horizontal: @align_fill,
+                  name: "$$$/Expand/Dlg/Expand/10=Expand")
+            {
+                checkbox(identifier: "object_checkbox",
+                         name: "$$$/Expand/Dlg/Expand/objectButton=O&bject",
+						 set_default_focus: true);
+
+                checkbox(identifier: "fill_checkbox",
+                         name: "$$$/Expand/Dlg/Expand/fillButton=&Fill");
+
+                checkbox(identifier: "stroke_checkbox",
+                         name: "$$$/Expand/Dlg/Expand/strokeButton=&Stroke");
+            }
+
+	    group(identifier: "expandGradientFrame",horizontal: @align_fill,
+				  name: "$$$/Expand/Dlg/Expand/11=Expand Gradient To", placement: @place_column)
+	    {
+			radiogroup() 
+			{
+				radio_button(bind: @Size,
+						identifier: "gradientMesh_radio",
+						name: "$$$/Expand/Dlg/Expand/smoothShadingButton=&Gradient Mesh",
+						value: @one);
+
+				row(child_vertical: @align_center, child_horizontal: @align_fill,
+						spacing: @label_widget_spacing)
+				{
+					radio_button(bind: @Size,
+							identifier: "specify_radio",
+							 name: "$$$/Expand/Dlg/Expand/stepsButton=Sp&ecify:",
+							value: @two);
+
+					unit_hot_number(decimal_places: 2,
+							digits: 5,
+							identifier: "objects_editNumber",
+							suffix: "$$$/Expand/Dlg/Expand/stepsText=Objects");
+
+				}
+			}
+		}
+	}
+	row(child_horizontal: @align_right, child_vertical: @align_center, reverse: os == @mac, spacing: @related_spacing)
+		{
+			 button(
+				  identifier: "okButton",
+				  name: "$$$/gOK=OK",
+				  commit_button: true);
+			 button(
+				  identifier: "cancelButton",
+				  name: "$$$/gCancel=Cancel",
+				  commit_button: true); 
+		}
+
+    }
+}

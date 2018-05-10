@@ -1,0 +1,66 @@
+layout TypeOnPathTool
+{
+	view subview(placement: @place_column, 
+					layout_theme: @dialog_large,
+					show_border: false,
+					child_horizontal: @align_fill,spacing: @unrelated_spacing)
+	{
+		column()
+		{
+			row()
+			{
+			popup(identifier: "EffectPopup",
+							name: "$$$/_SLOParagraphPalette/Dlg/PathTypeOptions/EffectStaticText=Effect:",
+							include_custom_item: false,
+							unknown: @EffectUnknown,
+							items: @EffectPopupItems,
+							bind: @EffectPopupVal,
+							set_default_focus: true);
+							
+			checkbox(identifier: "FlipCheckBox",
+							unknow: @FlipUnknown,  
+							name: "$$$/_SLOParagraphPalette/Dlg/PathTypeOptions/FlipCheckBox=Flip",
+							bind: @FlipCheckBoxVal);
+			}
+		
+		
+			popup(identifier: "AlignToPathPopup",
+							name: "$$$/_SLOParagraphPalette/Dlg/PathTypeOptions/AlignStaticText=Align to Path:",
+							include_custom_item: false,
+							unknown: @AlignUnknown, 
+							items: @AlignToPathPopupItems,
+							bind: @AlignToPathPopupVal);
+		
+		
+			unit_hot_number(identifier: "SpacingEditPopup",
+							name: "$$$/_SLOParagraphPalette/Dlg/PathTypeOptions/OverLapOffSetStaticText=Spacing:",
+							max_value: 800,
+							min_value: -800,
+							stepper: true,
+							popuplist: true,
+							unit: 'NumberEditUnit_Point',
+							decimal_places: 2,
+							items: @SpacingEditPopupItems,
+							bind: @SpacingEditPopupVal,
+							bind_final: true);
+		}
+	
+		row(vertical: @align_fill,child_horizontal: @align_fill, child_vertical: @align_center,spacing: @separated_spacing)
+		{
+			checkbox(identifier: "PreviewCheckbox",
+						guide_mask: [ @guide_label ],
+						name: "$$$/_SLOParagraphPalette/Dlg/PathTypeOptions/PathPreview=Preview",
+						bind: @PreviewCheckboxVal);
+
+			row(child_horizontal: @align_right, spacing: @related_spacing, reverse: os == @mac)
+			{ 
+				button(	identifier: "okButton",
+						commit_button: true, 
+						name: "$$$/gOK=OK");
+				button(	identifier: "cancelButton",
+						commit_button: true, 
+						name: "$$$/gCancel=Cancel");
+			} 
+		}
+	}
+}

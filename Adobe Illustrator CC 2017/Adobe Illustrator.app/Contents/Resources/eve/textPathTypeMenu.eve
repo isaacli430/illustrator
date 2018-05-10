@@ -1,0 +1,16 @@
+layout textPathTypeMenu
+{
+	view menu( id: 11,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/TextPathType/Rainbow=Rainbow", id:					83, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/TextPathType/Skew=Skew", id:							116, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/TextPathType/3DRibbon=3D Ribbon", id:				38, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/TextPathType/StairStep=Stair Step", id:				40, help_id:0);					
+		menu( text: "$$$/_MBAR/Mnu/TextPathType/Gravity=Gravity", id:					119, help_id:0);
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/TextPathType/PathTypeOptions=Type on a Path Options...", id:	123, help_id:0);
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/TextPathType/UpdateLegacyTOP=Update Legacy Type on a Path", id:	310, help_id:0);
+}
+}

@@ -1,0 +1,212 @@
+layout InfoPanel
+{
+	view subview(identifier: "infoPanel_subview",
+					layout_theme: @panel,
+					show_border: false, placement:@place_column)
+	{
+		column(guide_mask: [@guide_label], horizontal:@align_fill)
+		{	/* top level subview has different interwidget spacing than children; so everything inside column */
+			overlay(guide_mask: [@guide_label],horizontal:@align_fill)
+			{
+			panel(margin:0)
+			{	/*Text view*/
+				display_text(identifier: "tTop1", name:"  ", bind:@tTop1, characters:17);
+				display_text(identifier: "tTop2", name:"  ", bind:@tTop2, characters:17);
+			}
+			panel(margin:0, guide_mask: [@guide_label])
+			{	/* X Y view */
+				row( child_horizontal:@align_center, spacing:3)
+				{
+					image(identifier: "ixy",image:{normal:"SP_Coordinates_Sm_N.png", dark_normal:"SP_Coordinates_Sm_N_D.png"},vertical:@align_center);
+					column(guide_mask: [@guide_label])
+					{
+						row(spacing:3)
+						{
+						display_text(identifier:"lx", name:"",label:@lx);
+						display_text(identifier:"tx", name:"",bind:@tx, characters:6);
+						}
+						row(spacing:3)
+						{
+						display_text(identifier:"ly", name:"",label:@ly);
+						display_text(identifier:"ty",name:"",bind:@ty, characters:6);
+						}
+					}
+					separator(identifier:"svt", orientation:@vertical, vertical:@align_fill);
+					row(margin:[0,10,0,0], vertical:@align_fill)
+					{
+					image(identifier: "iwh", image:{normal:"SP_WidthHeight_Sm_N.png", dark_normal:"SP_WidthHeight_Sm_N_D.png"},vertical:@align_center,guide_mask: [@guide_label]);
+					}
+					column()
+					{
+						row(spacing:3)
+						{
+						overlay()
+						{
+						image(identifier: "lw1", image:{normal:"infozoom.png", dark_normal:"infozoom_D.png"}, vertical:@align_center,
+						guide_mask: [@guide_label]);
+						display_text(identifier:"lw", name:"",label:@lw);
+						}
+						display_text(identifier:"tw",name:"",bind:@tw, characters:6);
+						}
+						row(guide_mask: [@guide_label], spacing:3)
+						{
+						display_text(identifier:"lh",name:"",label:@lh);
+						
+						display_text(identifier:"th",name:"",bind:@th, characters:6);
+						}
+					}
+			
+				}
+			}
+			} 
+			/*end overlay of top */
+			
+			separator( identifier:"sht", orientation:@horizontal, horizontal:@align_fill);
+			
+			overlay(guide_mask: [@guide_label], horizontal:@align_fill, child_vertical:@align_center)
+			{
+				panel( margin:0, child_vertical:@align_center)
+				{	/*Text view*/
+					display_text(identifier:"tMid", name:"  ", bind:@tMid, characters:17);
+				}
+				panel( margin:0, guide_mask: [@guide_label] )
+				{
+					row(child_horizontal:@align_center, child_vertical:@align_center, spacing:3)
+					{
+						image(identifier:"im1",image:{normal:"SP_WidthHeight_Sm_N.png", dark_normal:"SP_WidthHeight_Sm_N_D.png"},vertical:@align_center); /* blank icon */
+						
+						column()
+						{
+						row(spacing:3)
+						{
+						overlay()
+						{
+							image(identifier: "la1", image:{normal:"SP_TransformAngle_Sm_N.png", dark_normal:"SP_TransformAngle_Sm_N_D.png"},vertical:@align_center, guide_mask: [@guide_label]);
+							image(identifier: "la2", image:"infocorn.png",vertical:@align_center, guide_mask: [@guide_label]);
+							image(identifier: "la3", image:{normal:"inforot.png", dark_normal:"inforot_D.png"},vertical:@align_center, guide_mask: [@guide_label]);
+							image(identifier: "la4", image:{normal:"infoshr.png", dark_normal:"infoshr_D.png"},vertical:@align_center, guide_mask: [@guide_label]);
+							display_text(identifier:"la",name:"",bind:@la);
+						}
+						display_text(identifier:"ta",name:"",bind:@ta, characters:6);
+						}
+						}
+						
+						separator(identifier:"svm",orientation:@vertical, vertical:@align_fill);
+						
+						row(margin:[0,10,0,0], vertical:@align_fill)
+						{
+						image(identifier:"im2", image:{normal:"SP_WidthHeight_Sm_N.png", dark_normal:"SP_WidthHeight_Sm_N_D.png"},vertical:@align_center); /* blank icon */
+						}
+						
+						column()
+						{
+						row(spacing:3)
+						{
+						overlay()
+						{
+							image(identifier: "lz1", image:{normal:"SP_TransformAngle_Sm_N.png", dark_normal:"SP_TransformAngle_Sm_N_D.png"},vertical:@align_center, guide_mask: [@guide_label]);
+							image(identifier: "lz2", image:"infocorn.png",vertical:@align_center, guide_mask: [@guide_label]);
+							image(identifier: "lz3", image:{normal:"inforot.png", dark_normal:"inforot_D.png"},vertical:@align_center, guide_mask: [@guide_label]);
+							image(identifier: "lz4", image:{normal:"infoshr.png", dark_normal:"infoshr_D.png"},vertical:@align_center, guide_mask: [@guide_label]);
+							display_text(identifier:"lz",name:"",label:@lz);
+						}
+						display_text(identifier:"tz",name:"",bind:@tz, characters:6);
+						}
+						}
+						
+					}
+				}
+			}
+			/*end overlay of mid  Put items below inside optional for states functionality*/
+			
+		
+			optional(bind: @ShowOptions)
+			{
+			separator(identifier:"shb",orientation:@horizontal, horizontal:@align_fill);
+			
+			row( child_horizontal:@align_center, spacing:3)
+				{
+					image(identifier: "ifill",image:{normal:"SP_Fill_Sm_N.png", dark_normal:"SP_Fill_Sm_N_D.png"},vertical:@align_center);
+					column()
+					{
+						row(spacing:3)
+						{
+						display_text(identifier:"lfc1", name:"", bind:@lfc1);
+						display_text(identifier:"tfc1",name:"",bind:@tfc1, characters:6);
+						}
+						row(spacing:3)
+						{
+						overlay()
+						{
+							panel(margin:0, placement:@place_row,spacing:3)
+							{
+							display_text(identifier:"lfc2",name:"", bind:@lfc2);
+							display_text(identifier:"tfc2",name:"",bind:@tfc2, characters:6);
+							}
+							panel(margin:0)
+							{
+								display_text(identifier:"tColorL", name:"",bind:@tColorL, characters:7);
+							}
+						}
+						}
+						row(spacing:3)
+						{
+						display_text(identifier:"lfc3",name:"", bind:@lfc3);
+						display_text(identifier:"tfc3",name:"",bind:@tfc3, characters:6);
+						}
+						row(spacing:3)
+						{
+						display_text(identifier:"lfc4",name:"", bind:@lfc4);
+						display_text(identifier:"tfc4",name:"",bind:@tfc4, characters:6);
+						}
+					}
+					
+					separator(identifier:"svb",orientation:@vertical, vertical:@align_fill);
+					row(margin:[0,11,0,0], vertical:@align_fill)
+					{
+					image(identifier: "istroke", image:{normal:"SP_Stroke_Sm_N.png", dark_normal:"SP_Stroke_Sm_N_D.png"},vertical:@align_center);
+					}
+					column()
+					{
+						row(spacing:3)
+						{
+						display_text(identifier:"lsc1",name:"", bind:@lsc1);
+						display_text(identifier:"tsc1",name:"",bind:@tsc1, characters:6);
+						}
+						row(spacing:3)
+						{
+						overlay()
+						{
+							panel(margin:0, placement:@place_row,spacing:3)
+							{
+							display_text(identifier:"lsc2",name:"", bind:@lsc2);
+							display_text(identifier:"tsc2",name:"",bind:@tsc2, characters:6);
+							}
+							panel(margin:0)
+							{
+								display_text(identifier:"tColorR", name:"",bind:@tColorR, characters:7);
+							}
+						}
+						}
+						row(spacing:3)
+						{
+						display_text(identifier:"lsc3",name:"", bind:@lsc3);
+						display_text(identifier:"tsc3",name:"",bind:@tsc3, characters:6);
+						}
+						row(spacing:3)
+						{
+						display_text(identifier:"lsc4",name:"", bind:@lsc4);
+						display_text(identifier:"tsc4",name:"",bind:@tsc4, characters:6);
+						}
+					}
+			
+				}
+				}	
+				/* end optional color container */
+		
+		} 
+		/* end main column container */
+	
+	
+	}
+}

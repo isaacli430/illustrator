@@ -1,0 +1,84 @@
+* { margin:0; padding:0; }
+html, body {
+    margin: 0;
+    padding: 0;
+	font-family: 'Adobe Clean', sans-serif;
+}
+div.top {
+   width: 337px;
+   height: 390px;
+   background-color: #fff;
+}
+div.head {
+	background-color: #49494A;
+   	height: 40px;
+	line-height: 40px;
+	color:white;
+	font-size: 14px;
+ 	padding: 0px 0px 0px 19px;
+}
+#content {
+    padding: 25px 19px 0px 19px;
+	height:70pt;
+}
+#start {
+	float:right;
+	padding: 0px 8px 1px 8px;
+	border-radius: 20px;
+    color: #0270e8;
+    text-decoration: none;
+    cursor: pointer;
+	border: solid #0270e8;
+	border-width: 2px;
+    vertical-align: top;
+	font-family: 'Adobe Clean', sans-serif;
+     font-size: 12px;
+	 font-weight: bold;
+	 margin-right:20pt;
+	 background-color: #fff;
+}
+#prev {
+	float:left;
+	padding: 0px 8px 1px 8px;
+	border-radius: 20px;
+    color: #0270e8;
+    text-decoration: none;
+    cursor: pointer;
+	border: solid #0270e8;
+	border-width: 2px;
+    vertical-align: top;
+	font-family: 'Adobe Clean', sans-serif;
+	 font-size: 12px;
+ 	 font-weight: bold;
+	 margin-left:20pt;
+	 background-color: #fff;
+}
+#next {
+	float:right;
+	padding: 0px 8px 1px 8px;
+	border-radius: 20px;
+    color: #0270e8;
+    text-decoration: none;
+    cursor: pointer;
+	border: solid #0270e8;
+	border-width: 2px;
+    vertical-align: top;
+	font-family: 'Adobe Clean', sans-serif;
+	 font-size: 12px;
+	 font-weight: bold;
+	 margin-right:20pt;
+	 background-color: #fff;
+}
+#next:focus {
+	outline: none;
+}
+#prev:focus {
+	outline: none;
+}
+#start:focus {
+	outline: none;
+}
+p {
+margin: 0;
+padding: 0;
+}

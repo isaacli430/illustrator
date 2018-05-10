@@ -1,0 +1,116 @@
+/* [1] */
+$$$/svgFileFormat/Str/HoldCursor/1=Hold the cursor over a setting for additional information.
+/* [2] */
+$$$/private/svgFileFormat/Str/HoldCursor/2=
+/* [3] */
+$$$/svgFileFormat/Str/SpecifyMethod/1=Specifies the method for choosing which glyphs are saved with the document.
+/* [4] */
+$$$/private/svgFileFormat/Str/SpecifyMethod/2=
+/* [5] */
+$$$/svgFileFormat/Str/NoneProvide/1=None (Use System Fonts) provides the smallest possible files but relies on the fonts being installed on end user systems.
+/* [6] */
+$$$/private/svgFileFormat/Str/NoneProvide/2=
+/* [7] */
+$$$/svgFileFormat/Str/OnlyGlyphsUsed/1=Only Glyphs Used is the set of glyphs for text that exists in the document. This option is not available for linked fonts. 
+/* [8] */
+$$$/svgFileFormat/Str/OnlyGlyphsUsed/2=Do not use this option if the textual content of the SVG file might change.
+/* [9] */
+$$$/svgFileFormat/Str/CommonEnglishIs/1=Common English is the set of English font characters. This is useful when the textual content of the SVG file might change.
+/* [10] */
+$$$/private/svgFileFormat/Str/CommonEnglishIs/2=
+/* [11] */
+$$$/svgFileFormat/Str/CommonEnglishGlypsUsedIs/1=Common English && Glyphs Used is the set of English font characters plus all other glyphs used in the document. 
+/* [12] */
+$$$/svgFileFormat/Str/CommonEnglishGlypsUsedIs/2=This is useful when the textual content of the SVG file might change.
+/* [13] */
+$$$/svgFileFormat/Str/RomanLetter/1=Common Roman is the set of Roman-letter font characters. This is useful when the textual content of the SVG file might change.
+/* [14] */
+$$$/private/svgFileFormat/Str/RomanLetter/2=
+/* [15] */
+$$$/svgFileFormat/Str/RomanLetterFont/1=Common Roman && Glyphs Used is the set of Roman-letter font characters plus all other glyphs used in the document. 
+/* [16] */
+$$$/svgFileFormat/Str/RomanLetterFont/2=This is useful when the textual content of the SVG file might change.
+/* [17] */
+$$$/svgFileFormat/Str/FullSet/1=All Glyphs is the full set of English and Roman-letter font characters. This is useful when the textual content of the SVG 
+/* [18] */
+$$$/svgFileFormat/Str/FullSet/2=file might change.
+/* [19] */
+$$$/svgFileFormat/Str/ReferencedIn/1=Specifies the location of the images referenced in the document.
+/* [20] */
+$$$/private/svgFileFormat/Str/ReferencedIn/2=
+/* [21] */
+$$$/svgFileFormat/Str/DirectlyIn/1=Embed the images directly in the document. This increases file size, but ensures that the images will always be 
+/* [22] */
+$$$/svgFileFormat/Str/DirectlyIn/2=included with the file.
+/* [23] */
+$$$/svgFileFormat/Str/Original/1=Link document to images exported from the original Illustrator file. This is useful for multiple SVG files that share 
+/* [24] */
+$$$/svgFileFormat/Str/Original/2=common raster elements. Images are saved as JPEG (no alpha channel) or PNG (alpha channel).
+/* [25] */
+$$$/svgFileFormat/Str/PreserveEditingC/1=Select this option to preserve Illustrator editing capabilities for future revisions.
+/* [26] */
+$$$/private/svgFileFormat/Str/PreserveEditingC/2=
+/* [27] */
+$$$/svgFileFormat/Str/DTDLabel/1=Specifies the desired SVG XML Document Type Definition.
+/* [28] */
+$$$/private/svgFileFormat/Str/DTDLabel/2=
+/* [29] */
+$$$/svgFileFormat/Str/DTD10/1=The exported file has features and syntax compatible with the SVG 1.0 Specification.
+/* [30] */
+$$$/private/svgFileFormat/Str/DTD10/2=
+/* [31] */
+$$$/svgFileFormat/Str/DTD11/1=The exported file has features and syntax compatible with the SVG 1.1 Specification.
+/* [32] */
+$$$/private/svgFileFormat/Str/DTD11/2=
+/* [33] */
+$$$/svgFileFormat/Str/DTD11Tiny/1=The exported file has features and syntax compatible with the SVG Tiny 1.1 Specification. 
+/* [34] */
+$$$/svgFileFormat/Str/DTD11Tiny/2=This profile is suitable for mobile phones.
+/* [35] */
+$$$/svgFileFormat/Str/DTDTiny11Plus/1=The exported file has features and syntax compatible with the SVG Tiny 1.1 Specification with the additional support of fill-opacity, stroke-opacity and gradient. 
+/* [36] */
+$$$/svgFileFormat/Str/DTDTiny11Plus/2=This profile is suitable for mobile phones.
+/* [37] */
+$$$/svgFileFormat/Str/DTDBasic11/1=The exported file has features and syntax compatible with the SVG Basic 1.1 Specification. This profile is suitable for PDAs.
+/* [38] */
+$$$/private/svgFileFormat/Str/DTDBasic11/2=
+/* [39] */
+$$$/svgFileFormat/Str/TypeLabel/1=Select the desired font type setting.
+/* [40] */
+$$$/private/svgFileFormat/Str/TypeLabel/2=
+/* [41] */
+$$$/svgFileFormat/Str/FontCEF/1=This font format produces the best visual fidelity for displaying text. The Adobe SVG Viewer can display text using this format, however not all viewers support this format.
+/* [42] */
+$$$/private/svgFileFormat/Str/FontCEF/2=
+/* [43] */
+$$$/svgFileFormat/Str/FontSVG/1=This is the standard W3C SVG font format.  It is supported by all viewers, but does not produce the best visual fidelity for small text due to the lack of font hinting.
+/* [44] */
+$$$/private/svgFileFormat/Str/FontSVG/2=
+/* [45] */
+$$$/svgFileFormat/Str/FontOutline/1=This font option will convert all text to outlined paths. Note however that the visual fidelity of small outlined text may not be accurately preserved.
+/* [46] */
+$$$/private/svgFileFormat/Str/FontOutline/2=
+/* [47] */
+$$$/svgFileFormat/Str/ShowMore/1=Show entire SVG dialog.
+/* [48] */
+$$$/private/svgFileFormat/Str/ShowMore/2=
+/* [49] */
+$$$/svgFileFormat/Str/ShowLess/1=Show basic SVG dialog.
+/* [50] */
+$$$/private/svgFileFormat/Str/ShowLess/2=
+/* [51] */
+$$$/svgFileFormat/Str/ShowCode/1=Launches a web browser to display the SVG code.
+/* [52] */
+$$$/private/svgFileFormat/Str/ShowCode/2=
+/* [53] */
+$$$/svgFileFormat/Str/Preview/1=Launches a web browser to view the SVG document.
+/* [54] */
+$$$/private/svgFileFormat/Str/Preview/2=
+/* [55] */
+$$$/svgFileFormat/Str/DTD12Tiny/1=The exported file has features and syntax compatible with the SVG Tiny 1.2 Specification. 
+/* [56] */
+$$$/svgFileFormat/Str/DTD12Tiny/2=This profile is suitable for mobile phones.
+/* [57] */
+$$$/svgFileFormat/Str/MobilePreview/1=Launches Device Central to preview the SVG contents.
+/* [58] */
+$$$/private/svgFileFormat/Str/MobilePreview/2=

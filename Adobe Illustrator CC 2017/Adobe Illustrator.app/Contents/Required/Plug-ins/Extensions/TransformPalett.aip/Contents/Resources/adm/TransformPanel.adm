@@ -1,0 +1,45 @@
+sheet TransformPanel
+{
+constant:
+	kStateWithPropertiesWithOptions:	1;
+	kStateWithPropertiesNoOptions:		2;
+	kStateNoPropertiesNoOptions:		3;
+	kStateNoPropertiesWithOptions:		4;
+
+interface:
+	showConstrainIcon: false;
+	showNinePinPoint: 0;
+	rotateItems: ["$$$/TransformPalett/Menu/Axis/1= 0"
+							,"$$$/TransformPalett/Menu/Axis/2= 30"
+							,"$$$/TransformPalett/Menu/Axis/3= 60"
+							,"$$$/TransformPalett/Menu/Axis/4= 90"
+							,"$$$/TransformPalett/Menu/Axis/5= 120"
+							,"$$$/TransformPalett/Menu/Axis/6= 150"
+							,"$$$/TransformPalett/Menu/Axis/7= 180"
+							,"$$$/TransformPalett/Menu/Axis/8= 210"
+							,"$$$/TransformPalett/Menu/Axis/9= 240"
+							,"$$$/TransformPalett/Menu/Axis/10= 270"
+							,"$$$/TransformPalett/Menu/Axis/11= 300"
+							,"$$$/TransformPalett/Menu/Axis/12= 330"];
+	shearItems: ["$$$/TransformPalett/Menu/Shears/1= -60"
+							,"$$$/TransformPalett/Menu/Shears/2= -45"
+							,"$$$/TransformPalett/Menu/Shears/3= -30"
+							,"$$$/TransformPalett/Menu/Shears/4= -20"
+							,"$$$/TransformPalett/Menu/Shears/5= -10"
+							,"$$$/TransformPalett/Menu/Shears/6=   0"
+							,"$$$/TransformPalett/Menu/Shears/7=  10"
+							,"$$$/TransformPalett/Menu/Shears/8=  20"
+							,"$$$/TransformPalett/Menu/Shears/9=  30"
+							,"$$$/TransformPalett/Menu/Shears/10=  45"
+							,"$$$/TransformPalett/Menu/Shears/11=  60"];
+	PanelState: kStateWithPropertiesWithOptions;
+	constrain: 1;
+	ninePointPinSelector: 4;
+	showWarningIcon: false;
+	hiddenText: false;
+	scaleStrokeAndEffect: 0;
+	scaleCornerRadiiForShapes: false;
+	PropertiesViewAvailable: false;
+	ShowPropertiesSection: true <== (PanelState == kStateWithPropertiesWithOptions || PanelState == kStateWithPropertiesNoOptions) ? true : false;
+	ShowOptions: true <== (PanelState == kStateWithPropertiesWithOptions || PanelState == kStateNoPropertiesWithOptions) ? true : false;
+}

@@ -1,0 +1,7 @@
+sheet FuzzyEffectUI
+{
+	interface:
+		FeatherRadiusCell: 1;
+		IsPreviewCheckBoxEnabled: false;
+		unlink PreviewCheckBoxCell: false <== (IsPreviewCheckBoxEnabled == false) ? false : PreviewCheckBoxCell;	
+}

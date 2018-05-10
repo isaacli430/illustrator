@@ -1,0 +1,120 @@
+layout FlattenTransparencyUI16100
+{
+    view subview(identifier: "AIEveSubView",
+				layout_theme: @dialog_large,				
+				show_border: false,
+				placement: @place_column,
+				spacing: @unrelated_spacing)
+	{
+		column(horizontal: @align_fill)
+		{
+			group(identifier: "SettingsGp",
+				header: "popup(identifier: 'PresetPopUp', horizontal: @align_left,
+				name: '$$$/FlattenTransparency/Dlg/PresetPopupLabel=P&reset:',
+						include_custom_item: true,
+							items: [{name:'XXXXXXXXXXXXXXXXXXXXXXXX', value: 'PlaceholderText'}],
+							set_default_focus: true,
+							horizontal: @align_left)",
+					placement: @place_column, horizontal: @align_fill)
+			{
+				combo_slider(identifier: "BalanceSlider",
+									slider_point: @up,
+									horizontal: @align_fill,
+									min_max_filter: @filterRasterVector,
+									name: "$$$/FlattenTransparency/Dlg/RasterVectorBalance=Raster/Vector &Balance:",
+									decimal_places: 0,
+									minLength: 150,
+		                			ticks_pos: [0, 0.250 ,0.500, 0.750, 1],
+ 									show_ticks: true,
+									snap_on_ticks: true,
+									bind_final: true,
+									snap_to_int: true,
+									unit: "NumberEditUnit_NoUnit",                               
+									left_mini_label: "$$$/FlattenTransparency/Dlg/Rasters=Rasters",
+									right_mini_label: "$$$/FlattenTransparency/Dlg/Vectors=Vectors",                                      
+									digits: 3);									
+				unit_hot_number(identifier: "LineResolutionPopUp", 
+					name: "$$$/FlattenTransparency/Dlg/MaximumResolution=&Line Art and Text Resolution:", 
+					popuplist:true,
+					digits:7,
+					min_value:1,
+					max_value:9600,
+					unit: "NumberEditUnit_NoUnit",                
+					decimal_places: 2,
+					suffix: "$$$/FlattenTransparency/Dlg/PPI=ppi");		
+				unit_hot_number(identifier: "GradientResolutionPopUp", 
+					name: "$$$/FlattenTransparency/Dlg/MinimumResolution=&Gradient and Mesh Resolution:", 
+					popuplist:true,
+					digits:7,
+					min_value:1,
+					max_value:9600,
+					unit: "NumberEditUnit_NoUnit",    
+					decimal_places: 2,
+					suffix: "$$$/FlattenTransparency/Dlg/PPI=ppi");
+				checkbox(default: true,
+						guide_mask: [ @guide_label ],	
+						identifier: "convertText",
+						name: "$$$/FlattenTransparency/Dlg/CheckboxOutlineText=Convert All &Text to Outlines");	
+				checkbox(default: true,
+						guide_mask: [ @guide_label ],
+						identifier: "convertStrokes",
+						name: "$$$/FlattenTransparency/Dlg/CheckboxOutlineStrokes=Convert All &Strokes to Outlines");				
+				checkbox(default: true,
+					identifier: "clipComplex",
+					guide_mask: [ @guide_label ],
+					name: "$$$/FlattenTransparency/Dlg/CheckboxClipComplexRegions=Clip Comple&x Regions");
+				checkbox(default: false,
+					identifier: "antiAliasOption",
+					guide_mask: [ @guide_label ],
+					name: "$$$/FlattenTransparency/Dlg/CheckboxAntiAliasOption2=A&nti-alias Rasters");
+			}	
+			checkbox(default: true,
+					identifier: "preserveAlphaTransparency",
+					guide_mask: [ @guide_label ],
+					name: "$$$/FlattenTransparency/Dlg/CheckboxPreserveAlpha=Preserve &Alpha Transparency");	
+			checkbox(default: true,
+					identifier: "preserveOverPrintsAndSpotColors",
+					guide_mask: [ @guide_label ],
+					name: "$$$/FlattenTransparency/Dlg/CheckboxPreserveSpotsAndOverprints=Preserve &Overprints and Spot Colors");										
+			column(spacing: @related_spacing)
+			{
+				row(horizontal: @align_fill, child_vertical: @align_center, spacing: @label_widget_spacing)
+			  	{
+					info_icon(identifier: "InfoIcon1", icontype:"note",size:"small");
+					static_text(identifier: "StaticTxtOverprintFlatteningInfo",
+					horizontal: @align_fill,
+					theme_font_size: @small,
+					name: "$$$/FlattenTransparency/Dlg/OverprintFlatteningWarning=Overprints will not be preserved in areas that interact with transparency.");
+			  	}
+		
+				row(horizontal: @align_fill, child_vertical: @align_center, spacing: @label_widget_spacing)
+			  	{
+					info_icon(identifier: "InfoIcon2", icontype:"note",size:"small");
+					static_text(identifier: "StaticTxtOverprintPreviewInfo",								
+									horizontal: @align_fill,
+									theme_font_size: @small,
+									name: "$$$/FlattenTransparency/Dlg/OverprintPreviewWarning=Turn on Overprint Preview to preview flattened spot colors.");   
+			  	}		
+			 }
+		}
+	row(horizontal: @align_fill,spacing: @separated_spacing, vertical: @align_fill)
+       {
+		row(child_horizontal: @align_left, vertical: @align_fill,child_vertical: @align_center)
+		{
+			checkbox(identifier: "previewButton",
+				name: "$$$/FlattenTransparency/Dlg/CheckboxPreview=&Preview",				
+				guide_mask: [@guide_label]);
+	      		button(identifier: "savePresetButton",
+               		name: "$$$/FlattenTransparency/Dlg/SavePreset=Sa&ve Preset...", vertical: @align_fill,
+					commit_button: true);		
+		}
+          row(horizontal: @align_right, reverse: os == @mac, child_vertical: @align_center, spacing: @related_spacing)
+		{	
+			 button(identifier: "okButton", commit_button: true,
+               				name: "$$$/gOK=OK");
+			 button(identifier: "cancelButton", commit_button: true,
+               				name: "$$$/gCancel=Cancel");
+           	}
+       }           
+   }
+}

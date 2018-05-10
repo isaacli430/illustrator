@@ -1,0 +1,21 @@
+sheet SwatchConflictOptions
+{
+interface:
+	/* These cells are set/queried from code */
+	Text: '$$$/_SwatchConflictDlg/Dlg/SwatchConflict/textSwatchConflictText=The color swatch \"%s\" has a conflict with the current document.';
+	Merge: true <== MergeOption ? true : false;
+	Locked: false;
+	ApplyToAll: false;
+
+	/* These cells are bound to the two radio buttons */
+	MergeOption: true;
+	AddOption: false <== Locked ? false : AddOption;
+
+logic:
+	/* This enforces the radio-group behavior */
+	when (!Locked) relate
+	{
+		MergeOption <== !AddOption;
+		AddOption <== !MergeOption;
+	}
+}

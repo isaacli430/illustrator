@@ -1,0 +1,120 @@
+layout CSSExportOptionsDlg
+{
+    view subview(identifier: "AIEveSubView",
+				 layout_theme: @dialog,
+				 child_horizontal: @align_fill,
+				 placement: @place_column,
+				 show_border: false,
+				 spacing: @unrelated_spacing)
+    {
+        column(child_horizontal: @align_fill)
+        {
+			group(name: "$$$/CSSExtract/Dlg/Options/Units=CSS Units", guide_mask: [ @guide_label])
+			{
+				radiogroup()
+				{
+					radio_button(name: "$$$/CSSExtract/Dlg/Options/Pixels=Pi&xels",
+								identifier: "PixelRadioButton",
+								bind: @UnitRadioGp,
+								value: 0,
+								set_default_focus: true);
+			
+
+					radio_button(name: "$$$/CSSExtract/Dlg/Options/Points=&Points",
+								identifier: "PointRadioButton",
+								bind: @UnitRadioGp,
+								value: 1);
+				}
+			}		 
+				
+			row(child_horizontal: @align_fill, child_vertical: @align_fill)
+			{
+				group(name: "$$$/CSSExtract/Dlg/Options/Appearance=Object Appearance", guide_mask: [ @guide_label])
+				{
+					checkbox(name: "$$$/CSSExtract/Dlg/Options/Fill=Include &Fill",
+						identifier: "fillCheckBox",
+						bind: @FillCheckBoxCell);
+
+					checkbox(name: "$$$/CSSExtract/Dlg/Options/Stroke=Include &Stroke",
+						identifier: "strokeCheckBox",
+						bind: @StrokeCheckBoxCell);
+
+					checkbox(name: "$$$/CSSExtract/Dlg/Options/Opacity=Include &Opacity",
+						identifier: "opacityCheckBox",
+						bind: @OpacityCheckBoxCell);
+				}	
+
+				group(name: "$$$/CSSExtract/Dlg/Options/Position_and_size=Position and Size", guide_mask: [ @guide_label])
+				{
+					checkbox(name: "$$$/CSSExtract/Dlg/Options/PositionInfo=Include A&bsolute Position",
+						identifier: "positionCheckBox",
+						bind: @PositionCheckBoxCell);
+
+					checkbox(name: "$$$/CSSExtract/Dlg/Options/Dimension=Include &Dimensions",
+						identifier: "dimensionsCheckBox",
+						bind: @DimensionsCheckBoxCell);
+				}
+			}
+			group(name: "$$$/CSSExtract/Dlg/Options/Other= Options")
+			{
+				checkbox(name: "$$$/CSSExtract/Dlg/Options/GenerateUnnamed=&Generate CSS for Unnamed Objects",
+								identifier: "generateCheckBox",
+								bind: @GenerateCheckBoxCell, guide_mask: [ @guide_label]);
+									
+				checkbox(name: "$$$/CSSExtract/Dlg/Options/Vendor=&Include Vendor Pre-fixes",
+								identifier: "vendorCheckBox",
+								bind: @VendorCheckBoxCell, guide_mask: [ @guide_label]);
+				row()
+				{
+					column(horizontal : @align_left)
+					{
+						checkbox(identifier:"Webkit",name: "$$$/Browser/Options/Webkit=Webkit",indent: gIndent, guide_mask: [ @guide_label ], bind : @WebkitCheckBoxCell);
+						checkbox(identifier:"Mozillafirefox",name: "$$$/Browser/Options/Firefox=Firefox",indent: gIndent, guide_mask: [ @guide_label ], bind : @MozillafireFoxCheckBoxCell);
+						checkbox(identifier:"IExplorer",name: "$$$/Browser/Options/IExplorer=Internet Explorer",indent: gIndent, guide_mask: [ @guide_label ], bind : @IExplorerCheckBoxCell);
+						checkbox(identifier:"Opera",name: "$$$/Browser/Options/Opera=Opera",indent: gIndent, guide_mask: [ @guide_label ], bind : @OperaCheckBoxCell);
+					}
+				}				
+
+				column(spacing : 0)
+				{
+					checkbox(name: "$$$/CSSExtract/Dlg/Options/UnsupportedArt=R&asterize Unsupported Art",
+									identifier: "unsupportedArtCheckBox",
+									bind: @UnsupportedArtCheckBoxCell, guide_mask: [ @guide_label] );
+
+					row(horizontal: @align_fill,child_horizontal: @align_fill)
+					{
+						popup(identifier: "ResolutionPopup", include_custom_item: false, bind: @ResolutionPopup,
+								name: "$$$/Rasterize/Dlg/AutoOptions/GroupResolution=&Resolution:",
+								popup_minimum_width_chars: 17, popup_maximum_width_chars: 17,
+								items: [{ name: "$$$/CSSExtract/Dlg/Options/UseEffectsSetting=Use Document Raster Effects Resolution", value: 300},
+										{ name: "$$$/CSSExtract/Dlg/Options/Otherresolution=Other", value: -1 }]);
+					
+						panel(bind: @ResolutionPopup, value: -1)
+						{
+							unit_hot_number(identifier: "ResolutionNumberEdit",
+											min_value: 1,
+											max_value: 2400,
+											decimal_places: 2,
+											digits: 4,
+											suffix: "$$$//CSSExtract/Dlg/Options/TextResolution=ppi",
+											bind: @OtherResolution,
+											guide_mask: [@guide_label]);	
+						}			
+					}
+				}	
+			}
+		}
+		row(reverse: os == @mac, spacing: @related_spacing,horizontal: @align_right)
+		{
+			button(name: "$$$/gOK=OK",
+					identifier: "okButton",
+					action: @ok,
+					commit_button: true);
+
+			button(identifier: "cancelButton",
+					name: "$$$/gCancel=Cancel",
+					action: @cancel,
+					commit_button: true);
+		}
+    }
+}

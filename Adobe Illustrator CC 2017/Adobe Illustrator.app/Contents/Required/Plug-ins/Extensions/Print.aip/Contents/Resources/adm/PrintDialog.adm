@@ -1,0 +1,192 @@
+sheet PrintDialog
+{
+constant:
+	PresetNames: [
+					"<Options Groups>",
+					"$$$/Print/Str/1011=General",
+					"$$$/Print/Str/1012=Marks and Bleed",
+					"$$$/Print/Str/1013=Output",
+					"$$$/Print/Str/1014=Graphics",
+					"$$$/Print/Str/1015=Color Management",
+					"$$$/Print/Str/1016=Advanced",
+					"$$$/Print/Str/1017=Summary"
+				];
+	kPrintDialogDecimalPointPrecision : 4;
+	ColorDescriptionLabelArray:	[
+		"$$$/Print/Options/Color/Info/Label/Description=Description",
+		"$$$/Print/Options/Color/Info/Label/Alert=Warning",
+		"$$$/Print/Options/Color/Info/Label/Reminder=Reminder"
+	];
+	ColorItemDescriptions: [
+		"",
+		"$$$/Print/Options/Color/Info/DocumentProfile=Shows the name of the document profile. When no profile is embedded in the document, this shows the profile as specified in the Color Settings dialog box.",
+		"$$$/Print/Options/Color/Info/ColorHandling=Color Handling determines if color management will be used, and if so, whether it happens in the application or at the printing device.",
+		"$$$/Print/Options/Color/Info/ColorHandling/Application=To preserve appearance, Illustrator will perform any necessary conversions to color numbers appropriate for your selected printer.",
+		"$$$/Print/Options/Color/Info/ColorHandling/PostScript=The PostScript printer converts document color numbers.",
+		"$$$/Print/Options/Color/Info/PrinterProfile=Select the profile applicable for the printer and type of paper to be used.",
+		"$$$/Print/Options/Color/Info/Intent=A rendering intent determines how a color management system handles color conversion from one color space to another. The rendering intent you choose depends on whether colors are critical in an image and on your preference of what the overall color appearance of an image should be.",
+		"$$$/Print/Options/Color/Info/Intent/Perceptual=Aims to preserve the visual relationship between colors so it's perceived as natural to the human eye, even though the color values themselves may change. This intent is suitable for photographic images with out-of-gamut colors.",
+		"$$$/Print/Options/Color/Info/Intent/Saturation=Tries to produce vivid colors in an image at the expense of color accuracy. This rendering intent is suitable for business graphics like graphs or charts, where bright saturated colors are more important than the exact relationship between colors (such as in a photographic image).",
+		"$$$/Print/Options/Color/Info/Intent/Relative=Compares the white of the source color space to that of the destination color space and shifts all colors accordingly. Out-of-gamut colors are shifted to the closest reproducible color in the destination color space. Relative colorimetric preserves more of the original colors in an image than Perceptual.",
+		"$$$/Print/Options/Color/Info/Intent/Absolute=Leaves colors that fall inside the destination gamut unchanged. Out-of-gamut colors are shifted to the closest reproducible color. No scaling of colors to destination white point is performed. This intent aims to maintain color accuracy at the expense of preserving relationships between colors, and is suitable for proofing to simulate the output of a particular device.",
+		"$$$/Print/Options/Color/Info/Preservation/CMYK=If unchecked, all color numbers will be subject to color conversion. If checked, CMYK objects without embedded profiles and native objects (such as line art or type) are not subject to color conversion. Images using profiles that differ from the profile of the output device will be converted.",
+		"$$$/Print/Options/Color/Info/Preservation/RGB=If unchecked, all color numbers will be subject to color conversion. If checked, RGB objects without embedded profiles and native objects (such as line art or type) are not subject to color conversion. Images using profiles that differ from the profile of the output device will be converted.",
+		"$$$/Print/Options/Color/Info/Preservation=If unchecked, all color numbers will be subject to color conversion. If checked, objects without embedded profiles and native objects (such as line art or type) are not subject to color conversion. Images using profiles that differ from the profile of the output device will be converted.",
+		"$$$/Print/Options/Color/Info/Warning=Check this option to prevent uncalibrated colors from being converted (when using Application Color Management) or to leave them untagged (when using PostScript Color Management).",
+		"$$$/Print/Options/Color/Info/Warning/CMYK=This document contains CMYK colors that use a different profile than the profile selected for your printer.  This may result in unwanted color conversions of CMYK objects. Select 'Preserve CMYK Numbers' to avoid this warning.",
+		"$$$/Print/Options/Color/Info/Warning/RGB=This document contains RGB colors that use a different profile than the profile selected for your printer.  This may result in unwanted color conversions of RGB objects. Select 'Preserve RGB Numbers' to avoid this warning.",
+		"$$$/Print/Options/Color/Info/Reminder=Remember to disable color management in the printer driver dialog box."
+	];
+	All:1;
+	Range:0;
+interface:
+	isMac:false;
+	editMode:false;
+	PrinterString: isMac ? '$$$/Print/Options/Printer/Mac=Printer...':'$$$/Print/Options/Printer/Win=Set&up...';
+	isPSPrinter:true;
+	iPresets:	[
+					{ name: PresetNames[1], value: 1 },
+					{ name: PresetNames[2], value: 2 },
+					{ name: PresetNames[3], value: 3 },
+					{ name: PresetNames[4], value: 4 },
+					{ name: PresetNames[5], value: 5 },
+					{ name: PresetNames[6], value: 6 },
+					{ name: PresetNames[7], value: 7 }
+				];
+	iLayers: [
+					{ name: "$$$/Print/Str/1101=Visible & Printable Layers", value: 0 },
+					{ name: "$$$/Print/Str/1102=Visible Layers", value: 1 },
+					{ name: "$$$/Print/Str/1103=All Layers", value: 2 }
+				];
+	iMode: [
+					{ name: "$$$/Print/Str/1601=Composite", value: 0 },
+					{ name: "$$$/Print/Str/1602=Separations (Host-Based)", value: 1 },
+					{ name: "$$$/Print/Str/1603=In-RIP Separations", value: 2 }
+			];
+	iEmulsion: [
+				{ name: "$$$/Print/Str/1701=Up (Right Reading)", value: 0 },
+				{ name: "$$$/Print/Str/1702=Down (Right Reading)", value: 1 }
+		];
+	iImageOptions: [
+				{ name: "$$$/Print/Str/1801=Positive", value: 0 },
+				{ name: "$$$/Print/Str/1802=Negative", value: 1 }
+		];
+	iPageScalingOptions: [
+							{name:"$$$/Print/Options/General/NoScale=Do Not Scale", value:5},
+							{name:"$$$/Print/Str/CustomScale=Custom",value:1},
+							{name:'$$$/Print/Options/General/Fit=Fit to Page', value :2},
+							{name:"$$$/Print/Str/TileFull=Tile Full Pages", value: 3},
+							{name: "$$$/Print/Str/TileImage=Tile Imageable Areas", value:4}
+						];
+	DeviceIndependent:false;
+	valuePresets:1;
+	valueOverlayName <== PresetNames[valuePresets];
+	
+/* ======================================== General Panel =====================================================*/
+	numArtboardInDoc:2;
+	numArtboardToBePrinted:1;
+	Copies:1<== editMode || DeviceIndependent? 1: Copies;
+	Collate:false <== editMode || DeviceIndependent || Copies <= 1 || (numArtboardToBePrinted <=1 && (valuePageScaling == 1 || valuePageScaling == 2))? false: Collate;
+	ReverseOrder:false <== editMode ? false:ReverseOrder;
+	SkipBlank:false <== editMode || (numArtboardToBePrinted <=1 && (valuePageScaling == 5 || valuePageScaling == 1 || valuePageScaling == 2)) || (valueIgnoreArtboards == true) ? false: SkipBlank;
+	valueLayers: 0;
+	valueIgnoreArtboards: false;
+	unlink valueSelectedPages: All <== editMode || valueIgnoreArtboards == true || (numArtboardInDoc == 1) ? SavedValueSelectedPages : valueSelectedPages;
+	SavedValueSelectedPages:All <== editMode ||valueIgnoreArtboards == true || (numArtboardInDoc == 1) ? SavedValueSelectedPages : valueSelectedPages;
+	unlink valuePageRange: "" <== editMode || valueIgnoreArtboards == true || (numArtboardInDoc == 1) ? SavedValuePageRange : valuePageRange;
+	SavedValuePageRange: "" <== editMode || valueIgnoreArtboards == true || (numArtboardInDoc == 1) ? SavedValuePageRange : valuePageRange;
+	ShowRangeWarning:true;
+	
+	unlink enableAutoRotate:true <== DeviceIndependent ? false: enableAutoRotate;
+	unlink AutoRotate:true <== enableAutoRotate?AutoRotate:false; 
+	savedOrientation:1 <==  DeviceIndependent || AutoRotate ? savedOrientation: orientation;
+	unlink orientation:1 <==  DeviceIndependent || AutoRotate ? savedOrientation: orientation;
+	canDoTransverse: true;
+	Transverse:false <== canDoTransverse ? Transverse: false;
+
+	fitToPageScaling:80;
+	unlink customScaling:false<== valuePageScaling != 2 && !DeviceIndependent && valuePageScaling != 5 ? true : false;
+	unlink ScalingWidth: 100 <== valuePageScaling != 2 ? ( customScaling? ScalingWidth: 100) : 100;
+	unlink ScalingHeight: 100 <== valuePageScaling != 2 ? ( customScaling? ScalingHeight: 100) : 100;
+	unlink ConstrainScale : true <== customScaling ?  ConstrainScale: SavedConstrainScale;
+	SavedConstrainScale : true <== customScaling ?  ConstrainScale: SavedConstrainScale;
+	valuePageScaling: 0 <== DeviceIndependent? 1: valuePageScaling;
+	minOverlap:0;
+	maxOverlap:100;
+	unlink valueOverlap:0 <== valuePageScaling == 3 ? valueOverlap:0;
+	unlink UseTileRange:false <== editMode || (valuePageScaling != 3 && valuePageScaling != 4) ? false:UseTileRange;
+	unlink TileRangeValue:"" <== !editMode && (valuePageScaling == 3 || valuePageScaling == 4) ? TileRangeValue : SavedTileRangeValue; 
+	SavedTileRangeValue: "" <== !editMode && (valuePageScaling == 3 || valuePageScaling == 4) ? TileRangeValue : SavedTileRangeValue;
+/* ======================================== Marks & Bleed Panel =====================================================*/
+	MarkType:1;
+	MarkWeight:2;
+	unlink MarkOffset:6 <== MarkType == 1 ? MarkOffset: 0;
+	bleed_values_locked:false;
+/* ======================================== Output Panel =====================================================*/
+	numInks:3;
+	valueMode: 0 <== DeviceIndependent|| !isPSPrinter? 0:valueMode;
+	valueEmulsion: 0 <== DeviceIndependent? 0:valueEmulsion;
+	unlink valueImage: 0 <== DeviceIndependent|| valueMode == 0 || !isPSPrinter? 0:valueImage;
+	valuePrinterResolution: 4;
+	unlink OverPrintBlack:false<==DeviceIndependent || valueMode == 0 ? false : OverPrintBlack;
+	unlink ConvertAllSpot:false <== !isPSPrinter || (numInks <= 4 && !editMode) ? false: ConvertAllSpot;
+/* ======================================== Graphics Panel =====================================================*/
+	DisableFlatnessGroup:false <== !isPSPrinter || DeviceIndependent;
+	rangeFlatness: {min_value : 1, max_value : 10};
+	unlink valueAutoFlat: false <== DisableFlatnessGroup ? DeviceIndependent: valueAutoFlat;
+	unlink valueFlatness: 1 <== !DisableFlatnessGroup && valueAutoFlat == false ? valueFlatness : RememberValueFlatness;
+	RememberValueFlatness: 1 <==  !DisableFlatnessGroup && valueAutoFlat == false ? valueFlatness : RememberValueFlatness;
+	CanDoBianryPrinting:true;
+	IsPSLevel3Supported:false;
+	unlink FontsDownload:1 <== isPSPrinter ? FontsDownload:0;
+	unlink PSLevel:2 <== isPSPrinter ? (IsPSLevel3Supported ? PSLevel:2):0;
+	unlink PSFormat:1<== isPSPrinter ? ((DeviceIndependent || !CanDoBianryPrinting)? 2: PSFormat):0;
+	unlink L1Grad:false<== isPSPrinter? L1Grad:false;
+	DRES:"";
+/* ======================================== Color Panel =====================================================*/
+	ColorDescriptionLabelIndex:0;
+	ColorDescriptionIndex:0;
+	ColorDescription <== ColorItemDescriptions[ColorDescriptionIndex];
+	ValueColorDescriptionLabel <== ColorDescriptionLabelArray[ColorDescriptionLabelIndex];
+	PrintMode:1;
+	unlink RenderingIntent:1 <== DeviceIndependent|| PrintMode == 0 ?0: RenderingIntent;
+	ColorHandling:1;
+	DocColorModel:1;
+	DocAndModelProfileMatch:true;
+	ProfileSameAsSource:false;
+	DisablePreserveNumber <== (PrintMode == 0 || (PrintMode == 2 && DocColorModel != 1) || (PrintMode != 2 && (!DocAndModelProfileMatch || ProfileSameAsSource)));
+	unlink PreserveNumbers:true <==  DisablePreserveNumber ? false : PreserveNumbers;
+	DocProfile:"";
+	ForceHidePreservationWarning:false;
+	ShowPreservationWarning:true <== PreserveNumbers || DisablePreserveNumber || ForceHidePreservationWarning  ? false:true;
+	ShowColorWarning<==!isPSPrinter;
+
+/* ======================================== Advanced Panel =====================================================*/
+	unlink BitMapPrinting:false <== isPSPrinter==false?(isMac==true?true:BitMapPrinting):false;
+	OverPrints:0;
+	SuppressWhiteOverprint:true;
+
+	ShowPreviewInfo <== !editMode && !DeviceIndependent;
+	ShowScaleInfo <== valuePageScaling == 2;
+	DocumentSize:'$$$/Print/Options/Thumbnail/EXVW/DocumentSize=9999.99 mm x 9999.99 mm';
+	PaperSize: '$$$/Print/Options/Thumbnail/EXVW/PaperSize=9999.99 mm x 9999.99 mm';
+
+/*================================================================================================================*/
+logic:
+	when (!editMode && valueIgnoreArtboards == false && numArtboardInDoc > 1) relate 
+	{
+		valuePageRange <== valuePageRange;
+		valueSelectedPages <== valuePageRange == "" ? All : Range;
+	}
+	when (!editMode && (valuePageScaling == 3 || valuePageScaling == 4)) relate 
+	{
+		TileRangeValue <== TileRangeValue;
+		UseTileRange <== TileRangeValue != "";
+	}
+	when(customScaling && ConstrainScale) relate
+	{
+		ScalingWidth <== ScalingHeight;
+		ScalingHeight <== ScalingWidth;
+	}
+
+}

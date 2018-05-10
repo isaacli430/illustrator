@@ -1,0 +1,114 @@
+layout DxfDwgImport
+{
+    view subview(identifier: "DxfDwgOptions",
+                 layout_theme: @dialog_large,
+                 name: "$$$/DxfDwg/Dlg/ImportParam/Caption=DXF/DWG Options",
+                 placement: @place_column,
+				 show_border: false,
+                 spacing: @unrelated_spacing)
+    {
+        column(spacing: @inter_group_spacing, horizontal: @align_fill)
+        {
+            group(horizontal: @align_fill, child_horizontal: @align_left,
+                  identifier: "ScaleFrame",
+                  name: "$$$/DxfDwg/Dlg/ImportParam/Cluster/Scale=Artwork Scale")
+            {
+				radiogroup(indentifier: "scaleRadioGroup")
+				{
+					radio_button(bind: @Scale,
+								identifier: "radioOriginalScale",
+								name: "$$$/DxfDwg/Dlg/ImportParam/RadioButton/OrginalSize=&Original Size",
+								value: @original,
+								set_default_focus: true,guide_mask: [ @guide_label ]);
+							
+					radio_button(bind: @Scale,
+								identifier: "radioScaleFit",
+								name: "$$$/DxfDwg/Dlg/ImportParam/RadioButton/FitArtboard=Scale to Fit &Artboard",
+								value: @scaleFit,guide_mask: [ @guide_label ]);
+
+					row(spacing: @label_widget_spacing)
+					{										
+						radio_button(bind: @Scale,
+									identifier: "radioScaleBy",
+									name: "$$$/DxfDwg/Dlg/ImportParam/RadioButton/ScaleBy=&Scale by:",
+									value: @scaleBy,guide_mask: [ @guide_label ]);
+						
+						unit_hot_number(identifier: "editNumScaleByPercent",
+									decimal_places: 4,
+									min_value: 0.0001,
+									max_value: 10000,
+									digits: 7,
+									unit: "NumberEditUnit_Percent",
+									guide_mask: [ @guide_label ]);
+					}
+				}
+
+                row(child_vertical: @align_center)
+                {
+                    unit_hot_number(identifier: "editNumScaleVal",
+									decimal_places: 4,
+									min_value: 0.0001,
+									max_value: 10000,
+									digits: 7,
+									name: "$$$/DxfDwg/Dlg/ImportParam/Static/Scale=Scal&e:",
+									guide_mask: [ @guide_label ]);
+
+                    unit_hot_number(identifier: "editNumScaleUnits",
+                    				decimal_places: 4,
+									min_value: 0.0001,
+									max_value: 10000,
+									digits: 7,
+									name: "$$$/DxfDwg/Dlg/ImportParam/Static/Units=&Unit(s) =");
+
+                    popup(identifier: "popupScaleType",
+                          include_custom_item: false,
+                          items: [ { name: "$$$/DxfDwg/UnitTypes/pt=Points",
+                                     value: "Points" },
+                                   { name: "$$$/DxfDwg/UnitTypes/pi=Picas",
+                                     value: "Picas" },
+                                   { name: "$$$/DxfDwg/UnitTypes/in=Inches",
+                                     value: "Inches" },
+                                   { name: "$$$/DxfDwg/UnitTypes/mm=Millimeters",
+                                     value: "Millimeters" },
+                                   { name: "$$$/DxfDwg/UnitTypes/cm=Centimeters",
+                                     value: "Centimeters" },
+                                   { name: "$$$/DxfDwg/UnitTypes/px=Pixels",
+                                     value: "Pixels" } ]);
+                }
+
+                checkbox(identifier: "checkBoxScaleLineWeights",
+                         name: "$$$/DxfDwg/Dlg/ImportParam/CheckBox/ScaleLineweights=Scale &Lineweights",guide_mask: [ @guide_label ]);
+            }
+
+            group(child_horizontal: @align_left,
+                  horizontal: @align_fill,
+                  identifier: "OptionsFrame",
+                  name: "$$$/DxfDwg/Dlg/ImportParam/Cluster/Options=Options",
+                  vertical: @align_proportional,guide_mask: [ @guide_label ])
+            {
+                popup(identifier: "popupLayout",
+                      name: "$$$/DxfDwg/Dlg/ImportParam/Static/Layout=La&yout:", include_custom_item: false,
+                          items: [ { name: "LayoutXXX", value: "LayoutXXX" } ],guide_mask: [ @guide_label ]);
+
+                checkbox(identifier: "checkBoxCenterArt",
+                         name: "$$$/DxfDwg/Dlg/ImportParam/CheckBox/CenterArt=&Center Artwork");
+
+                checkbox(identifier: "checkBoxMergeLayes",
+                         name: "$$$/DxfDwg/Dlg/ImportParam/CheckBox/MergeLayers=&Merge Layers");
+            }
+        }
+
+        row(horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+		{
+			button(default: true,
+				commit_button: true,
+				identifier: "okButton",
+				name: "$$$/gOK=OK");
+
+			button(cancel: true,
+				commit_button: true,
+				identifier: "cancelButton",
+				name: "$$$/gCancel=Cancel");
+		}
+    }
+}

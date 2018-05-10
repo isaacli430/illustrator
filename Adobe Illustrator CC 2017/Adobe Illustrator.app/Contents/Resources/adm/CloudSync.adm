@@ -1,0 +1,100 @@
+sheet CloudSyncPopup
+{
+	interface:
+		
+		SyncState: 2;
+		
+		/*Any changes here should have corresponding changes in AICloudSync.h*/
+			kNotSignedIn		:0;
+			kDisabledSyncing	:1;
+			kInSync				:2;
+			kCalculating		:3;
+			kSyncing			:4;
+			kStoppingSync		:5;
+			kReadyForApply		:6;
+			kConflict			:7;
+			kResolvingConflicts :8;
+			kApplyAndRestart	:9;
+			kApplying			:10;
+		
+		SyncError: 0;
+		/*Any changes here should have corresponding changes in AICloudSync.h*/
+			kNoSyncError			:0;
+			kServerError			:1;
+			kUserError				:2;
+			kNetworkError			:3;
+			kCloudSpaceFullError	:4;
+			kDiskFullError			:5;
+			kInvalidTokenError		:6;
+			kDatabaseCorruption		:7;
+			kUnknownError			:8;
+
+		UserID					:	"";
+		StatusString			:	"";
+		Conflict				<==	SyncState == kConflict;
+		showUserID				<== (SyncState == kInSync && SyncError == kNoSyncError) || (SyncState == kDisabledSyncing);
+		showProgressBar			<==	(SyncState == kSyncing || SyncState == kStoppingSync || SyncState == kResolvingConflicts) ;
+
+		settingsFailedMessage		:	"$$$/CloudSyncPopup/SyncDisabled=Sync Settings failed";
+		settingsNotAvailableMessage	:	"$$$/CloudSyncPopup/SyncNotAvailable=Sync Settings is not available.";
+		syncingMessage				:	"$$$/CloudSyncPopup/Syncing=Syncing... ";
+		pausingSyncMessage			:	"$$$/CloudSyncPopup/Pausing=Pausing Sync...";
+
+		SyncErrorToButtonState:		[
+										200,
+										202,
+										201,
+										202,
+										202,
+										202,
+										0,
+										0,
+										202
+									];
+		SyncStateToButtonState:		[
+										0,
+										1,
+										2,
+										0,
+										4,
+										4,
+										6,
+										0,
+										4,
+										9,
+										0
+									];
+		
+		SyncStateToAdditionalSyncMessage:[
+										"",										
+										"",
+										"",
+										syncingMessage,
+										syncingMessage,
+										pausingSyncMessage,
+										"",
+										"",
+										syncingMessage,
+										"",
+										""
+									];
+									
+		SyncErrorToAdditionalSyncMessage:[
+										"",
+										settingsFailedMessage,
+										"",	
+										settingsNotAvailableMessage,
+										"",
+										settingsFailedMessage,
+										settingsFailedMessage,
+										"",
+										""
+									];
+																	
+		ButtonState			<== (SyncState == kInSync)? SyncErrorToButtonState[SyncError] : SyncStateToButtonState[SyncState];
+		AdditionalSyncMessage <== (SyncState == kInSync)? SyncErrorToAdditionalSyncMessage[SyncError] : SyncStateToAdditionalSyncMessage[SyncState];
+		
+		
+		showAdditionalSyncMessage <== AdditionalSyncMessage != "";
+
+}

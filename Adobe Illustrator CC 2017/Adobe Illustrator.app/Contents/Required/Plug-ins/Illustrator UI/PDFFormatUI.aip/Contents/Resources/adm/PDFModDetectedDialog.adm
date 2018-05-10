@@ -1,0 +1,5 @@
+sheet PDFModDetectedDialog
+{
+	interface:
+		ReadPGF: true;
+}

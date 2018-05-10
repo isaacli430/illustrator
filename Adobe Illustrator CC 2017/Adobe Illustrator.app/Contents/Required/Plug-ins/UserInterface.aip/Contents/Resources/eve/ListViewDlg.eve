@@ -1,0 +1,17 @@
+layout ListViewDlg
+{
+    view subview(identifier: "AIEveSubView",
+				layout_theme: @dialog_large,spacing: @unrelated_spacing,
+				show_border: false)
+    {
+		column(horizontal:@align_fill)
+		{
+			static_text(identifier: "listDescription", name: "ListViewHeading", theme_font_size: @large);
+			multicolumn_tree(set_default_focus: true, identifier: "MCT", horizontal: @align_fill);
+		}
+		row(horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+		{	
+			button(name: "$$$/UserInterface/ListViewDlg/OK_Button=OK", identifier: "okButton", commit_button: true);
+		}		
+	}
+}

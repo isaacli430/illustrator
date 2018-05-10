@@ -1,0 +1,21 @@
+layout compositefontsnew
+{
+	view subview(name: "$$$/CompositeFontNewDialog/DialogName=New Composite Font",
+                     show_border: false,layout_theme: @dialog_large,
+                     placement: @place_row)
+	{
+		column(child_horizontal: @align_fill)
+		{
+			
+			edit_text(identifier: "FontName", characters: 22, set_default_focus: true, max_characters: 28, name: "$$$/CompositeFontNewDialog/Name=Name:");
+			
+			popup(identifier: "BasedOn", name: "$$$/CompositeFontNewDialog/BasedOn=Based On:");
+			
+			row(child_horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+			{
+				button(identifier: "okButton",     name: "$$$/gOK=OK", commit_button: true);
+				button(identifier: "cancelButton", name: "$$$/gCancel=Cancel", commit_button: true);
+			}
+		}
+	}
+}

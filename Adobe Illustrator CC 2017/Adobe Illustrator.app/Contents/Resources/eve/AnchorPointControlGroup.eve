@@ -1,0 +1,74 @@
+layout AnchorPointControlGroup
+{
+    view subview(identifier: "AnchorPointControlGroup"
+				, placement: @place_row
+				, layout_theme: @controlbar
+				, show_border: false
+				, child_vertical: @align_center
+				, margin: 0
+				, spacing: 5
+				, height: 31)
+    {
+		optional(identifier: "AnchorPointControlGroupSubGroup"
+				, placement: @place_row
+				, child_vertical: @align_center
+				, margin: 0)
+		{
+			row(spacing: 5)
+			{
+				row(spacing:@related_spacing, child_vertical: @align_center)
+				{
+					static_text(name: "$$$/AnchorPointControlGroup/ConvertAnchor=Convert:");
+					
+					button(identifier: "ConvertAnchorToCornerButton"
+							, action: @ConvertAnchorToCornerButtonAction
+							, image: {normal: "SP_AnchorCorner_Md_N.png", dark_normal: "SP_AnchorCorner_Md_N_D.png"}
+							, alt: "$$$/AI/AnchorPointControlGroup/ConverToCorner=Convert selected anchor points to corner"
+							, wants_focus: false);
+				}
+				
+				button(identifier: "ConvertAnchorToSmoothButton"
+						, action: @ConvertAnchorToSmoothButtonAction
+						, wants_focus: false
+						, image: {normal: "SP_AnchorSmooth_Md_N.png", dark_normal: "SP_AnchorSmooth_Md_N_D.png"}
+						, alt: "$$$/AI/AnchorPointControlGroup/ConverToSmooth=Convert selected anchor points to smooth");
+			}
+
+			row(spacing:@related_spacing, child_vertical: @align_center)
+			{
+				static_text(name: "$$$/AnchorPointControlGroup/Handles=Handles:");
+				button_bar(identifier: "ShowHandlesRadioButton",  bind: @HandlesRadioButtonsCell, items: [
+							{image: {normal: "SP_HandlesShow_Md_N.png", dark_normal: "SP_HandlesShow_Md_N_D.png"}, show_border: true, value: 0, alt: "$$$/AI/AnchorPointControlGroup/ShowHandles=Show handles for multiple selected anchor points"},
+							{ image: {normal: "SP_HandlesHide_Md_N.png", dark_normal: "SP_HandlesHide_Md_N_D.png"}, show_border: true, value: 1, alt: "$$$/AI/AnchorPointControlGroup/HideHandles=Hide handles for multiple selected anchor points"}                              
+																]);
+			}
+			row(spacing: 5)
+			{
+				row(spacing:@related_spacing, child_vertical: @align_center)
+				{
+					static_text(name: "$$$/AnchorPointControlGroup/AnchorPoints=Anchors:");
+					
+					button(identifier: "RemoveAnchorButton"
+							, action: @RemoveAnchorButtonAction
+							, wants_focus: false
+							, image: {normal: "SP_AnchorRemove_Md_N.png", dark_normal: "SP_AnchorRemove_Md_N_D.png"}
+							, alt: "$$$/AI/AnchorPointControlGroup/RemoveAnchor=Remove selected anchor points");
+				}
+				
+				button(identifier: "JoinAnchorsButton"
+						, action: @JoinAnchorsButtonAction
+						, image: {normal: "SP_AnchorConnect_Md_N.png", dark_normal: "SP_AnchorConnect_Md_N_D.png"}
+						, wants_focus: false
+						, alt: "$$$/AI/AnchorPointControlGroup/JoinAnchors=Connect selected end points"
+						, bind: @JoinAnchorsButtonCell);
+			
+			
+				button(identifier: "ScissorsButton"
+						, action: @ScissorsButtonAction
+						, wants_focus: false
+						, image: {normal: "SP_PathDeleteBetween_Md_N.png", dark_normal: "SP_PathDeleteBetween_Md_N_D.png"}
+						, alt: "$$$/AI/AnchorPointControlGroup/Scissors=Cut path at selected anchor points");
+			}
+		}
+	}
+}

@@ -1,0 +1,30 @@
+/* [1] */
+$$$/MPSParser/Str/Plugin/1=MPS Parser
+/* [2] */
+$$$/MPSParser/Str/Plugin/2=Parsed EPS
+/* [3] */
+$$$/MPSParser/Str/Plugin/3=Parsing PDF Format...
+/* [4] */
+$$$/MPSParser/Str/Plugin/4=Parsing EPS Format...
+/* [5] */
+$$$/MPSParser/Str/Plugin/5=The operation cannot complete because of an unknown error.
+/* [6] */
+$$$/MPSParser/Str/Plugin/6=Parsing could not complete because there is not enough memory. Some objects may be damaged or missing.
+/* [7] */
+$$$/MPSParser/Str/Plugin/7=The current layer is locked. To add artwork, unlock it in the Layers panel.
+/* [8] */
+$$$/MPSParser/Str/Plugin/8=Parsing WMF Format...
+/* [9] */
+$$$/MPSParser/Str/Plugin/9=Parsing EMF Format...
+/* [10] */
+$$$/MPSParser/Str/Plugin/10=Parsing PICT Format...
+/* [11] */
+$$$/MPSParser/Str/Plugin/11=DCS EPS files cannot be opened or embedded. Please place this file using the Link option.
+/* [12] */
+$$$/MPSParser/Str/Plugin/12= Encapsulated PostScript
+/* [13] */
+$$$/MPSParser/Str/Plugin/13= Windows Metafile
+/* [14] */
+$$$/MPSParser/Str/Plugin/14= Enhanced Metafile
+/* [15] */
+$$$/MPSParser/Str/Plugin/15= Macintosh PICT

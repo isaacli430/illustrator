@@ -1,0 +1,175 @@
+layout LivePaintGapOptionsDialog
+{
+    view subview(identifier: "AIEveSubView",
+		        layout_theme: @dialog_large,
+				placement: @place_column,
+				show_border: false,
+				spacing: @unrelated_spacing)
+	{
+		column(spacing: @inter_group_spacing, horizontal: @align_fill)
+		{
+			group(identifier: "GapDetectionGroup", horizontal: @align_fill,
+							header: "checkbox(identifier: 'GapDetectionCheckbox',
+												name: '$$$/PlanetX/Dialog/GapDetection/GapDetection=&Gap Detection',
+												bind: @GapDetectionStatus, horizontal: @align_left,
+												value_on: 1,
+												value_off: 0,
+												set_default_focus: true)")
+			{
+				column(horizontal: @align_fill)
+				{
+					row(child_vertical: @align_center)
+					{
+						popup(identifier: "GapSizePopupId",
+								name: "$$$/PlanetX/Dialog/GapDetection/MaxGapSize=Paint &stops at:",
+								items: @StopGapMenuItems,
+								include_custom_item: false,
+								bind: @GapSizePopup);
+						
+						unit_hot_number(identifier: "CustomGapEdit",
+										unit: "CurrentDocumentUnit",
+										decimal_places: 4,
+										min_value: 0.01,
+										stepper: true,
+										max_value: 72,
+										digits: 7,									
+										bind: @CustomGapEditValue,
+										unknown: @CustomGapEditUnknownState);
+						overlay(child_vertical: @align_center)
+						{
+							panel(bind: @ShowGapIcon, value: 3, margin: 0)
+							{
+								image(identifier: "SmallGapsIcon",  image: {normal:"SP_GapSmall_Md_N.png", dark_normal:"SP_GapSmall_Md_N_D.png"});
+							}
+							panel(bind: @ShowGapIcon, value: 6, margin: 0)
+							{
+								image(identifier: "MediumGapsIcon", image: {normal:"SP_GapMedium_Md_N.png", dark_normal:"SP_GapMedium_Md_N_D.png"});
+							}
+							panel(bind: @ShowGapIcon, value: 12, margin: 0)
+							{
+								image(identifier: "LargeGapsIcon", image: {normal:"SP_GapLarge_Md_N.png", dark_normal:"SP_GapLarge_Md_N_D.png"});
+							}
+							panel(bind: @ShowGapIcon, value: 0, margin: 0)
+							{
+								image(identifier: "CustomGapsIcon", image: {normal:"SP_GapCustom_Md_N.png", dark_normal:"SP_GapCustom_Md_N_D.png"});
+							}
+						}
+					}
+
+					row()
+					{
+						popup(identifier: "GapColorPopup",
+								name: "$$$/PlanetX/Dialog/Paintbucket/GapColor=Gap Pre&view Color:",
+								items: gSmallColorPopupList,
+								include_custom_item: false,
+								always_notify: true,
+								bind: @ColorPopupCell);
+						
+						swatch(	identifier: "colorSwatch",
+								border: @border_normal);
+					}
+					
+					separator(orientation: @horizontal, identifier: "separator");
+					
+					row(horizontal: @align_fill, child_vertical: @align_center)
+					{
+						display_text(name: "$$$/PlanetX/Dialog/GapDetection/NumGaps=Gaps Found: ", value: @NumGapsCell, identifier: "gapsFound");
+						button(identifier: "CloseGapsBtn", name: "$$$/PlanetX/Dialog/GapDetection/ExpandGaps=&Close gaps with paths", bind:@result, action: @ExpandGaps, horizontal: @align_right);
+					}
+				}
+			}
+			
+			group(horizontal: @align_fill, placement: @place_row, spacing: @connected_spacing)
+			{
+				info_icon(icontype: "note", size: "small", indefier: "warningIcon");
+				overlay(horizontal: @align_fill)
+				{
+					panel(bind: @DescString, value: 0, margin: 0)
+					{
+						static_text(characters: 1, horizontal: @align_fill, identifier: "hover1", theme_font_size: @small,
+								adjust_baseline_for_single_line_text: false,
+								name: "$$$/PlanetX/GapDetection/DefaultGapDetectionTip="
+								"This dialog sets the gap detection options for the selected Live Paint groups. "
+								"These options change how the Live Paint Bucket and Live Paint Selection tools apply color.");
+					}
+					panel(bind: @DescString, value: 1, margin: 0)
+					{
+						static_text(characters: 1, horizontal: @align_fill, identifier: "hover2", theme_font_size: @small,
+								adjust_baseline_for_single_line_text: false,
+								name: "$$$/PlanetX/GapDetection/NoSelectionTip="
+								"No Live Paint groups are selected. Changing settings sets the default gap detection options.");
+					}
+					panel(bind: @DescString, value: 2, margin: 0)
+					{
+						static_text(characters: 1, horizontal: @align_fill, identifier: "hover3", theme_font_size: @small,
+								adjust_baseline_for_single_line_text: false,
+								name: "$$$/PlanetX/GapDetection/GapDetectionCheckboxTip="
+								"Enabling gap detection stops paint from leaking through small areas between paths (gaps).");
+					}
+					panel(bind: @DescString, value: 3, margin: 0)
+					{
+						static_text(characters: 1, horizontal: @align_fill, identifier: "hover4", theme_font_size: @small,
+								adjust_baseline_for_single_line_text: false,
+								name: "$$$/PlanetX/GapDetection/GapSizePopupTrip="
+								"Specifies the largest gap size that paint will stop at. 'Custom Gaps' provides detailed numerical control of the size of gaps.");
+					}
+					panel(bind: @DescString, value: 4, margin: 0)
+					{
+						static_text(characters: 1, horizontal: @align_fill, identifier: "hover5", theme_font_size: @small,
+								adjust_baseline_for_single_line_text: false,
+								name: "$$$/PlanetX/GapDetection/PreviewColorTip="
+								"Specifies the color of the gap preview indicators.");
+					}
+					panel(bind: @DescString, value: 5, margin: 0)
+					{
+						static_text(characters: 1, horizontal: @align_fill, identifier: "hover6", theme_font_size: @small,
+								adjust_baseline_for_single_line_text: false,
+								name: "$$$/PlanetX/GapDetection/ExpandGapsTip="
+								"Closes currently detected gaps by inserting paths into the artwork.");
+					}
+				}
+			}
+		}
+		
+		row(horizontal: @align_fill, child_vertical: @align_center, spacing: @separated_spacing)
+		{
+			checkbox(identifier: "PreviewCheckBox",
+					bind: @PreviewCell,
+					state: "unchecked",
+					name: "$$$/PlanetX/Dialog/GapDetection/Preview=&Preview", horizontal: @align_left, 
+					guide_mask: [@guide_label]);
+
+			row(vertical: @align_fill,horizontal: @align_right, child_vertical: @align_fill, spacing: @button_group_spacing)
+			{
+				button(identifier: "ResetBtn", name: "$$$/PlanetX/Dialog/GapDetection/Default=Reset", 
+						commit_button: true,action: @ResetOptions);
+					
+				row(reverse: os == @mac, spacing: @related_spacing)
+				{
+					overlay()
+					{
+						optional(bind: @ShowSetDefaultButton, value: 0, margin: 0)
+						{
+							button(default: true,
+								commit_button: true,
+								name: "$$$/gOK=OK",
+								identifier: "okButton"); 
+						}
+					
+						optional(bind: @ShowSetDefaultButton, value: 1, margin: 0)
+						{
+							button(default: true, name: "$$$/PlanetX/GapDetection/SetDefault=Set Default",
+								commit_button: true,
+								identifier: "setDefaultButton", action: @SetDefault); 
+						}
+					}	
+
+					button( identifier: "cancelButton",
+							cancel: true,
+							commit_button: true,
+							name: "$$$/gCancel=Cancel");
+				}
+			}
+		}
+	}
+}

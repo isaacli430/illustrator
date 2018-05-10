@@ -1,0 +1,115 @@
+layout MergeToolUI
+{
+    view subview(identifier: "MergeToolOptions",
+                 layout_theme: @dialog_large,
+                 placement: @place_column,spacing: @unrelated_spacing ,
+                 child_horizontal: @align_fill,
+				 show_border: false)
+    {
+        column(spacing: @inter_group_spacing,horizontal: @align_fill)
+	{
+		group(identifier: "GapOptions",
+			placement: @place_row,
+			guide_mask: [@guide_label],horizontal: @align_fill,
+			header: "checkbox(identifier: 'gap_detection', set_default_focus: true, horizontal: @align_left,
+            name: '$$$/MergeTool/Dlg/MergeToolPreferences/GapDetection/GapDetectionOption=&Gap Detection')")
+	   { 
+			popup(identifier: "gap_size", name: "$$$/MergeTool/Dlg/MergeToolPreferences/GapDetection/CreateShapesUpto=G&ap Length:",
+					  include_custom_item: false,
+					  guide_mask: [@guide_label],
+					  items: [ { name: "$$$/MergeTool/Dlg/MergeToolPreferences/GapDetection/SmallGaps=Small", value: 0 },
+							   { name: "$$$/MergeTool/Dlg/MergeToolPreferences/GapDetection/MediumGaps=Medium", value: 1},
+							   { name: "$$$/MergeTool/Dlg/MergeToolPreferences/GapDetection/LargeGaps=Large", value: 2},
+							   { name: "$$$/MergeTool/Dlg/MergeToolPreferences/CustomGap=Custom", value: 3} ]);
+				
+	                 
+					unit_hot_number(decimal_places: 4, digits: 7,
+								identifier: "cutom_gap_value", unit: 'CurrentDocumentUnit', stepper: true);
+				
+           }
+
+        group(identifier: "OptionsFrame", 
+              horizontal: @align_fill,
+              name: "$$$/MergeTool/Dlg/MergeToolPreferences/Options=Options")
+        {
+            checkbox(identifier: "close_open_fill", guide_mask:[@guide_label],
+                     name: "$$$/MergeTool/Dlg/MergeToolPreferences/CloseOpenFill=Con&sider Open Filled Path as Closed");
+
+            checkbox(identifier: "split_path", guide_mask:[@guide_label], bind: @strokeSplit,
+                   name: "$$$/MergeTool/Dlg/MergeToolPreferences/BreakPath=&In Merge Mode, Clicking Stroke Splits the Path");
+
+			popup(identifier: "color_pickup_option", 
+					  include_custom_item: false, bind: @pickColorPopup,
+					  items: [ { name: "$$$/MergeTool/Dlg/MergeToolPreferences/PickColorFromArtWork=Artwork", value: 0 },
+								{ name: "$$$/MergeTool/Dlg/MergeToolPreferences/PickColorFromSwatches=Color Swatches", value: 1 }
+							    ],
+					   name: "$$$/MergeTool/Dlg/MergeToolPreferences/Coloring/ColorOption=&Pick Color From:");
+					   
+            checkbox( name: "$$$/MergeTool/Dlg/MergeToolPreferences/Coloring/SwatchCursorOption=&Cursor Swatch Preview", bind: @cursorSwatchPreviewCheckBox,
+                     identifier: "cursor_swatch_preview");
+	    static_text(identifier:"SelectionType", name:"$$$/MergeTool/Dlg/MergeToolPreferences/MergeType/Selection=Selection:");
+            radiogroup(identifier: "MergeTypeSelectionGroup")
+            {
+                radio_button(identifier: "Straight_Line",
+                	name: "$$$/MergeTool/Dlg/MergeToolPreferences/MergeType/Selection/StraightLine=St&raight Line",
+              		value: 0,
+            		bind: @mergeSelectionType);
+            	radio_button(identifier: "Free_Form",
+            		name: "$$$/MergeTool/Dlg/MergeToolPreferences/MergeType/Selection/FreeForm=Fr&eeform",
+            		value: 1,
+            		bind: @mergeSelectionType);
+	    }
+	}
+			
+		group(identifier: "HighlightFrame",
+              guide_mask:[@guide_label],horizontal: @align_fill,
+              name: "$$$/MergeTool/Dlg/MergeToolPreferences/Highlight=Highlight")
+        {
+            checkbox(identifier: "highlight_fill",
+                     name: "$$$/MergeTool/Dlg/MergeToolPreferences/hFill=Fi&ll");
+
+           	checkbox(identifier: "hightlight_stroke",
+                     name: "$$$/MergeTool/Dlg/MergeToolPreferences/hStroke=Highlight Stro&ke when Editable");
+                     
+            row(indent: gIndent, guide_mask:[@guide_label])
+            {
+				popup(identifier: "stroke_colors_popup",
+					  include_custom_item: false,
+					  items: gSmallColorPopupList,
+					   name: "$$$/MergeTool/Dlg/MergeToolPreferences/StrkokeColor=C&olor:");
+				
+						swatch(	identifier: "colorSwatch",
+								border: @border_normal
+							   );	
+				
+			}         
+          
+		}
+		group(identifier: "Tips",  horizontal: @align_fill, 
+				child_horizontal: @align_fill)
+		{
+			row(horizontal: @align_fill,spacing: @label_widget_spacing)
+			{
+				 info_icon(icontype: "note", size: "small");
+                		 static_text(identifier: "TipString", characters: 25, theme_font_size: @small, horizontal: @align_fill,
+							name: os == @mac ? "$$$/MergeTool/Dlg/MergeToolPreferences/TipsMac=Press Option key to erase shapes, or trim lines. While merging or erasing shapes, press Shift key to change to rectangular marquee selection." : "$$$/MergeTool/Dlg/MergeToolPreferences/TipsWin=Press Alt key to erase shapes, or trim lines. While merging or erasing shapes, press Shift key to change to rectangular marquee selection.");
+				
+			}
+			
+		}
+	}		
+	row( horizontal: @align_fill,spacing: @separated_spacing)
+        {
+		 button(identifier: "resetButton",vertical: @align_fill,
+				commit_button: true,
+               name: "$$$/MergeTool/Dlg/MergeToolPreferences/Reset=Rese&t");
+			
+		row(child_horizontal: @align_right, reverse: os == @mac, horizontal: @align_right, spacing: @related_spacing)
+		{
+			button(identifier: "okButton", name: "$$$/gOK=OK", commit_button: true);
+			button(identifier: "cancelButton", name: "$$$/gCancel=Cancel", commit_button: true);
+		}
+	}	
+    }
+}
+

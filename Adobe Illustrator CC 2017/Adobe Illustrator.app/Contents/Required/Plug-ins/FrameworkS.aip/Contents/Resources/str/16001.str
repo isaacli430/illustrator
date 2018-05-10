@@ -1,0 +1,12 @@
+/* [1] */
+$$$/FrameworkS/Str/16001/1/Mac=The expand filter operates on selected objects in the document. Please select one or more objects and try again.
+/* [2] */
+$$$/FrameworkS/Str/16001/2/Mac=The expand filter cannot change objects in locked or hidden layers. Please unlock or show the layers and try again.
+/* [3] */
+$$$/FrameworkS/Str/16001/3/Mac=The expand filter was not able to modify all of the selected objects. Illustrator may not have enough memory to complete this operation.
+/* [4] */
+$$$/FrameworkS/Str/16001/4/Mac=The expand filter encountered an internal error (overflow).
+/* [5] */
+$$$/FrameworkS/Str/16001/5/Mac=The expand filter encountered an internal error (underflow).
+/* [6] */
+$$$/FrameworkS/Str/16001/6/Mac=The expand filter encountered an internal error (undefined).

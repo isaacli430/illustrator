@@ -1,0 +1,8 @@
+/* [1] */
+$$$/MPSCommon/STR/16800/1/Mac=The document ^[%s^] uses fonts or characters which are not available or are in a different format than originally specified.
+/* [2] */
+$$$/MPSCommon/STR/16800/2/Mac=          Default font substituted for missing font.
+/* [3] */
+$$$/MPSCommon/STR/16800/3/Mac=          Substitute font created for missing font.
+/* [4] */
+$$$/MPSCommon/STR/16800/4/Mac=Can not export an Empty Document

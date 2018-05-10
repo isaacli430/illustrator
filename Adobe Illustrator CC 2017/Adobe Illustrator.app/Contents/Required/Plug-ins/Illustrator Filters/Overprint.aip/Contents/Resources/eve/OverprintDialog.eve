@@ -1,0 +1,58 @@
+layout OverprintBlack
+{
+	view subview(identifier: "AIEveSubView",
+					layout_theme: @dialog_large,
+					placement: @place_column,
+					show_border: false,
+					spacing:@unrelated_spacing,
+					child_horizontal:@align_fill
+				)
+	{
+		column(child_horizontal: @align_fill,spacing:@inter_group_spacing,child_horizontal:@align_fill)
+		{
+			group(identifier: "OperationGroup",
+								placement: @place_column,
+						header: "popup(identifier: 'OperationPopup',
+								include_custom_item: false, horizontal: @align_left,
+								items: [{name:'$$$/Overprint/Mnu/16000/1=Add Black',value: 'Add'},
+										{name:'$$$/Overprint/Mnu/16000/2=Remove Black',value: 'Remove'}],
+								child_vertical: @align_fill
+								)"
+					)
+			{
+					unit_hot_number(identifier: "PercentageEdit",
+								name:"$$$/Overprint/Dlg/Overprint/PercentText=&Percentage:",
+									set_default_focus: true,
+									unit: "NumberEditUnit_Percent",
+									vertical: @align_center,
+									digits:6
+									);
+					row(child_vertical: @align_center)
+					{
+						checkbox(name: "$$$/Overprint/Dlg/Overprint/FillCheckBox=&Fill",
+						label:"$$$/Overprint/Dlg/Overprint/6=Apply to:",
+							identifier: "Fill");
+						checkbox(name: "$$$/Overprint/Dlg/Overprint/StrokeCheckBox=&Stroke",
+							identifier: "Stroke");
+					}
+			}
+			group(identifier: "OptionsGroup",name:"$$$/Overprint/Dlg/Overprint/11=Options",guide_mask:[@guide_label])
+			{
+				checkbox(name: "$$$/Overprint/Dlg/Overprint/IncludeBlackCheckBox=Include &Blacks with CMY",
+					identifier: "BlackWithCMY");
+				checkbox(name: "$$$/Overprint/Dlg/Overprint/IncludeCustomCheckBox=Include Sp&ot Blacks",
+					identifier: "SpotBlack");
+			}
+        }
+		row(reverse:os==@mac,horizontal: @align_right,spacing:@related_spacing)
+        {
+            button(name: "$$$/gOK=OK",
+            	   identifier: "okButton",
+				   commit_button: true);
+
+            button(name: "$$$/gCancel=Cancel",
+            	   identifier: "cancelButton",
+				   commit_button: true);
+        }
+    }
+}

@@ -1,0 +1,68 @@
+/* [1] */
+$$$/svgFileFormat/Str/HoldCursorOver/1=Hold the cursor over a setting for additional information.
+/* [2] */
+$$$/private/svgFileFormat/Str/HoldCursorOver/2=
+/* [3] */
+$$$/svgFileFormat/Str/CSSProp/1=CSS Properties determine where attributes are placed within the CSS code.
+/* [4] */
+$$$/private/svgFileFormat/Str/CSSProp/2=
+/* [5] */
+$$$/svgFileFormat/Str/HighestPoint/1=Presentation Attributes applies properties at the highest point in the hierarchy, which allows for the most flexibility 
+/* [6] */
+$$$/svgFileFormat/Str/HighestPoint/2=for specific edits and transformations.
+/* [7] */
+$$$/svgFileFormat/Str/IncreaseFile/1=Style Attributes creates the most readable files, but may increase file size. Use this for code used in transformations, 
+/* [8] */
+$$$/svgFileFormat/Str/IncreaseFile/2=such as Extensible Stylesheet Language Transformation (XSLT).
+/* [9] */
+$$$/svgFileFormat/Str/FasterRend/1=Style Attributes (Entity References) results in faster rendering times and reduced file size.
+/* [10] */
+$$$/private/svgFileFormat/Str/FasterRend/2=
+/* [11] */
+$$$/svgFileFormat/Str/BestOption/1=Style Elements is the best option when creating a single style sheet that formats both HTML and SVG documents. This may 
+/* [12] */
+$$$/svgFileFormat/Str/BestOption/2=result in slower rendering speeds.
+/* [13] */
+$$$/svgFileFormat/Str/Precision/1=Specifies precision of vectors in exported artwork. Values range from 1 to 7, where a high value results in a larger file 
+/* [14] */
+$$$/svgFileFormat/Str/Precision/2=and increased image quality. 3 is the best choice for most files.
+/* [15] */
+$$$/svgFileFormat/Str/EncodingSpec/1=Encoding specifies the format for writing the characters of the SVG file.
+/* [16] */
+$$$/private/svgFileFormat/Str/EncodingSpec/2=
+/* [17] */
+$$$/svgFileFormat/Str/UseISO/1=Encode the file characters using the ISO 8859-1 standard. This is suitable for European languages.
+/* [18] */
+$$$/private/svgFileFormat/Str/UseISO/2=
+/* [19] */
+$$$/svgFileFormat/Str/UseUTF8/1=Encode the file characters using the Unicode (UTF-8) standard. This is an 8-bit format suitable for a wider variety of languages, 
+/* [20] */
+$$$/svgFileFormat/Str/UseUTF8/2=such as Japanese, Chinese, or Hebrew, as well as European languages.
+/* [21] */
+$$$/svgFileFormat/Str/UseUTF16/1=Encode the file characters using the Unicode (UTF-16) standard. This is a 16-bit format suitable for a wider variety of languages, 
+/* [22] */
+$$$/svgFileFormat/Str/UseUTF16/2=such as Japanese, Chinese, or Hebrew, as well as European languages.
+/* [23] */
+$$$/svgFileFormat/Str/Namespace/1=Optimize for the Adobe SVG Viewer through an Adobe XML namespace, to take advantage of faster rendering for features such as 
+/* [24] */
+$$$/svgFileFormat/Str/Namespace/2=filter effects.
+/* [25] */
+$$$/svgFileFormat/Str/IncludeExtended/1=Includes the extended syntax for use with server scripting languages such as Adobe Graphics Server, as well as variables and data 
+/* [26] */
+$$$/svgFileFormat/Str/IncludeExtended/2=sets created in the document.
+/* [27] */
+$$$/svgFileFormat/Str/Slicing/1=Include slicing data to preserve slice locations and optimization settings.
+/* [28] */
+$$$/private/svgFileFormat/Str/Slicing/2=
+/* [29] */
+$$$/svgFileFormat/Str/Metadata/1=Include file info (metadata) to preserve information about your document. This is useful to track information such as 
+/* [30] */
+$$$/svgFileFormat/Str/Metadata/2=^[Author^], ^[Date Created^], and ^[Date Modified^].
+/* [31] */
+$$$/svgFileFormat/Str/31/AutoKern/1=Outputs fewer <tspan> elements which will reduce file size. Appearance may change due to ignoring kerning position.
+/* [32] */
+$$$/private/svgFileFormat/Str/AutoKern/2=
+/* [33] */
+$$$/svgFileFormat/Str/TextOnPath/1=When this font option is checked, <textPath> will be used to write text on a path object. When unchecked, each character is written as a <text> element. 
+/* [34] */
+$$$/svgFileFormat/Str/TextOnPath/2=Use <textPath> if you want a more compact xml form. Note, <textPath> may not preserve the appearance shown in the Illustrator document.

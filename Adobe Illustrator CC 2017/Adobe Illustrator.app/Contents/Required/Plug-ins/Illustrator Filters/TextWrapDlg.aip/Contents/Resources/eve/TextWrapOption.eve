@@ -1,0 +1,51 @@
+layout TextWrapOptionsDialog
+{
+    view subview(identifier: "textWrapoptionsDialog",
+					placement: @place_column,
+					layout_theme: @dialog_large,
+					child_horizontal: @align_fill,
+					show_border: false,
+				 spacing: @unrelated_spacing)
+    {
+		column(child_horizontal: @align_fill)
+        {
+           	 unit_hot_number(horizontal: @align_left,
+				 decimal_places: 2,
+				 digits: 9,
+				 set_default_focus: true,
+				 stepper:true,
+				 bind_final: true,
+				 bind: @upDown,
+				 name: "$$$/TextWrapOptionDlg/Dlg/Bumper=&Offset:",
+                         identifier: "offsetSpinEdit");
+
+			 checkbox(identifier: "invertWrapCheckBox",
+							 name: "$$$/TextWrapOptionDlg/Dlg/InvertWrap=&Invert Wrap", guide_mask: [ @guide_label] );
+		
+			row(child_vertical: @align_center, spacing: 6)
+			{
+				info_icon(size: "small", icontype: "warning", identifier: "infoIconImage");
+
+				static_text(horizontal: @align_fill,
+					characters: 25,
+					guide_mask:[@guide_label],
+					identifier: "messageStaticText",
+					name: "$$$/TextWrapOptionDlg/Dlg/NoTextBelowWarning=This object must be above text in the same group to wrap. This order can be set in the Layers panel.");
+			}
+		}
+
+		row(child_vertical: @align_center, horizontal: @align_fill,spacing: @separated_spacing)
+		{
+			checkbox(identifier: "previewCheckBox",
+					guide_mask:[@guide_label],
+					name: "$$$/TextWrapOptionDlg/Dlg/Preview=&Preview",
+					horizontal: @align_left);
+			
+			row(horizontal: @align_right, child_vertical: @align_center, reverse: os == @mac, spacing:@related_spacing)
+			{
+				button(identifier: "okButton", name: "$$$/gOK=OK", default: true, commit_button:true);
+				button(identifier: "cancelButton", name: "$$$/gCancel=Cancel", cancel: true, commit_button:true);
+			}
+		}
+    }
+}

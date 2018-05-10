@@ -1,0 +1,7 @@
+sheet AddArrowUI
+{
+interface:
+scaleEdit: 0;
+showPreviewField: true;
+preview: false;
+}

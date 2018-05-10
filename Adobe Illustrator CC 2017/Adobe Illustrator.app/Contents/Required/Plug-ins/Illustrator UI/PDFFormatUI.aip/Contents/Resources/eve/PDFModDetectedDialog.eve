@@ -1,0 +1,44 @@
+layout PDFModDetectedDialog
+{
+    view subview(identifier: "AIEveSubView",
+				 show_border: false,
+				 layout_theme: @dialog_large,
+				 spacing: @unrelated_spacing)
+    {
+		row()
+		{
+			info_icon(icontype: "warning", size: "large");
+			column()
+			{
+				static_text(identifier: "InfoText",
+							 name: "$$$/PDF/Static/Modified=This document has been modified outside of Adobe Illustrator.");
+			
+				group(name: "$$$/PDF/Static/How=How do you want to proceed?",
+						horizontal: @align_fill)
+				{
+					
+					radiogroup(horizontal: @align_fill, show_border: false, margin: 0)
+					{
+					radio_button(identifier: "Discard",
+									name: "$$$/PDF/Radio/Discard=Discard changes, preserving Illustrator editing capabilities",
+									bind: @ReadPGF,
+									value: true);
+									
+					radio_button(identifier: "Keep",
+									name: "$$$/PDF/Radio/Keep=Keep changes, reducing Illustrator editing capabilities",
+									bind: @ReadPGF,
+									value: false);
+					}
+				}
+			}
+		}
+		
+		row(horizontal: @align_right, reverse: os == @mac,spacing: @related_spacing)
+		{
+			button(default: true, identifier: "okButton", name: "$$$/gOK=OK",commit_button:true);
+			button(cancel: true, identifier: "cancelButton", name: "$$$/gCancel=Cancel",commit_button:true);
+		}
+	
+	}
+
+}

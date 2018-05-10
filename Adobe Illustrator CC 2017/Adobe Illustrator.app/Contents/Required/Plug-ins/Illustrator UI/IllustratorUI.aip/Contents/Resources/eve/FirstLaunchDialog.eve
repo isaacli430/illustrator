@@ -1,0 +1,43 @@
+layout FirstLaunchDialog
+{
+    view subview(identifier: "AIEveSubView",
+				 placement: @place_column,
+				 show_border: false, 
+				 spacing: @unrelated_spacing,
+				 margin: 20,
+				 layout_theme: @dialog_large)
+    {	
+		row(horizontal: @align_fill, child_vertical:@align_top, child_horizontal:@align_top)
+		{
+			image(identifier:"syncStatus_icon",image:{normal:"AI_Sync_Status.png", dark_normal:"AI_Sync_Status_D.png"});
+			column(horizontal: @align_fill)
+			{
+				row(margin:2,horizontal: @align_fill)
+				{
+					optional(value: true, bind: @IsFirstMachine,horizontal: @align_fill)
+					{
+						static_text( identifier: "firstUserMessage", name: "$$$/CCFirstLaunch/CCFirstMachineMessage=Adobe Illustrator securely syncs your preferences and presets to Creative Cloud. Click Sync Settings Now to sync updated settings.",characters: 17, horizontal: @align_fill);
+					}
+					optional(value: false, bind: @IsFirstMachine, horizontal: @align_fill)
+					{
+						static_text(identifier: "secondUserMessage", characters: 17, name: "$$$/CCFirstLaunch/CCSecondMachineMessage=Settings from another computer are already synced with Creative Cloud. Would you like to use the settings from the cloud?", horizontal: @align_fill);
+					}
+				}
+				
+			}
+			
+		}
+		row(horizontal: @align_fill, vertical: @align_fill,placement: @place_row)
+		{
+			row(horizontal: @align_left, vertical: @align_fill,placement: @place_row)
+			{
+				button(identifier: "advancedButton", name: "$$$/CCFirstLaunch/CCButtonOpenSettings=Advanced...",commit_button: true,action: @Advanced);
+			}
+			row(horizontal: @align_right, spacing: @label_widget_spacing)
+			{
+						button(identifier: "disableSettingsButton", name: "$$$/CCFirstLaunch/CCButtonDontSync=Disable Sync Settings",commit_button: true,action: @Disable);
+						button(identifier: "okButton", name: "$$$/CCFirstLaunch/CCButtonSyncNow=Sync Settings Now", commit_button: true,action: @Sync,set_default_focus: true);
+			}
+		}
+    }
+}

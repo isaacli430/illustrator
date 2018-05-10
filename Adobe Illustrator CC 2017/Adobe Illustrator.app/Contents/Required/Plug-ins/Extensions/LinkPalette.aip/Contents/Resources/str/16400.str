@@ -1,0 +1,8 @@
+/* [1] */
+$$$/LinkPalette/Str/Error/UnknownErr=An unknown error has occurred.
+/* [2] */
+$$$/LinkPalette/Str/Error/AppNotFoundErr=Cannot find associated application.
+/* [3] */
+$$$/LinkPalette/Str/Error/LockedLayerErr=The image is on a locked layer. To embed the image, first unlock that layer in the Layers panel.
+/* [4] */
+$$$/LinkPalette/Str/Error/LockedImageErr=The image cannot be embedded because it is locked.

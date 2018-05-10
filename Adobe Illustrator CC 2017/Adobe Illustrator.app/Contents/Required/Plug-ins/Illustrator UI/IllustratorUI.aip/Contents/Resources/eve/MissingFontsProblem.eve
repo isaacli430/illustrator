@@ -1,0 +1,174 @@
+layout MissingFontsProblem
+{
+	view subview(placement: @place_column, 
+					show_border: false, margin:0
+					)
+	{
+		row(margin: 0)
+		{
+			image (identifier:"TKDBannerImage", image: "missing-fonts-hero.png", show_border: false);
+		}
+					
+		row(margin: 15, horizontal: @align_fill)
+		{				
+			column(horizontal:@align_fill, vertical:@align_fill, child_horizontal:@align_fill, spacing:@unrelated_spacing) 
+			{
+				overlay(horizontal:@align_fill)
+				{
+					panel(identifier: "TKDErrorStringGroup", bind: @ShowPanel, value: 0)
+					{
+						subview(show_border:false,margin:0,spacing: 0, horizontal: @align_fill)
+						{
+							row( horizontal: @align_fill, child_vertical: @align_fill, child_horizontal: @align_fill, margin: 0 )
+							{
+								info_icon(	identifier:"AlertIcon2", icontype:"warning", size:"large" , horizontal: @align_left, vertical: @align_fill);
+								column(horizontal: @align_fill, vertical: @align_fill)
+								{
+									row(horizontal: @align_fill, vertical: @align_fill)
+									{
+										static_text(identifier: "TKDErrorString", 
+											name: "$$$/MissingFont/Dlg/Main/kTIPText1=The document uses fonts that are currently not available on your computer.", 
+											horizontal: @align_fill, 
+											vertical: @align_center);
+									}
+									optional(margin:0, bind: @ShowError, value: 1, placement: @place_column, vertical: @align_center)
+									{
+										row(horizontal: @align_fill, vertical: @align_fill)
+										{
+											static_text(identifier: "TypekitCCEError",
+												name: "$$$/TypekitError/TypekitCCEErrorPrefix=Typekit has been disabled by your IT administrator.",
+												horizontal: @align_fill, 
+												vertical: @align_center);
+										}
+									}
+								}
+							}
+						}
+					}
+					panel(identifier: "TKDNoMissingFontsStaticText", bind: @ShowPanel, value: 1, margin: 0, spacing: 0)
+					{
+						subview(show_border:false,margin:0,spacing: 0, horizontal: @align_fill)
+						{
+							row(horizontal: @align_fill, child_vertical: @align_fill, child_horizontal: @align_fill, margin: 0)
+							{
+								image (identifier:"TKDSucessImage", image: "icon-asset-success.png", horizontal: @align_left, show_border: false, guide_mask: [@guide_label]);
+								column(horizontal: @align_fill, vertical: @align_fill)
+								{
+									static_text(identifier: "SpinningWheelText3",
+											name: "$$$/MissingFont/Dlg/Main/kTIPText2=Successfully synced fonts from Typekit.",
+											horizontal: @align_fill, 
+											vertical: @align_center);
+								}
+							}
+						}
+					}
+					panel(identifier: "TKDSpinningWheel", bind: @ShowPanel, value: 2)
+					{
+						subview(show_border:false,margin:0,spacing: 0, horizontal: @align_fill)
+						{
+							row(horizontal: @align_fill, child_vertical: @align_fill, child_horizontal: @align_fill, margin: 0)
+							{
+								info_icon(	identifier:"AlertIcon2", icontype:"warning", size:"large" , horizontal: @align_left, vertical: @align_fill);
+								column( horizontal: @align_fill, vertical: @align_fill )
+								{
+									static_text(identifier: "SpinningWheelText1",
+											name: "$$$/MissingFont/Dlg/Main/kTIPText3=Syncing fonts from Typekit...",
+											horizontal: @align_fill, 
+											vertical: @align_center);
+								}
+							}
+						}
+					}
+				}
+		
+				column(horizontal:@align_fill, vertical:@align_fill, child_horizontal:@align_fill)
+				{
+					row()
+					{
+						column(horizontal:@align_left)
+						{
+							static_text(
+								identifier:"missingFontsStaticText",
+								name: @numberOfMissingFonts
+							);
+						}
+						column(horizontal:@align_right)
+						{
+							static_text(
+								identifier:"syncText",
+								name: @syncCheckBoxText
+							);
+						}
+					}
+					multicolumn_tree(identifier: "missingFontsMCT",
+						width:200,
+						height:165,
+						horizontal:@align_fill,
+						scrollable:true
+					);
+				}
+
+				
+				
+				row(child_horizontal:@align_fill)
+				{
+					column(child_horizontal:@align_fill)
+					{
+						row(child_horizontal: @align_left, spacing: @related_spacing)
+						{
+							button(cancel: true,
+									identifier: "cancelButton",
+									commit_button: true,
+									name: "$$$/gClose=Close"
+								);
+
+							button(default: true,
+								identifier: "okButton",
+								commit_button: true,
+								name: "$$$/_MissingFonts/Dlg/MissingFonts/findFonts=Find Fonts...",
+								alt: "$$$/_MissingFonts/Dlg/MissingFonts/findFontsToolTip=Replace Missing Fonts with fonts from your computer",
+								action: @findFontsButtonAction
+							);							
+						}
+					}	
+				
+					column(child_horizontal:@align_fill)
+					{
+						row(child_horizontal: @align_right, reverse: os == @mac,spacing: @related_spacing)
+						{
+							button(cancel: true,
+								identifier: "SyncButton",
+								name: "$$$/_MissingFonts/Dlg/MissingFonts/MissingFontsSyncTBDFonts=Sync Fonts",
+								commit_button: true,
+								action: @syncButtonAction,
+								alt: "$$$/_MissingFonts/Dlg/MissingFonts/SyncButtonToolTip=Restore checked fonts from Typekit"
+							);	
+						}
+					}
+				}
+				
+				column(horizontal: @align_fill, spacing: 0, guide_mask: [ @guide_label ])
+				{
+					row(spacing:0)
+					{
+						checkbox(name: " ", 
+								identifier: "DontShow_checkBox",
+								wants_focus: false);
+						
+						guide_consumer(consume_horizontal: 1);
+						static_text(identifier: "DontShow_staticText",  		
+								name: "$$$/_MissingFonts/Dlg/MissingFonts/dontShowCheckBox=Don't show on document open");
+					}
+					row( spacing:0)
+					{
+						guide_consumer(consume_horizontal: 1);
+						guide_consumer(consume_horizontal: 1);
+						static_text(identifier: "DontShowTip", 
+								theme_font_size: @small, 
+								name: "$$$/_MissingFonts/Dlg/MissingFonts/dontShowTip=Tip: Accessible under Type > Resolve Missing Fonts");
+					}
+				}			
+			}
+		}
+	}
+}

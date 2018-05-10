@@ -1,0 +1,27 @@
+sheet HarmonyPanel
+{	
+	interface:
+
+	TextCellSelector: 0;
+
+	SwatchesView: 1;
+	SwatchesViewList: 1;
+	
+	VariationTextShades: "$$$/ColorHarmony/ColorGuide/ShadeVariationText=Shades";
+	VariationTextTints:	"$$$/ColorHarmony/ColorGuide/TintVariationText=Tints";
+	VariationTextWarm: "$$$/ColorHarmony/ColorGuide/WarmVariationText=Warm";
+	VariationTextCool: "$$$/ColorHarmony/ColorGuide/CoolVariationText=Cool";
+	VariationTextMuted: "$$$/ColorHarmony/ColorGuide/MutedVariationText=Muted";
+	VariationTextVivid: "$$$/ColorHarmony/ColorGuide/VividVariationText=Vivid";
+	
+	ColorGuideVariationLeftTextCell: (0==TextCellSelector) ? (VariationTextShades) : ( (1==TextCellSelector) ? (VariationTextWarm) : (VariationTextMuted) );
+	ColorGuideVariationRightTextCell: (0==TextCellSelector) ? (VariationTextTints) : ( (1==TextCellSelector) ? (VariationTextCool) : (VariationTextVivid) );
+
+	HaveColorSelection: 1;
+	EditOrApplyColorsTip: "$$$/ColorHarmonies/ColorGuide/Tooltips/LaunchEditorEditOrApply=Edit or Apply Colors";
+	EditColorsTip: "$$$/ColorHarmonies/ColorGuide/Tooltips/LaunchEditorEdit=Edit Colors";
+	TipString: (HaveColorSelection == 1)? EditOrApplyColorsTip : EditColorsTip;
+	
+	LimitToLibraryTextCell: "";
+	ShowLargePanel: true;
+}

@@ -1,0 +1,173 @@
+layout FileHandlingPreference
+{
+	view subview(identifier: "FileHandlingPrefEveSubView",
+				 child_horizontal: @align_fill,
+				 horizontal: @align_fill,
+				 vertical: @align_fill, 
+				 placement: @place_column,
+				 show_border: false,
+				 margin: [22,15,0,15], 
+				 layout_theme: @dialog_large)
+	{
+		column(spacing: 0)
+		{
+		static_text(identifier: "FPStaticTextCaption",
+					name: "$$$/PrefsDlg/FPDlg/Caption=File Handling & Clipboard"
+					);
+		
+		separator(identifier: "FPTopSeparator");
+		}
+
+		group(identifier: "FPDocumentRecoveryDataGrp", name: "$$$/PrefsDlg/FPDlg/DocumentRecoveryData=Data Recovery", horizontal: @align_fill)
+		{
+			row(horizontal: @align_fill)
+			{
+				column(horizontal: @align_fill)
+				{
+					row()
+					{
+						checkbox(identifier: "FPCheckboxAutomaticallySave",
+								name: "$$$/PrefsDlg/FPDlg/FPCheckboxAutomaticallySave=&Automatically Save Recovery Data Every:",
+								guide_mask: [ @guide_label ],
+								bind: @FPCheckAutomaticallySave);
+					}
+					row(margin:[8,17,0,0], horizontal: @align_fill)
+					{
+						static_text(identifier: "CrashRecoveryFolderString", name: "$$$/PrefsDlg/FPDlg/CrashRecoveryFolderStringValue=Folder:");
+						static_text(identifier: "CrashRecoveryPath", name: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",theme_font_size: @small, text_truncation: @path_ellipsis, adjust_baseline_for_single_line_text: false);
+					}
+				}
+				column(child_horizontal:@align_right)
+				{
+					row()
+					{
+						overlay()
+						{
+							panel( margin: 0, value:false, bind:@FPShowAlert)
+							{						
+							}
+							panel( placement: @place_row, margin: 0, value: true, bind: @FPShowAlert)
+							{
+								info_icon(icontype: "warning", size: "small",
+										alt: "$$$/PrefsDlg/FPDlg/FPCRInfo=Changes will take effect the next time you launch Illustrator."
+										);						
+							}
+						}
+						popup(identifier: "FPAutomaticallySaveValues",
+							include_custom_item: false,
+							name: "",
+							items: @FPAutomaticallySaveItems,
+							bind: @FPAutomaticallySavePopup,
+							alt: "$$$/PrefsDlg/FPDlg/FPCRTimerPopdown=Automatically save backup copies of documents at this time interval for recovery. Original file is not affected. "
+							);	
+					}
+					row(horizontal: @align_right)
+					{
+						button(identifier: "CrashRecoveryButton", name: "$$$/PrefsDlg/FPDlg/CrashRecoveryButtonBrowse=C&hoose...", horizontal: @align_fill);	
+					}
+				}
+			}
+
+			row(horizontal: @align_left)
+			{
+				checkbox(identifier: "FPCheckboxTurnOffComplexDoc",
+							name: "$$$/PrefsDlg/FPDlg/FPCheckboxTurnOffComplexDoc=Turn off Data &Recovery for complex documents",
+							guide_mask: [ @guide_label ],
+							bind: @FPCheckTurnOffComplexDoc);
+				overlay()
+				{
+					panel( margin: 0, value:false, bind:@FPShowAlertComplexDoc)
+					{						
+					}
+					panel( placement: @place_row, margin: 0, value: true, bind: @FPShowAlertComplexDoc)
+					{
+						info_icon(icontype: "warning", size: "small",
+							alt:"$$$/PrefsDlg/FPDlg/FPCRInfoComplex=Changes will take effect the next time you launch Illustrator."
+							);							
+					}
+				}
+			}
+		}
+		
+		group(identifier: "FPFilesGrp", name: "$$$/PrefsDlg/FPDlg/Files=Files")
+		{
+			unit_hot_number(identifier: "FPEditBoxRecentFileNumber",
+								name: "$$$/PrefsDlg/FPDlg/FPEditBoxRecentFileNumber=&Number of Recent Files to Display (0-30):",
+								decimal_places: 0,
+								min_value: 0,
+								max_value: 30,
+								digits: 2,
+								bind: @FPRecentFileNumber
+								);
+								
+			checkbox(identifier: "FPCheckboxUseLowRes",
+					name: "$$$/PrefsDlg/FPDlg/FPCheckboxUseLowRes=Use &Low Resolution Proxy for Linked EPS",
+					guide_mask: [ @guide_label ],
+					bind: @FPCheckUseLowRes);
+			
+			checkbox(identifier: "FPCheckboxBitmapsPixelPreview",
+					name: "$$$/PrefsDlg/FPDlg/FPCheckboxBitmapsPixelPreview=Display Bitmaps as Anti-Aliased images in Pixel Preview",
+					guide_mask: [ @guide_label ],
+					bind: @FPCheckBitmapsPixelPreview);
+					
+			popup(identifier: "FPPopupUpdateLinks",
+					include_custom_item: false,
+					name: "$$$/PrefsDlg/FPDlg/FPPopupUpdateLinks=&Update Links:",
+					items: @FPUpdateOptionsPopupItems,
+					indent: 20,
+					bind: @FPPopupUpdate
+					);
+		}
+		group(identifier: "FPQuitGrp", name: "$$$/PrefsDlg/FPDlg/Clipboard=Clipboard", placement: @place_row)
+		{
+
+			column( child_horizontal: @align_right)
+			{
+				static_text(identifier: "FPStaticTextOnCopy",
+						name: "$$$/PrefsDlg/FPDlg/FPStaticTextOnCopy=On Copy:"
+						);		
+				static_text(identifier: "FPStaticTextOnQuit",
+						name: "$$$/PrefsDlg/FPDlg/FPStaticTextOnQuit=On Quit:"
+						);		
+			}
+
+			column()
+			{
+				column(guide_mask: [ @guide_label ])
+				{
+					checkbox(identifier: "FPCheckboxSVG",name: "$$$/PrefsDlg/FPDlg/FPCheckboxSVG=Include SVG Code",
+							bind: @FPCheckSVG);
+				}
+						
+				column(guide_mask: [ @guide_label ])
+				{
+					checkbox(identifier: "FPCheckboxPDF",
+						name: "$$$/PrefsDlg/FPDlg/FPCheckboxPDF=P&DF",
+						bind: @FPCheckPDF);
+					checkbox(identifier: "FPCheckboxAICB",
+						name: "$$$/PrefsDlg/FPDlg/FPCheckboxAICB=AI&CB (no transparency support)",
+						bind: @FPCheckAICB
+						);
+					column(indent: 25)
+					{
+					radiogroup(placement: @place_column, show_border: false, margin: 0)
+					{		
+					radio_button(identifier: "FPRadioPath",
+						bind: @FPPreserveRadioGrp,
+						value: "FPRadioPath",
+						name: "$$$/PrefsDlg/FPDlg/FPRadioPath=Preserve Pa&ths",
+						guide_mask: [ @guide_label ]);
+						
+					radio_button(identifier: "FPRadioAppearance",
+						bind: @FPPreserveRadioGrp,
+						value: "FPRadioAppearance",
+						name: "$$$/PrefsDlg/FPDlg/FPRadioAppearance=Preserve Appearance and Overpr&ints",
+						guide_mask: [ @guide_label ]);
+						}
+					}
+				}
+			}
+		}
+				
+	}
+}

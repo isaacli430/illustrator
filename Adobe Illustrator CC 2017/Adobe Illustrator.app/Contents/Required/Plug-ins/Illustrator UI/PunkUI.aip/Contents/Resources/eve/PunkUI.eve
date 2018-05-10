@@ -1,0 +1,33 @@
+layout PunkUI
+{
+    view subview(identifier: "AIEveSubView",
+					layout_theme: @dialog_large,
+					show_border: false,
+					spacing: @unrelated_spacing)
+    {
+		combo_slider( identifier: "factor", 
+						vertical: @align_center,
+						horizontal: @align_fill,
+						min_max_filter: @filter,
+						bind: @dFactorParam,
+						slider_point: @up,
+						minLength: 251,
+						center_tick: true,
+						unit: "NumberEditUnit_Percent",
+						set_default_focus: true,
+						left_mini_label: "$$$/Punk/Dlg/PunkBloat/PunkText=Pucker",
+						right_mini_label: "$$$/Punk/Dlg/PunkBloat/BloatText=Bloat",
+						digits: 6,
+						bind_final: true,
+						decimal_places: 2);  
+		row(horizontal: @align_fill, child_vertical: @align_center)
+        {
+            checkbox(horizontal: @align_left, bind: @preview, name: "$$$/Punk/Dlg/PunkBloat/PunkPreview=&Preview", identifier: "previewChkBox");
+			row(horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+            {
+				button(default: true, identifier: "okButton", commit_button: true, name: "$$$/gOK=OK");
+				button(cancel: true, identifier: "cancelButton", commit_button: true, name: "$$$/gCancel=Cancel");
+			}            
+        }
+    }
+}

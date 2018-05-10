@@ -1,0 +1,30 @@
+/* [1] */
+$$$/Pathfinder/Str/Repeat/1=&Repeat Add
+/* [2] */
+$$$/Pathfinder/Str/Repeat/2=&Repeat Intersect
+/* [3] */
+$$$/Pathfinder/Str/Repeat/3=&Repeat Exclude
+/* [4] */
+$$$/Pathfinder/Str/Repeat/4=&Repeat Subtract
+/* [5] */
+$$$/Pathfinder/Str/Repeat/5=&Repeat Minus Back
+/* [6] */
+$$$/Pathfinder/Str/Repeat/6=&Repeat Divide
+/* [7] */
+$$$/Pathfinder/Str/Repeat/7=&Repeat Outline
+/* [8] */
+$$$/Pathfinder/Str/Repeat/8=&Repeat Trim
+/* [9] */
+$$$/Pathfinder/Str/Repeat/9=&Repeat Merge
+/* [10] */
+$$$/Pathfinder/Str/Repeat/10=&Repeat Crop
+/* [11] */
+$$$/Pathfinder/Str/Repeat/11=&Repeat Hard Mix
+/* [12] */
+$$$/Pathfinder/Str/Repeat/12=&Repeat Soft Mix
+/* [13] */
+$$$/Pathfinder/Str/Repeat/13=&Repeat Trap
+/* [14] */
+unusedAI10
+/* [15] */
+$$$/Pathfinder/Str/Repeat/15=Repeat Pathfinder

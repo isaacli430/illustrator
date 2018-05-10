@@ -1,0 +1,15 @@
+layout TouchSelectToolOptionsPanel
+{
+    view subview(identifier: "TouchSelectToolOptionsPanelSubview",
+				show_border: false,
+				layout_theme:@touch_tooloptions)
+    {
+			button(identifier: "TouchMultipleSelectionButton",
+							image: { normal: "SP_TouchAddRemoveSelection_Md_N.png", dark_normal: "SP_TouchAddRemoveSelection_Md_N_D.png" },
+							alt: "$$$/IllustratorUI/Str/TouchSelectionTool/ToolOption/ModifySelection=Add to/Remove from Selection",
+							wants_focus: false,
+							button_inner_bevel: false,
+							button_outer_bevel: false,
+							inset_undrawn_space: false);
+	}
+}

@@ -1,0 +1,12 @@
+/* [1] */
+$$$/SVGFilterEffect/Str/19001=While importing filters, found filter with XML ID ^[%s^].  This XML ID is already in use in this document.
+/* [2] */
+$$$/SVGFilterEffect/Str/19002=Delete the SVG filter?
+/* [3] */
+$$$/SVGFilterEffect/Str/19003=The SVG filter you have specified cannot be previewed correctly in Illustrator.
+/* [4] */
+$$$/SVGFilterEffect/Str/19004=The XML ID specified for the filter is already in use.  Please choose another id for this filter.
+/* [5] */
+$$$/SVGFilterEffect/Str/19005=Parse error at Line: %d Column: %d
+/* [6] */
+$$$/SVGFilterEffect/Str/19006=^[%s^] is not a valid XML id.  XML ids must begin with a letter, ^{_^}, or ^{:^}. Names cannot contain spaces or special characters, except for ^{.^}, ^{-^}, ^{_^}, and ^{:^}.

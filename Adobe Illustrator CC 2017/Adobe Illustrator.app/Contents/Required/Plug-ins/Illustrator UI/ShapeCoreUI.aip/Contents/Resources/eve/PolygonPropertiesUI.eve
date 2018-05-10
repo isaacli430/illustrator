@@ -1,0 +1,156 @@
+layout PolygonPropertiesUI
+{
+     view subview(identifier: "PolygonPropertiesUI",
+				 layout_theme: @panel,
+				 show_border: false)
+    {
+		optional(bind: @ShowPolygonPropertiesString, value: true)
+		{
+			static_text(identifier: "PolygonPropertiesLabel",
+						name: "$$$/ShapeCoreUI/PolygonProperties/Label/PolygonProperties=Polygon Properties:");
+		}
+
+		row(horizontal: @align_fill, guide_mask: [@guide_label])
+		{
+				image(identifier: "PolygonSideImage",
+						alt: "$$$/ShapeCoreUI/PolygonProperties/ToolTip/PolygonSideCount=Polygon Side Count",
+						image: { normal: "SP_PolygonNumberOfSides_Md_N.png", dark_normal: "SP_PolygonNumberOfSides_Md_N_D.png" });
+						
+				slider(identifier: "PolygonSideCountSlider",
+							alt: "$$$/ShapeCoreUI/PolygonProperties/ToolTip/PolygonSideCount=Polygon Side Count",
+							minLength: 130,
+							min_max_filter: @SideCountValue,
+							slider_point: @up,
+							key_orientation: @left,
+							set_default_focus: false);
+			
+			column(horizontal: @align_right)
+			{						
+				unit_edit_number(identifier: "PolygonSideCountNumEdit",
+							alt: "$$$/ShapeCoreUI/PolygonProperties/ToolTip/PolygonSideCount=Polygon Side Count",
+							decimal_places: 0,
+							digits: 1,
+							stepper: true,
+							set_default_focus: true,
+							wants_focus: false,
+							min_value: 3,
+							max_value: 1000);
+			}
+		}
+		
+		row(horizontal: @align_fill)
+		{
+			column()
+			{
+				unit_edit_number(identifier: "PolygonAngle",
+								alt: "$$$/ShapeCoreUI/PolygonProperties/ToolTip/PolygonAngle=Polygon Angle",
+								popuplist: true,
+								items: @AngleValues,
+								decimal_places: 2,
+								digits: 1,
+								unit:"NumberEditUnit_Degree",
+								label: "SP_RotateCCW_Md_N.png",
+								is_image_label: true);			
+			}
+			
+			column(horizontal: @align_right)
+			{
+				row()
+				{
+					overlay()
+					{
+						panel(margin: 0, bind: @PolygonCornerType, value: 0)
+						{
+							button(identifier: "PolygonCornerTypeInvalid",
+									image: { normal: "SP_MixedCornerLTPopup_Md_N.png", dark_normal: "SP_MixedCornerLTPopup_Md_N_D.png" },
+									alt: "$$$/ShapeCoreUI/PolygonProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+						panel(margin: 0, bind: @PolygonCornerType, value: 1)
+						{
+							button(identifier: "PolygonCornerTypeNormal",
+									image: { normal: "SP_NormalRoundingLTPopup_Md_N.png", dark_normal: "SP_NormalRoundingLTPopup_Md_N_D.png" },
+									alt: "$$$/ShapeCoreUI/PolygonProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+						panel(margin: 0, bind: @PolygonCornerType, value: 2)
+						{
+							button(identifier: "PolygonCornerTypeInverted",
+									image: { normal: "SP_InverseRoundingLTPopup_Md_N.png", dark_normal: "SP_InverseRoundingLTPopup_Md_N_D.png" },
+									alt: "$$$/ShapeCoreUI/PolygonProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+						panel(margin: 0, bind: @PolygonCornerType, value: 3)
+						{
+							button(identifier: "PolygonCornerTypeChamfer",
+									image: { normal: "SP_ChamferLTPopup_Md_N.png", dark_normal: "SP_ChamferLTPopup_Md_N_D.png" },
+									alt: "$$$/ShapeCoreUI/PolygonProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+					}
+					
+					unit_edit_number(identifier: "PolygonCornerRadius",
+									alt: "$$$/ShapeCoreUI/PolygonProperties/ToolTip/CornerRadius=Corner Radius",
+									decimal_places: 2,
+									digits: 1,
+									stepper: true,
+									unit:"CurrentDocumentUnit",
+									wants_focus: false,
+									min_value: 0.0);
+				}
+			}
+		}
+
+		optional(bind: @ShowRegularPolygonProperties, value: true)
+		{
+			row(horizontal: @align_fill)
+			{
+				column()
+				{
+					unit_edit_number(identifier: "PolygonRadius",
+									alt: "$$$/ShapeCoreUI/PolygonProperties/ToolTip/PolygonRadius=Polygon Radius",
+									decimal_places: 3,
+									digits: 4,
+									unit:"CurrentDocumentUnit",
+									max_value: 16384,
+									min_value: 0.0,
+									set_default_focus: false,
+									label: "SP_PolygonRadius_Md_N.png",
+									is_image_label: true);
+				}
+				column(horizontal: @align_right)
+				{
+					row()
+					{
+						unit_edit_number(identifier: "PolygonSideLength",
+										alt: "$$$/ShapeCoreUI/PolygonProperties/ToolTip/PolygonSideLength=Polygon Side Length",
+										decimal_places: 3,
+										digits: 4,
+										unit:"CurrentDocumentUnit",
+										label: "SP_PolygonSideLength_Md_N.png",
+										is_image_label: true,
+										set_default_focus: false,
+										max_value: 16384,
+										min_value: 0.0);
+					}
+				}
+			}
+		}
+
+		optional(bind: @ShowRegularPolygonProperties, value: false)
+		{
+			row(horizontal: @align_fill,
+				guide_mask: [@guide_label])
+			{
+				
+					image(identifier: "MakeSideEqualImage",
+							alt: "$$$/ShapeCoreUI/PolygonProperties/ToolTip/MakeSidesEqual=Make Sides Equal",
+							image: { normal: "SP_PolygonSideLength_Md_N.png", dark_normal: "SP_PolygonSideLength_Md_N_D.png" });
+					button(identifier: "MakeSidesEqualButton",
+						name: "$$$/ShapeCoreUI/PolygonProperties/Button/MakeSidesEqual=Make Sides Equal",
+						alt: "$$$/ShapeCoreUI/PolygonProperties/ToolTip/MakePolygonRegular=Balances side lengths. The polygon side aligned with the shortest bounding box side determines the final length the sides are equalized to.");
+				
+			}
+		}
+	}
+}

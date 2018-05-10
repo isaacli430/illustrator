@@ -1,0 +1,102 @@
+sheet CharacterMaxControlGroup
+{
+interface:
+	FontPopupVal:"";
+	FontStylePopupVal: "";
+	fontSizeUnits: "NumberEditUnit_Point";
+	
+	FontSizePopupItemsPt: ["$$$/_TextDlgs/Mnu/charSizePt/1=Other",
+								"" ,
+								"$$$/_TextDlgs/Mnu/charSizePt/2=6 pt",
+								"$$$/_TextDlgs/Mnu/charSizePt/3=7 pt",
+								"$$$/_TextDlgs/Mnu/charSizePt/4=8 pt",
+								"$$$/_TextDlgs/Mnu/charSizePt/5=9 pt",
+								"$$$/_TextDlgs/Mnu/charSizePt/6=10 pt",
+								"$$$/_TextDlgs/Mnu/charSizePt/7=11 pt",
+								"$$$/_TextDlgs/Mnu/charSizePt/8=12 pt",
+								"$$$/_TextDlgs/Mnu/charSizePt/9=14 pt",
+								"$$$/_TextDlgs/Mnu/charSizePt/10=18 pt",
+								"$$$/_TextDlgs/Mnu/charSizePt/11=21 pt",
+								"$$$/_TextDlgs/Mnu/charSizePt/12=24 pt",
+								"$$$/_TextDlgs/Mnu/charSizePt/13=36 pt",
+								"$$$/_TextDlgs/Mnu/charSizePt/14=48 pt",
+								"$$$/_TextDlgs/Mnu/charSizePt/15=60 pt",
+								"$$$/_TextDlgs/Mnu/charSizePt/16=72 pt"];
+	FontSizePopupItemsIn: ["$$$/_TextDlgs/Mnu/charSizeIn/1=Other" ,
+								"" ,
+								"$$$/_TextDlgs/Mnu/charSizeIn/2=0.1 in" ,
+								"$$$/_TextDlgs/Mnu/charSizeIn/3=0.125 in" ,
+								"$$$/_TextDlgs/Mnu/charSizeIn/4=0.15 in" ,
+								"$$$/_TextDlgs/Mnu/charSizeIn/5=0.175 in" ,
+								"$$$/_TextDlgs/Mnu/charSizeIn/6=0.2 in" ,
+								"$$$/_TextDlgs/Mnu/charSizeIn/7=0.225 in" ,
+								"$$$/_TextDlgs/Mnu/charSizeIn/8=0.25 in" ,
+								"$$$/_TextDlgs/Mnu/charSizeIn/9=0.275 in" ,
+								"$$$/_TextDlgs/Mnu/charSizeIn/10=0.3 in" ,
+								"$$$/_TextDlgs/Mnu/charSizeIn/11=0.35 in" ,
+								"$$$/_TextDlgs/Mnu/charSizeIn/12=0.4 in" ,
+								"$$$/_TextDlgs/Mnu/charSizeIn/13=0.5 in" ,
+								"$$$/_TextDlgs/Mnu/charSizeIn/14=0.6 in" ,
+								"$$$/_TextDlgs/Mnu/charSizeIn/15=0.7 in" ,
+								"$$$/_TextDlgs/Mnu/charSizeIn/16=1 in" ];
+								
+	FontSizePopupItemsMm: ["$$$/_TextDlgs/Mnu/charSizeMm/1=Other" ,
+								"" ,
+								"$$$/_TextDlgs/Mnu/charSizeMm/2=2 mm" ,
+								"$$$/_TextDlgs/Mnu/charSizeMm/3=2.5 mm" ,
+								"$$$/_TextDlgs/Mnu/charSizeMm/4=3 mm" ,
+								"$$$/_TextDlgs/Mnu/charSizeMm/5=4 mm" ,
+								"$$$/_TextDlgs/Mnu/charSizeMm/6=5 mm" ,
+								"$$$/_TextDlgs/Mnu/charSizeMm/7=6 mm" ,
+								"$$$/_TextDlgs/Mnu/charSizeMm/8=7 mm" ,
+								"$$$/_TextDlgs/Mnu/charSizeMm/9=8 mm" ,
+								"$$$/_TextDlgs/Mnu/charSizeMm/10=9 mm" ,
+								"$$$/_TextDlgs/Mnu/charSizeMm/11=10 mm" ,
+								"$$$/_TextDlgs/Mnu/charSizeMm/12=12 mm" ,
+								"$$$/_TextDlgs/Mnu/charSizeMm/13=14 mm" ,
+								"$$$/_TextDlgs/Mnu/charSizeMm/14=16 mm" ,
+								"$$$/_TextDlgs/Mnu/charSizeMm/15=20 mm" ,
+								"$$$/_TextDlgs/Mnu/charSizeMm/16=25 mm" ];
+	FontSizePopupItemsHa:[ "$$$/_TextDlgs/Mnu/charSizeHa/1=Other" ,
+								"" ,
+								"$$$/_TextDlgs/Mnu/charSizeHa/3=7 Ha" ,
+								"$$$/_TextDlgs/Mnu/charSizeHa/4=7.5 Ha" ,
+								"$$$/_TextDlgs/Mnu/charSizeHa/5=8 Ha" ,
+								"$$$/_TextDlgs/Mnu/charSizeHa/6=8.5 Ha" ,
+								"$$$/_TextDlgs/Mnu/charSizeHa/7=9 Ha" ,
+								"$$$/_TextDlgs/Mnu/charSizeHa/8=10 Ha" ,
+								"$$$/_TextDlgs/Mnu/charSizeHa/9=13 Ha" ,
+								"$$$/_TextDlgs/Mnu/charSizeHa/10=16 Ha" ,
+								"$$$/_TextDlgs/Mnu/charSizeHa/11=24 Ha" ,
+								"$$$/_TextDlgs/Mnu/charSizeHa/12=32 Ha" ,
+								"$$$/_TextDlgs/Mnu/charSizeHa/13=60 Ha" ,
+								"$$$/_TextDlgs/Mnu/charSizeHa/14=70 Ha" ,
+								"$$$/_TextDlgs/Mnu/charSizeHa/15=80 Ha" ,
+								"$$$/_TextDlgs/Mnu/charSizeHa/16=90 Ha" ,
+								"$$$/_TextDlgs/Mnu/charSizeHa/17=100 Ha" ];
+	FontSizePopupItemsPx: ["$$$/_TextDlgs/Mnu/charSizePx/1=Other" ,
+								"" ,
+								"$$$/_TextDlgs/Mnu/charSizePx/3=6 px" ,
+								"$$$/_TextDlgs/Mnu/charSizePx/4=7 px" ,
+								"$$$/_TextDlgs/Mnu/charSizePx/5=8 px" ,
+								"$$$/_TextDlgs/Mnu/charSizePx/6=9 px" ,
+								"$$$/_TextDlgs/Mnu/charSizePx/7=10 px" ,
+								"$$$/_TextDlgs/Mnu/charSizePx/8=11 px" ,
+								"$$$/_TextDlgs/Mnu/charSizePx/9=12 px" ,
+								"$$$/_TextDlgs/Mnu/charSizePx/10=14 px" ,
+								"$$$/_TextDlgs/Mnu/charSizePx/11=18 px" ,
+								"$$$/_TextDlgs/Mnu/charSizePx/12=21 px" ,
+								"$$$/_TextDlgs/Mnu/charSizePx/13=24 px" ,
+								"$$$/_TextDlgs/Mnu/charSizePx/14=36 px" ,
+								"$$$/_TextDlgs/Mnu/charSizePx/15=48 px" ,
+								"$$$/_TextDlgs/Mnu/charSizePx/16=60 px" ,
+								"$$$/_TextDlgs/Mnu/charSizePx/17=72 px" ];
+	FontSizeEditPopupItems <== fontSizeUnits=="NumberEditUnit_Point" ? FontSizePopupItemsPt :
+														(fontSizeUnits=="NumberEditUnit_Pixel" ? FontSizePopupItemsPx :
+															(fontSizeUnits=="NumberEditUnit_MM" ? FontSizePopupItemsMm :
+																( fontSizeUnits=="NumberEditUnit_Inch" ? FontSizePopupItemsIn : FontSizePopupItemsHa)
+															)
+														);
+}
+
+

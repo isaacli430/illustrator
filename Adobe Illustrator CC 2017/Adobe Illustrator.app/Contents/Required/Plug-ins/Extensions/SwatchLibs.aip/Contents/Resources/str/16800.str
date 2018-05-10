@@ -1,0 +1,82 @@
+/* [1] */
+$$$/SwatchLibs/Str/16801=Select a library to open:
+/* [2] */
+$$$/SwatchLibs/Str/16802=New Swatch
+/* [3] */
+$$$/SwatchLibs/Str/16803=R=%d G=%d B=%d
+/* [4] */
+$$$/SwatchLibs/Str/16804=C=%d M=%d Y=%d K=%d
+/* [5] */
+$$$/SwatchLibs/Str/16805=K=%d
+/* [6] */
+$$$/SwatchLibs/Str/16806=New Pattern
+/* [7] */
+$$$/SwatchLibs/Str/16807=Delete the swatch selection?
+/* [8] */
+$$$/SwatchLibs/Str/16808=Swatch Options
+/* [9] */
+$$$/SwatchLibs/Str/16809=New Swatch
+/* [10] */
+$$$/SwatchLibs/Str/16810=Swatches and Swatch Libraries
+/* [11] */
+$$$/SwatchLibs/Str/16811=by Neal Tucker, Ning-Ju Nan and Pankaj Mathur
+/* [12] */
+$$$/SwatchLibs/Str/16812=Undo Apply Swatch
+/* [13] */
+$$$/SwatchLibs/Str/16813=Redo Apply Swatch
+/* [14] */
+$$$/SwatchLibs/Str/16814=Loading Swatch Library
+/* [15] */
+$$$/SwatchLibs/Str/16815=Undo New Swatches
+/* [16] */
+$$$/SwatchLibs/Str/16816=Redo New Swatches
+/* [17] */
+$$$/SwatchLibs/Str/16817=Undo Delete Swatches
+/* [18] */
+$$$/SwatchLibs/Str/16818=Redo Delete Swatches
+/* [19] */
+$$$/SwatchLibs/Str/16819=Undo Move Swatches
+/* [20] */
+$$$/SwatchLibs/Str/16820=Redo Move Swatches
+/* [21] */
+$$$/SwatchLibs/Str/16821=Undo Swatch Changes
+/* [22] */
+$$$/SwatchLibs/Str/16822=Redo Swatch Changes
+/* [23] */
+$$$/SwatchLibs/Str/16823=%d%%
+/* [24] */
+$$$/SwatchLibs/Str/16824=Undo Merge Swatches
+/* [25] */
+$$$/SwatchLibs/Str/16825=Redo Merge Swatches
+/* [26] */
+$$$/SwatchLibs/Str/16826=Select Unused Swatches
+/* [27] */
+$$$/SwatchLibs/Str/16827=Swatch '%s' cannot be deleted because it is used in the document.
+/* [28] */
+$$$/SwatchLibs/Str/16828=Replace the %s swatch with a %s?
+/* [29] */
+$$$/SwatchLibs/Str/16829=color
+/* [30] */
+$$$/SwatchLibs/Str/16830=pattern
+/* [31] */
+$$$/SwatchLibs/Str/16831=gradient
+/* [32] */
+$$$/SwatchLibs/Str/16832=Merge Swatches
+/* [33] */
+$$$/SwatchLibs/Str/16833=Undo New Swatch
+/* [34] */
+$$$/SwatchLibs/Str/16834=Redo New Swatch
+/* [35] */
+$$$/SwatchLibs/Str/16835=Undo Duplicate Swatch
+/* [36] */
+$$$/SwatchLibs/Str/16836=Redo Duplicate Swatch
+/* [37] */
+$$$/SwatchLibs/Str/16837=Undo Duplicate Swatches
+/* [38] */
+$$$/SwatchLibs/Str/16838=Redo Duplicate Swatches
+/* [39] */
+$$$/SwatchLibs/Str/16839=Undo Place Pattern Definition
+/* [40] */
+$$$/SwatchLibs/Str/16840=Redo Place Pattern Definition
+/* [41] */
+$$$/SwatchLibs/Str/16841=Save Swatches as Library

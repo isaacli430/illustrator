@@ -1,0 +1,40 @@
+layout CleanUpUI
+{
+    view subview(identifier: "CleanUp",
+                 layout_theme: @dialog_large,
+                 placement: @place_column,
+                  spacing:@unrelated_spacing,
+                  child_horizontal: @align_fill,
+				 show_border: false)
+    {
+            group(identifier: "DeleteFrame",
+                  placement: @place_column,
+                  name: "$$$/Cleanup/Dlg/Cleanup/7=Delete")
+            {
+                checkbox(identifier: "stray_points", bind: @StrayPoints,
+                         set_default_focus: true,
+                         name: "$$$/Cleanup/Dlg/Cleanup/StrayPts=&Stray Points");
+
+                checkbox(identifier: "unpainted_objects", bind: @NoPaintObjects,
+                         name: "$$$/Cleanup/Dlg/Cleanup/NoPaint=&Unpainted Objects");
+
+                checkbox(identifier: "empty_text_paths", bind: @EmptyTextObjects,
+                         name: "$$$/Cleanup/Dlg/Cleanup/EmptyText=&Empty Text Paths");
+			}
+			
+        	row(child_horizontal: @align_right, reverse: os==@mac, spacing: @related_spacing)
+        {
+            button(default: true,
+                   identifier: "okButton",
+                   name: "$$$/gOK=OK",
+                   commit_button: true);
+			
+			button(cancel: true,
+                   identifier: "cancelButton",
+                   name: "$$$/gCancel=Cancel",
+                   commit_button: true);
+			                   
+        }
+    }
+}
+

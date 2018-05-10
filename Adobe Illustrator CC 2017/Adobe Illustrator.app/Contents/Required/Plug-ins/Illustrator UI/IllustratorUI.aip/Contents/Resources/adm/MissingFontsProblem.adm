@@ -1,0 +1,14 @@
+sheet MissingFontsProblem
+{
+  interface:
+    MissingFontsText:		"$$$/_MissingFonts/Dlg/MissingFonts/promptMissingFonts=The document uses fonts or characters which are not available or are in a different format than originally specified. Select 'Sync Fonts' to restore the fonts by syncing them from Typekit. Any fonts that are not available will be substituted.\n";
+    
+	numberOfMissingFonts:	"$$$/_MissingFonts/Dlg/MissingFonts/numberOfMissingFonts=Missing Fonts (?)";
+
+	syncCheckBoxText:		"$$$/_MissingFonts/Dlg/MissingFonts/syncCheckBox=Sync      ";
+	
+	ShowSpWheelSubscriptionText: true;
+	ShowPanel: 0;
+	DontShow: false;
+	ShowError: 0;
+}

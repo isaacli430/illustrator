@@ -1,0 +1,8 @@
+sheet RasterizeUI
+{
+	interface:
+		ResolutionRadioGp: empty;
+		BackGroundRadioGp: empty;
+		ResolutionPopup: 72;
+		OtherResolution: ResolutionPopup <== (ResolutionPopup == -1) ? OtherResolution : ResolutionPopup;
+}

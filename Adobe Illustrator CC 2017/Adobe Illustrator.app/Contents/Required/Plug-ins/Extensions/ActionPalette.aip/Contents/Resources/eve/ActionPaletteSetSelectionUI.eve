@@ -1,0 +1,41 @@
+layout ActionPaletteSetSelectionUI
+{
+    view subview(identifier: "ActionSetSelectionDialogSubView",
+    			 show_border: false,
+				layout_theme: @dialog_large,
+				spacing:@unrelated_spacing)
+    {
+            column(child_horizontal: @align_fill)
+            {
+                static_text(identifier: "prefixOfTextEditBox",
+                            name: "$$$/ActionPalette/Dlg/17300/3=&Select object(s) whose note has:");
+
+                edit_text(characters: 28,
+                		  identifier: "textEditBox",
+                          lines: 6.5,
+                          set_default_focus: true,
+                          scrollable: true);
+
+                row()
+                {
+                    checkbox(identifier: "isWholeWordChkbox",
+                             name: "$$$/ActionPalette/Dlg/17300/5=&Whole Word");
+
+                    checkbox(identifier: "isCaseSensitiveChkbox",
+                             name: "$$$/ActionPalette/Dlg/17300/6=&Case Sensitive");
+                }
+            }
+
+		row(horizontal: @align_fill,
+				child_horizontal: @align_right,
+				reverse: os == @mac, spacing: @related_spacing)
+		{
+			 button(default: true,
+                       identifier: "okButton",
+                       name: "$$$/gOK=OK", commit_button: true);
+			 button(cancel: true,
+                       identifier: "cancelButton",
+                       name: "$$$/gCancel=Cancel", commit_button: true);
+		}
+    }
+}

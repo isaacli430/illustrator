@@ -1,0 +1,11 @@
+sheet PackageDialogUI
+{	
+interface:
+	LocationCell: "";
+	FolderName: "";
+	Links: false;
+	unlink CollectLinks : false <== ( Links == false ) ? false : CollectLinks;
+	unlink Relink : false <== ( Links == false ) ? false : Relink;
+	Fonts: false;
+	Create: false;
+}

@@ -1,0 +1,26 @@
+/* [1] */
+$$$/Pathfinder/Str/LiveEffect/1=Add
+/* [2] */
+$$$/Pathfinder/Str/LiveEffect/2=Intersect
+/* [3] */
+$$$/Pathfinder/Str/LiveEffect/3=Exclude
+/* [4] */
+$$$/Pathfinder/Str/LiveEffect/4=Subtract
+/* [5] */
+$$$/Pathfinder/Str/LiveEffect/5=Minus Back
+/* [6] */
+$$$/Pathfinder/Str/LiveEffect/6=Divide
+/* [7] */
+$$$/Pathfinder/Str/LiveEffect/7=Trim
+/* [8] */
+$$$/Pathfinder/Str/LiveEffect/8=Merge
+/* [9] */
+$$$/Pathfinder/Str/LiveEffect/9=Crop
+/* [10] */
+$$$/Pathfinder/Str/LiveEffect/10=Outline
+/* [11] */
+$$$/Pathfinder/Str/LiveEffect/11=Hard Mix
+/* [12] */
+$$$/Pathfinder/Str/LiveEffect/12=Soft Mix
+/* [13] */
+$$$/Pathfinder/Str/LiveEffect/13=Trap

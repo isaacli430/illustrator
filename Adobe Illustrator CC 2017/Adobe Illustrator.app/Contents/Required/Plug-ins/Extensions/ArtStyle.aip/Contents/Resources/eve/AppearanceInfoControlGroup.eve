@@ -1,0 +1,23 @@
+layout AppearanceInfoControlGroup
+{
+    view subview(identifier: "AppearanceInfoControlGroup"
+				, placement: @place_row
+				, layout_theme: @controlbar
+				, show_border: false
+				, child_vertical: @align_center
+				, margin: 0
+				, spacing: 5
+				, height: 31)
+    {
+		optional(identifier: "AppearanceInfoControlGroupSubGroup"
+				, placement: @place_row
+				, child_vertical: @align_center
+				, margin: 0)
+		{
+			button(identifier: "AppearanceInfoButton"
+					, action: @AppearanceInfoButtonAction
+					, image: {normal: "SP_WarningGrayscale_Sm_N.png", dark:"SP_WarningGrayscale_Sm_N_D.png"}					, alt: "$$$/ArtStyle/Str/AppearanceInfo=Top-most fill/stroke is not active. Click here to make it active."
+					, wants_focus: false);
+		}
+	}
+}

@@ -1,0 +1,7 @@
+sheet CleanupUI
+{
+	interface:	
+		StrayPoints: false;
+		NoPaintObjects: false;
+		EmptyTextObjects: false;
+}

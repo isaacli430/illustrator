@@ -1,0 +1,134 @@
+layout TouchAppBar
+{
+    view subview(show_border: false, layout_theme:@touch_appbar)
+    {
+        row(horizontal: @align_fill, vertical: @align_fill)
+        {
+			column(horizontal: @align_left, vertical: @align_fill)
+			{
+				row(horizontal: @align_fill, vertical: @align_fill, spacing:0)
+				{
+					row( horizontal: @align_center, vertical: @align_center, margin:[0,12,0,12] )
+					{
+						image (identifier:"AIImage", image:{normal:"ai_cc_owl_light_ui.png", dark_normal:"ai_cc_owl_dark_ui.png"});
+					}
+					
+					row(spacing:0)
+					{
+						separator(orientation: @vertical, horizontal: @align_fill, minThickness:1);
+						optional(bind:@HPSproutEnabled, value:false)
+						{
+							popup(	identifier: "FileMenu",
+								popup_type: "touch_menu",
+								items:@FileMenuItems,
+								title: "$$$/AppBarControls/TouchAppBar/FileMenu/File=File",
+								include_custom_item: false,
+								wants_focus: false,
+								vertical: @align_center);
+						}
+						optional(bind:@HPSproutEnabled, value:true)
+						{
+							popup(	identifier: "FileMenuSprout",
+								popup_type: "touch_menu",
+								items:@FileMenuItemsSprout,
+								title: "$$$/AppBarControls/TouchAppBar/FileMenu/File=File",
+								include_custom_item: false,
+								wants_focus: false,
+								vertical: @align_center);
+						}
+						
+						separator(orientation: @vertical, horizontal: @align_fill, minThickness:1);
+						
+						button( default: false, 
+							horizontal: @align_fill,
+							identifier: "SaveDocument",
+							name: "$$$/AppBarControls/TouchAppBar/Save=Save",
+							image:{normal:"SP_TouchSave_Md_N.png", dark_normal:"SP_TouchSave_Md_N_D.png"},
+							vertical: @align_fill,
+							wants_focus: false,
+							picture_text_both: true);
+							
+						optional(bind: @HPSproutEnabled)
+						{
+							row( horizontal: @align_fill, vertical: @align_fill, spacing:0 )
+							{
+								separator(orientation: @vertical, horizontal: @align_fill, minThickness:1);
+
+								button( default: false, 
+									horizontal: @align_fill,
+									identifier: "CaptureImage",
+									name: "$$$/AppBarControls/TouchAppBar/CaptureImage=Capture",
+									image:{normal:"SP_TouchCapture_Md_N.png", dark_normal:"SP_TouchCapture_Md_N_D.png"},
+									vertical: @align_fill,
+									wants_focus: false,
+									picture_text_both: true);
+						
+								separator(orientation: @vertical, horizontal: @align_fill, minThickness:1);
+							}
+						}
+					}
+
+					optional(bind: @DocumentPresent)
+					{
+						row( horizontal: @align_fill, vertical: @align_fill, spacing:0 )
+						{
+							button( default: false, 
+									horizontal: @align_fill,
+									identifier: "CloseDocument",
+									image:{normal:"SP_TouchClose_Md_N.png", dark_normal:"SP_TouchClose_Md_N_D.png"},
+									vertical: @align_fill,
+									wants_focus: false,
+									alt: "$$$/AppBarControls/TouchAppBar/CloseDocument/CloseDocument=Close Document");
+							  
+							popup(	identifier: "DocumentName",
+									popup_type: "touch_popup",
+									horizontal: @align_fill,
+									vertical: @align_center,
+									wants_focus: false, 
+									popup_maximum_width_chars: 16);
+							
+							separator(orientation: @vertical, horizontal: @align_fill, minThickness:1);
+						}
+					}
+				}
+			}
+            row( horizontal: @align_right, vertical: @align_fill, spacing:0 )
+            {
+                button(image: {normal:"SP_TouchKeyboardAndMouse_Lg_N.png",dark_normal:"SP_TouchKeyboardAndMouse_Lg_N_D.png"},
+                        identifier: "WorkspaceToggleButton",
+                        vertical: @align_center,
+                        alt: "$$$/AppBar/HostView/Controls/SwitchFromTWSButton/ToolTip=Exit Touch Workspace",
+                        wants_focus: false);
+
+                separator(orientation: @vertical, horizontal: @align_fill, minThickness:1);
+                popup( 	identifier: "WorkSpaceSwitcher",
+                            popup_type: "touch_popup",
+                            horizontal: @align_fill,
+                            vertical: @align_center,
+                            wants_focus: false,
+                            dynamic_layout: true);
+                separator(orientation: @vertical, horizontal: @align_fill, minThickness:1);
+                optional(bind: @StarterWorkspaceEnabled, value: false)
+                {
+                     optional(bind: @HPSproutEnabled, value: false)
+					 {
+						subview(width: 50, vertical: @align_fill, show_border: false)
+						{
+							button(image: {normal:"SP_TouchHelp_Md_N.png",dark_normal:"SP_TouchHelp_Md_N_D.png"},
+									identifier: "TouchWorkspaceHelp",
+									vertical: @align_fill,
+									horizontal: @align_fill,
+									alt: "$$$/AppBar/HostView/Controls/TouchWorkspaceHelp/ToolTip=Show Help Overlays",
+									wants_focus: false);
+						}
+					 }
+                }
+            }
+
+
+
+
+
+        }
+    }
+}

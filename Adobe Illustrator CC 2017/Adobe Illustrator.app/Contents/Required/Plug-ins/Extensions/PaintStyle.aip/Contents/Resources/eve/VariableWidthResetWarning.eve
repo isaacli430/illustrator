@@ -1,0 +1,35 @@
+layout VariableWidthResetWarning
+{
+    view subview(identifier: "VariableWidthResetWarning",
+                 layout_theme: @dialog_large,
+                 show_border: false,					 
+				 placement:@place_column)
+    {	
+		row()
+		{
+			info_icon(icontype:"warning", size:"warning");
+			column(child_horizontal: @align_fill, horizontal: @align_fill)
+			{
+			   static_text(name: "$$$/PaintStyle/Str/VariableWidth/ResetWarning/Reset=Restoring the default width profile set will remove any custom saved profiles.");
+			   static_text(name: "$$$/PaintStyle/Str/VariableWidth/ResetWarning/Desc=Are you sure you want to reset the width profiles?");	
+				column(spacing: @unrelated_spacing)
+					{	    
+					   row(horizontal: @align_fill, spacing: @unrelated_spacing)
+						{
+						   
+						row(horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+							{
+								button(identifier: "okButton",
+								   commit_button: true,
+								   name: "$$$/gOK=OK");
+								button(commit_button: true,
+								   identifier: "cancelButton",
+								   name: "$$$/gCancel=Cancel");
+							}
+						}
+					}
+			}	
+		}
+	}	
+   }
+}

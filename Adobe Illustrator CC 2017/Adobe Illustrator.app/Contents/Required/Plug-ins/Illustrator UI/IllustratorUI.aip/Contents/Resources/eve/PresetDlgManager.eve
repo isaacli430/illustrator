@@ -1,0 +1,83 @@
+layout PresetManager
+{
+     view subview(child_horizontal: @align_fill,
+                 identifier: "PresetManger",
+                 layout_theme:  @dialog_large,
+                 placement: @place_column,
+                 show_border: false,
+				 width: 400,
+				 spacing:@unrelated_spacing)
+    {   
+		column(child_horizontal: @align_fill)
+		{
+			column(spacing: @related_spacing)
+			{
+				static_text(identifier: "PresetsStaticText",
+								name: "$$$/_DefineStyle/Dlg/Styles=Presets:");    
+				list(identifier: "PresetList",
+						orientation: "vertical",
+						height: 100,
+						horizontal: @align_fill);
+				row(horizontal: @align_fill)
+				{
+					row(horizontal: @align_left, spacing: @related_spacing)
+					{
+						button(identifier: "buttonNew",
+							image: {normal: "SP_NewItem_Sm_N.png", dark_normal:"SP_NewItem_Sm_N_D.png"},
+							alt: "$$$/_DefineStyle/Dlg/New=New...", horizontal: @align_left, action: @NewPresetAction);
+						button(identifier: "buttonEdit",
+							image: {normal: "SP_Edit_Sm_N.png", dark_normal:"SP_Edit_Sm_N_D.png"},
+							alt: "$$$/_DefineStyle/Dlg/Edit=Edit...", horizontal: @align_left, action: @EditPresetAction);
+						button(identifier: "buttonDelete",
+							image: {normal: "SP_Delete_Sm_N.png", dark_normal:"SP_Delete_Sm_N_D.png"},
+							alt: "$$$/_DefineStyle/Dlg/Delete=Delete", horizontal: @align_left, action: @DeletePresetAction);
+					}
+					row(horizontal: @align_right, spacing: @related_spacing)
+					{	button(identifier: "buttonImport",	
+							alt: "$$$/AI/Gallery/LoadTip=Import preset(s) from a file", 
+							name: "$$$/_DefineStyle/Dlg/Load=Import...", horizontal: @align_right, action: @ImportPresetAction);
+						button(identifier: "buttonExport",
+							alt: "$$$/AI/Gallery/SaveTip=Export the selected preset(s) to a file", 
+							name: "$$$/_DefineStyle/Dlg/Save=Export...", horizontal: @align_right, action: @ExportPresetAction);
+						}
+				}
+			}
+			
+			optional(value: 1, margin: 0, bind: @showPresetDesc, child_horizontal: @align_fill)
+			{
+				column(spacing: @related_spacing, child_horizontal: @align_fill)
+				{
+					static_text(identifier: "PresetsDescriptionStaticText",
+									name: "$$$/_DefineStyle/Dlg/StylesDesc=Preset Description:"); 
+									
+					subview(child_horizontal: @align_fill,
+					 identifier: "PresetDescriptionSubView",
+					 show_border: true,
+					 height: 64,
+					 horizontal: @align_fill);
+				}
+			}
+			column(spacing: @related_spacing)
+			{
+				static_text(identifier: "PresetsSettingsStaticText",
+							name: "$$$/_DefineStyle/Dlg/Settings=Preset Settings:"); 
+							
+				subview(child_horizontal: @align_fill,
+					 identifier: "PresetSettingsSubView", theme_font_size: @small,
+					 show_border: true,
+					 height: 150,
+					 horizontal: @align_fill);
+			}
+		}
+		row(child_horizontal: @align_right, reverse: os==@mac, spacing: @related_spacing)
+			{				
+				button(identifier: "okButton",
+					   name: "$$$/gOK=OK",
+					   set_default_focus: true,
+						commit_button: true);
+				button(identifier: "cancelButton",
+					   name: "$$$/gCancel=Cancel",
+						commit_button: true);		
+			}
+    }
+}

@@ -1,0 +1,54 @@
+layout TouchAlignPanel
+{
+    view subview(identifier: "TouchAlignPanelSubview", show_border: false, horizontal: @align_fill, layout_theme:@touch_panel, width: 190)
+    {
+		static_text(identifier: "align_rule_label", name: @rule_name);
+		button_bar(	identifier: "AlignOptions", horizontal: @align_fill, button_inner_gradient: false, 
+					hasSeparators: false, button_inner_bevel: false, button_outer_bevel: false, width_margin: 35.0, height_margin: 10.0,
+								items: [
+									{
+										image: {normal: "SP_TouchAlignToSelection_Md_N.png", dark_normal:"SP_TouchAlignToSelection_Md_N_D.png"}, 
+										show_border: true, 
+										value: 0, 
+										alt: "$$$/FWAlignADM/Str/ToolTip/AlignSelection=Align to: Selection"
+									},
+									{
+										image: {normal: "SP_TouchAlignToKeyObjects_Md_N.png",dark_normal:"SP_TouchAlignToKeyObjects_Md_N_D.png"}, 
+										show_border: true, 
+										value: 1, 
+										alt: "$$$/FWAlignADM/Str/ToolTip/AlignObject=Align to: Key Object"
+									},
+									{
+										image: {normal: "SP_TouchAlignToArtboard_Md_N.png", dark_normal:"SP_TouchAlignToArtboard_Md_N_D.png"},
+										show_border: true, 
+										value: 2, 
+										alt: "$$$/FWAlignADM/Str/ToolTip/AlignArtboard=Align to: Artboard"
+									}
+								], bind: @align_option); 
+		
+		separator(orientation: @horizontal, horizontal: @align_fill);
+		display_text(identifier: "align_label", label: "$$$/FWAlignADM/Touch/Str/Align=Align:", value: @align_name);
+		subview(identifier: "AlignControlView", width: 145, height: 145, show_border: false, horizontal: @align_center);
+		optional(bind :@ShowDistributeButtons, value: 1)
+		{
+			separator(orientation: @horizontal, horizontal: @align_fill);
+			static_text(identifier: "align_distribute_label", name: "$$$/FWAlignADM/Touch/Distribute/Str/DistributeObj= Distribute Objects:");
+			row(child_vertical: @align_center, horizontal: @align_left)
+			{	
+				button(identifier: "VerticalDistributeCenter",
+						image: {normal: "SP_DistributeVerticalCenter_Md_N.png",dark_normal:"SP_DistributeVerticalCenter_Md_N_D.png"},
+						alt: "$$$/FWAlignADM/Str/ToolTip/VDistributeCenter=Vertical Distribute Center",
+						button_inner_bevel: false, button_outer_bevel: false, inset_undrawn_space: false,
+						wants_focus: false,
+						width: 40, height: 25);
+				button(identifier: "HorizontalDistributeCenter",
+							image: {normal: "SP_DistributeHorizontalCenter_Md_N.png",dark_normal:"SP_DistributeHorizontalCenter_Md_N_D.png"},
+							alt: "$$$/FWAlignADM/Str/ToolTip/HDistributeCenter=Horizontal Distribute Center",
+							button_inner_bevel: false, button_outer_bevel: false, inset_undrawn_space: false,
+							wants_focus: false,
+							width: 40, height: 25);
+			}
+		}
+    }
+}
+

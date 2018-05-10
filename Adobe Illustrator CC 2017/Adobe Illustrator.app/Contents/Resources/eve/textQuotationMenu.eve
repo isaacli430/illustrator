@@ -1,0 +1,11 @@
+layout textQuotationMenu
+{
+	view menu( id: 86,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/Type/DoubleLeftQuot=&Double Left Quotation Marks", 			id:	375, help_id:  0 );
+		menu( text: "$$$/_MBAR/Mnu/Type/DoubleRightQuot=Double &Right Quotation Marks", 			id:	376, help_id:  0 );
+		menu( text: "$$$/_MBAR/Mnu/Type/SingleLeftQuot=&Single Left Quotation Marks", 			id:	377, help_id:  0 );
+		menu( text: "$$$/_MBAR/Mnu/Type/SingleRightQuot=Single Right &Quotation Marks", 			id:	378, help_id:  0 );
+	}
+}

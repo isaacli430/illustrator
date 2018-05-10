@@ -1,0 +1,49 @@
+layout layout_widget
+{
+    view subview(name:'Layout Widget', spacing: 0, margin: [0,0,3,0], placement: @place_column, wants_focus: false)
+    {
+        column(vertical: @align_fill, horizontal: @align_center, spacing: 3, margin: [5,5,5,5])
+		{
+			row(horizontal: @align_center, spacing: 3)
+			{
+				button ( image: {normal:"P_AB1Up_Lg_N.png",dark_normal:"P_AB1Up_Lg_N_D.png"}, bind: @layout_1_up, action: @do_layout_4, alt: "$$$/AppBar/HostView/Controls/ConsolidateAll/Tooltip=Consolidate All", wants_focus: false);
+				button ( image: {normal:"P_ABAllInGrid_Lg_N.png",dark_normal:"P_ABAllInGrid_Lg_N_D.png"}, bind: @layout_1_up, action: @do_layout_1, alt: "$$$/AppBar/HostView/Controls/TileAllInGrid/Tooltip=Tile All In Grid", wants_focus: false);
+				button ( image: {normal:"P_ABAllVertically_Lg_N.png",dark_normal:"P_ABAllVertically_Lg_N_D.png"}, bind: @layout_1_up, action: @do_layout_2, alt: "$$$/AppBar/HostView/Controls/TileAllVertically/Tooltip=Tile All Vertically",  wants_focus: false);
+				button ( image: {normal:"P_ABAllHorizontally_Lg_N.png",dark_normal:"P_ABAllHorizontally_Lg_N_D.png"}, bind: @layout_1_up, action: @do_layout_3, alt: "$$$/AppBar/HostView/Controls/TileAllHorizontally/Tooltip=Tile All Horizontally", wants_focus: false);
+			}
+			row(horizontal: @align_fill, spacing: 0, margin: [2,5,2,5])
+			{
+				separator(orientation: @horizontal, vertical: @align_center);
+			}
+			row(horizontal: @align_center, spacing: 3)
+			{
+				button ( image: {normal:"P_AB2UpColumns_Lg_N.png",dark_normal:"P_AB2UpColumns_Lg_N_D.png"}, bind: @layout_2_up, action: @do_layout_5, alt: "$$$/AppBar/HostView/Controls/2UP/Tooltip=2-Up", wants_focus: false);
+				button ( image: {normal:"P_AB2UpRows_Lg_N.png",dark_normal:"P_AB2UpRows_Lg_N_D.png"}, bind: @layout_2_up, action: @do_layout_6, alt: "$$$/AppBar/HostView/Controls/2UP/Tooltip=2-Up", wants_focus: false);
+				button ( image: {normal:"P_AB3Up2RowsR_Lg_N.png",dark_normal:"P_AB3Up2RowsR_Lg_N_D.png"}, bind: @layout_3_up, action: @do_layout_7, alt: "$$$/AppBar/HostView/Controls/3UP/Tooltip=3-Up", wants_focus: false);
+				button ( image: {normal:"P_AB3Up2RowsL_Lg_N.png",dark_normal:"P_AB3Up2RowsL_Lg_N_D.png"}, bind: @layout_3_up, action: @do_layout_8, alt: "$$$/AppBar/HostView/Controls/3UP/Tooltip=3-Up", wants_focus: false);
+			}
+			row(horizontal: @align_center, spacing: 3)
+			{
+				button ( image: {normal:"P_AB3UpColumns_Lg_N.png",dark_normal:"P_AB3UpColumns_Lg_N_D.png"}, bind: @layout_3_up, action: @do_layout_10, alt: "$$$/AppBar/HostView/Controls/3UP/Tooltip=3-Up", wants_focus: false);
+				button ( image: {normal:"P_AB3UpRows_Lg_N.png",dark_normal:"P_AB3UpRows_Lg_N_D.png"}, bind: @layout_3_up, action: @do_layout_9, alt: "$$$/AppBar/HostView/Controls/3UP/Tooltip=3-Up", wants_focus: false);
+				button ( image: {normal:"P_AB4UpGrid_Lg_N.png",dark_normal:"P_AB4UpGrid_Lg_N_D.png"}, bind: @layout_4_up, action: @do_layout_11, alt: "$$$/AppBar/HostView/Controls/4UP/Tooltip=4-Up", wants_focus: false);
+				button ( image: {normal:"P_AB4Up2CollSplitR_Lg_N.png",dark_normal:"P_AB4Up2CollSplitR_Lg_N_D.png"}, bind: @layout_4_up, action: @do_layout_12, alt: "$$$/AppBar/HostView/Controls/4UP/Tooltip=4-Up", wants_focus: false);
+			}
+			row(horizontal: @align_center, spacing: 3)
+			{
+				button ( image: {normal:"P_AB4Up3CollSplitFarR_Lg_N.png",dark_normal:"P_AB4Up3CollSplitFarR_Lg_N_D.png"}, bind: @layout_4_up, action: @do_layout_13, alt: "$$$/AppBar/HostView/Controls/4UP/Tooltip=4-Up", wants_focus: false);
+				button ( image: {normal:"P_AB4UpColumns_Lg_N.png",dark_normal:"P_AB4UpColumns_Lg_N_D.png"}, bind: @layout_4_up, action: @do_layout_14, alt: "$$$/AppBar/HostView/Controls/4UP/Tooltip=4-Up", wants_focus: false);
+				button ( image: {normal:"P_AB4UpRows_Lg_N.png",dark_normal:"P_AB4UpRows_Lg_N_D.png"}, bind: @layout_4_up, action: @do_layout_15, alt: "$$$/AppBar/HostView/Controls/4UP/Tooltip=4-Up", wants_focus: false);
+				button ( image: {normal:"P_AB5Up2CollSplitR_Lg_N.png",dark_normal:"P_AB5Up2CollSplitR_Lg_N_D.png"}, bind: @layout_5_up, action: @do_layout_16, alt: "$$$/AppBar/HostView/Controls/5UP/Tooltip=5-Up", wants_focus: false);
+			}
+			row(horizontal: @align_center, spacing: 3)
+			{
+				button ( image: {normal:"P_AB5Up3ColSplitFarR_Lg_N.png",dark_normal:"P_AB5Up3ColSplitFarR_Lg_N_D.png"}, bind: @layout_5_up, action: @do_layout_17, alt: "$$$/AppBar/HostView/Controls/5UP/Tooltip=5-Up", wants_focus: false);
+				button ( image: {normal:"P_AB5Up3ColSplitLast2_Lg_N.png",dark_normal:"P_AB5Up3ColSplitLast2_Lg_N_D.png"}, bind: @layout_5_up, action: @do_layout_18, alt: "$$$/AppBar/HostView/Controls/5UP/Tooltip=5-Up", wants_focus: false);
+				button ( image: {normal:"P_AB6UpGrid_Lg_N.png",dark_normal:"P_AB6UpGrid_Lg_N_D.png"}, bind: @layout_6_up, action: @do_layout_19, alt: "$$$/AppBar/HostView/Controls/6UP/Tooltip=6-Up", wants_focus: false);
+				button ( image: {normal:"P_AB6Up123_Lg_N.png",dark_normal:"P_AB6Up123_Lg_N_D.png"}, bind: @layout_6_up, action: @do_layout_20, alt: "$$$/AppBar/HostView/Controls/6UP/Tooltip=6-Up", wants_focus: false);
+			}
+			
+		}
+    }
+}

@@ -1,0 +1,172 @@
+layout EPSOptions
+{
+	view subview( identifier: "EPSOptions",
+					layout_theme: @dialog_large,
+					placement: @place_column,
+					show_border: false,
+					child_horizontal: @align_fill,
+					spacing:@unrelated_spacing)
+    {
+		column(child_horizontal: @align_fill,spacing:@related_spacing)
+		{
+			column(guide_mask: [ @guide_label ])
+			{
+				row(spacing: @label_widget_spacing)
+				{
+					column(spacing: @related_spacing)
+					{
+						row()
+						{
+							popup(identifier:   "VersionsPopup",
+							name: "$$$/_FFILLUST/Dlg/11320/Version=Version:",
+							include_custom_item: false,
+							items: @EPSCompatibilityPopupItems,
+							bind: @EPSCompatibilityPopupVal,
+							set_default_focus: true
+							);
+							panel(margin: 0, bind: @showWarning)
+							{
+								info_icon(identifier:"AlertIcon1",
+								icontype:"warning",
+								size:"small");
+							}
+						}
+						optional(margin:0, bind: @showWarning, value: false, vertical: @align_fill)
+						{
+							row(margin: 0)
+							{
+								guide_consumer(consume_horizontal: 1);
+								static_text(identifier: "CC_Compatible_Warning", theme_font_size: @small, name: "$$$/_FFILLUST/Dlg/11320/CCCompatibility=Compatible with Illustrator 17 and above.");
+							}
+						}
+					}
+				}
+				popup(identifier:   "FormatPopup",
+							include_custom_item: false,
+							name: "$$$/_FFILLUST/Dlg/11300/PreviewFormat=Preview &Format:",
+							items: @PreviewMenuItems,
+							bind: @FormatPopupVal);
+				radiogroup(indent: gIndent,margin:0,show_border:false,identifier:"TransparancyRadio",placement:@place_row)
+				{
+					radio_button(bind: @TransparentOrOpaqueVal,
+									identifier: "TransparentRadioButton",
+									name: "$$$/_FFILLUST/Dlg/11300/7=&Transparent",
+									value: 1);
+					radio_button(bind: @TransparentOrOpaqueVal,
+										identifier: "OpaqueRadioButton",
+										name: "$$$/_FFILLUST/Dlg/11300/8=&Opaque",
+										value: 2);
+				}
+			}
+			group(identifier:   "TransparencyFrame",
+					name: "$$$/_FFILLUST/Dlg/11300/TransparencyFrameTitle=Transparency",
+					guide_mask: [ @guide_label ])
+			{
+				overlay()
+				{
+					panel(bind: @OverlayToUse, margin: 0, value: 0)
+					{
+						popup(identifier:   "OverprintsPopup",
+							include_custom_item: false,
+							popup_minimum_width_chars:8,
+							name: "$$$/_FFILLUST/Dlg/11300/Overprints=Ov&erprints:",
+							items: @EPSOverprintMenuItems,
+							bind: @OverprintsPopupVal
+							);
+					}
+					panel(bind: @OverlayToUse, margin: 0, value: 1)
+					{
+						radiogroup(show_border:false,margin:0,identifier:"PreserveRadio")
+						{
+							radio_button(bind: @TransparencyVal,
+											identifier: "PreservePathsRadioButton",
+											name: "$$$/_FFILLUST/Dlg/11301/PreservePaths=Preserve &Paths (discard transparency)",
+											guide_mask: [ @guide_label ],
+											value: 1);
+							radio_button(bind: @TransparencyVal,
+											identifier: "PreserveAppearanceRadioButton",
+											name: "$$$/_FFILLUST/Dlg/11301/PreserveAppearanceAndOverprints=Preserve Appearance and Ov&erprints",
+											guide_mask: [ @guide_label ],
+											value: 2);
+						}
+					}
+				}
+				row()
+				{
+					popup(identifier:   "PresetsPopup",
+								include_custom_item: false,
+								popup_minimum_width_chars:12,
+								name: "$$$/_FFILLUST/Dlg/11300/Preset=P&reset:"
+								);
+					button(identifier: "CustomButton",
+								name: "$$$/_FFILLUST/Dlg/11300/Custom=C&ustom...",
+								action: @CustomButtonAction);
+				}
+			}
+			group(identifier: "OptionsFrame",
+						name: "$$$/_FFILLUST/Dlg/11300/16=Options")
+			{
+				row()
+				{
+					checkbox(identifier:   "EmbedFontsCheckbox",
+								name: "$$$/_FFILLUST/Dlg/11300/EmbedFonts=E&mbed Fonts (for other applications)",
+								guide_mask: [ @guide_label ],
+								bind: @EmbedFontsCheckboxVal);
+
+					panel(margin: 0, bind: @showInfo)
+					{
+						info_icon(identifier:"InfoIcon1",
+						icontype:"note",
+						size:"small");
+					}
+				}	
+				checkbox(identifier: "LinkedFilesCheckBox",
+							name: "$$$/_FFILLUST/Dlg/11300/9=Include &Linked Files",
+							guide_mask: [ @guide_label ],
+							bind: @LinkedFilesCheckBoxVal);
+				checkbox(identifier: "DocumentThumbnailsCheckBox",
+							name: "$$$/_FFILLUST/Dlg/11300/10=&Include Document Thumbnails",
+							guide_mask: [ @guide_label ],
+							bind: @DocumentThumbnailsCheckBoxVal);
+				checkbox(identifier: "IncludePostScriptCheckBox",
+							name: "$$$/_FFILLUST/Dlg/11300/13=Include &CMYK PostScript in RGB Files",
+							guide_mask: [ @guide_label ],
+							bind: @IncludePostScriptCheckBoxVal);
+				checkbox(identifier: "CompatibleGradientCheckBox",
+							name: "$$$/_FFILLUST/Dlg/11300/CompatibleGradientPrinting=Compatible &Gradient and Gradient Mesh Printing",
+							guide_mask: [ @guide_label ],
+							bind: @CompatibleGradientCheckBoxVal);
+				checkbox(identifier: "UsePrinterDefaultScreenCheckBox",
+							name: "$$$/_FFILLUST/Dlg/11300/UsePrinter=Use Printer's &Default Screen",
+							guide_mask: [ @guide_label ],
+							bind: @UsePrinterDefaultScreenCheckBoxVal);
+				popup(identifier:   "AdobePSPopup",
+								include_custom_item: false,
+								name: "$$$/_FFILLUST/Dlg/11300/AdobePostScript=Ado&be PostScript^R:",
+								items: @LanguageLevelPopupItems,
+								bind: @AdobePSPopupVal
+								);
+			}
+			column(spacing:@label_widget_spacing)
+			{
+				static_text(identifier: "WarningsStaticText",
+										name: "$$$/_FFILLUST/Dlg/11300/Warning=Warnings");
+				multicolumn_tree(identifier: "MCT",
+										wants_focus: false,
+										horizontal: @align_fill,
+										height: 75);
+			}
+		}
+		row(child_horizontal: @align_right, reverse: os == @mac,spacing:@related_spacing)
+		{ 
+			button(default: true,
+						identifier: "okButton",
+						commit_button: true,
+						name: "$$$/gOK=OK");
+			button(cancel: true,
+						identifier: "cancelButton",
+						commit_button: true,
+						name: "$$$/gCancel=Cancel");
+		} 
+    }
+}

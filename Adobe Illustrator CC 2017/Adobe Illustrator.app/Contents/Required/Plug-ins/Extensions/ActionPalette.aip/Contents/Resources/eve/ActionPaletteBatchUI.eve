@@ -1,0 +1,169 @@
+layout ActionPaletteBatchUI
+{
+	view subview(identifier: "ActionPaletteBatchDialog_subview",
+					layout_theme: @dialog_large,
+					spacing: @unrelated_spacing,
+					show_border: false)
+	{
+		column(child_horizontal: @align_fill, spacing: @inter_group_spacing,horizontal: @align_fill)
+		{
+			group(identifier: "playGroup",
+					name: "$$$/ActionPalette/Dlg/17500/26=Play",horizontal: @align_fill)
+			{
+				popup(identifier: "setPopup",
+						name: "$$$/ActionPalette/Dlg/17500/3=&Set:",
+						include_custom_item: false,
+						items: [{name:'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'}],
+						set_default_focus: true);
+				popup(identifier: "actionPopup",
+						name: "$$$/ActionPalette/Dlg/17500/5=&Action:",
+						include_custom_item: false,
+						items: [{name:'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'}]);
+			}
+			group(identifier: "sourceGroup",
+					header: "popup(identifier: 'sourcePopup',
+									name: '$$$/ActionPalette/Dlg/17500/27=Source:',
+									include_custom_item: false, horizontal: @align_left,
+									items: [{name:'$$$/ActionPalette/Mnu/16605/1=Folder', value: 0},
+											{name:'$$$/ActionPalette/Mnu/16605/2=Data Sets', value: 1}],
+									bind: @batchSourceMode)",horizontal: @align_fill)
+			{
+				overlay()
+				{
+					panel(value: 0,
+							margin: 0,
+							bind: @batchSourceModeSection)
+					{
+						column()
+						{
+							file_picker(identifier: "openFilePicker",
+										characters: 40,
+										pick_name: "$$$/ActionPalette/Dlg/17500/8=&Choose...",
+										pick_type: 1,
+										pick_title: "$$$/ActionPalette/Str/16637=Select Batch Source Folder.",
+										bind: @batchOpenPath);
+							checkbox(identifier: "openCheckbox",
+										name: "$$$/ActionPalette/Dlg/17500/9=&Override Action ^[Open^] Commands",
+										guide_mask: [@guide_label],
+										value_off: 0,
+										value_on: 1,
+										bind: @batchOverrideOpen);
+							checkbox(identifier: "includeCheckbox",
+										name: "$$$/ActionPalette/Dlg/17500/10=&Include All Subdirectories",
+										guide_mask: [@guide_label],
+										value_off: 0,
+										value_on: 1,
+										bind: @batchIncludeSubDir);
+						}
+					}
+					panel(value: 1,
+							margin: 0,
+							bind: @batchSourceModeSection)
+					{
+						row()
+						{
+							button(identifier: "infoIcon",
+									image: {normal:"SP_Info_Sm_N.png",dark_normal:"SP_Info_Sm_N_D.png"},
+									show_border: false,
+									wants_focus: false);
+							static_text(name: "$$$/ActionPalette/Dlg/17500/31=No options available");
+						}
+					}
+				}
+			}
+			group(identifier: "destinationGroup",
+					header: "popup(identifier: 'destinationPopup',
+									name: '$$$/ActionPalette/Dlg/17500/29=Destination:',
+									include_custom_item: false, horizontal: @align_left,
+									items: [{name:'$$$/ActionPalette/Mnu/16603/1=None', value: 0},
+											{name:'$$$/ActionPalette/Mnu/16603/2=Save and Close', value: 1},
+											{name:'$$$/ActionPalette/Mnu/16603/3=Folder', value: 2}],
+									disabled_items: @disabledList,
+									bind: @batchSaveMode)",horizontal: @align_fill)
+			{
+				row()
+				{
+					column(child_horizontal: @align_fill)
+					{
+						file_picker(identifier: "saveFilePicker",
+									characters: 20,
+									pick_name: "$$$/ActionPalette/Dlg/17500/12=C&hoose...",
+									pick_type: 1,
+									pick_title: "$$$/ActionPalette/Str/16638=Select Batch Destination Folder.",
+									bind: @batchSavePath);
+						checkbox(identifier: "saveCheckox",
+									name: "$$$/ActionPalette/Dlg/17500/13=Ove&rride Action ^[Save^] Commands",
+									guide_mask: [@guide_label],
+									value_off: 0,
+									value_on: 1,
+									bind: @batchOverrideSave);
+						file_picker(identifier: "exportFilePicker",
+									characters: 20,
+									pick_name: "$$$/ActionPalette/Dlg/17500/14=Choos&e...",
+									pick_type: 1,
+									pick_title: "$$$/ActionPalette/Str/16639=Select Batch Export Folder.",
+									bind: @batchExportPath);
+						checkbox(identifier: "exportCheckbox",
+									name: "$$$/ActionPalette/Dlg/17500/15=Overri&de Action ^[Export^] Commands",
+									guide_mask: [@guide_label],
+									value_off: 0,
+									value_on: 1,
+									bind: @batchOverrideExport);
+					}
+					separator(orientation: @vertical);
+					column(child_horizontal: @align_fill)
+					{
+						static_text(identifier: "fileText",
+									name: "$$$/ActionPalette/Dlg/17500/16=File Name:");
+						radiogroup(identifier: "fileNameOptionsRadioGroup")
+						{
+							radio_button(identifier: "numberRadioButton",
+											name: "$$$/ActionPalette/Dlg/17500/17=File + &Number",
+											value: 0,
+											guide_mask: [@guide_label],
+											bind: @batchFileNameOptions);
+							radio_button(identifier: "dataRadioButton",
+											name: "$$$/ActionPalette/Dlg/17500/18=File + Da&ta Set Name",
+											value: 1,
+											guide_mask: [@guide_label],
+											bind: @batchFileNameOptions);
+							radio_button(identifier: "setRadioButton",
+											name: "$$$/ActionPalette/Dlg/17500/19=Data Set Na&me",
+											value: 2,
+											guide_mask: [@guide_label],
+											bind: @batchFileNameOptions);
+						}
+					}
+				}
+			}
+			group(identifier: "errorsGroup",
+					header: "popup(identifier: 'errorsPopup',
+									name: '$$$/ActionPalette/Dlg/17500/30=Errors:',
+									include_custom_item: false, horizontal: @align_left,
+									items: [{name:'$$$/ActionPalette/Mnu/16604/1=Stop for Errors', value: 0},
+											{name:'$$$/ActionPalette/Mnu/16604/2=Log Errors to File', value: 1}],
+									bind: @batchErrorMode)",horizontal: @align_fill)
+			{
+				file_picker(identifier: "errorFilePicker",
+							characters: 40,
+							pick_name: "$$$/ActionPalette/Dlg/17500/21=Sa&ve As...",
+							pick_type: 2,
+							filters: [{file_filter_description: "$$$/ActionPalette/Str/16641/Win=Log Files(*.txt)", file_filter_name: "txt"}],
+							pick_title: "$$$/ActionPalette/Str/16640=Select Batch Error Log File.",
+							bind: @batchErrorPath);
+			}
+		}
+		row(horizontal: @align_fill,
+			child_horizontal: @align_right,
+			spacing: @related_spacing,
+			reverse: os == @mac)
+		{
+			button(identifier: "okButton",
+					commit_button: true,
+					name: "$$$/gOK=OK");
+			button(identifier: "cancelButton",
+					commit_button: true,
+					name: "$$$/gCancel=Cancel");
+		}
+	}
+}

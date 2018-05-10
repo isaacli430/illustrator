@@ -1,0 +1,23 @@
+sheet SmartGuidePreference
+{
+interface:
+	SGAlignGuide: false;
+	SGHilite: false;
+	SGAnchor: false;
+	SGMeasureLabel: false;
+    SGSpacingGuides: false;
+	SGTransformTool: false;
+	SGConsGuide: false;
+	SGSnapTolerance: 1;
+	
+	SGPGuideAnglePopupItems: [
+						{ name: "$$$/PrefsDlg/SGPDlg/ADAM/SGPPopupAngleItems/Angle1=90^D Angles", value: 1 },
+						{ name: "$$$/PrefsDlg/SGPDlg/ADAM/SGPPopupAngleItems/Angle2=45^D Angles", value: 2 },
+						{ name: "$$$/PrefsDlg/SGPDlg/ADAM/SGPPopupAngleItems/Angle3=90^D & 45^D Angles", value: 3 },
+						{ name: "$$$/PrefsDlg/SGPDlg/ADAM/SGPPopupAngleItems/Angle4=60^D Angles", value: 4 },
+						{ name: "$$$/PrefsDlg/SGPDlg/ADAM/SGPPopupAngleItems/Angle5=60^D & Horizontal Angles", value: 5 },
+						{ name: "$$$/PrefsDlg/SGPDlg/ADAM/SGPPopupAngleItems/Angle6=30^D Angles", value: 6 },
+						{ name: "$$$/PrefsDlg/SGPDlg/ADAM/SGPPopupAngleItems/Angle7=90^D & 15^D Angles", value: 7 },
+						{ name: "$$$/PrefsDlg/SGPDlg/ADAM/SGPPopupAngleItems/Angle8=Custom Angles", value: 8 }
+						];
+}

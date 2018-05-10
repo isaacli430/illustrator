@@ -1,0 +1,29 @@
+sheet tateChuYokoOptionsDialog
+{
+	interface:
+		tateChuYoko: 0;
+		upDown: 0;
+		leftRight: 0;
+		upDownLeftRightItems: ["-10 pt",
+								"-9 pt",
+								"-8 pt",
+								"-7 pt",
+								"-6 pt",
+								"-5 pt",
+								"-4 pt",
+								"-3 pt",
+								"-2 pt",
+								"-1 pt",
+								"0 pt",
+								"1 pt",
+								"2 pt",
+								"3 pt",
+								"4 pt",
+								"5 pt",
+								"6 pt",
+								"7 pt",
+								"8 pt",
+								"9 pt",
+								"10 pt"];
+		preview: 0;
+}

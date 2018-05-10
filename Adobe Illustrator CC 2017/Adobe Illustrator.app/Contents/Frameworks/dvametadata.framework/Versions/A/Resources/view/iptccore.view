@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<views
+    xmlns="http://ns.adobe.com/metadata/ui/1.0/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:xmpRights="http://ns.adobe.com/xap/1.0/rights/"
+	xmlns:photoshop="http://ns.adobe.com/photoshop/1.0/"
+	xmlns:Iptc4xmpCore="http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/">
+
+<!-- 
+	IPTC Core View
+	Contains the basic metadata properties.
+	TODO remove labels and retrieve them from the schema
+-->	
+<view name="com.adobe.xmp.view.iptccore"
+      label="$$$/metadataui/view/iptccore_label=IPTC"
+      description="$$$/metadataui/view/iptccore_description=International Press Telecommunications Council Core schema properties"
+	  version="0.9.0">
+
+	<note type="none" align="left" fontSize="normal">
+		<param name="message" value="$$$/xmp/iptc/core/PanelIntroduction=All fields on this panel are from the IPTC Core standard (http://www.iptc.org/photometadata)."/>
+	</note>	
+
+	<section
+		label="$$$/iptc/core/contactinfo=IPTC Contact"
+		description="$$$/iptc/core/Contact/howto=Use this section to record the photographer´s contact information">
+
+	    <property
+			name="dc:creator"
+			hint="$$$/metadataui/view/basic/CreatorHint=Commas can be used to separate multiple creators"/>
+
+	    <property 
+			name="photoshop:AuthorsPosition"/>
+
+		<!-- TODO this shall be enough once we support structs
+		<property
+			name="Iptc4xmpCore:CreatorContactInfo"/>
+		-->
+
+		<property
+			name="Iptc4xmpCore:CreatorContactInfo/Iptc4xmpCore:CiAdrExtadr"
+			label="$$$/xmp/Iptc4xmpCore/CiAdrExtadr=Address"
+			description="$$$/xmp/Iptc4xmpCore/CiAdrExtadr_description=Enter Address for the person that created this image"
+			multiLines="3"/>
+
+		<property
+			name="Iptc4xmpCore:CreatorContactInfo/Iptc4xmpCore:CiAdrCity"
+			label="$$$/xmp/Iptc4xmpCore/CiAdrCity=City"
+			description="$$$/xmp/Iptc4xmpCore/CiAdrCity_description=Enter the City for the address of the person that created this image"/>
+
+		<property
+			name="Iptc4xmpCore:CreatorContactInfo/Iptc4xmpCore:CiAdrRegion"
+			label="$$$/xmp/Iptc4xmpCore/CiAdrRegion=State/Province"
+			description="$$$/xmp/Iptc4xmpCore/CiAdrRegion_description=Enter the State for the address of the person that created this image"/>
+
+		<property
+			name="Iptc4xmpCore:CreatorContactInfo/Iptc4xmpCore:CiAdrPcode"
+			label="$$$/xmp/Iptc4xmpCore/CiAdrPcode=Postal Code"
+			description="$$$/xmp/Iptc4xmpCore/CiAdrCtry_description=Enter the Country name for the address of the person that created this image"/>
+		
+		<property
+			name="Iptc4xmpCore:CreatorContactInfo/Iptc4xmpCore:CiTelWork"
+			label="$$$/xmp/Iptc4xmpCore/CiTelWork=Phone(s)"
+			description="$$$/xmp/Iptc4xmpCore/CiTelWork_description=Enter the work Phone number(s) for the person that created this image, using the international format, such as +1 (123) 456789"
+			multiLines="2"/>
+
+		<property
+			name="Iptc4xmpCore:CreatorContactInfo/Iptc4xmpCore:CiEmailWork"
+			label="$$$/xmp/Iptc4xmpCore/CiEmailWork=E-Mail(s)"
+			description="$$$/xmp/Iptc4xmpCore/CiEmailWork_description=Enter the work Email address(es) for the person that created this image, such as name@domain.com"
+			multiLines="2"/>
+
+		<property
+			name="Iptc4xmpCore:CreatorContactInfo/Iptc4xmpCore:CiUrlWork"
+			label="$$$/xmp/Iptc4xmpCore/CiUrlWork=Website(s)"
+			description="$$$/xmp/Iptc4xmpCore/CiUrlWork_description=Enter the work Web URL(s) for the person that created this image, such as http://www.domain.com/"/>
+	</section>
+		
+	<section
+		label="$$$/iptc/core/descriptions=IPTC Image"
+		description="$$$/iptc/core/Image/howto=Use this section for formal descriptive information about the image">
+
+		<property
+			name="photoshop:DateCreated"/>
+
+		<property
+			name="Iptc4xmpCore:IntellectualGenre"/>
+
+		<property
+			name="Iptc4xmpCore:Scene"
+			multiLines="3"
+			hint="$$$/iptc/core/Image/howto2=Scene values are defined at http://www.newscodes.org, multiple values may be separated by a comma or semicolon"/>
+
+		<property
+			name="Iptc4xmpCore:Location"/>
+
+		<property
+			name="photoshop:City"/>
+
+		<property
+			name="photoshop:State"/>
+		
+		<property
+			name="photoshop:Country"/>
+
+		<property
+			name="Iptc4xmpCore:CountryCode"
+			hint="$$$/xmp/Iptc4xmpCore/CountryCode_hint=The location above could either be the location shown in the image or the location from which the photo was taken. To make a clear distinction use the two Location properties on the IPTC Ext panel"/>
+
+	</section>
+
+	<section
+		label="$$$/iptc/core/generalInfo=IPTC Content"
+		description="$$$/iptc/core/Content/howto=Use this section to describe the visual content of the image">
+
+		<property
+			name="photoshop:Headline"
+			multiLines="2"/>
+
+	    <property
+			name="dc:description"
+			multiLines="3"/>
+
+	    <property
+			name="dc:subject"
+	  		multiLines="3"
+			hint="$$$/AWS/FileInfoLib/Panels/Description/KeywordsHint=Semicolons or commas can be used to separate multiple values"/>
+
+		<property
+			name="Iptc4xmpCore:SubjectCode"
+			multiLines="2"
+			hint="$$$/xmp/Iptc4xmpCore/SubjectCode_hint=Subject Codes are defined at http://www.newscodes.org, semicolons or commas can be used to separate multiple values"/>
+
+		<property
+			name="photoshop:CaptionWriter"/>
+	</section>
+
+	<section
+		label="$$$/iptc/core/trackinginfo=IPTC Status"
+		description="$$$/iptc/core/Status/howto=Use this section to record workflow and copyright information">
+
+		<property
+			name="dc:title"/>
+
+		<property
+			name="photoshop:TransmissionReference"/>
+
+		<property
+			name="photoshop:Instructions"
+			multiLines="3"/>
+
+		<property
+			name="photoshop:Credit"/>
+		
+		<property
+			name="photoshop:Source"/>
+
+	    <property
+			name="dc:rights"
+			multiLines="3"/>
+
+	    <property
+			name="xmpRights:UsageTerms"
+			multiLines="3"/>
+	</section>
+
+</view>
+
+</views>

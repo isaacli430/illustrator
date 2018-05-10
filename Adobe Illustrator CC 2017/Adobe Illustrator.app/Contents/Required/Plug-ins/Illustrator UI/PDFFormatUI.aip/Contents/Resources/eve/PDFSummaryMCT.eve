@@ -1,0 +1,149 @@
+layout SummaryMCT
+{
+	view subview(	identifier: "PDFSummaryTree_subview",
+					layout_theme: @dialog,
+					child_horizontal: @align_fill,
+					show_border: false,
+					placement: @place_column
+				)
+	{
+		multicolumn_tree(	identifier: "SummaryMCT",										 
+							wants_focus: false,
+							horizontal: @align_fill,
+							theme_font_size: @small,	
+							items:	[
+										{
+											name:"$$$/PDFFormatUI/SummaryTree/Str/PDFStyle=Adobe PDF Preset:",
+											value: @valuePDFPresetName
+										},
+										{
+											name:"$$$/PDFFormatUI/SummaryTree/Str/PDFStyleCompatibility=Compatibility:",
+											value: @valuePDFCompatibilitySummaryString
+										},
+										{
+											name:"$$$/PDFFormatUI/SummaryTree/Str/Summary/Standard=Standard:",
+											value: @valuePDFStandardSummaryString
+										},
+										{
+											name:""
+										},
+										{
+											name:"$$$/PDFFormat/Static/PDFPanelsGeneral=General",
+											children:   [
+															{name: "$$$/PDFormatUI/SummaryTree/Str/PDFStylePGF=Preserve Illustrator Editing Capabilities:", value: @valueIsPreservePGF, hide: @valueIsPreservePGFIsDisabled},
+															{name: "$$$/PDFormatUI/SummaryTree/Str/PDFStyleThumbnails=Embed Page Thumbnails:", value: @valueIsEmbedThumnail},
+															{name: "$$$/PDFormatUI/SummaryTree/Str/PDFStyleViewPDF=View PDF File after Saving:", value: @valueIsViewPDF, hide: @valueIsViewPDFIsDisabled},
+															{name: "$$$/PDFormatUI/SummaryTree/Str/PDFStyleFastWebViewStr=Optimize for Fast Web View:", value: @valueIsOptimizeForWeb},
+															{name: "$$$/PDFormatUI/SummaryTree/Str/PDFStyleAcrobatLayers=Create Acrobat Layers from Top-Level Layers:", value: @valueIsCreateAcroLayers, hide: @valueIsCreateAcroLayersIsDisabled}
+														]
+										},
+										{
+											name:"$$$/PDFFormatUI/SummaryTree/Str/PDFStyleComp=Compression",
+											children:   [
+															{name: "$$$/PDFormatUI/SummaryTree/Str/PDFStyleColorBitmapImage=Color Bitmap Images:", 
+																children: 
+																	[
+																		{name: "", value: @valueBmpSamplingOptionSummaryString},
+																		{name: "$$$/PDFormatUI/SummaryTree/Str/PDFStyleResolution=Resolution:", value: @valueBmpPPI, hide : @valueBmpPPIIsDisabled},
+																		{name: "$$$/PDFormatUI/SummaryTree/Str/PDFStyleForImageAbove=For Image Above:", value: @valueBmpPPITolerance, hide : @valueBmpPPIToleranceIsDisabled},
+																		{name: "$$$/PDFormatUI/SummaryTree/Str/PDFStyleComp=Compression:", value: @valueBmpCompressionTypeString},
+																		{name: "$$$/PDFormatUI/SummaryTree/Str/quality=Image Quality:", value: @valueBmpImageQualitySummaryString, hide : @valueBmpImageQualityIsDisabled},
+																		{name: "$$$/PDFormatUI/SummaryTree/Str/PDFStyleTile=Tile Size:", value: @valueBmpTileSize, hide : @valueBmpTileSizeIsDiasbled}
+																	]
+															},
+															{name: "$$$/PDFormatUI/SummaryTree/Str/PDFStyleGrayBitmapImage=Grayscale Bitmap Images:", 
+																children: 
+																	[
+																		{name: "", value: @valueGraySamplingOptionSummaryString},
+																		{name: "$$$/PDFormatUI/SummaryTree/Str/PDFStyleResolution=Resolution:", value: @valueGrayPPI, hide : @valueGrayPPIIsDisabled},
+																		{name: "$$$/PDFormatUI/SummaryTree/Str/PDFStyleForImageAbove=For Image Above:", value: @valueGrayPPITolerance, hide : @valueGrayPPIToleranceIsDisabled},
+																		{name: "$$$/PDFormatUI/SummaryTree/Str/PDFStyleComp=Compression:", value: @valueGrayCompressionTypeString},
+																		{name: "$$$/PDFormatUI/SummaryTree/Str/quality=Image Quality:", value: @valueGrayImageQualitySummaryString, hide : @valueGrayImageQualityIsDisabled},
+																		{name: "$$$/PDFormatUI/SummaryTree/Str/PDFStyleTile=Tile Size:", value: @valueGrayTileSize, hide : @valueGrayTileSizeIsDisabled}
+																	]
+															},
+															{name: "$$$/PDFormatUI/SummaryTree/Str/PDFStyleMonoBitmapImage=Monochrome Bitmap Images:", 
+																children: 
+																	[
+																		{name: "", value: @valueMonoSamplingOptionSummaryString},
+																		{name: "$$$/PDFormatUI/SummaryTree/Str/PDFStyleResolution=Resolution:", value: @valueMonoPPI, hide : @valueMonoPPIIsDisabled},
+																		{name: "$$$/PDFormatUI/SummaryTree/Str/PDFStyleForImageAbove=For Image Above:", value: @valueMonoPPITolerance, hide : @valueMonoPPIToleranceIsDisabled},
+																		{name: "$$$/PDFormatUI/SummaryTree/Str/PDFStyleComp=Compression:", value: @valueMonoCompressionTypeSummaryString}																							
+																	]
+															},
+															{
+																name: "$$$/PDFormatUI/SummaryTree/Str/PDFStyleCompressArt=Compress Text and Line Art:",
+																value: @valueIsCompressTextAndLine
+															}																				
+														]
+										},															
+										{
+											name:"$$$/PDFFormatUI/SummaryTree/Str/PDFPanelsBleeds=Marks and Bleeds",
+											children:   [
+															{name: "$$$/PDFormatUI/SummaryTree/Str/Summary/MarksBleeds/TrimMarks=Trim Marks:", value: @valueIsTrimMarks},
+															{name: "$$$/PDFormatUI/SummaryTree/Str/Summary/MarksBleeds/RegMarks=Registration Marks:", value: @valueIsRegistrationMarks},
+															{name: "$$$/PDFormatUI/SummaryTree/Str/Summary/MarksBleeds/ColorBars=Color Bars:", value: @valueIsColorBars}	,
+															{name: "$$$/PDFormatUI/SummaryTree/Str/Summary/MarksBleeds/PageInformation=Page Information:", value: @valueIsPageInfo},
+															{name: "$$$/PDFormatUI/SummaryTree/Str/Summary/MarksBleeds/Type=Printer Mark Type:", value: @valuePrinterMarkTypeString},
+															{name: "$$$/PDFormatUI/SummaryTree/Str/Summary/MarksBleeds/Weight=Trim Mark Weight:", value: @valueTrimMarkWeightString},
+															{name: "$$$/PDFormatUI/SummaryTree/Str/Summary/MarksBleeds/Offset=Offset from Artboard:", value: @valueOffsetStr, hide: @valueOffsetIsDisabled},
+															{name: "$$$/PDFormatUI/SummaryTree/Str/PDFStyleDocBleed=Use Document Bleed:", value: @valueIsUseDocBleed, hide: @valueBleedsDisabled},
+															{name: "$$$/PDFormatUI/SummaryTree/Str/PDFStyleBleedLeft=Bleed Left:", value: @valueBleedLeftStr, hide: @valueIsUseDocBleed},
+															{name: "$$$/PDFormatUI/SummaryTree/Str/PDFStyleBleed/Right=Bleed Right:", value: @valueBleedRightStr, hide: @valueIsUseDocBleed},
+															{name: "$$$/PDFormatUI/SummaryTree/Str/PDFStyleBleedTop=Bleed Top:", value: @valueBleedTopStr, hide: @valueIsUseDocBleed},
+															{name: "$$$/PDFormatUI/SummaryTree/Str/PDFStyleBleedBottom=Bleed Bottom:", value: @valueBleedBottomStr, hide: @valueIsUseDocBleed}
+														]
+										},
+										{
+											name:"$$$/PDFFormatUI/SummaryTree/Str/PDFPanelsOutput=Output",
+											children:   [
+															{name: "$$$/PDFormatUI/SummaryTree/Str/SummaryTree/Color=Color:", 
+																children: 
+																	[
+																		{name: "$$$/PDFormatUI/SummaryTree/Str/Summary/ColorConversion=Color Conversion:", value: @valueColorConversionOptionSummaryString},
+																		{name: "$$$/PDFormatUI/SummaryTree/Str/Summary/Destination=Destination:", value: @valueDestinationOptionString, hide:@valueIsDestinationOption},
+																		{name: "$$$/PDFormatUI/SummaryTree/Str/Summary/ProfileInclusion=Profile Inclusion Policy:", value: @valueProfileInclusionPolicySummaryString}																							
+																	]
+															},
+															{name: "$$$/PDFormatUI/SummaryTree/Str/SummaryTree/PDFX=PDF/X:", hide: @valueIsPDFXIsDisabled,
+																children: 
+																	[
+																		{name: "$$$/PDFormatUI/SummaryTree/Str/Summary/OutputIntentProfileName=Output Intent Profile Name:", value: @valueOutputIntentProfileName},
+																		{name: "$$$/PDFormatUI/SummaryTree/Str/Summary/OutputCondition=Output Condition:", value: @valueOutputConditionName, hide:@valueIsOutputConditionName},
+																		{name: "$$$/PDFormatUI/SummaryTree/Str/Summary/OutputConditionIdentifier=Output Condition Identifier:", value: @valueOutputConditionID},
+																		{name: "$$$/PDFormatUI/SummaryTree/Str/Summary/RegistryName=Registry Name:", value: @valueRegistryName},
+																		{name: "$$$/PDFormatUI/SummaryTree/Str/Summary/Trapped=Mark as Trapped:", value: @valueIsMarkTrapped}
+																	]
+															}																																							
+														]
+										},
+										{
+											name:"$$$/PDFFormatUI/SummaryTree/Str/PDFPanelsAdvanced=Advanced",
+											children:   [
+															{name: "$$$/PDFormatUI/SummaryTree/Str/PDFStyleSubsetFontBelow=Subset embedded fonts below:", 
+																value: @valuePercentageCharUsedThresholdStr																						
+															},
+															{name: "$$$/PDFormatUI/SummaryTree/Str/PDFStyleOverprint=Overprint:", 
+																value: @valueOverPrintsOptionSummaryString,
+																hide: @valueOverPrintsOptionIsDisabled
+															},
+															{name: "$$$/PDFormatUI/SummaryTree/Str/PDFStyleTransparencyStyle=Flattener Preset:", 
+																value: @valueFlattenerPresetSummaryString,
+																hide: @valueFlattenerPresetIsDisabled,
+																children: 
+																	[
+																		{name: "$$$/PDFormatUI/SummaryTree/Str/FlatteningBalance=Raster/Vector Balance:", value: @valueRasterVectorBalance},
+																		{name: "$$$/PDFormatUI/SummaryTree/Str/MaxRes=Line Art and Text Resolution:", value: @valueLineArtAndTextResolutionString},
+																		{name: "$$$/PDFormatUI/SummaryTree/Str/MinRes=Gradient and Mesh Resolution:", value: @valueGradientAndMeshResolutionString},
+																		{name: "$$$/PDFormatUI/SummaryTree/Str/OutlineText=Convert All Text to Outlines:", value: @valueIsConvertTextToOutline},
+																		{name: "$$$/PDFormatUI/SummaryTree/Str/OutlineStrokes=Convert All Strokes to Outlines:", value: @valueIsConvertStrokesToOutline},
+																		{name: "$$$/PDFormatUI/SummaryTree/Str/ClipComplex=Clip Complex Regions:", value: @valueIsClipComplexRegions},
+																		{name: "$$$/PDFormatUI/SummaryTree/Str/AntiAlias=Anti-alias Rasters:", value: @valueIsAntiAlias}
+																	]
+															}																																							
+														]
+										}
+									]
+							);
+		}
+}

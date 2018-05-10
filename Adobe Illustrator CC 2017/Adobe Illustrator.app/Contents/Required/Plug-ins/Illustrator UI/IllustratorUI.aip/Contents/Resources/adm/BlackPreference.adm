@@ -1,0 +1,13 @@
+sheet BlackPreference
+{
+interface:
+	BPScreenOptionsPopupItems: [ { name: "$$$/_ColorConvdg/Mnu/BlackPreservation/OnScreenAccurate=Display All Blacks Accurately", value: 1 },
+								 { name: "$$$/_ColorConvdg/Mnu/BlackPreservation/OnScreenConsistent=Display All Blacks as Rich Black", value: 0 } 
+								];
+	BPPrintOptionsPopupItems:   [ { name: "$$$/_ColorConvdg/Mnu/BlackPreservation/ExportAccurate=Output All Blacks Accurately", value: 1 },
+								 { name: "$$$/_ColorConvdg/Mnu/BlackPreservation/ExportConsistent=Output All Blacks as Rich Black", value: 0 } 
+								];
+	BPOnScreenCell: 0;
+	BPOnExportCell: 0;
+	BPCellDesc: 6;
+}

@@ -1,0 +1,12 @@
+layout creativeCloudMenu
+{
+	view menu( id: 73,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/CreativeCloud/SyncSettings=Sync Settings", id: 334, help_id:0);
+		menu( text: "Status", id:	335, help_id:0);
+		separator();
+		menu( text: "$$$/_MBAR/CreativeCloud/ManageSyncSettings=Manage Sync Settings...",	id: 336, help_id:0);
+		menu( text: "$$$/_MBAR/CreativeCloud/ManageAccountOnline=Manage Creative Cloud Account...",	id: 337, help_id:0);
+	}
+}

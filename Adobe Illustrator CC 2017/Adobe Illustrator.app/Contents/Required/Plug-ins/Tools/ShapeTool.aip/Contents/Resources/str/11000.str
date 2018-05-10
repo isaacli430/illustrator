@@ -1,0 +1,40 @@
+/* [1] */
+$$$/ShapeTool/Str/Action/ActionPolyTool=Polygon Tool
+/* [2] */
+$$$/ShapeTool/Str/Action/ActionStarTool=Star Tool
+/* [3] */
+$$$/ShapeTool/Str/Action/ActionSpiralTool=Spiral Tool
+/* [4] */
+$$$/ShapeTool/Str/Action/CenterX=Center X: 
+/* [5] */
+$$$/ShapeTool/Str/Action/CenterY=Center Y: 
+/* [6] */
+$$$/ShapeTool/Str/Action/Radius=Radius: 
+/* [7] */
+$$$/ShapeTool/Str/Action/PolySides=Sides: 
+/* [8] */
+$$$/ShapeTool/Str/Action/StarRadius1=Radius 1: 
+/* [9] */
+$$$/ShapeTool/Str/Action/StarRadius2=Radius 2: 
+/* [10] */
+$$$/ShapeTool/Str/Action/StarPoints=Points: 
+/* [11] */
+$$$/ShapeTool/Str/Action/SpiralDecay=Decay: 
+/* [12] */
+$$$/ShapeTool/Str/Action/SpiralSegments=Segments: 
+/* [13] */
+$$$/ShapeTool/Str/Action/SpiralStyle=Clockwise: 
+/* [14] */
+$$$/ShapeTool/Str/Action/ActionOvalTool=Ellipse Tool
+/* [15] */
+$$$/ShapeTool/Str/Action/ActionRectTool=Rectangle Tool
+/* [16] */
+$$$/ShapeTool/Str/Action/ActionRoundRectTool=Rounded Rectangle Tool
+/* [17] */
+$$$/ShapeTool/Str/Action/Width=Width: 
+/* [18] */
+$$$/ShapeTool/Str/Action/Height=Height: 
+/* [19] */
+$$$/ShapeTool/Str/Action/Centered=Centered: 
+/* [20] */
+$$$/ShapeTool/Str/Action/CornerRadius=Corner Radius: 

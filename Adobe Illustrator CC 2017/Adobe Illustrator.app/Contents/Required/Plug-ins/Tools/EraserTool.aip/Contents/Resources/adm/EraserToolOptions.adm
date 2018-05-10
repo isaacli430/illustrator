@@ -1,0 +1,45 @@
+sheet EraserToolOptions
+{
+	interface:
+		
+		min_diameter_variation: 0;
+		max_diameter_variation: 1296;
+		
+		min_roundness_variation: 0;
+		max_roundness_variation: 100;
+		
+		min_angle_variation: 0;
+		max_angle_variation: 180;
+		
+		ruler_units: "NumberEditUnit_Point";
+
+		previewHeight: 172;
+		
+		show_preview : true;
+		preview : false;
+		
+		round: 100;
+		angle: 0;
+		diameter: 0;
+		
+		AV_angle_right: 0;     
+		AV_roundness_right: 0;
+		AV_diameter_right: 0; 
+		
+		AV_brush_param_type_for_angle: 0;
+		AV_brush_param_type_for_roundness: 0;
+		AV_brush_param_type_for_diameter: 0;
+		
+		dependingItems : [ 
+                         {name: "$$$/EraserBrushTool/Mnu/DependingOn/1=Fixed",value: 0},
+                         {name: "$$$/EraserBrushTool/Mnu/DependingOn/2=Random",value: 1},
+                         {name: "$$$/EraserBrushTool/Mnu/DependingOn/3=Pressure",value: 2},
+                         {name: "$$$/EraserBrushTool/Mnu/DependingOn/4=Stylus Wheel",value: 3},
+                         {name: "$$$/EraserBrushTool/Mnu/DependingOn/5=Tilt",value: 4},
+                         {name: "$$$/EraserBrushTool/Mnu/DependingOn/6=Bearing",value: 5},
+                         {name: "$$$/EraserBrushTool/Mnu/DependingOn/7=Rotation",value: 6}
+                         ];
+		
+		
+
+}

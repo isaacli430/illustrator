@@ -1,0 +1,212 @@
+layout PathfinderPanel
+{
+    view subview(identifier: "AIEveSubView",
+				 child_horizontal: @align_fill,
+				 placement: @place_column,
+				 layout_theme: @panel,
+				 show_border: false, width: gStandardMinPanelWidth, 
+				 child_vertical: @align_center)
+    {
+	static_text(identifier: "ShapeModesStaticText", bind: @staticText,
+				name: "$$$/Pathfinder/LTxt1/16100=Shape Modes:");
+	
+	row(child_vertical: @align_center, horizontal: @align_fill, child_horizontal: @align_fill)
+		{
+			overlay()
+				{
+						panel( bind: @showMixedAdd, value: 1, margin: 0)
+						{									
+							button(identifier: "MixedUnite",
+									image: {normal: "SP_AddToMixed_Md_N.png",dark_normal: "SP_AddToMixed_Md_N_D.png"},
+									wants_focus: false,
+									items: [{action: @unite, alt: (os == @mac ? "$$$/Pathfinder/Str/ToolTip/1/Mac=Unite (Option-click to create a Compound Shape and add to shape area)" :
+																				"$$$/Pathfinder/Str/ToolTip/1/Win=Unite (Alt-click to create a Compound Shape and add to shape area)" )},
+											{action: @unite_alt, alt: (os == @mac ? "$$$/Pathfinder/Str/ToolTip/1/Mac=Unite (Option-click to create a Compound Shape and add to shape area)" :
+																				"$$$/Pathfinder/Str/ToolTip/1/Win=Unite (Alt-click to create a Compound Shape and add to shape area)" ), modifiers: [@option]}], 
+									bind:@buttonsCell, value: 1);
+						}
+						panel(bind: @showMixedAdd, value: 0, margin: 0)
+						{
+							button(identifier: "Unite",
+									image: {normal: "SP_AddTo_Md_N.png", dark_normal:"SP_AddTo_Md_N_D.png"},
+									wants_focus: false,
+									bind:@buttonsCell,
+									value: 1,
+									items: [{action: @unite, alt: (os == @mac ? "$$$/Pathfinder/Str/ToolTip/1/Mac=Unite (Option-click to create a Compound Shape and add to shape area)" :
+																				"$$$/Pathfinder/Str/ToolTip/1/Win=Unite (Alt-click to create a Compound Shape and add to shape area)" )},
+											{action: @unite_alt, alt: (os == @mac ? "$$$/Pathfinder/Str/ToolTip/1/Mac=Unite (Option-click to create a Compound Shape and add to shape area)" :
+																				"$$$/Pathfinder/Str/ToolTip/1/Win=Unite (Alt-click to create a Compound Shape and add to shape area)" ), modifiers: [@option]}]);
+						}
+						panel(bind: @showMixedAdd, value: 2, margin: 0)
+						{
+							button(identifier: "PressedUnite",
+									image: {normal: "SP_AddTo_Md_N.png", dark_normal: "SP_AddTo_Md_N_D.png"},
+									wants_focus: false,
+									action: @unite_pressed, 
+									alt: (os == @mac ? "$$$/Pathfinder/Str/ToolTip/1/Mac=Unite (Option-click to create a Compound Shape and add to shape area)" :
+																				"$$$/Pathfinder/Str/ToolTip/1/Win=Unite (Alt-click to create a Compound Shape and add to shape area)" ),
+									bind:@buttonsCell, value: 1);
+						}
+				}
+			overlay()
+				{
+						panel( bind: @showMixedSubtract, value: 1, margin: 0)
+						{									
+							button(identifier: "MixedMinusFront",
+									image: {normal: "SP_SubtractFromMixed_Md_N.png",dark_normal: "SP_SubtractFromMixed_Md_N_D.png"},
+									wants_focus: false,
+									items: [{action: @minusfront, alt: (os == @mac ? "$$$/Pathfinder/Str/ToolTip/2/Mac=Minus Front (Option-click to create a Compound Shape and subtract from shape area)" :
+																					 "$$$/Pathfinder/Str/ToolTip/2/Win=Minus Front (Alt-click to create a Compound Shape and subtract from shape area)")},
+											{action: @minusfront_alt, alt: (os == @mac ? "$$$/Pathfinder/Str/ToolTip/2/Mac=Minus Front (Option-click to create a Compound Shape and subtract from shape area)" :
+																					 "$$$/Pathfinder/Str/ToolTip/2/Win=Minus Front (Alt-click to create a Compound Shape and subtract from shape area)"), modifiers: [@option]}],
+									bind:@buttonsCell, value: 2);
+						}
+						panel(bind: @showMixedSubtract, value: 0, margin: 0)
+						{
+							button(identifier: "MinusFront",
+									image: {normal: "SP_SubtractFrom_Md_N.png", dark_normal: "SP_SubtractFrom_Md_N_D.png"},
+									wants_focus: false,
+									items: [{action: @minusfront, alt: (os == @mac ? "$$$/Pathfinder/Str/ToolTip/2/Mac=Minus Front (Option-click to create a Compound Shape and subtract from shape area)" :
+																					 "$$$/Pathfinder/Str/ToolTip/2/Win=Minus Front (Alt-click to create a Compound Shape and subtract from shape area)")},
+											{action: @minusfront_alt, alt: (os == @mac ? "$$$/Pathfinder/Str/ToolTip/2/Mac=Minus Front (Option-click to create a Compound Shape and subtract from shape area)" :
+																					 "$$$/Pathfinder/Str/ToolTip/2/Win=Minus Front (Alt-click to create a Compound Shape and subtract from shape area)"), modifiers: [@option]}],
+									bind:@buttonsCell,	value: 2);
+						}
+						panel(bind: @showMixedSubtract, value: 2, margin: 0)
+						{
+							button(identifier: "PressedMinusFront",
+									image: {normal: "SP_SubtractFrom_Md_N.png", dark_normal: "SP_SubtractFrom_Md_N_D.png"},
+									wants_focus: false,
+									action: @minusfront_pressed, 
+									alt: (os == @mac ? "$$$/Pathfinder/Str/ToolTip/2/Mac=Minus Front (Option-click to create a Compound Shape and subtract from shape area)" :
+																					 "$$$/Pathfinder/Str/ToolTip/2/Win=Minus Front (Alt-click to create a Compound Shape and subtract from shape area)"),
+									bind:@buttonsCell, value: 2);
+						}
+				}
+			overlay()
+				{
+						panel( bind: @showMixedIntersect, value: 1, margin: 0)
+						{									
+							button(identifier: "MixedIntersect",
+									image: {normal: "SP_IntersectOverlapMixed_Md_N.png",dark_normal: "SP_IntersectOverlapMixed_Md_N_D.png"},
+									wants_focus: false,
+									items: [{action: @intersect, alt: (os == @mac ? "$$$/Pathfinder/Str/ToolTip/3/Mac=Intersect (Option-click to create a Compound Shape and intersect shape area)" :
+																				    "$$$/Pathfinder/Str/ToolTip/3/Win=Intersect (Alt-click to create a Compound Shape and intersect shape area)")},
+											{action: @intersect_alt, alt: (os == @mac ? "$$$/Pathfinder/Str/ToolTip/3/Mac=Intersect (Option-click to create a Compound Shape and intersect shape area)" :
+																				    "$$$/Pathfinder/Str/ToolTip/3/Win=Intersect (Alt-click to create a Compound Shape and intersect shape area)"), modifiers: [@option]}], 
+									bind:@buttonsCell, value: 3);
+						}
+						panel(bind: @showMixedIntersect, value: 0, margin: 0)
+						{
+							button(identifier: "Intersect",
+									image: {normal: "SP_IntersectOverlap_Md_N.png", dark_normal: "SP_IntersectOverlap_Md_N_D.png"},
+									wants_focus: false,
+									items: [{action: @intersect, alt: (os == @mac ? "$$$/Pathfinder/Str/ToolTip/3/Mac=Intersect (Option-click to create a Compound Shape and intersect shape area)" :
+																				    "$$$/Pathfinder/Str/ToolTip/3/Win=Intersect (Alt-click to create a Compound Shape and intersect shape area)")},
+											{action: @intersect_alt, alt: (os == @mac ? "$$$/Pathfinder/Str/ToolTip/3/Mac=Intersect (Option-click to create a Compound Shape and intersect shape area)" :
+																				    "$$$/Pathfinder/Str/ToolTip/3/Win=Intersect (Alt-click to create a Compound Shape and intersect shape area)"), modifiers: [@option]}], 
+									bind:@buttonsCell, value: 3);
+						}
+						panel(bind: @showMixedIntersect, value: 2, margin: 0)
+						{
+							button(identifier: "PressedIntersect",
+									image: {normal: "SP_IntersectOverlap_Md_N.png", dark_normal: "SP_IntersectOverlap_Md_N_D.png"},
+									wants_focus: false,
+									action: @intersect_pressed, 
+									alt: (os == @mac ? "$$$/Pathfinder/Str/ToolTip/3/Mac=Intersect (Option-click to create a Compound Shape and intersect shape area)" :
+																				    "$$$/Pathfinder/Str/ToolTip/3/Win=Intersect (Alt-click to create a Compound Shape and intersect shape area)"),
+									bind:@buttonsCell, value: 3);
+						}
+				}
+			overlay()
+				{
+						panel(bind: @showMixedExclude, value: 1, margin: 0)
+						{									
+							button(identifier: "MixedExclude",
+									image: {normal: "SP_ExcludeOverlapMixed_Md_N.png",dark_normal: "SP_ExcludeOverlapMixed_Md_N_D.png"},
+									wants_focus: false,
+									items: [{action: @exclude, alt: (os == @mac ? "$$$/Pathfinder/Str/ToolTip/4/Mac=Exclude (Option-click to create a Compound Shape and exclude overlapping shape areas)" :
+																				  "$$$/Pathfinder/Str/ToolTip/4/Win=Exclude (Alt-click to create a Compound Shape and exclude overlapping shape areas)")},
+											{action: @exclude_alt, alt: (os == @mac ? "$$$/Pathfinder/Str/ToolTip/4/Mac=Exclude (Option-click to create a Compound Shape and exclude overlapping shape areas)" :
+																				  "$$$/Pathfinder/Str/ToolTip/4/Win=Exclude (Alt-click to create a Compound Shape and exclude overlapping shape areas)"), modifiers: [@option]}],
+									bind:@buttonsCell, value: 4);
+						}
+						panel(bind: @showMixedExclude, value: 0, margin: 0)
+						{
+							button(identifier: "Exclude",
+									image: {normal: "SP_ExcludeOverlap_Md_N.png", dark_normal: "SP_ExcludeOverlap_Md_N_D.png"},
+									wants_focus: false,
+									items: [{action: @exclude, alt: (os == @mac ? "$$$/Pathfinder/Str/ToolTip/4/Mac=Exclude (Option-click to create a Compound Shape and exclude overlapping shape areas)" :
+																				  "$$$/Pathfinder/Str/ToolTip/4/Win=Exclude (Alt-click to create a Compound Shape and exclude overlapping shape areas)")},
+											{action: @exclude_alt, alt: (os == @mac ? "$$$/Pathfinder/Str/ToolTip/4/Mac=Exclude (Option-click to create a Compound Shape and exclude overlapping shape areas)" :
+																				  "$$$/Pathfinder/Str/ToolTip/4/Win=Exclude (Alt-click to create a Compound Shape and exclude overlapping shape areas)"), modifiers: [@option]}], 
+									bind:@buttonsCell, value: 4);
+						}
+						panel(bind: @showMixedExclude, value: 2, margin: 0)
+						{
+							button(identifier: "PressedExclude",
+									image: {normal: "SP_ExcludeOverlap_Md_N.png", dark_normal: "SP_ExcludeOverlap_Md_N_D.png"},
+									wants_focus: false,
+									action: @exclude_pressed, 
+									alt: (os == @mac ? "$$$/Pathfinder/Str/ToolTip/4/Mac=Exclude (Option-click to create a Compound Shape and exclude overlapping shape areas)" :
+																				  "$$$/Pathfinder/Str/ToolTip/4/Win=Exclude (Alt-click to create a Compound Shape and exclude overlapping shape areas)"),
+									bind:@buttonsCell, value: 4);
+						}
+				}
+							
+			button(identifier: "expandButton",
+                   		name: "$$$/Pathfinder/Bttn/16100=Expand", bind:@expandCell,
+						alt: "$$$/Pathfinder/Str/ToolTip/13=Expand Compound Shape",
+						action: @expand);
+		}
+	
+	
+	static_text(identifier: "PathfindersStaticText", bind: @staticText,
+				name: "$$$/Pathfinder/LTxt2/16100=Pathfinders:");
+
+	row(child_vertical: @align_center, horizontal: @align_fill, child_horizontal: @align_fill)
+		{
+			button(identifier: "Divide",
+					image: {normal: "SP_DividePath_Md_N.png", dark_normal: "SP_DividePath_Md_N_D.png"},
+					alt: "$$$/Pathfinder/Str/ToolTip/6=Divide",
+					wants_focus: false,
+					action: @divide, bind:@buttonsCell,
+					value: 5);
+
+			button(identifier: "Trim",
+					image: {normal: "SP_TrimPath_Md_N.png", dark_normal: "SP_TrimPath_Md_N_D.png"},
+					alt: "$$$/Pathfinder/Str/ToolTip/7=Trim",
+					wants_focus: false,
+					action: @trim, bind:@buttonsCell,
+					value: 6);
+
+			button(identifier: "Merge",
+					image: {normal: "SP_MergePath_Md_N.png", dark_normal: "SP_MergePath_Md_N_D.png"},
+					alt: "$$$/Pathfinder/Str/ToolTip/8=Merge",
+					wants_focus: false,
+					action: @merge, bind:@buttonsCell,
+					value: 7);
+
+			button(identifier: "Crop",
+					image: {normal: "SP_CropPath_Md_N.png", dark_normal: "SP_CropPath_Md_N_D.png"},
+					alt: "$$$/Pathfinder/Str/ToolTip/9=Crop",
+					wants_focus: false,
+					action: @crop, bind:@buttonsCell,
+					value: 8);
+		
+			button(identifier: "Outline",
+					image: {normal: "SP_OutlinePath_Md_N.png", dark_normal: "SP_OutlinePath_Md_N_D.png"},
+					alt: "$$$/Pathfinder/Str/ToolTip/10=Outline",
+					wants_focus: false,
+					action: @outline, bind:@buttonsCell,
+					value: 9);
+		
+			button(identifier: "MinusBack",
+					image: {normal: "SP_SubstractBackPath_Md_N.png", dark_normal: "SP_SubstractBackPath_Md_N_D.png"},
+					alt: "$$$/Pathfinder/Str/ToolTip/5=Minus Back",
+					wants_focus: false,
+					action: @minusback, bind:@buttonsCell,
+					value: 10);
+		}
+     }
+}

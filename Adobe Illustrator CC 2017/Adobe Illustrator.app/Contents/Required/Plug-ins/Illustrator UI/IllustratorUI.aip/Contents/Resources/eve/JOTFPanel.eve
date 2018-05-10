@@ -1,0 +1,97 @@
+layout OpenType
+{
+	view subview(identifier: "AIEveSubView", horizontal: @align_fill,
+				 layout_theme: @panel, width: gStandardMinPanelWidth, 
+				 show_border: false, 
+				 wants_focus: false)
+		{	row(child_horizontal: @align_fill, horizontal: @align_fill)
+			{		
+				popup(identifier: "OTFFigurePopup", name:"$$$/_OpenType/Dlg/Figure=Figure:", horizontal: @align_fill, 
+				items: [{name: "$$$/IllustratorUI/_TextDlgs/Mnu/OTFFigureMenu/1=Default Figure", value: 0},
+						{name: "$$$/IllustratorUI/_TextDlgs/Mnu/OTFFigureMenu/2=Tabular Lining", value: 1},
+						{name: "$$$/IllustratorUI/_TextDlgs/Mnu/OTFFigureMenu/3=Proportional Oldstyle", value: 2},
+						{name: "$$$/IllustratorUI/_TextDlgs/Mnu/OTFFigureMenu/4=Proportional Lining", value: 3},
+						{name: "$$$/IllustratorUI/_TextDlgs/Mnu/OTFFigureMenu/5=Tabular Oldstyle", value: 4}
+					], alt:"$$$/IllustratorUI/_TextDlgs/Str/OTFPalette/2=Choose an Open Type Figure Style",
+					include_custom_item: false
+					);
+			}
+			row(child_horizontal: @align_fill, horizontal: @align_fill)
+			{
+				popup(identifier: "OTFPositionPopup", name:"$$$/_OpenType/Dlg/Position=Position:", horizontal: @align_fill, 
+				items: [{name: "$$$/_TextDlgs/Mnu/OTFPositionMenu/1=Default Position", value: 0},
+						{name: "$$$/_TextDlgs/Mnu/OTFPositionMenu/2=Superscript/Superior", value: 1},
+						{name: "$$$/_TextDlgs/Mnu/OTFPositionMenu/3=Subscript/Inferior", value: 2},
+						{name: "$$$/_TextDlgs/Mnu/OTFPositionMenu/4=Numerator", value: 3},
+						{name: "$$$/_TextDlgs/Mnu/OTFPositionMenu/5=Denominator", value: 4}
+					], alt:"$$$/_TextDlgs/Str/OTFPalette/4=Choose an Open Type Position Style",
+					include_custom_item: false
+					);
+			}
+			row(child_vertical: @align_center, horizontal: @align_fill, child_horizontal: @align_center, spacing: 0)
+			{
+				 row(horizontal: @align_center, spacing: 0)
+				 {
+					toggle_button(identifier:"OTFStdLigatures", image: {normal: "SP_StandardLigatures_Md_N.png", 
+									 dark_normal: "SP_StandardLigatures_Md_N_D.png"}, 
+							 alt:"$$$/_TextDlgs/Str/OTFPalette/5=Standard Ligatures", 
+							 bind: @stdLigatures, value_on: true, value_off: false,
+							 button_style: true, 
+							 border: false);
+					toggle_button(identifier:"OTFContextAlt", image: {normal: "SP_ContextualAlternates_Md_N.png",
+									dark_normal: "SP_ContextualAlternates_Md_N_D.png"}, 
+							 alt:"$$$/_TextDlgs/Str/OTFPalette/6=Contextual Alternates", 
+							 bind: @contextAlt, value_on: true, value_off: false,
+							 button_style: true, 
+							 border: false);
+					toggle_button(identifier:"OTFDisLigatures", image: {normal: "SP_DiscretionaryLigatures_Md_N.png", 
+									dark_normal: "SP_DiscretionaryLigatures_Md_N_D.png"}, 
+							alt:"$$$/_TextDlgs/Str/OTFPalette/7=Discretionary Ligatures", 
+							bind: @disLigatures, value_on: true, value_off: false,
+							button_style: true, 
+							border: false);
+					toggle_button(identifier:"OTFSwash", image: {normal: "SP_Swash_Md_N.png", 
+									dark_normal: "SP_Swash_Md_N_D.png"}, 
+							alt:"$$$/_TextDlgs/Str/OTFPalette/8=Swash", 
+							bind: @swash, value_on: true, value_off: false,
+							button_style: true, 
+							border: false);
+					toggle_button(identifier:"OTFStyleAlt", image: {normal: "SP_StylisticAlternates_Md_N.png", 
+									dark_normal: "SP_StylisticAlternates_Md_N_D.png"}, 
+							alt:"$$$/_TextDlgs/Str/OTFPalette/9=Stylistic Alternates", 
+							bind: @styleAlt, value_on: true, value_off: false,
+							button_style: true, 
+							border: false);
+					toggle_button(identifier:"OTFTitlAlt", image: {normal: "SP_TitlingAlternates_Md_N.png", 
+									dark_normal: "SP_TitlingAlternates_Md_N_D.png"}, 
+							alt:"$$$/_TextDlgs/Str/OTFPalette/10=Titling Alternates", 
+							bind: @titlAlt, value_on: true, value_off: false,
+							button_style: true, 
+							border: false);
+					toggle_button(identifier:"OTFOrdinals", image: {normal: "SP_Ordinals_Md_N.png", 
+									dark_normal: "SP_Ordinals_Md_N_D.png"}, 
+							alt:"$$$/_TextDlgs/Str/OTFPalette/11=Ordinals", 
+							bind: @ordinals, value_on: true, value_off: false,
+							button_style: true, 
+							border: false);
+					toggle_button(identifier:"OTFFractions", image: {normal: "SP_Fractions_Md_N.png", 
+									dark_normal: "SP_Fractions_Md_N_D.png"}, 
+							alt:"$$$/_TextDlgs/Str/OTFPalette/12=Fractions", 
+							bind: @fractions, value_on: true, value_off: false,
+							button_style: true, 
+							border: false);
+				}
+			}
+			optional(value: 1, margin: 0, bind: @showAsianTextOptions, wants_focus: false, horizontal: @align_fill)
+			{
+				separator(orientation: @horizontal, horizontal: @align_fill);
+				guide_consumer();
+				checkbox(identifier:"OTFProportionalMetrics", name: "$$$/_OpenType/Dlg/ProportionalMetrics=Proportional Metrics", bind: @proportionalMetrics, value_on: true, value_off: false, guide_mask:[@guide_label], horizontal: @align_left);
+				checkbox(identifier:"OTFHOrVStyles", name: "$$$/_OpenType/Dlg/HorVstyles=H or V Styles", bind: @hOrVStyles, value_on: true, value_off: false, guide_mask:[@guide_label], horizontal: @align_left);
+				checkbox(identifier:"OTFRomanItalics", name: "$$$/_OpenType/Dlg/RomanItalics=Roman Italics", bind: @romanItalics, value_on: true, value_off: false, guide_mask:[@guide_label], horizontal: @align_left);
+			}
+		}
+									
+}
+
+

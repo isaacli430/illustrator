@@ -1,0 +1,14 @@
+layout textSymbolMenu
+{
+	view menu( id: 84,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/Type/Bullet=&Bullet", 									id:	368, help_id:  0 );
+		menu( text: "$$$/_MBAR/Mnu/Type/Copyright=&Copyright Symbol", 						id:	369, help_id:  0 );
+		menu( text: "$$$/_MBAR/Mnu/Type/Ellipsis=&Ellipsis", 								id:	370, help_id:  0 );
+		menu( text: "$$$/_MBAR/Mnu/Type/Paragraph=&Paragraph Symbol", 						id:	371, help_id:  0 );
+		menu( text: "$$$/_MBAR/Mnu/Type/RegisteredTrademark=&Registered Trademark Symbol", 	id:	372, help_id:  0 );
+		menu( text: "$$$/_MBAR/Mnu/Type/Section=&Section Symbol", 							id:	373, help_id:  0 );
+		menu( text: "$$$/_MBAR/Mnu/Type/Trademark=&Trademark Symbol", 						id:	374, help_id:  0 );
+	}
+}

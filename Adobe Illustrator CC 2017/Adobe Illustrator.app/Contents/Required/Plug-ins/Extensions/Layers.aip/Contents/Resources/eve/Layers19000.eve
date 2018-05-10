@@ -1,0 +1,102 @@
+layout LayerPanelOptions
+{
+    view subview(identifier: "AIEveSubView",
+                 layout_theme: @dialog_large,
+                 placement: @place_column,
+				 show_border: false,spacing: @unrelated_spacing)
+    {
+		column(horizontal: @align_fill, spacing: @inter_group_spacing)
+		{
+			checkbox(name: "$$$/Layers/Dlg/PaletteOptions/palOptDlgShowLyrOnly=S&how Layers Only",
+					 guide_mask: [ @guide_label ],
+					 set_default_focus: true,
+					 identifier: "ShowLayersOnly");
+			
+			group(name: "$$$/Layers/Dlg/PaletteOptions/4=Row Size",
+			  horizontal: @align_fill,
+			  identifier: "RowSizeGroup")
+			{
+				radiogroup()
+				{
+					row(spacing: 0)
+					{
+						radio_button(bind: @RowSize,
+								 value: @small,
+								 name: "$$$/Layers/Dlg/PaletteOptions/palOptDlgSmlBtn=&Small",
+								 identifier: "SmallRowSize");
+
+						guide_consumer(consume_horizontal: 1);
+					}
+
+					radio_button(bind: @RowSize,
+							 value: @medium,
+							 name: "$$$/Layers/Dlg/PaletteOptions/palOptDlgMedBtn=&Medium",
+							 identifier: "MediumRowSize");
+
+					radio_button(bind: @RowSize,
+							 value: @large,
+							 name: "$$$/Layers/Dlg/PaletteOptions/palOptDlgLrgBtn=&Large",
+							 identifier: "LargeRowSize");
+
+					row(spacing: @label_widget_spacing)
+					{
+						radio_button(bind: @RowSize,
+								 value: @other,
+								 name: "$$$/Layers/Dlg/PaletteOptions/palOptDlgUsrBtn=&Other:",
+								 identifier: "OtherRowSize");
+
+						unit_hot_number(identifier: "UserText",
+									digits: 2,
+									decimal_places: 0,
+									guide_mask: [ @guide_label ],
+									min_value: 12,
+									max_value: 100,
+									unit: "NumberEditUnit_NoUnit",
+									suffix: "$$$/Layers/Dlg/PaletteOptions/palOptDlgUsrUnits=pixels");
+					}
+				}
+			}
+		
+			group(name: "$$$/Layers/Dlg/PaletteOptions/palOptDlgThumbnailText=Thumbnails",
+			  horizontal: @align_fill,
+			  identifier: "Thumbnail")
+			{
+				checkbox(name: "$$$/Layers/Dlg/PaletteOptions/palOptDlgLyrBox=L&ayers",
+					 identifier: "Layers");
+
+				checkbox(indent: gIndent,
+					 guide_mask: [ @guide_label ],
+					 name: "$$$/Layers/Dlg/PaletteOptions/palOptDlgTopLyrBox=&Top Level Only",
+					 identifier: "TopLevelLayersOnly");
+
+				checkbox(name: "$$$/Layers/Dlg/PaletteOptions/palOptDlgGrpBox=&Groups",
+					 identifier: "Groups");
+
+				checkbox(name: "$$$/Layers/Dlg/PaletteOptions/palOptDlgObjBox=O&bjects",
+					 identifier: "Objects");
+			}
+		}
+		row(horizontal: @align_fill)
+			
+		{
+			guide_consumer(consume_horizontal: 1);
+			guide_consumer(consume_horizontal: 1);
+
+			row(horizontal: @align_right,
+				spacing: @related_spacing,
+				reverse: os == @mac)
+			{
+				button(default: true,
+				   commit_button: true,
+				   name: "$$$/gOK=OK",
+				   identifier: "okButton");
+
+				button(cancel: true,
+				   commit_button: true,
+				   name: "$$$/gCancel=Cancel",
+				   identifier: "cancelButton");
+			}
+		}
+			
+	}
+}

@@ -1,0 +1,20 @@
+layout GraphMarker
+{
+	view subview(identifier: "AIEveSubView", placement: @place_column, show_border: false, layout_theme: @dialog_large, spacing:@unrelated_spacing)
+	{
+		column(vertical:@align_fill, horizontal:@align_fill, spacing:@label_widget_spacing)
+		{
+			static_text(name: "$$$/_GraphCol/Dlg/GraphIconDesign/markerListText=Choose Marker Design:", horizontal: @align_left);
+			row(horizontal: @align_fill, vertical:@align_fill)
+			{
+				list(identifier: "designslist", height: 200, width: 200, horizontal: @align_fill, vertical:@align_fill);
+				image(identifier: "designpreview", width: 100, height: 100, vertical: @align_top);
+			}
+		}
+		row(reverse: os == @mac, horizontal: @align_right, spacing:@related_spacing)
+        {
+			button(default: true, identifier: "okButton", name: "$$$/gOK=OK", commit_button:true);
+			button(cancel: true, identifier: "cancelButton", name: "$$$/gCancel=Cancel", commit_button:true);
+        }
+    }
+}

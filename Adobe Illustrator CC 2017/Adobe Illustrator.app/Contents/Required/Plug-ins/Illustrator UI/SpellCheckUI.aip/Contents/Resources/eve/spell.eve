@@ -1,0 +1,152 @@
+layout SpellDialog
+{
+    view subview(identifier: "SpellDialogView", placement: @place_column
+    , layout_theme: @dialog_large, child_horizontal: @align_fill, show_border: false, spacing: @unrelated_spacing)
+	{
+	row(child_horizontal: @align_fill, horizontal:@align_fill)
+	{
+	column(child_horizontal: @align_fill, horizontal:@align_fill)
+	{
+		
+		row(horizontal:@align_fill)
+		{
+			column(horizontal:@align_fill, child_horizontal: @align_fill,  spacing:@label_widget_spacing)
+			{
+			row()
+			{
+			static_text(identifier: "StartText", horizontal: @align_left, name: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+			, horizontal:@align_fill);
+			}
+			row()
+			{
+			overlay()
+			{
+				panel(margin:0)
+				{
+				edit_text(identifier: "StartListText", scrollable: true,
+				characters:36, lines:6,
+				guide_mask: [@guide_label]);
+				}
+				panel(margin:0)
+				{
+				list(identifier: "StartList", vertical:@align_fill, width:240,  guide_mask: [@guide_label]);
+				}
+			}
+			column(horizontal:@align_fill,  spacing:20)
+			{
+			row(horizontal:@align_fill)
+			{
+				button(identifier: "StartButton", action:@StartButton, horizontal: @align_fill, name: '$$$/SpellCheck/Start=Start',
+				set_default_focus:true);
+			}
+			
+			column(horizontal:@align_fill)
+			{
+			row(horizontal:@align_fill)
+			{
+				
+				button(identifier: "IgnoreButton", action:@IgnoreButton, horizontal: @align_fill, name: '$$$/SpellCheck/Ignore=Ignore');
+			}
+			row(horizontal:@align_fill)
+			{
+			
+				button(identifier: "IgnoreAllButton", action:@IgnoreAllButton, horizontal: @align_fill, name: '$$$/SpellCheck/IgnoreAll=Ignore All');
+			}
+			}
+			}
+			}
+			}
+			
+			
+		}
+		
+		column(horizontal:@align_fill, spacing:@label_widget_spacing)
+		{
+		row()
+		{
+			static_text(identifier: "SuggestionText", horizontal: @align_left, 
+			name: "$$$/SpellCheck/Text/nosuggestion=No Suggestions", bind:@SuggestionText);
+		}
+		row(horizontal:@align_fill)
+		{
+			overlay()
+			{
+				panel(margin:0)
+				{
+				edit_text(identifier: "StartListTextDummy", scrollable: true,
+				characters:36, lines:6,
+				guide_mask: [@guide_label]);
+				}
+				panel(margin:0)
+				{
+				list(identifier: "SuggestionList", height:20, width:240, 
+				wants_focus:false,
+				guide_mask: [@guide_label]);
+				}
+			}
+				
+			
+			column(horizontal:@align_fill)
+			{
+				
+				button(identifier: "ChangeButton", action:@ChangeButton, horizontal: @align_fill, name: '$$$/SpellCheck/Change=Change');
+				button(identifier: "ChangeAllButton",action:@ChangeAllButton, horizontal: @align_fill, name: '$$$/SpellCheck/ChangeAll=Change All');
+				
+				button(identifier: "AddButton",action:@AddButton, horizontal: @align_fill, name: '$$$/SpellCheck/Add=Add');
+			}
+		}
+		}
+		
+		row(child_vertical:@align_center, guide_mask: [@guide_label], spacing:0)
+		{
+					overlay(child_vertical:@align_center)
+					{
+						panel(bind: @show_advanced_options, value: false, margin: 0)
+						{
+							toggle_button(identifier: "ShowAdvancedOptionsButton", bind: @show_advanced_options, value_on: true, value_off: false, 
+							image:{normal:"DisclosureUp_N.png", dark_normal:"DisclosureUp_N_D.png"}, wants_focus: false);
+						}
+						panel(bind: @show_advanced_options, value: true, margin: 0)
+						{
+							toggle_button(identifier: "HideAdvancedOptionsButton", bind: @show_advanced_options, value_on: false, value_off: true, 
+							image:{normal:"DisclosureDown_N.png", dark_normal:"DisclosureDown_N_D.png"}, wants_focus: false);				
+						}
+					}
+					
+			display_text(identifier: "OptionsText", horizontal: @align_left, name: '$$$/SpellCheck/Options=Options');
+			separator();
+			
+		}
+		optional(bind: @show_advanced_options, value: true, margin: 0)
+		{
+			group(horizontal: @align_fill, placement:@place_row, name:'$$$/SpellCheck/Cluster/Find=Find')
+			{
+				checkbox(identifier: "RepeatedCheckbox", bind: @RepeatedCheckbox, name:'$$$/SpellCheck/RepeatedWords=Repeated Words');
+				checkbox(identifier: "UncapitalizeCheckbox", bind: @UncapitalizeCheckbox, name:'$$$/SpellCheck/Uncapitalizedstartofsentence=Uncapitalized Start of Sentence');
+			}
+		}
+		optional(bind: @show_advanced_options, value: true, margin: 0)
+		{
+			group(horizontal: @align_fill, placement:@place_column, name:'$$$/SpellCheck/Cluster/Ignore=Ignore')
+			{
+				row()
+				{
+				checkbox(identifier: "UCCheckbox", bind: @UCCheckbox, name:'$$$/SpellCheck/Wordsthatarealluppercase=Words that Are All Uppercase');
+				checkbox(identifier: "RomanCheckbox", bind: @RomanCheckbox, name:'$$$/SpellCheck/Romannumerals=Roman Numerals');
+				}
+				checkbox(identifier: "NumberCheckbox", bind: @NumberCheckbox, name:'$$$/SpellCheck/WordswithNumbers=Words with Numbers');
+			}
+		}
+		}
+		}
+		
+		row(vertical: @align_fill,child_horizontal: @align_fill, child_vertical: @align_center,spacing: @separated_spacing)
+        {
+		row(child_horizontal: @align_right, spacing: @related_spacing)
+		{ 
+			button(identifier: "okButton", action:@okButton, commit_button: true, horizontal: @align_right, name: '$$$/SpellCheck/Done=Done');
+		}
+		}
+
+	}
+}

@@ -1,0 +1,42 @@
+layout EnvelopeMakePanelGroup
+{
+	view subview(identifier: "EnvelopeControlPanelGroupUI",					
+					show_border: false,
+					layout_theme:  @controlbar,
+					placement: @place_row,
+					child_vertical:  @align_center,
+					margin:0,
+					spacing: 5,
+					height:  31					
+				 )	
+	{
+		optional(identifier: "EnvelopeMakeSubGroup", placement: @place_row, child_vertical: @align_center, margin : 0, spacing: 0)
+		{			
+			overlay()
+			 {
+					 panel(bind: @makeEnvPop, value: 0, margin: 0)
+					 {
+							button(identifier: "MakeEnv0CG",
+										wants_focus: false,
+										image: {normal: "SP_MakeWarp_Md_N.png",dark_normal:"SP_MakeWarp_Md_N_D.png"},
+										action: @makeEnvAction,
+										alt: "$$$/Deform/ControlPalette/Str/MakeEnvelope=Make Envelope");
+					 }
+					 panel(bind: @makeEnvPop, value: 1, margin: 0)
+					 {
+							button(identifier: "MakeEnv1CG",
+										wants_focus: false,
+										image: {normal: "SP_MakeMesh_Md_N.png",dark_normal:"SP_MakeMesh_Md_N_D.png"},
+										action: @makeEnvAction,
+										alt: "$$$/Deform/ControlPalette/Str/MakeEnvelope=Make Envelope");
+					 }
+			 }			
+				
+			popup(identifier: "MakeEnvOptionsCG", show_border: true, vertical: @align_center,
+							wants_focus: false,button_view: true,
+							alt: "$$$/Deform/ControlPalette/Str/MakeEnvelopeOptions=Make Envelope Options",
+							include_custom_item: false,
+							items: @entriesMakeEnv);				
+		}		
+	}
+}

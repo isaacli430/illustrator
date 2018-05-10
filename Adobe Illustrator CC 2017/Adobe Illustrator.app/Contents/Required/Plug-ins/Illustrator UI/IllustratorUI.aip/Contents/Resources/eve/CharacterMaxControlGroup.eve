@@ -1,0 +1,50 @@
+layout CharacterMaxControlGroup
+{
+     view subview(identifier: "CharacterMaxControlGroup",
+				 layout_theme: @controlbar,
+				 show_border: false,
+				 child_vertical: @align_center,
+				 placement: @place_row,
+				 margin : 0,
+				 spacing: 5,
+				 height:  31)
+    {		
+		optional(identifier: "CharacterHyperlinkSubGroup", child_vertical: @align_center, margin : 0, placement: @place_row, spacing: 5)			
+		{
+			subview(margin:0, show_border: false, height: 25 , child_vertical:@align_center)
+			{
+				separator(orientation: @vertical, vertical: @align_fill);
+			}
+			row(spacing: @related_spacing)
+			{
+				link_button(identifier: "CharacterHyperlinkButton",
+								name: "$$$/ControlStrings/Code=Character:",
+								alt: "$$$/_TextDlgs/CharacterPaletteTip=Character Panel");
+
+				popup(identifier: "FontPopupDummy", 
+								include_custom_item: false,
+								max_characters: 30,
+								popup_minimum_width_chars: 12,
+								popup_maximum_width_chars: 12,
+								alt: "$$$/_TextDlgs/CharacterFontTip=Font");
+			}
+			
+			popup(identifier: "FontStylePopup", 
+							bind:@FontStylePopupVal, 
+							include_custom_item: false,
+							max_characters: 25,
+							alt: "$$$/_TextDlgs/CharacterFontStyleTip=Font Style");
+				
+			unit_hot_number(identifier: "FontSizeEditPopup",
+							alt: "$$$/_TextDlgs/CharacterFontSizeTip=Font Size",
+							max_value: 1296, min_value: 0.1,
+							stepper: true,
+							popuplist: true,
+							decimal_places: 2,
+							digits: 2,
+							bind_final: true);
+												
+		}		
+    }
+}
+

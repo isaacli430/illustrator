@@ -1,0 +1,60 @@
+/* [1] */
+!MEM
+/* [2] */
+$$$/Layers/Str/Error/2=The action cannot complete because there isn't enough memory (RAM) available.
+/* [3] */
+271
+/* [4] */
+$$$/Layers/Str/Error/4=The action cannot complete because there isn't enough memory (RAM) available.
+/* [5] */
+PARM
+/* [6] */
+$$$/Layers/Str/Error/6=The action cannot complete because a parameter is invalid.\n(Possibly a program error.)
+/* [7] */
+NESS
+/* [8] */
+$$$/Layers/Str/Error/8=The action cannot complete because the source or destination layer is locked or hidden.
+/* [9] */
+!sel
+/* [10] */
+$$$/Layers/Str/Error/10=The action cannot complete because no selection was found.
+/* [11] */
+!XLL
+/* [12] */
+$$$/Layers/Str/Error/12=You must leave at least one layer in the artwork.
+/* [13] */
+DOC?
+/* [14] */
+$$$/Layers/Str/Error/14/Mac=The action cannot complete because no open artwork was found.
+/* [15] */
+!IMP
+/* [16] */
+$$$/Layers/Str/Error/16=The program attempted to call an unimplemented function.
+/* [17] */
+$$$/Layers/Str/Error/17=UIDx
+/* [18] */
+$$$/Layers/Str/Error/18=XML names must begin with a letter, _ or : and may not contain spaces.
+/* [19] */
+$$$/Layers/Str/Error/19=UIDu
+/* [20] */
+$$$/Layers/Str/Error/20=The XML name is in use by another object.
+/* [21] */
+<Others>
+/* [22] */
+$$$/Layers/Str/Error/22=The action failed with an unexpected error code.
+/* [23] */
+
+/* [24] */
+
+/* [25] */
+$$$/Layers/Str/Error/OneLayerDelete=^[%s^] contains artwork. Do you want to delete this layer?
+/* [26] */
+$$$/Layers/Str/Error/SomeLayersDelete=Some of the selected layers contain artwork. Should they be deleted?
+/* [27] */
+$$$/Layers/Str/Error/AllLayersDelete=The selected layers contain artwork. Should they be deleted?
+/* [28] */
+$$$/Layers/Str/Error/EmptyLayerDelete=Delete the selected layer?
+/* [29] */
+$$$/Layers/Str/Error/EmptyLayersDelete=Delete the selected layers?
+/* [30] */
+$$$/Layers/Str/Error/DiscardHiddenArt=The hidden layers contain artwork. Do you wish to discard the hidden art?

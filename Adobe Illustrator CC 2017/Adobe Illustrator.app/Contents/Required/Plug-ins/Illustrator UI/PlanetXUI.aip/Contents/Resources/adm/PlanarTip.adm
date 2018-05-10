@@ -1,0 +1,6 @@
+sheet PlanarTip
+{
+	interface:		
+
+		showTip1: 1 ;	
+}

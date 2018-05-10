@@ -1,0 +1,236 @@
+layout AreaTypeOptions
+{
+    view subview(identifier: "AIEveSubView",
+				 child_horizontal: @align_fill,
+				 placement: @place_column,
+				 show_border: false, 
+				 layout_theme: @dialog_large,spacing: @unrelated_spacing
+				 )
+    {
+		column(child_horizontal: @align_fill)
+		{
+		row(child_horizontal: @align_fill)
+        {			
+       
+			column(child_horizontal: @align_fill)
+			{
+				unit_hot_number(identifier: "EditNumberWidth",
+							name: "$$$/AreaTypeOptionsDlg/Width=Width:",
+							horizontal: @align_left,
+							max_value: 1000,
+							min_value: 0,
+							decimal_places: 2,
+							set_default_focus: true,
+							stepper:true,
+							bind: @EditNumberWidthValue,
+							bind_final: true
+							);
+		
+				group(identifier: "GrpRows",
+						  name: "$$$/AreaTypeOptionsDlgDlg/Rows=Rows", child_horizontal: @align_fill)
+				{
+           			unit_hot_number(identifier: "EditNumberRowNumber",
+           						name: "$$$/AreaTypeOptionsDlgDlg/Number=Number:",
+								max_value: 1000,
+								min_value: 1,
+								decimal_places: 0,
+								stepper:true,
+								bind: @EditNumberRowNumberValue,
+								bind_final: true
+								);
+					unit_hot_number(identifier: "EditNumberRowSpan",
+								name: "$$$/AreaTypeOptionsDlgDlg/Span=Span:",
+								max_value: 1000,
+								min_value: 0,
+								decimal_places: 2,
+								stepper:true,
+								bind: @EditNumberRowSpanValue,
+								bind_final: true
+								);
+
+           			checkbox(identifier: "CheckBoxRowFixed",
+           						name: "$$$/AreaTypeOptionsDlgDlg/Fixed=Fixed"
+           					 );
+		           			
+           			unit_hot_number(identifier: "EditNumberRowGutter",
+								name: "$$$/AreaTypeOptionsDlgDlg/Gutter=Gutter:",
+								max_value: 1000,
+								min_value: 0,
+								decimal_places: 2,
+								stepper:true,
+								bind: @EditNumberRowGutterValue,
+								bind_final: true
+								);
+				}
+			}
+			column(child_horizontal: @align_fill)
+			{
+				unit_hot_number(identifier: "EditNumberHeight",
+								name: "$$$/AreaTypeOptionsDlgDlg/Height=Height:",
+								horizontal: @align_left,
+								max_value: 1000,
+								min_value: 0,
+								decimal_places: 2,
+								stepper:true,
+								bind: @EditNumberHeightValue,
+								bind_final: true
+							   );
+							   
+				group(identifier: "GrpCols",
+						  name: "$$$/AreaTypeOptionsDlgDlg/Columns=Columns")
+				{
+   					unit_hot_number(identifier: "EditNumberColNumber",
+   								name: "$$$/AreaTypeOptionsDlgDlg/Number=Number:",
+								max_value: 1000,
+								min_value: 1,
+								decimal_places: 0,
+								stepper:true,
+								bind: @EditNumberColNumberValue,
+								bind_final: true
+								);
+					unit_hot_number(identifier: "EditNumberColSpan",
+								name: "$$$/AreaTypeOptionsDlgDlg/Span=Span:",
+								max_value: 1000,
+								min_value: 0,
+								decimal_places: 2,
+								stepper:true,
+								bind: @EditNumberColSpanValue,
+								bind_final: true
+								);
+
+   					checkbox(identifier: "CheckBoxColFixed",
+   								name: "$$$/AreaTypeOptionsDlgDlg/Fixed=Fixed"
+   							 );
+		           			
+   					unit_hot_number(identifier: "EditNumberColGutter",
+								name: "$$$/AreaTypeOptionsDlgDlg/Gutter=Gutter:",
+								max_value: 1000,
+								min_value: 0,
+								decimal_places: 2,
+								stepper:true,
+								bind: @EditNumberColGutterValue,
+								bind_final: true
+								);
+				}
+			}
+        }
+        row(child_horizontal: @align_fill)
+        {
+			group(identifier: "GrpOffset",
+                  name: "$$$/AreaTypeOptionsDlgDlg/Offset=Offset", guide_mask: [ @guide_label ])
+			{
+	
+				unit_hot_number(identifier: "EditNumberInset",
+							name: "$$$/AreaTypeOptionsDlg/InsetSpacing=Inset Spacing:",
+							max_value: 1000,
+							min_value: -1000,
+							decimal_places: 2,
+							stepper:true,
+								bind: @EditNumberInsetValue,
+								bind_final: true
+							);
+				
+                row()
+                {
+					popup(identifier: "PopupBaseline",
+                      include_custom_item: false,
+                      items: [ 
+                               { name: "$$$/AreaTypeOptionsDlg/PopupBaseline/type/OnePoint=Em Box Height",
+                                 value: 0}
+                                ],
+						name: "$$$/AreaTypeOptionsDlg/FirstBaseline=First Baseline:"
+                      );
+                 
+					unit_hot_number(identifier: "EditNumberMinOffset",
+								name: "$$$/AreaTypeOptionsDlgDlg/Min=Min:",		
+								max_value: 1000,
+								min_value: 0,
+								decimal_places: 2,
+								stepper:true,
+								bind: @EditNumberMinOffsetValue,
+								bind_final: true
+							);
+                }
+			}
+        }
+        
+        row(child_horizontal: @align_fill)
+        {
+			group(identifier: "GrpOptions", 
+					name: "$$$/AreaTypeOptionsDlgDlg/Options=Options", 
+					guide_mask: [ @guide_label ],
+					placement: @place_row,
+					spacing: 0
+					)
+			{
+				
+				overlay()
+				{
+					optional(margin: 0, bind: @valueTextFlowOverlay, value: 0, placement: @place_row, wants_focus:false)
+					{
+						 button_bar(identifier: "ArrangementButtonBarLToR", bind: @arrangement,name: "$$$/AreaTypeOptionsDlgDlg/TextFlow=Text Flow:",
+								items: [
+									 {image: {normal:"SP_GridByRow_Sm_N.png",dark_normal:"SP_GridByRow_Sm_N_D.png"}, show_border: true, value: 0, alt: "$$$/SLOParapaletteItems/SLOAreaTextDialog/TooltipBRLTR=By Rows, Left to Right"},
+									 {image: {normal:"SP_GridByColumn_Sm_N.png",dark_normal:"SP_GridByColumn_Sm_N_D.png"}, show_border: true, value: 1, alt: "$$$/SLOParapaletteItems/SLOAreaTextDialog/TooltipBCLTR=By Columns, Left to Right"}
+								]
+								);
+					}
+						
+					optional(margin: 0, bind: @valueTextFlowOverlay, value: 1, placement: @place_row,wants_focus:false)
+					{
+						 button_bar(identifier: "ArrangementButtonBarLToR2", bind: @arrangement2,name: "$$$/AreaTypeOptionsDlgDlg/TextFlow=Text Flow:",
+								items: [
+									 {image: {normal:"SP_RightToLeft_GridByColumn_Sm_N.png",dark_normal:"SP_RightToLeft_GridByColumn_Sm_N_D.png"}, show_border: true, value: 2, alt: "$$$/SLOParapaletteItems/SLOAreaTextDialog/TooltipBCRTL=By Columns, Right to Left"},
+									 {image: {normal:"SP_RightToLeft_GridByRow_Sm_N.png",dark_normal:"SP_RightToLeft_GridByRow_Sm_N_D.png"}, show_border: true, value: 3, alt: "$$$/SLOParapaletteItems/SLOAreaTextDialog/TooltipBRTRL=By Rows, Right to Left"}
+								]
+								);
+					}
+					
+				}	
+			}
+			optional(margin: 0, bind: @IsWorldReady, value: true, placement: @place_row, wants_focus:false)
+			{
+				group(identifier: "StoryOptions", 
+					name: "$$$/AreaTypeOptionsDlgDlg/StoryOptions=Story Options", 
+					guide_mask: [ @guide_label ],
+					placement: @place_row,
+					horizontal: @align_fill,
+					spacing: 0
+					)
+				{
+						button_bar(identifier: "StoryDirectionButtonBarLToR", bind: @storydir,name: "$$$/AreaTypeOptionsDlgDlg/Direction=Direction:",
+								items: [
+									 {image: {normal:"SP_StoryDirLTR_Md_N.png",dark_normal:"SP_StoryDirLTR_Md_N_D.png"}, show_border: true, value: 0, alt: "$$$/SLOParapaletteItems/SLOAreaTextDialog/TooltipSDLTR=Left-To-Right Story Direction"},
+									 {image: {normal:"SP_StoryDirRTL_Md_N.png",dark_normal:"SP_StoryDirRTL_Md_N_D.png"}, show_border: true, value: 1, alt: "$$$/SLOParapaletteItems/SLOAreaTextDialog/TooltipSDRTL=Right-To-Left Story Direction"}
+								]
+								);
+			
+				}	
+			}
+        }
+        }
+
+		row(child_horizontal: @align_fill)
+		{
+			checkbox(identifier: "DefaultAutoAdjustPref", guide_mask: [ @guide_label ],
+					 name: "$$$/AreaTypeOptions/Dlg/AutoAdjustOption=&Auto Size"
+					 );
+		}
+		
+        row(vertical: @align_fill,child_horizontal: @align_fill, child_vertical: @align_center,spacing: @separated_spacing)
+        {
+			checkbox(identifier: "CheckBoxpreview", guide_mask: [ @guide_label ],
+					 name: "$$$/AreaTypeOptions/Dlg/Preview=&Preview");
+			
+			row(child_horizontal: @align_right, reverse: os == @mac,spacing: @related_spacing)
+			{ 
+				button(default: true,
+							identifier: "okButton",commit_button: true,
+							name: "$$$/gOK=OK");
+				button(cancel: true,
+							identifier: "cancelButton",commit_button: true,
+							name: "$$$/gCancel=Cancel");       
+			} 
+        }
+    }
+}

@@ -1,0 +1,77 @@
+layout SymbolControlGroupDlg
+{
+	view subview(   identifier: "SymbolControlGroupUI",					
+					show_border: false,
+					layout_theme:  @controlbar,
+					placement: @place_row,
+					margin:0,
+					spacing: 5,
+					height:  31
+				 )	
+	{											
+			optional(identifier: "SymbolTypeSubGroup", placement: @place_row, child_vertical:  @align_center, margin : 0)
+			{
+				overlay()
+				{
+					panel(bind: @valueSymbolType, value: 0, margin: 0)
+					{
+						image( identifier: "SymbolTypeMovie", image: {normal:"SP_MovieClipSymbol_Lg_N.png",dark_normal:"SP_MovieClipSymbol_Lg_N_D.png"},
+							alt: "$$$/SymbolPalette/ControlPalette/Str/SymbolFlashType/MovieClip=Movie Clip");
+					}
+					panel(bind: @valueSymbolType, value: 1, margin: 0)
+					{
+						image( identifier: "SymbolTypeGraphic", image: {normal:"SP_GraphicClipSymbol_Lg_N.png",dark_normal:"SP_GraphicClipSymbol_Lg_N_D.png"},
+							alt: "$$$/SymbolPalette/ControlPalette/Str/SymbolFlashType/Graphic=Graphic");
+					}
+				}
+			}
+			optional(identifier: "SymbolInstanceInfoSubGroup", placement: @place_row, child_vertical:  @align_center, margin : 0)
+			{
+				edit_text(  identifier: "SymbolInstanceNameEdit",
+							name: "$$$/SymbolControlPanel/InstanceName=Instance Name:",
+							alt:"$$$/SymbolPalette/ControlPalette/Str/InstanceName=Symbol Instance Name",
+							characters: 10,
+							max_characters: 100);
+							
+				row(spacing: @label_widget_spacing, margin: 0)
+				{
+					static_text(identifier: "SymbolInstanceNameStTxt",
+							name:"$$$/SymbolControlPanel/InstanceOf=Instance Of:");
+					display_text(identifier: "SymbolNameDisplayTxt", 
+							 bind: @valueSymbolName, 
+							 alt:"$$$/SymbolPalette/ControlPalette/Str/InstanceOf=Instance Of Symbol",
+							 characters: 9);
+				}
+			}			
+			optional(identifier: "SymbolOperationsSubGroup", placement: @place_row, child_vertical:  @align_center, margin : 0, spacing: @related_spacing)
+			{	
+				button( identifier: "EditSymbolBtn",
+				        bind: @valueEditSymbol,
+						name:"$$$/SymbolControlPanel/EditSymbol=Edit Symbol",
+						alt: "$$$/SymbolPalette/ControlPalette/Str/EditContents=Edit Symbol Definition",
+						wants_focus: false,
+						action:@EditSymbolAction
+						);
+				button( identifier: "BreakLinkBtn",
+						name:"$$$/SymbolControlPanel/BreakLink=Break Link",
+						alt: "$$$/SymbolPalette/ControlPalette/Str/BreakLink=Break Link to Symbol",
+						wants_focus: false,
+						action:@BreakLinkAction
+						);
+				button( identifier: "ResetBtn",
+						bind: @valueResetInstance,
+						name:"$$$/SymbolControlPanel/Reset=Reset",
+						alt: "$$$/SymbolPalette/ControlPalette/Str/Reset=Reset the symbol instance to its original size and appearance",
+						wants_focus: false,
+						action:@ResetInstanceAction
+						);																										
+			}
+			optional(identifier: "SymbolReplaceSubGroup", placement: @place_row, child_vertical:  @align_center, margin : 0, spacing: @related_spacing)
+			{						
+				static_text(identifier: "ReplaceStTxt",
+							name:"$$$/SymbolPalette/ControlPalette/Str/Replace=Replace:");				
+				
+				popup_panel_button(width:36, shape_square: true, identifier: "ReplaceSymbolImage", alt: "$$$/SymbolPalette/ControlPalette/Str/ReplaceToolTip=Replace Instance with Symbol");
+			}						
+	}
+}

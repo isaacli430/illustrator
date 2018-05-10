@@ -1,0 +1,21 @@
+layout SoftMessage_PieAngle_
+{
+    view subview(show_border: false, spacing: 0  )
+    {	
+	row(horzontal:@align_fill, spacing: 0)
+	{	
+		column(horizontal: @align_fill, spacing: 0)
+		{	
+			static_text(identifier: "StartAngle", name: "$$$/ShapeTool/PieAngleReadoutSoftMessage/StartAngleStr=Start Angle: ", horizontal: @align_right);
+			static_text(identifier: "EndAngle", name: "$$$/ShapeTool/PieAngleReadoutSoftMessage/EndAngleStr=End Angle: ", horizontal: @align_right);
+			static_text(identifier: "PieAngle", name: "$$$/ShapeTool/PieAngleReadoutSoftMessage/PieAngleStr=Pie Angle: ", horizontal: @align_right);
+		}
+		column(horizontal: @align_fill, spacing: 0)
+		{
+			static_text(identifier: "StartAngleValue", name:"-0000.00 mm", horizontal: @align_left);
+			static_text(identifier: "EndAngleValue", name:"-0000.00 mm", horizontal: @align_left);
+			static_text(identifier: "PieAngleValue", name:"-0000.00 mm", horizontal: @align_left);
+		}
+	}
+    }
+}

@@ -1,0 +1,12 @@
+layout graphsMenu
+{
+	view menu( id: 18,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/Graph/Type=&Type...", id:		74, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Graph/Data=&Data...", id:		75, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Graph/Design=D&esign...", id:	77, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Graph/Column=&Column...", id:	76, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Graph/Marker=&Marker...", id:	78, help_id:0);
+}
+}

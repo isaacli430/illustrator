@@ -1,0 +1,40 @@
+/* [1] */
+-108
+/* [2] */
+$$$/sangamservice/Str/16052=The filter cannot complete because there isn't enough memory (RAM) available.
+/* [3] */
+271
+/* [4] */
+$$$/sangamservice/Str/16054=The filter cannot complete because there isn't enough memory (RAM) available.
+/* [5] */
+SEGM
+/* [6] */
+$$$/sangamservice/Str/Anchor=The filter cannot complete because a path has too many anchor points.
+/* [7] */
+NESS
+/* [8] */
+$$$/sangamservice/Str/Locked=The filter cannot complete because a layer is locked or invisible.
+/* [9] */
+!sel
+/* [10] */
+$$$/Sangam2AIMapperPlugin/STR/16050/10/Mac=You must select a path first.
+/* [11] */
+<others>
+/* [12] */
+$$$/sangamservice/Str/16062=The filter cannot complete because of an unknown error.
+/* [13] */
+CRPT
+/* [14] */
+$$$/sangamservice/Str/16064=The filter cannot complete because the file seem corrupt.
+/* [15] */
+SDFL
+/* [16] */
+$$$/sangamservice/Str/16066=The filter cannot complete because scratch disk is out of space.
+/* [17] */
+PSWD
+/* [18] */
+$$$/sangamservice/Str/16068=Cannot place this file.\nTo import this file you must open it in Microsoft Word, turn off the password protection and then save and close the file.
+/* [19] */
+DXF1
+/* [20] */
+$$$/sangamservice/Str/16070=Cannot open the illustration.

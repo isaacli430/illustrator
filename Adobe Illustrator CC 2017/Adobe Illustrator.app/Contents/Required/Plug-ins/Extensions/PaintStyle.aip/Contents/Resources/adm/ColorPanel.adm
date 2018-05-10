@@ -1,0 +1,10 @@
+sheet ColorPanel
+{
+interface: 	
+	cellShowFillStroke: true;
+	cellGradientStopPanel: false;
+	cellGamutOrLastColor: 0;
+	StateOne: true;
+	StateTwo: true;
+	cellIsPopupPanel: false;
+}

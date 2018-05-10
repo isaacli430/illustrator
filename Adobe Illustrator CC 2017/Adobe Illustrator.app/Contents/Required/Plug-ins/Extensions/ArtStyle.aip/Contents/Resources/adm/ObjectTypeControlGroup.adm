@@ -1,0 +1,6 @@
+sheet ObjectTypeControlGroup
+{
+interface:
+	ObjectTypeCell: "text";
+	ObjectTypeLabelCell: "$$$/ArtStyle/Str/ButtonNeme=xxxxxxxxxxxxxx";
+}

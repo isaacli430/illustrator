@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<views
+    xmlns="http://ns.adobe.com/metadata/ui/1.0/"
+	xmlns:xmp="http://ns.adobe.com/xap/1.0/"
+	xmlns:photoshop="http://ns.adobe.com/photoshop/1.0/">
+
+<!-- 
+	Origin View
+	Displays information about the origin of the asset.
+	TODO remove labels and retrieve them from the schema
+-->	
+<view name="com.adobe.xmp.view.origin"
+      label="$$$/metadataui/view/origin_label=Origin"
+      description="$$$/metadataui/view/origin_description=Displays information about the origin of the asset"
+	  version="0.9.0">
+
+	<!-- type date -->
+	<property
+		name="photoshop:DateCreated"
+		label="$$$/AWS/FileInfoLib/Panels/Origin/DateCreated=Date Created"
+		description="$$$/xmp/xmp/CreateDate_description=The date and time the resource was originally created."/>
+
+    <property
+		name="photoshop:City"
+		label="$$$/AWS/FileInfoLib/Panels/Origin/City=City"
+		description="$$$/xmp/photoshop/City_description=Enter the name of the City pictured in this image"
+		autoCompletion="true"/>
+
+    <property
+		name="photoshop:State"
+		label="$$$/AWS/FileInfoLib/Panels/Origin/State=State/Province"
+		description="$$$/xmp/photoshop/State_description=Enter the name of the Province or State pictured in this image"
+		autoCompletion="true"/>
+
+	<!-- Could be layouted beside the State/Provice -->
+    <property
+		name="photoshop:Country"
+		label="$$$/AWS/FileInfoLib/Panels/Origin/Country=Country"
+		description="$$$/xmp/photoshop/Country_description=Enter the name of the Country pictured in this image"
+		autoCompletion="true"/>
+	
+	<separator/>
+
+    <property
+		name="photoshop:Credit"
+		label="$$$/AWS/FileInfoLib/Panels/Origin/Credit=Credit"
+		description="$$$/xmp/photoshop/Credit_description=Enter who should be Credited when this image is published"
+		autoCompletion="true"/>
+
+    <property
+		name="photoshop:Source"
+		label="$$$/AWS/FileInfoLib/Panels/Origin/Source=Source"
+		description="$$$/xmp/photoshop/Source_description=Enter the original owner of the copyright of this image"
+		autoCompletion="true"/>
+
+	<separator/>
+
+    <property
+		name="photoshop:Headline"
+		label="$$$/AWS/FileInfoLib/Panels/Origin/Headline=Headline"
+		description="$$$/xmp/photoshop/Headline_description=Enter a brief publishable synopsis or summary of the contents of this image"
+		multiLines="3"
+		autoCompletion="true"/>
+
+    <property
+		name="photoshop:Instructions"
+		label="$$$/AWS/FileInfoLib/Panels/Origin/Instructions=Instructions"
+		description="$$$/xmp/photoshop/Instructions_description=Enter information about embargoes, or other restrictions not covered by the Rights Usage field"
+		multiLines="3"
+		autoCompletion="true"/>
+
+    <property
+		name="photoshop:TransmissionReference"
+		label="$$$/AWS/FileInfoLib/Panels/Origin/TransmissionReference=Transmission Reference"
+		description="$$$/xmp/photoshop/TransmissionReference_description=Original transmission reference."
+		multiLines="3"
+		autoCompletion="true"/>
+
+    <property
+    	name="photoshop:Urgency"
+		label="$$$/AWS/FileInfoLib/Panels/Origin/Urgency=Urgency" />
+		  
+</view>
+
+</views>

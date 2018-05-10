@@ -1,0 +1,873 @@
+sheet CharParaStylesUI
+{
+interface:
+
+	precision0Cell : 0;
+	/* Slider Filter */
+	slider_filter: {min_value:0, max_value:10};
+	
+	/* The selection in the list box */
+	PanelSelection: 0;
+	
+	/* Character Styles (0) or Paragraph Styles (1) */
+	WhichStyle: 1;
+	
+	/* Show asian options? 0 - No, 1 - Yes */
+	ShowAsianOptions: 1;
+	
+	/* World Ready On*/
+	IsWorldReady:0;
+	
+	StyleName: "Dummy";
+	previewValue: 1;
+	
+	StyleIsNormal: false;
+	NormalStylePlus: "" <== (StyleIsNormal == true) ? "" : 
+								( (WhichStyle == 0) ? 
+									"$$$/CharParaStylesPlugin/Str/Main/NormalCharStylePlus=[Normal Character Style] +" :
+									"$$$/CharParaStylesPlugin/Str/Main/NormalParaStylePlus=[Normal Paragraph Style] +");
+
+	/* Normal list items for paragraph styles */
+	ParaStyleItemsArrNormal: [
+						{ name: "$$$/CharParaStylesUI/PanelList/General=General", value: 0 },
+						{ name: "$$$/CharParaStylesUI/PanelList/BasicCharFormats=Basic Character Formats", value: 1 },
+						{ name: "$$$/CharParaStylesUI/PanelList/AdvCharFormats=Advanced Character Formats", value: 2 },
+						{ name: "$$$/CharParaStylesUI/PanelList/Indents=Indents and Spacing", value: 3 },
+						{ name: "$$$/CharParaStylesUI/PanelList/Tabs=Tabs", value: 4 },
+						{ name: "$$$/CharParaStylesUI/PanelList/Composer=Composition", value: 5 },
+						{ name: "$$$/CharParaStylesUI/PanelList/Hyphenation=Hyphenation", value: 6 },
+						{ name: "$$$/CharParaStylesUI/PanelList/Justification=Justification", value: 7 },
+						{ name: "$$$/CharParaStylesUI/PanelList/CharColor=Character Color", value: 8 },
+						{ name: "$$$/CharParaStylesUI/PanelList/OpenType=OpenType Features", value: 9 }
+					];
+	
+	/* Asian list items for paragraph styles */
+	ParaStyleItemsArrAsian: [
+						{ name: "$$$/CharParaStylesUI/PanelList/General=General", value: 0 },
+						{ name: "$$$/CharParaStylesUI/PanelList/BasicCharFormats=Basic Character Formats", value: 1 },
+						{ name: "$$$/CharParaStylesUI/PanelList/AdvCharFormats=Advanced Character Formats", value: 2 },
+						{ name: "$$$/CharParaStylesUI/PanelList/Indents=Indents and Spacing", value: 3 },
+						{ name: "$$$/CharParaStylesUI/PanelList/Tabs=Tabs", value: 4 },
+						{ name: "$$$/CharParaStylesUI/PanelList/Composer=Composition", value: 5 },
+						{ name: "$$$/CharParaStylesUI/PanelList/Hyphenation=Hyphenation", value: 6 },
+						{ name: "$$$/CharParaStylesUI/PanelList/Justification=Justification", value: 7 },
+						{ name: "$$$/CharParaStylesUI/PanelList/CharColor=Character Color", value: 8 },
+						{ name: "$$$/CharParaStylesUI/PanelList/OpenType=OpenType Features", value: 9 },
+						{ name: "$$$/CharParaStylesUI/PanelList/TateChuuYoko=Tate-chu-yoko", value: 10 },
+						{ name: "$$$/CharParaStylesUI/PanelList/JCompositionSettings=Japanese Composition Settings", value: 11 },
+						{ name: "$$$/CharParaStylesUI/PanelList/Wari_chuu=Warichu", value: 12 }
+					];
+					
+
+	/* Normal list items for paragraph styles For Middle East Build*/
+	ParaStyleItemsArrNormalME: [
+						{ name: "$$$/CharParaStylesUI/PanelList/General=General", value: 0 },
+						{ name: "$$$/CharParaStylesUI/PanelList/BasicCharFormats=Basic Character Formats", value: 1 },
+						{ name: "$$$/CharParaStylesUI/PanelList/AdvCharFormats=Advanced Character Formats", value: 2 },
+						{ name: "$$$/CharParaStylesUI/PanelList/MECharFormats=Middle East Character Formats", value: 13 },
+						{ name: "$$$/CharParaStylesUI/PanelList/Indents=Indents and Spacing", value: 3 },
+						{ name: "$$$/CharParaStylesUI/PanelList/Tabs=Tabs", value: 4 },
+						{ name: "$$$/CharParaStylesUI/PanelList/Composer=Composition", value: 5 },
+						{ name: "$$$/CharParaStylesUI/PanelList/Hyphenation=Hyphenation", value: 6 },
+						{ name: "$$$/CharParaStylesUI/PanelList/Justification=Justification", value: 7 },
+						{ name: "$$$/CharParaStylesUI/PanelList/CharColor=Character Color", value: 8 },
+						{ name: "$$$/CharParaStylesUI/PanelList/OpenType=OpenType Features", value: 9 }
+					];
+	
+	/* Asian list items for paragraph styles For Middle East Build */
+	ParaStyleItemsArrAsianME: [
+						{ name: "$$$/CharParaStylesUI/PanelList/General=General", value: 0 },
+						{ name: "$$$/CharParaStylesUI/PanelList/BasicCharFormats=Basic Character Formats", value: 1 },
+						{ name: "$$$/CharParaStylesUI/PanelList/AdvCharFormats=Advanced Character Formats", value: 2 },
+						{ name: "$$$/CharParaStylesUI/PanelList/MECharFormats=Middle East Character Formats", value: 13 },
+						{ name: "$$$/CharParaStylesUI/PanelList/Indents=Indents and Spacing", value: 3 },
+						{ name: "$$$/CharParaStylesUI/PanelList/Tabs=Tabs", value: 4 },
+						{ name: "$$$/CharParaStylesUI/PanelList/Composer=Composition", value: 5 },
+						{ name: "$$$/CharParaStylesUI/PanelList/Hyphenation=Hyphenation", value: 6 },
+						{ name: "$$$/CharParaStylesUI/PanelList/Justification=Justification", value: 7 },
+						{ name: "$$$/CharParaStylesUI/PanelList/CharColor=Character Color", value: 8 },
+						{ name: "$$$/CharParaStylesUI/PanelList/OpenType=OpenType Features", value: 9 },
+						{ name: "$$$/CharParaStylesUI/PanelList/TateChuuYoko=Tate-chu-yoko", value: 10 },
+						{ name: "$$$/CharParaStylesUI/PanelList/JCompositionSettings=Japanese Composition Settings", value: 11 },
+						{ name: "$$$/CharParaStylesUI/PanelList/Wari_chuu=Warichu", value: 12 }
+					];				
+	
+	/* Normal list items for character styles  */
+	CharStyleItemsArrNormal: [
+						{ name: "$$$/CharParaStylesUI/PanelList/General=General", value: 0 },
+						{ name: "$$$/CharParaStylesUI/PanelList/BasicCharFormats=Basic Character Formats", value: 1 },
+						{ name: "$$$/CharParaStylesUI/PanelList/AdvCharFormats=Advanced Character Formats", value: 2 },						
+						{ name: "$$$/CharParaStylesUI/PanelList/CharColor=Character Color", value: 8 },
+						{ name: "$$$/CharParaStylesUI/PanelList/OpenType=OpenType Features", value: 9 }
+					];
+	
+	/* Asian list items for paragraph styles */									
+	CharStyleItemsArrAsian: [
+						{ name: "$$$/CharParaStylesUI/PanelList/General=General", value: 0 },
+						{ name: "$$$/CharParaStylesUI/PanelList/BasicCharFormats=Basic Character Formats", value: 1 },
+						{ name: "$$$/CharParaStylesUI/PanelList/AdvCharFormats=Advanced Character Formats", value: 2 },						
+						{ name: "$$$/CharParaStylesUI/PanelList/CharColor=Character Color", value: 8 },
+						{ name: "$$$/CharParaStylesUI/PanelList/OpenType=OpenType Features", value: 9 },
+						{ name: "$$$/CharParaStylesUI/PanelList/TateChuuYoko=Tate-chu-yoko", value: 10 },
+						{ name: "$$$/CharParaStylesUI/PanelList/Wari_chuu=Warichu", value: 12 }
+					];
+					
+	/* Normal list items for character styles for Middle East Build */
+	CharStyleItemsArrNormalME: [
+						{ name: "$$$/CharParaStylesUI/PanelList/General=General", value: 0 },
+						{ name: "$$$/CharParaStylesUI/PanelList/BasicCharFormats=Basic Character Formats", value: 1 },
+						{ name: "$$$/CharParaStylesUI/PanelList/AdvCharFormats=Advanced Character Formats", value: 2 },
+						{ name: "$$$/CharParaStylesUI/PanelList/MECharFormats=Middle East Character Formats", value: 13 },
+						{ name: "$$$/CharParaStylesUI/PanelList/CharColor=Character Color", value: 8 },
+						{ name: "$$$/CharParaStylesUI/PanelList/OpenType=OpenType Features", value: 9 }
+					];
+	
+	/* Asian list items for paragraph styles for Middle East Build  */									
+	CharStyleItemsArrAsianME: [
+						{ name: "$$$/CharParaStylesUI/PanelList/General=General", value: 0 },
+						{ name: "$$$/CharParaStylesUI/PanelList/BasicCharFormats=Basic Character Formats", value: 1 },
+						{ name: "$$$/CharParaStylesUI/PanelList/AdvCharFormats=Advanced Character Formats", value: 2 },
+						{ name: "$$$/CharParaStylesUI/PanelList/MECharFormats=Middle East Character Formats", value: 13 },
+						{ name: "$$$/CharParaStylesUI/PanelList/CharColor=Character Color", value: 8 },
+						{ name: "$$$/CharParaStylesUI/PanelList/OpenType=OpenType Features", value: 9 },
+						{ name: "$$$/CharParaStylesUI/PanelList/TateChuuYoko=Tate-chu-yoko", value: 10 },
+						{ name: "$$$/CharParaStylesUI/PanelList/Wari_chuu=Warichu", value: 12 }
+					];
+
+	/* This is what the list is actually bound to. It is calculated below. */					
+	PanelListItems: ParaStyleItemsArrAsian <== (WhichStyle == 0) ? ( (ShowAsianOptions == 0) ? ((IsWorldReady > 0) ? CharStyleItemsArrNormalME :CharStyleItemsArrNormal): ((IsWorldReady > 0)?CharStyleItemsArrAsianME : CharStyleItemsArrAsian) ): 
+																   ( (ShowAsianOptions == 0) ? ((IsWorldReady > 0) ? ParaStyleItemsArrNormalME :ParaStyleItemsArrNormal): ((IsWorldReady > 0)?ParaStyleItemsArrAsianME : ParaStyleItemsArrAsian));
+	
+	/*** Basic Character Formats Panel ***/
+	CaseMenuItems: [ { name: "$$$/CharParaStylesUI/Dlg/BCF/CaseMenu/Normal=Normal", value: 0 },
+					 { name: "$$$/CharParaStylesUI/Dlg/BCF/CaseMenu/AllCaps=All Caps", value: 1 },
+					 { name: "$$$/CharParaStylesUI/Dlg/BCF/CaseMenu/SmallCaps=Small Caps", value: 2 }
+					];
+	AlignmentMenuItems: [ { name: "$$$/CharParaStylesUI/Dlg/BCF/AlignmentMenu/Roman=Roman Baseline (Em Box Center for Vertical Text)", value: 0 },
+						  { name: "$$$/CharParaStylesUI/Dlg/BCF/AlignmentMenu/EmTopRight=Em Box Top/Right", value: 1 },
+						  { name: "$$$/CharParaStylesUI/Dlg/BCF/AlignmentMenu/EmCenter=Em Box Center (Roman Baseline for Vertical Text)", value: 2 },
+						  { name: "$$$/CharParaStylesUI/Dlg/BCF/AlignmentMenu/EmBotLeft=Em Box Bottom/Left", value: 3 },
+						  { name: "$$$/CharParaStylesUI/Dlg/BCF/AlignmentMenu/ICFTopRight=ICF Box Top/Right", value: 4 },
+						  { name: "$$$/CharParaStylesUI/Dlg/BCF/AlignmentMenu/ICFBotLeft=ICF Box Bottom/Left", value: 5 }
+						];
+	PositionMenuItems: [ { name: "$$$/CharParaStylesUI/Dlg/BCF/PositionMenu/Normal=Normal", value: 0 },
+						 { name: "$$$/CharParaStylesUI/Dlg/BCF/PositionMenu/Superscript=Superscript", value: 1 },
+						 { name: "$$$/CharParaStylesUI/Dlg/BCF/PositionMenu/Subscript=Subscript", value: 2 }
+						];
+	KerningMenuItems: [ { name: "$$$/CharParaStylesUI/Dlg/BCF/KerningMnu/Auto=Auto", value: 0 },
+						{ name: "$$$/CharParaStylesUI/Dlg/BCF/KerningMnu/Optical=Optical", value: 1 },
+						{ name: "$$$/CharParaStylesUI/Dlg/BCF/KerningMnu/MetricRomanOnly=Metrics - Roman Only", value: 2 },
+						{ name: "$$$/CharParaStylesUI/Dlg/BCF/KerningMnu/Zero=0 (zero)", value: 3 }
+						];
+	TrackingMenuItems: [ "-100",
+						 "-75",
+				         "-50",
+				         "-25",
+				         "-10",
+				         "-5",
+				         "",
+				         "0",
+				         "",
+				         "5",
+				         "10",
+				         "25",
+				         "50",
+				         "75",
+				         "100",
+				         "200"
+						];
+												
+	KerningMenuSelection: -1;
+	FontSizeEditValue: 0;
+	LeadingEditValue: 0;
+	TrackingEditValue: 0;
+	UnderlineCBValue: 1;
+	StrikethruCBValue: 1;
+	CaseMenuSelection: -1;
+	AlignmentMenuSelection: -1;
+	PositionMenuSelection: -1;
+	VertAlignCBValue: 0;
+						
+	/*** Advanced Character Formats ***/
+	AltGlyphsMenuItems: [ { name: "$$$/CharParaStylesUI/Dlg/ACF/AltGlyphsMnu/Default=Default Form", value: 1 },
+						  { name: "$$$/CharParaStylesUI/Dlg/ACF/AltGlyphsMnu/Traditional=Traditional", value: 2 },
+						  { name: "$$$/CharParaStylesUI/Dlg/ACF/AltGlyphsMnu/Expert=Expert", value: 3 },
+						  { name: "$$$/CharParaStylesUI/Dlg/ACF/AltGlyphsMnu/JIS78=JIS 78", value: 4 },
+						  { name: "$$$/CharParaStylesUI/Dlg/ACF/AltGlyphsMnu/JIS83=JIS 83", value: 5 },
+						  { name: "$$$/CharParaStylesUI/Dlg/ACF/AltGlyphsMnu/JIS90=JIS 90", value: 6 },
+						  { name: "$$$/CharParaStylesUI/Dlg/ACF/AltGlyphsMnu/JIS04=JIS 04", value: 7 },
+						  { name: "$$$/CharParaStylesUI/Dlg/ACF/AltGlyphsMnu/HalfWidth=Monospaced Half-Width Forms", value: 8 },
+						  { name: "$$$/CharParaStylesUI/Dlg/ACF/AltGlyphsMnu/ThirdWidth=Monospaced Third-Width Forms", value: 9 },
+						  { name: "$$$/CharParaStylesUI/Dlg/ACF/AltGlyphsMnu/QuarterWidth=Monospaced Quarter-Width Forms", value: 10 }
+						];
+	AkiMenuItems: [ { name: "$$$/CharParaStylesUI/Dlg/ACF/AkiMnu/None=None", value: 2 },
+					{ name: "-", value: -1 },
+					{ name: "$$$/CharParaStylesUI/Dlg/ACF/AkiMnu/Auto=Auto", value: 1 },
+					{ name: "-", value: -2 },
+					{ name: "$$$/CharParaStylesUI/Dlg/ACF/AkiMnu/8bu=8-bu (1/8 em space)", value: 3 },
+					{ name: "$$$/CharParaStylesUI/Dlg/ACF/AkiMnu/4bu=4-bu (1/4 em space)", value: 4 },
+					{ name: "$$$/CharParaStylesUI/Dlg/ACF/AkiMnu/2bu=2-bu (1/2 em space)", value: 5 },
+					{ name: "$$$/CharParaStylesUI/Dlg/ACF/AkiMnu/24bu=2-bu 4-bu (3/4 em space)", value: 6 },
+					{ name: "$$$/CharParaStylesUI/Dlg/ACF/AkiMnu/Zenkaku=Zenkaku (1 em space)", value: 7 }
+					];
+					
+	ScaleMenuItems: [ "25%",
+					"50%",
+					"75%",
+					"90%",
+					"100%",
+					"110%",
+					"125%",
+					"150%",
+					"175%",
+					"200%"
+					];
+					
+	TSumeItems: [ "0%",
+				"",
+				"10%",
+				"20%",
+				"30%",
+				"40%",
+				"50%",
+				"60%",
+				"70%",
+				"80%",
+				"90%",
+				"100%"
+				];
+				
+	CharRotItems: [
+						"$$$/CharParaStylesUI/RotateCharacterMenu/Minus180=-180^D",
+						  "$$$/CharParaStylesUI/RotateCharacterMenu/Minus150=-150^D",
+						  "$$$/CharParaStylesUI/RotateCharacterMenu/Minus120=-120^D",
+						  "$$$/CharParaStylesUI/RotateCharacterMenu/Minus90=-90^D",
+						  "$$$/CharParaStylesUI/RotateCharacterMenu/Minus60=-60^D",
+						  "$$$/CharParaStylesUI/RotateCharacterMenu/Minus45=-45^D",
+						  "$$$/CharParaStylesUI/RotateCharacterMenu/Minus30=-30^D",
+						  "$$$/CharParaStylesUI/RotateCharacterMenu/0=0^D",
+						  "$$$/CharParaStylesUI/RotateCharacterMenu/30=30^D",
+						  "$$$/CharParaStylesUI/RotateCharacterMenu/45=45^D",
+						  "$$$/CharParaStylesUI/RotateCharacterMenu/60=60^D",
+						  "$$$/CharParaStylesUI/RotateCharacterMenu/90=90^D",
+						  "$$$/CharParaStylesUI/RotateCharacterMenu/120=120^D",
+						  "$$$/CharParaStylesUI/RotateCharacterMenu/150=150^D",
+						  "$$$/CharParaStylesUI/RotateCharacterMenu/180=180^D"
+				  ];				
+	HorzScaleEditValue: 1;
+	VertScaleEditValue: 1;
+	BaseShiftEditValue: 0;
+	CharRotEditValue: 0;
+	TsumeEditValue: 0;
+	AkiBeforeMenuSelection: 0;
+	AkiAfterMenuSelection: 0;
+	AltGlyphsMenuSelection: 0;
+		
+	/*** Middle East Character Formats Panel ***/
+	MEDigitsMenuItems: [    {name: "$$$/CharParaStylesUI/Dlg/MECF/DigitsMnu/Default=Default", value: 0},
+							{name: "$$$/CharParaStylesUI/Dlg/MECF/DigitsMnu/Arabic=Arabic", value: 1},
+							{name: "$$$/CharParaStylesUI/Dlg/MECF/DigitsMnu/Hindi=Hindi", value: 2},
+							{name: "$$$/CharParaStylesUI/Dlg/MECF/DigitsMnu/Farsi=Farsi", value: 3}
+							
+							];
+	MEKashidasMenuItems: [  {name: "$$$/CharParaStylesUI/Dlg/MECF/Kashidas/Default=Default", value: 0},
+							{name: "$$$/CharParaStylesUI/Dlg/MECF/Kashidas/Off=Off", value: 1}		
+							
+							];
+	MECharDirectionMenuItems: [  {name: "$$$/CharParaStylesUI/Dlg/MECF/CharDir/Default=Default", value: 0},
+								 {name: "$$$/CharParaStylesUI/Dlg/MECF/CharDir/LeftToRight=Left To Right", value: 1},
+								 {name: "$$$/CharParaStylesUI/Dlg/MECF/CharDir/RightToLeft=Right To Left", value: 2}								 
+							
+							];	
+   	MEDiaPosAdditionalHorItems: 
+					[	"-200", 
+						"-100",
+						"-75",
+						"-50",
+						"-25",
+						"-10",
+						"-5",
+						"0",
+						"5",
+						"10",
+						"25",
+						"50",
+						"75",
+						"100",
+						"200"						
+					];
+	MEDiaPosAdditionalVerItems: 
+					[	"-200", 
+						"-100",
+						"-75",
+						"-50",
+						"-25",
+						"-10",
+						"-5",
+						"0",
+						"5",
+						"10",
+						"25",
+						"50",
+						"75",
+						"100",
+						"200"						
+					];
+	MEDigitsSelection:0;
+	MEKashidasSelection:0;
+	MECharDirectionSelection:0;
+	MEDiaPosAdditionalHorEditValue:0;
+	MEDiaPosAdditionalVerEditValue:0;
+	
+	/*** Indents and Spacing Panel ***/
+	IASAlignmentMenuItems: [ {name: "$$$/CharParaStylesUI/Dlg/IaS/AlignmentMnu/Left=Left", value: 0},
+							 {name: "$$$/CharParaStylesUI/Dlg/IaS/AlignmentMnu/Center=Center", value: 1},
+							 {name: "$$$/CharParaStylesUI/Dlg/IaS/AlignmentMnu/Right=Right", value: 2},
+							 {name: "$$$/CharParaStylesUI/Dlg/IaS/AlignmentMnu/LeftJust=Left Justify", value: 3},
+							 {name: "$$$/CharParaStylesUI/Dlg/IaS/AlignmentMnu/CenterJust=Center Justify", value: 4},
+							 {name: "$$$/CharParaStylesUI/Dlg/IaS/AlignmentMnu/RightJust=Right Justify", value: 5},
+							 {name: "$$$/CharParaStylesUI/Dlg/IaS/AlignmentMnu/FullJust=Full Justify", value: 6}
+							];
+							
+	IASParaDirectionMenuItems: [
+							 {name: "$$$/CharParaStylesUI/Dlg/IaS/ParaDirectionMnu/LefttoRight=Left to Right", value: 0},
+							 {name: "$$$/CharParaStylesUI/Dlg/IaS/ParaDirectionMnu/RighttoLeft=Right to Left", value: 1}
+							];
+							
+	IASKashidaMenuItems	: [
+							{name: "$$$/_TextDlgs/Mnu/ParaPanel/11=None",value: 0},
+							{name: "$$$/_TextDlgs/Mnu/ParaPanel/12=Short",value: 1},
+							{name: "$$$/_TextDlgs/Mnu/ParaPanel/13=Medium",value: 2},
+							{name: "$$$/_TextDlgs/Mnu/ParaPanel/14=Long",value: 3},
+							{name: "$$$/_TextDlgs/Mnu/ParaPanel/15=Stylistic",value: 4}
+							];
+							
+	IASAlignMenuSelection: 0;
+	IASParaDirectionMenuSelection: 0;
+	IASKashidaMenuSelection: 0;
+	LeftIndentValue: 0;
+	FirstLineIndentValue: 0;
+	RightIndentValue: 0;
+	SpaceBeforeValue: 0;
+	SpaceAfterValue: 0;
+	
+	/*** Tabs Panel ***/
+	TabJustRadioGp: 0;
+	TabXValue: 0;
+	TabLeaderStr: "";
+	
+	unlink TabAlignOnStr: "." <== (3 != TabJustRadioGp)? lastAlignVal : TabAlignOnStr;
+  	lastAlignVal: "." <== (3 == TabJustRadioGp) ? TabAlignOnStr : lastAlignVal;
+
+	EnableTabRepeatButton: false;
+	EnableTabClearButton: false;
+	
+	/*** Composition Panel ***/
+	ComposerEngMenuItemsME: [ 
+							{name: "$$$/CharParaStylesUI/Dlg/Compose/ComposeMenu/Every=Adobe Every-line Composer", value: 1},
+							{name: "$$$/CharParaStylesUI/Dlg/Compose/ComposeMenu/Single=Adobe Single-line Composer", value: 2},
+							{name: "$$$/CharParaStylesUI/Dlg/Compose/ComposeMenu/MEEvery=Middle Eastern Every-line Composer", value: 3},
+							{name: "$$$/CharParaStylesUI/Dlg/Compose/ComposeMenu/MESingle=Middle Eastern Single-line Composer", value: 4}
+						];
+						
+	ComposerEngMenuItemsIndic: [ 
+							{name: "$$$/CharParaStylesUI/Dlg/Compose/ComposeMenu/Every=Adobe Every-line Composer", value: 1},
+							{name: "$$$/CharParaStylesUI/Dlg/Compose/ComposeMenu/Single=Adobe Single-line Composer", value: 2},
+							{name: "$$$/CharParaStylesUI/Dlg/Compose/ComposeMenu/MESAEvery=Middle Eastern & South Asian Every-line Composer", value: 3},
+							{name: "$$$/CharParaStylesUI/Dlg/Compose/ComposeMenu/MESASingle=Middle Eastern & South Asian Single-line Composer", value: 4}
+						];
+						
+	ComposerEngMenuItemsUS: [ 
+							{name: "$$$/CharParaStylesUI/Dlg/Compose/ComposeMenu/Every=Adobe Every-line Composer", value: 1},
+							{name: "$$$/CharParaStylesUI/Dlg/Compose/ComposeMenu/Single=Adobe Single-line Composer", value: 2}
+						];
+						
+	ComposerAsianMenuItemsME: [ 
+							{name: "$$$/CharParaStylesUI/Dlg/Compose/JComposeMenu/Every=Adobe Japanese Every-line Composer", value: 1},
+							{name: "$$$/CharParaStylesUI/Dlg/Compose/JComposeMenu/Single=Adobe Japanese Single-line Composer", value: 2},
+							{name: "$$$/CharParaStylesUI/Dlg/Compose/ComposeMenu/MEEvery=Middle Eastern Every-line Composer", value: 3},
+							{name: "$$$/CharParaStylesUI/Dlg/Compose/ComposeMenu/MESingle=Middle Eastern Single-line Composer", value: 4}
+						];
+						
+	ComposerAsianMenuItemsUS: [ 
+							{name: "$$$/CharParaStylesUI/Dlg/Compose/JComposeMenu/Every=Adobe Japanese Every-line Composer", value: 1},
+							{name: "$$$/CharParaStylesUI/Dlg/Compose/JComposeMenu/Single=Adobe Japanese Single-line Composer", value: 2}
+						];
+	
+	ComposerMenuSelection: 2;
+	
+	ComposerMenuItems: ComposerEngMenuItemsUS <== (ShowAsianOptions == 0) ? 
+								((IsWorldReady == 0) ? (ComposerEngMenuItemsUS) : (( IsWorldReady == 2 ) ? ComposerEngMenuItemsIndic : ComposerEngMenuItemsME )) :
+								(IsWorldReady == 0 ? ComposerAsianMenuItemsUS : ComposerAsianMenuItemsME) ;
+	
+	PunctuationCBValue: 0;
+	
+	/*** Hyphenation Panel ***/
+	HyphGpCBValue: 0;
+	
+	unlink WordsLongerThanValue: 0 <== (HyphGpCBValue == 1) ? WordsLongerThanValue : WordsLongerThanValueLast;
+	WordsLongerThanValueLast: 0 <== (HyphGpCBValue != 1) ? WordsLongerThanValueLast : WordsLongerThanValue;
+	
+	unlink AfterFirstValue: 0 <== (HyphGpCBValue == 1) ? AfterFirstValue : AfterFirstValueLast;
+	AfterFirstValueLast: 0 <== (HyphGpCBValue != 1) ? AfterFirstValueLast : AfterFirstValue;
+	
+	unlink BeforeLastValue: 0 <== (HyphGpCBValue == 1) ? BeforeLastValue : BeforeLastValueLast;
+	BeforeLastValueLast: 0 <== (HyphGpCBValue != 1) ? BeforeLastValueLast : BeforeLastValue;
+	
+	unlink HyphenLimitValue: 0 <== (HyphGpCBValue == 1) ? HyphenLimitValue : HyphenLimitValueLast;
+	HyphenLimitValueLast: 0 <== (HyphGpCBValue != 1) ? HyphenLimitValueLast : HyphenLimitValue;
+	
+	unlink HyphenZoneValue: 0 <== (HyphGpCBValue == 1) ? HyphenZoneValue : HyphenZoneValueLast;
+	HyphenZoneValueLast: 0 <== (HyphGpCBValue != 1) ? HyphenZoneValueLast : HyphenZoneValue;
+	
+	unlink SpacingSliderValue: 0 <== (HyphGpCBValue == 1) ? SpacingSliderValue : SpacingSliderValueLast;
+	SpacingSliderValueLast: 0 <== (HyphGpCBValue != 1) ? SpacingSliderValueLast : SpacingSliderValue;
+	
+	unlink HyphCapCBValue: 0 <== (HyphGpCBValue == 1) ? HyphCapCBValue : HyphCapCBValueLast;
+	HyphCapCBValueLast: 0 <== (HyphGpCBValue != 1) ? HyphCapCBValueLast : HyphCapCBValue;
+	
+	/*** Justification Panel ***/
+
+	AutoLeadingValue: 0;
+	
+	SingleWordJustMenuItems: [ { name: "$$$/CharParaStylesUI/Dlg/Just/JustMenu/FullJust=Full Justify", value: 1},
+							   { name: "$$$/CharParaStylesUI/Dlg/Just/JustMenu/AlignLeft=Align Left", value: 2},
+							   { name: "$$$/CharParaStylesUI/Dlg/Just/JustMenu/AlignCenter=Align Center", value: 3},
+							   { name: "$$$/CharParaStylesUI/Dlg/Just/JustMenu/AlignRight=Align Right", value: 4}
+								];
+	SingleWordJustSelection: 1;
+	
+	/*** Character Color Panel ***/
+	StrokeWeightMenuItems: [ { name: "0 pt", value: 0 },
+							 { name: "0.25 pt", value: 1 },
+							 { name: "0.50 pt", value: 2 },
+							 { name: "0.75 pt", value: 3 },
+							 { name: "1 pt", value: 4 },
+							 { name: "2 pt", value: 5 },
+							 { name: "3 pt", value: 6 },
+							 { name: "4 pt", value: 7 },
+							 { name: "5 pt", value: 8 },
+							 { name: "6 pt", value: 9 },
+							 { name: "7 pt", value: 10 },
+							 { name: "8 pt", value: 11 },
+							 { name: "9 pt", value: 12 },
+							 { name: "10 pt", value: 13 },
+							 { name: "20 pt", value: 14 },
+							 { name: "30 pt", value: 15 },
+							 { name: "40 pt", value: 16 },
+							 { name: "50 pt", value: 17 },
+							 { name: "60 pt", value: 18 },
+							 { name: "70 pt", value: 19 },
+							 { name: "80 pt", value: 20 },
+							 { name: "90 pt", value: 21 },
+							 { name: "100 pt", value: 22 }
+							];
+							
+	TintMenuItems: ["0%",
+					"10%",
+					"20%",
+					"30%",
+					"40%",
+					"50%",
+					"60%",
+					"70%",
+					"80%",
+					"90%",
+					"100%"
+					];
+							
+	StrokeWeightMenuSelection: 4;
+	TintMenuSelection: -1;
+	OverprintFillCBValue: 0;
+	OverprintStrokeCBValue: 1;
+	
+	/*** OpenType Features PANEL ***/
+	OTFFigureMenuItems: [ { name: "$$$/CharParaStylesUI/Dlg/OTF/FigureMenu/Default=Default Figure", value: 0 },
+						  { name: "$$$/CharParaStylesUI/Dlg/OTF/FigureMenu/TabLining=Tabular Lining", value: 1 },
+						  { name: "$$$/CharParaStylesUI/Dlg/OTF/FigureMenu/PropOldstyle=Proportional Oldstyle", value: 2 },
+						  { name: "$$$/CharParaStylesUI/Dlg/OTF/FigureMenu/PropLining=Proportional Lining", value: 3 },
+						  { name: "$$$/CharParaStylesUI/Dlg/OTF/FigureMenu/TabOldstyle=Tabular Oldstyle", value: 4 }
+						];
+	OTFFigureSelection: -1;
+	
+	OTFPositionMenuItems: [ { name: "$$$/CharParaStylesUI/Dlg/OTF/PositionMenu/Default=Default Position", value: 0 },
+							{ name: "$$$/CharParaStylesUI/Dlg/OTF/PositionMenu/Superscript=Superscript/Superior", value: 1 },
+							{ name: "$$$/CharParaStylesUI/Dlg/OTF/PositionMenu/Subscript=Subscript/Inferior", value: 2 },
+							{ name: "$$$/CharParaStylesUI/Dlg/OTF/PositionMenu/Numerator=Numerator", value: 3 },
+							{ name: "$$$/CharParaStylesUI/Dlg/OTF/PositionMenu/Denominator=Denominator", value: 4 }
+						  ];
+	OTFPositionSelection: -1;
+	
+	OTFStdLigaturesCBValue: 0;
+	OTFContextualAltCBValue: 0;
+	OTFDiscLigaturesCBValue: 0;
+	OTFSwashCBValue: 0;
+	OTFStylisticAltCBValue: 0;
+	OTFTitlingAltCBValue: 0;
+	
+	OTFOverlapSwashCBValue: 0;
+	OTFJustificationAltCBValue: 0;
+	OTFStretchedAltCBValue: 0;
+	
+	OTFOrdinalsCBValue: 0;
+	OTFFractionsCBValue: 0;
+	OTFPropMetricsCBValue: 0;
+	OTFHorVStyleCBValue: 0;
+	OTFRomanItalicsCBValue: 0;
+	
+	/*** Tate-chu-yoko PANEL ***/
+	TateChuYokoCBValue: 0;
+	TCYValues: [	"-10 pt",
+					"-9 pt",
+					"-8 pt",
+					"-7 pt",
+					"-6 pt",
+					"-5 pt",
+					"-4 pt",
+					"-3 pt",
+					"-2 pt",
+					"-1 pt",
+					"0 pt",
+					"1 pt",
+					"2 pt",
+					"3 pt",
+					"4 pt",
+					"5 pt",
+					"6 pt",
+					"7 pt",
+					"8 pt",
+					"9 pt",
+					"10 pt"
+					];
+
+	unlink UpDownEditValue: 0 <== (TateChuYokoCBValue == 1) ? UpDownEditValue : UpDownEditValueLast;
+	UpDownEditValueLast: 0 <== (TateChuYokoCBValue != 1) ? UpDownEditValueLast : UpDownEditValue;
+		
+	unlink LeftRightEditValue: 0 <== (TateChuYokoCBValue == 1) ? LeftRightEditValue : LeftRightEditValueLast;
+	LeftRightEditValueLast: 0 <== (TateChuYokoCBValue != 1) ? LeftRightEditValueLast : LeftRightEditValue;
+	
+	/*** Japanese Composition Settings PANEL ***/
+	KinsokuTypeMenuItems: [ { name: "$$$/CharParaStylesUI/Dlg/JCS/KinsokuTypeMenu/PushInFirst=Push In First", value: 1},
+							{ name: "$$$/CharParaStylesUI/Dlg/JCS/KinsokuTypeMenu/PushOutFirst=Push Out First", value: 2},
+							{ name: "$$$/CharParaStylesUI/Dlg/JCS/KinsokuTypeMenu/PushOutOnly=Push Out Only", value: 3}
+							];
+	KinsokuTypeMenuSelection: -1;
+	
+	KinsokuSetMenuItems: [ { name: "$$$/CharParaStylesUI/Dlg/JCS/KinsokuSetMenu/None=None", value: 0},
+						   { name: "-", value: -1},
+						   { name: "$$$/CharParaStylesPlugin/PredefinedKinsoku/Hard=Hard", value: 1},
+						   { name: "$$$/CharParaStylesPlugin/PredefinedKinsoku/Soft=Soft", value: 2} 
+							];
+	BurasagariMenuItems: [ { name: "$$$/CharParaStylesUI/Dlg/JCS/BurasagariMenu/None=None", value: 0},
+						   { name: "-", value: -1},
+						   { name: "$$$/CharParaStylesUI/Dlg/JCS/BurasagariMenu/Regular=Regular", value: 2},
+						   { name: "$$$/CharParaStylesUI/Dlg/JCS/BurasagariMenu/Forced=Forced", value: 3} 
+						   ];
+	BurasagariMenuSelection: -1;
+	
+	BunriKinshiCBValue: 0;
+	
+	MojikumiMenuItems: [ { name: "$$$/CharParaStylesUI/Dlg/JCS/MojikumiMenu/None=None", value: 0},
+						 { name: "-", value: -1},
+						 { name: "$$$/CharParaStylesPlugin/PredefinedMojikumi/YakumonoHankakuMojikumi=YakumonoHankaku", value: 1},
+						 { name: "$$$/CharParaStylesPlugin/PredefinedMojikumi/GyomatsuYakumonoHankakuMojikumi=GyomatsuYakumonoHankaku", value: 2},
+						 { name: "$$$/CharParaStylesPlugin/PredefinedMojikumi/GyomatsuYakumonoZenkakuMojikumi=GyomatsuYakumonoZenkaku", value: 3},
+						 { name: "$$$/CharParaStylesPlugin/PredefinedMojikumi/YakumonoZenkakuMojikumi=YakumonoZenkaku", value: 4}
+						];
+	JCSLeadingMenuItems: [ { name: "$$$/CharParaStylesPlugin/Mnu/LeadingType/TopToBottom=Top-To-Top Leading", value: 0 },
+						   { name: "$$$/CharParaStylesPlugin/Mnu/LeadingType/BottomToTop=Bottom-To-Bottom Leading", value: 1 }
+							];
+	JCSLeadingMenuSelection: -1;
+	
+	/*** Warichu PANEL ***/
+	WarichuMinLinesItems: ["1", 
+						"2",
+						"3",
+						"4",
+						"5",
+						"6",
+						"7",
+						"8",
+						"9",
+						"10"
+					];
+					
+	WarichuLinesItems: ["2",
+						"3",
+						"4",
+						"5"
+					];
+	WarichuSizeItems: ["30%",
+						"40%",
+						"50%",
+						"60%",
+						"70%"
+					];	
+	WarichuAlignMenuItems: [ { name: "$$$/CharParaStylesUI/Dlg/Warichu/AlignMenu/LeftTop=Left/Top aligned", value: 0 },
+			 { name: "$$$/CharParaStylesUI/Dlg/Warichu/AlignMenu/Center=Center aligned", value: 1 },
+			 { name: "$$$/CharParaStylesUI/Dlg/Warichu/AlignMenu/RightBottom=Right/Bottom aligned", value: 2 },
+			 { name: "$$$/CharParaStylesUI/Dlg/Warichu/AlignMenu/FJLeftTop=Full Just Left/Top", value: 3 },
+			 { name: "$$$/CharParaStylesUI/Dlg/Warichu/AlignMenu/FJCenter=Full Just Center", value: 4 },
+			 { name: "$$$/CharParaStylesUI/Dlg/Warichu/AlignMenu/FJRightBottom=Full Just Right/Bottom", value: 5 },
+			 { name: "$$$/CharParaStylesUI/Dlg/Warichu/AlignMenu/ForceFJ=Force Full Just", value: 6 },
+			 { name: "$$$/CharParaStylesUI/Dlg/Warichu/AlignMenu/Default=Default alignment", value: 7 }
+			];
+	WarichuCBValue: 0;
+	
+	WarichuLinesEditValue: -1;
+	
+	WarichuSizeEditValue: -1;
+	
+	WarichuLineGapEditValue: 0;
+	
+	WarichuAlignMenuSelection: -1;
+	
+	MinCharsFirstLineEditValue: -1;
+	
+	MinCharsLastLineEditValue: -1;
+	
+			
+					
+
+/********************************************************** MultiColumnTree****************************************************/
+	hideParaStyle: false <== WhichStyle == 0;
+	hideAsianOption: false <== ShowAsianOptions == 0;
+	hideParaAsianOption: false <== (WhichStyle == 0) || (ShowAsianOptions == 0);
+	hideMiddleEast:false <== IsWorldReady ==0;
+
+/******************** Basic Panel ************************/
+	fontFamilyValue: "";
+	fontStyleValue: "";
+	hideFontFamily: true;
+	hideFontSize : true;
+	hideLeadingEdit: true;
+	hideKerningMenu: true;
+	hideTrackingEdit: true;
+	hideCaseMenu: true;
+	hidePositionMenu: true;
+	hideAlignmentMenu: true;
+	
+	dispCaseMenu:"" <== CaseMenuSelection >=0 ? CaseMenuItems[CaseMenuSelection].name : "";
+	dispPositionMenu:"" <== PositionMenuSelection >= 0 ? PositionMenuItems[PositionMenuSelection].name : "";
+	dispKerningMenu:"" <== KerningMenuSelection >= 0 ? KerningMenuItems[KerningMenuSelection].name : "";
+	dispAlignmentMenu:"" <== AlignmentMenuSelection >= 0 ? AlignmentMenuItems[AlignmentMenuSelection].name : "";
+	dispFontSizeMenu:"";
+	dispLeadingMenu:"";
+	dispTrackingMenu:"";
+
+	dispVertAlignCB: true <== VertAlignCBValue == 1;
+	dispUnderlineCB: true <== UnderlineCBValue == 1;
+	dispStrikethruCB: true <== StrikethruCBValue == 1;
+	hideVertAlignCB: true <== VertAlignCBValue == 2;
+	hideUnderlineCB: true <== UnderlineCBValue == 2;
+	hideStrikethruCB: true <== StrikethruCBValue == 2;
+
+/******************** Advanced Panel ************************/
+
+	dispHorzScaleEditValue: "";
+	dispVertScaleEditValue: "";
+	dispBaseShiftEditValue: "";
+	dispCharRotEditValue: "";
+	dispTsumeEditValue: "";
+	dispAkiBeforeMenuSelection: "" <== AkiBeforeMenuSelection == 2 ? AkiMenuItems[0].name : AkiMenuItems[AkiBeforeMenuSelection + 1].name;
+	dispAkiAfterMenuSelection:  "" <== AkiAfterMenuSelection == 2 ? AkiMenuItems[0].name : AkiMenuItems[AkiAfterMenuSelection + 1].name;
+	dispAltGlyphsMenuSelection: "" <== AltGlyphsMenuSelection == 0 ? AltGlyphsMenuItems[0].name : AltGlyphsMenuItems[AltGlyphsMenuSelection - 1].name;
+	dispLanguageMenuSelection: "";
+
+	hideHorzScaleEditValue: true;
+	hideVertScaleEditValue: true;
+	hideBaseShiftEditValue: true;
+	hideCharRotEditValue: true;
+	hideAkiBeforeMenuSelection: true <== hideAkiBeforeMenuSelection || ShowAsianOptions == 0;
+	hideAkiAfterMenuSelection:  true <== hideAkiAfterMenuSelection || ShowAsianOptions == 0;
+	hideAltGlyphsMenuSelection: true<== hideAltGlyphsMenuSelection || ShowAsianOptions == 0;
+	hideTsumeEditValue: true <== hideTsumeEditValue || ShowAsianOptions == 0;
+	hideLanguageMenuSelection: true;
+	
+	/******************** Middle East Character Formats Panel ************************/
+	dispDigitsMenuSelection : "";
+	dispKashidasMenuSelection: "";
+	dispCharacterDirectionMenuSelection: "";
+	dispHorizontalEditValue: "";
+	dispVerticalEditValue: "";
+	
+	hideDigitsMenuSelection: true;
+	hideKashidasMenuSelection: true;
+	hideCharacterDirectionMenuSelection: true;
+	hidehorizontalEditValue: true;
+	hideVerticalEditValue: true;
+	
+	
+	
+	/******************** Indents Panel ************************/
+
+	dispIASAlign: "" <== IASAlignMenuSelection >= 0 ? IASAlignmentMenuItems[IASAlignMenuSelection].name : "";
+	dispIASParaDirection: "" <== (IASParaDirectionMenuSelection >= 0 && hideMiddleEast==false)  ? IASParaDirectionMenuItems[IASParaDirectionMenuSelection].name : "";
+	dispIASKashida: "" <== (IASKashidaMenuSelection >= 0 && hideMiddleEast==false)? IASKashidaMenuItems[IASKashidaMenuSelection].name : "";
+	dispLeftIndent: 0;
+	dispFirstLineIndent: 0;
+	dispRightIndent: 0;
+	dispSpaceBefore: 0;
+	dispSpaceAfter: 0;
+	
+	hideIASAlign: true;
+	hideIASParaDirection: true;
+	hideIASKashida : true;
+	hideLeftIndent: true;
+	hideFirstLineIndent: true;
+	hideRightIndent: true;
+	hideSpaceBefore: true;
+	hideSpaceAfter: true;
+	
+/************************* Composition Panel ***********************************/
+	dispComposerMenu: "" <== ComposerMenuSelection > 0 ? ComposerMenuItems[ComposerMenuSelection - 1].name : "";
+	hideComposerMenu: true <== ComposerMenuSelection < 0;
+
+	hidePunctuationCB: true <== PunctuationCBValue == 2;
+	dispPunctuationCB: true <== PunctuationCBValue == 1;
+
+
+/*********************** Hyphenation Panel **************************************/
+
+	hideHyphGpCB: true <== HyphGpCBValue == 2;
+	dispHyphGpCB: true <== HyphGpCBValue ==1;
+	hideHyphCapCB: true <== HyphCapCBValue == 2 || HyphGpCBValue == 2;
+	dispHyphCapCB: true <== HyphCapCBValue ==1;
+
+	dispWordsLongerThan: 0 <== WordsLongerThanValue;
+	dispAfterFirst: 0 <== AfterFirstValue;
+	dispBeforeLast: 0 <== BeforeLastValue;
+	dispHyphenLimit: 0 <== HyphenLimitValue;
+	dispHyphenZone: "";
+	
+	hideWordsLongerThan: true;
+	hideAfterFirst: true;
+	hideBeforeLast: true;
+	hideHyphenLimit: true;
+	hideHyphenZone: true;
+
+/************************* Justification Panel **********************************************/
+
+	dispSingleWordJust:"" <== SingleWordJustSelection > 0 ? SingleWordJustMenuItems[SingleWordJustSelection - 1].name : "";
+	hideSingleWordJust: true <== SingleWordJustSelection < 0;
+	dispAutoLeading:"";
+	hideAutoLeading: true;
+	dispWordSpacing:"";
+	dispLetterSpacing:"";
+	dispGlyphSpacing:"";
+	hideWordSpacing: true;
+	hideLetterSpacing: true;
+	hideGlyphSpacing: true;
+
+
+
+/************************* Open Type Panel **********************************************/
+
+	dispOTFFigure: "" <== OTFFigureSelection >=0 ? OTFFigureMenuItems[OTFFigureSelection].name : "";
+	hideOTFFigure:true <== OTFFigureSelection < 0;
+	dispOTFPosition: "" <== OTFPositionSelection >= 0 ? OTFPositionMenuItems[OTFPositionSelection].name : "";
+	hideOTFPosition: true <== OTFPositionSelection < 0;
+	hideOTFStdLigaturesCB: true <== OTFStdLigaturesCBValue == 2;
+	hideOTFContextualAltCB:true <== OTFContextualAltCBValue == 2;
+	hideOTFDiscLigaturesCB: true <==OTFDiscLigaturesCBValue == 2;
+	hideOTFSwashCB: true <== OTFSwashCBValue == 2;
+	hideOTFStylisticAltCB: true <== OTFStylisticAltCBValue == 2;
+	hideOTFTitlingAltCB: true <== OTFTitlingAltCBValue == 2;
+	
+	
+	hideOTFOverlapSwashCB: true <== (OTFOverlapSwashCBValue == 2) || (hideMiddleEast == true);
+	hideOTFJustificationAltCB: true <== (OTFJustificationAltCBValue == 2) || (hideMiddleEast == true);
+	hideOTFStretchedAltCB: true <== (OTFStretchedAltCBValue == 2) || (hideMiddleEast == true);
+	
+	hideOTFOrdinalsCB: true <== OTFOrdinalsCBValue == 2;
+	hideOTFFractionsCB: true <== OTFFractionsCBValue == 2;
+	hideOTFPropMetricsCB: true <== OTFPropMetricsCBValue == 2 || ShowAsianOptions == 0;
+	hideOTFHorVStyleCB: true <== OTFHorVStyleCBValue == 2 || ShowAsianOptions == 0;
+	hideOTFRomanItalicsCB: true <== OTFRomanItalicsCBValue == 2 || ShowAsianOptions == 0;
+
+	dispOTFStdLigaturesCB: true <== OTFStdLigaturesCBValue ==1;
+	dispOTFContextualAltCB:true <== OTFContextualAltCBValue ==1;
+	dispOTFDiscLigaturesCB: true <== OTFDiscLigaturesCBValue ==1;
+	dispOTFSwashCB: true <== OTFSwashCBValue ==1;
+	dispOTFStylisticAltCB: true <== OTFStylisticAltCBValue ==1;
+	dispOTFTitlingAltCB: true <== OTFTitlingAltCBValue ==1;
+	
+	dispOTFOverlapSwashCB: true <== OTFOverlapSwashCBValue ==1;
+	dispOTFJustificationAltCB: true <== OTFJustificationAltCBValue ==1;
+	dispOTFStretchedAltCB: true <== OTFStretchedAltCBValue ==1;
+	
+	dispOTFOrdinalsCB: true <== OTFOrdinalsCBValue ==1;
+	dispOTFFractionsCB: true <== OTFFractionsCBValue ==1;
+	dispOTFPropMetricsCB: true <== OTFPropMetricsCBValue ==1;
+	dispOTFHorVStyleCB: true <== OTFHorVStyleCBValue ==1;
+	dispOTFRomanItalicsCB: true <== OTFRomanItalicsCBValue ==1;
+
+/************************* Tate-Chu-yoko Panel **********************************************/
+
+	dispTateChuYokoCB: true <== TateChuYokoCBValue == 1;
+	hideTateChuYokoCB: true <== TateChuYokoCBValue ==2;
+	dispUpDownEdit: "";
+	hideUpDownEdit: true;
+	dispLeftRightEdit: "";
+	hideLeftRightEdit: true;
+
+
+/************************* JComposition Panel **********************************************/	
+
+	dispKinsokuSet:"";
+	dispKinsokuType:"" <== KinsokuTypeMenuSelection > 0 ? KinsokuTypeMenuItems[KinsokuTypeMenuSelection - 1].name : "";
+	dispBurasagari:"" <== BurasagariMenuSelection > 1 ? BurasagariMenuItems[BurasagariMenuSelection].name : (BurasagariMenuSelection == 0 ? BurasagariMenuItems[0].name : "");
+	dispBunriKinshi: true <== BunriKinshiCBValue == 1;
+	dispMojikumi:"";
+	dispJCSLeading:"" <== JCSLeadingMenuSelection >= 0 ? JCSLeadingMenuItems[JCSLeadingMenuSelection].name : "";
+
+	hideKinsokuSet:true;
+	hideKinsokuType:true <== KinsokuTypeMenuSelection < 0;
+	hideBurasagari:true <== BurasagariMenuSelection < 0;
+	hideBunriKinshi: true <== BunriKinshiCBValue == 2;
+	hideMojikumi:true;
+	hideJCSLeading:true <== JCSLeadingMenuSelection < 0;
+
+/************************* Warichu Panel **********************************************/	
+
+	dispWarichu: true <== WarichuCBValue == 1;
+	dispWarichuLines:"";
+	dispWarichuSize:"";
+	dispWarichuLineGap:"";
+	dispWarichuAlign:"" <== WarichuAlignMenuSelection >= 0 ? WarichuAlignMenuItems[WarichuAlignMenuSelection].name : "";
+	dispMinCharsFirstLine: 0 <== MinCharsFirstLineEditValue;
+	dispMinCharsLastLine: 0 <== MinCharsLastLineEditValue;
+
+	hideWarichu: true <== WarichuCBValue == 2;
+	hideWarichuLines: true;
+	hideWarichuSize: true;
+	hideWarichuLineGap: true;
+	hideWarichuAlign: true <== WarichuAlignMenuSelection < 0;
+	hideMinCharsFirstLine: true;
+	hideMinCharsLastLine: true;
+
+/************************* Char COlor Panel **********************************************/	
+
+	IsCCLibraryEnabled: true;
+	
+
+dispOPFill: true <== OverprintFillCBValue == 1;
+dispOPStroke: true <== OverprintStrokeCBValue == 1;
+dispFillColor: "";
+dispStrokeColor: "";
+dispCCWeight: "";
+
+hideOPFill: true <== OverprintFillCBValue == 2;
+hideOPStroke: true <== OverprintStrokeCBValue == 2;
+hideFillColor: true;
+hideStrokeColor: true;
+hideCCWeight: true;
+
+invariant:
+	/*** Tab PANEL ***/
+	TabRepeatBtn <== EnableTabRepeatButton == true;
+	TabClearBtn <== EnableTabClearButton == true;
+
+
+
+}

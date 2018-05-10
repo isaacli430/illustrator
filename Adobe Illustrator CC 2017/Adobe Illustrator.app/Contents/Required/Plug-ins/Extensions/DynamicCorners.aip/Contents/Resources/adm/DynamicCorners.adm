@@ -1,0 +1,5 @@
+sheet DynamicCorners
+{
+	interface:
+		DlgCornerRadiusField: 0;
+}

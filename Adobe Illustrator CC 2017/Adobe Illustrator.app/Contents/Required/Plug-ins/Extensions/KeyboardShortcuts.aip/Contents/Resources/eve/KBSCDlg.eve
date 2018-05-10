@@ -1,0 +1,116 @@
+layout KeyboardShortcutDlg
+{
+    view subview(identifier: "KeyboardShortcutDlgView",
+				 child_horizontal: @align_fill,
+				 placement: @place_column,
+				 show_border: false, 
+				 layout_theme: @dialog_large,
+				 spacing: @unrelated_spacing
+				 )
+    {
+		row(spacing:0, margin:0)
+		{
+			popup(	identifier:	"KeysetPopupID",
+				name:	'$$$/KBSCPlugin/KBSCDlg/Set=&Set:',
+				include_custom_item:	false,	
+				set_default_focus: true,
+				guide_mask:[@guide_label],
+				horizontal:				@align_fill									
+				);
+		
+			button ( identifier:			"SaveKeysetAsButtonID",
+						button_style:			true,									 
+						image:					{normal:"SP_Save_Md_N.png", dark_normal:"SP_Save_Md_N_D.png"},
+						alt:"$$$/KBSCPlugin/UIStrings/Save=Save..."								
+					);
+							
+			button ( identifier:			"DeleteKeysetButtonID",
+						button_style:			true,
+						image:					{normal:"SP_Delete_Md_N.png", dark_normal:"SP_Delete_Md_N_D.png"},
+						alt:"$$$/KBSCPlugin/UIStrings/Delete=Delete"
+					);
+		}		
+	
+		group(identifier: "ShorcutTreeGroup",
+				child_horizontal: @align_fill,
+				header: "popup(identifier: 'CommandTypePopUp', 
+								horizontal: @align_left,
+								bind:		@valueCommandType,
+								include_custom_item:	false,										
+								items: [
+											{name:'$$$/KBSCPlugin/UIStrings/Menus=Menu Commands', value: 2},
+											{name:'$$$/KBSCPlugin/UIStrings/Tools=Tools', value: 1}
+										])"
+					)				
+			{		
+				row()
+				{
+					edit_text(identifier: "DummyWidgetID", guide_mask:[@guide_label]);
+					checkbox(identifier:        "MatchCaseID",
+							 bind: @valueMatchCase,	
+							name:    '$$$/KBSCPlugin/UIStrings/Dlg=Match Case');
+				}
+
+				
+				multicolumn_tree(	identifier: "TreeListID",										 
+									horizontal: @align_fill,
+									height: 300
+									);
+				row(child_vertical: @align_fill, margin:0)
+				{
+					row(horizontal: @align_fill, margin:0)
+					{
+						info_icon(	identifier:		"WarningIconID",
+									icontype:		"warning",
+									vertical:		@align_top);
+						static_text(identifier: "WarningTextID",
+						             horizontal: @align_fill,
+									 vertical:	@align_fill,
+									 name:"xx",
+									 characters:1);
+					}
+				    column(child_horizontal: @align_fill)
+					{
+						overlay(child_horizontal: @align_fill)
+						{
+							button(	identifier: "RedoButtonID",
+								name: '$$$/KBSCPlugin/KBSCDlg/Redo=&Redo'																			
+							   );
+
+							button(	identifier: "UndoButtonID",
+								name: '$$$/KBSCPlugin/KBSCDlg/Undo=&Undo'																			
+							   );
+						}
+						
+						button(	identifier: "ClearButtonID",
+								name: '$$$/KBSCPlugin/KBSCDlg/Clear=&Clear'																	
+							   );
+						button(	identifier: "GotoButtonID",
+								name: '$$$/KBSCPlugin/KBSCDlg/GoToConflict=&Go To Conflict'																			
+							   );
+					}
+				}
+			}
+		row(child_horizontal: @align_fill)
+		{
+			button(	identifier: "ExportTxtBtn",
+						name: '$$$/KBSCPlugin/KBSCDlg/ExportText=&Export Text...',
+						commit_button: true,
+						horizontal: @align_left);
+			row(spacing: @related_spacing, reverse: os == @mac)
+			{				
+				button(	identifier: "okButton",
+						name: '$$$/gOK=OK',
+						commit_button: true,
+						horizontal: @align_right);
+			
+				button(	identifier: "cancelButton",
+					name: '$$$/gCancel=Cancel',
+					commit_button: true,
+					horizontal: @align_right);
+			}
+		}		  	
+					  		
+	}
+}
+

@@ -1,0 +1,6 @@
+layout liveEffectMenu
+{
+	view menu( id: 48,
+				menubar: false )
+	{ separator();  }
+}

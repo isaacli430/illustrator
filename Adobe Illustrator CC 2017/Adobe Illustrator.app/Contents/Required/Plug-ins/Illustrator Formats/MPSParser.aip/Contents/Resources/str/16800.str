@@ -1,0 +1,6 @@
+/* [1] */
+$$$/MPSParser/Str/FontProblemStringResource/1=The document ^[%s^] uses fonts or characters which are not available or are in a different format than originally specified.
+/* [2] */
+$$$/MPSParser/Str/FontProblemStringResource/2=          Default font substituted for missing font.
+/* [3] */
+$$$/MPSParser/Str/FontProblemStringResource/3=          Substitute font created for missing font.

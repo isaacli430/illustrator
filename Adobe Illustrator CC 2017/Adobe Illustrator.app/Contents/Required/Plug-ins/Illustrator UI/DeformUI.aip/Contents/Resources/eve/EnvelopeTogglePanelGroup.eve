@@ -1,0 +1,24 @@
+layout EnvelopeTogglePanelGroup
+{
+	view subview(identifier: "EnvelopeControlPanelGroupUI",					
+					show_border: false,
+					layout_theme:  @controlbar,
+					placement: @place_row,
+					child_vertical:  @align_center,
+					margin:0,
+					spacing: 5,
+					height:  31					
+				 )	
+	{											
+		optional(identifier: "EnvelopeEditSubGroup", placement: @place_row, child_vertical:  @align_center, margin : 0)
+		{	
+				button_bar(identifier: "EditEnvelopeContentsButtonBarCG",
+						wants_focus: false,
+    					items: [
+    						{image: {normal: "SP_EditEnvelope_Md_N.png",dark_normal:"SP_EditEnvelope_Md_N_D.png"} , show_border: true, value: 0, alt: '$$$/Deform/ControlPalette/Str/EditEnvelope=Edit Envelope'},
+    						{image: {normal: "SP_EditContents_Md_N.png",dark_normal:"SP_EditContents_Md_N_D.png"} , show_border: true, value: 1, alt: '$$$/Deform/ControlPalette/Str/EditContents=Edit Contents'}
+    					]
+    					);		
+		}				
+	}
+}

@@ -1,0 +1,251 @@
+layout TouchRectanglePropertiesUI
+{
+     view subview(identifier: "TouchRectanglePropertiesUI",
+				 layout_theme:@touch_panel,
+				 show_border: false,
+				 margin : 0
+				 )
+    {	
+		static_text(identifier: "RectanglePropertiesLabel",
+					name: "$$$/ShapeCoreUI/RectangleProperties/Label/RectangleProperties=Rectangle Properties:");
+					
+		row(horizontal: @align_fill)
+		{
+			unit_scrubby_number(identifier: "RectangleWidth",
+								alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/RectangleWidth=Rectangle Width",
+								decimal_places: 3,
+								digits: 2,
+								unit:"CurrentDocumentUnit",
+								max_value: 16384,
+								min_value: 0.0,
+								label: "SP_TouchWidth_Sm_N.png",
+								is_image_label: true);
+
+			toggle_button(identifier: "ConstrainDimensions",
+							bind: @ConstrainDimensions,
+							value_on: true,
+							value_off: false,
+							image: { normal: "NoConstrainIcon.png", dark_normal: "NoConstrainIconDark.png", down: "LinkOnConstrainIcon.png", dark_down: "LinkOnConstrainIconDark.png" },
+							alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/ConstrainDimensions=Constrain Width and Height Proportions",
+							vertical: @align_center,
+							wants_focus: false);
+
+			unit_scrubby_number(identifier: "RectangleHeight",
+								alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/RectangleHeight=Rectangle Height",
+								decimal_places: 3,
+								digits: 2,
+								unit:"CurrentDocumentUnit",
+								max_value: 16384,
+								min_value: 0.0);
+
+			image(identifier: "RectangleHeightImage",
+					alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/RectangleHeight=Rectangle Height",
+					image: { normal: "SP_TouchHeight_Sm_N.png", dark_normal: "SP_TouchHeight_Sm_N_D.png" });
+		}
+		
+		row( horizontal: @align_fill,
+			child_vertical: @align_center
+			)
+		{
+			unit_scrubby_number(identifier: "RectangleAngle",
+								alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/RectangleAngle=Rectangle Angle",
+								decimal_places: 2,
+								digits: 2,
+								unit:"NumberEditUnit_Degree",
+								label: "SP_TouchRotateCCW_Sm_N.png",
+								is_image_label: true);
+		}
+		
+		row(horizontal: @align_fill, child_vertical: @align_fill )
+		{
+			column()
+			{
+				row(child_vertical: @align_center)
+				{
+					overlay()
+					{
+						panel(margin: 0, bind: @LeftTopCornerType, value: 0)
+						{
+							button(identifier: "LeftTopCornerTypeInvalid",
+									image: { normal: "SP_TouchDefaultCornerTopLeft_Sm_N.png", dark_normal: "SP_TouchDefaultCornerTopLeft_Sm_N_D.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+						panel(margin: 0, bind: @LeftTopCornerType, value: 1)
+						{
+							button(identifier: "LeftTopCornerTypeNormal",
+									image: { normal: "SP_TouchRoundedCornerTopLeft_Sm_N.png", dark_normal: "SP_TouchRoundedCornerTopLeft_Sm_N_D.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+						panel(margin: 0, bind: @LeftTopCornerType, value: 2)
+						{
+							button(identifier: "LeftTopCornerTypeInverted",
+									image: { normal: "SP_TouchInvertedCornerTopLeft_Sm_N.png", dark_normal: "SP_TouchInvertedCornerTopLeft_Sm_N_D.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+						panel(margin: 0, bind: @LeftTopCornerType, value: 3)
+						{
+							button(identifier: "LeftTopCornerTypeChamfer",
+									image: { normal: "SP_TouchChamferTopLeft_Sm_N.png", dark_normal: "SP_TouchChamferTopLeft_Sm_N_D.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+					}
+
+					unit_scrubby_number(identifier: "LeftTopRadius",
+										alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerRadius=Corner Radius",
+										decimal_places: 2,
+										digits: 2,
+										unit:"CurrentDocumentUnit",
+										wants_focus: false,
+										min_value: 0.0);
+				}
+
+				row(child_vertical: @align_center)
+				{
+					overlay()
+					{
+						panel(margin: 0, bind: @LeftBottomCornerType, value: 0)
+						{
+							button(identifier: "LeftBottomCornerTypeInvalid",
+									image: { normal: "SP_TouchDefaultCornerBottomLeft_Sm_N.png", dark_normal: "SP_TouchDefaultCornerBottomLeft_Sm_N_D.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+						panel(margin: 0, bind: @LeftBottomCornerType, value: 1)
+						{
+							button(identifier: "LeftBottomCornerTypeNormal",
+									image: { normal: "SP_TouchRoundedCornerBottomLeft_Sm_N.png", dark_normal: "SP_TouchRoundedCornerBottomLeft_Sm_N_D.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+						panel(margin: 0, bind: @LeftBottomCornerType, value: 2)
+						{
+							button(identifier: "LeftBottomCornerTypeInverted",
+									image: { normal: "SP_TouchInvertedCornerBottomLeft_Sm_N.png", dark_normal: "SP_TouchInvertedCornerBottomLeft_Sm_N_D.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+						panel(margin: 0, bind: @LeftBottomCornerType, value: 3)
+						{
+							button(identifier: "LeftBottomCornerTypeChamfer",
+									image: { normal: "SP_TouchChamferBottomLeft_Sm_N.png", dark_normal: "SP_TouchChamferBottomLeft_Sm_N_D.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+					}
+
+					unit_scrubby_number(identifier: "LeftBottomRadius",
+										alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerRadius=Corner Radius",
+										decimal_places: 2,
+										digits: 2,
+										unit:"CurrentDocumentUnit",
+										max_value: 16384,
+										min_value: 0.0);
+				}
+			}
+
+			column()
+			{
+				toggle_button(identifier: "ConstrainRadii",
+								bind: @ConstrainRadii,
+								value_on: true, value_off: false,
+								image: { normal: "NoConstrainIcon.png", dark_normal: "NoConstrainIconDark.png", down: "LinkOnConstrainIcon.png", dark_down: "LinkOnConstrainIconDark.png" },
+								alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/ConstrainRadii=Link Corner Radius Values",
+								vertical: @align_center,
+								wants_focus: false);
+			}
+
+			column()
+			{
+				row(child_vertical: @align_center)
+				{
+					unit_scrubby_number(identifier: "RightTopRadius",
+										alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerRadius=Corner Radius",
+										decimal_places: 2,
+										digits: 2,
+										unit:"CurrentDocumentUnit",
+										max_value: 16384,
+										min_value: 0.0);
+
+					overlay()
+					{
+						panel(margin: 0, bind: @RightTopCornerType, value: 0)
+						{
+							button(identifier: "RightTopCornerTypeInvalid",
+									image: { normal: "SP_TouchDefaultCornerTopRight_Sm_N.png", dark_normal: "SP_TouchDefaultCornerTopRight_Sm_N_D.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+						panel(margin: 0, bind: @RightTopCornerType, value: 1)
+						{
+							button(identifier: "RightTopCornerTypeNormal",
+									image: { normal: "SP_TouchRoundedCornerTopRight_Sm_N.png", dark_normal: "SP_TouchRoundedCornerTopRight_Sm_N_D.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+						panel(margin: 0, bind: @RightTopCornerType, value: 2)
+						{
+							button(identifier: "RightTopCornerTypeInverted",
+									image: { normal: "SP_TouchInvertedCornerTopRight_Sm_N.png", dark_normal: "SP_TouchInvertedCornerTopRight_Sm_N_D.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+						panel(margin: 0, bind: @RightTopCornerType, value: 3)
+						{
+							button(identifier: "RightTopCornerTypeChamfer",
+									image: { normal: "SP_TouchChamferTopRight_Sm_N.png", dark_normal: "SP_TouchChamferTopRight_Sm_N_D.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+					}
+				}
+
+				row(child_vertical: @align_center)
+				{
+					unit_scrubby_number(identifier: "RightBottomRadius",
+										alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerRadius=Corner Radius",
+										decimal_places: 2,
+										digits: 2,
+										unit:"CurrentDocumentUnit",
+										max_value: 16384,
+										min_value: 0.0);
+
+					overlay()
+					{
+						panel(margin: 0, bind: @RightBottomCornerType, value: 0)
+						{
+							button(identifier: "RightBottomCornerTypeInvalid",
+									image: { normal: "SP_TouchDefaultCornerBottomRight_Sm_N.png", dark_normal: "SP_TouchDefaultCornerBottomRight_Sm_N_D.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+						panel(margin: 0, bind: @RightBottomCornerType, value: 1)
+						{
+							button(identifier: "RightBottomCornerTypeNormal",
+									image: { normal: "SP_TouchRoundedCornerBottomRight_Sm_N.png", dark_normal: "SP_TouchRoundedCornerBottomRight_Sm_N_D.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+						panel(margin: 0, bind: @RightBottomCornerType, value: 2)
+						{
+							button(identifier: "RightBottomCornerTypeInverted",
+									image: { normal: "SP_TouchInvertedCornerBottomRight_Sm_N.png", dark_normal: "SP_TouchInvertedCornerBottomRight_Sm_N_D.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+						panel(margin: 0, bind: @RightBottomCornerType, value: 3)
+						{
+							button(identifier: "RightBottomCornerTypeChamfer",
+									image: { normal: "SP_TouchChamferBottomRight_Sm_N.png", dark_normal: "SP_TouchChamferBottomRight_Sm_N_D.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+					}
+				}
+			}
+		}
+    }
+}

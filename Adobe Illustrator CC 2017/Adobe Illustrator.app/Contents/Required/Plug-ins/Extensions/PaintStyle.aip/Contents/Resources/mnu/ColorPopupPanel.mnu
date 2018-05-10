@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+<menuItem id="3" text="$$$/PaintStyle/Mnu/Color/2=&amp;Grayscale"></menuItem>
+	<menuItem id="4" text="$$$/PaintStyle/Mnu/Color/3=&amp;RGB"></menuItem>
+	<menuItem id="5" text="$$$/PaintStyle/Mnu/Color/4=&amp;HSB"></menuItem>
+  <menuItem id="6" text="$$$/PaintStyle/Mnu/Color/5=&amp;CMYK"></menuItem>
+  <menuItem id="7" text="$$$/PaintStyle/Mnu/Color/6=&amp;Web Safe RGB"></menuItem>
+	<separator></separator>
+	<menuItem id="9" text="$$$/PaintStyle/Mnu/Color/7=&amp;Invert"></menuItem>
+	<menuItem id="10" text="$$$/PaintStyle/Mnu/Color/8=Co&amp;mplement"></menuItem>
+	<separator></separator>
+	<menuItem id="12" text="$$$/PaintStyle/Mnu/Color/9=Create &amp;New Swatch..."></menuItem>
+</menu>

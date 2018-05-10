@@ -1,0 +1,119 @@
+layout PSExportUI
+{
+    view subview(child_horizontal: @align_fill,
+                 identifier: "PSExportOptions",
+                 layout_theme:  @dialog_large,
+                 placement: @place_column,
+                 show_border: false,spacing:@unrelated_spacing)
+    {
+		column(child_horizontal: @align_fill, spacing:@inter_group_spacing)
+		{
+			popup(identifier: "ColorModelPopup",
+				  include_custom_item: false,
+				  select_on_key: true,
+				  set_default_focus: true,
+				  items: [ { name: "$$$/PhotoshopFileFormat/Mnu/16010/1=RGB",
+							 value: "RGB" },
+						   { name: "$$$/PhotoshopFileFormat/Mnu/16010/2=CMYK",
+							 value: "CMYK" },
+						   { name: "$$$/PhotoshopFileFormat/Mnu/16010/3=Grayscale",
+							 value: "Grayscale" } ],
+				  name: "$$$/PhotoshopFileFormat/Dlg/16010/3=&Color Model:");
+					
+			row(child_horizontal: @align_fill)
+			{
+				popup(identifier: "ResolutionPopup",
+						name: "$$$/PhotoshopFileFormat/Dlg/16010/14=&Resolution:",
+						bind: @Resolution,
+						include_custom_item: false,
+						items: [ { name: "$$$/PhotoshopFileFormat/Dlg/16010/5=Screen (72 ppi)", value: 72},
+								 { name: "$$$/PhotoshopFileFormat/Dlg/16010/6=Medium (150 ppi)", value: 150},
+								 { name: "$$$/PhotoshopFileFormat/Dlg/16010/7=High (300 ppi)", value: 300},
+								 { name: "", value: 0 },
+								 { name: "$$$/PhotoshopFileFormat/Dlg/16010/8=Other", value: -1}]);
+				
+				panel(bind: @Resolution, value: -1)
+				{				 
+					unit_hot_number(identifier: "ResolutionNumberEdit", 
+									min_value: 72, 
+									max_value: 2400,
+									decimal_places: 2,
+									digits: 4,
+									suffix: "$$$/PhotoshopFileFormat/Dlg/16010/10=ppi",
+									bind: @OtherResolution,
+									guide_mask: [@guide_label]);
+				}
+			}  
+			
+			group(identifier: "OptionsFrame",
+				  name: "$$$/PhotoshopFileFormat/Dlg/16010/23=Options")
+			{
+				radiogroup(guide_mask:[@guide_label])
+				{
+					radio_button(bind: @OptionExport,
+								 identifier: "FlatImageRadioButton",
+								 name: "$$$/PhotoshopFileFormat/Dlg/16010/13=&Flat Image",
+								 value: @flatImage);
+
+					radio_button(bind: @OptionExport,
+								 identifier: "WriteLayersRadioButton",
+								 name: "$$$/PhotoshopFileFormat/Dlg/16010/12=Write &Layers",
+								 value: @writeLayers);
+				}											 
+
+				checkbox(identifier: "PreserveTextChkBox",
+						 indent: gIndent,
+						 name: "$$$/PhotoshopFileFormat/Dlg/16010/19=Preserve &Text Editability",
+						 guide_mask:[@guide_label]);
+
+				checkbox(identifier: "MaxEditabilityChkBox",
+						 indent: gIndent,
+						 name: "$$$/PhotoshopFileFormat/Dlg/16010/25=Ma&ximum Editability",
+						 guide_mask:[@guide_label]);
+				row(child_vertical: @align_center)
+				{
+					popup(identifier: "AntiAliasPopup",
+							bind: @Antialias,
+							name: "$$$/Rasterize/Dlg/Options/TextAntialiasing=&Anti-aliasing:",
+							include_custom_item: false,
+							items: [ { name: "$$$/Rasterize/Mnu/Antialiasing/None=None", value: 0 },
+							{ name: "$$$/Rasterize/Mnu/Antialiasing/ArtOptimized=Art Optimized (Supersampling)", value: 1 },
+							{ name: "$$$/Rasterize/Mnu/Antialiasing/TypeOptimized=Type Optimized (Hinted)", value: 2 } ] ,
+							guide_mask:[@guide_label]);
+
+					overlay()
+					{
+						panel(margin: 0, bind: @Antialias, value: 1)
+						{
+							info_icon(identifier: "WarningIcon1", icontype: "note", size: "small", alt: "$$$/Rasterize/Str/ToolTip/ArtOptimizedAntialias=Text anti-aliasing settings will not be honored." );
+						}
+						panel(margin: 0, bind: @Antialias, value: 2)
+						{
+							info_icon(identifier: "WarningIcon2", icontype: "note", size: "small", alt: "$$$/Rasterize/Str/ToolTip/TextOptimizedAntialias=Best suited for text Objects. Text anti-aliasing settings will be honored.");
+						}
+					}
+				}
+				
+				row(child_vertical: @align_center, guide_mask:[@guide_label])
+				{
+					checkbox(identifier: "EmbedProfileChkBox",
+							 name: "$$$/PhotoshopFileFormat/Dlg/16010/16=&Embed ICC Profile:");
+							 
+					static_text(identifier: "ProfileName",
+								name: "$$$/private/PhotoshopFileFormat/Dlg/16010/DoNotLocalize=xxxxxxxxxxxxxxxxxxxxxxxxxxx",
+								theme_font_size: @small);          	                
+				}
+			}
+		}
+		
+		row(child_horizontal: @align_right, reverse: os==@mac, spacing: @related_spacing)
+		{				
+			button(identifier: "okButton",
+				   name: "$$$/gOK=OK",
+					commit_button: true);
+			button(identifier: "cancelButton",
+				   name: "$$$/gCancel=Cancel",
+					commit_button: true);		
+		}
+    }
+}

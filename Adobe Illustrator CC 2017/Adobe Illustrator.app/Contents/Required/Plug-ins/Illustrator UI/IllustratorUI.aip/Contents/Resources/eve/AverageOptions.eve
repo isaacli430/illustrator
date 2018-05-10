@@ -1,0 +1,49 @@
+layout AverageOptions
+{
+    view subview(identifier: "AIEveSubView",
+				 placement: @place_column,
+				 show_border: false, 
+				 spacing: @unrelated_spacing,
+				 layout_theme: @dialog_large)
+    {			
+        group(identifier: "AxisGroup",
+			  horizontal: @align_fill,
+			  name: "$$$/_AverageCmd/Dlg/Average/titleFrameAverage=Axis",
+			  placement: @place_column)
+        {
+			radiogroup()
+			{
+				radio_button(identifier: "HorizontalRadioButton",
+							 bind: @Axis,
+							 name: "$$$/_AverageCmd/Dlg/Average/horizontalAverage=&Horizontal",
+							 value: "horizontal");
+										
+				radio_button(identifier: "VerticalRadioButton",
+							 bind: @Axis,
+							 name: "$$$/_AverageCmd/Dlg/Average/verticalAverage=&Vertical",
+							 value: "vertical");
+
+				radio_button(identifier: "BothRadioButton",
+							 set_default_focus: true,
+							 bind: @Axis,
+							 name: "$$$/_AverageCmd/Dlg/Average/bothAverage=&Both",
+							 value: "both");
+			}
+        }
+
+        row(horizontal: @align_right,
+			spacing: @related_spacing,
+			reverse: os == @mac)
+        {
+			button(default: true,
+				   commit_button: true,
+				   identifier: "okButton",
+				   name: "$$$/gOK=OK");
+
+			button(cancel: true,
+				   commit_button: true,
+				   identifier: "cancelButton",
+				   name: "$$$/gCancel=Cancel");
+        }
+    }
+}

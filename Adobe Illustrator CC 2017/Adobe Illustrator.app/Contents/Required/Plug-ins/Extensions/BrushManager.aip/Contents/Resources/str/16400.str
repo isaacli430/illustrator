@@ -1,0 +1,12 @@
+/* [1] */
+$$$/BrushManager/Str/16401=An unknown error has occurred.
+/* [2] */
+$$$/BrushManager/Str/16402=There are no brushes installed.
+/* [3] */
+$$$/BrushManager/Str/16403=All installed brushes require artwork. Make a selection and try again.
+/* [4] */
+$$$/BrushManager/Str/16404=No installed brushes accept artwork. Use the panel menu to create a brush.
+/* [5] */
+$$$/BrushManager/Str/16405=All selected artwork must have the same type of stroke to change the stroke options.
+/* [6] */
+$$$/BrushManager/Str/16406=One or more of the brushes are in use in styles and cannot be deleted until the styles are deleted.

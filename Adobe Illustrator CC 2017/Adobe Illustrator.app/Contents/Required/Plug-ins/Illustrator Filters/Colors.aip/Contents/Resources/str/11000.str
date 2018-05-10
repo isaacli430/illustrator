@@ -1,0 +1,14 @@
+/* [1] */
+$$$/Colors/Str/Action/1=Blend Front to Back
+/* [2] */
+$$$/Colors/Str/Action/2=Blend Horizontally
+/* [3] */
+$$$/Colors/Str/Action/3=Blend Vertically
+/* [4] */
+$$$/Colors/Str/Action/4=Invert Colors
+/* [5] */
+$$$/Colors/Str/Action/5=Convert to Grayscale
+/* [6] */
+$$$/Colors/Str/Action/6=Convert to CMYK
+/* [7] */
+$$$/Colors/Str/Action/7=Convert to RGB

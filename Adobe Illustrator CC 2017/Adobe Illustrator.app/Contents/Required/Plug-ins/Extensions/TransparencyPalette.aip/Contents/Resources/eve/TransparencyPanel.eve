@@ -1,0 +1,149 @@
+layout TransparencyPanel
+{
+    view subview(identifier: "TransparencyPanelSubView",
+				 child_horizontal: @align_fill,
+				 layout_theme: @panel,
+				 show_border: false, width: gStandardMinPanelWidth, 
+				 child_vertical: @align_center)
+    {		
+		row(child_vertical: @align_center, horizontal: @align_fill)
+		{				
+			popup(identifier: "BlendingModePopup",
+					include_custom_item: false,
+					items: [{name:"$$$/TransparencyPalette/Mnu/Mode/Normal=Normal", value:0}
+							,{name:"-"}
+							,{name:"$$$/TransparencyPalette/Mnu/Mode/Darken=Darken" , value:8}
+							,{name:"$$$/TransparencyPalette/Mnu/Mode/Multiply=Multiply" , value:1}
+							,{name:"$$$/TransparencyPalette/Mnu/Mode/ColorBurn=Color Burn" , value:7}
+							,{name:"-"}
+							,{name:"$$$/TransparencyPalette/Mnu/Mode/Lighten=Lighten" , value:9}
+							,{name:"$$$/TransparencyPalette/Mnu/Mode/Screen=Screen" , value:2}
+							,{name:"$$$/TransparencyPalette/Mnu/Mode/ColorDodge=Color Dodge" , value:6}
+							,{name:"-"}
+							,{name:"$$$/TransparencyPalette/Mnu/Mode/Overlay=Overlay" , value:3}
+							,{name:"$$$/TransparencyPalette/Mnu/Mode/SoftLight=Soft Light", value:4}
+							,{name:"$$$/TransparencyPalette/Mnu/Mode/HardLight=Hard Light" , value:5}
+							,{name:"-"}
+							,{name:"$$$/TransparencyPalette/Mnu/Mode/Difference=Difference" , value:10}
+							,{name:"$$$/TransparencyPalette/Mnu/Mode/Exclusion=Exclusion" , value:11}
+							,{name:"-"}
+							,{name:"$$$/TransparencyPalette/Mnu/Mode/Hue=Hue" , value:12}
+							,{name:"$$$/TransparencyPalette/Mnu/Mode/Saturation=Saturation" , value:13}
+							,{name:"$$$/TransparencyPalette/Mnu/Mode/Color=Color" , value:14}
+							,{name:"$$$/TransparencyPalette/Mnu/Mode/Luminosity=Luminosity" , value:15}],
+					bind: @BlendingMode,
+					alt: "$$$/TransparencyPalette/Str/16701=Blending Mode");
+					
+				unit_hot_number(identifier: "Opacity",
+								name: "$$$/TransparencyPalette/Pnl/OpacityWithColon=Opacity:",
+                                min_value: 0, 
+                                max_value: 100,
+								unit: 'NumberEditUnit_Percent',
+								digits: 3,
+								decimal_places: 0,
+                                slider: true);				
+					
+		}	
+					
+		optional(bind: @ShowPreviewGroup, value: true, child_vertical: @align_center, child_horizontal: @align_fill, margin: 0)
+		{
+			separator(orientation: @horizontal, vertical: @align_center);
+			
+			row(child_vertical: @align_center, guide_mask:[@guide_label], spacing:3)
+			{
+				group(identifier: "ThumbnailsGroup",
+                                  placement: @place_row, margin: [2, 2, 2, 2])
+				{
+					row(child_vertical: @align_center, spacing: 1)
+					{
+						panel(bind: @ShowArtThumbnail, value: true, margin: 0)
+						{
+							image(identifier: "ArtThumbnail",
+									  width: 52,
+									  height: 52);
+						}
+						
+						
+						toggle_button(identifier: "LinkButton", 
+									image: {down: "SP_Link_Md_N.png", dark_down:"SP_Link_Md_N_D.png", normal: "SP_Unlink_Md_N.png", dark_normal:"SP_Unlink_Md_N_D.png"},
+									alt: "$$$/GlobAdjTool/EditWPDlg/PropBtnTip=Adjust widths proportionately",
+									value_on: true, value_off: false, 
+									wants_focus: false);
+
+						
+						overlay()
+						{
+							panel(bind: @ShowMaskThumbnail, value: true, margin: 0)
+							{
+								image(identifier: "MaskThumbnail",
+										  width: 52,
+										  height: 52);
+							}
+							
+							panel(bind: @ShowMaskQuestion, value: true, margin: 0)
+							{
+								image(identifier: "MaskQuestion",
+										  show_border:true,
+										  width: 52,
+										  height: 52);
+							}
+						}
+					}
+				}			  
+				column(child_vertical: @align_center)
+				{
+					toggle_button(identifier: "MakeReleaseOpacityMask",
+						on_text:"$$$/TransparencyPalette/Mnu/TransparencyPalette/MakeMask=Make Mask",
+						off_text:"$$$/TransparencyPalette/Mnu/TransparencyPalette/Release=Release",
+						alt:"$$$/TransparencyPalette/Mnu/TransparencyPalette/toolTip=Make/Release Opacity Mask",
+						value_on: true,
+						value_off: false,
+						commit_button: false,
+						spring_loaded: true,
+						horizontal: @align_fill, 
+						bind: @showMakeOpacityMask);
+						
+					checkbox(identifier: "Clip",
+								name: "$$$/TransparencyPalette/Pnl/Clip=Clip",
+								bind: @Clip);
+								
+					checkbox(identifier: "InvertMask",
+								name: "$$$/TransparencyPalette/Pnl/InvertMask=Invert Mask",
+								bind: @InvertMask);			
+				}
+			}
+			
+		}
+		
+		optional(bind: @ShowCheckBoxGroup,
+					 value: true,
+					 child_vertical: @align_center,
+					 guide_mask:[@guide_label],
+					 placement: @place_column,
+					 margin: 0)
+		{
+			separator(orientation: @horizontal, vertical: @align_center);
+			
+			row(child_vertical: @align_center)
+			{
+				checkbox(identifier: "IsolateBlending",
+								name: "$$$/TransparencyPalette/Pnl/IsolateBlending=Isolate Blending",
+								bind: @IsolateBlending,
+								alt: "$$$/TransparencyPalette/Str/16705=Prevents blending modes from being applied past the bottom of a group");	
+								
+				checkbox(identifier: "KnockoutGroup",
+								name: "$$$/TransparencyPalette/Pnl/KnockoutGroup=Knockout Group",
+								bind: @KnockoutGroup,
+								alt: "$$$/TransparencyPalette/Str/16706=Prevents the elements of a group from showing through each other",
+								tri_state: true,
+								value_off: 0,
+								value_on: 1);	
+			}				
+			checkbox(identifier: "OpacityMaskDefineKnockoutShape",
+							name: "$$$/TransparencyPalette/Pnl/OpacityAndMaskDefineKnockoutShape=Opacity && Mask Define Knockout Shape",
+							bind: @OpacityMaskDefineKnockoutShape,
+							alt: "$$$/TransparencyPalette/Str/16707=In knockout groups, causes an element to be shaped by its opacity setting and mask");	
+		}
+    }
+}
+

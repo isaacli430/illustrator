@@ -1,0 +1,17 @@
+layout RectangleLeftBottomCornerTypes
+{
+     view subview(identifier: "RectangleLeftBottomCornerTypes",
+					spacing: 0,
+					margin: 0,
+				 	show_border: false,
+					wants_focus: false)
+    {
+		button_bar(identifier: "LeftBottomCornerType",
+					items:	[
+								{ image: { normal: "SP_NormalRoundingLB_Sm_N.png", dark_normal: "SP_NormalRoundingLB_Sm_N_D.png" }, show_border: true, value: 1, alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/RoundCornerType=Round"},
+								{ image: { normal: "SP_InverseRoundingLB_Sm_N.png", dark_normal: "SP_InverseRoundingLB_Sm_N_D.png" }, show_border: true, value: 2, alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/InvertedRoundCornerType=Inverted Round"},
+								{ image: { normal: "SP_ChamferLB_Sm_N.png", dark_normal: "SP_ChamferLB_Sm_N_D.png" }, show_border: true, value: 3, alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/ChamferCornerType=Chamfer"}
+							],
+					wants_focus: false);
+    }
+}

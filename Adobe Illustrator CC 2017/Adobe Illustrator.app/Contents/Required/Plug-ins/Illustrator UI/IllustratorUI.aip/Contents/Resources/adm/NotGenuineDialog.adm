@@ -1,0 +1,6 @@
+sheet NotGenuineDialog
+{
+interface:
+	showCancelButton: true;
+	description: "$$$/PiracyConversion/Dlg/Description=You have received multiple fair warnings that this copy of Adobe Illustrator is not genuine. If you do not address this issue, Adobe may have no choice but to restrict the capabilities of the Adobe Illustrator. To protect your copy of Adobe Illustrator, you must click Know More now.";
+}

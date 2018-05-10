@@ -1,0 +1,45 @@
+layout VectorizeControlPanelGroup
+{
+    view subview(identifier: "VectorizeControlPanelGroup",
+				 placement: @place_row,
+				 layout_theme: @controlbar,
+				 show_border: false,
+				 child_vertical: @align_center,
+				 margin : 0,
+				 spacing: 5,
+				 height:  31
+				 )
+    {						
+		optional(identifier: "VectorizePresetSubGroup", placement: @place_row, child_vertical: @align_center, margin:0)
+		{
+			popup(identifier: "ControlPanelPresetPopup",
+					name: "$$$/VectorizeControlPanel/ControlPanelPresetPopup/PresetLabel=Preset:",
+					include_custom_item: false,
+					child_horizontal: @align_right,
+					wants_focus: false,
+					bind: @TracingPreset,
+					alt: "$$$/VectorizeControlPanel/Str/TracingPresetTip=Tracing Preset");
+							
+			button(identifier: "ControlPanelVectorizePanelButton",
+					button_style: true,
+					wants_focus: false,
+					image: {normal: "SP_ShowDialog_Md_N.png",dark_normal:"SP_ShowDialog_Md_N_D.png"},
+					alt: "$$$/VectorizeControlPanel/Str/TracingOptionTip=Image Trace Panel");
+								
+			popup(	identifier: "ControlPanelPreviewPopup", name: "$$$/VectorizePanel/ControlPanelPreview=View:", bind : @PreviewPopup,
+					alt: "$$$/VectorizePanel/Preview/ToolTip=Viewing Options",
+					items: [{ name: "$$$/VectorizePanel/ControlPanelPreviewPopup/PreviewTracing/VectorizeResult=Tracing Result", value: 0},
+							{ name: "$$$/VectorizePanel/ControlPanelPreviewPopup/PreviewTracing/VectorizeResultWithOutline=Tracing Result with Outlines", value: 1 },
+							{ name: "$$$/VectorizePanel/ControlPanelPreviewPopup/PreviewTracing/Outline=Outlines", value: 2},
+							{ name: "$$$/VectorizePanel/ControlPanelPreviewPopup/PreviewTracing/Outlinewithimage=Outlines with Source Image", value: 3},
+							{ name: "$$$/VectorizePanel/ControlPanelPreviewPopup/PreviewTracing/SourceImage=Source Image", value: 4}],
+					include_custom_item: false);					
+					
+			button(identifier: "ControlPanelExpandButton",
+					name: "$$$/VectorizeControlGroup/Str/Expand=Expand",
+					wants_focus: false,		
+					button_style: true,
+					alt: "$$$/VectorizeControlGroup/Str/TracingExpandObjectTip=Convert tracing object into paths");	
+		}
+	}
+}

@@ -1,0 +1,15 @@
+16700.adm                                         		NewActionUI.adm                                   
+16700.eve                                         		NewActionUI.eve                                   
+16800.adm                                         		ActionPanel.adm                                   
+16800.eve                                         		ActionPanel.eve                                   
+16800.mnu                                        		ActionPanel.mnu                                  
+17000.adm                                         		InsertMenuItemUI.adm                              
+17000.eve                                         		InsertMenuItemUI.eve                              
+17100.adm                                         		InsertStopUI.adm                                  
+17100.eve                                         		InsertStopUI.eve                                  
+17200.adm                                         		ActionPalettePlaybackOptionsUI.adm                
+17200.eve                                         		ActionPalettePlaybackOptionsUI.eve                
+17300.adm                                         		ActionPaletteSetSelectionUI.adm                   
+17300.eve                                         		ActionPaletteSetSelectionUI.eve                   
+17500.adm                                         		ActionPaletteBatchUI.adm                          
+17500.eve                                         		ActionPaletteBatchUI.eve                          

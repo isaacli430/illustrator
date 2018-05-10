@@ -1,0 +1,10 @@
+sheet PluginScratchPreference
+{
+interface:
+	AddlPluginCell: true;
+	showAlert: false;
+invariant:
+	check_error <== AddlPluginCell == true;
+output:
+	result <== {dummy: AddlPluginCell};
+}

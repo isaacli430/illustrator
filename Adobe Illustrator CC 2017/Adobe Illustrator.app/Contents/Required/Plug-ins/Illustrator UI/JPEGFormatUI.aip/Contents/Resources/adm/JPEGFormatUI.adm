@@ -1,0 +1,49 @@
+sheet JPEGFormatUI
+{
+interface:
+	ImageQuality: 5;
+	ImageQualityPopup: 3;
+	ColorModel: 1;
+    ImageMapRadioGp: 1;
+    CompressionMethod: 1;
+    ProgressiveScans: 3;
+    Resolution: 72;
+    OtherResolution: Resolution <== (Resolution == -1) ? OtherResolution : Resolution;
+    Antialias: 2;
+    ShowAAInfo: true <== (Antialias == 1) ? false : true;
+    EnableImageMap: true;
+    unlink ImageMap: false <== EnableImageMap ? ImageMap : false;
+    EmbedProfile: false;
+    ShowProfileName: true <== (ColorModel == 3) ? false: true;
+    AnchorString: "imagemap";
+    EmptyAnchorWarning: true;
+    filter: {min_value:0, max_value:10};
+	ShowJPEGBanner: false;
+	ShowJPEGResolution: false;
+	ShowOkCancelButton: false;
+	ShowImageMapOptions: false;
+	ShowGrpImage: false;
+	
+logic:
+	relate
+	{
+		ImageQuality <== ImageQualityPopup;
+		ImageQualityPopup <== (round(ImageQuality) < 3) ? 1 : ((round(ImageQuality) < 6) ? 3 : ((round(ImageQuality) < 8) ? 6 : 8));
+	}
+	relate
+	{
+		EmptyAnchorWarning <== (AnchorString == "") && (ImageMapRadioGp == 1) && (ImageMap == true) ? false : true;
+		AnchorString <== AnchorString;
+	}
+invariant:
+	check_error <== (EmptyAnchorWarning == true);
+
+output:
+	result <== { EmptyAnchorWarning: EmptyAnchorWarning, ImageQuality: ImageQuality, ImageQualityPopup: ImageQualityPopup,
+				ColorModel: ColorModel, ImageMapRadioGp: ImageMapRadioGp, CompressionMethod: CompressionMethod,
+				ProgressiveScans: ProgressiveScans, Resolution: Resolution, OtherResolution: OtherResolution,
+				Antialias: Antialias, ShowAAInfo: ShowAAInfo, EnableImageMap: EnableImageMap, 
+				ImageMap: ImageMap, EmbedProfile: EmbedProfile, ShowProfileName: ShowProfileName,
+				AnchorString: AnchorString };
+				
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<style>
+			html, body {
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+			}
+		</style>
+		<!-- prevent caching -->
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<script type="text/javascript" src="js/CSInterface.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+
+			String.prototype.escapeSpecialChars = function() {
+				return this.replace(/\\/g, "\\\\")
+						   .replace(/\"/g, "\\\"")
+						   .replace(/\n/g, "\\n")
+						   .replace(/\r/g, "\\r");
+			};
+
+			var CSLibrary = new CSInterface();
+			var oldConsole = window.console;
+			var remoteFontsPath;
+
+			CSLibrary.addEventListener("SetURLForLearnPanel", function (event) {
+				console.log(event);
+
+				var jsonData = event.data;
+				var evt = new CSEvent("GetLocalPath", "APPLICATION");
+				var jsonObj = {
+					"href":jsonData["manifest"]
+				};
+
+				evt.data = JSON.stringify(jsonObj);
+
+				function onGetLocalPathResponse(event){
+					var data = event.data;
+					var url = data["href"];
+					var localPath = data["localPath"];
+					if (url!== undefined && url !== jsonData["manifest"])
+								return;
+
+					if (localPath!==undefined){
+						// content is cached locally and is valid.
+						redirectToAppropriateOnBoardingPage(localPath);
+					}
+					else{
+						redirectToAppropriateOnBoardingPage(jsonData["url"]);
+
+						//also initiate request to redowload the asset content.
+						var cache_event = new CSEvent("CacheExp", "APPLICATION");
+						var cache_event_data = {
+							"href": jsonData["manifest"],
+						};
+						cache_event.data = JSON.stringify(cache_event_data);
+						CSLibrary.dispatchEvent(cache_event);
+					}
+					var rsp_event = new CSEvent("OnBoardingEvent", "APPLICATION");
+					var dataMap = {
+					 						"Type" : "RelayoutLearnPanel"
+										};
+					rsp_event.data = JSON.stringify(dataMap);
+					CSLibrary.dispatchEvent(rsp_event);
+					CSLibrary.removeEventListener("com.adobe.experimentation.events.experienceCacheGetLocalPathResponse", onGetLocalPathResponse);
+				}
+
+				CSLibrary.addEventListener("com.adobe.experimentation.events.experienceCacheGetLocalPathResponse", onGetLocalPathResponse);
+				CSLibrary.dispatchEvent(evt);
+			});
+
+			function redirectToAppropriateOnBoardingPage(url)
+			{
+				var container = document.getElementById("content");
+				while(container.firstChild)
+				{
+					container.removeChild(container.firstChild)
+				}
+				var newEle = document.createElement("object");
+				newEle.height = "100%";
+				newEle.width = "100%";
+				newEle.type = "text/html";
+				newEle.data = url;
+				newEle.onload = function(event) {
+					console.log("URL loaded for Learn Panel.")
+
+					var ele = event.target;
+					var content = ele.contentDocument;
+
+					ele.height = content.body.scrollHeight;
+					ele.width = content.body.scrollWidth;
+					
+					var doc = document.getElementsByTagName('object')[0].contentDocument;
+					var head = doc.getElementsByTagName('head')[0];
+					var link = doc.createElement('link');
+					var url = document.getElementsByTagName('object')[0].data;
+					var re = new RegExp("https://((butler|(butler+[.]+stage))+[.])*adobe[.]com/*");
+					var fontsPath = "";
+					if(re.test(url) == false)
+					{
+						var currentPath = window.location.href;
+						var rootPath = currentPath.substring(0, currentPath.lastIndexOf("/"));
+						fontsPath = rootPath + "/fonts/adobe-clean.css";
+					}
+					else {
+						console.log("loading from https");
+						fontsPath = remoteFontsPath;
+					}
+					
+					link.rel  = 'stylesheet';
+					link.type = 'text/css';
+					link.href = fontsPath;
+					link.media = 'all';
+					
+					head.appendChild(link);
+
+					var rsp_event = new CSEvent("URLSetForLearnPanel", "APPLICATION");
+					rsp_event.data = "";
+					CSLibrary.dispatchEvent(rsp_event);
+				};
+
+				container.appendChild(newEle);
+			}
+
+			//Send the ready event to app
+			var rsp_event = new CSEvent("OnBoardingEvent", "APPLICATION");
+			var dataMap = {
+			 	"Type" : "LearnPanelReady"
+			};
+			rsp_event.data = JSON.stringify(dataMap);
+			CSLibrary.dispatchEvent(rsp_event);
+
+
+			(function readFontPath () {
+				$.ajax({
+					url: '../font.json',
+					async: true,
+					dataType: 'json',
+					success: function (response) {
+						remoteFontsPath = response.url;
+					},
+					error: function(response) {
+						remoteFontsPath = "https://butler.adobe.com/fonts/adobe-clean.css";
+					}
+				});
+			})();
+		</script>
+	</head>
+	<body>
+		<div id="content">
+		</div>
+	</body>
+</html>

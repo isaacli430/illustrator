@@ -1,0 +1,58 @@
+layout ResetGridOptionsUI
+{
+	view subview(identifier: "ResetGridOptions",
+				 layout_theme: @dialog_large,
+				 placement: @place_column,
+				 show_border: false,
+				 spacing: @unrelated_spacing)
+    {
+        column(horizontal: @align_fill)
+        {
+			checkbox(identifier: "maintainShapeCheckBox",
+                         name: "$$$/Deform/ResetGridDlg/MaintainShape=&Maintain Envelope Shape",
+                         guide_mask: [@guide_label]);
+                         
+            group(identifier: "meshGroup", name: "$$$/Deform/ResetGridDlg/MeshGroup=Mesh", horizontal: @align_fill, child_horizontal: @align_fill)
+            {
+                 unit_hot_number(decimal_places: 0,
+								digits: 3,
+								stepper:true,
+								max_value:50,
+								min_value:1,
+								name: "$$$/Deform/ResetGridDlg/Rows=&Rows:",
+								identifier: "rowsSpinEdit");
+								
+                 unit_hot_number(decimal_places: 0,
+								digits: 3,
+								stepper:true,
+								max_value:50,
+								min_value:1,								
+								name: "$$$/Deform/ResetGridDlg/Columns=&Columns:",
+								identifier: "colsSpinEdit");								
+            }
+        }
+        
+        row(vertical: @align_fill,child_vertical: @align_center,spacing: @separated_spacing)
+        {
+			checkbox(identifier: "previewCheckbox",
+						horizontal: @align_left,
+                         name: "$$$/Deform/ResetGridDlg/Preview=&Preview",
+                         guide_mask: [@guide_label]);
+           
+			row(child_horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+			{
+				button(default: true,
+					commit_button: true,
+					   identifier: "okButton",
+					   horizontal: @align_fill,
+					   name: "$$$/gOK=OK");
+
+				button(cancel: true,
+					commit_button: true,
+					   identifier: "cancelButton",
+					   horizontal: @align_fill,
+					   name: "$$$/gCancel=Cancel");
+			}              
+        }
+    }
+}

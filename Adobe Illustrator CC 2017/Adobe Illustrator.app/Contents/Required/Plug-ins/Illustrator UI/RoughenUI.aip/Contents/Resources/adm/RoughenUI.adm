@@ -1,0 +1,17 @@
+sheet RoughenUI
+{
+  interface:
+	sizeAbsRateFilter: {min_value: 0, max_value: 100};
+	sizeRelRateFilter: {min_value: 0, max_value: 100};
+	sizeAbsRateCell: 1;
+	sizeRelRateCell: 1;
+	sizeAbsEditRange: {min_value: 0, max_value: 7200};
+	
+	// Relative: false, Absolute: true
+    Mode: false;
+	
+	detailRateCell: 1;
+    detailRateFilter: {min_value: 0, max_value: 100};
+
+    PointsRadioGp: empty;
+}

@@ -1,0 +1,12 @@
+layout LineControlGroup
+{
+     view subview(identifier: "LineControlGroup",
+				 layout_theme: @controlbar,
+				 show_border: false,
+				 child_vertical: @align_center,
+				 placement: @place_row,
+				 margin : 0,
+				 spacing: 5,
+				 height: 31){}
+}
+

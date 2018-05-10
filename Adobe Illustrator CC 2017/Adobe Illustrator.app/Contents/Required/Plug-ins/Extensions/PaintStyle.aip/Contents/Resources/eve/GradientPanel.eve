@@ -1,0 +1,61 @@
+layout GradientPanel
+{
+    view subview(identifier: "GradientPanelSubView",
+				 child_horizontal: @align_fill,
+				 layout_theme: @panel,
+				 show_border: false,
+				 child_vertical: @align_center)
+    {
+		row(vertical: @align_top)
+		{
+			row(horizontal: @align_left, spacing: 0)
+			{
+				column(child_horizontal: @align_center)
+				{
+					image(guide_mask: [@guide_label], identifier: "GradientThumbnail", height: 32, width: 32, show_border: true);
+					stroke_fill(identifier:  "GradientStrokeFillSelector", small_mode: true, has_default: false, has_swap: false, ai_color_mode: true);
+					button(identifier: "GradientReverseButton", alt: "$$$/PaintStyle/Str/Gradient/ReverseToolTip=Reverse Gradient", horizontal: @align_center, image: {normal: "GradientReverse_N.png", dark_normal: "GradientReverse_D.png"} );
+				}
+				row(child_vertical: @align_top, vertical: @align_top, margin: 0)
+				{					
+					button(identifier: "GradientThumbnailDropDown", image: { normal: "GradientThumbNail_N.png", dark_normal: "GradientThumbNail_D.png"} );
+				}
+			}
+			column(horizontal: @align_fill)
+			{
+				popup(horizontal: @align_fill, identifier: "GradientTypePopup", name: "$$$/PaintStyle/kGradientDlgID/Type=Type:", 
+						popuplist: true, include_custom_item: false, items: @GradientTypeItems );
+				column(child_vertical: @align_center, vertical: @align_center, horizontal: @align_fill)
+				{
+					button_bar(identifier: "GradientStrokeOptions", name: "$$$/PaintStyle/kGradientDlgID/Stroke=Stroke:",
+								items: [{image: {normal: "GradientStrokeMask_N.png", dark_normal: "GradientStrokeMask_D.png"}, value: 0, alt: "$$$/PaintStyle/Str/Gradient/ApplyMask=Apply gradient within stroke"},
+										{image: {normal: "GradientStrokeAlong_N.png", dark_normal: "GradientStrokeAlong_D.png"}, value: 1, alt: "$$$/PaintStyle/Str/Gradient/ApplyAlong=Apply gradient along stroke"},
+										{image: {normal: "GradientStrokeAcross_N.png", dark_normal: "GradientStrokeAcross_D.png"}, value: 2, alt: "$$$/PaintStyle/Str/Gradient/ApplyAcross=Apply gradient across stroke"}]);
+					unit_hot_number(identifier: "GradientAnglePopup", alt: "$$$/PaintStyle/Str/Gradient/AngleToolTip=Angle",
+							unit: 'NumberEditUnit_Degree', min_value: -180, max_value: 180, is_image_label: true, label: "GradientAngle_N.png", 
+							digits: 3, decimal_places: 1, popuplist: true, items: @GradientAnglePresets );
+					unit_hot_number(identifier: "GradientAspectRatioPopup", unit: 'NumberEditUnit_Percent', is_image_label: true, 
+							min_value: 0.5, max_value: 32767,
+							digits: 3, decimal_places: 1, alt: "$$$/PaintStyle/Str/Gradient/AspectRatioToolTip=Aspect Ratio", 
+							label: "GradientAspectRatio_N.png", popuplist: true, items: @GradientAspectRatioPresets );
+				}
+			}
+		}
+		row(horizontal: @align_fill, spacing: 0)
+		{
+			image(guide_mask: [@guide_label], horizontal: @align_fill, vertical: @align_fill, identifier: "GradientSlider");
+			
+			button(horizontal: @align_right, vertical: @align_center, identifier: "GradientStopDeleteButton", 
+				image: {normal: "GradientStopDelete_N.png", dark_normal: "GradientStopDelete_D.png"},
+				alt: "$$$/PaintStyle/Str/Gradient/StopDeleteToolTip=Delete Stop" );
+			
+		}
+		column(vertical: @align_bottom)
+		{
+			unit_hot_number(identifier: "GradientStopOpacityPopup", name: "$$$/PaintStyle/kGradientDlgID/Opacity=Opacity:", unit: 'NumberEditUnit_Percent', 
+					digits: 3, decimal_places: 0, min_value: 0, max_value: 100, popuplist: true, include_custom_item: false, items: @GradientOpacityLocationPresets);
+			unit_hot_number(identifier: "GradientStopLocationPopup", name: "$$$/PaintStyle/kGradientDlgID/Location=Location:", unit: 'NumberEditUnit_Percent', 
+					digits: 3, decimal_places: 2, min_value: 0, max_value: 100, popuplist: true, include_custom_item: false, items: @GradientOpacityLocationPresets);
+		}
+    }
+}

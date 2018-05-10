@@ -1,0 +1,21 @@
+layout guideObjectCtxMenu
+{
+	view menu( id: 34,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/context/Undo=Undo", id:				(os == @win) ? 1970168943 : 1970168943, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/context/Redo=Redo", id:				(os == @win) ? 1919247471 : 1919247471, help_id:0);
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/context/MakePixelPerfect=Make Pixel Perfect", id:		 		 0x63697A01, help_id:  0 ) ;
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/context/Perspective=Perspective", id:	 322, help_id:  72 ) { separator();  }
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/guide/Hide=Hide Guides", id:			154, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/guide/Lock=Lock Guides", id:			155, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/guide/Release=Release Guides", id:	53, help_id:0);
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/context/Transform=Transform", id:	 91, help_id:  23 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/context/Arrange=Arrange", id:		 92, help_id:  47 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/context/Select=Select", id:		 79, help_id:  24 ) { separator();  }
+	}
+}

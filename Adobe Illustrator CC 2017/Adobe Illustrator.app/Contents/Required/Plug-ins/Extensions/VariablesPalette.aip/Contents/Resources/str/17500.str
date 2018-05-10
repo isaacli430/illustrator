@@ -1,0 +1,44 @@
+/* [1] */
+$$$/VariablesPalette/Str/AlreadyInUseOld=This name already in use. Please choose another.
+/* [2] */
+$$$/VariablesPalette/Str/DeleteSelected=Delete the selected bindings?
+/* [3] */
+$$$/VariablesPalette/Str/DeleteAll=Delete all occurrences of this variable?
+/* [4] */
+$$$/VariablesPalette/Str/Unbind=Unbind the object?
+/* [5] */
+$$$/VariablesPalette/Str/SelectSame=Please select the same art type.
+/* [6] */
+$$$/VariablesPalette/Str/SelectEither=Please select either text, graph or linked object.
+/* [7] */
+$$$/VariablesPalette/Str/DelelteSelected=Delete the selected data set?
+/* [8] */
+$$$/VariablesPalette/Str/UpdateDataSetArtboard=Update the data set with data from the artboard?
+/* [9] */
+$$$/VariablesPalette/Str/ChangeType=Changing the type will delete all dynamic bindings to this variable. Proceed?
+/* [10] */
+$$$/VariablesPalette/Str/BadParam=The filter cannot complete because of a bad parameter error
+/* [11] */
+$$$/VariablesPalette/Str/Unknown=The filter cannot complete because of an unknown error.
+/* [12] */
+$$$/VariablesPalette/Str/Memory=The filter cannot complete because there isn't enough memory (RAM) available.
+/* [13] */
+$$$/VariablesPalette/Str/Identical=All the values of associated objects with the same variable must be identical.
+/* [14] */
+$$$/VariablesPalette/Str/ArtType=The selected objects' art type must be identical.
+/* [15] */
+$$$/VariablesPalette/Str/XMLNames=XML names must begin with a letter, underscore ( _ ), or colon ( : ). Names cannot contain spaces or special characters, except for period ( . ), hyphen ( - ), underscore ( _ ), and colon ( : ).
+/* [16] */
+$$$/VariablesPalette/Str/AlradyBound=This art is already bound to the same type of variable.
+/* [17] */
+$$$/VariablesPalette/Str/AtLeast=There must be at least one bound variable in order to create a data set.
+/* [18] */
+$$$/VariablesPalette/Str/CurrValue=The current values have not been captured, and will be discarded upon switching data sets. Proceed?
+/* [19] */
+$$$/VariablesPalette/Str/Locked=Variables are locked.
+/* [20] */
+$$$/VariablesPalette/Str/Loading=The incoming variable library is locked. Loading this variable library will overwrite the existing variables and data sets. Proceed?
+/* [21] */
+$$$/VariablesPalette/Str/Invalid=The incoming variable library is invalid.
+/* [22] */
+$$$/VariablesPalette/Str/AlradyContained=The current document already contains variables. Do you want to overwrite the current variables and data sets?

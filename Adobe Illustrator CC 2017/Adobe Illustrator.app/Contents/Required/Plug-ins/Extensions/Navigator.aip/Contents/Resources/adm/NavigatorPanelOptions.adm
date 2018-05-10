@@ -1,0 +1,6 @@
+sheet NavigatorPanelOptions
+{
+interface:
+	GreekingValue: 0;
+	DrawDashedAsSolid: false;
+}

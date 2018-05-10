@@ -1,0 +1,193 @@
+layout TransformEachUI
+{
+ 	view subview( layout_theme : @dialog_large,
+ 					spacing: @unrelated_spacing,
+					show_border: false)
+	{
+		column(child_horizontal: @align_fill,spacing: @inter_group_spacing,horizontal: @align_fill)
+		{
+				group(identifier:"scaleGroup",
+						name: "$$$/Transform/Dlg/Transform/25=Scale")
+				{
+					combo_slider(min_max_filter: @scaleFilter,
+									horizontal: @align_fill,
+									bind: @horizontalScale,
+									identifier: "scaleHorizontalComboSlider",
+									slider_point: @up,
+									digits: 9,
+									minLength: 150,
+									bind_final:true,
+									name: "$$$/Transform/Dlg/Transform/17=&Horizontal:",
+									decimal_places: 2,
+									value_range: @scaleValueRange,
+									bind: @horizontalScale,
+									set_default_focus: true,
+									unit: "NumberEditUnit_Percent");   
+			
+					combo_slider(min_max_filter: @scaleFilter,
+									horizontal: @align_fill,
+									bind: @vericalScale,
+									identifier: "scaleVerticalComboSlider",
+									slider_point: @up,
+									digits: 9,
+									minLength: 150,
+									name: "$$$/Transform/Dlg/Transform/ScaleVLabel=&Vertical:",
+									decimal_places: 2,
+									value_range: @scaleValueRange,
+									bind: @vericalScale,
+									bind_final:true,
+									unit: "NumberEditUnit_Percent");   
+				}
+			
+				group(identifier:"moveGroup",
+						name: "$$$/Transform/Dlg/Transform/26=Move")
+				{
+					combo_slider(min_max_filter: @moveFilter,
+									horizontal: @align_fill,
+									bind: @horizontalMove,
+									identifier: "moveHorizontalComboSlider",
+									slider_point: @up,
+									digits: 9,
+									minLength: 150,
+									name: "$$$/Transform/Dlg/Transform/MoveHLabel=H&orizontal:",
+									decimal_places: 4,
+									value_range: @moveValueRange,
+									bind: @horizontalMove,
+									bind_final:true,
+									unit: 'CurrentDocumentUnit');
+				
+					combo_slider(min_max_filter: @moveFilter,
+									horizontal: @align_fill,
+									bind: @vericalMove,
+									identifier: "moveVerticalComboSlider",
+									slider_point: @up,
+									digits: 9,
+									minLength: 150,
+									name: "$$$/Transform/Dlg/Transform/MoveVLabel=V&ertical:",
+									decimal_places: 4,
+									value_range: @moveValueRange,
+									bind: @vericalMove,
+									bind_final:true,
+									unit: 'CurrentDocumentUnit');
+				}
+			
+				group(identifier:"rotateGroup",
+						name: "$$$/Transform/Dlg/Transform/27=Rotate",
+						placement: @place_row,
+						child_vertical: @align_center)
+				{
+					angle_picker(name: "$$$/Transform/Dlg/Transform/RotateLabel=&Angle:",
+								 identifier: "anglePicker",
+								 value_range: {min_value: -360, max_value: 360},
+								 bind_final:true,
+								 bind: @rotate, show_editbox: true);
+				}
+				
+				group(identifier:"optionsGroup",
+						name: "$$$/Transform/Dlg/Transform/OptionsLabel=Options",
+						guide_mask: [ @guide_label],
+						child_vertical: @align_center)
+				{
+					row(horizontal: @align_fill)
+					{
+						column(placement: @place_column)
+						{		
+							checkbox(name: "$$$/Transform/Dlg/Transform/ObjectsLabel=Transform O&bjects",
+								identifier: "ObjectsCheckBox",
+								bind: @transformObjects);
+						
+							checkbox(name: "$$$/Transform/Dlg/Transform/PatternsLabel=Transform Pa&tterns",
+								bind: @transformPatterns,
+								identifier: "PatternCheckBox");
+								
+							checkbox(name: "$$$/Transform/Dlg/Transform/ScaleStrokesEffectsLabel/Modal=Scale Strokes && E&ffects",
+								identifier: "ScaleStrokeAndEffectChkBx",
+								bind: @scaleStrokeAndEffect);
+							optional(bind: @ShowScaleRectangleCorners, value: true)
+							{												
+								checkbox(name: "$$$/Transform/Dlg/Transform/ScaleShapesRadiiLabel=&Scale Corners",
+									identifier: "ScaleCornerRadiiForShapesChkBx",
+									alt: "$$$/Transform/Dlg/Transform/Str/ToolTip/ScaleRadiiForShapes=Set this option to scale corner radii proportionally",
+									bind: @scaleCornerRadiiForShapes);
+							}
+						}
+						column(placement: @place_column, horizontal: @align_center)
+						{
+							checkbox(identifier: "reflectXCheckBox",
+								name: "$$$/Transform/Dlg/Transform/ReflectX=Reflect &X",
+								guide_mask: [@guide_label],
+								bind: @reflectX);
+            	
+							checkbox(identifier: "reflectYCheckBox",
+								name: "$$$/Transform/Dlg/Transform/ReflectY=Reflect &Y",
+								guide_mask: [@guide_label],
+								bind: @reflectY);
+								
+							checkbox(identifier: "randomCheckBox",
+								name: "$$$/Transform/Dlg/Transform/Random=&Random",
+								guide_mask: [@guide_label],
+								bind: @random);
+						}
+					}
+					column(horizontal: @align_fill,child_horizontal: @align_fill)
+					{
+						separator(orientation: @horizontal, vertical: @align_center, horizontal: @align_fill, identifier: "Separator");
+						row(placement: @place_row)
+						{
+							column()
+							{
+								pin_selector(identifier: "ninePointPinSelector",
+									wants_focus: false,
+									bind: @ninePointPinSelector,
+									horizontal: @align_left);
+							}
+							column(horizontal: @align_center)
+							{
+								panel(identifier: "CopyNumberEditView", bind: @view, value: "copyNumberEditView", child_horizontal: @align_fill, margin: 0,horizontal: @align_left)
+								{
+									unit_hot_number(identifier: "copyNumberEdit",
+										name: "$$$/Transform/Dlg/Transform/CopiesLabel=Copie&s",
+										bind: @copyNumberEdit,
+										bind_final:true,
+										unit: 'NumberEditUnit_NoUnit',
+										decimal_places: 0,
+										max_value: 1000,
+										min_value: 0,
+										digits: 4);
+								}
+							}
+						}
+					}
+				}
+		}
+		
+		row(horizontal: @align_fill,child_horizontal: @align_fill,spacing: @separated_spacing,child_vertical: @align_center)
+		{
+			checkbox(identifier: "previewCheckBox",
+						name: "$$$/Transform/Dlg/Transform/Preview=&Preview",
+						guide_mask: [@guide_label],
+                        bind: @showPreview);
+			optional(identifier: "CopyButtonView", bind: @view, value: "copyButtonView", child_horizontal: @align_fill, margin: 0, child_vertical: @align_fill)
+			{
+				button(identifier: "copyButton",
+						name: "$$$/Transform/Dlg/Transform/CopyButton=&Copy",
+						bind_output: @copyButtonClicked,
+						commit_button: true,
+						value: false);
+			}
+			row(horizontal: @align_fill,
+				child_horizontal: @align_right,
+				reverse: os == @mac, spacing: @related_spacing)
+			{
+				button(default: true,
+						identifier: "okButton",
+						commit_button: true,
+						name: "$$$/gOK=OK");
+				button(cancel: true,
+						commit_button: true,
+						identifier: "cancelButton",
+						name: "$$$/gCancel=Cancel");
+			}
+		}
+	}
+}

@@ -1,0 +1,61 @@
+layout OffsetPathUI
+{
+    view subview(identifier: "AIEveSubView",
+					placement: @place_column,
+					layout_theme: @dialog_large,
+					show_border: false,
+					spacing: @unrelated_spacing)
+    {
+			column(child_horizontal: @align_fill)
+        	{
+            	unit_hot_number(decimal_places: 4,
+                        identifier: "offsetNumber",
+                        max_value: 16000,
+                        min_value: -16000,
+                        set_default_focus: true,
+                        name: "$$$/OffsetPath/Dlg/OffsetPath/Offset=&Offset:");
+
+				popup(identifier: "joinsSelection",
+					include_custom_item: false,
+                      items: [ { name: "$$$/OffsetPath/Str/Action/8=Miter",
+                                 value: 0 },
+                               { name: "$$$/OffsetPath/Str/Action/6=Round",
+                                 value: 1 },
+                               { name: "$$$/OffsetPath/Str/Action/7=Bevel",
+                                 value: 2 } ],						
+				  name: "$$$/OffsetPath/Dlg/OffsetPath/Joins=&Joins:");
+
+				unit_hot_number(decimal_places: 3,					
+                        identifier: "miterlimitNumber",
+                        max_value: 16000,
+                        min_value: -16000,
+                        name: "$$$/OffsetPath/Dlg/OffsetPath/Miter=&Miter limit:");
+			
+			}
+			
+		    row(child_vertical: @align_center,spacing: @separated_spacing)
+			{
+				checkbox(identifier: "previewButton",
+                     	horizontal: @align_left,
+						vertical: @align_center,
+                     	name: "$$$/OffsetPath/Dlg/OffsetPath/Preview=&Preview",
+						guide_mask: [@guide_label]);
+
+				row(horizontal: @align_right,
+					reverse: os == @mac, spacing: @related_spacing)
+				{
+					button(default: true,
+						name: "$$$/gOK=OK",
+						identifier: "okButton",
+						commit_button: true);
+
+					button(cancel: true,
+						name: "$$$/gCancel=Cancel",
+						identifier: "cancelButton",
+						commit_button: true);
+            
+				}
+			}
+	
+	}
+}

@@ -1,0 +1,31 @@
+sheet TransparencyPanel
+{
+	interface:
+				ControlGroup1Enabled: false;
+				
+				BlendingMode: 0 <== (ControlGroup1Enabled == true) ? BlendingMode : 0;
+				
+				KnockoutGroup: 0 <== (ControlGroup1Enabled == true) ? KnockoutGroup : 0;
+				
+				OpacityMaskDefineKnockoutShape: false <== (ControlGroup1Enabled == true)? OpacityMaskDefineKnockoutShape: false;
+				
+				IsolateBlending: false <== (ControlGroup1Enabled == true) ? IsolateBlending : false;
+				
+				
+				ControlGroup2Enabled: false;
+				
+				Clip: false <== (ControlGroup2Enabled == true)? Clip : false;
+				
+				InvertMask: false <== (ControlGroup2Enabled == true) ? InvertMask : false;
+								
+				PanelState: 1;
+				ShowPreviewGroup: true <== (PanelState < 3) ? true : false;
+				ShowCheckBoxGroup: true <== (PanelState == 1) ? true : false;
+																
+				ShowArtThumbnail: false;
+				ShowMaskThumbnail: false;
+				ShowMaskQuestion: false;
+                                              
+                showMakeOpacityMask : true;
+				
+}

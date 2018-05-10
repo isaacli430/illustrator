@@ -1,0 +1,110 @@
+layout FindReplace
+{
+    view subview(identifier: "AIEveSubView",
+				placement: @place_row, 
+				layout_theme: @dialog_large,
+				show_border: false)
+    {
+        column(horizontal: @align_fill)
+        {   
+				column(horizontal: @align_fill, spacing: @related_spacing)
+				{
+					  row(horizontal: @align_fill)
+					  {
+							combobox(identifier: "Find",
+										name: "$$$/FindReplace/Dlg/Find=Fi&nd:",        
+										horizontal: @align_fill,                                                                                                                                                                  
+										set_default_focus: true,
+										max_characters: 255);
+							 popup(identifier: "FindPopUp",
+										horizontal: @align_right,                                 
+										image:      {normal:"SP_AtSign_Xs_N.png",dark_normal:"SP_AtSign_Xs_N_D.png"},
+										show_border: true,
+										wants_focus: false,
+										allow_mouse_scroll: false,
+										alt: "$$$/FindReplace/Text/insert=Inserts a special character",
+										include_custom_item: false,
+							items: @entriesFind);                                                    
+					  }       
+					  row()
+					  {      
+					  overlay()
+							{
+								panel(horizontal: @align_fill, bind: @showOverset, value: false, margin: 0)
+								{									
+								}
+								panel(horizontal: @align_fill, bind: @showOverset, value: true, margin: 0)
+								{														
+									display_text(name: " ", value: "$$$/FindReplace/Text/OversetText=(Overset Text)");								
+								}
+							}
+						}
+				 }
+                  row(horizontal: @align_fill)
+                  {
+                        combobox(identifier: "Replace",
+                                    horizontal: @align_fill,
+                                    name: "$$$/FindReplace/Dlg/Replacewith=Replace &With:",
+						max_characters: 255);                                    
+                         popup(identifier: "ReplacePopUp",
+									horizontal: @align_right,                                                                       
+                                    image:      {normal:"SP_AtSign_Xs_N.png",dark_normal:"SP_AtSign_Xs_N_D.png"},
+                                    wants_focus: false,
+                                    show_border: true,
+                                    allow_mouse_scroll: false,
+                                    alt: "$$$/FindReplace/Text/insert=Inserts a special character",
+                                    include_custom_item: false,
+                        items: @entriesReplace);
+                  }
+                  row()
+                  {
+                        column()
+                        {
+                              checkbox(identifier: "MatchCase",
+                                          bind: @matchCaseCell,
+                                          name: "$$$/FindReplace/Dlg/MatchCase=Match &Case");
+                              checkbox(identifier: "FindWholeWords",
+                                          bind: @findWholeWordsCell,
+                                          name: "$$$/FindReplace/Dlg/FindWholeWord=Find W&hole Word");
+                              checkbox(identifier: "SearchBack",
+                                           bind: @searchBackwardsCell,
+                                           name: "$$$/FindReplace/Dlg/SearchBackwards=Search &Backwards");
+                        }
+                        column()
+                        {
+                              checkbox(identifier: "HiddenLayers",
+                                           bind: @hiddenLayersCell,
+                                           name: "$$$/FindReplace/Dlg/CheckHiddenLayers=Check Hi&dden Layers");                   
+                              checkbox(identifier: "LockedLayers",
+                                           bind: @lockedLayersCell,
+                                           name: "$$$/FindReplace/Dlg/CheckLockedLayers=Check &Locked Layers");
+						      optional(bind: @WorldReadyCell, value: true)
+							  {
+									checkbox(identifier: "IgnoreAccents",
+                                           bind: @ignoreAccentsCell,
+                                           name: "$$$/FindReplace/Dlg/IgnoreAccents=Ignore &Accents");
+							  }
+						
+                        }
+                  }
+        }
+       column(child_horizontal: @align_fill)
+                  {           
+                      button(identifier: "findNextButton", default:true, name: "$$$/FindReplace/Dlg/FindBtn=&Find",
+                                    bind: @findButton, action: @FindAction);                     
+					button(identifier: "replaceButton", name: "$$$/FindReplace/Dlg/ReplaceBtn=&Replace", 
+                        bind: @replaceButton, action: @ReplaceAction);
+					button(identifier: "replaceFindButton", name: "$$$/FindReplace/Dlg/ReplacenFindBtn=R&eplace && Find", 
+                        bind: @replaceFindButton, action: @ReplaceNFindAction);
+					 button(identifier: "replaceAllButton", name: "$$$/FindReplace/Dlg/ReplaceAllBtn=Replace &All", 
+                        bind: @replaceAllButton, action: @ReplaceAllAction);
+					 guide_consumer();
+					 row(spacing: @separated_spacing, child_horizontal: @align_fill)
+					 {
+						 button(identifier: "cancelButton", name: "$$$/FindReplace/Dlg/DoneBtn=Done", 
+							bind: @doneButton, action: @DoneAction,commit_button: true);              
+                     }
+                  }
+            }
+    }
+}

@@ -1,0 +1,7 @@
+sheet DivideSliceDialog
+{
+	interface:
+		evenHorizontalRadioGp:empty;
+	
+		evenVerticalRadioGp:empty;
+}

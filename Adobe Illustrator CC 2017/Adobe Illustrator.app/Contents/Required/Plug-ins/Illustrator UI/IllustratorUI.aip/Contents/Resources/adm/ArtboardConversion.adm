@@ -1,0 +1,23 @@
+sheet ArtboardConversion
+{
+    interface:
+    FileName: "";
+   
+    donotshow: true;
+    
+    EnableCropArea: 1;
+    EnableArtworkBoundingBox: 1;
+    EnablePageTiles: 1;
+    
+	showWarning: false <== EnableCropArea == 1 && CropArea == 0? true : false;
+    LegacyArtboard: 1;
+    CropArea: 1 <== (EnableCropArea == 0) ? 0 : CropArea;
+    ArtworkBoundingBox: 1 <== (EnableArtworkBoundingBox == 0) ? 0 : ArtworkBoundingBox;    
+    PageTiles: 1 <== (EnablePageTiles == 0) ? 0 : PageTiles;
+    
+    invariant:
+    okEnabled <== (LegacyArtboard == 1 || CropArea == 1 || ArtworkBoundingBox == 1 || PageTiles == 1);
+    
+    output:
+    okOutput <== {LegacyArtboard: LegacyArtboard, CropArea: CropArea, ArtworkBoundingBox: ArtworkBoundingBox, PageTiles: PageTiles};
+}

@@ -1,0 +1,322 @@
+    layout SmartExportUI
+    {
+        view subview(identifier: "SmartExportDialog",
+                    layout_theme: @dialog_large,
+                     show_border: false, margin: [22, 15, 0, 0])
+        {
+            row(horizontal:@align_fill,vertical: @align_fill, margin: [0, 0, 2, 15]) 
+            {
+                column(horizontal:@align_fill, vertical: @align_fill,margin: [0, 0 , 0, 0])
+                {
+                    row(horizontal: @align_center,vertical:@align_top,spacing:0,margin:0)
+                    {
+                        button_bar(bind: @ActiveTab,
+                                    horizontal: @align_center,
+                                    identifier: 'AssetTypeButton', 
+                                    wants_focus: false,
+                                    spacing:0,margin:0,
+                                    items: [{ name: '$$$/SmartExportUI/SmartExportDialog/Artboards=Artboards',
+                                                alt: '$$$/SmartExportUI/SmartExportDialog/ArtboardDesc=Artboards available for export',             
+                                                value: 0 },
+                                            { name: '$$$/SmartExportUI/SmartExportDialog/Assets=Assets', 
+                                                alt: '$$$/SmartExportUI/SmartExportDialog/AssetsDesc=Assets collected for export',             
+                                                value: 1 }]);
+                         
+                    }
+                    row(vertical: @align_fill,horizontal:@align_fill,spacing: 0, margin: [-12, 0 , 0, 0]) 
+                    {
+                       
+                        column(vertical: @align_fill,horizontal: @align_fill, child_horizontal: @align_fill, child_vertical: @align_fill,placement: @place_overlay)
+                        {
+							panel(value: false)
+							{
+								row(vertical: @align_fill,horizontal: @align_fill) 
+								{
+									multicolumn_tree(identifier: "FileView",
+													wants_focus: false,
+													height: 385,
+													width: 490,
+													horizontal: @align_fill,
+													vertical: @align_fill);
+								}
+							}								
+							panel(bind: @AssetTabEmptyState,horizontal: @align_fill, value: true,show_border: true)
+							{
+								column(horizontal: @align_fill, vertical: @align_center, child_horizontal: @align_center)
+								{
+                                    column(horizontal: @align_center, child_horizontal: @align_left)
+                                    {
+                                        row(margin: [7, 0, 7, 0])
+                                        {
+                                            static_text(identifier: "AssetTabEmptyStateTextHeader",
+                                                font_size: 15,
+                                                name: "$$$/SmartExportUI/Dialog/AssetTab/EmptyState/HeaderText=Export assets independently of artboards",
+                                                bold: true
+                                            );
+                                        }
+
+                                        row(margin: [7, 0, 7, 0])
+                                        {
+         								    static_text(identifier: "AssetTabEmptyStateText",
+        										font_size: 12,
+        										adjust_baseline_for_single_line_text: false,
+                                                characters: 20,
+        										name: "$$$/SmartExportUI/Dialog/AssetTab/EmptyState/Text=Drag artwork to the Asset Export panel to have it ready for export."
+        									);
+                                        }
+                                    }
+									
+                                    row(horizontal:@align_center, margin: [5, 0, 5, 0])
+                                    {
+    									button(identifier: "LaunchAssetPanelButton",
+    										horizontal: @align_center,
+    										wants_focus: false,
+                                            font_size: 12,
+    										name: "$$$/SmartExportUI/Dialog/AssetTab/EmptyState/Button=Asset Export Panel"
+    									);
+                                    }
+									
+                                    row(horizontal:@align_center, margin: [5, 0, 5, 0])
+                                    {
+    									link_button(identifier: "LearnMoreLinkButton",
+    										horizontal: @align_center,
+    										wants_focus: false,												
+    										name: "$$$/SmartExportUI/Dialog/AssetTab/EmptyState/Link=Learn More"
+    									);
+                                    }
+								}
+							}
+                        }
+                        
+                    }
+                }
+                column(horizontal:@align_right,vertical: @align_fill,child_horizontal:@align_fill,margin: [0, 0 , 0, 0])
+                {
+                    row(margin:2,vertical: @align_top,horizontal:@align_fill) {
+                        column(horizontal:@align_fill,spacing: 9) {
+                            static_text(horizontal: @align_left,name: @SelectName);                            
+                            overlay(horizontal:@align_fill) 
+                            {
+                                panel(bind:@ShowArtboardOptions,horizontal:@align_fill)
+                                {
+                                    column(guide_mask: [],horizontal:@align_fill) 
+                                    {
+                                        radiogroup(horizontal:@align_fill) 
+                                        {
+                                           
+                                            row(horizontal:@align_fill) 
+                                            {
+                                                column(horizontal:@align_left,guide_mask: [@guide_label]) {
+                                                    radio_button(bind: @Selection, identifier: "AllArtboards", 
+                                                             name: "$$$/SmartExportUI/SmartExportDialog/All=&All", 
+                                                            alt: '$$$/SmartExportUI/Dialog/ExportAllDesc=Export all the artboards in this document',
+                                                            value: @Selection_all_artboards);
+                                                } 
+                                                column(horizontal:@align_fill,placement: @place_row,guide_mask: [@guide_label],margin:[0,20,0,0]) {                                                
+                                                    radio_button(bind: @Selection,identifier: "ArtboardRange", 
+                                                             name: "$$$/SmartExportUI/SmartExportDialog/Range=&Range:", 
+                                                            alt: '$$$/SmartExportUI/Dialog/ExportRangeDesc=Export specific artboards, or in ranges. For example, 1, 4, 6-8.',
+                                                             value: @Selection_artboards_range);
+                                                    edit_text(identifier: 'ArtboardRangeEditBox',horizontal:@align_fill);
+                                                }
+                                            }
+                                            row(horizontal:@align_fill) 
+                                            {
+                                                radio_button(bind: @Selection,identifier: "FullDocument",
+                                                         name: "$$$/SmartExportUI/SmartExportDialog/FullDocument=&Full Document", 
+                                                         alt: '$$$/SmartExportUI/SmartExportDialog/ExportFullDocDesc=Export the whole document as one file',
+                                                         value: @Selection_full_document);  
+                                                
+                                            }
+
+                                        }
+                                    }
+                                }
+                                panel(bind:@ShowAssetOptions,horizontal:@align_fill)
+                                {
+                                    column(guide_mask: []) 
+                                    {
+                                        checkbox(identifier: "AssetSelection", 
+                                                name: "$$$/SmartExportUI/SmartExportDialog/AllAssets=A&ll Assets",
+                                                alt : '$$$/SmartExportUI/SmartExportDialog/AllAssetsDesc=Export all available assets or none',
+                                                tri_state: true); 
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+					row()
+                    {
+                        static_text(identifier: 'Location:',
+                                    name: '$$$/SmartExportUI/SmartExportDialog/ExportTo=Export to:'
+                                    );
+                    }
+                    row()
+                    {
+                        edit_text(identifier: 'ExportLocationEditBox',characters: 27,horizontal:@align_fill);
+                        button(identifier: "PickExportLocation", horizontal:@align_right,
+							image: {normal: "SP_Folder_Md_N.png", dark_normal: "SP_Folder_Md_N_D.png"},
+                            alt: '$$$/SmartExportUI/Dialog/LocationDesc=Choose the folder where exported files are placed');
+                    }
+                    row()
+                    {
+                    	checkbox(identifier: "OpenLocationAfterExport",
+                    	         name: "$$$/SmartExportUI/SmartExportDialog/OpenLocationCheckBox=&Open Location after Export",
+                                 alt : '$$$/SmartExportUI/SmartExportDialog/OpenLocationDesc=Open folder location after export');
+                    }
+
+                    row(vertical: @align_top,spacing: 0,margin: [0,0,-10,0]) {
+                        static_text(identifier: 'ExportSettings',vertical : @align_center,
+                                    name: '$$$/SmartExportUI/SmartExportDialog/Formats=Formats:'
+                                    ); 
+                        button(identifier: 'AddIOS_Dialog',
+                                    horizontal:@align_right,
+                                    wants_focus: false,
+                                    bind_output:@AddButtonType,
+                                    value :2,
+                                    vertical : @align_center,
+                                    image: {normal:"SP_iOSdown_N.png", dark_normal:"SP_iOSdown_N_D.png"} ,
+                                    name: '$$$/SmartExportUI/SmartExportDialog/iOs=iOs',
+                                    alt: '$$$/SmartExportUI/Dialog/AddiOSDesc=Adds iOS device presets' );
+                        button(identifier: 'AddHDPI_Dialog', 
+                                    horizontal:@align_right,
+                                    wants_focus: false,
+                                    bind_output:@AddButtonType,
+                                    value :3,
+                                    vertical : @align_center,
+                                    image: {normal:"SP_android_N.png", dark_normal:"SP_android_N_D.png"} ,
+                                    name: '$$$/SmartExportUI/SmartExportDialog/hdpi=hdpi',
+                                    alt: '$$$/SmartExportUI/Dialog/AddAndroidDesc=Adds Android device presets' );
+                        panel(horizontal:@align_right,vertical : @align_center, height : 15) {                        
+                                separator(orientation: @vertical); 
+                        }
+
+						button(identifier: 'FileFormatOptions',
+                                    horizontal:@align_right,
+                                    wants_focus: false,
+                                    bind_output:@AddButtonType,
+                                    value :4,
+                                    vertical : @align_center,
+                                    image: {normal:"SP_Settings_Xs_N.png", dark_normal:"SP_Settings_Xs_N_D.png"} ,
+                                    name: '$$$/SmartExportUI/SmartExportDialog/FileFormatOptions=FileFormatOptions',
+                                    alt: '$$$/SmartExportUI/Dialog/AdvancedSettingsDesc=Advanced settings for exported file types');
+						
+                    }
+                    row(vertical: @align_fill, margin:0,child_vertical:@align_fill,child_horizontal:@align_fill) {
+                        group(margin: 3,vertical: @align_fill,horizontal: @align_fill)
+                        {
+                            column(vertical: @align_fill,horizontal: @align_fill,spacing: 1) {
+                                row(margin: [0,7,0,0],vertical: @align_top,horizontal: @align_fill) 
+                                { 
+                                    
+                                    optional(bind: @IsWinOS,spacing: 0 ,margin:0,vertical: @align_top,horizontal: @align_fill,placement: @place_row) 
+                                    {
+                                        panel(horizontal: @align_left,vertical: @align_fill, width: 82) { 
+                                            static_text(horizontal: @align_left,display_disable:true,
+                                                            name: '$$$/SmartExportUI/SmartExportDialog/ExportSettingsScale=Scale');  
+                                        }
+                                        panel(horizontal: @align_fill,vertical: @align_fill) {
+                                            static_text(horizontal: @align_left,display_disable:true,
+                                                            name: '$$$/SmartExportUI/SmartExportDialog/ExportSettingsSuffix=Suffix');     
+                                        }
+                                        panel(horizontal: @align_right,vertical: @align_fill, width: 121) { 
+                                            static_text(horizontal: @align_left,display_disable:true,
+                                                            name: '$$$/SmartExportUI/SmartExportDialog/ExportSettingsFormat=Format');     
+                                        }
+                                    }
+                                    optional(bind: @IsMacOS,spacing: 0 ,margin:0,vertical: @align_top,horizontal: @align_fill,placement: @place_row) 
+                                    {
+                                        panel(horizontal: @align_left,vertical: @align_fill, width: 89) 
+                                        { 
+                                            static_text(horizontal: @align_left,display_disable:true,
+                                                            name: '$$$/SmartExportUI/SmartExportDialog/ExportSettingsScale=Scale');  
+                                        }
+                                        panel(horizontal: @align_fill,vertical: @align_fill) {
+                                            static_text(horizontal: @align_left,display_disable:true,
+                                                            name: '$$$/SmartExportUI/SmartExportDialog/ExportSettingsSuffix=Suffix');     
+                                        }
+                                        panel(horizontal: @align_right,vertical: @align_fill, width: 124) 
+                                        { 
+                                            static_text(horizontal: @align_left,display_disable:true,
+                                                            name: '$$$/SmartExportUI/SmartExportDialog/ExportSettingsFormat=Format');     
+                                        }
+                                    }
+                                }  
+                                row(vertical: @align_fill,horizontal: @align_fill,margin: [-2,0,0,0]) {
+                                    multicolumn_tree(identifier: "ExportSettingsMCT",
+                                                        wants_focus: false,
+                                                        width: 305 ,
+                                                        height: 100 ,
+                                                        horizontal: @align_fill,
+                                                        vertical: @align_fill);
+                                }  
+                            }
+                        }                     
+                    }
+                    
+                }
+               
+            }
+            row(margin: [-10,0,0,15] ,vertical: @align_top,horizontal:@align_fill) 
+            {
+                overlay()
+                {
+                    panel(bind:@ShowViewToggle) 
+                    {
+                        button_bar(bind: @ViewToggle,
+                            horizontal: @align_center,
+                            wants_focus: false,
+                            items: [{  image: {normal:"SP_ThumbnailViewLarge_Sm_N.png", dark_normal:"SP_ThumbnailViewLarge_Sm_N_D.png"},
+                                        alt: '$$$/SmartExportUI/Dialog/LargeThumbView=Large thumbnail view', 
+                                        value: 1 },
+                                    {  image: {normal:"SP_ThumbnailView_Sm_N.png", dark_normal:"SP_ThumbnailView_Sm_N_D.png"}, 
+                                        alt: '$$$/SmartExportUI/Dialog/SmallThumbView=Small thumbnail view', 
+                                        value: 2 }]);
+                    }
+                }
+                button(identifier: 'DeselectAll',
+                    horizontal:@align_right,
+                    name: '$$$/SmartExportUI/SmartExportDialog/ClearSelection=Clear Selection');
+                panel(vertical: @align_top,horizontal:@align_right, width: 310,height: 20,spacing:0, margins:0,placement: @place_row) 
+                {
+                    edit_text(identifier: 'PrefixEditBox',name: '$$$/SmartExportUI/SmartExportDialog/Prefix=&Prefix:',
+                                alt:'$$$/SmartExportUI/SmartExportDialog/PrefixDesc=Text added at the front of the file name. Leave blank to add no prefix.',vertical: @align_top,
+                                characters: 8, guide_mask:[ @guide_label ]); 
+
+                    static_text(identifier: 'PreviewFileName',theme_font_size: @small,vertical: @align_top,horizontal: @align_fill,name: '                              '); 
+                } 
+            }
+            row(margin: [6,0,0,15] ,vertical: @align_top,horizontal:@align_fill,spacing: 0) 
+            {
+                
+                static_text(identifier: 'ExportedItemInformation',
+                            horizontal:@align_right,
+                            name: 'Selected: 100 Artboards, Total Files on Export: 1200');
+                optional( bind : @ShowEmptyWarning,horizontal:@align_right) 
+                {
+                    panel (margin: [0,2,0,0]) {
+                        image(identifier: "warningImage", image: {normal:"SP_WarningGrayscale_Sm_N.png", dark_normal:"SP_WarningGrayscale_Sm_N_D.png"}, horizontal:@align_right,
+                            alt: "$$$/SmartExportUI/SmartExportDialog/SelectionContainsBlankArtboardsWarning=Selection contains blank artboards");
+                    }
+                        
+                }                
+                panel(vertical: @align_top,horizontal:@align_right, width: 320) 
+                {
+                    row(horizontal: @align_right, reverse: os == @mac)
+                    {   
+                        button(identifier: "okButton",  commit_button: true, set_default_focus: true,  name: @ExportButtonName);
+                        button(identifier: "cancelButton",  commit_button: true,  name: "$$$/gCancel=Cancel");
+                    }
+                }
+            }
+            panel(margin: [0,0,0,0] ,vertical: @align_top,horizontal:@align_fill,spacing: 0) 
+            {
+               row(horizontal: @align_right)
+                    {   
+                        image(identifier: "gripperImage", image: "CSResizeGripperIcon.png");
+                    }
+            }
+                          
+        }
+    }

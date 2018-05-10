@@ -1,0 +1,14 @@
+sheet UIPreference
+{
+interface:
+	UICollapseCell: false;
+	UIOpenCell: false;
+	UITabsCell: false;
+	UIShowAlert: false;
+	UICanvasBrightnessOption:0;
+	ShowScrollPref: true;
+	ScrollButtonPos: 0;
+	UISnapUIScaleFactor:1;
+	UIScalePref: true;	
+
+}

@@ -1,0 +1,24 @@
+layout hiddenMiscMenu
+{
+	view menu( id: 57,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/HiddenMisc/SwitchUnits=Switch Units", id:			149, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenMisc/NewFileNoDlg=New File (No Dialog)", id:		220, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenMisc/CloseAll=Close All", id:				117, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenMisc/Help2=Help (Secondary)", id:			217, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenMisc/Undo2=Undo (Secondary)", id:			111, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenMisc/Cut2=Cut (Secondary)", id:			205, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenMisc/Copy2=Copy (Secondary)", id:			206, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenMisc/Paste2=Paste (Secondary)", id:			207, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenMisc/ZoomIn2=Zoom In (Secondary)", id:			218, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenMisc/ShowDebug=Debug Panel", id:			31, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenMisc/NavigateToNextDocument=Navigate to Next Document", id:	305, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenMisc/NavigateToPreviousDocument=Navigate to Previous Document", id:	306, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenMisc/NavigateToNextDocumentGroup=Navigate to Next Document Group", id:	307, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenMisc/NavigateToPreviousDocumentGroup=Navigate to Previous Document Group", id:	308, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenMisc/subscript2=Subscript (Secondary)", 		id:	389, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/HiddenMisc/superscript2=Superscript (Secondary)", 	id:	390, help_id:0);	
+}
+}
+

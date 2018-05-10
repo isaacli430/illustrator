@@ -1,0 +1,23 @@
+sheet PlacementOptions
+{
+interface:
+		kkAsIs										: 0;
+		kkFill										: 1;
+		kkFit										: 2;
+		kkConform									: 3;
+		kkReconform									: 4;
+		
+		kkMidMid									: 4;
+		
+		AV_Preserve_Attributes						: kkReconform;
+		
+		align_condition								: false <== (AV_Preserve_Attributes	== kkReconform || AV_Preserve_Attributes	== kkConform); 
+		clip_condition								: false <== (AV_Preserve_Attributes	== kkReconform || AV_Preserve_Attributes	== kkFit || AV_Preserve_Attributes	== kkConform);
+		
+		unlink AV_alignment_ninePointPinSelector	: kkMidMid <== (align_condition) ? AV_alignment_ninePointPinSelector_old : AV_alignment_ninePointPinSelector;
+		AV_alignment_ninePointPinSelector_old		: kkMidMid <== !(align_condition) ? AV_alignment_ninePointPinSelector : AV_alignment_ninePointPinSelector_old;
+
+
+		unlink AV_clip								: false	<== (clip_condition) ? AV_clip_old : AV_clip;
+		AV_clip_old									: false	<== !(clip_condition) ? AV_clip : AV_clip_old;
+}

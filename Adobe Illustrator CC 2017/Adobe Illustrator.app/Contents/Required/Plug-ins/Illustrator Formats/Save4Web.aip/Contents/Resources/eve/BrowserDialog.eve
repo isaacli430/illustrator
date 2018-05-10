@@ -1,0 +1,42 @@
+layout BrowserUI
+{
+    view subview(identifier: "AIEveSubView",
+					show_border: false,
+					placement: @place_row,
+					layout_theme: @dialog_large,
+					spacing: @unrelated_spacing)
+    {
+		list(identifier: "BrowserList",
+			height:200,
+			width:200
+			);
+		column(child_horizontal: @align_fill)
+		{
+			button(default: true,
+				commit_button: true,
+				identifier: "okButton",
+				name: "$$$/gOK=OK");
+
+			button(cancel: true,
+				commit_button: true,
+				identifier: "cancelButton",
+				name: "$$$/gCancel=Cancel");
+				
+			button(identifier: "AddButton",
+				action: @addButtonAction,				
+				name: '$$$/Dialog/BrowserDialog/Add=&Add...');
+			 
+			button(identifier: "Remove",
+				action: @removeButtonAction, 
+				name: '$$$/Dialog/BrowserDialog/Remove=&Remove');
+			 
+			button(identifier: "SetDefaultButton",
+				action: @setAsDefaultButtonAction, 
+				name: '$$$/Dialog/BrowserDialog/SetDefaultButton=&Set As Default');
+
+			button(identifier: "FindAllButton",
+				action: @findAllButtonAction, 
+				name: '$$$/Dialog/BrowserDialog/FindAll=&Find All');
+		}
+    }
+}

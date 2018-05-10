@@ -1,0 +1,6 @@
+layout recentFileMenu
+{
+	view menu( id: 43,
+				menubar: false )
+	{ separator();  }
+}

@@ -1,0 +1,49 @@
+layout TouchPencilOptionsPanel
+{
+    view subview(identifier: "TouchPencilOptionsPanel",
+				show_border: false,
+                child_horizontal: @align_center,
+				layout_theme:@touch_tooloptions)
+    {	
+		button_bar(identifier: "PencilToolTouchRadioGp",is_vertical: true, button_inner_bevel: false, button_outer_bevel: false,  width_margin: 2.0, height_margin: 7.0, button_inner_gradient: false, hasSeparators: false, wants_focus: false,
+								items: [
+									 {image: {normal: "SP_TouchFreeDraw_Lg_N.png", dark_normal: "SP_TouchFreeDraw_Lg_N_D.png"}, value: 1, alt: "$$$/SketchingTool/PencilTool/FreeDrawingButton/Tooltip=Free Drawing"},
+									 {image: {normal: "SP_TouchStraightLine_Lg_N.png", dark_normal: "SP_TouchStraightLine_Lg_N_D.png"}, value: 2, alt: "$$$/SketchingTool/PencilTool/StraightDrawingButton/Tooltip=Straight Line Drawing"},
+									 {image: {normal: "SP_TouchConstrainedAngles_Lg_N.png", dark_normal: "SP_TouchConstrainedAngles_Lg_N_D.png"}, value: 3, alt: "$$$/SketchingTool/PencilTool/ConstraintDrawingButton/Tooltip=Constrain Drawing (45#{deg})"}
+								]
+							);
+		
+		separator();
+
+		column(spacing: @related_spacing, child_horizontal: @align_center)
+		{
+			button(identifier: "Increment", alt: "$$$/SketchingTools/PencilTool/Touch/ToolOption/IncreaseStrokeWidthButton/Tooltip=Increase Stroke Weight", 
+				wants_focus: false, 
+				button_inner_bevel: false,
+				button_outer_bevel: false,
+				inset_undrawn_space: false,
+				image: {normal: "SP_TouchPlus_Md_N.png", dark_normal: "SP_TouchPlus_Md_N_D.png"});
+			unit_scrubby_number(bind: @pencilSize, identifier: "Pencil_Size", 
+						min_value: 0,
+						max_value: 100,
+	                    decimal_places: 0,
+	                    digits: 0,
+						unit:'NumberEditUnit_Point');
+			button(identifier: "Decrement", alt: "$$$/SketchingTools/PencilTool/Touch/ToolOption/DecreaseStrokeWidthButton/Tooltip=Decrease Stroke Weight", 
+				wants_focus: false,
+				button_inner_bevel: false,
+				button_outer_bevel: false,
+				inset_undrawn_space: false,
+				image: {normal: "SP_TouchMinus_Md_N.png", dark_normal: "SP_TouchMinus_Md_N_D.png"});
+		}
+
+		separator();
+		
+		button(horizontal: @align_center, identifier: "AdvancedOptions", alt: "$$$/SketchingTool/PencilTool/AdvancedOptions=Advanced Options",
+				wants_focus: false,
+				button_inner_bevel: false,
+				button_outer_bevel: false,
+				inset_undrawn_space: false,
+				image: {normal: "SP_TouchMoreSettings_Md_N.png", dark_normal: "SP_TouchMoreSettings_Md_N_D.png"});
+	}
+}

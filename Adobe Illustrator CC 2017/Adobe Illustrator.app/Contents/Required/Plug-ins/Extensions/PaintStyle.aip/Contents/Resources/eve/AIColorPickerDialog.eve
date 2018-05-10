@@ -1,0 +1,219 @@
+layout AIColorPickerDialog
+{
+    view subview(identifier: "AIColorPickerDialog",
+                 layout_theme: @dialog_large,
+				 margin: [15,15,15,15],spacing:@related_spacing,
+                 show_border: false)
+    {	
+		row()
+		{
+			display_text(identifier: "ColorModelSwatchesToggleStaticText",
+					bind:@ColorModelSwatchesToggleStaticText,horizontal: @align_left,wants_focus: false);
+		}
+		column()
+		{
+			row()
+			{	
+				overlay(vertical:@align_center)
+				{
+					panel(bind:@ColorPickerNormalMode,value: 0)
+					{
+						image(identifier: "ColorPickerCanvasViewWidget",
+									height: 255,
+									width: 255,
+									wants_focus: false,
+									show_border: false,
+									vertical:@align_center);
+					}
+					panel(bind:@ColorPickerNormalMode,value: 1)
+					{
+						
+						multicolumn_tree(identifier: "ColorPickerSwatchViewWidget",
+										height: 255,
+										width: 255,
+										vertical: @align_center);
+					
+					}
+
+				}
+				
+				row(spacing:0)
+				{
+					image(identifier: "ColorPickerLeftDiamondWidget",
+							height: 265,
+							width: 9,
+							wants_focus: false,
+							show_border: false);
+					image(identifier: "ColorPickerRampViewWidget",
+							height: 255,
+							width: 25,
+							wants_focus: false,
+							show_border: false,
+							vertical:@align_center);
+					image(identifier: "ColorPickerRightDiamondWidget",
+							height: 265,
+							width: 9,
+							wants_focus: false,
+							show_border: false);
+				}
+
+				column()
+				{
+					row()
+					{
+						image(identifier: "ColorPickerColorBoxViewWidget",
+							height: 80,
+							width: 62,
+							wants_focus: false,
+							border: @border_normal);
+						column(vertical:@align_center,spacing:0)
+						{
+							optional(bind: @show_outOfGamutButtons,value: true,spacing:0)
+							{
+								button(	identifier: "OutGamutImageButton",
+									 image: {normal: "SP_WarningGrayscale_Sm_N.png", dark_normal:"SP_WarningGrayscale_Sm_N_D.png"},
+									 wants_focus: false,
+									 alt:"$$$/PaintStyle/Str/ColorToolTip/OutOfGamut=Out of Gamut Warning (click to correct)",
+									 vertical:@align_center);
+								pattern_swatch(identifier: "OutGamutSwatch",border: @border_normal, horizontal: @align_center,
+									alt:"$$$/PaintStyle/Str/ColorToolTip/InGamutColor=In Gamut Color (click to correct)",
+									height:16,width:16,show_border:true);
+							}
+								 
+							optional(bind: @show_outOfWebButtons,value: true,spacing:0)
+							{
+								button(	identifier: "OutWebColorImageButton",
+									 image: {normal: "SP_WebSafe_Sm_N.png", dark_normal:"SP_WebSafe_Sm_N_D.png"},
+									 alt:"$$$/PaintStyle/Str/ColorToolTip/OutOfWeb=Out of Web Color Warning (click to correct)",
+									 wants_focus: false, horizontal: @align_center);
+				
+								pattern_swatch( identifier: "OutWebColorSwatch",border: @border_normal, horizontal: @align_center,
+									alt:"$$$/PaintStyle/Str/ColorToolTip/InWebColor=In Web Color (click to correct)",
+									height:16,width:16,show_border:true);
+							}
+						}
+
+						column(vertical:@align_center,spacing:3)
+						{
+							button(identifier: "okButton",
+								commit_button: true,horizontal: @align_fill,vertical:@align_center,
+								name: "$$$/gOK=OK");
+							button(identifier: "cancelButton",
+									commit_button: true,horizontal: @align_fill,vertical:@align_center,
+									name: "$$$/gCancel=Cancel");
+							toggle_button(identifier: "ColorModelSwatchesToggleButton",
+								on_text:"$$$/PaintStyle/Dlg/ColorPicker/ColorSwatches=Color Swatches",
+								off_text:"$$$/PaintStyle/Dlg/ColorPicker/ColorModels=Color Models",
+								value_on: true,
+								value_off: false,horizontal: @align_fill,vertical:@align_center,
+								commit_button: true,
+								spring_loaded: true,
+								bind: @ColorModelSwatchesToggleButton);
+						}
+
+					}
+					
+					row()
+					{
+						column(guide_mask: [],spacing:4)
+						{
+							row(spacing:3)
+							{
+								column(guide_mask: [])
+								{
+									overlay( identifier: "RGBHSBOverLay")
+									{
+										panel(bind: @ShowRGBHSBCMYK,value: true,spacing:4)
+										{
+											radiogroup()
+											{
+												radio_button(bind: @radioButtonValue,value: 0,identifier: "hueRadioButton",name: '$$$/PaintStyle/Dlg/ColorPicker/HueButtom=H:');
+												radio_button(bind: @radioButtonValue,value: 1,identifier: "saturationRadioButton",name: '$$$/PaintStyle/Dlg/ColorPicker/SaturationButtom=S:');
+												radio_button(bind: @radioButtonValue,value: 2,identifier: "brightnessRadioButton",name: '$$$/PaintStyle/Dlg/ColorPicker/BrightNessButtom=B:');
+												radio_button(bind: @radioButtonValue,value: 3,identifier: "redRadioButton",name: '$$$/PaintStyle/Dlg/ColorPicker/RedButtom=R:');
+												radio_button(bind: @radioButtonValue,value: 4,identifier: "greenRadioButton",name: '$$$/PaintStyle/Dlg/ColorPicker/GreenButtom=G:');
+												radio_button(bind: @radioButtonValue,value: 5,identifier: "blackRadioButton",name: '$$$/PaintStyle/Dlg/ColorPicker/BlueButtom=B:');
+											}	
+										}
+									}
+								}
+								column(guide_mask: [])
+								{
+									overlay( identifier: "RGBHSBOverLay")
+									{
+										panel(bind: @ShowRGBHSBCMYK,value: true,spacing:4)
+										{
+											unit_hot_number(bind: @hue, identifier: "hue", digits: 4, decimal_places: 2, min_value: 0, 
+												max_value: 360, unit:"NumberEditUnit_Degree"); 
+								
+											unit_hot_number(bind: @saturation, identifier: "saturation", digits: 4, decimal_places: 2, min_value: 0, 
+												max_value: 100, unit:"NumberEditUnit_Percent"); 
+								
+											unit_hot_number(bind: @brightness, identifier: "brightness", digits: 4, decimal_places: 2, min_value: 0, 
+												max_value: 100, unit:"NumberEditUnit_Percent"); 
+								
+											unit_hot_number(bind: @red, identifier: "red", digits: 4, decimal_places: 2, min_value: 0,max_value: 255);
+								
+											unit_hot_number(bind: @green, identifier: "green", digits: 4, decimal_places: 2, min_value: 0,max_value: 255);
+								
+											unit_hot_number(bind: @blue, identifier: "blue", digits: 4, decimal_places: 2, min_value: 0,max_value: 255);
+										}
+									}
+								}
+							}
+
+							row(horizontal: @align_fill)
+							{
+								optional(bind: @ShowRGBHSBCMYK)
+								{
+									edit_text(guide_mask: [@guide_label],bind: @hexadecimalValue,identifier: "hexadecimalValue", name: '#',max_characters:7, characters:8, horizontal: @align_fill);
+								}
+							}
+						}
+						
+						column(guide_mask: [])
+						{
+							overlay( identifier: "CMYKOverLay")
+							{
+								panel(bind: @ShowRGBHSBCMYK,value: true,spacing:4)
+								{
+									guide_consumer(consume_vertical: 1);
+									guide_consumer(consume_vertical: 1);
+									guide_consumer(consume_vertical: 1);
+									unit_hot_number(bind: @cyan, identifier: "cyan", digits: 4, decimal_places: 2, min_value: 0, 
+											max_value: 100, unit:"NumberEditUnit_Percent",name: '$$$/PaintStyle/Dlg/ColorPicker/35=C:');
+									unit_hot_number(bind: @magenta, identifier: "magenta", digits: 4, decimal_places: 2, min_value: 0, 
+											max_value: 100, unit:"NumberEditUnit_Percent",name: '$$$/PaintStyle/Dlg/ColorPicker/36=M:');  
+									unit_hot_number(bind: @yellow, identifier: "yellow", digits: 4, decimal_places: 2, min_value: 0, 
+											max_value: 100, unit:"NumberEditUnit_Percent",name: '$$$/PaintStyle/Dlg/ColorPicker/37=Y:'); 
+									unit_hot_number(bind: @black, identifier: "black", digits: 4, decimal_places: 2, min_value: 0, 
+											max_value: 100, unit:"NumberEditUnit_Percent",name: '$$$/PaintStyle/Dlg/ColorPicker/38=K:');
+								} 
+							}
+
+						}
+					}	
+				}
+			}
+
+			row(horizontal:@align_fill)
+			{
+				overlay( identifier: "WebCheckBoxOverLay", horizontal:@align_fill)
+				{
+					panel(bind: @ShowRGBHSBCMYK,value: true,guide_mask: [@guide_label])
+					{
+						checkbox(identifier: "webColorsCheckbox", name: "$$$/PaintStyle/Dlg/ColorPicker/WebSafe=&Only Web Colors",bind: @webColorsCheckbox);
+					}
+
+					panel(bind:@ColorPickerNormalMode,value: 1,guide_mask: [@guide_label],horizontal:@align_fill)
+					{
+						subview(identifier: "DummyWidgetID", horizontal:@align_fill,show_border: false,  margin:0, width: 200, height: 30);
+					}
+				}
+
+			}
+		
+		}
+
+	}
+}

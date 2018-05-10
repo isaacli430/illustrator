@@ -1,0 +1,19 @@
+layout IdeaFileFormatUIControlGroup
+{
+     view subview(identifier: "IdeaFileFormatUIControlGroup",
+				 layout_theme: @controlbar,
+				 show_border: false,
+				 child_vertical: @align_center,
+				 placement: @place_row,
+				 margin : 0,
+				 spacing: 5,
+				 height:  31)
+    {		
+		optional(identifier: "IdeaFileFormatUIControlGroupSubGroup", child_vertical:  @align_center, margin : 0,spacing: @related_spacing, placement: @place_row)	
+		{
+			separator(orientation: @vertical, vertical: @align_fill);
+			
+			button(identifier: "expandButton", name: "$$$/IdeaFileFormatUI/ExpandButton=Expand");
+		}
+    }
+}

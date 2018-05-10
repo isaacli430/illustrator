@@ -1,0 +1,33 @@
+sheet WarpOptionsUI
+{
+interface:
+	WarpStyleItems:	[
+						{name: "$$$/Deform/WarpOptions/StyleItem/Arc=Arc",					value: "arc",			icon: "arc"},
+						{name: "$$$/Deform/WarpOptions/StyleItem/ArcLower=Arc Lower",		value: "arclower",		icon: "arclower"},
+						{name: "$$$/Deform/WarpOptions/StyleItem/ArcUpper=Arc Upper",		value: "arcupper",		icon: "arcupper"},
+						{name: "",															value: "",				icon: ""},
+						{name: "$$$/Deform/WarpOptions/StyleItem/Arch=Arch",				value: "arch",			icon: "arch"},
+						{name: "$$$/Deform/WarpOptions/StyleItem/Bulge=Bulge",				value: "bulge",			icon: "bulge"},
+						{name: "$$$/Deform/WarpOptions/StyleItem/ShellLower=Shell Lower",	value: "shelllower",	icon: "shelllower"},
+						{name: "$$$/Deform/WarpOptions/StyleItem/ShellUpper=Shell Upper",	value: "shellupper",	icon: "shellupper"},
+						{name: "",															value: "",				icon: ""},
+						{name: "$$$/Deform/WarpOptions/StyleItem/Flag=Flag",				value: "flag",			icon: "flag"},
+						{name: "$$$/Deform/WarpOptions/StyleItem/Wave=Wave",				value: "wave",			icon: "wave"},
+						{name: "$$$/Deform/WarpOptions/StyleItem/Fish=Fish",				value: "fish",			icon: "fish"},
+						{name: "$$$/Deform/WarpOptions/StyleItem/Rise=Rise",				value: "rise",			icon: "rise"},
+						{name: "",															value: "",				icon: ""},
+						{name: "$$$/Deform/WarpOptions/StyleItem/FishEye=FishEye",			value: "fisheye",		icon: "fisheye"},
+						{name: "$$$/Deform/WarpOptions/StyleItem/Inflate=Inflate",			value: "inflate",		icon: "inflate"},
+						{name: "$$$/Deform/WarpOptions/StyleItem/Squeeze=Squeeze",			value: "squeeze",		icon: "squeeze"},
+						{name: "$$$/Deform/WarpOptions/StyleItem/Twist=Twist",				value: "twist",			icon: "twist"}
+					];
+	WarpStyle: "arc";
+	unlink Rotate: "Horizontal" <== (WarpStyle == "fisheye" || WarpStyle == "inflate") ? RememberRotate : Rotate;
+	RememberRotate: "Horizontal" <== (WarpStyle == "fisheye" || WarpStyle == "inflate") ? RememberRotate : Rotate;
+	Bend: 0;
+	MinMaxFilter: {min_value: -100, max_value: 100};
+	HorizontalDistortion: 0;
+	VerticalDistortion: 0;
+	AllowPreview: true;
+	unlink Preview: false <== (AllowPreview == true) ? Preview : false;
+}

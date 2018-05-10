@@ -1,0 +1,40 @@
+layout FuzzyEffectUI
+{
+    view subview(identifier: "AIEveSubView",
+				 layout_theme: @dialog_large,
+				 show_border: false,
+				 spacing: @unrelated_spacing)
+    {
+ 		unit_hot_number(identifier: "FeatherRadius",
+							name: "$$$/FuzzyEffect/Dlg/17000/4=&Radius:",
+							max_value: 250,
+							min_value: 0.2,
+							stepper: true,
+							digits: 6,
+							decimal_places: 2,
+							bind: @FeatherRadiusCell,
+							unit: "CurrentDocumentUnit",
+							set_default_focus: true,
+							bind_final: true);
+
+        row(child_vertical: @align_center,spacing: @separated_spacing)
+        {
+			checkbox(identifier: "previewButton",
+					 name: "$$$/gPreview=&Preview",
+					 horizontal: @align_left,
+					 guide_mask: [@guide_label],
+					 bind: @PreviewCheckBoxCell);
+
+			row(horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+			{
+				button( identifier: "okButton",
+					   name: "$$$/gOK=OK",
+					   commit_button: true);
+
+				button( identifier: "cancelButton",
+					   name: "$$$/gCancel=Cancel",
+					   commit_button: true);
+			}
+		}         
+    }
+}

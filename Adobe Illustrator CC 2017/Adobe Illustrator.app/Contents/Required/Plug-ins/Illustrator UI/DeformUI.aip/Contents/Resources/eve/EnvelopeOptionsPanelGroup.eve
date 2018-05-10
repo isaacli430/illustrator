@@ -1,0 +1,21 @@
+layout EnvelopeOptionsPanelGroup
+{
+	view subview(identifier: "EnvelopeControlPanelGroupUI",					
+					show_border: false,
+					layout_theme:  @controlbar,
+					placement: @place_row,
+					child_vertical:  @align_center,
+					margin:0,
+					spacing: 5,
+					height:  31					
+				 )	
+	{											
+		optional(identifier: "EnvelopeOptionsDialogSubGroup", placement: @place_row, child_vertical: @align_center, margin : 0)
+		{
+			button(identifier: "EnvelopeOptionsButtonCG",
+				wants_focus: false,
+				image: {normal: "SP_ShowDialog_Md_N.png",dark_normal:"SP_ShowDialog_Md_N_D.png"},
+				alt: "$$$/Deform/Str/16423/ControlPanel=Envelope Options...");
+		}			
+	}
+}

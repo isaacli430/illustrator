@@ -1,0 +1,10 @@
+layout maskingMenu
+{
+	view menu( id: 15,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/Mask/Make=&Make", id:		120, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Mask/Release=&Release", id:	121, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Mask/Select=&Edit Contents", id:	292, help_id:0);
+}
+}

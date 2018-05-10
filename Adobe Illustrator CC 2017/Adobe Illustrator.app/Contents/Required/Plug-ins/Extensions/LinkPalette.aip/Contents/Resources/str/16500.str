@@ -1,0 +1,36 @@
+/* [1] */
+
+/* [2] */
+$$$/LinkPalette/Str/UserInterface/ShowText=L&inks
+/* [3] */
+$$$/LinkPalette/Str/UserInterface/HideText=Hide L&inks
+/* [4] */
+$$$/LinkPalette/Str/UserInterface/EmbeddedName=Embedded Raster Image
+/* [5] */
+$$$/LinkPalette/Str/UserInterface/MegabyteUnits=M
+/* [6] */
+$$$/LinkPalette/Str/UserInterface/KilobyteUnits=k
+/* [7] */
+$$$/LinkPalette/Str/UserInterface/FileSizeFormat=%d bytes (%0.1f%c)
+/* [8] */
+$$$/LinkPalette/Str/UserInterface/UndoUnlink=Undo Embed Image
+/* [9] */
+$$$/LinkPalette/Str/UserInterface/RedoUnlink=Redo Embed Image
+/* [10] */
+
+/* [11] */
+$$$/LinkPalette/Str/UserInterface/EditOriginalText=Edit &Original
+/* [12] */
+$$$/LinkPalette/Str/UserInterface/UndoPlaceOptions=Undo Placement Options
+/* [13] */
+$$$/LinkPalette/Str/UserInterface/RedoPlaceOptions=Redo Placement Options
+/* [14] */
+$$$/LinkPalette/Str/UserInterface/iUndoReplace=Undo Replace Link
+/* [15] */
+$$$/LinkPalette/Str/UserInterface/iRedoReplace=Redo Replace Link
+/* [16] */
+$$$/LinkPalette/Str/UserInterface/UpdateLinkShortcut=Update Link
+/* [17] */
+$$$/LinkPalette/Str/UserInterface/iNotAvailable=NA
+/* [18] */
+$$$/LinkPalette/Str/UserInterface/EditImageText=Edit &Image

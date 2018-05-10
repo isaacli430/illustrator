@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BuildDate</key>
+	<string>"Tue Apr 12 2016 21:35:31"</string>
+	<key>BuildMachineOSBuild</key>
+	<string>15D21</string>
+	<key>BuildVersion</key>
+	<string>"10.0.0.1"</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>UpdaterNotifications</string>
+	<key>CFBundleGetInfoString</key>
+	<string>UpdaterNotifications 10.0.0.1, © 2009-2015 Adobe Systems Incorporated and its licensors. All rights reserved.</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.adobe.AAM.AdobeUpdaterNotificationFramework</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>1.0</string>
+	<key>CFBundleName</key>
+	<string>UpdaterNotifications</string>
+	<key>CFBundlePackageType</key>
+	<string>FMWK</string>
+	<key>CFBundleShortVersionString</key>
+	<string>UpdaterNotifications 10.0.0.1</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleSupportedPlatforms</key>
+	<array>
+		<string>MacOSX</string>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>10.0.0.1</string>
+	<key>DTCompiler</key>
+	<string>com.apple.compilers.llvm.clang.1_0</string>
+	<key>DTPlatformBuild</key>
+	<string>7C68</string>
+	<key>DTPlatformVersion</key>
+	<string>GM</string>
+	<key>DTSDKBuild</key>
+	<string>15C43</string>
+	<key>DTSDKName</key>
+	<string>macosx10.11</string>
+	<key>DTXcode</key>
+	<string>0720</string>
+	<key>DTXcodeBuild</key>
+	<string>7C68</string>
+	<key>ProductVersion</key>
+	<string>10.0.0.1 (BuildVersion: 1.0; BuildDate: Tue Apr 12 2016 21:35:31)</string>
+</dict>
+</plist>

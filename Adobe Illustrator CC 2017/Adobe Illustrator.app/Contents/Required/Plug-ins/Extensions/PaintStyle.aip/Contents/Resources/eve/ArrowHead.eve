@@ -1,0 +1,15 @@
+layout ArrowHead
+{
+	view subview(identifier: "ArrowHeadEveSubView",
+			 child_horizontal: @align_fill,
+			 layout_theme: @panel,
+			 show_border: false,
+			 child_vertical: @align_center,
+			 placement: @place_column)	
+	{
+				multicolumn_tree(identifier: "MCT",
+							wants_focus: false,
+							height: 280,
+							width: 160);
+	}
+}

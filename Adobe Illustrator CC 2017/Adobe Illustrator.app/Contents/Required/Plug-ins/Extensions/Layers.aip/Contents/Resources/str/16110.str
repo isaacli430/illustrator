@@ -1,0 +1,104 @@
+/* [1] */
+$$$/Layers/Str/LayerMenu/newLayerUndo=New Layer
+/* [2] */
+$$$/Layers/Str/LayerMenu/newLayer=&New Layer...
+/* [3] */
+$$$/Layers/Str/LayerMenu/newLayerAbove=&New Layer Above ^Q%s^Q...
+/* [4] */
+$$$/Layers/Str/LayerMenu/newLayerBelow=&New Layer Below ^Q%s^Q...
+/* [5] */
+$$$/Layers/Str/LayerMenu/newTopLayer=&New Top Layer...
+/* [6] */
+$$$/Layers/Str/LayerMenu/newLayerInside=New Su&blayer...
+/* [7] */
+$$$/Layers/Str/LayerMenu/newLayerInsideOnBottom=New Su&blayer on Bottom...
+/* [8] */
+$$$/Layers/Str/LayerMenu/deletion=Deletion
+/* [9] */
+$$$/Layers/Str/LayerMenu/deleteName=&Delete ^Q%s^Q
+/* [10] */
+$$$/Layers/Str/LayerMenu/deleteSel=&Delete Selection
+/* [11] */
+$$$/Layers/Str/LayerMenu/duplication=Duplication
+/* [12] */
+$$$/Layers/Str/LayerMenu/duplicateName=Dupli&cate ^Q%s^Q
+/* [13] */
+$$$/Layers/Str/LayerMenu/duplicateSel=Dupli&cate Selection
+/* [14] */
+$$$/Layers/Str/LayerMenu/options=Layers Panel Options
+/* [15] */
+$$$/Layers/Str/LayerMenu/optionsForSel=&Options for Selection...
+/* [16] */
+$$$/Layers/Str/LayerMenu/optionsForName=&Options for ^Q%s^Q...
+/* [17] */
+$$$/Layers/Str/LayerMenu/showAllLayers=S&how All Layers
+/* [18] */
+$$$/Layers/Str/LayerMenu/hideAllLayers=&Hide All Layers
+/* [19] */
+$$$/Layers/Str/LayerMenu/artworkAllLayers=O&utline All Layers
+/* [20] */
+$$$/Layers/Str/LayerMenu/previewAllLayers=&Preview All Layers
+/* [21] */
+$$$/Layers/Str/LayerMenu/lockAllLayers=&Lock All Layers
+/* [22] */
+$$$/Layers/Str/LayerMenu/unlockAllLayers=&Unlock All Layers
+/* [23] */
+$$$/Layers/Str/LayerMenu/hideOthers=&Hide Others
+/* [24] */
+$$$/Layers/Str/LayerMenu/artworkOthers=O&utline Others
+/* [25] */
+$$$/Layers/Str/LayerMenu/lockOthers=&Lock Others
+/* [26] */
+$$$/Layers/Str/LayerMenu/layerColorPicker=Layer Selection Color
+/* [27] */
+$$$/Layers/Str/LayerMenu/undo=&Undo %s
+/* [28] */
+$$$/Layers/Str/LayerMenu/redo=&Redo %s
+/* [29] */
+$$$/Layers/Str/LayerMenu/moveLayer=Reorder Layers
+/* [30] */
+$$$/Layers/Str/LayerMenu/moveNonLayer=Reorder
+/* [31] */
+$$$/Layers/Str/LayerMenu/moveArtSel=Move Selected
+/* [32] */
+$$$/Layers/Str/LayerMenu/copyArtSel=Copy Selected
+/* [33] */
+$$$/Layers/Str/LayerMenu/layerMerger=Merge Selected
+/* [34] */
+$$$/Layers/Str/LayerMenu/layerFlattening/Mac=Flattening
+/* [35] */
+$$$/Layers/Str/LayerMenu/numLayers= Layers
+/* [36] */
+$$$/Layers/Str/LayerMenu/oneLayer=1 Layer
+/* [37] */
+
+/* [38] */
+
+/* [39] */
+$$$/Layers/Str/LayerMenu/collectInNew=Collect in New Layer
+/* [40] */
+$$$/Layers/Str/LayerMenu/reverseOrder=Reverse Order
+/* [41] */
+$$$/Layers/Str/LayerMenu/locateObject=Locat&e Object
+/* [42] */
+$$$/Layers/Str/LayerMenu/locateLayer=Locat&e Layer
+/* [43] */
+$$$/Layers/Str/LayerMenu/makeClip=Make Clipping Ma&sk
+/* [44] */
+$$$/Layers/Str/LayerMenu/releaseClip=Release Clipping Ma&sk
+/* [45] */
+$$$/Layers/Str/LayerMenu/makeReleaseClip=Make/Release Clipping Ma&sk
+/* [46] */
+$$$/Layers/Str/LayerMenu/releaseToLayers=Release to Layers
+/* [47] */
+$$$/Layers/Str/LayerMenu/releaseToLayersSeq=Release to La&yers (Sequence)
+/* [48] */
+$$$/Layers/Str/LayerMenu/releaseToLayersBld=Release to La&yers (Build)
+/* [49] */
+$$$/Layers/Str/LayerMenu/duplicate1Layer=Duplicate Layer
+/* [50] */
+$$$/Layers/Str/LayerMenu/duplicateLayers=Duplicate Layers
+/* [51] */
+$$$/Layers/Str/LayerMenu/mvAppearance=Move Appearance
+/* [52] */
+$$$/Layers/Str/LayerMenu/cpAppearance=Copy Appearance

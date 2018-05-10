@@ -1,0 +1,201 @@
+layout ColorHarmonyDialog
+{
+	view subview(identifier: "ColorHarmonyDialog", layout_theme: @dialog_large, placement: @place_row, show_border: false, spacing: 0, margin: [gLargeSpacing, gLargeSpacing, gLargeSpacing, 0])
+	{
+		column(vertical: @align_fill)
+		{
+			row(horizontal: @align_fill, child_vertical: @align_center, vertical: @align_center)
+			{
+				swatch(identifier: "set_base_color_button", wants_focus: false, alt: '$$$/ColorHarmonies/HarmonyDialog/Tooltips/SetBaseColor=Set current color as the base color', border: @border_normal);
+				subview(identifier: "rule_picker_popup", margin: 0, spacing: 0, horizontal: @align_fill)
+				{	
+					panel(margin: 0, spacing: 0, height: 26);
+				}
+				row(horizontal: @align_right, spacing: @related_spacing, vertical: @align_center)
+				{
+					row(spacing: @label_widget_spacing)
+					{
+						edit_text(identifier: "color_group_name", characters: 15, max_characters: 255);
+						button(identifier: "extract_selected_colors", wants_focus: false, image: {normal: "P_ExtractColors_14x14_N.png", dark_normal: "P_ExtractColors_14x14_N_D.png"}, alt: '$$$/ColorHarmonies/HarmonyDialog/Tooltips/ExtractColors=Get colors from selected art');
+					}
+					optional(placement: @place_row, spacing: 0, margin: 0, guide_mask: [@guide_label, @guide_baseline], bind: @ShowColorStorage, value: true)
+					{
+						button(identifier: "save_color_group_button",	action: @SaveColorGroupAction,	wants_focus: false, image: {normal: "SP_Save_Sm_N.png", dark_normal: "SP_Save_Sm_N_D.png"},			alt: '$$$/ColorHarmonies/HarmonyDialog/Tooltips/SaveScheme=Save changes to color group');
+						button(identifier: "new_color_group_button",	action: @NewColorGroupAction,	wants_focus: false, image: {normal: "SP_Folder_Sm_N.png", dark_normal: "SP_Folder_Sm_N_D.png"}, alt: '$$$/ColorHarmonies/HarmonyDialog/Tooltips/NewScheme=New Color Group');
+						button(identifier: "delete_color_group_button", action: @DeleteColorAction,		wants_focus: false, image: {normal: "SP_Delete_Sm_N.png", dark_normal: "SP_Delete_Sm_N_D.png"}, alt: '$$$/ColorHarmonies/HarmonyDialog/Tooltips/DeleteScheme=Delete Color Group');
+					}
+				}
+			}
+			column(spacing: @unrelated_spacing)
+			{
+				row(horizontal: @align_fill)
+				{
+					column(horizontal: @align_fill, spacing: 0)
+					{
+						group(identifier: "harmony_recolor_group", spacing: 0, margin: [15, 15, 5, 15], horizontal: @align_fill, child_horizontal: @align_fill, header: "button_bar(bind: @EditAssign, identifier: 'EditAssignButtonBar', horizontal: @align_center, wants_focus: false, 
+									items: [{ name: '$$$/ColorHarmony/HarmonyDialog/HarmonyTabName=Edit', alt: '$$$/ColorHarmonies/Tooltips/HarmonyTab=Edit active colors', value: 0 },
+											{ name: '$$$/ColorHarmony/HarmonyDialog/RecolorTabName=Assign', alt: '$$$/ColorHarmonies/Tooltips/RecolorTab=Control how art is recolored', value: 1}])")
+						{
+							overlay(vertical: @align_fill)
+							{
+								panel(margin: 0, spacing: 0, guide_mask: [@guide_label, @guide_baseline], bind: @EditAssign, value: 1, horizontal: @align_fill)
+								{
+									column(spacing: @inter_group_spacing)
+									{
+										row(horizontal: @align_fill, child_vertical: @align_center)
+										{	
+											row(spacing: @related_spacing)
+											{
+												popup(identifier: "preset_color_job", horizontal: @align_left, vertical: @align_center, popup_minimum_width_chars: 7, popup_maximum_width_chars: 7, name: '$$$/ColorHarmonies/HarmonyDialog/PresetsList=P&reset:', alt: '$$$/ColorHarmonies/HarmonyDialog/Tooltips/RecolorPresets=Specifies a recoloring preset');
+												button(identifier: "color_reduction_options", wants_focus: false, action: @ColorReductionOptionsAction, vertical: @align_center, image: {normal: "P_OptionsView_Md_N.png", dark_normal: "P_OptionsView_Md_N_D.png"}, alt: '$$$/ColorHarmonies/Tooltips/ColorReduceOptions=Color Reduction Options' );
+											}
+											unit_hot_number(identifier: "number_of_colors", horizontal: @align_right, vertical: @align_center, stepper: true, digits: 3, popuplist: true, decimal_places: 0, unit: 'NumberEditUnit_NoUnit', name: '$$$/ColorHarmonies/HarmonyDialog/NumColorsLabel=&Colors:', alt: '$$$/ColorHarmonies/Tooltips/NumColors=Controls how many colors will appear in the recolored artwork');
+										}
+										row(horizontal: @align_fill, child_vertical: @align_center)
+										{
+											static_text(identifier: "original_colors_header", name: '$$$/ColorHarmonies/HarmonyDialog/OriginalColorsLable=Current Colors', characters: 10, theme_font_size: @small, adjust_baseline_for_single_line_text: false, horizontal: @align_left);
+											static_text(identifier: "new_colors_header", name: '$$$/ColorHarmonies/HarmonyDialog/NewColorsLable=New', theme_font_size: @small, horizontal: @align_right);
+											popup(identifier: "new_colors_sort", show_popup_arrow: false, wants_focus: false, include_custom_item: false, horizontal: @align_right, items: @NewColorSortOptions, image: {normal: "CS4_flyout.png", dark_normal: "CS4_flyout_D.png"}, alt: '$$$/ColorHarmonies/HarmonyDialog/Tooltips/NewColorSort=Specifies how the new colors are sorted');
+										}
+									}
+									subview(identifier: "recolor_view", horizontal: @align_fill, vertical: @align_fill, width: 250, show_border: false, wants_focus: false);
+								}
+								panel(margin: 0, guide_mask: [@guide_label, @guide_baseline], bind: @EditAssign, value: 0, horizontal: @align_fill, vertical: @align_fill)
+								{
+									overlay(margin: 0, horizontal: @align_fill, vertical: @align_fill)
+									{
+										panel(margin: 0, horizontal: @align_fill, vertical: @align_fill, bind: @ShowWheel, value: true, width: 250, height: 250)
+										{
+											subview(identifier: "color_wheel", margin: 0, show_border: false, horizontal: @align_fill, vertical: @align_fill, wants_focus: false);
+										}
+										panel(margin: 0, horizontal: @align_fill, vertical: @align_fill, bind: @ShowWheel, value: false, width: 250, height: 250)
+										{
+											subview(identifier: "adjuster_bars", margin: 0, show_border: false, horizontal: @align_fill, vertical: @align_fill, wants_focus: false);
+										}
+									}
+								}
+							}
+							overlay(child_vertical: @align_bottom)
+							{
+								panel(margin: 0, spacing: 0, placement: @place_row, child_vertical: @align_center, bind: @EditAssign, value: 0, guide_mask: [@guide_label, @guide_baseline])
+								{
+									row(spacing: 0, horizontal: @align_left)
+									{
+										button_bar(identifier: "color_wheel_display_mode", bind: @EditColorUIType, wants_focus: false,
+													items: [{ image: {normal: "SP_Continuous_Md_N.png", dark_normal: "SP_Continuous_Md_N_D.png"}, value: 0, alt: '$$$/ColorHarmonies/HarmonyDialog/Tooltips/Continuous=Display smooth color wheel'},
+															{ image: {normal: "SP_Segmented_Md_N.png", dark_normal: "SP_Segmented_Md_N_D.png"}, value: 1, alt: '$$$/ColorHarmonies/HarmonyDialog/Tooltips/Chunky=Display segmented color wheel'},
+															{ image: {normal: "SP_ColorBar_Md_N.png", dark_normal: "SP_ColorBar_Md_N_D.png"}, value: 2, alt: '$$$/ColorHarmonies/HarmonyDialog/Tooltips/ColorBars=Display color bars'}]);
+									}
+									panel(horizontal: @align_center, child_horizontal: @align_center, margin: 0, spacing: 0, bind: @ShowWheel, value: true)
+									{
+										button_bar( identifier: "bright_sat_button", bind: @BrightSatToggle, wants_focus: false, 
+												 items: [{ image: {normal: "SP_SaturationHueWheel_Sm_N.png", dark_normal: "SP_SaturationHueWheel_Sm_N_D.png"}, value: 0, alt: '$$$/ColorHarmonies/HarmonyDialog/BrightnessWheel=Show saturation and hue on wheel'},
+														 { image: {normal: "SP_BrightnessHueWheel_Sm_N.png", dark_normal: "SP_BrightnessHueWheel_Sm_N_D.png"}, value: 1, alt: '$$$/ColorHarmonies/HarmonyDialog/Tooltips/SaturationWheel=Show brightness and hue on wheel'}]);
+										slider(identifier: "brightness_saturation_slider", minLength: 120, center_tick: true, slider_point: @up, wants_focus: false, decimal_places: 0, min_max_filter: @slider_min_max);
+									}
+									row(spacing: 0, horizontal: @align_right)
+									{	
+										overlay()
+										{
+											panel(margin: 0, spacing: 0, bind: @ShowWheel, value: false, placement: @place_row)
+											{	
+												button(identifier: "random_change_color_order_edit", wants_focus: false, action: @RandomizeColorOrderAction, image: {normal: "SP_ShuffleColor_Md_N.png", dark_normal: "SP_ShuffleColor_Md_N_D.png"}, alt: '$$$/ColorHarmonies/Tooltips/RandomizeColorOrder=Randomly change color order');
+												button(identifier: "random_change_saturation_brightness_edit", wants_focus: false, action: @RandomizeShadesAction, image: {normal: "SP_RandomShade_Md_N.png", dark_normal: "SP_RandomShade_Md_N_D.png"}, alt: '$$$/ColorHarmonies/HarmonyDialog/Tooltips/RandomizeShades=Randomly changes saturation and brightness');
+											}
+											panel(maring: 0, spacing: 0, bind: @ShowWheel, value: true, placement: @place_row)
+											{
+												toggle_button(identifier: "add_color_tool", wants_focus: false, value_on: true, value_off: false, image: {normal: "SP_AddMarker_Md_N.png", dark_normal: "SP_AddMarker_Md_N_D.png"}, alt: '$$$/ColorHarmonies/HarmonyDialog/Tooltips/AddMarker=Add Color tool');
+												toggle_button(identifier: "remove_color_tool", wants_focus: false, value_on: true, value_off: false, image: {normal: "SP_DeleteMarker_Md_N.png", dark_normal: "SP_DeleteMarker_Md_N_D.png"}, alt: '$$$/ColorHarmonies/HarmonyDialog/Tooltips/RemoveMarker=Remove Color tool');
+											}
+										}
+										overlay()
+										{
+											panel(margin: 0, spacing: 0, bind: @ShowLinkColors, value: true, guide_mask: [@guide_label, @guide_baseline])
+											{
+												button(identifier: "unlink_harmony_colors", wants_focus: false, action: @LinkUnlinkSchemeAction, image: {normal: "SP_Unlink_Md_N.png", dark_normal: "SP_Unlink_Md_N_D.png"}, alt: '$$$/ColorHarmonies/HarmonyDialog/Tooltips/LinkScheme=Link harmony colors');
+											}
+											panel(margin: 0, spacing: 0, bind: @ShowLinkColors, value: false, guide_mask: [@guide_label, @guide_baseline])
+											{
+												button(identifier: "link_harmony_colors", wants_focus: false, action: @LinkUnlinkSchemeAction, image: {normal: "SP_Linked_Md_N.png", dark_normal: "SP_Linked_Md_N_D.png"}, alt: '$$$/ColorHarmonies/HarmonyDialog/Tooltips/UnlinkScheme=Unlink harmony colors');
+											}
+										}
+									}
+								}
+								panel(margin: 0, spacing: 0, placement: @place_row, bind: @EditAssign, value: 1, guide_mask: [@guide_label, @guide_baseline])
+								{
+									row(spacing: 0, horizontal: @align_left, vertical: @align_center)
+									{	
+										button(identifier: "merge_colors", wants_focus: false, image: {normal: "SP_GroupColor_Md_N.png", dark_normal: "SP_GroupColor_Md_N_D.png"}, alt: '$$$/ColorHarmonies/Tooltips/GroupColors=Merge colors into a row');
+										button(identifier: "separate_colors", wants_focus: false, image: {normal: "SP_UngroupColor_Md_N.png", dark_normal: "SP_UngroupColor_Md_N_D.png"}, alt: '$$$/ColorHarmonies/Tooltips/Ungroup=Separate colors into different rows');
+										button(identifier: "exclude_colors", wants_focus: false, image: {normal: "SP_ExcludeColor_Md_N.png", dark_normal: "SP_ExcludeColor_Md_N_D.png"}, alt: '$$$/ColorHarmonies/Tooltips/Exclude=Excludes selected colors so they will not be recolored');
+										button(identifier: "new_color_row", wants_focus: false, image: {normal: "SP_NewColorGroup_Md_N.png", dark_normal: "SP_NewColorGroup_Md_N_D.png"}, alt: '$$$/ColorHarmonies/Tooltips/NewRow=New Row');
+									}
+									row(spacing: 0, horizontal: @align_right, vertical: @align_center)
+									{
+										button(identifier: "random_change_color_order_assign", wants_focus: false, action: @RandomizeColorOrderAction, image: {normal: "SP_ShuffleColor_Md_N.png", dark_normal: "SP_ShuffleColor_Md_N_D.png"}, alt: '$$$/ColorHarmonies/Tooltips/RandomizeColorOrder=Randomly change color order');
+										button(identifier: "random_change_saturation_brightness_assign", wants_focus: false, action: @RandomizeShadesAction, image: {normal: "SP_RandomShade_Md_N.png", dark_normal: "SP_RandomShade_Md_N_D.png"}, alt: '$$$/ColorHarmonies/HarmonyDialog/Tooltips/RandomizeShades=Randomly changes saturation and brightness');
+										toggle_button(identifier: "find_color_in_artwork", wants_focus: false, value_on: true, value_off: false, image: {normal: "SP_SearchColor_Md_N.png", dark_normal: "SP_SearchColor_Md_N_D.png"}, alt: '$$$/ColorHarmonies/Tooltips/ColorFinder=Click on colors above to find them in the artwork');
+									}
+								}
+							}
+						}
+						row(child_horizontal: @align_right, horizontal: @align_right)
+						{
+							static_text(identifier: "limit_color_library_name", name: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", max_characters: 24, theme_font_size: @small);
+						}
+						row(spacing: @related_spacing, horizontal: @align_fill)
+						{
+							overlay()
+							{
+								panel(margin: 0, bind: @ShowColorEditor, value: true, guide_mask: [@guide_label, @guide_baseline])
+								{
+									color_editor(identifier: "color_editor");
+								}
+								panel(margin: 0, spacing: 0, placement: @place_coulumn, bind: @ShowColorEditor, value: false, guide_mask: [@guide_label, @guide_baseline])
+								{
+									combo_slider(identifier: "global_saturation_slider",	bind: @GlobalAdjustSaturation,	minLength: 120, center_tick: true, slider_point: @up, min_max_filter: @GlobalAdjustMinMaxFilter, decimal_places: 2, digits: 4, unit: 'NumberEditUnit_Percent', name: '$$$/ColorHarmonies/HarmonyDialog/AdjustSaturation=&Saturation:');
+									combo_slider(identifier: "global_brightness_slider",	bind: @GlobalAdjustBrightness,	minLength: 120, center_tick: true, slider_point: @up, min_max_filter: @GlobalAdjustMinMaxFilter, decimal_places: 2, digits: 4, unit: 'NumberEditUnit_Percent', name: '$$$/ColorHarmonies/HarmonyDialog/AdjustBrightness=&Brightness:');
+									combo_slider(identifier: "global_temperature_slider",	bind: @GlobalAdjustTemperature, minLength: 120, center_tick: true, slider_point: @up, min_max_filter: @GlobalAdjustMinMaxFilter, decimal_places: 2, digits: 4, unit: 'NumberEditUnit_Percent', name: '$$$/ColorHarmonies/HarmonyDialog/AdjustTemperature=&Temperature:');
+									combo_slider(identifier: "global_luminosity_slider",	bind: @GlobalAdjustLuminosity,	minLength: 120, center_tick: true, slider_point: @up, min_max_filter: @GlobalAdjustMinMaxFilter, decimal_places: 2, digits: 4, unit: 'NumberEditUnit_Percent', name: '$$$/ColorHarmonies/HarmonyDialog/AdjustLuminosity=&Luminosity:');
+								}
+							}
+							row(vertical: @align_top, horizontal: @align_fill)
+							{
+								popup(identifier: "color_space_popup", show_popup_arrow: false, wants_focus: false, horizontal: @align_left, include_custom_item: false, items: @ColorAdjustItems, image: {normal: "CS4_flyout.png", dark_normal: "CS4_flyout_D.png"}, horizontal: @align_left, alt: '$$$/ColorHarmonies/HarmonyDialog/Tooltips/SliderColorSpace=Specifies the mode of the color adjustment sliders');
+								popup(identifier: "limit_color_group", show_popup_arrow: false, wants_focus: false, horizontal: @align_right, include_custom_item: false, image: {normal: "SP_LimitToLibEnabledTri_Lg_N.png", dark_normal: "SP_LimitToLibEnabledTri_Lg_N_D.png"}, alt: '$$$/ColorHarmonies/HarmonyDialog/Tooltips/LimitToLibrary=Limits the color group to colors in a swatch library');
+							}
+						}
+					}
+					optional(placement: @place_column, vertical: @align_fill, spacing: @label_widget_spacing, margin: 0, guide_mask: [@guide_label, @guide_baseline], bind: @ShowColorStorage, value: true)
+					{
+						static_text(name: '$$$/ColorHarmony/LiveColorDlg/StorageTitle=Color Groups', horizontal: @align_left, theme_font_size: @small);
+						multicolumn_tree(identifier: "color_storage", wants_focus: false, width: 250, height: 414);
+					}
+				}
+				row(horizontal: @align_fill, vertical: @align_center)
+				{
+					checkbox(identifier: "recolor_art_checkbox", name: "$$$/ColorHarmonies/HarmonyDialog/RecolorArt=Recolor &Art", alt: '$$$/ColorHarmonies/Tooltips/RecolorArt=Recolor Selected Artwork', horizontal: @align_left, guide_mask: [@guide_label]);
+					row(horizontal: @align_right, reverse: os==@mac, spacing: @related_spacing)
+					{
+						button(default: true, identifier: "okButton", name: "$$$/gOK=OK", commit_button: true, set_default_focus: true);
+						button(cancel: true, identifier: "cancelButton", name: "$$$/gCancel=Cancel", commit_button: true);
+					}
+				}
+			}
+		}
+		column(child_vertical: @align_center, vertical: @align_center, margin: 0, spacing: 0)
+		{
+			overlay(margin:0, spacing: 0)
+			{
+				panel(margin: 0, bind: @ShowColorStorage, value: false)
+				{
+					button(identifier: "divider_graphic_expand", wants_focus: false, action: @ExpandStorageAction, image: {normal:"P_DividerGraphic_Right.png", dark_normal:"P_DividerGraphic_Right_D.png"}, alt: '$$$/ColorHarmonies/HarmonyDialog/Tooltips/ShowStorage=Show color group storage');
+				}
+				panel(margin: 0, bind: @ShowColorStorage, value: true)
+				{
+					button(identifier: "divider_graphic_collapse", wants_focus: false, action: @CollapseStorageAction, image: {normal:"P_DividerGraphic_Left.png", dark_normal:"P_DividerGraphic_Left_D.png"}, alt: '$$$/ColorHarmonies/HarmonyDialog/Tooltips/HideStorage=Hide color group storage');
+				}
+			}
+		}
+	}
+}

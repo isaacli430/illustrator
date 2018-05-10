@@ -1,0 +1,76 @@
+sheet FlareUI
+{
+	interface:
+		IsPreviewCheckBoxEnabled: true;
+		unlink PreviewCheckBoxCell: false <== (IsPreviewCheckBoxEnabled == false) ? false : PreviewCheckBoxCell;
+		
+		CenterDiameterCell: 0;
+		CenterOpacityCell: 0;
+		CenterBrightnessCell: 0;
+		
+		HaloGrowthCell: 0;
+		HaloFuzzinessCell: 0;
+		
+		DuplicateRaysNumberCell: 0;
+		DuplicateRaysLongestCell: 0;
+		DuplicateRaysFuzzinessCell: 0;
+		
+		DuplicateRingsPathCell: 0;
+		DuplicateRingsNumberCell: 0;
+		DuplicateRingsLargestCell: 0;
+		DuplicateRingsDirectionCell: 0;
+		
+		RaysChkBxCell: true;
+		unlink RaysNumberCell: 0 <== (RaysChkBxCell == false)? DuplicateRaysNumberCell : RaysNumberCell;
+		unlink RaysLongestCell: 0 <== (RaysChkBxCell == false)? DuplicateRaysLongestCell : RaysLongestCell;
+		unlink RaysFuzzinessCell: 0 <== (RaysChkBxCell == false)? DuplicateRaysFuzzinessCell : RaysFuzzinessCell;
+		
+		RingsChkBxCell: true;
+		unlink RingsPathCell: 0 <== (RingsChkBxCell == false)? DuplicateRingsPathCell : RingsPathCell;
+		unlink RingsNumberCell: 0 <== (RingsChkBxCell == false)? DuplicateRingsNumberCell : RingsNumberCell;
+		unlink RingsLargestCell: 0 <== (RingsChkBxCell == false)? DuplicateRingsLargestCell : RingsLargestCell;
+		unlink RingsDirectionCell: 0 <== (RingsChkBxCell == false)? DuplicateRingsDirectionCell : RingsDirectionCell;
+						
+	logic:
+		when (RaysChkBxCell == true) relate
+		{
+			RaysNumberCell <== DuplicateRaysNumberCell;
+			DuplicateRaysNumberCell <== RaysNumberCell;
+		}
+		
+		when (RaysChkBxCell == true) relate
+		{
+			RaysLongestCell <== DuplicateRaysLongestCell;
+			DuplicateRaysLongestCell <== RaysLongestCell;
+		}
+		
+		when (RaysChkBxCell == true) relate
+		{	
+			RaysFuzzinessCell <== DuplicateRaysFuzzinessCell;
+			DuplicateRaysFuzzinessCell <== RaysFuzzinessCell;
+		}
+		
+		when (RingsChkBxCell == true) relate
+		{
+			DuplicateRingsPathCell <== RingsPathCell;
+			RingsPathCell <== DuplicateRingsPathCell;
+		}
+		
+		when (RingsChkBxCell == true) relate
+		{
+			DuplicateRingsNumberCell <== RingsNumberCell;
+			RingsNumberCell <== DuplicateRingsNumberCell;
+		}
+			
+		when (RingsChkBxCell == true) relate
+		{
+			DuplicateRingsLargestCell <== RingsLargestCell;
+			RingsLargestCell <== DuplicateRingsLargestCell;
+		}
+		
+		when (RingsChkBxCell == true) relate
+		{	
+			DuplicateRingsDirectionCell <== RingsDirectionCell;
+			RingsDirectionCell <== DuplicateRingsDirectionCell;
+		}
+}

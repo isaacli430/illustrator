@@ -1,0 +1,127 @@
+layout BlackPreference
+{
+	view subview(identifier: "BlackPrefEveSubView",
+				horizontal: @align_fill,
+				 child_horizontal: @align_fill,
+				 placement: @place_column,
+				 show_border: false, 
+				 margin: [22,15,0,15],
+				 layout_theme: @dialog_large)
+	{
+		column(spacing: 0)
+		{
+		static_text(identifier: "BPStaticTextCaption",
+					name: "$$$/BlackPreservation/Dialog/PanelName=Appearance of Black"
+					);
+		
+		separator(identifier: "BPTopSeparator");
+		}
+		
+		group(	identifier: "BPOptionsGrp", 
+				name: "$$$/PrefsDlg/BPDlg/BPOptionsGrp=Options for Black on RGB and Grayscale Devices")
+		{
+			column(child_horizontal:@align_fill)
+			{
+			popup(identifier: "BPPopupOnScreen",
+					include_custom_item: false,
+					name: "$$$/PrefsDlg/BPDlg/BPPopupOnScreen=On &Screen:",
+					items: @BPScreenOptionsPopupItems,
+					bind: @BPOnScreenCell
+					);
+			popup(identifier: "BPPopupPrinting",
+					include_custom_item: false,
+					name: "$$$/PrefsDlg/BPDlg/BPPopupPrinting=P&rinting / Exporting:",
+					items: @BPPrintOptionsPopupItems,
+					bind: @BPOnExportCell
+					);
+			}
+			row( child_horizontal: @align_fill, horizontal: @align_fill)
+			{
+			column( spacing:@label_widget_spacing)
+			{
+				static_text(identifier: "BPEgkGrp", name: "$$$/PrefsDlg/BPDlg/BPEgkGrp=Example of 100K Black");
+				button(identifier: "BP100kBlackImage", image: "SP_100K_220x74_N.png", show_border: false, wants_focus: false);	
+			}
+			column( spacing:@label_widget_spacing)
+			{
+				static_text(identifier: "BPEgRichGrp",
+							name: "$$$/PrefsDlg/BPDlg/BPEgRichGrp=Example of Rich Black");
+				button(identifier: "BPRichBlackImage", image: "SP_RichBlack_220x74_N.png", show_border: false, wants_focus: false);
+			}
+			}
+		}
+		group(identifier: "BPDescriptionGrp", 
+				name: "$$$/PrefsDlg/BPDlg/BPDescriptionGrp=Description",
+				child_horizontal: @align_fill)
+		{
+			overlay()
+			{
+				panel(bind:@BPCellDesc, margin:0, value: 0)
+				{
+					static_text(identifier: "BPStaticTextDesc0",
+						name: "$$$/BlackPreservation/Dialog/DescriptionStr/OnScreenAccurate=Displaying all blacks accurately will show pure blacks (100K) and rich blacks (blacks with mixed CMYK values) as described by the document. This option will display black as Photoshop does (the preview shown here is exaggerated).",
+						theme_font_size: @small,
+						characters: 37,
+						adjust_baseline_for_single_line_text: false
+						);
+				}
+				panel(bind:@BPCellDesc, margin:0, value: 1)
+				{
+					static_text(identifier: "BPStaticTextDesc1",
+						name: "$$$/BlackPreservation/Dialog/DescriptionStr/OnScreenConsistent=Displaying all blacks as rich black will show both pure blacks (100K) and rich blacks (blacks with mixed CMYK values) as rich black. This will not change color values in the document, but all blacks will appear as dark as possible.",
+						theme_font_size: @small,
+						characters: 37,
+						adjust_baseline_for_single_line_text: false
+						);
+				}
+				panel(bind:@BPCellDesc, margin:0, value: 2)
+				{
+					static_text(identifier: "BPStaticTextDesc2",
+						name: "$$$/BlackPreservation/Dialog/DescriptionStr/ExportAccurate=On RGB and grayscale devices, outputting all blacks accurately will show pure blacks (100K) and rich blacks (blacks with mixed CMYK values) as described by the document. This option will output black as Photoshop does (the preview shown here is exaggerated).",
+						theme_font_size: @small,
+						characters: 37,
+						adjust_baseline_for_single_line_text: false
+						);
+				}
+				panel(bind:@BPCellDesc, margin:0, value: 3)
+				{
+					static_text(identifier: "BPStaticTextDesc3",
+						name: "$$$/BlackPreservation/Dialog/DescriptionStr/ExportConsistent=On RGB and grayscale devices, outputting all blacks as rich black will show both pure blacks (100K) and rich blacks (blacks with mixed CMYK values) as rich black. This will not change color values in the document, but all blacks will appear as dark as possible on RGB devices.",
+						theme_font_size: @small,
+						characters: 37,
+						adjust_baseline_for_single_line_text: false
+						);
+				}
+				panel(bind:@BPCellDesc, margin:0, value: 4)
+				{
+					static_text(identifier: "BPStaticTextDesc4",
+						name: "$$$/BlackPreservation/Dialog/DescriptionStr/KOnlySample=Example of 100K Black.",
+						theme_font_size: @small,
+						characters: 37,
+						adjust_baseline_for_single_line_text: false
+						);
+				}
+				panel(bind:@BPCellDesc, margin:0, value: 5)
+				{
+					static_text(identifier: "BPStaticTextDesc5",
+						name: "$$$/BlackPreservation/Dialog/DescriptionStr/RichSample=Example of Rich Black.",
+						theme_font_size: @small,
+						characters: 37,
+						adjust_baseline_for_single_line_text: false
+						);
+				}
+				panel(bind:@BPCellDesc, margin:0, value: 6)
+				{
+					static_text(identifier: "BPStaticTextDesc6",
+						name: "$$$/BlackPreservation/Dialog/DescriptionStr/None=Move the cursor over the item you want described.",
+						theme_font_size: @small,
+						characters: 37,
+						adjust_baseline_for_single_line_text: false
+						);
+				}
+/* akjindal: characters have been made 37 according to the combined width of the two images above.*/
+			}
+		}
+	
+	}
+}

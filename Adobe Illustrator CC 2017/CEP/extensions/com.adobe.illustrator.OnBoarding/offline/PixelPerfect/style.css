@@ -1,0 +1,21 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Adobe Clean', sans-serif;
+    background-color: #3273EB;
+}
+
+.coach {
+    position: relative;
+    color: #fff;
+    font-size: 14px;
+    text-align: left;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+    margin: 10px 15px 10px 15px;
+}
+
+#div1 {
+    margin-bottom: 5px;
+}

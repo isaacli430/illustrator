@@ -1,0 +1,42 @@
+layout ObjectTypeControlGroup
+{
+    view subview(identifier: "ObjectTypeControlGroup"
+				, placement: @place_row
+				, layout_theme: @controlbar
+				, show_border: false
+				, child_vertical: @align_center
+				, margin: 0
+				, spacing: 5
+				, height: 31)
+    {
+		optional(identifier: "ObjectTypeControlGroupSubGroup"
+				, placement: @place_row
+				, child_vertical: @align_center
+				, margin: 0, spacing: 0)
+		{
+			overlay()
+			{
+				panel(bind: @ObjectTypeCell
+						, value: "text")
+				{
+					display_text(identifier: "ObjectTypeLabel"
+								, name: ""
+								, value: @ObjectTypeLabelCell
+								, alt: "$$$/ArtStyle/Str/ObjectNameTip=Object Type");
+				}
+				panel(bind: @ObjectTypeCell
+						, value: "link")
+				{
+					link_button(identifier: "ObjectTypeLinkButton"
+								, wants_focus: false
+								, name: "$$$/ArtStyle/Str/ButtonNeme=xxxxxxxxxxxxxx"
+								, alt: "$$$/ArtStyle/Str/ObjectNameTip=Object Type");
+				}
+			}
+			subview(margin:0, show_border: false, height: 25 , child_vertical:@align_center)
+			{
+				separator(orientation: @vertical, vertical: @align_fill);
+			}
+		}
+	}
+}

@@ -1,0 +1,52 @@
+/* [1] */
+$$$/BoundingBox/Str/Action/ActionRotate=Rotate
+/* [2] */
+$$$/BoundingBox/Str/Action/ActionAngle=Angle: 
+/* [3] */
+$$$/BoundingBox/Str/Action/ActionScale=Scale
+/* [4] */
+$$$/BoundingBox/Str/Action/ActionScaleHorizontal=Horizontal: 
+/* [5] */
+$$$/BoundingBox/Str/Action/ActionScaleVertical=Vertical: 
+/* [6] */
+$$$/BoundingBox/Str/Action/ActionScaleOrigin=Origin: 
+/* [7] */
+$$$/BoundingBox/Str/Action/ActionSOTopLeft=Top Left
+/* [8] */
+$$$/BoundingBox/Str/Action/ActionSOTopRight=Top Right
+/* [9] */
+$$$/BoundingBox/Str/Action/ActionSOBottomLeft=Bottom Left
+/* [10] */
+$$$/BoundingBox/Str/Action/ActionSOBottomRight=Bottom Right
+/* [11] */
+$$$/BoundingBox/Str/Action/ActionSOTop=Top
+/* [12] */
+$$$/BoundingBox/Str/Action/ActionSOBottom=Bottom
+/* [13] */
+$$$/BoundingBox/Str/Action/ActionSOLeft=Left
+/* [14] */
+$$$/BoundingBox/Str/Action/ActionSORight=Right
+/* [15] */
+$$$/BoundingBox/Str/Action/ActionSOCenter=Center
+/* [16] */
+$$$/BoundingBox/Str/Action/ActionSelectBehind=Select Next Object Below
+/* [17] */
+$$$/BoundingBox/Str/Action/ActionSelectInFront=Select Next Object Above
+/* [18] */
+$$$/BoundingBox/Str/Action/ActionSelectBottom=Select Last Object Below
+/* [19] */
+$$$/BoundingBox/Str/Action/ActionSelectTop=Select First Object Above
+/* [20] */
+$$$/BoundingBox/Str/Action/ActionMove=Move
+/* [21] */
+$$$/BoundingBox/Str/Action/ActionMoveHorizontal=Horizontal: 
+/* [22] */
+$$$/BoundingBox/Str/Action/ActionMoveVertical=Vertical: 
+/* [23] */
+$$$/BoundingBox/Str/Action/ActionShear=Shear
+/* [24] */
+$$$/BoundingBox/Str/Action/ActionPerspective=Perspective
+/* [25] */
+$$$/BoundingBox/Str/Action/ActionShearAngle=Shear: 
+/* [26] */
+$$$/BoundingBox/Str/Action/ActionSymmetric=Symmetric: 

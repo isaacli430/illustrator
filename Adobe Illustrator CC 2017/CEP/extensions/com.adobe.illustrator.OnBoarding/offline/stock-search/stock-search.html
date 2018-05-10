@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Adobe Search</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="../../js/lib/ResizeSensor.js"></script>
+<script src="../../js/lib/ElementQueries.js"></script>
+</head>
+<body>
+<div class="content"  id="main">
+	<div class="close" data-locale="ButlerCardDismiss" onclick="closeFunction()"></div>
+	<div class = "contentPart" style="margin-top:20px">
+		<p data-locale="New" class="featureTag"></p>
+		<p style="font-size:14px;" data-locale="SearchAdobeStock"> </p>
+	</div>
+	<div class = "contentPart">
+		<p data-locale="StockSearchDescription" style="color:#999999;"></p>
+	</div>
+	<div class = "tip">
+		<div style="float: left; width: 15%"><img src="tip.png"/></div>
+		<div style="float: right; width: 85%">
+			<p data-locale="Tip" style="font-weight: bold; color: #3f3f3f; font-style: normal;"></p>
+			<p data-locale="DropDownTipDescription"></p>
+		</div>
+		<div style="clear: both;"></div>
+	</div>
+</div>	
+<script type="text/javascript" src="../../js/CSInterface.js"></script>
+<script>
+var CSLibrary = new CSInterface();
+
+function SendEvent(data, type)
+{
+	var rsp_event = new CSEvent("com.adobe.experimentation.events.ButlerEvent", "APPLICATION");
+    var jsonObj = {
+		"Data": data, 
+        "Type": type
+    };
+    rsp_event.data = JSON.stringify(jsonObj);
+    CSLibrary.dispatchEvent(rsp_event);
+}
+
+var flag = false;
+var element = document.getElementById('main');
+new ResizeSensor(element, function() {
+	if(flag == false)
+	{
+		flag=true;
+		return;
+	}
+	var frame = window.frameElement;
+	var body = element.parentElement;
+	frame.height = body.scrollHeight;
+	
+	var data = body.offsetHeight;
+	if(data%2 == 1)
+		data = data - 1; 
+
+	SendEvent(data.toString(), "HeightInformation");
+	console.log("height updated called with height =" + data);
+});
+
+ window.onload=function()
+ {
+	var resourceBundle = CSLibrary.initResourceBundle();
+	var frame = window.frameElement;
+	frame.SMID = "StockSearchIAM";
+ }
+
+function closeFunction()
+{
+	SendEvent("StockSearchIAMClose", "StockSearchWorkflow");
+}
+
+function AdobeStockFunction()
+{
+	
+	SendEvent("StockSearchMoreAboutAdobeStockClicked", "StockSearchWorkflow");
+	window.cep.util.openURLInDefaultBrowser("http://www.adobe.com/go/stock_learn_more");
+	return false;
+}
+
+function AdobeHelpFunction()
+{
+	SendEvent("StockSearchMoreAboutAdobeHelpClicked", "StockSearchWorkflow");
+	window.cep.util.openURLInDefaultBrowser(document.getElementById("AdobeCommunityURL").innerHTML);
+	return false;
+	
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+layout SoftMessage_text
+{
+    view subview(show_border: false, spacing: 10 )
+    {		
+		row(horizontal: @align_fill)
+		{	
+			static_text(identifier: "SimpleText", name: "-00000.00");					
+		}
+    }
+}
+

@@ -1,0 +1,36 @@
+layout CurvatureToolOptionsPanel
+{
+   view subview(identifier: "CurvatureToolOptionsPanelSubView",
+				show_border: false,
+				layout_theme:@touch_tooloptions,
+				child_horizontal: @align_center)
+    {		
+
+		column()
+                {
+                    toggle_button(identifier: "CurvaturePenToolEdit"
+						, image: {normal: "SP_CurvatureCornerPoints_Lg_N.png", dark_normal: "SP_CurvatureCornerPoints_Lg_N_D.png"}
+						, alt: "$$$/CurvatureToolUI/Touch/CreateCornerToolTipStr=Corner Curvature Point"
+						, button_inner_bevel: false
+						, wants_focus: false
+						, button_outer_bevel: false
+						, inset_undrawn_space: false);
+                    
+                    separator();
+                                                
+                    toggle_button(identifier: "CurvaturePenToolDelete"
+						, image: {normal: "SP_AnchorDel_Lg_N.png", dark_normal: "SP_AnchorDel_Lg_N_D.png"}
+						, alt: "$$$/CurvatureToolUI/Touch/RemoveToolTipStr=Remove Curvature Point"
+						, wants_focus: false
+						, button_inner_bevel: false
+						, button_outer_bevel: false
+						, inset_undrawn_space: false
+						);
+                    
+                    separator();
+                                                
+                    }	
+		
+    }
+}
+

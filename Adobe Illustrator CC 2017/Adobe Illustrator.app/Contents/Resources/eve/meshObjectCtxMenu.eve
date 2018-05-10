@@ -1,0 +1,16 @@
+layout meshObjectCtxMenu
+{
+	view menu( id: 39,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/context/Undo=Undo", id:			(os == @win) ? 1970168943 : 1970168943, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/context/Redo=Redo", id:			(os == @win) ? 1919247471 : 1919247471, help_id:0);
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/context/Transform=Transform", id:	 91, help_id:  23 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/context/Arrange=Arrange", id:		 92, help_id:  47 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/context/Select=Select", id:		 79, help_id:  24 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/context/DL=Add to Library", id:		 0x51756C01, help_id:  0 ) ;
+		menu( text: "$$$/_MBAR/Mnu/context/SmartExport=Collect For Export", id: 			0x65697A10, help_id: 0 ) ;
+		menu( text: "$$$/_MBAR/Mnu/context/Export=Export Selection...", id:		 		 0x63697A00, help_id:  0 ) ;
+	}
+}

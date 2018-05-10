@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+	<menuItem id="1" text="$$$/MagicWand/Str/17003/Win=Hide &amp;Stroke Options"></menuItem>
+	
+	<menuItem id="4" text="$$$/MagicWand/Str/17005/Win=Hide &amp;Transparency Options"></menuItem>
+		<separator></separator>
+	<menuItem id="7" text="$$$/MagicWand/Mnu/FlyOutMnu3/Win=&amp;Reset"></menuItem>
+			<separator></separator>
+	<menuItem id="8" text="$$$/MagicWand/Mnu/FlyOutMnu4/Win=&amp;Use All Layers"></menuItem>
+</menu>

@@ -1,0 +1,83 @@
+sheet NewDocumentDialog
+{
+	interface:
+		max_art_size : 16383;
+		max_bleed_value: 72;
+		max_num_artboards: 100;
+		
+		min_spacing: -16383;
+		doc_title : "";
+		num_artboards : 1;
+		unlink arrangement: "grid_by_row" <== num_artboards >= 2 ? arrangement : arrangement_mem;
+		arrangement_mem: "grid_by_row" <== num_artboards < 2 ? arrangement_mem : arrangement;
+		unlink left_to_right: true <== num_artboards >= 2 ? left_to_right : left_to_right_mem;
+		left_to_right_mem: true <== num_artboards < 2 ? left_to_right_mem : left_to_right;
+		show_row_edit <== (arrangement == "grid_by_column" || arrangement == "row_only");
+		unlink spacing: 0 <== num_artboards >= 2 ? spacing : spacing_mem;
+		spacing_mem: 0 <== num_artboards < 2 ? spacing_mem : spacing;
+		rows_columns: 1 <== num_artboards >= 2 ? ((arrangement == "row_only" || arrangement == "column_only") ? 1 : rows_columns) : 1;
+		width: 1;
+		height: 1;
+		show_asian_options: true;
+		units_popup_items_normal <== 
+					[
+						{name:'$$$/_ARTWORKD/Mnu/rulerUnits/1=Points', value: "NumberEditUnit_Point"},
+						{name:'$$$/_ARTWORKD/Mnu/rulerUnits/2=Picas', value: "NumberEditUnit_Pica"},
+						{name:'$$$/_ARTWORKD/Mnu/rulerUnits/3=Inches', value: "NumberEditUnit_Inch"},
+						{name:'$$$/_ARTWORKD/Mnu/rulerUnits/4=Millimeters', value: "NumberEditUnit_MM"},
+						{name:'$$$/_ARTWORKD/Mnu/rulerUnits/5=Centimeters', value: "NumberEditUnit_CM"},
+						{name:'$$$/_ARTWORKD/Mnu/rulerUnits/6=Pixels', value: "NumberEditUnit_Pixel"}
+					];
+
+		units_popup_items_asian <== 
+					[
+						{name:'$$$/_ARTWORKD/Mnu/rulerUnits/1=Points', value: "NumberEditUnit_Point"},
+						{name:'$$$/_ARTWORKD/Mnu/rulerUnits/2=Picas', value: "NumberEditUnit_Pica"},
+						{name:'$$$/_ARTWORKD/Mnu/rulerUnits/3=Inches', value: "NumberEditUnit_Inch"},
+						{name:'$$$/_ARTWORKD/Mnu/rulerUnits/4=Millimeters', value: "NumberEditUnit_MM"},
+						{name:'$$$/_ARTWORKD/Mnu/rulerUnits/5=Centimeters', value: "NumberEditUnit_CM"},
+						{name:'$$$/_ARTWORKD/Mnu/rulerUnits/Ha=Ha', value: "NumberEditUnit_Ha"},
+						{name:'$$$/_ARTWORKD/Mnu/rulerUnits/6=Pixels', value: "NumberEditUnit_Pixel"}
+					];
+		units_popup_items <== show_asian_options ? units_popup_items_asian : units_popup_items_normal;
+		landscape: true;
+		show_advanced_options: false;
+		color_mode: "rgb";
+		raster_effects: "high";
+		preview_mode: "default";
+		ruler_units: "NumberEditUnit_Point";
+		bleed_decimal_places: 3 <== ruler_units == "NumberEditUnit_Inch" ? 4 : 3;
+		bleed_top : 0;
+		bleed_left : 0;
+		bleed_bottom : 0;
+		bleed_right : 0;
+		bleed_values_locked : false;
+		advanced_options_summary: "";
+		color_mismatch: false;
+		transparency_grid: "off";
+		show_transparency_grid: true;
+		align_to_pixel_grid: false;
+		show_templates_button: true;
+		ppi: 72;
+		min_ppi: 72;
+		max_ppi: 1000;
+		
+logic:
+	when (bleed_values_locked == true) relate
+	{
+		bleed_top <== bleed_left;
+		bleed_left <== bleed_top;
+	}
+
+	when (bleed_values_locked == true) relate
+	{
+		bleed_left <== bleed_bottom;
+		bleed_bottom <== bleed_left;
+	}
+
+	when (bleed_values_locked == true) relate
+	{
+		bleed_bottom <== bleed_right;
+		bleed_right <== bleed_bottom;
+	}
+}

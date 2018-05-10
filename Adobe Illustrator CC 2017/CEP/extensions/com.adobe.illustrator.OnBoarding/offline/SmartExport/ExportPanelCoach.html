@@ -1,0 +1,98 @@
+<html>
+    <head>
+        
+        
+        <!-- prevent caching -->
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="style.css">
+        <style>
+            body{
+                background-color: #3273EB;
+                overflow: hidden;
+                width: 320px;
+            }
+            .coach {
+                border-radius: 0;
+            }
+            #heading
+            {
+                color: white;
+                font-size: 18px;
+                width: 200px;
+            }
+            #description
+            {
+                color: white;
+                font-size: 14px;
+                width: 200px;
+            }
+            
+        </style>
+		<script type="text/javascript" src="../../js/CSInterface.js"></script>
+		<script type="text/javascript"> 
+
+			var CSLibrary = new CSInterface();
+			
+           
+            function GotItClickedFromExportPanelCoach() {
+                var rsp_event = new CSEvent("SmartExportOnBoardingEvent", "APPLICATION");
+                var jsonObj = {
+                    "Data": '', 
+                    "Type": "GotItClickedFromExportPanelCoach"
+                };
+                rsp_event.data = JSON.stringify(jsonObj);
+                CSLibrary.dispatchEvent(rsp_event);
+            }
+            
+            function KnowHowClickedFromExportPanelCoach() {
+                var rsp_event = new CSEvent("SmartExportOnBoardingEvent", "APPLICATION");
+                var jsonObj = {
+                    "Data": '', 
+                    "Type": "KnowHowClickedFromExportPanelCoach"
+                };
+                rsp_event.data = JSON.stringify(jsonObj);
+                CSLibrary.dispatchEvent(rsp_event);
+            }
+			
+			
+		</script>
+    </head>
+    <body>
+        <div id="popupContainer">
+            <div class="box" style="border:0">
+                <div class="coach">
+                    <div class="right">
+                            <div>
+                            <p data-locale="PanelCoachDescription"></p>
+                            </div>
+                           <div class="button">
+                                    <span data-locale="PanelCoachGotitLink" class="close" onclick="GotItClickedFromExportPanelCoach()"></span><button  data-locale="PanelCoachKnowHowButton" class="click" onclick="KnowHowClickedFromExportPanelCoach()"></button>
+                            </div>
+                       </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+         var InformClientAboutPopupHeight = function ()
+            {
+                var rsp_event = new CSEvent("SmartExportOnBoardingEvent", "APPLICATION");
+                var jsonObj = {
+                    "Data": document.getElementById('popupContainer').offsetHeight.toString(), 
+                    "Type": "HeightInformationFromCoachPopup"
+                };
+                rsp_event.data = JSON.stringify(jsonObj);
+                CSLibrary.dispatchEvent(rsp_event);
+            }
+        window.onload=function()
+        {
+            var cs = new CSInterface();
+            var resourceBundle = cs.initResourceBundle();	
+            InformClientAboutPopupHeight();
+        }
+    </script>
+</html>

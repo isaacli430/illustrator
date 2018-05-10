@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE ThemeParameters [
+  <!-- Inline DTD for Drover Theme files -->
+  
+  <!ENTITY kColor_ApplicationBackground                 "4000000">
+  <!ENTITY kColor_ContentBackground                     "4000001">
+  
+  <!ENTITY kColor_Focus                                 "4000002">
+  
+  <!ENTITY kColor_StaticTextNormal                      "4000003">
+  <!ENTITY kColor_StaticTextDisabled                    "4000004">
+  
+  <!ENTITY kColor_ControlNormal                         "4000005">
+  <!ENTITY kColor_ControlActive                         "4000006">
+  <!ENTITY kColor_ControlHilight                        "4000007">
+  <!ENTITY kColor_ControlHilightHover                   "4000008">
+  
+  <!ENTITY kColor_ButtonDefaultActionFocus              "4000009">
+  
+  <!ENTITY kColor_DisabledImageAlpha                    "4000010">
+  
+  <!ENTITY kColor_FaceNormal                            "4000011">
+  <!ENTITY kColor_FaceDisabled                          "4000012">
+  <!ENTITY kColor_FaceSelected                          "4000013">
+  
+  <!ENTITY kColor_HotTextNormal                         "4000014">
+  <!ENTITY kColor_HotTextHover                          "4000015">
+  <!ENTITY kColor_HotTextFocused                        "4000016">
+  <!ENTITY kColor_HotTextDisabled                       "4000017">
+  
+  <!ENTITY kColor_TextEditTextFocused                   "4000018">
+  <!ENTITY kColor_TextEditBackgroundFocused             "4000019">
+  
+  <!ENTITY kColor_WidgetNormal                          "4000020">
+  <!ENTITY kColor_WidgetActive                          "4000021">
+  <!ENTITY kColor_WidgetDisabled                        "4000022">
+  
+  <!ENTITY kColor_SliderTrack                           "4000023">
+  <!ENTITY kColor_SliderTickNormal                      "4000024">
+  <!ENTITY kColor_SliderTickDisabled                    "4000025">
+  
+  <!ENTITY kColor_KnobNeedleNormal                      "4000026">
+  <!ENTITY kColor_KnobNeedleDisabled                    "4000027">
+  
+  <!ENTITY kColor_PopupListTextNormal                   "4000028">
+  <!ENTITY kColor_PopupListTextDisabled                 "4000029">
+  <!ENTITY kColor_PopupListTextHighlighted              "4000030">
+  <!ENTITY kColor_PopupListContentNormal                "4000031">
+  <!ENTITY kColor_PopupListContentHighlighted           "4000032">
+  <!ENTITY kColor_PopupListContentSelected              "4000033">
+  <!ENTITY kColor_PopupListDivider                      "4000034">
+  <!ENTITY kColor_PopupListScrollBarTrack               "4000035">
+  <!ENTITY kColor_PopupListScrollBarThumb               "4000036">
+  
+  
+  <!ENTITY kColor_ListBoxBackgroundNormal               "4000037">
+  <!ENTITY kColor_ListBoxBackgroundSelected             "4000038">
+  <!ENTITY kColor_ListBoxBackgroundHighlighted          "4000039">
+  <!ENTITY kColor_ListBoxEdges                          "4000040">
+  <!ENTITY kColor_ListBoxTextNormal                     "4000041">
+  <!ENTITY kColor_ListBoxTextSelected                   "4000042">
+
+  <!ENTITY kColor_TableBackgroundNormal                 "4000043">
+  <!ENTITY kColor_TableBackgroundSelected               "4000044">
+  <!ENTITY kColor_TableEdges                            "4000045">
+  
+  <!ENTITY kColor_TableMarqueeFill                      "4000046">
+  <!ENTITY kColor_TableDragStroke                       "4000047">
+  <!ENTITY kColor_TableDragFill                         "4000048">
+  
+  <!ENTITY kColor_TableDefaultText                      "4000049">
+  <!ENTITY kColor_TableHeaderText                       "4000050">
+  
+  <!ENTITY kColor_ScrollBarTrack                        "4000051">
+  <!ENTITY kColor_ScrollBarThumb                        "4000052">
+  <!ENTITY kColor_ScrollBarThumbActive                  "4000053">
+
+  <!ENTITY kColor_Divider                               "4000054">
+  
+  <!ENTITY kColor_ToolTipText                           "4000055">
+  <!ENTITY kColor_ToolTipBackground                     "4000056">
+  
+  <!ENTITY kColor_ProgressBarBackground                 "4000057">
+  <!ENTITY kColor_ProgressBar                           "4000058"> 
+  
+  <!ENTITY kColor_TabActive                             "4000059">
+  <!ENTITY kColor_TabInactive                           "4000060">
+  <!ENTITY kColor_TabWell                               "4000061">
+  <!ENTITY kColor_TabWellDivider                        "4000062">
+  <!ENTITY kColor_TabWellTextNormal                     "4000063">
+  <!ENTITY kColor_TabWellTextSelected                   "4000064"> 
+  <!ENTITY kColor_TabWellTextDisabled                   "4000065"> 
+  
+  
+  <!ENTITY kColor_ColorRampBlack                        "4000066">
+  <!ENTITY kColor_ColorRampWhite                        "4000067"> 
+  
+  <!ENTITY kColor_ControlNormalAlt                      "4000068"> 
+  
+  <!ENTITY kColor_ListBoxDivider                      "4000069"> 
+  <!ENTITY kColor_TableDivider                        "4000070"> 
+  
+  <!ENTITY kColor_ContrastMinimum                       "4000071"> 
+  <!ENTITY kColor_ContrastMaximum                       "4000072"> 
+  
+  <!ENTITY kColor_Unused                                "4000073"> 
+  
+  
+    
+  <!-- theme colors -->
+  <!ENTITY Generic 	"0.0000">
+  <!ENTITY Darkest 	"0.0000">
+  <!ENTITY Dark 	  "0.5000" >
+  <!ENTITY Light 	  "0.5001">
+  <!ENTITY Lightest	"1.0000">
+  
+  <!-- defines entities for the text ids -->
+  
+  <!ENTITY kText_Main_Large "0"> <!-- default text id -->
+  <!ENTITY kText_Main_Small "1">
+  <!ENTITY kText_Title      "2">
+  
+  <!-- entity definitions for the font size schemes -->
+  
+  <!ENTITY kFontSizeScheme_Small    "0">
+  <!ENTITY kFontSizeScheme_Regular  "1">	<!-- default font size scheme -->
+  <!ENTITY kFontSizeScheme_Large    "2">
+
+  <!-- Definitions of objects in this file, for validating parsers and editors -->
+<!ELEMENT ThemeParameters (ThemeColors | ThemeFonts)>
+  <!ELEMENT ThemeColors (Theme | KeyFrame)*>
+  <!ATTLIST ThemeColors>
+  <!ELEMENT Theme (KeyFrame)+>
+  <!ATTLIST Theme
+	t CDATA #REQUIRED
+>
+  <!ELEMENT KeyFrame EMPTY>
+  <!ATTLIST KeyFrame
+	name CDATA #REQUIRED
+	t CDATA #IMPLIED
+	v CDATA #REQUIRED
+	h CDATA #IMPLIED
+	s CDATA #IMPLIED
+	a CDATA #IMPLIED
+	hold (true | false) "false"
+>
+  <!ELEMENT ThemeFonts (FontSize)>
+  <!ATTLIST ThemeFonts>
+  <!ELEMENT FontSize EMPTY>
+  <!ATTLIST FontSize
+	name CDATA #REQUIRED
+	size CDATA #REQUIRED
+	scheme CDATA #REQUIRED
+>
+
+]>
+
+<ThemeParameters>
+	
+	<ThemeFonts>
+		<FontSize name="&kText_Main_Small;" size="8"  scheme="&kFontSizeScheme_Small;" />
+		<FontSize name="&kText_Main_Large;" size="9"  scheme="&kFontSizeScheme_Small;" />
+		<FontSize name="&kText_Title;"      size="11" scheme="&kFontSizeScheme_Small;" />
+		
+		<FontSize name="&kText_Main_Small;" size="9"  scheme="&kFontSizeScheme_Regular;" />
+		<FontSize name="&kText_Main_Large;" size="11" scheme="&kFontSizeScheme_Regular;" />
+		<FontSize name="&kText_Title;"      size="13" scheme="&kFontSizeScheme_Regular;" />
+		
+		<FontSize name="&kText_Main_Small;" size="13" scheme="&kFontSizeScheme_Large;" />
+		<FontSize name="&kText_Main_Large;" size="15" scheme="&kFontSizeScheme_Large;" />
+		<FontSize name="&kText_Title;"      size="17" scheme="&kFontSizeScheme_Large;" />
+	</ThemeFonts>
+	
+	<ThemeColors>
+  
+  
+  <Theme t="&Darkest;" >
+  
+    <KeyFrame name="&kColor_ApplicationBackground;" v="0.00" />
+    <KeyFrame name="&kColor_ContentBackground;" v="0.15" />
+	
+	<KeyFrame name="&kColor_Focus;" h="200" s="0.75" v="0.80" />
+	<KeyFrame name="&kColor_FaceSelected;" h="200" s="0.75" v="0.80" />
+    
+    <KeyFrame name="&kColor_StaticTextNormal;" v="0.60" />
+    <KeyFrame name="&kColor_StaticTextDisabled;" v="0.40" />
+    
+    <KeyFrame name="&kColor_ControlNormal;" v="0.12" />
+    <KeyFrame name="&kColor_ControlNormalAlt;" v="0.09" />
+    <KeyFrame name="&kColor_ControlActive;" v="0.00" />
+    
+    <KeyFrame name="&kColor_ScrollBarTrack;" v="0.08" />
+    <KeyFrame name="&kColor_ScrollBarThumb;" v="0.15" />
+    <KeyFrame name="&kColor_ScrollBarThumbActive;" v="0.18" />
+    
+    
+    <KeyFrame name="&kColor_Divider;" v="0.10" />
+    
+    <KeyFrame name="&kColor_FaceNormal;" v="0.83" />
+    <KeyFrame name="&kColor_FaceDisabled;" v="0.40" />
+    
+    <KeyFrame name="&kColor_ButtonDefaultActionFocus;" v="0.80" />
+    
+    <KeyFrame name="&kColor_ProgressBarBackground;" v="0.08" />
+    <KeyFrame name="&kColor_ProgressBar;" h="200" s="1.00" v="0.70" />
+    
+    <KeyFrame name="&kColor_SliderTrack;" v="0.08" />
+    <KeyFrame name="&kColor_SliderTickNormal;" v="0.30" />
+    <KeyFrame name="&kColor_SliderTickDisabled;" v="0.14" />
+      
+    <KeyFrame name="&kColor_WidgetNormal;"    v="0.50" />
+    <KeyFrame name="&kColor_WidgetActive;"    v="0.65" />
+    <KeyFrame name="&kColor_WidgetDisabled;"  v="0.21" />
+      
+    <KeyFrame name="&kColor_TabActive;" v="0.15" />
+    <KeyFrame name="&kColor_TabInactive;" v="0.10" />
+    <KeyFrame name="&kColor_TabWell;" v="0.10" />
+    <KeyFrame name="&kColor_TabWellDivider;" v="0.08" />
+    <KeyFrame name="&kColor_TabWellTextNormal;" v="0.45" />
+    <KeyFrame name="&kColor_TabWellTextSelected;" v="0.83" />
+    <KeyFrame name="&kColor_TabWellTextDisabled;" v="0.28" />
+    
+      
+    <KeyFrame name="&kColor_HotTextNormal;" h="200" s="0.75" v="0.80" />
+    <KeyFrame name="&kColor_HotTextFocused;" h="200" s="0.75" v="0.80" />
+    <KeyFrame name="&kColor_HotTextHover;" h="200" s="0.75" v="0.80" />
+    <KeyFrame name="&kColor_HotTextDisabled;" v="0.40" />
+    
+    <KeyFrame name="&kColor_ListBoxBackgroundNormal;" v="0.15" />
+    <KeyFrame name="&kColor_ListBoxBackgroundSelected;" v="0.25" />
+    <KeyFrame name="&kColor_ListBoxDivider;" v="0.12" />
+    <KeyFrame name="&kColor_ListBoxEdges;" v="0.10" />
+    <KeyFrame name="&kColor_ListBoxTextNormal;" v="0.83" />
+    <KeyFrame name="&kColor_ListBoxTextSelected;" v="0.83" />
+    
+    <KeyFrame name="&kColor_TableBackgroundNormal;" v="0.15" />
+    <KeyFrame name="&kColor_TableBackgroundSelected;" v="0.25" />
+    <KeyFrame name="&kColor_TableDivider;" v="0.12" />
+    <KeyFrame name="&kColor_TableEdges;" v="0.10" />
+    
+    <KeyFrame name="&kColor_TableDefaultText;" v="0.60" />
+    <KeyFrame name="&kColor_TableHeaderText;" v="0.83" />
+    
+      <KeyFrame name="&kColor_ControlHilight;" h="200" s="0.75" v="0.50" />
+      <KeyFrame name="&kColor_ControlHilightHover;" h="200" s="0.75" v="0.35" />
+      
+      <KeyFrame name="&kColor_KnobNeedleDisabled;" v="0.15" />
+	  
+	  <KeyFrame name="&kColor_ContrastMinimum;" v="1.0" a="0.075" />
+	  <KeyFrame name="&kColor_ContrastMaximum;" v="1.0" a="0.135" />
+    
+  </Theme>
+  
+  <Theme t="&Dark;" >
+  
+    <KeyFrame name="&kColor_ApplicationBackground;" v="0.15" />
+    <KeyFrame name="&kColor_ContentBackground;" v="0.35" />
+	
+	<KeyFrame name="&kColor_Focus;" h="200" s="0.75" v="1.00" />
+	<KeyFrame name="&kColor_FaceSelected;" h="200" s="0.75" v="1.00" />
+    
+    <KeyFrame name="&kColor_StaticTextNormal;" v="0.85" />
+    <KeyFrame name="&kColor_StaticTextDisabled;" v="0.65" />
+    
+    <KeyFrame name="&kColor_ControlNormal;" v="0.23" />
+    <KeyFrame name="&kColor_ControlNormalAlt;" v="0.23" />
+    <KeyFrame name="&kColor_ControlActive;" v="0.15" />
+    
+    
+    <KeyFrame name="&kColor_ScrollBarTrack;" v="0.25" />
+    <KeyFrame name="&kColor_ScrollBarThumb;" v="0.35" />
+    <KeyFrame name="&kColor_ScrollBarThumbActive;" v="0.38" />
+    
+    <KeyFrame name="&kColor_Divider;" v="0.25" />
+    
+    <KeyFrame name="&kColor_FaceNormal;" v="1.00" />
+    <KeyFrame name="&kColor_FaceDisabled;" v="0.65" />
+    
+    <KeyFrame name="&kColor_ButtonDefaultActionFocus;" v="1.00" />
+    
+    <KeyFrame name="&kColor_ProgressBarBackground;" v="0.25" />
+    <KeyFrame name="&kColor_ProgressBar;" h="200" s="1.00" v="0.90" />
+    
+    <KeyFrame name="&kColor_SliderTrack;" v="0.25" />
+    <KeyFrame name="&kColor_SliderTickNormal;" v="1.00" />
+    <KeyFrame name="&kColor_SliderTickDisabled;" v="0.30" />
+      
+    <KeyFrame name="&kColor_WidgetNormal;"    v="0.65" />
+    <KeyFrame name="&kColor_WidgetActive;"    v="0.75" />
+    <KeyFrame name="&kColor_WidgetDisabled;"  v="0.40" />
+      
+    <KeyFrame name="&kColor_TabActive;" v="0.35" />
+    <KeyFrame name="&kColor_TabInactive;" v="0.20" />
+    <KeyFrame name="&kColor_TabWell;" v="0.20" />
+    <KeyFrame name="&kColor_TabWellDivider;" v="0.15" />
+    <KeyFrame name="&kColor_TabWellTextNormal;" v="0.55" />
+    <KeyFrame name="&kColor_TabWellTextSelected;" v="1.00" />
+    <KeyFrame name="&kColor_TabWellTextDisabled;" v="0.60" />
+    
+    <KeyFrame name="&kColor_HotTextNormal;" h="200" s="0.75" v="1.00" />
+    <KeyFrame name="&kColor_HotTextHover;" h="200" s="0.75" v="1.00" />
+    <KeyFrame name="&kColor_HotTextFocused;" h="200" s="0.75" v="1.00" />
+    <KeyFrame name="&kColor_HotTextDisabled;" v="0.65" />
+    
+    <KeyFrame name="&kColor_ListBoxBackgroundNormal;" v="0.35" />
+    <KeyFrame name="&kColor_ListBoxBackgroundSelected;" v="0.45" />
+    <KeyFrame name="&kColor_ListBoxDivider;" v="0.30" />
+    <KeyFrame name="&kColor_ListBoxEdges;" v="0.25" />
+    <KeyFrame name="&kColor_ListBoxTextNormal;" v="0.85" />
+    <KeyFrame name="&kColor_ListBoxTextSelected;" v="0.85" />
+    
+    <KeyFrame name="&kColor_TableBackgroundNormal;" v="0.35" />
+    <KeyFrame name="&kColor_TableBackgroundSelected;" v="0.45" />  
+    <KeyFrame name="&kColor_TableDivider;" v="0.30" />
+    <KeyFrame name="&kColor_TableEdges;" v="0.25" />
+    
+    <KeyFrame name="&kColor_TableDefaultText;" v="0.85" />
+    <KeyFrame name="&kColor_TableHeaderText;" v="1.00" />
+    
+      <KeyFrame name="&kColor_ControlHilight;" h="200" s="0.75" v="0.70" />
+      <KeyFrame name="&kColor_ControlHilightHover;" h="200" s="1.00" v="0.50" />
+      
+      <KeyFrame name="&kColor_KnobNeedleDisabled;" v="0.25" />
+	  
+	  <KeyFrame name="&kColor_ContrastMinimum;" v="1.0" a="0.075" />
+	  <KeyFrame name="&kColor_ContrastMaximum;" v="1.0" a="0.120" />
+    
+  </Theme>
+  
+  
+  <Theme t="&Generic;" >
+        
+      <KeyFrame t="&Generic;" hold="true" name="&kColor_Unused;" v="0.00" a="0.00" />
+      <KeyFrame t="&Generic;" hold="true" name="&kColor_DisabledImageAlpha;" v="0.00" a="0.50" />
+      
+     
+      
+      <KeyFrame t="&Generic;" hold="true" name="&kColor_ColorRampBlack;" v="0.0" />
+      <KeyFrame t="&Generic;" hold="true" name="&kColor_ColorRampWhite;" v="1.0" />
+      
+      <KeyFrame t="&Generic;" hold="true" name="&kColor_TextEditTextFocused;" v="0.08" />
+      <KeyFrame t="&Generic;" hold="true" name="&kColor_TextEditBackgroundFocused;" v="0.90" />
+      
+      <KeyFrame t="&Generic;" hold="true" name="&kColor_ToolTipText;" v="0.00" />
+      <KeyFrame t="&Generic;" hold="true" name="&kColor_ToolTipBackground;" v="0.65" />
+      
+      
+      
+      <KeyFrame t="&Generic;" hold="true" name="&kColor_KnobNeedleNormal;" v="0.00" />
+     
+      <KeyFrame t="&Generic;" hold="true" name="&kColor_ListBoxBackgroundHighlighted;" h="200" s="1.00" v="0.70" />
+      
+      <KeyFrame t="&Generic;" hold="true" name="&kColor_PopupListTextNormal;" v="0.10" />
+      <KeyFrame t="&Generic;" hold="true" name="&kColor_PopupListTextDisabled;" v="0.5" />
+      <KeyFrame t="&Generic;" hold="true" name="&kColor_PopupListTextHighlighted;" v="0.83" />
+      <KeyFrame t="&Generic;" hold="true" name="&kColor_PopupListContentNormal;" v="0.83" />
+      <KeyFrame t="&Generic;" hold="true" name="&kColor_PopupListContentHighlighted;" h="200" s="1.0" v="0.70" />
+      <KeyFrame t="&Generic;" hold="true" name="&kColor_PopupListContentSelected;" v="0.6471" />
+      <KeyFrame t="&Generic;" hold="true" name="&kColor_PopupListScrollBarTrack;" v="0.75" />
+      <KeyFrame t="&Generic;" hold="true" name="&kColor_PopupListScrollBarThumb;" v="0.83" />
+      <KeyFrame t="&Generic;" hold="true" name="&kColor_PopupListDivider;" v="0.6471" />
+      
+      <KeyFrame t="&Generic;" hold="true" name="&kColor_TableMarqueeFill;" h="200" s="1.00" v="0.70" a="0.25" />
+      <KeyFrame t="&Generic;" hold="true" name="&kColor_TableDragStroke;" h="200" s="0.80" v="1.00" />
+      <KeyFrame t="&Generic;" hold="true" name="&kColor_TableDragFill;" h="200" s="1.00" v="0.70" />
+  
+  </Theme>
+  
+	</ThemeColors>
+	
+</ThemeParameters>

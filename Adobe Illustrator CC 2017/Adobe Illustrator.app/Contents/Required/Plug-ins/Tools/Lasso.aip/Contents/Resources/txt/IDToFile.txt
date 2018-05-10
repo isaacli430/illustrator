@@ -1,0 +1,2 @@
+LassoTool_D.png                                   		SP_AnchorRegionSelect_Lg_N_D.png                  
+LassoTool_N.png                                   		SP_AnchorRegionSelect_Lg_N.png                    

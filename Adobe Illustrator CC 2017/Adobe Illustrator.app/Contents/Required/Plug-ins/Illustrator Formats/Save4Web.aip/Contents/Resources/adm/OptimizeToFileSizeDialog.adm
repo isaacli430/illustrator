@@ -1,0 +1,6 @@
+sheet OptimizeFileSizeUI
+{
+   interface:
+	AutoCurrentSettings: 0;
+	SliceSelectOption:0;
+}

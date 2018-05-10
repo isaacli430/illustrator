@@ -1,0 +1,5 @@
+sheet TouchTransparencyPanel
+{
+	interface:
+			BlendingMode: 0;													
+}

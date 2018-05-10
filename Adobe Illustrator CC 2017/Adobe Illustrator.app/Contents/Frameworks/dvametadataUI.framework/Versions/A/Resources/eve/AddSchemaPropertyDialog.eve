@@ -1,0 +1,18 @@
+layout AddSchemaPropertyDialog
+{
+	view dva_dialog(identifier:'AddSchemaPropertyDialog', name: '$$$/dvametadataui/AddSchemaPropertyDialog/Title=Add Property')
+	{
+		row(horizontal: align_fill)
+		{	
+			column(horizontal: align_fill)
+			{
+				dva_text_edit(identifier:'nameTextEdit',  minWidth:200, label:'$$$/dvametadataui/AddSchemaPropertyDialog/PropertyNameStatic=Name:', setAsFocused:'true');
+				dva_popup(identifier:'columnTypePopup', minWidth:200, label:'$$$/dvametadataui/AddSchemaPropertyDialog/PropertyTypeStatic=Type:');
+			}
+			column()
+			{
+				dva_ok_cancel_column(minWidth:80, minHeight:20);
+			}
+		}
+	}
+} 

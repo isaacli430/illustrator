@@ -1,0 +1,45 @@
+layout SmoothToolUI_
+{
+    view subview(identifier: "SmoothToolOptions",
+                 layout_theme: @dialog_large,
+                 show_border: false)
+    {	
+	column(spacing:@unrelated_spacing, child_horizontal: @align_fill)
+    {
+        group(identifier: "ToleranceFrame",
+                  name: "$$$/BRSPencilTool/Dlg/SmoothToolPreferences/FidelitySlider=Fidelity",horizontal: @align_fill)
+            	{
+		    		combo_slider(decimal_places: 0, digits: 3, interval: 1,
+								show_editbox: false,
+								set_default_focus: true,
+								show_ticks: true,
+								horizontal: @align_fill,
+								guide_mask: [@guide_label],
+								left_mini_label: "$$$/BRSPencilTool/Dlg/SmoothToolPreferences/Accurate=Accurate",
+								right_mini_label:  "$$$/BRSPencilTool/Dlg/SmoothToolPreferences/Smooth=Smooth",
+								unit: "NumberEditUnit_Percent",
+								identifier: "fidelity_ComboSlider");
+            	}
+		row(child_vertical: @align_center, horizontal: @align_fill)
+		{
+			button( identifier: "resetButton", horizontal: @align_left,guide_mask: [@guide_label],
+                   name: "$$$/BRSPencilTool/Dlg/SmoothToolPreferences/Reset=&Reset",vertical: @align_fill,commit_button: true);
+				   
+			row(horizontal: @align_right,
+ 				reverse: os == @mac, spacing: @related_spacing)
+			{
+				button(commit_button: true,
+                   			identifier: "okButton",
+                   			name: "$$$/gOK=OK");
+
+            			button(commit_button: true,
+                  	 		identifier: "cancelButton",
+                  	 		name: "$$$/gCancel=Cancel");
+			}
+            	
+		}
+	}
+       
+    }
+}
+

@@ -1,0 +1,105 @@
+layout ArtboardConversion
+{
+    view subview(layout_theme : @dialog_large,
+				placement: @place_column,
+				show_border: false,		
+				spacing: @unrelated_spacing,
+				name: '$$$/OpenArtworkDlg/Dlg/NewArtboard/ConvertArtboards=Convert to Artboards')
+    {
+		column()
+		{
+			display_text(identifier: "FileName", name: '$$$/OpenArtworkDlg/Dlg/NewArtboard/filename=File Name:', bind: @FileName, horizontal: @align_fill, characters: 20);
+
+			group(name: '$$$/OpenArtworkDlg/Dlg/NewArtboard/clusterTitle=Create Artboards for:', horizontal: @align_fill)
+			{
+				column()
+				{
+					row()
+					{
+						checkbox(identifier: "LegacyArtboardChkbox", 
+							guide_mask: [ @guide_label ], 
+							name: '$$$/OpenArtworkDlg/Dlg/NewArtboard/LegacyArtboard=&Legacy Artboard', 
+							bind: @LegacyArtboard,
+							value_on: 1,
+							value_off: 0,
+							state: "unchecked",
+							set_default_focus: true);
+	                        
+						overlay()
+						{
+							panel(margin:0, value:false, bind: @donotshow)
+							{
+								info_icon(icontype: "warning", size: "small");
+							}	
+						}				
+					}	
+	                
+					row()
+					{
+						checkbox(identifier: "CropAreaChkbox", guide_mask: [ @guide_label ], 
+							value_on: 1,
+							value_off: 0,
+							state: "unchecked",
+							name: '$$$/OpenArtworkDlg/Dlg/NewArtboard/CropAreas=&Crop Area(s)', 
+							bind: @CropArea);
+	                        
+						overlay(vertical: @align_center)
+						{
+							panel(margin:0, bind: @showWarning, value:true, vertical: @align_center)
+							{
+								info_icon(identifier: "CropAreaWarning", icontype: "warning", size: "small", alt: "$$$/OpenArtworkDlg/Dlg/NewArtboard/alertTipString=Crop areas will be discarded.", vertical: @align_center);
+							}	
+						}		
+					}	
+	                
+					row()
+					{
+						checkbox(identifier: "ArtworkBoundingBoxChkbox", guide_mask: [ @guide_label ], 
+							name: '$$$/OpenArtworkDlg/Dlg/NewArtboard/ArtworkBoundingBox=&Artwork Bounding Box', 
+							value_on: 1,
+							value_off: 0,
+							state: "unchecked",
+							bind: @ArtworkBoundingBox);
+	                        
+						overlay()
+						{
+							panel(margin:0, value:false, bind: @donotshow)
+							{
+								info_icon(icontype: "warning", size: "small");
+							}	
+						}				
+					}
+	                
+					row()
+					{
+						checkbox(identifier: "PageTilesChkbox", guide_mask: [ @guide_label ], 
+							name: '$$$/OpenArtworkDlg/Dlg/NewArtboard/PageTiles=&Page Tiles', 
+							value_on: 1,
+							value_off: 0,
+							state: "unchecked",
+							bind: @PageTiles);
+						overlay()
+						{
+							panel(margin:0, value:false, bind: @donotshow)
+							{
+								info_icon(icontype: "warning", size: "small");
+							}	
+						}				
+					}
+				}
+			}
+	        
+			row(horizontal: @align_fill, child_vertical: @align_fill, spacing: @related_spacing)
+			{
+				info_icon(identifier: "noteicon", icontype: "note", size: "small", horizontal: @align_left);
+				static_text(identifier: "notedesciption", characters: 1, theme_font_size: @small, horizontal: @align_fill,
+					name: '$$$/OpenArtworkDlg/Dlg/NewArtboard/labelInfo=Legacy Artboard, Crop Areas, Artwork Bounding Box and Page Tiles present in legacy Illustrator file can be converted into multiple Artboards.');			
+			}
+        }
+        row(horizontal: @align_fill, reverse: os == @mac, child_horizontal: @align_right, spacing: @related_spacing)
+        {
+            button(identifier: "okButton", name:'$$$/gOK=OK', bind: @okOutput, commit_button: true);
+            button(identifier: "cancelButton", name: '$$$/gCancel=Cancel', commit_button: true);
+        }
+    }
+}

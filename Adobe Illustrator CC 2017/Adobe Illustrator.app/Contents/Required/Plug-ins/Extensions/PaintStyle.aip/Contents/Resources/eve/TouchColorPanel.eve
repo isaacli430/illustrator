@@ -1,0 +1,56 @@
+layout TouchColorPanel
+{
+     view subview(	identifier: "ColorPanelSubview",
+					show_border: false,
+					layout_theme:@touch_panel)
+    {
+		overlay(vertical: @align_fill, horizontal: @align_fill)
+		{
+			panel(bind: @ColorViewModeMinimized, value:false)
+			{
+				row(horizontal: @align_fill)
+				{
+					stroke_fill(identifier:  "FillStrokeControl", vertical: @align_center, width:35, height:35, small_mode: false, has_default:false, has_swap:false, ai_color_mode: true);
+					column(horizontal: @align_right, vertical: @align_fill)
+					{
+						row(horizontal: @align_right)
+						{							
+							button(	identifier: "SwapFillStroke",
+									 		image: {normal: "SP_TouchColorSwapper_Xs_N.png", dark_normal:"SP_TouchColorSwapper_Xs_N_D.png"},
+									 		wants_focus: false,
+											 height:25,
+											 width:25,
+											 alt:"$$$/PaintStyle/Str/ColorToolTip/SwapFillProxy=Swap Fill and Stroke");
+							button(	identifier: "DefaultFillStroke",
+									 		image: {normal: "SP_TouchDefaultFillAndColor_Sm_N.png", dark_normal:"SP_TouchDefaultFillAndColor_Sm_N_D.png"},
+											 wants_focus: false,
+											 alt:"$$$/PaintStyle/Str/ColorToolTip/DefaultFillStrokeColor=Default Fill and Stroke",
+											 height:25,
+											 width:25);
+						}
+						row(horizontal: @align_right)
+						{
+							pattern_swatch(identifier: "None", alt:"$$$/PaintStyle/Str/ColorToolTip/NoneColor=Apply No Color", width:25, height:25, show_border:true);
+							pattern_swatch(identifier: "Black Color", alt:"$$$/PaintStyle/Str/TouchColorPanel/BlackColor=Apply Black Color", width:25, height:25, show_border:true);
+							pattern_swatch(identifier: "White Color", alt:"$$$/PaintStyle/Str/TouchColorPanel/WhiteColor=Apply White Color", width:25, height:25,show_border:true);
+						}			
+					}
+				}
+				column(spacing: 0, horizontal: @align_fill, vertical: @align_bottom)
+				{
+					subview(bind: @ColorViewModeRGBWithSliderAndCanvas, value: true, identifier: "ColorViews", horizontal: @align_fill, height: 300, show_border: false);
+					toggler(identifier: "switchToOther", show_border: false, 
+					on_text:"$$$/PaintStyle/Str/TouchColorPanel/SwitchToColorMode=COLOR",
+					off_text: "$$$/PaintStyle/Str/TouchColorPanel/SwitchToSwatchMode=SWATCHES",
+					value_off:true, horizontal: @align_fill, vertical: @align_bottom);
+				}
+			}
+			panel(bind: @ColorViewModeMinimized, value:true)
+			{
+				stroke_fill(identifier:  "MinFillStrokeControl", vertical: @align_top, horizontal: @align_center, width:35, height:35, small_mode: false, has_default:false, has_swap:false, ai_color_mode: true);
+				subview(identifier: "ColorMinmizedView", horizontal: @align_center, vertical: @align_fill, show_border: false, width: 54);
+			}
+		}
+		
+    }
+}

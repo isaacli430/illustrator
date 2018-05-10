@@ -1,0 +1,24 @@
+/* [1] */
+!MEM
+/* [2] */
+$$$/ReshapeTool/STR/16050/2/Mac=The filter cannot complete because there isn^}t enough memory (RAM) available.\n\n[^0]
+/* [3] */
+271
+/* [4] */
+$$$/ReshapeTool/STR/16050/4/Mac=The filter cannot complete because there isn^}t enough memory (RAM) available.\n\n[^0]
+/* [5] */
+SEGM
+/* [6] */
+$$$/ReshapeTool/STR/16050/6/Mac=The filter cannot complete because a path has too many anchor points.\n\n[^0]
+/* [7] */
+NESS
+/* [8] */
+$$$/ReshapeTool/STR/16050/8/Mac=The filter cannot complete because a layer is locked or invisible.\n\n[^0]
+/* [9] */
+!sel
+/* [10] */
+$$$/ReshapeTool/STR/16050/10/Mac=You must select a path first.\n\n[^0]
+/* [11] */
+<others>
+/* [12] */
+$$$/ReshapeTool/STR/16050/12/Mac=The filter cannot complete because of an unknown error.\n\n[^0]

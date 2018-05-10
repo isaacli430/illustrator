@@ -1,0 +1,5 @@
+sheet NamedStyleLibraryPanel
+{
+	interface:
+		NamedStylesView: "Thumbnail";
+}

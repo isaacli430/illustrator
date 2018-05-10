@@ -1,0 +1,55 @@
+layout TextColumnsUI
+{
+	view subview(identifier: "SplitIntoGrid",
+                 layout_theme: @dialog_large,
+                 name: "$$$/TxtColumns/Cap/RowColumn=Split Into Grid",
+                 spacing:@unrelated_spacing,
+				 child_horizontal: @align_fill,
+                 show_border: false)
+    {
+		column()
+		{
+			row(child_horizontal: @align_fill, child_vertical: @align_fill,spacing: @inter_group_spacing)
+			{                
+                group(identifier: "Rowsgroup",
+                      name: "$$$/TxtColumns/Dlg/RowColumn/rows=Rows",
+                      placement: @place_column)
+                {
+                    unit_hot_number(identifier: "rowNumberSpinEdit",	decimal_places: 0, stepper:true, digits:9, name: '$$$/TxtColumns/Dlg/RowColumn/rowNumber=&Number:', set_default_focus: true);
+					unit_hot_number(identifier: "heightSpinEdit",		decimal_places: 2, stepper:true, digits:9, name: '$$$/TxtColumns/Dlg/RowColumn/rowHeight=&Height:');
+					unit_hot_number(identifier: "rowGutterSpinEdit",	decimal_places: 2, stepper:true, digits:9, name: '$$$/TxtColumns/Dlg/RowColumn/rowGutter=&Gutter:');
+					unit_hot_number(identifier: "rowTotalSpinEdit",		decimal_places: 2, stepper:true, digits:9, name: '$$$/TxtColumns/Dlg/RowColumn/rowTotal=&Total:');
+                }                 
+            
+
+                group(identifier: "Columnngroup",
+                      name: "$$$/TxtColumns/Dlg/RowColumn/columns=Columns",
+                      placement: @place_column)
+                {
+                    unit_hot_number(identifier: "colNumberSpinEdit",	decimal_places: 0, stepper:true, digits:9, name: '$$$/TxtColumns/Dlg/RowColumn/colNumber=N&umber:');
+					unit_hot_number(identifier: "widthSpinEdit",		decimal_places: 2, stepper:true, digits:9, name: '$$$/TxtColumns/Dlg/RowColumn/colWidth=&Width:');
+					unit_hot_number(identifier: "colGutterSpinEdit",	decimal_places: 2, stepper:true, digits:9, name: '$$$/TxtColumns/Dlg/RowColumn/colGutter=Gutt&er:');
+					unit_hot_number(identifier: "colTotalSpinEdit",		decimal_places: 2, stepper:true, digits:9, name: '$$$/TxtColumns/Dlg/RowColumn/colTotal=T&otal:');						
+                }                               
+			}
+			checkbox(identifier: "addGuidesChkBx", name: '$$$/TxtColumns/Dlg/RowColumn/Guide=A&dd Guides', guide_mask:[@guide_label]); 
+		}
+		row(child_horizontal: @align_fill, child_vertical: @align_center,spacing: @separated_spacing)
+		{
+				checkbox(identifier: "previewChkBx", name: '$$$/TxtColumns/Dlg/RowColumn/Preview/preview=&Preview', guide_mask:[@guide_label]);  
+			
+		   		row(child_horizontal: @align_right, reverse: os==@mac, spacing: @related_spacing)
+				{
+			   		button(default: true,
+					   identifier: "okButton",
+					   name: "$$$/gOK=OK",
+					   commit_button: true);
+
+			   		button(cancel: true,
+					   identifier: "cancelButton",
+					   name: "$$$/gCancel=Cancel",
+					   commit_button: true);
+				}
+		}
+    }
+}

@@ -1,0 +1,31 @@
+layout SmartExportUI
+{
+    view subview(identifier: "AssetPanelListItem",
+                 layout_theme: @panel,width: 200,height: 35,
+                 show_border: false)
+    {                    
+        row(horizontal:@align_fill,vertical:@align_center,guide_mask: [])
+        {
+   
+            image(identifier: 'ViewThumbnail',horizontal:@align_left,
+                name: 'Image',width: 30,height: 30);
+            overlay(vertical:@align_center,horizontal:@align_fill)
+            {
+                panel(bind:@showStaticText, vertical: @align_center) 
+                {
+                    static_text(identifier: 'Name',
+                        horizontal: @align_fill,
+                        name: ' ',
+                        vertical: @align_center,
+                        theme_font_size: @small); 
+                }
+                panel(bind:@inEditMode) 
+                {
+                    edit_text(identifier: 'NameEditField', horizontal: @align_fill,
+                    name: '',vertical: @align_center,
+                    theme_font_size: @small);
+                }
+            }
+        }
+    }
+}

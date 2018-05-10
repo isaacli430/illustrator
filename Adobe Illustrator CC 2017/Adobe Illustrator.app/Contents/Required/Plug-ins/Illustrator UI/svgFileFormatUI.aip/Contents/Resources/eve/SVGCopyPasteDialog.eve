@@ -1,0 +1,15 @@
+layout SVGCopyPaste
+{
+   view subview(identifier: "SVGCopyPasteSubview", 
+					layout_theme: @dialog_large, 
+					placement: @place_column,
+					child_horizontal: @align_fill,
+					spacing: @unrelated_spacing)
+	{
+		static_text(identifier: "SVGCopyPasteStr",
+				font_size: 12,
+				vertical: @align_center,
+				horizontal: @align_center,
+				name: "$$$/SVGCopyPaste/Dlg/Str=Copy or paste of art in progress...");
+	}
+}

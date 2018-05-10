@@ -1,0 +1,8 @@
+/* [1] */
+$$$/LiveBlends/Str/16401=The selected artwork contains an element that cannot be used in a blend.
+/* [2] */
+$$$/LiveBlends/Str/nd2p=A blend must contain at least two paths of non-zero length.
+/* [3] */
+$$$/LiveBlends/Str/16403=Blends between compound paths must contain the same number of components.
+/* [4] */
+$$$/LiveBlends/Str/16404=Objects in the interior of a blend cannot be moved in the paint order. (You can use Reverse Front to Back on the entire blend.)

@@ -1,0 +1,12 @@
+layout alignmentMenu
+{
+	view menu( id: 22,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/Alignment/Left=&Left", id:					58, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Alignment/Center=&Center", id:				213, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Alignment/Right=&Right", id:					214, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Alignment/Justify=&Justify", id:				215, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Alignment/LastLine=J&ustify Last Line", id:	216, help_id:0);
+}
+}

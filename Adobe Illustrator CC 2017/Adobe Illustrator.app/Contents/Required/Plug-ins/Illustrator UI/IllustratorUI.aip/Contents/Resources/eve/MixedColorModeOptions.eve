@@ -1,0 +1,24 @@
+layout MixedColorModelOptionsDlg
+{
+	view subview(identifier: "AIEveSubView",
+				 show_border: false,
+				 spacing: @unrelated_spacing,
+				 layout_theme: @dialog_large)
+	{
+		column(horizontal: @align_fill)
+		{
+			static_text(identifier: "StaticMessage", characters: 30, adjust_baseline_for_single_line_text: false, name: '$$$/_ColorSpaceConverter/Dlg/ConvertCM/textConvertCMStr=This document contains objects using both CMYK and RGB color modes.  Illustrator allows only one color mode per document.  Which color mode would you like to use?');
+			radiogroup()
+			{
+				radio_button(identifier: "RadioRGB", label: '$$$/_ColorSpaceConverter/Dlg/ConvertCM/colormode=Color Mode:', name: '$$$/_ColorSpaceConverter/Dlg/ConvertCM/rgbConvertCMRadio=&RGB', bind: @SelectedColorModel, value: "ColorModel_RGB");
+				radio_button(identifier: "RadioCMYK", name: '$$$/_ColorSpaceConverter/Dlg/ConvertCM/cmykConvertCMRadio=&CMYK', bind: @SelectedColorModel, value: "ColorModel_CMYK");
+			}
+			static_text(identifier: "StaticNote", characters: 1, adjust_baseline_for_single_line_text: false, horizontal: @align_fill, name: '$$$/_ColorSpaceConverter/Dlg/ConvertCM/noteConvertCMStr=Please note: Objects using the unchosen color mode will be converted to the other color mode.');
+		}
+		row(horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+        {
+            button(name: "$$$/gOK=OK", commit_button: true, identifier: "okButton");
+            button(name: "$$$/gCancel=Cancel", commit_button: true, identifier: "cancelButton");
+        }
+	}
+}

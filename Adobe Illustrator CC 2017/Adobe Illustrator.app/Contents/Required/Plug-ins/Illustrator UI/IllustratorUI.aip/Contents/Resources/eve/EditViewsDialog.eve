@@ -1,0 +1,41 @@
+layout editViewsDialog
+{
+	view subview(identifier: "editViewsDialog_subview",
+					layout_theme: @dialog_large,
+					spacing: @unrelated_spacing,
+					show_border: false)
+	{
+		column()
+		{
+			sequence_list(identifier: "views_sequenceList",
+							height: 100,
+							horizontal: @align_fill,
+							set_default_focus: true,
+							guide_mask: [@guide_label],
+							multiple_selection: true);
+			button(identifier: "delete_button",
+					name: "$$$/_ViewsPalette/Dlg/EditViewSnap/deleteEVS=&Delete",
+					action: @deleteAction,
+					bind: @deleteCell);
+			edit_text(identifier: "name_editText",
+						name: "$$$/_ViewsPalette/Dlg/EditViewSnap/nameTextEVS=&Name:",
+						max_characters: 31,
+						characters: 20,
+						horizontal: @align_fill,
+						bind: @nameCell);
+		}
+		row(horizontal: @align_fill,
+			child_horizontal: @align_right,
+			spacing: @related_spacing,
+			reverse: os == @mac)
+		{
+			button(identifier: "okButton",
+					name: "$$$/gOK=OK",
+					commit_button: true,
+					bind: @okCell);
+			button(identifier: "cancelButton",
+					commit_button: true,
+					name: "$$$/gCancel=Cancel");
+		}
+	}
+}

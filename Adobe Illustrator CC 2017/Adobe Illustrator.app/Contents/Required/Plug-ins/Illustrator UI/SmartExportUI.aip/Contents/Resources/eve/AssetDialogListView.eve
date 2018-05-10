@@ -1,0 +1,31 @@
+layout SmartExportUI
+{
+    view subview(identifier: "AssetDialogListItem",
+                 layout_theme: @panel,width: 231,height: 33,
+                 show_border: false,
+                 placement: @place_row)
+    {                    
+       
+        checkbox(identifier: "SelectItem",characters: 0,vertical:@align_center,
+                theme_font_size: @small);
+        image(identifier: 'ViewThumbnail',horizontal:@align_left,
+            name: 'Image',width: 23,height: 23);
+        overlay(vertical:@align_center,horizontal:@align_fill,margin: [0, 2, 0, 0])
+        {
+            panel(bind:@showStaticText, vertical: @align_center,horizontal:@align_fill) 
+            {
+                static_text(identifier: 'Name',
+                    horizontal: @align_fill,
+                    name: ' ',
+                    vertical: @align_center,
+                    theme_font_size: @small); 
+            }
+            panel(bind:@inEditMode,horizontal:@align_fill) 
+            {
+                edit_text(identifier: 'NameEditField', horizontal: @align_fill,
+                name: '',vertical: @align_center,
+                theme_font_size: @small);
+            }
+        }
+    }
+}

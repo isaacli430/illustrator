@@ -1,0 +1,37 @@
+layout SmartExportUI
+{
+    view subview(identifier: "ThumbnailViewItem",
+                 layout_theme: @panel,width: 118,height: 140,
+                 show_border: false)
+    {                    
+        row(margin: [8, 0, 0, 0],horizontal: @align_fill,vertical: @align_top)
+        {
+            image(image: "SP_ColumnChart_N.png",
+                identifier: 'ViewThumbnail',
+                horizontal:@align_center,
+                vertical:@align_center,
+                width: 86,
+                height: 86,
+                name: 'Image');
+        }
+        row(margin: [ 5, 16, 2, 0],horizontal: @align_fill,vertical: @align_top)
+        {   
+           
+            static_text(identifier: 'ArtboardIndex',horizontal: @align_left,
+                        name: '001',
+                        theme_font_size: @small); 
+            optional(bind:@showStaticText)
+            {
+                static_text(identifier: 'ArtboardName',horizontal: @align_left,
+                            name: 'aaaaaaaaaaa',
+                            theme_font_size: @small); 
+            }
+            optional(bind:@inEditMode,margin: [ -5, 0, 0, 0])
+            {
+                edit_text(identifier: 'ArtboardNameEdit', horizontal: @align_left,
+                            name: '',
+                            theme_font_size: @small); 
+            }
+        }
+    }
+}

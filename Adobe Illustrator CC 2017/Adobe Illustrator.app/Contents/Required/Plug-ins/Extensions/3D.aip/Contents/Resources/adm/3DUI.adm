@@ -1,0 +1,39 @@
+sheet I3DUI
+{
+ interface:
+	ExtrudeBevelVisibility: false;
+	RevolveVisibility: false;
+	RevolveCapRadioGroup: 1;
+	ExtrudeCapRadioGroup: 1;
+	BevelExtentRadioGroup: 1;
+	AdvancedMode: false;
+	SimpleMode: true <== !AdvancedMode;
+	MapArtVisible: true;
+	ShadingVal: 3;
+	WarningText: "x";
+	WarningVisible: false;
+	
+	unlink LightGroupVisible: false <== ((ShadingVal == 2) || (ShadingVal == 3)) ? true: LightGroupVisible;
+	unlink HighLightGroupVisible: false <== (ShadingVal == 3) ? true: HighLightGroupVisible;
+	unlink SurfaceOptionsVisible: true <== (ShadingVal == 0) ? false: SurfaceOptionsVisible;
+	
+	
+	ShadingType: [{name:'$$$/3D/Surface/Wireframe=Wireframe', value: 0},
+								{name:'$$$/3D/Surface/NoShading=No Shading', value: 1},
+								{name:'$$$/3D/Surface/DiffuseShading=Diffuse Shading', value: 2},
+								{name:'$$$/3D/Surface/PlasticShading=Plastic Shading', value: 3}];
+	
+	LightControlsAvailable: true;
+	LightControlNotAvailableWarning: false <== !LightControlsAvailable;
+
+	
+	ShadingColorVal: 1;
+	
+	unlink CustomShadingColor: false <== (ShadingColorVal == 2) ? true: false;
+	
+	ShadingColor: [{name:'$$$/3D/ShadingColor/none=None', value: 0},
+				{name:'$$$/3D/ShadingColor/black=Black', value: 1},
+				{name:'$$$/3D/ShadingColor/custom=Custom', value: 2}];
+				
+			
+}

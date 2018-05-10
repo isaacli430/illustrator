@@ -1,0 +1,13 @@
+sheet Compositefonts
+{
+interface:
+	show_sample : true;
+	sample_icf_box : false;
+	sample_em_box:false;
+	sample_base_line:false;
+	sample_cap_height:false;
+	sample_max_ascent_descent:false;
+	sample_max_ascender:false;
+	sample_x_height:false;
+	cant_preview: false;	
+}

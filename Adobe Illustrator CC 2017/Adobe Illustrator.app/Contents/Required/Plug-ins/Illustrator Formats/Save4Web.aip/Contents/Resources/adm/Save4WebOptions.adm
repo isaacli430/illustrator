@@ -1,0 +1,147 @@
+sheet Save4WebOptions
+{
+	constant:
+	
+	interface:
+		BrowserPopUpCell: 0;
+		S4WToolOption: 0;
+		SliceVisibleOption: true;
+		artView: 0;
+		percentItems: [ "$$$/SaveForWeb/ImageContextMenu/Zoom1600=1600%",
+						"$$$/SaveForWeb/ImageContextMenu/Zoom800=800%",
+						"$$$/SaveForWeb/ImageContextMenu/Zoom400=400%",
+						"$$$/SaveForWeb/ImageContextMenu/Zoom300=300%",
+						"$$$/SaveForWeb/ImageContextMenu/Zoom200=200%",
+						"$$$/SaveForWeb/ImageContextMenu/Zoom100=100%",
+						"$$$/SaveForWeb/ImageContextMenu/Zoom50=50%",
+						"$$$/SaveForWeb/ImageContextMenu/Zoom25=25%",
+						"$$$/SaveForWeb/ImageContextMenu/Zoom12=12.5%",
+						"",
+						"$$$/SaveForWeb/ImageContextMenu/ZoomToFit=Fit On Screen"];
+
+		SliceTypeItems: [
+							{ name: "$$$/SaveForWeb/MainDialog/SliceTypes/AllSlices=All Slices", value: 0 },
+							{ name: "$$$/SaveForWeb/MainDialog/SliceTypes/AllUserSlices=All User Slices", value: 1 },
+							{ name: "$$$/SaveForWeb/MainDialog/SliceTypes/SelectedSlices=Selected Slices", value: 2 }
+							
+						];
+		SliceTypeValue: 0;
+		/********************* Optimize Palette *********************/
+		
+		showOptNamesItem: true;
+		showOptimizeSettings: true;
+		showNoSlicesSelectedItem: false;
+		
+		OptFormatItemValue: 0;
+		
+		showOptGifAlgorithmItem: false <== OptFormatItemValue == 0 || OptFormatItemValue == 2;
+		
+		showOptGifDitherPatternItem: false <== OptFormatItemValue == 0 || OptFormatItemValue == 2;
+		
+		showOptGifTransparencyItem: false <== OptFormatItemValue == 0 || OptFormatItemValue == 2;
+		OptGifTransparencyItemValue:false;
+		
+		showOptPNG24TransparencyItem: false <== OptFormatItemValue == 3;
+		Opt: false;
+		
+		showOptTransparencyDitherPatternItem: false <== OptFormatItemValue == 0 || OptFormatItemValue == 2;
+		
+		showOptGifInterlacedItem: false <== OptFormatItemValue == 0;
+		OptGifInterlacedItemValue: false;
+		
+		showOptJPEGQualityMenuItem: false <== OptFormatItemValue == 1;
+		OptJPEGQualityMenuItemValue: 60;
+		
+		showOptJPEGProgressiveItem: false <== OptFormatItemValue == 1;
+		OptJPEGProgressiveItemValue: false;
+		
+		showOptJPEGColorProfileItem: false <== OptFormatItemValue == 1;
+		OptJPEGColorProfileItemValue: false;
+		
+		showOptGifLossItem: false <== OptFormatItemValue == 0;
+		OptGifLossItemValue:0;
+		
+		showOptGifColorsItem: false <== OptFormatItemValue == 0 || OptFormatItemValue == 2;
+		OptGifColorsItemValue:256; 
+		OptGifColorsItemMinimum: 2;
+		OptGifColorsItemMaximum: 256;
+		
+		showOptGifDitherItem: false <== OptFormatItemValue == 0 || OptFormatItemValue == 2;
+		OptGifDitherItemValue: 100;
+		
+		showOptJPEGOptimizedItem: false <== OptFormatItemValue == 1;
+		OptJPEGOptimizedItemValue: false;
+		
+		showOptJPEGQualityNumItem:  false <== OptFormatItemValue == 1;
+		
+		showOptJPEGBlurNumItem:  false <== OptFormatItemValue == 1;
+		OptJPEGBlurNumItemMaximum: 200;
+		OptJPEGBlurNumItemValue: 0;
+		
+		showOptGifMatteItem: false <== OptFormatItemValue == 0 || OptFormatItemValue == 1 || OptFormatItemValue == 2;
+		showOptPNG24MatteItem: false <== OptFormatItemValue == 3;
+		
+		showTransparencyDitherItem:  false <== OptFormatItemValue == 0 || OptFormatItemValue == 2;
+		TransparencyDitherItemValue: 100;
+		
+		showOptGifWebSnapItem: false <== OptFormatItemValue == 0 || OptFormatItemValue == 2;
+		OptGifWebSnapItemValue: 0;
+		
+		showOptPNGInterlacedItem: false <== OptFormatItemValue == 2 || OptFormatItemValue == 3;
+		OptPNGInterlacedItemValue: false;
+		
+		showOptHistogramZonedOn:false;
+		showOptGifLossZonedOn:false;
+		showOptJPEGQualityZonedOn:false;
+		showOptGifDitherZonedOn:false;
+		
+		showInfoPanel: true;
+		
+		OptFormatPopupItems: [
+		{name:"$$$/OptimizePalette/Format/GIF=GIF", value:0},
+		{name:"$$$/OptimizePalette/Format/JPEG=JPEG", value:1},
+		{name:"$$$/OptimizePalette/Format/PNG8=PNG-8", value:2},
+		{name:"$$$/OptimizePalette/Format/PNG24=PNG-24", value:3}
+		];
+		
+		OptGifColorsPopupItems:[
+			"$$$/OptimizePalette/2=2",
+			"$$$/OptimizePalette/4=4",
+			"$$$/OptimizePalette/8=8",
+			"$$$/OptimizePalette/16=16",
+			"$$$/OptimizePalette/32=32",
+			"$$$/OptimizePalette/64=64",
+			"$$$/OptimizePalette/128=128",
+			"$$$/OptimizePalette/256=256"
+		];
+		
+		OptGifMattePopupItems: [
+			{name:"$$$/ColorPopupMenu/ColorNone=None", value:1},
+			{name:"-", value:-1},
+			{name:"$$$/ColorPopupMenu/ColorEyedropperColor=Eyedropper Color", value:2},
+			{name:"$$$/ColorPopupMenu/ColorWhite=White", value:3},
+			{name:"$$$/ColorPopupMenu/ColorBlack=Black", value:4},
+			{name:"-", value:-2},
+			{name:"$$$/ColorPopupMenu/ColorOther=Other...", value:5}
+		];
+		
+		OptJPEGQualityPopupItems: [
+			{name:"$$$/OptimizePalette/Quality/Low=Low", value:10},
+			{name:"$$$/OptimizePalette/Quality/Medium=Medium", value:30},
+			{name:"$$$/OptimizePalette/Quality/High=High", value:60},
+			{name:"$$$/OptimizePalette/Quality/VeryHigh=Very High", value:80},
+			{name:"$$$/OptimizePalette/Quality/Maximum=Maximum", value:100}
+		];
+		
+		
+		/********************* Image Size Pane *********************/
+		AntiAliasPopupItems: [
+			{name:"$$$/SaveForWeb/ImageSizePanel/AntialiasMenu/None=None", value:0},
+			{name:"$$$/SaveForWeb/ImageSizePanel/AntialiasMenu/ArtOptimized=Art Optimized", value:1},
+			{name:"$$$/SaveForWeb/ImageSizePanel/AntialiasMenu/TypeOptimized=Type Optimized", value:2}
+		];
+		
+		NoOfColors: " ";
+		
+	logic:
+}

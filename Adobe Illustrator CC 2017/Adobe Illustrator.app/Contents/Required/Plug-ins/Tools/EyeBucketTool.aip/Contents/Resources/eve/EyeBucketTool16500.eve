@@ -1,0 +1,89 @@
+layout EyeDropperToolOptions
+{
+	view subview(identifier: "EyeDropperToolOptions",
+					child_horizontal: @align_fill,
+					name: '$$$/EyeBucketTool/Cap/16500=Eyedropper Options',
+					placement: @place_column,
+					show_border: false,spacing: @unrelated_spacing,
+					layout_theme: @dialog_large)
+	{
+		column(spacing: @unrelated_spacing)
+		{
+			column()
+			{
+				row()
+				{
+					static_text(item_id: 8, name: '$$$/EyeBucketTool/Dlg/16500/STATIC/2=Raster Sample Size:');
+					popup(identifier: "RasterSampleSizePopup",
+							include_custom_item: false,
+							items: [{name:'$$$/EyeBucketTool/Mnu/16000/1=Point Sample'},
+									{name:'$$$/EyeBucketTool/Mnu/16000/2=3 x 3 Average'},
+									{name:'$$$/EyeBucketTool/Mnu/16000/3=5 x 5 Average'}],
+							set_default_focus: true);
+				}	
+
+				row()
+				{
+					column()
+					{
+						static_text(name: '$$$/EyeBucketTool/Dlg/16500/STATIC=Eyedropper Picks Up:');
+						multicolumn_tree(identifier: "multicolumntree",
+										wants_focus: false,
+										width: 217,
+										height: 324,
+										horizontal: @align_fill,
+										vertical: @align_fill,
+										items: [{name: '',
+													children:
+													[{name: ''},{name: '',
+																children:
+																[
+																	{name: ''},
+																	{name: ''},
+																	{name: ''}
+																]},
+														{name: '',
+														children:
+														[{name: ''},{name: ''},{name: ''},{name: ''},{name: ''},{name: ''},{name: ''},{name: ''}]}]},
+												{name: ''},
+												{name: ''}
+										]);
+					}
+				
+					column()
+					{
+						static_text(name: '$$$/EyeBucketTool/Dlg/16500/STATIC/1=Eyedropper Applies:');
+						multicolumn_tree(identifier: "multicolumntree2",
+										wants_focus: false,
+										width: 217,
+										height: 324,
+										horizontal: @align_fill,
+										vertical: @align_fill,
+										items: [{name: '',
+													children:
+													[{name: ''},{name: '',
+																children:
+																[
+																	{name: ''},
+																	{name: ''},
+																	{name: ''}
+																]},
+														{name: '',
+														children:
+														[{name: ''},{name: ''},{name: ''},{name: ''},{name: ''},{name: ''},{name: ''},{name: ''}]}]},
+												{name: ''},
+												{name: ''}
+										]);
+					}
+				}
+			}
+			row(reverse: os == @mac, horizontal: @align_right, spacing: @related_spacing)
+			{
+				button(identifier: "okButton", commit_button: true,
+						name: "$$$/gOK=OK");
+				button(identifier: "cancelButton", commit_button: true,
+						name: "$$$/gCancel=Cancel");
+			}
+		}
+	}
+}

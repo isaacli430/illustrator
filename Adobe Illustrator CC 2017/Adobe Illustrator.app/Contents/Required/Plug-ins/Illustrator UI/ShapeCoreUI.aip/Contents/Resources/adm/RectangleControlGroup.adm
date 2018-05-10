@@ -1,0 +1,17 @@
+sheet RectanglePropertiesUI
+{
+constant:
+	kInvalidCornerType: 0;
+	
+interface:
+	
+	MultipleSelection: false;
+
+	DontConstrain: false;
+
+	unlink ConstrainDimensions: true <== MultipleSelection ? DontConstrain : ConstrainDimensions;
+
+	
+	RectangleCornerType: kInvalidCornerType;
+
+}

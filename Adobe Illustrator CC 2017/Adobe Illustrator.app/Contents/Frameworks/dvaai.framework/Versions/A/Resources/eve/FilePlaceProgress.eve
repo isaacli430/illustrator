@@ -1,0 +1,16 @@
+layout FilePlaceProgressPopup
+{
+ 	view subview(identifier: "FilePlaceProgressPopupSubView", width: 200, height:60,
+			 child_horizontal: @align_fill,
+			 layout_theme: @panel,
+			 show_border: false,
+			 placement: @place_column)
+    {		
+		column(child_horizontal: @align_fill)
+		{
+			static_text(identifier: "fileNameString", characters: 20, name: "   ");
+			popup_progress_bar(identifier: "progressBar", horizontal: @align_fill);
+			static_text(identifier: "fileIndexValue", characters: 10, name: "   ", theme_font_size: @small);
+		}			
+	}
+}

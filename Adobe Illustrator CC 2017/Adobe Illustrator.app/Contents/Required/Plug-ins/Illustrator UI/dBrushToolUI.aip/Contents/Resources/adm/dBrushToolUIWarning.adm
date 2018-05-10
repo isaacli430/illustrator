@@ -1,0 +1,9 @@
+sheet dBrushToolWarning
+{
+  interface:   
+    donotShow: false;
+	boldText: "";
+	normalText: "";
+	checkBoxText: "";
+	infoText: "";
+}

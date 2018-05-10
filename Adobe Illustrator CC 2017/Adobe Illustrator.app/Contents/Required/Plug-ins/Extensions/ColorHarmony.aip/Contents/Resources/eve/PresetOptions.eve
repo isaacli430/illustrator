@@ -1,0 +1,41 @@
+layout PresetOptionsDialog
+{
+	view subview(identifier: "PresetOptionsDialog_subview",
+					layout_theme: @dialog_large,
+					child_horizontal: @align_fill,
+					spacing: @unrelated_spacing,
+					show_border: false)
+	{
+		column()
+		{
+			static_text(identifier: "PrOptStaticTextCaption",
+						name: '$$$/ColorHarmonies/HarmonyDialog/ChooseLibrary=Choose a color library to use with this preset:'
+						);
+			row(horizontal: @align_fill, placement: @place_row)
+			{
+				static_text(identifier: "PrOStaticTextLibraryCaption",
+								name: '$$$/ColorHarmonies/HarmonyDialog/Library=Library:'
+							);
+				row(horizontal: @align_fill, placement: @place_row, spacing: 4)
+				{
+					popup(identifier: "PresetOptionsPopUp",include_custom_item: false,
+								image: {normal: "SP_LimitToLibNotEnabledTri_Lg_N.png",dark_normal:"SP_LimitToLibNotEnabledTri_Lg_N_D.png"},
+								wants_focus: false, show_popup_arrow: false,
+								alt: "$$$/ColorHarmonies/HarmonyDialog/Tooltips/LimitToLibrary=Limits the color group to colors in a swatch library");      
+					static_text(identifier: "SwatchLibrary", horizontal: @align_fill, name: "XXXXXXXXXXXXXXXXXXXXXXXXX");
+				}
+			}
+		}	
+		
+		row(horizontal: @align_fill, spacing: @related_spacing, 
+				child_horizontal: @align_right,
+				margin_top: 25, placement: @place_row, 
+				reverse: os == @mac)
+		{
+			button(identifier: "okButton", commit_button: true,
+					name: "$$$/gOK=OK");
+			button(identifier: "cancelButton", commit_button: true,
+					name: "$$$/gCancel=Cancel");
+		}
+	}
+}

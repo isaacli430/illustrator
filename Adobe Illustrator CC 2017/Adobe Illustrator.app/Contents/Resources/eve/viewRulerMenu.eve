@@ -1,0 +1,11 @@
+layout viewRulerMenu
+{
+	view menu( id: 17,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/View/ShowRulers=Show &Rulers", id:				37, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Rulers/CoordinateSystem=&Change to Artboard Rulers", id: 1383427079, help_id:0);
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/View/ShowVideoRulers=Show &Video Rulers", id:		299, help_id:0);
+}
+}

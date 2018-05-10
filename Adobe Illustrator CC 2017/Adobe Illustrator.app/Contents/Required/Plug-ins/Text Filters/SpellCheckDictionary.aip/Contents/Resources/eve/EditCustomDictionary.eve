@@ -1,0 +1,33 @@
+layout EditCustomDictionary
+{
+    view subview(name: "$$$/SpellCheckDictionary/Dialog/Name=Edit Custom Dictionary",
+                 show_border: false,
+                 placement: @place_row,
+                 layout_theme: @dialog_large)
+    {
+        column(child_horizontal: @align_fill)
+        {
+           edit_text(identifier: "editText", set_default_focus: true, 
+					 name: "$$$/SpellCheckDictionary/Dialog/Entry=&Entry:",
+					 characters:35,
+						max_characters: 255);
+
+            list(identifier: "listBox",
+				height: 148);
+        }
+
+        column(child_horizontal: @align_fill)
+        {
+            button(identifier: "buttonAdd",
+				name: "$$$/SpellCheckDictionary/Dialog/Add=&Add" );
+
+            button(identifier: "buttonDelete",
+				name: "$$$/SpellCheckDictionary/Dialog/Delete=Dele&te" );
+
+            button(identifier: "buttonChange",
+				name: "$$$/SpellCheckDictionary/Dialog/Change=&Change" );
+            button(identifier: "buttonDone",commit_button: true,
+				name: "$$$/SpellCheckDictionary/Dialog/Done=&Done" );
+        }
+    }
+}

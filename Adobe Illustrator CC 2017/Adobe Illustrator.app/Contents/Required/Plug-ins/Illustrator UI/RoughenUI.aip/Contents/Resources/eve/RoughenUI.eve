@@ -1,0 +1,116 @@
+layout RoughenUI
+{
+	view subview(identifier: "AIEveSubView",
+				layout_theme: @dialog_large,
+				child_horizontal: @align_fill,
+				placement: @place_column, spacing: @unrelated_spacing,
+				show_border: false)
+	{
+
+		column(child_horizontal: @align_fill, spacing: @inter_group_spacing)
+		{
+			group(identifier: "RoughenOptionsGrp",
+					name: "$$$/RoughenUI/Dlg/OptionsGrp=Options",child_horizontal:@align_fill)
+			{
+				overlay(horizontal: @align_fill)
+				{
+					panel(margin: 0, bind: @Mode, value: true)
+					{
+						combo_slider(min_max_filter: @sizeAbsRateFilter,
+						value_range:@sizeAbsEditRange,
+						 horizontal: @align_fill,
+						 identifier: "ComboSliderAbsSize",
+						 slider_point: @up,
+						 digits: 7,
+						 minLength: 200,
+						 decimal_places: 2,
+						 bind: @sizeAbsRateCell,bind_final: true,
+						 name: "$$$/RoughenUI/Dlg/Size=&Size:",
+						 unit: "CurrentDocumentUnit",
+						 suffix_width: '$$$/RoughenUI/Dlg/StaticTextPerInch=/in'
+						); 
+					}
+					panel(margin: 0, bind: @Mode, value: false)
+					{
+						combo_slider(min_max_filter: @sizeRelRateFilter,
+						 horizontal: @align_fill,
+						 identifier: "ComboSliderRelSize",
+						 slider_point: @up,
+						 unit: 'NumberEditUnit_Percent',
+						 digits: 7,
+						 minLength: 200,
+						 decimal_places: 2,
+						 bind: @sizeRelRateCell,bind_final: true,
+						 name: "$$$/RoughenUI/Dlg/Size=&Size:",
+						 set_default_focus: true,
+						 suffix_width: '$$$/RoughenUI/Dlg/StaticTextPerInch=/in'
+						); 
+					}
+				}
+				radiogroup(placement: @place_row, show_border: false, margin: 0)
+			    	{
+					radio_button(bind: @Mode,
+						name: "$$$/RoughenUI/Dlg/AutoOptions/RelativeRadioButton=&Relative",
+						identifier: "RelativeRadioButton",
+						value: false);
+					
+					radio_button(bind: @Mode,
+								name: "$$$/RoughenUI/Dlg/AutoOptions/AbsoluteRadioButton=&Absolute",
+								identifier: "AbsoluteRadioButton",
+								value: true);
+				}
+			
+				combo_slider(min_max_filter: @detailRateFilter,
+					 horizontal: @align_fill,
+					 identifier: "ComboSliderDetail",
+					 slider_point: @up,
+					 digits: 7,
+					 minLength: 200,
+					 decimal_places: 2,
+					 bind: @detailRateCell,bind_final: true,
+					 name: "$$$/RoughenUI/Dlg/DetailStaticText=&Detail:", 
+					 suffix: "$$$/RoughenUI/Dlg/StaticTextPerInch=/in"
+					); 
+			}
+			
+			group(identifier: "RoughenPointsGrp", 
+				name: "$$$/RoughenUI/Dlg/PointsGrp=Points", 
+				placement: @place_row, horizontal:@align_fill)
+				
+			{
+				radiogroup(placement: @place_row, horizontal: @align_fill,  show_border: false, margin: 0)
+				{
+					guide_consumer();
+					radio_button(bind: @PointsRadioGp,
+							name: "$$$/RoughenUI/Dlg/AutoOptions/SmoothRadioButton=S&mooth",
+							identifier: "SmoothRadioButton",
+							value: @one);
+
+					radio_button(bind: @PointsRadioGp,
+						name: "$$$/RoughenUI/Dlg/AutoOptions/CornerRadioButton=Cor&ner",
+						identifier: "CornerRadioButton",
+						value: @two);
+				}
+			}
+		}
+
+		row(horizontal: @align_fill, child_vertical: @align_center,spacing: @separated_spacing)
+		{
+			checkbox(identifier: "previewButton", guide_mask: [ @guide_label ],
+					name: "$$$/RoughenUI/Dlg/Preview=&Preview");
+
+			row(reverse: os == @mac, horizontal: @align_right, spacing: @related_spacing)
+			{
+				button(default: true,
+				identifier: "okButton", commit_button: true,
+				name: "$$$/gOK=OK");
+
+				button(cancel: true,
+				identifier: "cancelButton",commit_button: true,
+				name: "$$$/gCancel=Cancel");
+			}
+
+			
+		}
+	}
+}

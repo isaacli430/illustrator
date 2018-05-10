@@ -1,0 +1,70 @@
+layout LayerOptions
+{
+    view subview(identifier: "AIEveSubView",
+                 layout_theme: @dialog_large,
+                 placement: @place_column,
+				 show_border: false,
+				 spacing: @unrelated_spacing)
+    {
+        edit_text(identifier: "Name",
+					max_characters: 255,
+                    horizontal: @align_fill,
+                    set_default_focus: true,
+                    name: "$$$/Layers/Dlg/LayerOptions/optDlgStaticName=&Name:");
+
+		row(child_vertical: @align_center)
+		{
+			popup(identifier: "Colors",
+					include_custom_item: false,
+					items: gLargeColorPopupList,
+					name: "$$$/Layers/Dlg/LayerOptions/optDlgStaticSelColor=&Color:");
+
+			swatch(	identifier: "SelectedColorWell", border: @border_normal);						
+		}
+
+		row(spacing: @label_widget_spacing)
+		{
+			column(guide_mask:[])
+			{
+				row()
+				{
+					checkbox(identifier: "Template", name: "$$$/Layers/Dlg/LayerOptions/optDlgTemplateCheckbox=&Template");
+					checkbox(identifier: "Lock", name: "$$$/Layers/Dlg/LayerOptions/optDlgLockCheckbox=&Lock"); 
+				}
+				row()
+				{
+					checkbox(identifier: "Show", name: "$$$/Layers/Dlg/LayerOptions/optDlgShowCheckbox=&Show");
+					checkbox(identifier: "Print", name: "$$$/Layers/Dlg/LayerOptions/optDlgPrintCheckbox=&Print");
+				}
+				row()
+				{
+					checkbox(identifier: "Preview",	name: "$$$/Layers/Dlg/LayerOptions/optDlgPreviewCheckbox=Pre&view");   
+					checkbox(identifier: "Dimmed", name: "$$$/Layers/Dlg/LayerOptions/optDlgDimmedCheckbox=&Dim Images to:");
+				}	 
+			}
+			column(guide_mask:[])
+			{
+				guide_consumer(consume_vertical: 1);
+				guide_consumer(consume_vertical: 1);
+				unit_hot_number(identifier: "DimmedPercent",
+						decimal_places: 2,
+						digits: 5,
+						unit: "NumberEditUnit_Percent",
+						show_units: true);
+			}
+		}
+
+		row(horizontal: @align_right, spacing: @related_spacing, reverse: os == @mac)
+		{
+			button(default: true,
+					name: "$$$/gOK=OK",
+					identifier: "okButton",
+					commit_button: true);
+
+			button(cancel: true,
+					name: "$$$/gCancel=Cancel",
+					identifier: "cancelButton",
+					commit_button: true);
+		}
+	}
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+	<menuItem id="1" text="$$$/FWAlignADM/Mnu/16001/1=Show &amp;Options"></menuItem>
+	<separator></separator>
+	<menuItem id="3" text="$$$/FWAlignADM/Mnu/16001/2=&amp;Use Preview Bounds"></menuItem>
+	<menuItem id="4" text="$$$/FWAlignADM/Mnu/16001/4=&amp;Cancel Key Object"></menuItem>
+</menu>

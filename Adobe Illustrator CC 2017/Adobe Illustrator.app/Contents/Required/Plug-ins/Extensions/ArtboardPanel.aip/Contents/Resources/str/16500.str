@@ -1,0 +1,16 @@
+/* [1] */
+$$$/SymbolPalette/Str/16501=Invalid name. Please choose another.
+/* [2] */
+$$$/ArtBoardPanel/Str/16502=That name is already in use. Please choose another.
+/* [3] */
+$$$/SymbolPalette/Str/CircularDef=A symbol definition cannot contain an instance of the same symbol being redefined.
+/* [4] */
+$$$/SymbolPalette/Str/GraphInDef=A symbol definition cannot contain a graph. (You can use the Ungroup command to convert a graph into regular objects.)
+/* [5] */
+$$$/SymbolPalette/Str/LinkedFileInDef=A symbol definition cannot contain a linked image.
+/* [6] */
+$$$/SymbolPalette/Str/InvalidDef=The selection cannot be used as a symbol definition. Try expanding complex objects or simplifying their structure.
+/* [7] */
+$$$/SymbolPalette/Str/NameMissing=Please enter a name.
+/* [8] */
+$$$/SymbolPalette/Str/InvalidDef/Select=Select OK to edit the symbol definition or select Cancel to discard edits to the symbol and continue.

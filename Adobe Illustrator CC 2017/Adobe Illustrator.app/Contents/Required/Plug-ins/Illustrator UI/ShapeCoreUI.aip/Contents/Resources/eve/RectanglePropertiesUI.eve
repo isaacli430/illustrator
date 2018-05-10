@@ -1,0 +1,276 @@
+layout RectanglePropertiesUI
+{
+     view subview(identifier: "RectanglePropertiesUI",
+				 layout_theme: @panel,
+				 show_border: false)
+    {
+		optional(bind: @ShowRectanglePropertiesString, value: true)
+		{
+			static_text(identifier: "RectanglePropertiesLabel",
+						name: "$$$/ShapeCoreUI/RectangleProperties/Label/RectangleProperties=Rectangle Properties:");
+		}
+
+		row(horizontal: @align_fill,
+			child_vertical: @align_center)
+		{
+			unit_edit_number(identifier: "RectangleWidth",
+								alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/RectangleWidth=Rectangle Width",
+								decimal_places: 3,
+								digits: 4,
+								unit:"CurrentDocumentUnit",
+								max_value: 16384,
+								min_value: 0.0,
+								label: "SP_Width_Md_N.png",
+								is_image_label: true);
+
+			row(spacing: 0)
+			{
+				guide_consumer(consume_horizontal: 1);
+
+				toggle_button(identifier: "ConstrainDimensions",
+								bind: @ConstrainDimensions,
+								value_on: true,
+								value_off: false,
+								image: { normal: "NoConstrainIcon.png", dark_normal: "NoConstrainIconDark.png", down: "LinkOnConstrainIcon.png", dark_down: "LinkOnConstrainIconDark.png" },
+								alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/ConstrainDimensions=Constrain Width and Height Proportions",
+								vertical: @align_center,
+								wants_focus: false);
+			}
+			
+			row(spacing: @connected_spacing)
+			{
+				unit_edit_number(identifier: "RectangleHeight",
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/RectangleHeight=Rectangle Height",
+									decimal_places: 3,
+									digits: 4,
+									unit:"CurrentDocumentUnit",
+									max_value: 16384,
+									min_value: 0.0);
+
+				image(identifier: "RectangleHeightImage",
+						alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/RectangleHeight=Rectangle Height",
+						image: { normal: "SP_Height_Md_N.png", dark_normal: "SP_Height_Md_N_D.png" });
+			}
+		}
+		
+		row(margin: [0,5,0,0])
+		{
+			unit_edit_number(identifier: "RectangleAngle",
+								alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/RectangleAngle=Rectangle Angle",
+								popuplist: true,
+								items: @AngleValues,
+								decimal_places: 2,
+								digits: 1,
+								unit:"NumberEditUnit_Degree",
+								label: "SP_RotateCCW_Md_N.png",
+								is_image_label: true);
+		}
+		
+		row(horizontal: @align_fill,
+			child_vertical: @align_fill)
+		{
+			column(vertical: @align_fill)
+			{
+				row(spacing: 1,
+					child_vertical: @align_center)
+				{
+					overlay()
+					{
+						panel(margin: 0, bind: @LeftTopCornerType, value: 0)
+						{
+							button(identifier: "LeftTopCornerTypeInvalid",
+									image: { normal: "SP_MixedCornerLTPopup_Md_N.png", dark_normal: "SP_MixedCornerLTPopup_Md_N_D.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+						panel(margin: 0, bind: @LeftTopCornerType, value: 1)
+						{
+							button(identifier: "LeftTopCornerTypeNormal",
+									image: { normal: "SP_NormalRoundingLTPopup_Md_N.png", dark_normal: "SP_NormalRoundingLTPopup_Md_N_D.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+						panel(margin: 0, bind: @LeftTopCornerType, value: 2)
+						{
+							button(identifier: "LeftTopCornerTypeInverted",
+									image: { normal: "SP_InverseRoundingLTPopup_Md_N.png", dark_normal: "SP_InverseRoundingLTPopup_Md_N_D.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+						panel(margin: 0, bind: @LeftTopCornerType, value: 3)
+						{
+							button(identifier: "LeftTopCornerTypeChamfer",
+									image: { normal: "SP_ChamferLTPopup_Md_N.png", dark_normal: "SP_ChamferLTPopup_Md_N_D.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+					}
+
+					unit_edit_number(identifier: "LeftTopRadius",
+										alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerRadius=Corner Radius",
+										decimal_places: 2,
+										digits: 1,
+										stepper: true,
+										unit:"CurrentDocumentUnit",
+										wants_focus: false,
+										min_value: 0.0);
+				}
+
+				row(spacing: 1,
+					child_vertical: @align_center)
+				{
+					overlay()
+					{
+						panel(margin: 0, bind: @LeftBottomCornerType, value: 0)
+						{
+							button(identifier: "LeftBottomCornerTypeInvalid",
+									image: { normal: "SP_MixedCornerLBPopup_Md_N.png", dark_normal: "SP_MixedCornerLBPopup_Md_N_D.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+						panel(margin: 0, bind: @LeftBottomCornerType, value: 1)
+						{
+							button(identifier: "LeftBottomCornerTypeNormal",
+									image: { normal: "SP_NormalRoundingLBPopup_Md_N.png", dark_normal: "SP_NormalRoundingLBPopup_Md_N_D.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+						panel(margin: 0, bind: @LeftBottomCornerType, value: 2)
+						{
+							button(identifier: "LeftBottomCornerTypeInverted",
+									image: { normal: "SP_InverseRoundingLBPopup_Md_N.png", dark_normal: "SP_InverseRoundingLBPopup_Md_N_D.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+						panel(margin: 0, bind: @LeftBottomCornerType, value: 3)
+						{
+							button(identifier: "LeftBottomCornerTypeChamfer",
+									image: { normal: "SP_ChamferLBPopup_Md_N.png", dark_normal: "SP_ChamferLBPopup_Md_N_D.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+					}
+
+					unit_edit_number(identifier: "LeftBottomRadius",
+										alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerRadius=Corner Radius",
+										decimal_places: 2,
+										digits: 1,
+										stepper: true,
+										unit:"CurrentDocumentUnit",
+										max_value: 16384,
+										min_value: 0.0);
+				}
+			}
+
+			column(vertical: @align_fill)
+			{
+				row(vertical: @align_center,
+					spacing: 0)
+				{
+					guide_consumer(consume_horizontal: 1);
+
+					toggle_button(identifier: "ConstrainRadii",
+									bind: @ConstrainRadii,
+									value_on: true, value_off: false,
+									image: { normal: "NoConstrainIcon.png", dark_normal: "NoConstrainIconDark.png", down: "LinkOnConstrainIcon.png", dark_down: "LinkOnConstrainIconDark.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/ConstrainRadii=Link Corner Radius Values",
+									vertical: @align_center,
+									wants_focus: false);
+				}
+			}
+
+			column(vertical: @align_fill)
+			{
+				row(spacing: 1,
+					child_vertical: @align_center)
+				{
+					unit_edit_number(identifier: "RightTopRadius",
+										alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerRadius=Corner Radius",
+										decimal_places: 2,
+										digits: 1,
+										stepper: true,
+										unit:"CurrentDocumentUnit",
+										max_value: 16384,
+										min_value: 0.0);
+
+					overlay()
+					{
+						panel(margin: 0, bind: @RightTopCornerType, value: 0)
+						{
+							button(identifier: "RightTopCornerTypeInvalid",
+									image: { normal: "SP_MixedCornerRTPopup_Md_N.png", dark_normal: "SP_MixedCornerRTPopup_Md_N_D.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+						panel(margin: 0, bind: @RightTopCornerType, value: 1)
+						{
+							button(identifier: "RightTopCornerTypeNormal",
+									image: { normal: "SP_NormalRoundingRTPopup_Md_N.png", dark_normal: "SP_NormalRoundingRTPopup_Md_N_D.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+						panel(margin: 0, bind: @RightTopCornerType, value: 2)
+						{
+							button(identifier: "RightTopCornerTypeInverted",
+									image: { normal: "SP_InverseRoundingRTPopup_Md_N.png", dark_normal: "SP_InverseRoundingRTPopup_Md_N_D.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+						panel(margin: 0, bind: @RightTopCornerType, value: 3)
+						{
+							button(identifier: "RightTopCornerTypeChamfer",
+									image: { normal: "SP_ChamferRTPopup_Md_N.png", dark_normal: "SP_ChamferRTPopup_Md_N_D.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+					}
+				}
+
+				row(spacing: 1,
+					child_vertical: @align_center)
+				{
+					unit_edit_number(identifier: "RightBottomRadius",
+										alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerRadius=Corner Radius",
+										decimal_places: 2,
+										digits: 1,
+										stepper: true,
+										unit:"CurrentDocumentUnit",
+										max_value: 16384,
+										min_value: 0.0);
+
+					overlay()
+					{
+						panel(margin: 0, bind: @RightBottomCornerType, value: 0)
+						{
+							button(identifier: "RightBottomCornerTypeInvalid",
+									image: { normal: "SP_MixedCornerRBPopup_Md_N.png", dark_normal: "SP_MixedCornerRBPopup_Md_N_D.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+						panel(margin: 0, bind: @RightBottomCornerType, value: 1)
+						{
+							button(identifier: "RightBottomCornerTypeNormal",
+									image: { normal: "SP_NormalRoundingRBPopup_Md_N.png", dark_normal: "SP_NormalRoundingRBPopup_Md_N_D.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+						panel(margin: 0, bind: @RightBottomCornerType, value: 2)
+						{
+							button(identifier: "RightBottomCornerTypeInverted",
+									image: { normal: "SP_InverseRoundingRBPopup_Md_N.png", dark_normal: "SP_InverseRoundingRBPopup_Md_N_D.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+						panel(margin: 0, bind: @RightBottomCornerType, value: 3)
+						{
+							button(identifier: "RightBottomCornerTypeChamfer",
+									image: { normal: "SP_ChamferRBPopup_Md_N.png", dark_normal: "SP_ChamferRBPopup_Md_N_D.png" },
+									alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/CornerType=Corner Type",
+									wants_focus: false);
+						}
+					}
+				}
+			}
+		}
+    }
+}

@@ -1,0 +1,18 @@
+layout ReplaceFileWarningDlg
+{
+    view subview(identifier: "AIEveSubView",
+				layout_theme: @dialog_large,spacing: @unrelated_spacing,
+				show_border: false)
+    {
+		column(horizontal:@align_fill)
+		{
+			display_text(name: "$$$/App/Functionality/RFWD_msg=Some of the specified files already exist in the target location. The files marked below will be replaced:");
+			multicolumn_tree(set_default_focus: true, identifier: "MCT", horizontal: @align_fill);
+		}
+		row(horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+		{	
+			button(name: "$$$/App/Functionality/RFWD_gOK=Replace", identifier: "okButton", commit_button: true);		
+			button(name: "$$$/App/Functionality/RFWD_gCancel=Cancel", identifier: "cancelButton", commit_button: true);			
+		}		
+	}
+}

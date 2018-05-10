@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Notification Bar</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="js/CSInterface.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+</head>
+<body>
+<div class="content" id="main">
+	<div style="float:left" class="center">Warning: This copy of Adobe Illustrator is not genuine. Buy Adobe Genuine software now to resolve this issue.<button class="action" onclick="BuyNowFunction()"><label>Buy Now</label></button></div>
+</div>
+<script>
+
+window.onload=function()
+{
+	var frame = window.frameElement;
+	frame.SMID = "Not Genuine";
+}
+
+function BuyNowFunction() {
+	var buttonEvent = new CSEvent("NotGenuineEvent", "APPLICATION");
+	var dataMap = {
+                                "Type" : "ButtonClickEvent",
+                                "Data" : "BuyNow"
+				  };
+	buttonEvent.data = JSON.stringify(dataMap);
+    CSLibrary.dispatchEvent(buttonEvent);
+    console.log (buttonEvent.data);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+layout StrokePanel
+{
+	view subview(identifier: "StrokePanelEveSubView", width: gStandardMinPanelWidth, 
+			 child_horizontal: @align_fill,
+			 layout_theme: @panel,
+			 show_border: false,
+			 child_vertical: @align_center,
+			 placement: @place_column)	
+	{
+			optional(bind: @StateOne, value: true, child_vertical: @align_center)
+			{
+				edit_number(identifier: "EditNumberWeight",
+						name: "$$$/PaintStyle/StrokeDlg/WtLabel=Weight:",
+						max_value: 1000,
+						min_value: 0,
+						decimal_places: 3,
+						digits: 3,
+						stepper: true,
+						popuplist: true,
+						set_default_focus: true
+						);
+				
+			}
+
+			optional(bind: @StateTwo, value: true, child_vertical: @align_center, child_horizontal: @align_fill, margin: 0)
+			{
+				button_bar(identifier: "CapRadioGp",  name: "$$$/PaintStyle/StrokeDlg/CapLabel=Cap:",
+								items: [
+									 {image: {normal: "SP_ButtCap_Sm_N.png", dark_normal: "SP_ButtCap_Sm_N_D.png"}, show_border: true, value: 1, alt:"$$$/PaintStyle/Str/StrokePaletteAction/StrokeButtCap=Butt Cap"},
+									 {image: {normal: "SP_RoundCap_Sm_N.png", dark_normal: "SP_RoundCap_Sm_N_D.png"}, show_border: true, value: 2, alt:"$$$/PaintStyle/Str/StrokePaletteAction/StrokeRoundCap=Round Cap"},
+									 {image: {normal: "SP_ProjectingCap_Sm_N.png", dark_normal: "SP_ProjectingCap_Sm_N_D.png"}, show_border: true, value: 3, alt:"$$$/PaintStyle/Str/StrokePaletteAction/StrokeProjectingCap=Projecting Cap"}
+								]
+							);
+				row()
+				{			
+					button_bar(identifier: "CornerRadioGp", name: "$$$/PaintStyle/StrokeDlg/CornerLabel=Corner:",
+									items: [
+										 {image: {normal: "SP_MiterJoin_Sm_N.png", dark_normal: "SP_MiterJoin_Sm_N_D.png"}, show_border: true, value: 1, alt:"$$$/PaintStyle/Str/StrokePaletteAction/StrokeMiterJoin=Miter Join"},
+										 {image: {normal: "SP_RoundJoin_Sm_N.png", dark_normal: "SP_RoundJoin_Sm_N_D.png"}, show_border: true, value: 2, alt:"$$$/PaintStyle/Str/StrokePaletteAction/StrokeRoundJoin=Round Join"},
+										 {image: {normal: "SP_BevelJoin_Sm_N.png", dark_normal: "SP_BevelJoin_Sm_N_D.png"}, show_border: true, value: 3, alt:"$$$/PaintStyle/Str/StrokePaletteAction/StrokeBevelJoin=Bevel Join"}
+									]
+								);
+					edit_number(identifier: "LimitNumber",
+						name: "$$$/PaintStyle/StrokeDlg/LimitLabel=Limit:",
+						suffix:"$$$/PaintStyle/StrokeDlg/xUnitSuffix=x",
+						max_value: 500,
+						min_value: 1,
+						decimal_places: 1,
+						digits: 1,
+						horizontal:@align_right,
+						guide_mask: [ @guide_label ]						
+						);			
+				}
+				button_bar(identifier: "AlignStrokeRadioGp", name: "$$$/PaintStyle/StrokeDlg/AlignStroke=Align Stroke:",
+								items: [
+									 {image: {normal: "SP_StrokeCentered_Sm_N.png", dark_normal: "SP_StrokeCentered_Sm_N_D.png"}, show_border: true, value: 1, alt:"$$$/PaintStyle/Str/StrokePanel/AlignStrokeCenterStr=Align Stroke to Center"},
+									 {image: {normal: "SP_StrokeInside_Sm_N.png", dark_normal: "SP_StrokeInside_Sm_N_D.png"}, show_border: true, value: 2, alt:"$$$/PaintStyle/Str/StrokePanel/AlignStrokeInsideStr=Align Stroke to Inside"},
+									 {image: {normal: "SP_StrokeOutside_Sm_N.png", dark_normal: "SP_StrokeOutside_Sm_N_D.png"}, show_border: true, value: 3, alt:"$$$/PaintStyle/Str/StrokePanel/AlignStrokeOutsideStr=Align Stroke to Outside"}
+								]
+							);	
+				separator(horizontal: @align_fill);
+				row( guide_mask: [ @guide_label ])
+				{
+					checkbox(identifier: "DashedLineChkBx", 
+						guide_mask: [ @guide_label ],
+						name: "$$$/PaintStyle/StrokeDlg/DashedLineLabel=Dashed Line");
+						
+					button_bar(identifier: "DashLineRadioGp", 
+								horizontal: @align_right,	
+								items: [
+									 {image: {normal: "SP_DashStyleClassic_32x16_N.png", dark_normal: "SP_DashStyleClassic_32x16_N_D.png"}, show_border: true, value: 1, alt:"$$$/PaintStyle/StrokeDlg/ToolTips/ClassicDash=Preserves exact dash and gap lengths"},
+									 {image: {normal: "SP_DashStyleAdjusted_32x16_N.png", dark_normal: "SP_DashStyleAdjusted_32x16_N_D.png"}, show_border: true, value: 2, alt:"$$$/PaintStyle/StrokeDlg/ToolTips/AdjustDash=Aligns dashes to corners and path ends, adjusting lengths to fit"}								
+								]
+							);	
+				}
+				
+				row(guide_mask: [ @guide_label ], child_horizontal: @align_fill, spacing:2)
+				{
+					column(child_horizontal: @align_center, spacing:0)
+					{
+						edit_number(identifier: "Dash1EditNumber", 
+                                decimal_places: 2,
+                                max_value: 1000,
+                                min_value: 0,
+								alt:"$$$/PaintStyle/StrokeDlg/dash=dash",                                                       
+                                digits:0);
+						static_text(identifier: "Dash1Label", name:"$$$/PaintStyle/StrokeDlg/dash=dash");
+					}
+					
+                    column(child_horizontal: @align_center, spacing:0)
+					{
+						edit_number(identifier: "Gap1EditNumber", 
+                                decimal_places: 2,
+                                max_value: 1000,
+                                min_value: 0,   
+								alt:"$$$/PaintStyle/StrokeDlg/gap=gap",
+                                digits:0);
+						static_text(identifier: "Gap1Label", name:"$$$/PaintStyle/StrokeDlg/gap=gap");
+					}
+					column(child_horizontal: @align_center, spacing:0)
+					{
+						edit_number(identifier: "Dash2EditNumber", 
+                                decimal_places: 2,
+                                max_value: 1000,
+                                min_value: 0,
+								alt:"$$$/PaintStyle/StrokeDlg/dash=dash",                                                         
+                                digits:0);
+						static_text(identifier: "Dash2Label",name:"$$$/PaintStyle/StrokeDlg/dash=dash");
+					}
+					
+                    column(child_horizontal: @align_center, spacing:0)
+					{
+						edit_number(identifier: "Gap2EditNumber", 
+                                decimal_places: 2,
+                                max_value: 1000,
+                                min_value: 0, 
+								alt:"$$$/PaintStyle/StrokeDlg/gap=gap",                                                        
+                                digits:0);
+						static_text(identifier: "Gap2Label",name:"$$$/PaintStyle/StrokeDlg/gap=gap");
+						
+					}
+					column(child_horizontal: @align_center, spacing:0)
+					{
+						edit_number(identifier: "Dash3EditNumber", 
+                                decimal_places: 2,
+                                max_value: 1000,
+                                min_value: 0,
+								alt:"$$$/PaintStyle/StrokeDlg/dash=dash",                                                        
+                                digits:0);
+						static_text(identifier: "Dash3Label",name:"$$$/PaintStyle/StrokeDlg/dash=dash");
+					}
+					
+                    column(child_horizontal: @align_center, spacing:0)
+					{
+						edit_number(identifier: "Gap3EditNumber", 
+                                decimal_places: 2,
+                                max_value: 1000,
+                                min_value: 0,  
+								alt:"$$$/PaintStyle/StrokeDlg/gap=gap",                                                       
+                                digits:0);
+						static_text(identifier: "Gap3Label",name:"$$$/PaintStyle/StrokeDlg/gap=gap");
+						
+					}
+				}				
+			}
+			optional(bind: @StateThree, value: true, child_vertical: @align_center, child_horizontal: @align_fill, margin: 0, placement:@place_column)
+			{
+				separator(horizontal:@align_fill);
+				row(horizontal:@align_fill, child_vertical:@align_center, vertical:@align_center, spacing: @label_widget_spacing)
+				{
+					row(spacing: 0, child_vertical:@align_center, vertical:@align_center) 
+					{
+						popup_panel_button(label: "$$$/PaintStyle/StrokeDlg/Arrowheads=Arrowheads:", identifier:"LeftArrowImage",  width:55, alt: "$$$/PaintStyle/StrokeDlg/ToolTips/LeftArrow=Click to pick arrowhead to apply to start point of path");
+					}
+					
+					row(spacing:0,child_vertical:@align_center, vertical:@align_center)
+					{
+						guide_consumer(consume_horizontal:1);
+						popup_panel_button(identifier:"RightArrowImage", width:55,
+						alt: "$$$/PaintStyle/StrokeDlg/ToolTips/RightArrow=Click to pick arrowhead to apply to end point of path");
+					}
+					
+					button(identifier:"SwapArrowBtn", horizontal:@align_right, image:{normal:"SP_SwapArrowheads_Sm_N.png", dark_normal:"SP_SwapArrowheads_Sm_N_D.png"},
+						alt: "$$$/PaintStyle/StrokeDlg/ToolTips/SwapButton=Swap start and end arrowheads");					
+				}
+				row(horizontal:@align_fill,child_vertical:@align_center, vertical:@align_center, spacing: @label_widget_spacing)
+				{
+					row(horizontal:@align_fill, spacing: @label_widget_spacing)
+					{
+						edit_number(identifier: "ScaleStartEditNumber", 
+								name:"$$$/PaintStyle/StrokeDlg/ScaleLabel=Scale:",
+                                decimal_places: 0,
+                                max_value: 1000,
+                                min_value: 1,     
+                                stepper: true,                                                    
+                                digits:1, unit: 'NumberEditUnit_Percent',
+                                alt: "$$$/PaintStyle/StrokeDlg/ToolTips/LeftArrowScale=Scale factor for start arrowhead");
+						edit_number(identifier: "ScaleEndEditNumber", 
+								name: " ",
+                                decimal_places: 0,
+                                max_value: 1000,
+                                min_value: 1,stepper: true,                                                      
+                                digits:1, unit: 'NumberEditUnit_Percent',
+                                alt: "$$$/PaintStyle/StrokeDlg/ToolTips/RightArrowScale=Scale factor for end arrowhead");
+					}					
+					toggle_button(identifier: "LinkScaleBtn", horizontal:@align_right, 
+												   image: {down: "SP_Link_Md_N.png", dark_down:"SP_Link_Md_N_D.png", normal: "SP_Unlink_Md_N.png", dark_normal:"SP_Unlink_Md_N_D.png"}, 
+						alt: "$$$/PaintStyle/StrokeDlg/ToolTips/LinkScales=Link start and end arrowhead scales");
+				}
+				row(horizontal:@align_fill)
+				{
+					button_bar(identifier: "AlignLineRadioGp",
+								name:"$$$/PaintStyle/StrokeDlg/AlignArrow=Align:",
+								items: [
+									 {image: {normal: "SP_AlignArrowheadsExtending_Sm_N.png", dark_normal: "SP_AlignArrowheadsExtending_Sm_N_D.png"}, show_border: true, value: 1, alt:"$$$/PaintStyle/StrokeDlg/ToolTips/ExtendTip=Extend arrow tip beyond end of path"},
+									 {image: {normal: "SP_AlignArrowheadsAtEnd_Sm_N.png", dark_normal: "SP_AlignArrowheadsAtEnd_Sm_N_D.png"}, show_border: true, value: 2, alt:"$$$/PaintStyle/StrokeDlg/ToolTips/AlignAtTip=Place arrow tip at end of path"}								
+								]
+							);
+				}
+				separator(horizontal:@align_fill);
+				
+				row(horizontal:@align_fill, child_vertical:@align_center, vertical:@align_center, spacing: 0)
+				{
+					row(spacing: 0, child_vertical:@align_center, vertical:@align_center)
+					{		
+						popup_panel_button(label:"$$$/PaintStyle/StrokeDlg/ProfileLabel=Profile:", identifier:"VariableWidthImage", width:110);
+					}
+					row(spacing:0, horizontal:@align_right,child_vertical:@align_center, vertical:@align_center)
+					{
+						button(identifier:"FlipHorBtn", image: {normal: "SP_FlipHorizontal_Sm_N.png", dark_normal: "SP_FlipHorizontal_Sm_N_D.png"}, alt:"$$$/PaintStyle/StrokeDlg/ToolTips/VariableWidthFlipAlong=Flip Along" );
+						button(identifier:"FlipVerBtn", image: {normal: "SP_FlipVertical_Sm_N.png", dark_normal: "SP_FlipVertical_Sm_N_D.png"},alt:"$$$/PaintStyle/StrokeDlg/ToolTips/VariableWidthFlipAcross=Flip Across");
+					}
+				}
+			}
+	}
+}

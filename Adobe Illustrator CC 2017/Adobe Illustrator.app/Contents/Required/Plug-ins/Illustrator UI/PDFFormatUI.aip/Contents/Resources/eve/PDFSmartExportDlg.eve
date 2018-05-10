@@ -1,0 +1,36 @@
+layout PDFSmartExportDlg
+{
+	view subview(identifier: "PDFSubviewSE", placement: @place_column, show_border: false, layout_theme: @dialog, child_horizontal: @align_fill)
+	{				
+			/*Below colum is just to mask guide & align two top popups properly.*/
+			column(margin:[10,15,10,15])
+			{
+				row(horizontal: @align_left )
+				{
+					popup(	identifier:				"PDFPresetPopupSE",
+							name:					'$$$/PDFFormat/Static/PresetSE=&Adobe PDF Preset:',	
+							set_default_focus:		true,
+							include_custom_item:	false,	
+							horizontal:				@align_fill,
+							popup_maximum_width_chars: 20,
+							popup_minimum_width_chars: 20,
+							items:					[
+														{ name: '$$$/PDFFileFormat/Str/PDFStyleAI=[Illustrator Default]', value: 2 }													
+													]						
+							);
+				}
+				row(horizontal: @align_fill)
+				{							
+					info_icon(identifier: "infoIcon", icontype: "note", size: "small", 
+								alt: "$$$/PDFFormat/Dlg/Options/infoText=Use Edit > Adobe PDF Presets to view, modify, or create new presets." ,
+								horizontal:				@align_left);
+					static_text(identifier: "PDFPresetInfoText",
+								theme_font_size: @large,
+								vertical: @align_center,
+								horizontal: @align_left,
+								name: "$$$/PDFFormat/Dlg/Options/infoText=Use Edit > Adobe PDF Presets to view, modify, or create new presets.");
+				}
+			}
+		
+	}
+}

@@ -1,0 +1,19 @@
+sheet TouchRectanglePropertiesUI
+{
+constant:
+	kInvalidCornerType: 0;
+
+interface:
+	MultipleSelection: false;
+
+	DontConstrain: false;
+
+	unlink ConstrainDimensions: true <== MultipleSelection ? DontConstrain : ConstrainDimensions;
+
+	unlink ConstrainRadii: true <== MultipleSelection ? DontConstrain : ConstrainRadii;
+
+	LeftTopCornerType: kInvalidCornerType;
+	LeftBottomCornerType: kInvalidCornerType;
+	RightTopCornerType: kInvalidCornerType;
+	RightBottomCornerType: kInvalidCornerType;
+}

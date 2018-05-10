@@ -1,0 +1,103 @@
+layout app_bar
+{		
+    view subview(identifier: "AIAppBarView",
+					name:'AIAppBar',
+					spacing: 6,
+					margin: 0,
+					vertical: @align_center,
+					placement: @place_row,
+					show_border: false,
+					wants_focus: false)
+    {
+		button(bind: @layout_bridge_button,
+				image: { normal:"SP_ABOpenBridge_Lg_N.png", dark_normal:"SP_ABOpenBridge_Lg_N_D.png" },
+				action: @launch_bridge,
+				alt: "$$$/AppBar/HostView/Controls/BridgetButton/Tooltip=Go to Bridge",
+				wants_focus: false);
+		optional(horizontal: @align_left,
+						spacing: 0,
+						margin: 0,
+						bind: @show_Adobe_Stock_icon,
+						value: 1)
+			{
+				button(image: {normal:"SP_ABOpenStock_Lg_N.png",dark_normal:"SP_ABOpenStock_Lg_N_D.png"}, 
+					action: @goto_adobe_stock, 
+					alt: "$$$/AppBar/HostView/Controls/AdobeStock/ToolTip=Search Adobe Stock", 
+					wants_focus: false);
+			}
+		popup_window(identifier: "LayoutWidget",
+						eve_source: "grid.eve",
+						alt: "$$$/AppBar/HostView/Controls/LayoutWidget/ToolTip=Arrange Documents",
+						bind: @selectedview_image,
+						wants_focus: false);
+		row(spacing: 0,
+			margin: 0,
+			horizontal: @align_left)
+		{
+			optional(horizontal: @align_left,
+						spacing: 0,
+						margin: 0,
+						bind: @show_GPU_icon,
+						value: 1)
+			{
+				button(image: { normal:"SP_GPUAccelerated_Lg_N.png", dark_normal:"SP_GPUAccelerated_Lg_N_D.png" },
+						action: @launch_gpu_performance,
+						alt: "$$$/AppBar/HostView/Controls/GPUEnabledButton/ToolTip=GPU Performance is Enabled. Click to modify options in the Preferences panel",
+						wants_focus: false);
+			}
+			optional(horizontal: @align_left,
+						spacing: 0,
+						margin: 0,
+						bind: @show_GPU_icon,
+						value: 2)
+			{
+				button(image: { normal:"SP_GPUAcceleratedOff_Lg_N.png", dark_normal:"SP_GPUAcceleratedOff_Lg_N_D.png" },
+						action: @launch_gpu_performance,
+						alt: "$$$/AppBar/HostView/Controls/GPUDisabledButton/Tooltip=GPU Performance is Disabled. Click to modify options in the Preferences panel",
+						wants_focus: false);
+			}
+			
+			optional(horizontal: @align_left,
+						spacing: 0,
+						margin: 0,
+						bind: @show_GPU_icon,
+						value: 3)
+			{
+				button(image: { normal:"SP_GPUAcceleratedOff_Lg_N.png", dark_normal:"SP_GPUAcceleratedOff_Lg_N_D.png" },
+						action: @launch_gpu_performance,
+						alt: "$$$/AppBar/HostView/Controls/GPUDisabledOn32BitBinariesButton/Tooltip=The GPU Performance feature is not available for 32-bit operating systems.",
+						wants_focus: false);
+			}
+			optional(horizontal: @align_left,
+						margin: 0,
+						bind: @show_TWS_icon,
+						value: true)
+			{
+				button(image: {normal:"SP_TouchMode_Lg_N.png",dark_normal:"SP_TouchMode_Lg_N_D.png"}, action: @launch_TWS, alt: "$$$/AppBar/HostView/Controls/SwitchToTWSButton/ToolTip=Change to Touch Workspace", wants_focus: false);
+			}
+		}
+		optional(horizontal: @align_right,
+					spacing: 0,
+					margin: 0,
+					bind: @show_Learn_icon,
+					value: true)
+		{
+			button(identifier: "learn_button",
+					image: { normal:"SP_PL_AppBar_Learning_N.png",dark_normal:"SP_PL_AppBar_Learning_N_D.png" },
+					action: @launch_learn_panel,
+					alt: "$$$/AppBar/HostView/Controls/LearnPanelButton/Tooltip=Get familiar with Illustrator. Explore helpful tutorials...",
+					wants_focus: false);
+		}
+		optional(horizontal: @align_right,
+					margin: 0,
+					bind: @show_safemode_button,
+					value: true)
+		{
+			link_button( identifier: "safe_mode_button",
+						action: @launch_safemode_dialog,
+						name: "$$$/AppBar/HostView/Controls/SafeModeButtonName=Safe Mode",
+						alt: "$$$/AppBar/HostView/Controls/SafeModeButton/ToolTip=Safe Mode",
+						wants_focus: false);
+		}
+    }
+}

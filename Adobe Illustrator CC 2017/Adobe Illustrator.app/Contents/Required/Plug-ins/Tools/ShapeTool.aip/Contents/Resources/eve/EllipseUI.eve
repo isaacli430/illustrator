@@ -1,0 +1,49 @@
+layout EllipseUI
+{
+    view subview(horizontal: @align_fill,
+                 identifier: "EllipseToolOptions",
+                 layout_theme: @dialog_large,
+                 placement: @place_column,
+				 spacing: @unrelated_spacing,
+				 show_border: false)
+    {
+		row()
+		{
+			row(child_vertical: @align_center)
+			{
+				column()
+				{
+					unit_hot_number(name: "$$$/ShapeTool/Dlg/Oval/OvalWidthText=&Width:",
+								set_default_focus: true,
+								bind: @Width, 
+								decimal_places: 4,
+								identifier: "width_editNumber");
+
+					unit_hot_number(name: "$$$/ShapeTool/Dlg/Oval/OvalHeightText=&Height:",
+								bind: @Height,
+								decimal_places: 4, 
+								identifier: "height_editNumber");
+				}
+					toggle_button(identifier: "NoConstrainIcon", 
+									image: {normal: "NoConstrainIcon.png", dark_normal:"NoConstrainIconDark.png", down: "LinkOnConstrainIcon.png", dark_down:"LinkOnConstrainIconDark.png"}, 
+									alt: "$$$/ShapeTool/Dlg/Oval/OvalNoConstrainToolTipText=Constrain Width and Height Proportions",
+									value_on: true, value_off: false, 
+									action: @constrain_action, 
+									bind: @showConstrainIcon,
+									vertical: @align_center, 
+									wants_focus: false);
+			}
+			
+		}
+		row(horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+		{	
+			button(commit_button: true,
+				   identifier: "okButton",
+				   name: "$$$/gOK=OK");
+
+			button(identifier: "cancelButton",
+				   commit_button: true,
+				   name: "$$$/gCancel=Cancel");
+		}
+    }
+}

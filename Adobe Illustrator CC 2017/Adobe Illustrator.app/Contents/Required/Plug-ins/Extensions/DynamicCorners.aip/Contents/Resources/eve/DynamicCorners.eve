@@ -1,0 +1,51 @@
+layout DynamicCornerPanel
+{
+	view subview(identifier: "DynamicCornerPanelEveSubView", 
+				 layout_theme: @dialog_large,
+				 child_horizontal: @align_fill,
+				 placement: @place_column,
+				 show_border: false,
+				 spacing: @unrelated_spacing)
+	{
+		 column(child_horizontal: @align_fill)
+        {
+            button_bar(identifier: "DynamicCornerRadioGp",name: "$$$/DynamicCorner/DynamicCornerDlg/DynamicCornerLabel=&Corner:",
+								items: [
+									 {image: {normal: "SP_NormalRounding_Md_N.png", dark_normal: "SP_NormalRounding_Md_N_D.png"}, show_border: true, value: 1, alt:"$$$/DynamicCorner/Str/CornersChangeAction/CornerNormalRounding=Round"},
+									 {image: {normal: "SP_InverseRounding_Md_N.png", dark_normal: "SP_InverseRounding_Md_N_D.png"}, show_border: true, value: 2, alt:"$$$/DynamicCorner/Str/CornersChangeAction/CornerInvertedRounding=Inverted Round"},
+									 {image: {normal: "SP_Chamfer_Md_N.png", dark_normal: "SP_Chamfer_Md_N_D.png"}, show_border: true, value: 3, alt:"$$$/DynamicCorner/Str/CornersChangeAction/CornerChamferRounding=Chamfer"}
+								]
+							);
+				edit_number(identifier: "EditNumberRadius",
+						bind: @EditNumberRadius,
+						name: "$$$/DynamicCorner/DynamicCornerDlg/DynamicCornerRadiusLabel=&Radius:",
+						min_value: 0,
+						decimal_places: 2,
+						digits: 5,
+						stepper: true,
+						popuplist: false,
+						set_default_focus: true,
+						bind: @DlgCornerRadiusField,
+						unit: "CurrentDocumentUnit"
+						); 
+			button_bar(identifier: "DynamicCornerTypeRadioGp",name: "$$$/DynamicCorner/DynamicCornerDlg/DynamicCornerTypeLabel=R&ounding:",
+								items: [
+									 {image: {normal: "SP_AdobeRounding_Md_N.png", dark_normal: "SP_AdobeRounding_Md_N_D.png"}, show_border: true, value: 1,  alt:"$$$/DynamicCorner/Str/TypeChangeAction/TypeRelativeRounding=Relative"},
+									 {image: {normal: "SP_AbsoluteRounding_Md_N.png", dark_normal: "SP_AbsoluteRounding_Md_N_D.png"}, show_border: true, value: 2, alt:"$$$/DynamicCorner/Str/TypeChangeAction/TypeAbsoluteRounding=Absolute"}
+								]
+							);
+		}
+		row(child_horizontal: @align_right, reverse: os == @mac, child_vertical: @align_center, spacing: @related_spacing) {	   	
+				button(
+					identifier: "okButton",
+					name: "$$$/gOK=OK",
+          commit_button: true);
+
+				button(
+					identifier: "cancelButton",
+					name: "$$$/gCancel=Cancel",
+          commit_button: true
+				);
+			}
+    }
+}

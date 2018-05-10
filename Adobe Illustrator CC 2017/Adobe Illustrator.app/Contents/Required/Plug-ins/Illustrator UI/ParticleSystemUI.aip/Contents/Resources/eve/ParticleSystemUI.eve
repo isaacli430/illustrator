@@ -1,0 +1,171 @@
+layout ParticleSystemUI
+{
+    view subview(identifier: "AIEveSubView",
+				 layout_theme: @dialog_large,
+				 show_border: false,
+				 spacing: @unrelated_spacing)
+    {
+		column(horizontal: @align_fill)
+		{
+			unit_hot_number(identifier: "Diameter",
+							bind: @DiameterCell,
+							name: "$$$/ParticleSystem/Dlg/Tools/DiameterStr=&Diameter:",
+							max_value: 999,
+							min_value: 1,
+							set_default_focus: true,
+							decimal_places: 2,
+							digits: 6);  
+						
+			popup(identifier: "MethodPopUp",
+					bind: @MethodPopUpCell,
+					name: "$$$/ParticleSystem/Dlg/Tools/MethodStr=&Method:",
+					include_custom_item: false,
+					items: [{name: "$$$/ParticleSystem/Mnu/Method=Average", value: 0},
+							{name: "$$$/ParticleSystem/Mnu/Method/1=User Defined", value: 1},
+							{name: "$$$/ParticleSystem/Mnu/Method/2=Random", value: 2}]);		
+		            
+			row()
+			{
+				unit_hot_number(identifier: "Intensity",
+								bind: @IntensityCell,
+								name: "$$$/ParticleSystem/Dlg/Tools/IntensityStr=&Intensity:",
+								max_value: 10,
+								min_value: 1,
+								unit: "NumberEditUnit_NoUnit",
+								decimal_places: 2,
+								digits: 6);  
+									
+				popup(identifier: "IntensityModifierPopUp",
+						bind: @IntensityModifierPopUpCell,
+						include_custom_item: false,
+						items: [{name: "$$$/ParticleSystem/Mnu/Tablet/Fixed=Fixed", value: 0},
+								{name: "$$$/ParticleSystem/Mnu/Tablet/Pressure=Pressure", value: 1},
+								{name: "$$$/ParticleSystem/Mnu/Tablet/StylusWheel=Stylus Wheel", value: 2},
+								{name: "$$$/ParticleSystem/Mnu/Tablet/Tilt=Tilt", value: 3},
+								{name: "$$$/ParticleSystem/Mnu/Tablet/Bearing=Bearing", value: 4},
+								{name: "$$$/ParticleSystem/Mnu/Tablet/Rotation=Rotation", value: 5}]);		
+			}
+			
+			unit_hot_number(identifier: "SymbolSetDensity",
+							bind: @SymbolSetDensityCell,
+							name: "$$$/ParticleSystem/Dlg/Tools/GroupDensityStr=&Symbol Set Density:",
+							max_value: 10,
+							min_value: 1,
+							unit: "NumberEditUnit_NoUnit",
+							decimal_places: 2,
+							digits: 6);  
+										
+			group(identifier: "highlightFrame",
+					horizontal: @align_fill,
+					header: "button_bar(identifier:'SelectedSymbolTool',
+							bind: @SelectedSymbolTool,
+							items: [ {identifier:'Sprayer', image:{normal:'sprayerImageN.png',dark_normal:'sprayerImageND.png'}, value: 0, alt: '$$$/ParticleSystem/Str/16601=Symbol Sprayer'},
+									{identifier:'Shifter', image:{normal:'shifterImageN.png',dark_normal:'shifterImageND.png'}, value: 1, alt: '$$$/ParticleSystem/Str/16603=Symbol Shifter'},
+									{identifier:'Scruncher', image:{normal:'scruncherImageN.png',dark_normal:'scruncherImageND.png'}, value: 2, alt: '$$$/ParticleSystem/Str/16605=Symbol Scruncher'},
+									{identifier:'Sizer', image:{normal:'sizerImageN.png',dark_normal:'sizerImageND.png'}, value: 3, alt: '$$$/ParticleSystem/Str/16607=Symbol Sizer'},
+									{identifier:'Spinner', image:{normal:'spinnerImageN.png',dark_normal:'spinnerImageND.png'}, value: 4, alt: '$$$/ParticleSystem/Str/16609=Symbol Spinner'},
+									{identifier:'Stainer', image:{normal:'stainerImageN.png',dark_normal:'stainerImageND.png'}, value: 5, alt: '$$$/ParticleSystem/Str/16611=Symbol Stainer'},
+									{identifier:'Screener', image:{normal:'screenerImageN.png',dark_normal:'screenerImageND.png'}, value: 6, alt: '$$$/ParticleSystem/Str/16613=Symbol Screener'},
+									{identifier:'Styler', image:{normal:'stylerImageN.png',dark_normal:'stylerImageND.png'}, value: 7, alt: '$$$/ParticleSystem/Str/16615=Symbol Styler'}],
+									horizontal: @align_center)")
+			{			
+				overlay(margin: 0, horizontal: @align_fill, child_horizontal: @align_fill)
+				{
+					panel(margin: 0,bind: @IsSprayerToolSelected, value: true, placement: @place_row, wants_focus: false, vertical: @align_center)
+					{
+						
+						column(horizontal: @align_left, guide_mask: [@guide_label])
+						{
+							popup(identifier: "ScrunchPopUp",
+								bind: @UseAvgDensity,
+								name: "$$$/ParticleSystem/Dlg/Tools/Sprayer1Str=S&crunch:",
+								include_custom_item: false,
+								items: [{name: "$$$/ParticleSystem/Mnu/MethodSprayer=Average", value: 1},
+										{name: "$$$/ParticleSystem/Mnu/MethodSprayer/1=User Defined", value: 0}]);
+								
+							popup(identifier: "SizePopUp",
+								bind: @UseAvgScale,
+								name: "$$$/ParticleSystem/Dlg/Tools/Sprayer2Str=Si&ze:",
+								include_custom_item: false,
+								items: [{name: "$$$/ParticleSystem/Mnu/MethodSprayer=Average", value: 1},
+										{name: "$$$/ParticleSystem/Mnu/MethodSprayer/1=User Defined", value: 0}]);
+								
+							popup(identifier: "SpinPopUp",
+								bind: @UseAvgOrient,
+								name: "$$$/ParticleSystem/Dlg/Tools/Sprayer3Str=Spi&n:",
+								include_custom_item: false,
+								items: [{name: "$$$/ParticleSystem/Mnu/MethodSprayer=Average", value: 1},
+										{name: "$$$/ParticleSystem/Mnu/MethodSprayer/1=User Defined", value: 0}]);
+						}
+						
+						column(horizontal: @align_right, guide_mask: [@guide_label])
+						{
+							popup(identifier: "ScreenPopUp",
+								bind: @UseAvgAlpha,
+								name: "$$$/ParticleSystem/Dlg/Tools/Sprayer4Str=Scr&een:",
+								include_custom_item: false,
+								items: [{name: "$$$/ParticleSystem/Mnu/MethodSprayer=Average", value: 1},
+										{name: "$$$/ParticleSystem/Mnu/MethodSprayer/1=User Defined", value: 0}]);
+								
+							popup(identifier: "StainPopUp",
+								bind: @UseAvgColor,
+								name: "$$$/ParticleSystem/Dlg/Tools/Sprayer5Str=S&tain:",
+								include_custom_item: false,
+								items: [{name: "$$$/ParticleSystem/Mnu/MethodSprayer=Average", value: 1},
+										{name: "$$$/ParticleSystem/Mnu/MethodSprayer/1=User Defined", value: 0}]);
+								
+							popup(identifier: "StylePopUp",
+								bind: @UseAvgStyle,
+								name: "$$$/ParticleSystem/Dlg/Tools/Sprayer6Str=St&yle:",
+								include_custom_item: false,
+								items: [{name: "$$$/ParticleSystem/Mnu/MethodSprayer=Average", value: 1},
+										{name: "$$$/ParticleSystem/Mnu/MethodSprayer/1=User Defined", value: 0}]);
+						}				
+					}
+					
+					panel(margin: 0, bind: @IsSprayerToolSelected, value: false, wants_focus: false)
+					{			
+						panel(margin: 0, bind: @SelectedSymbolTool, value: 3, guide_mask: [@guide_label], wants_focus: false)
+						{
+							checkbox(identifier: "ProportionalResizingCheckBox",
+							bind: @ProportionalResizingCheckBoxCell,
+							name: "$$$/ParticleSystem/Dlg/Tools/SizerUniformScaleCheckbox=Proportional &Resizing");
+						
+							checkbox(identifier: "AffectsDensityCheckBox",
+							bind: @AffectsDensityCheckBoxCell,
+							name: "$$$/ParticleSystem/Dlg/Tools/SizerScaleAffectsDensityCheckbox=Resizing &Affects Density");
+						}
+						
+						row(horizontal: @align_fill)
+						{
+							info_icon(icontype: "note", size: "small");								
+							
+							static_text(horizontal: @align_fill,
+								identifier: "infoText",
+								adjust_baseline_for_single_line_text: false,
+								characters: 30,
+								name: @tipStringLargest,
+								theme_font_size: @small);
+						} 
+					}
+				}
+			}
+							
+			checkbox(identifier: "ShowBrushCheckBox",
+						bind: @ShowBrushCheckBoxCell,
+						name: "$$$/ParticleSystem/Dlg/Tools/ShowGuideCheckbox=Show &Brush Size and Intensity",
+						guide_mask: [ @guide_label ]);
+		}
+				
+	    row(horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+	    {
+			button(identifier: "okButton",
+				   name: "$$$/gOK=OK",
+				   commit_button: true);
+
+			button(identifier: "cancelButton",
+				   name: "$$$/gCancel=Cancel",
+				   commit_button: true);
+		}
+    }
+}

@@ -1,0 +1,6 @@
+sheet SmartExportUI
+{
+    interface:
+        inEditMode: false;
+        showStaticText <== !inEditMode ;
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+  <menuItem id ="1" text="$$$/ArtStyle/Mnu/16600/1=New Graphic Style..."></menuItem>
+  <menuItem id ="2" text="$$$/ArtStyle/Mnu/16600/2=Duplicate Graphic Style"></menuItem>
+  <menuItem id ="3" text="$$$/ArtStyle/Mnu/16600/12=Merge Graphic Styles"></menuItem>
+  <menuItem id ="4" text="$$$/ArtStyle/Mnu/16600/3=Delete Graphic Style"></menuItem>
+  <separator></separator>
+  <menuItem id ="6" text="$$$/ArtStyle/Mnu/16600/4=Break Link to Graphic Style"></menuItem>
+  <separator></separator>
+  <menuItem id ="8" text="$$$/ArtStyle/Mnu/16600/11=Select All Unused"></menuItem>
+  <separator></separator>
+  <menuItem id ="10" text="$$$/ArtStyle/Mnu/16600/10=Sort by Name"></menuItem>
+  <separator></separator>
+  <menuItem id ="12" text="$$$/ArtStyle/Mnu/16600/15=Use Square for Preview"></menuItem>
+  <menuItem id ="13" text="$$$/ArtStyle/Mnu/16600/16=Use Text for Preview"></menuItem>
+  <separator></separator>
+  <menuItem id ="15" text="$$$/ArtStyle/Mnu/16600/5=Thumbnail View"></menuItem>
+  <menuItem id ="16" text="$$$/ArtStyle/Mnu/16600/6=Small List View"></menuItem>
+  <menuItem id ="17" text="$$$/ArtStyle/Mnu/16600/7=Large List View"></menuItem>
+  <separator></separator>
+  <menuItem id ="19" text="$$$/ArtStyle/Mnu/16600/9=Override Character Color"></menuItem>
+  <menuItem id ="20" text="$$$/ArtStyle/Mnu/16600/8=Graphic Style Options..."></menuItem>
+  <separator></separator>
+  <subMenu id="22" text="$$$/ArtStyle/Mnu/16600/13=Open Graphic Style Library">
+    <separator></separator>
+    <menuItem id="23" text="$$$/ArtStyle/Mnu/16600/17=Other Library..."></menuItem>
+  </subMenu>
+  <menuItem id ="24" text="$$$/ArtStyle/Mnu/16600/14=Save Graphic Style Library..."></menuItem>
+</menu>

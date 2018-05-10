@@ -1,0 +1,6 @@
+sheet LiveShapesPopupPanel
+{
+	interface:
+	scaleStrokeAndEffect: false;
+	scaleCornerRadiiForShapes: false;
+}

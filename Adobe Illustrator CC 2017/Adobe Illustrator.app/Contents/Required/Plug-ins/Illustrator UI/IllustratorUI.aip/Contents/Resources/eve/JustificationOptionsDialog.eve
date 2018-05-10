@@ -1,0 +1,141 @@
+layout justificationOptionsDialog
+{
+	view subview(identifier: "justificationOptionsDialog_subview",
+					layout_theme: @dialog_large,
+					spacing: @unrelated_spacing,
+					show_border: false)
+	{
+		column()
+		{
+			row(horizontal: @align_fill,
+				child_horizontal: @align_fill, spacing: 0)
+			{
+				guide_consumer(consume_horizontal: 1);
+				static_text(identifier: "minimum_staticText", name: "$$$/_SLOParagraphPalette/Dlg/Justification/Static18/Minimum=Minimum");
+				guide_consumer(consume_horizontal: 1);
+				static_text(identifier: "desired_staticText", name: "$$$/_SLOParagraphPalette/Dlg/Justification/Static19/Desired=Desired");
+				guide_consumer(consume_horizontal: 1);
+				static_text(identifier: "maximum_staticText", name: "$$$/_SLOParagraphPalette/Dlg/Justification/Static20/Maximum=Maximum");
+			}
+			
+			row(horizontal: @align_fill,
+				child_horizontal: @align_fill)
+			{
+				unit_hot_number(identifier: "minimumWordSpacing_editNumber",
+									name: "$$$/_SLOParagraphPalette/Dlg/Justification/Static21/WordSpacing=&Word Spacing:",
+									unit: "NumberEditUnit_Percent",
+									set_default_focus: true,
+									digits: 5,
+									decimal_places: 0,
+									bind_final: true,
+									bind: @minimumWordSpacing);
+				unit_hot_number(identifier: "desiredWordSpacing_editNumber",
+									unit: "NumberEditUnit_Percent",
+									digits: 5,
+									decimal_places: 0,
+									bind_final: true,
+									bind: @desiredWordSpacing);
+				unit_hot_number(identifier: "maximumWordSpacing_editNumber",
+									unit: "NumberEditUnit_Percent",
+									digits: 5,
+									decimal_places: 0,
+									bind_final: true,
+									bind: @maximumWordSpacing);
+			}
+			row(horizontal: @align_fill,
+				child_horizontal: @align_fill)
+			{
+				unit_hot_number(identifier: "minimumLetterSpacing_editNumber",
+									name: "$$$/_SLOParagraphPalette/Dlg/Justification/Static22/LetterSpacing=&Letter Spacing:",
+									unit: "NumberEditUnit_Percent",
+									digits: 5,
+									decimal_places: 0,
+									bind_final: true,
+									bind: @minimumLetterSpacing);
+				unit_hot_number(identifier: "desiredLetterSpacing_editNumber",
+									unit: "NumberEditUnit_Percent",
+									digits: 5,
+									decimal_places: 0,
+									bind_final: true,
+									bind: @desiredLetterSpacing);
+				unit_hot_number(identifier: "maximumLetterSpacing_editNumber",
+									unit: "NumberEditUnit_Percent",
+									digits: 5,
+									decimal_places: 0,
+									bind_final: true,
+									bind: @maximumLetterSpacing);
+			}
+			row(horizontal: @align_fill,
+				child_horizontal: @align_fill)
+			{
+				unit_hot_number(identifier: "minimumGlyphScaling_editNumber",
+									name: "$$$/_SLOParagraphPalette/Dlg/Justification/Static23/GlyphScaling=&Glyph Scaling:",
+									unit: "NumberEditUnit_Percent",
+									digits: 5,
+									decimal_places: 0,
+									bind_final: true,
+									bind: @minimumGlyphScaling);
+				unit_hot_number(identifier: "desiredGlyphScaling_editNumber",
+									unit: "NumberEditUnit_Percent",
+									digits: 5,
+									decimal_places: 0,
+									bind_final: true,
+									bind: @desiredGlyphScaling);
+				unit_hot_number(identifier: "maximumGlyphScaling_editNumber",
+									unit: "NumberEditUnit_Percent",
+									digits: 5,
+									decimal_places: 0,
+									bind_final: true,
+									bind: @maximumGlyphScaling);
+			}
+			separator(orientation: @horizontal);
+			row(horizontal: @align_fill,
+				child_horizontal: @align_center)
+			{
+				column(vertical: @align_fill,
+						child_vertical: @align_fill)
+				{
+					unit_hot_number(identifier: "autoLeading_editNumber",
+									name: "$$$/_SLOParagraphPalette/Dlg/Justification/SLOautoLeading=&Auto Leading:",
+									unit: "NumberEditUnit_Percent",
+									min_value: 0,
+									max_value: 500,
+									decimal_places: 0,
+									digits: 4,
+									bind: @autoLeading,
+									bind_final: true);
+					popup(identifier: "singleWordJustification_popup",
+							name: "$$$/_SLOParagraphPalette/Dlg/Justification/SLOSingleWordJustification=&Single Word Justification:",
+							include_custom_item: false,
+							items: @singleWordJustificationItems,
+							bind: @singleWordJustification);
+				}
+			}
+		}
+		row(horizontal: @align_fill,
+			child_horizontal: @align_fill,
+			vertical: @align_fill,
+			child_vertical: @align_center)
+		{
+			
+			checkbox(identifier: "preview_checkbox",
+						name: "$$$/_SLOParagraphPalette/Dlg/Justification/SLOpreviewJustification=&Preview",
+						guide_mask: [@guide_label],
+						value_off: 0,
+						value_on: 1,
+						bind: @preview);
+			row(horizontal: @align_fill,
+				child_horizontal: @align_right,
+				spacing: @related_spacing,
+				reverse: os == @mac)
+			{
+				button(identifier: "okButton",
+						commit_button: true,
+						name: "$$$/gOK=OK");
+				button(identifier: "cancelButton",
+						commit_button: true,
+						name: "$$$/gCancel=Cancel");
+			}
+		}
+	}
+}

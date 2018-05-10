@@ -1,0 +1,139 @@
+layout KinsokuShoriSettings
+{
+interface:
+
+	view subview(identifier: "KSSettingsEveSubView",
+				 show_border: false, spacing: @unrelated_spacing,
+				 layout_theme: @dialog_large)
+	{	
+		column()
+		{
+			popup(identifier: "KSSPopupKinsokuSet",
+						include_custom_item: false,
+						name: "$$$/KinsokuDlg/Dlg/KinsokuSet=Kinsoku Set:",
+						horizontal: @align_fill,
+						bind: @PopupKinsokuSet,
+						placement: @place_row
+						);
+						
+						/*,
+						items: [{name: "$$$/KinsokuDlg/Dlg/Hard=Hard", value: 0},
+								{name: "$$$/KinsokuDlg/Dlg/Soft=Soft", value: 1}
+								]*/
+
+			
+			row(placement: @place_row, horizontal: @align_fill)
+			{
+				edit_text(identifier: "KSSEditTextInput",
+						name: "$$$/KinsokuDlg/Dlg/Input=Input:",
+						horizontal: @align_fill,
+						placement: @place_column
+					);
+					
+				popup(identifier: "KSSPopupInput",
+						include_custom_item: false,
+						horizontal: @align_fill,
+						bind: @PopupInput,
+						items: [{name: "$$$/KinsokuDlg/Dlg/DirectEntry=Direct Entry", value: 0},
+								{name: "-"},
+								{name: "$$$/KinsokuDlg/Dlg/ShiftJISEntry=Shift JIS", value: 1},
+								{name: "$$$/KinsokuDlg/Dlg/JISEntry=JIS", value: 2},
+								{name: "$$$/KinsokuDlg/Dlg/UnicodeEntry=Unicode", value: 3},
+								{name: "$$$/KinsokuDlg/Dlg/KutenEntry=Kuten", value: 4}
+								],
+						placement: @place_column
+						);	
+						
+				button(identifier: "KSSButtonAddDelete",
+						name: "$$$/KinsokuDlg/Dlg/AddCharacter=Add", placement: @place_column, horizontal: @align_right);
+			}
+			
+			column(spacing: @label_widget_spacing, horizontal: @align_fill)
+			{
+			static_text(identifier: "KSSStaticTextCantBegin",
+								name: "$$$/KinsokuDlg/Dlg/CantBeginLineCharacters=Can^}t-Begin-Line Characters", horizontal: @align_left, placement: @place_row);
+						
+			subview(identifier: "GridPanel123", spacing: 0, show_border: true, height: 115, width: 393, margin: 0, placement: @place_row)
+			{
+			subview(identifier: "GridPanel", spacing: 0, show_border: true, height: 115, width: 393, margin: 0, placement: @place_row)
+			{				
+						grid_view(identifier: "KSSCantBegin_grid", horizontal: @align_fill, vertical: @align_fill);
+			}
+			}
+			}
+			
+			column(spacing: @label_widget_spacing, horizontal: @align_fill)
+			{			
+			static_text(identifier: "KSSStaticTextCantEnd",
+								name: "$$$/KinsokuDlg/Dlg/CantEndLineCharacters=Can^}t-End-Line Characters", horizontal: @align_left, placement: @place_row);
+								
+			subview(identifier: "GridPanel1", spacing: 0, show_border: true, border: @border_normal, height: 58, width: 393, margin: 0, placement: @place_row)
+			{				
+						grid_view(identifier: "KSSCantEnd_grid", horizontal: @align_fill, vertical: @align_fill, border: @border_normal);			
+			}
+			}
+			
+			column(spacing: @label_widget_spacing, horizontal: @align_fill)
+			{			
+			static_text(identifier: "KSSStaticTextJapPunct",
+								name: "$$$/KinsokuDlg/Dlg/JapaneseHangingPunctuation=Japanese Hanging Punctuation", horizontal: @align_left, placement: @place_row);
+							
+			subview(identifier: "GridPanel2", spacing: 0, show_border: false, height: 39, width: 393, margin: 0, placement: @place_row)
+			{
+						grid_view(identifier: "KSSJapPunct_grid", horizontal: @align_fill, vertical: @align_fill);			
+			}
+			}
+			
+			column(spacing: @label_widget_spacing, horizontal: @align_fill)
+			{			
+			static_text(identifier: "KSSStaticTextNonSep",
+								name: "$$$/KinsokuDlg/Dlg/NonseperableCharacters=Inseparable Characters", horizontal: @align_left, placement: @place_row);
+								
+			subview(identifier: "GridPanel3", spacing: 0, show_border: false, height: 39, width: 393, margin: 0, placement: @place_row)
+			{				
+						grid_view(identifier: "KSSNonSep_grid", horizontal: @align_fill, vertical: @align_fill);			
+			}
+			}
+
+			row(horizontal: @align_fill)
+			{
+					column( vertical:@align_fill)
+					{
+						row( child_horizontal: @align_left, vertical:@align_fill, spacing: @related_spacing,child_vertical: @align_fill)
+						{
+							button(identifier: "KSSButtonNewSet",
+							name: "$$$/KinsokuDlg/Dlg/NewSet=New Set...");
+							
+							button(identifier: "KSSButtonSave",
+							name: "$$$/KinsokuDlg/Dlg/Save=Save");
+							
+							button(identifier: "KSSButtonDeleteSet",
+							name: "$$$/KinsokuDlg/Dlg/DeleteSet=Delete Set");							
+						}
+					}
+					
+					column(vertical:@align_fill, horizontal: @align_fill, child_horizontal: @align_right)
+					{
+						row( child_horizontal: @align_right, horizontal: @align_fill, vertical:@align_fill, spacing: @related_spacing,child_vertical: @align_fill)
+						{
+							button(identifier: "KSSButtonExport",
+							name: "$$$/KinsokuDlg/Dlg/ExportSet=Export...");
+							
+							button(identifier: "KSSButtonImport",
+							name: "$$$/KinsokuDlg/Dlg/Import=Import...");
+						}
+					}
+			}
+		}
+		row(horizontal: @align_right, reverse: os == @mac, child_horizontal: @align_right, spacing: @related_spacing)
+		{
+			button(identifier: "KSSButtonOk",
+			name: "$$$/KinsokuDlg/Dlg/Ok=OK",
+			commit_button: true);
+			
+			button(identifier: "KSSButtonCancel",
+			name: "$$$/KinsokuDlg/Dlg/Cancel=Cancel",
+			commit_button: true);
+		}
+	}
+}

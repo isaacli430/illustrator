@@ -1,0 +1,138 @@
+layout dBrushToolUIDialog
+{
+    view subview(identifier: "dBrushToolUI",
+                 layout_theme: @dialog_large,
+                 placement: @place_column,
+                 show_border: false,
+                 spacing: @unrelated_spacing)
+    {
+        column(child_horizontal: @align_fill, spacing: @button_group_spacing)
+        {
+            column(child_horizontal: @align_fill)
+            {
+				optional(bind: @show_name, value: true, child_horizontal: @align_fill, margin: 0)
+				{
+					edit_text(identifier: "brushNameEdit",
+							  bind: @name,
+							  max_characters: 31, set_default_focus: true,
+							  name: "$$$/dBrushTool/Dlg/BrushDef/BrushName=&Name:");
+				}
+
+				popup(identifier: "brushShapePopup",
+						include_custom_item: false,
+						iconpopup_include_vertical_separator: false,
+						name: "$$$/dBrushTool/Dlg/BrushDef/BrushShape=&Shape:");
+			}
+
+            group(name: "$$$/dBrushTool/Dlg/BrushDef/BrushOptionsGroupName=Brush Options",
+                  placement: @place_column, guide_mask: [ @guide_label ])
+            {
+                row(spacing: 0)
+                {
+                    
+
+                    button(horizontal: @align_fill,
+                           identifier: "brushPreviewView",
+                           wants_focus: false, height: 70, width: 320,
+                           name: "Placeholder for preview",
+                           vertical: @align_fill);
+                }
+                
+                column(child_horizontal: @align_fill)
+                {
+					combo_slider(	name: "$$$/dBrushTool/Dlg/BrushDef/BrushSize=Si&ze:",
+								identifier: "bristleSize", 
+								bind: @size, bind_final: true,
+								slider_point: @up, minLength: 140,
+								digits: 4,
+								minLength: 200,
+								decimal_places: 2, snap_to_int: false,
+								unit: 'NumberEditUnit_MM');
+
+					combo_slider(	name: "$$$/dBrushTool/Dlg/BrushDef/BristleLength=Bristle &Length:",
+								identifier: "bristleLength", 
+  								min_max_filter: @filterLength, minLength: 140,
+  								bind: @length, bind_final: true,
+  								slider_point: @up,
+  								unit: 'NumberEditUnit_Percent',
+  								left_mini_label: "$$$/dBrushTool/Dlg/BrushDef/BristleLength/SliderTag/Short=Short",
+  								right_mini_label: "$$$/dBrushTool/Dlg/BrushDef/BristleLength/SliderTag/Long=Long",
+  								digits: 4,
+  								minLength: 200,
+  								decimal_places: 0);
+
+					combo_slider(	name: "$$$/dBrushTool/Dlg/BrushDef/BristleDensity=Bristle &Density:",
+								identifier: "bristleDensity", 
+								min_max_filter: @filterDensity, minLength: 140,
+								bind: @density, bind_final: true,
+								slider_point: @up,
+								unit: 'NumberEditUnit_Percent',
+								left_mini_label: "$$$/dBrushTool/Dlg/BrushDef/BrushDensity/SliderTag/Low=Low",
+								right_mini_label: "$$$/dBrushTool/Dlg/BrushDef/BrushDensity/SliderTag/High=High",
+								digits: 4,
+								minLength: 200,
+								decimal_places: 0);
+
+					combo_slider(	name: "$$$/dBrushTool/Dlg/BrushDef/BristleThickness=Bristle &Thickness:",
+								identifier: "bristleThickness", 
+								min_max_filter: @filterThickness, minLength: 140,
+								bind: @thickness, bind_final: true,
+								slider_point: @up,
+								unit: 'NumberEditUnit_Percent',
+								left_mini_label: "$$$/dBrushTool/Dlg/BrushDef/BristleThickness/SliderTag/Fine=Fine",
+								right_mini_label: "$$$/dBrushTool/Dlg/BrushDef/BristleThickness/SliderTag/Coarse=Coarse",
+								digits: 4,
+								minLength: 200,
+								decimal_places: 0);
+                
+					combo_slider(	name: "$$$/dBrushTool/Dlg/BrushDef/PaintOpacity=Paint &Opacity:",
+								identifier: "bristleOpacity", 
+								min_max_filter: @filterOpacity, minLength: 140,
+								bind: @opacity, bind_final: true,
+								slider_point: @up,
+								unit: 'NumberEditUnit_Percent',
+								left_mini_label: "$$$/dBrushTool/Dlg/BrushDef/PaintOpacity/SliderTag/Translucent=Translucent",
+								right_mini_label: "$$$/dBrushTool/Dlg/BrushDef/PaintOpacity/SliderTag/Opaque=Opaque",
+								digits: 4,
+								minLength: 200,
+								decimal_places: 0);
+                
+					combo_slider(	name: "$$$/dBrushTool/Dlg/BrushDef/BristleStiffness=Sti&ffness:",
+								identifier: "bristleStiffness", 
+								min_max_filter: @filterStiffness, minLength: 140,
+								bind: @stiffness, bind_final: true,
+								slider_point: @up,
+								unit: 'NumberEditUnit_Percent',
+								left_mini_label: "$$$/dBrushTool/Dlg/BrushDef/BristleStiffness/SliderTag/Flexible=Flexible",
+								right_mini_label: "$$$/dBrushTool/Dlg/BrushDef/BristleStiffness/SliderTag/Rigid=Rigid",
+								digits: 4,
+								minLength: 200,
+								decimal_places: 0);
+                }
+			}
+        }
+
+        row(horizontal: @align_fill)
+        {
+            optional(bind: @show_preview, margin: 0, vertical: @align_fill, value: true)
+            {
+                checkbox(identifier: "previewCheckBox", horizontal: @align_left, vertical: @align_center, guide_mask: [@guide_label], 
+						 bind: @preview,
+                         name: "$$$/dBrushToolUI/Dlg/Preview=&Preview");
+            }
+            
+            row(horizontal: @align_right, spacing: @related_spacing, reverse: os == @mac)
+            {
+				button(default: true,
+                   identifier: "okButton",
+                   name: "$$$/gOK=OK",
+                   commit_button: true);
+
+				button(cancel: true,
+                   identifier: "cancelButton",
+                   name: "$$$/gCancel=Cancel",
+                   commit_button: true);
+			}
+        }
+    }
+}

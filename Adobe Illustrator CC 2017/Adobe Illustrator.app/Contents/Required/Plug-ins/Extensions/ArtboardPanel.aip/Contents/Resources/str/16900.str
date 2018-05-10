@@ -1,0 +1,50 @@
+/* [1] */
+$$$/SymbolPalette/Str/Action/Symbols=Symbols
+/* [2] */
+$$$/SymbolPalette/Str/Action/New=New Symbol
+/* [3] */
+$$$/SymbolPalette/Str/Action/Redefine=Redefine Symbol
+/* [4] */
+$$$/SymbolPalette/Str/Action/Dup=Duplicate Symbol
+/* [5] */
+$$$/SymbolPalette/Str/Action/Delete=Delete Symbol
+/* [6] */
+
+/* [7] */
+
+/* [8] */
+$$$/SymbolPalette/Str/Action/Place=Place Symbol Instance
+/* [9] */
+$$$/SymbolPalette/Str/Action/Relink=Replace Symbol
+/* [10] */
+$$$/SymbolPalette/Str/Action/Unlink=Break Link to Symbol
+/* [11] */
+
+/* [12] */
+$$$/SymbolPalette/Str/Action/SelectUnused=Select All Unused
+/* [13] */
+$$$/SymbolPalette/Str/Action/SelectInstances=Select All Instances
+/* [14] */
+
+/* [15] */
+$$$/SymbolPalette/Str/Action/Sort=Sort by Name
+/* [16] */
+
+/* [17] */
+
+/* [18] */
+
+/* [19] */
+
+/* [20] */
+
+/* [21] */
+$$$/SymbolPalette/Str/Action/Options=Symbol Options
+/* [22] */
+
+/* [23] */
+$$$/SymbolPalette/Str/Action/Library=Open Symbol Library
+/* [24] */
+$$$/SymbolPalette/Str/Action/Save=Save Symbol Library
+/* [25] */
+$$$/SymbolPalette/Str/Action/NewRep=Replace with instance: 

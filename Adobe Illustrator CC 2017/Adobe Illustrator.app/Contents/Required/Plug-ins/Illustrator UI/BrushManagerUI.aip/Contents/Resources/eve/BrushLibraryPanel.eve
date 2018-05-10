@@ -1,0 +1,62 @@
+layout BrushLibraryPanel
+{
+    view subview(identifier: "AIEveSubView",
+				 placement: @place_column,
+				 layout_theme: @panel,
+				 show_border: false,
+				 margin: gPanelToolbarSubviewMargin,
+				 spacing: gPanelToolbarTopSpacing,
+				 child_vertical: @align_center)
+	{
+		overlay(vertical: @align_fill, horizontal: @align_fill)
+		{
+			panel(margin: 0, bind: @ThumbnailView, value: false, vertical: @align_fill, horizontal: @align_fill)
+			{
+				multicolumn_tree(identifier: "Brushes_mct",
+									wants_focus: false,
+									height: 120,
+									width: 200,
+									horizontal: @align_fill,
+									vertical: @align_fill);
+			}
+
+			panel(margin: 0, bind: @ThumbnailView, value: true, vertical: @align_fill, horizontal: @align_fill)
+			{
+				grid_view(identifier: "Brushes_grid",
+							height: 120,
+							width: 200,
+							horizontal: @align_fill,
+							vertical: @align_fill);
+			}
+		}
+		buttongroup(horizontal: @align_fill, vertical: @align_bottom, child_vertical: @align_fill,
+							spacing: gPanelToolbarIconSpacing, child_width: gPanelToolbarIconWidth, child_height: gPanelToolbarIconHeight)
+			{
+				button(identifier: "Libraries",
+						horizontal: @align_left,
+						image: {normal: "SP_LibraryTri_Wi_N.png", dark_normal: "SP_LibraryTri_Wi_N_D.png"},
+						alt: "$$$/BrushManager/Str/16806=Brush Libraries Menu",
+						action: @Libraries,
+						wants_focus: false);
+
+				button(identifier: "PreviousLibrary",
+						image: {normal: "SP_PreviousPage_Sm_N.png", dark_normal: "SP_PreviousPage_Sm_N_D.png"},
+						alt: "$$$/BrushManager/Str/16807=Load Previous Brush Library",
+						action: @PreviousLibrary,
+						wants_focus: false);
+
+				button(identifier: "NextLibrary",
+						image: {normal: "SP_NextPage_Sm_N.png", dark_normal: "SP_NextPage_Sm_N_D.png"},
+						alt: "$$$/BrushManager/Str/16808=Load Next Brush Library",
+						action: @NextLibrary,
+						wants_focus: false);
+
+				image(identifier: "NoEditImage",
+					wants_focus: false,
+					image: {normal:"SP_NoEdit_Xs_N.png", dark_normal:"SP_NoEdit_Xs_N_D.png"},
+					horizontal: @align_right);
+
+				resize_gripper_gap(horizontal: @align_right);
+			}
+	}
+}

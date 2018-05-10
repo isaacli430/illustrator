@@ -1,0 +1,29 @@
+layout FocusModeControlGroup
+{
+    view subview(identifier: "FocusModeControlGroup",
+				 placement: @place_row,
+				 layout_theme: @controlbar,
+				 show_border: false,
+				 child_vertical: @align_center,
+				 margin : 0,
+				 spacing: 5,
+				 height:  31
+				 )
+    {
+		optional(identifier: "FocusModeControlGroupSubGroup",
+				 placement: @place_row,
+				 child_vertical: @align_center,
+				 spacing: 5,
+				 margin: 0)
+		{
+			subview(margin:0, show_border: false, height: 25 , child_vertical:@align_center)
+			{
+				separator(orientation: @vertical, vertical: @align_fill);
+			}
+			button(identifier: "IsolateButton",
+					wants_focus: false,
+					image: {normal: "SP_EnterGroup_Md_N.png",dark_normal:"SP_EnterGroup_Md_N_D.png"},
+					alt: "$$$/FocusModeControlGroup/Isolate/IsolateTip=Isolate Selected Object");
+		}
+	}
+}

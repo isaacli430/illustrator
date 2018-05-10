@@ -1,0 +1,31 @@
+layout TransparencyMaxControlGroup
+{
+     view subview(identifier: "TransparencyMaxControlGroup",
+				 layout_theme: @controlbar,
+				 show_border: false,
+				 child_vertical: @align_center,
+				 placement: @place_row,
+				 margin : 0,
+				 spacing: 5,
+				 height:  31)
+    {		
+		optional(identifier: "OpacityHyperlinkSubGroup", child_vertical:  @align_center, margin : 0, spacing: @related_spacing, placement: @place_row)			
+		{
+			link_button(identifier: "OpacityHyperlinkButton",
+							wants_focus: false,
+							name: "$$$/TransparencyPalette/Pnl/OpacityWithColon=Opacity:",
+							alt: "$$$/TransparencyPalette/Str/TransparencyPalette=Transparency Panel");
+			unit_hot_number(identifier: "Opacity",
+								min_value: 0, 
+                                max_value: 100,
+                                digits: 3,         
+								decimal_places: 0,
+                                unit: 'NumberEditUnit_Percent',
+                                alt: "$$$/TransparencyPalette/Str/Opacity=Opacity",       
+                                slider: true
+								);	
+		}
+				
+    }
+}
+

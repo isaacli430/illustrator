@@ -1,0 +1,254 @@
+layout NewDocumentDialog
+{
+    view subview(identifier: "NewDocumentDialogView", placement: @place_column
+    , layout_theme: @dialog_large, child_horizontal: @align_fill, show_border: false, spacing: @unrelated_spacing)
+	{
+		column(child_horizontal: @align_fill)
+		{
+			row(margin: [0, 0, 0, 10])
+			{
+				edit_text(identifier: "NewDocumentNameEditText", horizontal: @align_fill, bind: @doc_title, name:'$$$/_NewArtworkDlg/Dlg/ArtworkNew/nameTitle=&Name:', max_characters: 255);
+			}
+			
+			group(horizontal: @align_fill, child_horizontal: @align_fill, placement: @place_column
+			, header: "popup(identifier: 'NewDocumentProfilePopup', name:'$$$/_NewArtworkDlg/Dlg/ArtworkNew/startupProfileTitle=&Profile:', alt: '$$$/_NewArtworkDlg/Dlg/ArtworkNew/startupProfileToolTip=Document Profile', horizontal: @align_fill))")
+			{	
+				row(child_vertical: @align_center)
+				{
+					unit_hot_number(identifier: "NumberOfArtboardsEditNumber", bind: @num_artboards
+					, name:'$$$/_NewArtworkDlg/Dlg/ArtworkNew/numArtboardsTitle=Nu&mber of Artboards:'
+					, stepper: true, min_value: 1, max_value: @max_num_artboards, decimal_places: 0);
+					row()
+					{
+						overlay()
+						{
+							panel(bind: @left_to_right, value: true, placement: @place_row, margin: 0)
+							{
+								button_bar(identifier: "ArrangementButtonBarLToR", bind: @arrangement, vertical: @align_fill,
+									items: [
+										{image: {normal:"SP_GridByRow_Sm_N.png",dark_normal:"SP_GridByRow_Sm_N_D.png"}, show_border: true, value: "grid_by_row", alt: "$$$/_NewArtworkDlg/Dlg/ArtworkNew/GridByRowTip=Grid by Row"},
+										{image: {normal:"SP_GridByColumn_Sm_N.png",dark_normal:"SP_GridByColumn_Sm_N_D.png"}, show_border: true, value: "grid_by_column", alt: "$$$/_NewArtworkDlg/Dlg/ArtworkNew/GridByColTip=Grid by Column"},
+										{image: {normal:"SP_RowOnly_Sm_N.png",dark_normal:"SP_RowOnly_Sm_N_D.png"}, show_border: true, value: "row_only", alt: "$$$/_NewArtworkDlg/Dlg/ArtworkNew/RowOnlyTip=Arrange by Row"},
+										{image: {normal:"SP_ColumnOnly_Sm_N.png",dark_normal:"SP_ColumnOnly_Sm_N_D.png"}, show_border: true, value: "column_only", alt: "$$$/_NewArtworkDlg/Dlg/ArtworkNew/ColOnlyTip=Arrange by Column"}
+									]
+								);
+								toggle_button(identifier: "ToggleButtonLR", bind: @left_to_right, vertical: @align_fill, value_on: false, value_off: true, image: {normal:"SP_LeftToRight_Sm_N.png",dark_normal:"SP_LeftToRight_Sm_N_D.png"}, show_border: true, alt: "$$$/_NewArtworkDlg/Dlg/ArtworkNew/zToggleString=Change to Right-to-Left Layout", wants_focus: false);
+							}
+							panel(bind: @left_to_right, value: false, placement: @place_row, margin: 0)
+							{
+								button_bar(identifier: "ArrangementButtonBarRToL", bind: @arrangement, vertical: @align_fill,
+									items: [
+										{image: {normal:"SP_RightToLeft_GridByRow_Sm_N.png",dark_normal:"SP_RightToLeft_GridByRow_Sm_N_D.png"}, show_border: true, value: "grid_by_row", alt: "$$$/_NewArtworkDlg/Dlg/ArtworkNew/RLGridByRowTip=Right-to-Left Grid by Row"},
+										{image: {normal:"SP_RightToLeft_GridByColumn_Sm_N.png",dark_normal:"SP_RightToLeft_GridByColumn_Sm_N_D.png"}, show_border: true, value: "grid_by_column", alt: "$$$/_NewArtworkDlg/Dlg/ArtworkNew/RLGridByColTip=Right-to-Left Grid by Column"},
+										{image: {normal:"SP_RightToLeft_RowOnly_Sm_N.png",dark_normal:"SP_RightToLeft_RowOnly_Sm_N_D.png"}, show_border: true, value: "row_only", alt: "$$$/_NewArtworkDlg/Dlg/ArtworkNew/RLRowOnlyTip=Right-to-Left Arrange by Row"},
+										{image: {normal:"SP_ColumnOnly_Sm_N.png",dark_normal:"SP_ColumnOnly_Sm_N_D.png"}, show_border: true, value: "column_only", alt: "$$$/_NewArtworkDlg/Dlg/ArtworkNew/ColOnlyTip=Arrange by Column"}
+									]
+								);
+								toggle_button(identifier: "ToggleButtonRL", bind: @left_to_right, vertical: @align_fill, value_on: true, value_off: false, image: {normal:"SP_RightToLeft_Sm_N.png",dark_normal:"SP_RightToLeft_Sm_N_D.png"}, show_border: true, alt: "$$$/_NewArtworkDlg/Dlg/ArtworkNew/zRLToggleString=Change to Left-to-Right Layout", wants_focus: false);				
+							}
+						}
+					}
+				}
+				row(horizontal: @align_fill)
+				{
+					unit_hot_number(identifier: "SpacingEditNumber", bind: @spacing, unit: @ruler_units, name:'$$$/_NewArtworkDlg/Dlg/ArtworkNew/spacingTitle=Spac&ing:', stepper: true
+					, horizontal: @align_left, min_value : @min_spacing, max_value : @max_art_size, decimal_places: 2);
+					
+					overlay(horizontal: @align_fill)
+					{
+						panel(bind: @show_row_edit, value: true, margin: 0)
+						{
+							row(spacing: 0, horizontal: @align_fill)
+							{
+								guide_consumer(consume_horizontal: 2);
+								unit_hot_number(identifier: "RowsEditNumber", bind: @rows_columns, name:'$$$/_NewArtworkDlg/Dlg/ArtworkNew/rowsTitle=R&ows:'
+								, stepper: true, min_value : 1, max_value : @num_artboards, horizontal: @align_right
+								, alt: "$$$/_NewArtworkDlg/Dlg/ArtworkNew/RowStringTip=Number of Artboards Per Column", decimal_places: 0);
+							}
+						}
+						panel(bind: @show_row_edit, value: false, margin: 0)
+						{
+							row(spacing: 0, horizontal: @align_fill)
+							{
+								guide_consumer(consume_horizontal: 2);
+								unit_hot_number(identifier: "ColumnsEditNumber", bind: @rows_columns, name:'$$$/_NewArtworkDlg/Dlg/ArtworkNew/colsTitle=C&olumns:'
+								, stepper: true, min_value : 1, max_value : @num_artboards, horizontal: @align_right
+								, alt: "$$$/_NewArtworkDlg/Dlg/ArtworkNew/ColStringTip=Number of Artboards Per Row", decimal_places: 0);
+							}
+						}
+					}
+				}
+				popup(identifier: "PresetSizePopup", name:'$$$/_NewArtworkDlg/Dlg/ArtworkNew/sizeTitle=&Size:', horizontal: @align_fill);
+				row()
+				{
+					column(guide_mask: [])
+					{
+						unit_hot_number(identifier: "WidthEditNumber", bind: @width, unit: @ruler_units, name:'$$$/_NewArtworkDlg/Dlg/ArtworkNew/widthTitle=&Width:'
+						, horizontal: @align_left, min_value : 1, max_value : @max_art_size, decimal_places: 2);
+						
+						unit_hot_number(identifier: "HeightEditNumber", bind: @height, unit: @ruler_units, name:'$$$/_NewArtworkDlg/Dlg/ArtworkNew/heightTitle=&Height:'
+						, min_value: 1, max_value : @max_art_size, decimal_places: 2);
+					}
+					column(guide_mask: [], horizontal: @align_right)
+					{
+						popup(identifier: "UnitsPopup", name:'$$$/_NewArtworkDlg/Dlg/ArtworkNew/unitsTitle=&Units:', horizontal: @align_right, bind: @ruler_units, include_custom_item: false,
+						popup_maximum_width_chars: 7, popup_minimum_width_chars: 7, items: @units_popup_items);
+						
+						button_bar(identifier: "OrientationButtonBar", bind: @landscape, name: '$$$/_NewArtworkDlg/Dlg/ArtworkNew/orientTitle=Orientation:', horizontal: @align_right,
+							items: [
+								{image: {normal: "SP_Portrait2_Md_N.png",dark_normal: "SP_Portrait2_Md_N_D.png"} , show_border: true, value: false},
+								{image: {normal: "SP_Landscape2_Md_N.png",dark_normal: "SP_Landscape2_Md_N_D.png"} , show_border: true, value: true}
+							]
+						);
+					}
+				}
+				row(placement: @place_row, horizontal: @align_fill, spacing: @related_spacing)
+				{
+					column(spacing: 0)
+					{
+						row(spacing: 0, horizontal: @align_fill)
+						{
+							guide_consumer(consume_horizontal: 1);
+							static_text(identifier: "TopBleedStaticText", name: '$$$/_NewArtworkDlg/Dlg/Bleed/top=Top');
+						}
+						unit_hot_number(identifier: "TopBleedEditNumber", bind: @bleed_top, unit: @ruler_units, digits : 5
+						, name: '$$$/_NewArtworkDlg/Dlg/Bleed/Bleed=B&leed:'
+						, stepper: true, min_value: 0, max_value: @max_bleed_value, decimal_places: @bleed_decimal_places);
+					}
+					column(spacing: 0, guide_mask: [@guide_label])
+					{
+						row(margin: [0, 0, 0, 0])
+						{
+							static_text(identifier: "BottomBleedStaticText", name: '$$$/_NewArtworkDlg/Dlg/Bleed/bottom=Bottom');
+						}
+						unit_hot_number(identifier: "BottomBleedEditNumber", bind: @bleed_bottom, unit: @ruler_units, digits : 5, name: ""
+						, stepper: true, min_value: 0, max_value: @max_bleed_value, decimal_places: @bleed_decimal_places);
+					}
+					column(spacing: 0, guide_mask: [@guide_label])
+					{
+						row(margin: [0, 0, 0, 0])
+						{
+							static_text(identifier: "LeftBleedStaticText", name: '$$$/_NewArtworkDlg/Dlg/Bleed/left=Left');
+						}
+						unit_hot_number(identifier: "LeftBleedEditNumber", bind: @bleed_left, unit: @ruler_units, digits : 5, name: ""
+						, stepper: true, min_value: 0, max_value: @max_bleed_value, decimal_places: @bleed_decimal_places);
+					}				
+					column(spacing: 0, guide_mask: [@guide_label])
+					{
+						row(margin: [0, 0, 0, 0])
+						{
+							static_text(identifier: "RightBleedStaticText", name: '$$$/_NewArtworkDlg/Dlg/Bleed/right=Right');
+						}
+						unit_hot_number(identifier: "RightBleedEditNumber", bind: @bleed_right, unit: @ruler_units, digits : 5, name: ""
+						, stepper: true, min_value: 0, max_value: @max_bleed_value, decimal_places: @bleed_decimal_places);
+					}
+					column(spacing: 0, guide_mask: [@guide_label])
+					{
+						guide_consumer(consume_vertical: 1);
+						toggle_button(identifier: "NoConstrainIcon", 
+									image: {normal: "NoConstrainIcon.png", dark_normal:"NoConstrainIconDark.png", down: "LinkOnConstrainIcon.png", dark_down:"LinkOnConstrainIconDark.png"},
+									alt: "$$$/_NewArtworkDlg/Dlg/ArtworkNew/zLockBleedString=Make all settings the same",
+									value_on: true, value_off: false, 
+									bind: @bleed_values_locked,
+									vertical: @align_center,
+									horizontal: @align_center,
+									wants_focus: false);
+						/*checkbox(identifier: "LockBleedPictureCheckbox", bind: @bleed_values_locked, image: {normal: "SP_Link_Md_N.png", dark_normal: "SP_Link_Md_N_D.png"}, button_style: true, alt: "$$$/_NewArtworkDlg/Dlg/ArtworkNew/zLockBleedString=Make all settings the same");*/
+					}				
+				}
+				row(child_vertical: @align_center, spacing: 0)
+				{
+					overlay()
+					{
+						panel(bind: @show_advanced_options, value: false, margin: 0)
+						{
+							toggle_button(identifier: "ShowAdvancedOptionsButton", bind: @show_advanced_options, value_on: true, value_off: false, image:{normal:"DisclosureUp_N.png", dark_normal: "DisclosureUp_N_D.png"}, wants_focus: false);
+						}
+						panel(bind: @show_advanced_options, value: true, margin: 0)
+						{
+							toggle_button(identifier: "HideAdvancedOptionsButton", bind: @show_advanced_options, value_on: false, value_off: true, image:{normal:"DisclosureDown_N.png", dark_normal: "DisclosureDown_N_D.png"}, wants_focus: false);				
+						}
+					}
+					static_text(identifier: "AdvancedStaticText", name:'$$$/_NewArtworkDlg/Dlg/ArtworkNew/advancedOptionsTitle=Advanced');
+					separator();
+				}
+				optional(bind: @show_advanced_options, value: false, margin: 0)
+				{
+					row(spacing: 0)
+					{
+						guide_consumer(consume_horizontal: 1);
+						static_text(identifier: "AdvancedOptionsSummaryStaticText", name: @advanced_options_summary);
+					}
+				}
+				optional(bind: @show_advanced_options, margin: 0, placement: @place_row)
+				{
+					column(child_horizontal: @align_fill)
+					{
+						popup(identifier: "ColorModePopup", name: '$$$/_NewArtworkDlg/Dlg/ArtworkNew/colorModeTitle=&Color Mode:', bind: @color_mode, include_custom_item: false,
+										items: [
+										{name:'$$$/_ARTWORKD/Mnu/colorMode/1=CMYK', value: "cmyk"},
+										{name:'$$$/_ARTWORKD/Mnu/colorMode/2=RGB', value: "rgb"}
+									], horizontal: @align_fill);
+									
+						popup(identifier: "RasterEffectsPopup", name: '$$$/_NewArtworkDlg/Dlg/ArtworkNew/rasterResolutionTitle=&Raster Effects:', bind: @raster_effects, include_custom_item: false,
+										items: [
+										{name:'$$$/_ARTWORKD/Mnu/rasterEffect/1=High (300 ppi)', value: "high"},
+										{name:'$$$/_ARTWORKD/Mnu/rasterEffect/2=Medium (150 ppi)', value: "medium"},
+										{name:'$$$/_ARTWORKD/Mnu/rasterEffect/3=Screen (72 ppi)', value: "screen"}
+									]);
+						optional(margin: 0, bind: @show_transparency_grid, value: true)
+						{
+							popup(identifier: "TransparencyGridPopup", name: '$$$/_NewArtworkDlg/Dlg/ArtworkNew/transparencyGridTitle=Transparency &Grid:'
+									, bind: @transparency_grid, include_custom_item: false, horizontal: @align_fill,
+											items: [
+											{name:'$$$/_NewArtworkDlg/Dlg/ArtworkNew/GridColorsOff=Off', value: "off"},
+											{name:'-'},
+											{icon: "SP_GridColorsLight_Sm_N", name:'$$$/_ARTWORKD/Mnu/GridColors/3=Light', value: "light"},
+											{icon: "SP_GridColorsMedium_Sm_N", name:'$$$/_ARTWORKD/Mnu/GridColors/4=Medium', value: "medium"},
+											{icon: "SP_GridColorsDark_Sm_N", name:'$$$/_ARTWORKD/Mnu/GridColors/5=Dark', value: "dark"},
+											{name:'-'},
+											{icon: "SP_GridColorsRed_Sm_N", name:'$$$/_ARTWORKD/Mnu/GridColors/7=Red', value: "red"},
+											{icon: "SP_GridColorsOrange_Sm_N", name:'$$$/_ARTWORKD/Mnu/GridColors/8=Orange', value: "orange"},
+											{icon: "SP_GridColorsGreen_Sm_N", name:'$$$/_ARTWORKD/Mnu/GridColors/9=Green', value: "green"},
+											{icon: "SP_GridColorsBlue_Sm_N", name:'$$$/_ARTWORKD/Mnu/GridColors/10=Blue', value: "blue"},
+											{icon: "SP_GridColorsPurple_Sm_N", name:'$$$/_ARTWORKD/Mnu/GridColors/11=Purple', value: "purple"}
+										]);
+						}
+						popup(identifier: "PreviewModePopup", name: '$$$/_NewArtworkDlg/Dlg/ArtworkNew/previewModeTitle=Pr&eview Mode:', bind: @preview_mode, include_custom_item: false,
+										items: [
+										{name:'$$$/_ARTWORKD/Mnu/previewMode/1=Default', value: "default"},
+										{name:'$$$/_ARTWORKD/Mnu/previewMode/2=Pixel', value: "pixel"},
+										{name:'$$$/_ARTWORKD/Mnu/previewMode/3=Overprint', value: "overprint"}
+									]);
+
+						checkbox(identifier: "AlignToPixelGridCheckbox", bind: @align_to_pixel_grid, name: '$$$/TransformPalett/Mnu/Transform/7=&Align New Objects to Pixel Grid');				
+					}
+					column()
+					{
+						optional(margin: 0, bind: @color_mismatch, horizontal: @align_left)
+						{
+							info_icon(identifier: "WarningIcon", icontype: "warning", size: "small", horizontal: @align_left
+							, alt: "$$$/_NewArtworkDlg/Dlg/ArtworkNew/mismatchWarning=The chosen color mode is different from the color space defined by the Document Profile. Panel content may not match the new color mode.");				
+						}
+					}
+				}			
+			}
+		}
+		row(spacing: @separated_spacing)
+		{
+			row(vertical: @align_fill)
+			{
+				optional(margin: 0, bind : @show_templates_button, horizontal: @align_left, vertical: @align_fill, child_vertical: @align_fill)
+				{
+					button(identifier: "TemplatesButton", horizontal: @align_left, name: '$$$/_NewArtworkDlg/Dlg/ArtworkNew/gTemplates=&Templates...');
+				}
+			}
+			row(horizontal: @align_right, spacing: @related_spacing, reverse: os == @mac)
+			{
+				button(identifier: "okButton", commit_button: true, name: "$$$/gOK=OK");
+
+				button(identifier: "cancelButton", commit_button: true, name: "$$$/gCancel=Cancel");
+			}
+		}
+	}
+}

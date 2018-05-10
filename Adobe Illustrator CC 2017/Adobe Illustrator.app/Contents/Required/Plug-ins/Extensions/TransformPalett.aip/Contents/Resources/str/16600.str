@@ -1,0 +1,24 @@
+/* [1] */
+$$$/TransformPalett/Str/Undo/UndoMove=Undo Move
+/* [2] */
+$$$/TransformPalett/Str/Undo/RedoMove=Redo Move
+/* [3] */
+$$$/TransformPalett/Str/Undo/UndoScale=Undo Scale
+/* [4] */
+$$$/TransformPalett/Str/Undo/RedoScale=Redo Scale
+/* [5] */
+$$$/TransformPalett/Str/Undo/UndoRotate=Undo Rotate
+/* [6] */
+$$$/TransformPalett/Str/Undo/RedoRotate=Redo Rotate
+/* [7] */
+$$$/TransformPalett/Str/Undo/UndoShear=Undo Shear
+/* [8] */
+$$$/TransformPalett/Str/Undo/RedoShear=Redo Shear
+/* [9] */
+$$$/TransformPalett/Str/Undo/UndoReflect=Undo Reflect
+/* [10] */
+$$$/TransformPalett/Str/Undo/RedoReflect=Redo Reflect
+/* [11] */
+$$$/TransformPalett/Str/Undo/UndoRegMove=Undo Move Registration Point
+/* [12] */
+$$$/TransformPalett/Str/Undo/RedoRegMove=Redo Move Registration Point

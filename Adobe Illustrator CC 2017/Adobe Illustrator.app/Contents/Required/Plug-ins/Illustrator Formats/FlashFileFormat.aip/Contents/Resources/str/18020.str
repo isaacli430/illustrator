@@ -1,0 +1,12 @@
+/* [1] */
+$$$/FlashFileFormat/Str/errorStringResource/1=Insufficient memory was available to complete the export.
+/* [2] */
+$$$/FlashFileFormat/Str/errorStringResource/2=Insufficient disk space was available to complete the export.
+/* [3] */
+$$$/FlashFileFormat/Str/errorStringResource/3=SWF Export has encountered an SWF error.
+/* [4] */
+$$$/FlashFileFormat/Str/errorStringResource/4=SWF Export has encountered an unknown error.
+/* [5] */
+$$$/FlashFileFormat/Str/errorStringResource/5=Duplicate symbol names are not allowed. Please ensure the Layer names are unique.
+/* [6] */
+$$$/FlashFileFormat/Str/errorStringResource/6=There were some problems in converting linked images to symbols. Please embed the images and try again.

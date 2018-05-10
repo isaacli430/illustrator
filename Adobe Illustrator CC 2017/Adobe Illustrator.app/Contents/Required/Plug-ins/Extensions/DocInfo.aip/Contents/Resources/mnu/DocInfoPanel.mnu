@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+  <menuItem id="1" text="$$$/DocInfo/Mnu/16002/0=Selection &amp;Only"></menuItem>
+	<separator></separator>
+	<menuItem id="2" text="$$$/DocInfo/Mnu/16002//2=&amp;Document"></menuItem>
+	<menuItem id="3" text="$$$/DocInfo/Mnu/16002//3=&amp;Objects"></menuItem>
+  <menuItem id="4" text="$$$/DocInfo/Mnu/16002//4=&amp;Graphic Styles"></menuItem>
+  <menuItem id="5" text="$$$/DocInfo/Mnu/16002//5=&amp;Brushes"></menuItem>
+  <menuItem id="6" text="$$$/DocInfo/Mnu/16002//6=&amp;Spot Color Objects"></menuItem>
+  <menuItem id="7" text="$$$/DocInfo/Mnu/16002//7=&amp;Pattern Objects"></menuItem>
+  <menuItem id="8" text="$$$/DocInfo/Mnu/16002//8=&amp;Gradient Objects"></menuItem>
+  <menuItem id="9" text="$$$/DocInfo/Mnu/16002//9=&amp;Fonts"></menuItem>
+  <menuItem id="10" text="$$$/DocInfo/Mnu/16002//10=&amp;Linked Images"></menuItem>
+  <menuItem id="11" text="$$$/DocInfo/Mnu/16002//11=&amp;Embedded Images"></menuItem>
+  <menuItem id="12" text="$$$/DocInfo/Mnu/16002//12=&amp;Font Details"></menuItem>
+  <separator></separator>
+  <menuItem id="13" text="$$$/DocInfo/Mnu/16002//14=&amp;Save..."></menuItem>
+</menu>

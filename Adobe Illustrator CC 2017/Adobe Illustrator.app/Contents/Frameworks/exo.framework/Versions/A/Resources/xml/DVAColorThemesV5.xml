@@ -1,0 +1,1062 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE ThemeParameters [
+  <!-- Inline DTD for Drover Theme files -->
+	
+	<!ENTITY kColor_Unused									"5000000">
+	
+	<!-- PALETTE -->
+	<!ENTITY kColor_Gray_01									"5000001">
+	<!ENTITY kColor_Gray_02									"5000002">
+	<!ENTITY kColor_Gray_03									"5000003">
+	<!ENTITY kColor_Gray_04									"5000004">
+	<!ENTITY kColor_Gray_05									"5000005">
+	<!ENTITY kColor_Gray_06									"5000006">
+	<!ENTITY kColor_Gray_07									"5000007">
+	<!ENTITY kColor_Gray_08									"5000008">
+	<!ENTITY kColor_Gray_09									"5000009">
+	<!ENTITY kColor_Gray_10									"5000010">
+	
+	<!ENTITY kColor_Blue										"5000011">	
+	
+	<!-- CORE -->
+	<!ENTITY kColor_ApplicationBackground							"5000012">
+	<!ENTITY kColor_ContentBackground									"5000013">
+	<!ENTITY kColor_Focus															"5000014">
+	
+	<!-- BUTTON -->
+	<!ENTITY kColor_ButtonSecondary										"5000015">
+	<!ENTITY kColor_ButtonPrimary											"5000016">
+	
+	<!ENTITY kColor_ButtonBackgroundDefault						"5000017">
+	<!ENTITY kColor_ButtonBackgroundDownSecondary			"5000018">
+	<!ENTITY kColor_ButtonBackgroundDownPrimary				"5000019">
+	<!ENTITY kColor_ButtonBackgroundDisabled					"5000020">
+	
+	<!ENTITY kColor_ButtonTextHover										"5000021">
+	<!ENTITY kColor_ButtonTextFocus										"5000022">
+	<!ENTITY kColor_ButtonTextDisabled								"5000023">
+	
+	<!-- FIELDS -->
+	<!ENTITY kColor_FieldBackgroundDefault						"5000024">
+	<!ENTITY kColor_FieldBackgroundHover							"5000025">
+	<!ENTITY kColor_FieldBackgroundDisabled						"5000026">
+	
+	<!ENTITY kColor_FieldBorderDefault								"5000027">
+	
+	<!ENTITY kColor_TextFieldBackgroundDefault				"5000028">
+	<!ENTITY kColor_TextFieldBackgroundFocused				"5000029">
+	
+	<!ENTITY kColor_TextFieldFaceDefault							"5000030">
+	<!ENTITY kColor_TextFieldFaceFocused							"5000031">
+	<!ENTITY kColor_TextFieldFaceDisabled							"5000032">
+	
+	<!ENTITY kColor_FaceDefault												"5000033">
+	<!ENTITY kColor_FaceActive												"5000034">
+	<!ENTITY kColor_FaceDisabled											"5000035">
+	
+	<!ENTITY kColor_StaticTextDefault									"5000036">
+	<!ENTITY kColor_StaticTextDisabled								"5000037">
+	
+	<!ENTITY kColor_ControlTextDefault								"5000038">
+	<!ENTITY kColor_ControlTextDisabled								"5000039">
+	
+	<!ENTITY kColor_ControlDefault										"5000040">
+	<!ENTITY kColor_ControlActive											"5000041">
+	<!ENTITY kColor_ControlDisabled										"5000042">
+
+	<!ENTITY kColor_HotTextDefault										"5000043">
+	<!ENTITY kColor_HotTextHover											"5000044">
+	<!ENTITY kColor_HotTextDisabled										"5000045">
+	<!ENTITY kColor_HotTextFocused										"5000046">
+	
+	<!ENTITY kColor_HotTextLabelDefault								"5000047">
+	<!ENTITY kColor_HotTextLabelHover									"5000048">
+	<!ENTITY kColor_HotTextLabelDisabled							"5000049">
+	<!ENTITY kColor_HotTextLabelFocused								"5000050">
+	
+	<!ENTITY kColor_HotTextUnderlineDefault						"5000051">
+	<!ENTITY kColor_HotTextUnderlineHover							"5000052">
+	<!ENTITY kColor_HotTextUnderlineDisabled					"5000053">
+	
+	<!ENTITY kColor_Divider														"5000054">
+	<!ENTITY kColor_SliderTrackDisabled												"5000055">
+	
+	<!ENTITY kColor_ScrollBarTrackDefault							"5000056">
+	<!ENTITY kColor_ScrollBarTrackDisabled						"5000057">
+	<!ENTITY kColor_ScrollBarThumbDefault							"5000058">
+	<!ENTITY kColor_ScrollBarThumbActive							"5000059">
+	<!ENTITY kColor_ScrollBarThumbDisabled						"5000060">
+	
+	<!ENTITY kColor_ProgressBarTrack									"5000061">
+	<!ENTITY kColor_ProgressBarDefault								"5000062">
+	<!ENTITY kColor_ProgressBarDisabled								"5000063">
+	
+	<!ENTITY kColor_ListBackground										"5000064">
+	<!ENTITY kColor_ListBorder												"5000065">
+	
+	<!ENTITY kColor_ListBoxBackgroundHighlighted			"5000066">
+	<!ENTITY kColor_ListBoxBackgroundSelected					"5000067">
+	<!ENTITY kColor_ListBoxBackgroundDefault					"5000068">
+	
+	<!ENTITY kColor_DisabledImageAlpha								"5000069">
+	
+	<!ENTITY kColor_TabWell														"5000070">
+	<!ENTITY kColor_TabActive													"5000071">
+	<!ENTITY kColor_TabInactive												"5000072">
+	<!ENTITY kColor_TabWellDivider										"5000073">
+	
+	<!ENTITY kColor_TabTextActive											"5000074">
+	<!ENTITY kColor_TabTextInactive										"5000075">
+	<!ENTITY kColor_TabTextDisabled										"5000076">
+	
+	<!ENTITY kColor_TreeDivider												"5000077">
+	<!ENTITY kColor_TreeSelected											"5000078">
+	<!ENTITY kColor_TreeDrag													"5000079">
+	<!ENTITY kColor_TreeMarquee												"5000080">
+	
+	<!ENTITY kColor_ToggleSelectedBackground					"5000081">
+	<!ENTITY kColor_ToggleSelectedBorder							"5000082">
+	<!ENTITY kColor_ToggleHoverBackground							"5000083">
+	<!ENTITY kColor_ToggleHoverBorder									"5000084">
+	
+	<!-- Brush Color Values -->
+	<!ENTITY kColor_BrushShapePreviewOutline					"5000085">
+	<!ENTITY kColor_BrushShapePreviewBackground				"5000086">
+	<!ENTITY kColor_BrushShapePreviewFill							"5000087">
+	<!ENTITY kColor_BrushShapePreviewVariationFill		"5000088">
+	
+	<!ENTITY kColor_ToolTipText												"5000089">
+	<!ENTITY kColor_ToolTipBackground									"5000090">
+	
+	<!ENTITY kColor_StarRatingUnselected							"5000091">
+	<!ENTITY kColor_StarRatingSelected								"5000092">
+	
+	<!ENTITY kColor_White															"5000093">
+	<!ENTITY kColor_Black															"5000094">
+	
+	<!ENTITY kColor_IconFill													"5000095">
+	<!ENTITY kColor_IconFillMedium										"5000096">
+	<!ENTITY kColor_IconFillPale											"5000097">
+	
+	<!ENTITY kColor_IconInvertFill										"5000098">
+	<!ENTITY kColor_IconInvertFillMedium							"5000099">
+	<!ENTITY kColor_IconInvertFillPale								"5000100">
+
+	<!ENTITY kColor_IconColored												"5000101">
+	<!ENTITY kColor_IconInvertColored									"5000102">
+	
+	<!ENTITY kColor_LevelMeterBorder									"5000103">
+	<!ENTITY kColor_MessageBoxText										"5000104">
+	
+	<!ENTITY kColor_PictureButtonBackgroundDown				"5000105">
+	<!ENTITY kColor_PictureButtonBackgroundHover			"5000106">
+	<!ENTITY kColor_PictureButtonBorder								"5000107">
+	
+	<!ENTITY kColor_TextColored												"5000108">
+	
+	<!ENTITY kColor_TextFieldBackgroundWithScrollBars	"5000109">
+	
+	<!ENTITY kColor_ButtonBarBackgroundDefault				"5000110">
+
+	<!ENTITY kColor_SliderTrackEnabled								"5000111">
+	
+	<!ENTITY kColor_ButtonBackgroundDefaultStandard		"5000112">
+	<!ENTITY kColor_ButtonBackgroundHoverStandard			"5000113">
+	<!ENTITY kColor_ButtonBackgroundDownStandard			"5000114">
+	<!ENTITY kColor_ButtonStandardBorder							"5000115">
+	
+	<!ENTITY kColor_FieldBackgroundDown								"5000116">
+	
+	<!ENTITY kColor_ScrollBarArrowDefault								"5000117">
+	<!ENTITY kColor_ScrollBarArrowHover									"5000118">
+	<!ENTITY kColor_ScrollBarArrowDisable								"5000119">
+
+	<!ENTITY kColor_TreeHeader                                          "5000120">
+
+	
+	<!-- SPECTRUM COMMON v1.3.1 -->
+	
+	<!ENTITY kColor_White_V "1.0">
+	<!ENTITY kColor_Black_V "0.0">
+	
+	<!ENTITY kColor_Blue_01_H "206.14">
+	<!ENTITY kColor_Blue_01_S "0.7143">
+	<!ENTITY kColor_Blue_01_V "0.9608">
+	
+	<!ENTITY kColor_Blue_02_H "210">
+	<!ENTITY kColor_Blue_02_S "0.8085">
+	<!ENTITY kColor_Blue_02_V "0.9216">
+	
+	<!ENTITY kColor_Blue_03_H "212.86">
+	<!ENTITY kColor_Blue_03_S "0.9130">
+	<!ENTITY kColor_Blue_03_V "0.9020">
+	
+	<!ENTITY kColor_Blue_04_H "213.85">
+	<!ENTITY kColor_Blue_04_S "0.9286">
+	<!ENTITY kColor_Blue_04_V "0.8235">
+	
+	
+	
+	<!-- SPECTRUM DARKEST v1.3.1 -->
+
+	<!ENTITY kColor_Gray_Darkest_01 "0.0863">
+	<!ENTITY kColor_Gray_Darkest_02 "0.1137">
+	<!ENTITY kColor_Gray_Darkest_03 "0.1373">
+	<!ENTITY kColor_Gray_Darkest_04 "0.1647">
+	<!ENTITY kColor_Gray_Darkest_05 "0.1922">
+	<!ENTITY kColor_Gray_Darkest_06 "0.2706">
+	<!ENTITY kColor_Gray_Darkest_07 "0.3882">
+	<!ENTITY kColor_Gray_Darkest_08 "0.5412">
+	<!ENTITY kColor_Gray_Darkest_09 "0.7255">
+	<!ENTITY kColor_Gray_Darkest_10 "0.9098">
+	
+	<!-- SPECTRUM DARK v1.3.1 -->
+	
+	<!ENTITY kColor_Gray_Dark_01 "0.2588">
+	<!ENTITY kColor_Gray_Dark_02 "0.2784">
+	<!ENTITY kColor_Gray_Dark_03 "0.2941">
+	<!ENTITY kColor_Gray_Dark_04 "0.3176">
+	<!ENTITY kColor_Gray_Dark_05 "0.3412">
+	<!ENTITY kColor_Gray_Dark_06 "0.4235">
+	<!ENTITY kColor_Gray_Dark_07 "0.5529">
+	<!ENTITY kColor_Gray_Dark_08 "0.7294">
+	<!ENTITY kColor_Gray_Dark_09 "0.9608">
+	<!ENTITY kColor_Gray_Dark_10 "1.0000">
+	
+	<!-- SPECTRUM LIGHT v1.3.1 -->
+	
+	<!ENTITY kColor_Gray_Light_01 "0.9020">
+	<!ENTITY kColor_Gray_Light_02 "0.8745">
+	<!ENTITY kColor_Gray_Light_03 "0.8431">
+	<!ENTITY kColor_Gray_Light_04 "0.8039">
+	<!ENTITY kColor_Gray_Light_05 "0.7725">
+	<!ENTITY kColor_Gray_Light_06 "0.6588">
+	<!ENTITY kColor_Gray_Light_07 "0.5176">
+	<!ENTITY kColor_Gray_Light_08 "0.3686">
+	<!ENTITY kColor_Gray_Light_09 "0.2235">
+	<!ENTITY kColor_Gray_Light_10 "0.0784">
+	
+	<!-- SPECTRUM LIGHTEST v1.3.1 -->
+	
+	<!ENTITY kColor_Gray_Lightest_01 "1.0000">
+	<!ENTITY kColor_Gray_Lightest_02 "0.9804">
+	<!ENTITY kColor_Gray_Lightest_03 "0.9608">
+	<!ENTITY kColor_Gray_Lightest_04 "0.9176">
+	<!ENTITY kColor_Gray_Lightest_05 "0.8824">
+	<!ENTITY kColor_Gray_Lightest_06 "0.7608">
+	<!ENTITY kColor_Gray_Lightest_07 "0.5961">
+	<!ENTITY kColor_Gray_Lightest_08 "0.4392">
+	<!ENTITY kColor_Gray_Lightest_09 "0.2941">
+	<!ENTITY kColor_Gray_Lightest_10 "0.1725">
+	
+  <!-- theme colors -->
+  <!ENTITY General 	"0.0000">
+  <!ENTITY Darkest 	"0.0000">
+  <!ENTITY Dark 	"0.5000">
+  <!ENTITY Light 	"0.5001">
+  <!ENTITY Lightest	"1.0000">
+  
+  <!-- defines entities for the text ids -->
+  
+  <!ENTITY kText_Main_Large "0"> <!-- default text id -->
+  <!ENTITY kText_Main_Small "1">
+  <!ENTITY kText_Title      "2">
+  
+  <!-- entity definitions for the font size schemes -->
+  
+  <!ENTITY kFontSizeScheme_Small    "0">
+  <!ENTITY kFontSizeScheme_Regular  "1">	<!-- default font size scheme -->
+  <!ENTITY kFontSizeScheme_Large    "2">
+
+  <!-- Definitions of objects in this file, for validating parsers and editors -->
+<!ELEMENT ThemeParameters (ThemeColors | ThemeFonts)>
+  <!ELEMENT ThemeColors (Theme | KeyFrame)*>
+  <!ATTLIST ThemeColors>
+  <!ELEMENT Theme (KeyFrame)+>
+  <!ATTLIST Theme
+	t CDATA #REQUIRED
+>
+  <!ELEMENT KeyFrame EMPTY>
+  <!ATTLIST KeyFrame
+	name CDATA #REQUIRED
+	t CDATA #IMPLIED
+	v CDATA #REQUIRED
+	h CDATA #IMPLIED
+	s CDATA #IMPLIED
+	a CDATA #IMPLIED
+	hold (true | false) "false"
+>
+  <!ELEMENT ThemeFonts (FontSize)>
+  <!ATTLIST ThemeFonts>
+  <!ELEMENT FontSize EMPTY>
+  <!ATTLIST FontSize
+	name CDATA #REQUIRED
+	size CDATA #REQUIRED
+	scheme CDATA #REQUIRED
+>
+
+]>
+
+<ThemeParameters>
+	
+	<ThemeFonts>
+		<FontSize name="&kText_Main_Small;" size="8"  scheme="&kFontSizeScheme_Small;" />
+		<FontSize name="&kText_Main_Large;" size="9"  scheme="&kFontSizeScheme_Small;" />
+		<FontSize name="&kText_Title;"      size="11" scheme="&kFontSizeScheme_Small;" />
+		
+		<FontSize name="&kText_Main_Small;" size="9"  scheme="&kFontSizeScheme_Regular;" />
+		<FontSize name="&kText_Main_Large;" size="11" scheme="&kFontSizeScheme_Regular;" />
+		<FontSize name="&kText_Title;"      size="13" scheme="&kFontSizeScheme_Regular;" />
+		
+		<FontSize name="&kText_Main_Small;" size="13" scheme="&kFontSizeScheme_Large;" />
+		<FontSize name="&kText_Main_Large;" size="15" scheme="&kFontSizeScheme_Large;" />
+		<FontSize name="&kText_Title;"      size="17" scheme="&kFontSizeScheme_Large;" />
+	</ThemeFonts>
+	
+	<ThemeColors>
+  
+		<Theme t="&Darkest;" >
+		
+			<!-- PALETTE -->
+			<KeyFrame name="&kColor_Gray_01;"		v="&kColor_Gray_Darkest_01;" />
+			<KeyFrame name="&kColor_Gray_02;"		v="&kColor_Gray_Darkest_02;" />
+			<KeyFrame name="&kColor_Gray_03;"		v="&kColor_Gray_Darkest_03;" />
+			<KeyFrame name="&kColor_Gray_04;"		v="&kColor_Gray_Darkest_04;" />
+			<KeyFrame name="&kColor_Gray_05;"		v="&kColor_Gray_Darkest_05;" />
+			<KeyFrame name="&kColor_Gray_06;"		v="&kColor_Gray_Darkest_06;" />
+			<KeyFrame name="&kColor_Gray_07;"		v="&kColor_Gray_Darkest_07;" />
+			<KeyFrame name="&kColor_Gray_08;"		v="&kColor_Gray_Darkest_08;" />
+			<KeyFrame name="&kColor_Gray_09;"		v="&kColor_Gray_Darkest_09;" />
+			<KeyFrame name="&kColor_Gray_10;"		v="&kColor_Gray_Darkest_10;" />
+			
+			<KeyFrame name="&kColor_Blue;" 	h="&kColor_Blue_02_H;" s="&kColor_Blue_02_S;" v="&kColor_Blue_02_V;" />
+		
+			<!-- CORE -->
+			<KeyFrame name="&kColor_ApplicationBackground;" 					v="&kColor_Gray_Darkest_01;" />
+			<KeyFrame name="&kColor_ContentBackground;" 							v="&kColor_Gray_Darkest_03;" />
+			<KeyFrame name="&kColor_Focus;" 													h="&kColor_Blue_02_H;" s="&kColor_Blue_02_S;" v="&kColor_Blue_02_V;" />
+			
+			<!-- BUTTON SHARED -->
+			<KeyFrame name="&kColor_ButtonBackgroundDisabled;" 				v="&kColor_Gray_Darkest_04;" />
+			
+			<!-- BUTTON NON-COMMIT -->
+			<KeyFrame name="&kColor_ButtonBackgroundDefaultStandard;"	v="&kColor_Gray_Darkest_02;" />
+			<KeyFrame name="&kColor_ButtonBackgroundHoverStandard;" 	v="&kColor_Gray_Darkest_04;" />
+			<KeyFrame name="&kColor_ButtonBackgroundDownStandard;" 		v="&kColor_Gray_Darkest_01;" />
+			
+			<KeyFrame name="&kColor_ButtonStandardBorder;"						v="&kColor_Gray_Darkest_05;" />
+	
+			<!-- BUTTON COMMIT -->
+			<KeyFrame name="&kColor_ButtonBackgroundDefault;" 				v="&kColor_Gray_Darkest_03;" />
+			<KeyFrame name="&kColor_ButtonSecondary;" 								v="&kColor_Gray_Darkest_08;" />
+			<KeyFrame name="&kColor_ButtonPrimary;" 									v="&kColor_Gray_Darkest_10;" />
+			
+			<KeyFrame name="&kColor_ButtonBackgroundDownSecondary;" 	v="&kColor_Gray_Darkest_07;" /> 
+			<KeyFrame name="&kColor_ButtonBackgroundDownPrimary;" 		v="&kColor_Gray_Darkest_09;" />
+			
+			<!-- BUTTON ICON -->
+			<KeyFrame name="&kColor_PictureButtonBackgroundDown;" 		v="&kColor_Gray_Darkest_01;" />
+			<KeyFrame name="&kColor_PictureButtonBackgroundHover;" 		v="&kColor_Gray_Darkest_04;" />
+			<KeyFrame name="&kColor_PictureButtonBorder;" 						v="&kColor_Gray_Darkest_05;" />
+			
+			<!-- BUTTON TOGGLE -->
+			<KeyFrame name="&kColor_ToggleSelectedBackground;" 				v="&kColor_Gray_Darkest_01;" />
+			<KeyFrame name="&kColor_ToggleSelectedBorder;" 						v="&kColor_Gray_Darkest_05;" />
+			<KeyFrame name="&kColor_ToggleHoverBackground;" 					v="&kColor_Gray_Darkest_04;" />
+			<KeyFrame name="&kColor_ToggleHoverBorder;" 							v="&kColor_Gray_Darkest_05;" />
+			
+			<!-- BUTTON TEXT -->
+			<KeyFrame name="&kColor_ButtonTextHover;" 								v="&kColor_Gray_Darkest_01;" />
+			<KeyFrame name="&kColor_ButtonTextFocus;" 								v="&kColor_White_V;" />
+			<KeyFrame name="&kColor_ButtonTextDisabled;" 							v="&kColor_Gray_Darkest_06;" />
+			
+			<!-- FIELDS: POPUP, COMBOBOX -->
+			<KeyFrame name="&kColor_FieldBackgroundDefault;" 					v="&kColor_Gray_Darkest_02;" />
+			<KeyFrame name="&kColor_FieldBackgroundHover;" 						v="&kColor_Gray_Darkest_04;" />
+			<KeyFrame name="&kColor_FieldBackgroundDown;" 						v="&kColor_Gray_Darkest_03;" />
+			<KeyFrame name="&kColor_FieldBackgroundDisabled;" 				v="&kColor_Gray_Darkest_04;" />
+			
+			<KeyFrame name="&kColor_FieldBorderDefault;" 							v="&kColor_Gray_Darkest_05;" />
+			
+			<KeyFrame name="&kColor_FaceDefault;" 										v="&kColor_Gray_Darkest_09;" />
+			<KeyFrame name="&kColor_FaceActive;" 											v="&kColor_Gray_Darkest_09;" />
+			<KeyFrame name="&kColor_FaceDisabled;" 										v="&kColor_Gray_Darkest_06;" />
+			
+			<!-- FIELDS: TEXTFIELD, COMBOBOX -->
+			<KeyFrame name="&kColor_TextFieldBackgroundDefault;" 			v="&kColor_Gray_Darkest_01;" />
+			<KeyFrame name="&kColor_TextFieldBackgroundFocused;" 			v="&kColor_Gray_Darkest_10;" />
+			<KeyFrame name="&kColor_TextFieldBackgroundWithScrollBars;" 	v="&kColor_Gray_Darkest_10;" />
+			
+			<KeyFrame name="&kColor_TextFieldFaceDefault;" 						v="&kColor_Gray_Darkest_09;" />
+			<KeyFrame name="&kColor_TextFieldFaceFocused;" 						v="&kColor_Gray_Darkest_01;" />
+			<KeyFrame name="&kColor_TextFieldFaceDisabled;" 					v="&kColor_Gray_Darkest_06;" />
+			
+			<!-- stuff -->
+			<KeyFrame name="&kColor_StaticTextDefault;" 							v="&kColor_Gray_Darkest_08;" />
+			<KeyFrame name="&kColor_StaticTextDisabled;" 							v="&kColor_Gray_Darkest_06;" />
+			
+			<KeyFrame name="&kColor_MessageBoxText;" 									v="&kColor_Gray_Darkest_09;" />
+			<KeyFrame name="&kColor_TextColored;" 										h="&kColor_Blue_02_H;" s="&kColor_Blue_02_S;" v="&kColor_Blue_02_V;" />
+			
+			<!-- option controls: RADIOBUTTON, CHECKBOX -->
+			<KeyFrame name="&kColor_ControlTextDefault;"							v="&kColor_Gray_Darkest_08;" />
+			<KeyFrame name="&kColor_ControlTextDisabled;"							v="&kColor_Gray_Darkest_06;" />
+			
+			<KeyFrame name="&kColor_ControlDefault;"									v="&kColor_Gray_Darkest_08;" />
+			<KeyFrame name="&kColor_ControlActive;"										v="&kColor_Gray_Darkest_09;" />
+			<KeyFrame name="&kColor_ControlDisabled;"									v="&kColor_Gray_Darkest_06;" />
+			
+			<!-- hottext -->
+			<KeyFrame name="&kColor_HotTextDefault;" 									h="&kColor_Blue_02_H;" s="&kColor_Blue_02_S;" v="&kColor_Blue_02_V;" />
+			<KeyFrame name="&kColor_HotTextHover;" 										h="&kColor_Blue_02_H;" s="&kColor_Blue_02_S;" v="&kColor_Blue_02_V;" />
+			<KeyFrame name="&kColor_HotTextDisabled;" 								v="&kColor_Gray_Darkest_06;" />
+			<KeyFrame name="&kColor_HotTextFocused;" 									h="&kColor_Blue_02_H;" s="&kColor_Blue_02_S;" v="&kColor_Blue_02_V;" />
+			
+			<KeyFrame name="&kColor_HotTextLabelDefault;" 						v="&kColor_Gray_Darkest_08;" />
+			<KeyFrame name="&kColor_HotTextLabelHover;" 							v="&kColor_Gray_Darkest_09;" />
+			<KeyFrame name="&kColor_HotTextLabelDisabled;" 						v="&kColor_Gray_Darkest_06;" />
+			<KeyFrame name="&kColor_HotTextLabelFocused;" 						v="&kColor_Gray_Darkest_09;" />
+			
+			<!-- divider -->
+			<KeyFrame name="&kColor_Divider;" 												v="&kColor_Gray_Darkest_05;" />
+			
+			<!-- slider -->
+			<KeyFrame name="&kColor_SliderTrackDisabled;" 										v="&kColor_Gray_Darkest_06;" />
+            <KeyFrame name="&kColor_SliderTrackEnabled;" 										v="&kColor_Gray_Darkest_06;" />
+			
+			<!-- scrollbar -->
+			<KeyFrame name="&kColor_ScrollBarTrackDefault;" 					v="&kColor_Gray_Darkest_01;" />
+			<KeyFrame name="&kColor_ScrollBarTrackDisabled;" 					v="&kColor_Gray_Darkest_03;" />
+			
+			<KeyFrame name="&kColor_ScrollBarThumbDefault;" 					v="&kColor_Gray_Darkest_05;" />
+			<KeyFrame name="&kColor_ScrollBarThumbActive;" 						v="&kColor_Gray_Darkest_06;" />
+			<KeyFrame name="&kColor_ScrollBarThumbDisabled;" 					v="&kColor_Gray_Darkest_03;" a="0.0" />
+			
+			<!-- progess bar -->
+			<KeyFrame name="&kColor_ProgressBarTrack;" 								v="&kColor_Gray_Darkest_02;" />
+			<KeyFrame name="&kColor_ProgressBarDisabled;" 						v="&kColor_Gray_Darkest_04;" />
+			<KeyFrame name="&kColor_ProgressBarDefault;" 							h="&kColor_Blue_02_H;" s="&kColor_Blue_02_S;" v="&kColor_Blue_02_V;" />
+			
+			<!-- lists -->
+			<KeyFrame name="&kColor_ListBackground;" 									v="&kColor_Gray_Darkest_01;" />
+			<KeyFrame name="&kColor_ListBorder;" 											v="&kColor_Gray_Darkest_05;" />
+			
+			<KeyFrame name="&kColor_ListBoxBackgroundHighlighted;" 		v="&kColor_Gray_Darkest_03;" />
+			<KeyFrame name="&kColor_ListBoxBackgroundSelected;" 			v="&kColor_Gray_Darkest_06;" />
+			<KeyFrame name="&kColor_ListBoxBackgroundDefault;" 				v="&kColor_Gray_Darkest_01;" />
+			
+			<!-- tabwell -->
+			<KeyFrame name="&kColor_TabWell;" 												v="&kColor_Gray_Darkest_03;" />
+			<KeyFrame name="&kColor_TabActive;" 											v="&kColor_Gray_Darkest_03;" />
+			<KeyFrame name="&kColor_TabInactive;" 										v="&kColor_Gray_Darkest_03;" />
+			<KeyFrame name="&kColor_TabWellDivider;" 									v="&kColor_Gray_Darkest_05;" />
+			
+			<KeyFrame name="&kColor_TabTextActive;" 									v="&kColor_Gray_Darkest_09;" />
+			<KeyFrame name="&kColor_TabTextInactive;" 								v="&kColor_Gray_Darkest_08;" />
+			<KeyFrame name="&kColor_TabTextDisabled;" 								v="&kColor_Gray_Darkest_06;" />
+			
+			<!-- tree -->
+			<KeyFrame name="&kColor_TreeDivider;" 										v="&kColor_Gray_Darkest_04;" />
+			<KeyFrame name="&kColor_TreeSelected;" 										v="&kColor_Gray_Darkest_06;" />
+			<KeyFrame name="&kColor_TreeMarquee;" 										h="&kColor_Blue_02_H;" s="&kColor_Blue_02_S;" v="&kColor_Blue_02_V;" a="0.25" />
+			<KeyFrame name="&kColor_TreeDrag;" 												h="&kColor_Blue_02_H;" s="&kColor_Blue_02_S;" v="&kColor_Blue_02_V;" />
+			<KeyFrame name="&kColor_TreeHeader;" 										v="&kColor_Gray_Darkest_06;" />
+			
+			<!-- tooltip -->
+			<KeyFrame name="&kColor_ToolTipText;" 										v="&kColor_Gray_Darkest_09;" />
+			<KeyFrame name="&kColor_ToolTipBackground;" 							v="&kColor_Gray_Darkest_06;" />
+			
+			<!-- star rating -->
+			<KeyFrame name="&kColor_StarRatingUnselected;" 						v="&kColor_Gray_Darkest_07;" />
+			<KeyFrame name="&kColor_StarRatingSelected;" 							h="&kColor_Blue_02_H;" s="&kColor_Blue_02_S;" v="&kColor_Blue_02_V;" />
+			
+			<!-- icons -->
+			<KeyFrame name="&kColor_IconFill;" 												v="0.6980" />
+			<KeyFrame name="&kColor_IconFillMedium;" 									v="0.3960" />
+			<KeyFrame name="&kColor_IconFillPale;" 										v="0.2667" />
+			
+			<KeyFrame name="&kColor_IconInvertFill;" 									v="0.2745" />
+			<KeyFrame name="&kColor_IconInvertFillMedium;" 						v="0.5490" />
+			<KeyFrame name="&kColor_IconInvertFillPale;" 							v="0.6667" />
+			
+			<KeyFrame name="&kColor_IconColored;" 										h="210.00" s="0.8085" v="0.9216" />
+			<KeyFrame name="&kColor_IconInvertColored;" 							h="212.86" s="0.9130" v="0.9020" />
+			
+			<!-- level meter -->
+			<KeyFrame name="&kColor_LevelMeterBorder;" 								v="&kColor_Black_V;" />
+			
+			<KeyFrame name="&kColor_ButtonBarBackgroundDefault;"					v="&kColor_Gray_Darkest_02;" />
+			
+			<!-- ScrollBar arrow colors-->
+			<KeyFrame name="&kColor_ScrollBarArrowDefault;" 				v="&kColor_Gray_Darkest_07;" />
+			<KeyFrame name="&kColor_ScrollBarArrowHover;" 					v="&kColor_Gray_Darkest_08;" />
+			<KeyFrame name="&kColor_ScrollBarArrowDisable;" 				v="&kColor_Gray_Darkest_04;" />
+		</Theme>
+  
+		<Theme t="&Dark;" >
+  
+			<!-- PALETTE -->
+			<KeyFrame name="&kColor_Gray_01;"		v="&kColor_Gray_Dark_01;" />
+			<KeyFrame name="&kColor_Gray_02;"		v="&kColor_Gray_Dark_02;" />
+			<KeyFrame name="&kColor_Gray_03;"		v="&kColor_Gray_Dark_03;" />
+			<KeyFrame name="&kColor_Gray_04;"		v="&kColor_Gray_Dark_04;" />
+			<KeyFrame name="&kColor_Gray_05;"		v="&kColor_Gray_Dark_05;" />
+			<KeyFrame name="&kColor_Gray_06;"		v="&kColor_Gray_Dark_06;" />
+			<KeyFrame name="&kColor_Gray_07;"		v="&kColor_Gray_Dark_07;" />
+			<KeyFrame name="&kColor_Gray_08;"		v="&kColor_Gray_Dark_08;" />
+			<KeyFrame name="&kColor_Gray_09;"		v="&kColor_Gray_Dark_09;" />
+			<KeyFrame name="&kColor_Gray_10;"		v="&kColor_Gray_Dark_10;" />
+			
+			<KeyFrame name="&kColor_Blue;" 	h="&kColor_Blue_01_H;" s="&kColor_Blue_01_S;" v="&kColor_Blue_01_V;" />
+		
+			<!-- CORE -->
+			<KeyFrame name="&kColor_ApplicationBackground;" 					v="&kColor_Gray_Dark_01;" />
+			<KeyFrame name="&kColor_ContentBackground;" 							v="&kColor_Gray_Dark_03;" />
+			<KeyFrame name="&kColor_Focus;" 													h="&kColor_Blue_01_H;" s="&kColor_Blue_01_S;" v="&kColor_Blue_01_V;" />
+			
+			<!-- BUTTON SHARED -->
+			<KeyFrame name="&kColor_ButtonBackgroundDisabled;" 				v="&kColor_Gray_Dark_04;" />
+			
+			<!-- BUTTON NON-COMMIT -->
+			<KeyFrame name="&kColor_ButtonBackgroundDefaultStandard;" v="&kColor_Gray_Dark_02;" />
+			<KeyFrame name="&kColor_ButtonBackgroundHoverStandard;" 	v="&kColor_Gray_Dark_04;" />
+			<KeyFrame name="&kColor_ButtonBackgroundDownStandard;" 		v="&kColor_Gray_Dark_03;" />
+			
+			<KeyFrame name="&kColor_ButtonStandardBorder;"						v="&kColor_Gray_Dark_05;" />
+	
+			<!-- BUTTON COMMIT -->
+			<KeyFrame name="&kColor_ButtonBackgroundDefault;" 				v="&kColor_Gray_Dark_03;" />
+			
+			<KeyFrame name="&kColor_ButtonSecondary;" 								v="&kColor_Gray_Dark_08;" />
+			<KeyFrame name="&kColor_ButtonPrimary;" 									v="&kColor_Gray_Dark_10;" />
+			
+			<KeyFrame name="&kColor_ButtonBackgroundDownSecondary;" 	v="&kColor_Gray_Dark_07;" /> 
+			<KeyFrame name="&kColor_ButtonBackgroundDownPrimary;" 		v="&kColor_Gray_Dark_09;" />
+			
+			<!-- BUTTON ICON -->
+			<KeyFrame name="&kColor_PictureButtonBackgroundDown;" 		v="&kColor_Gray_Dark_03;" />
+			<KeyFrame name="&kColor_PictureButtonBackgroundHover;" 		v="&kColor_Gray_Dark_04;" />
+			<KeyFrame name="&kColor_PictureButtonBorder;" 						v="&kColor_Gray_Dark_05;" />
+			
+			<!-- BUTTON TOGGLE -->
+			<KeyFrame name="&kColor_ToggleSelectedBackground;" 				v="&kColor_Gray_Dark_01;" />
+			<KeyFrame name="&kColor_ToggleSelectedBorder;" 						v="&kColor_Gray_Dark_05;" />
+			<KeyFrame name="&kColor_ToggleHoverBackground;" 					v="&kColor_Gray_Dark_04;" />
+			<KeyFrame name="&kColor_ToggleHoverBorder;" 							v="&kColor_Gray_Dark_05;" />
+			
+			<!-- BUTTON TEXT -->
+			<KeyFrame name="&kColor_ButtonTextHover;" 								v="&kColor_Gray_Dark_01;" />
+			<KeyFrame name="&kColor_ButtonTextFocus;" 								v="&kColor_White_V;" />
+			<KeyFrame name="&kColor_ButtonTextDisabled;" 							v="&kColor_Gray_Dark_06;" />
+			
+			<!-- FIELDS: POPUP, COMBOBOX -->
+			<KeyFrame name="&kColor_FieldBackgroundDefault;" 					v="&kColor_Gray_Dark_02;" />
+			<KeyFrame name="&kColor_FieldBackgroundHover;" 						v="&kColor_Gray_Dark_04;" />
+			<KeyFrame name="&kColor_FieldBackgroundDown;" 						v="&kColor_Gray_Dark_03;" />
+			<KeyFrame name="&kColor_FieldBackgroundDisabled;" 				v="&kColor_Gray_Dark_04;" />
+			
+			<KeyFrame name="&kColor_FieldBorderDefault;" 							v="&kColor_Gray_Dark_05;" />
+			
+			<KeyFrame name="&kColor_FaceDefault;" 										v="&kColor_Gray_Dark_09;" />
+			<KeyFrame name="&kColor_FaceActive;" 											v="&kColor_Gray_Dark_09;" />
+			<KeyFrame name="&kColor_FaceDisabled;" 										v="&kColor_Gray_Dark_06;" />
+			
+			<!-- FIELDS: TEXTFIELD, COMBOBOX -->
+			<KeyFrame name="&kColor_TextFieldBackgroundDefault;" 			v="&kColor_Gray_Dark_01;" />
+			<KeyFrame name="&kColor_TextFieldBackgroundFocused;" 			v="&kColor_Gray_Dark_10;" />
+			<KeyFrame name="&kColor_TextFieldBackgroundWithScrollBars;" 	v="&kColor_Gray_Dark_10;" />
+			
+			<KeyFrame name="&kColor_TextFieldFaceDefault;" 						v="&kColor_Gray_Dark_09;" />
+			<KeyFrame name="&kColor_TextFieldFaceFocused;" 						v="&kColor_Gray_Dark_01;" />
+			<KeyFrame name="&kColor_TextFieldFaceDisabled;" 					v="&kColor_Gray_Dark_06;" />
+			
+			<!-- stuff -->
+			<KeyFrame name="&kColor_StaticTextDefault;" 							v="&kColor_Gray_Dark_08;" />
+			<KeyFrame name="&kColor_StaticTextDisabled;" 							v="&kColor_Gray_Dark_06;" />
+			
+			<KeyFrame name="&kColor_MessageBoxText;" 									v="&kColor_Gray_Dark_09;" />
+			<KeyFrame name="&kColor_TextColored;" 										h="&kColor_Blue_01_H;" s="&kColor_Blue_01_S;" v="&kColor_Blue_01_V;" />
+			
+			<!-- option controls: RADIOBUTTON, CHECKBOX -->
+			<KeyFrame name="&kColor_ControlTextDefault;"							v="&kColor_Gray_Dark_08;" />
+			<KeyFrame name="&kColor_ControlTextDisabled;"							v="&kColor_Gray_Dark_06;" />
+			
+			<KeyFrame name="&kColor_ControlDefault;"									v="&kColor_Gray_Dark_08;" />
+			<KeyFrame name="&kColor_ControlActive;"										v="&kColor_Gray_Dark_09;" />
+			<KeyFrame name="&kColor_ControlDisabled;"									v="&kColor_Gray_Dark_06;" />
+			
+			<!-- hottext -->
+			<KeyFrame name="&kColor_HotTextDefault;" 									h="&kColor_Blue_01_H;" s="&kColor_Blue_01_S;" v="&kColor_Blue_01_V;" />
+			<KeyFrame name="&kColor_HotTextHover;" 										h="&kColor_Blue_01_H;" s="&kColor_Blue_01_S;" v="&kColor_Blue_01_V;" />
+			<KeyFrame name="&kColor_HotTextDisabled;" 								v="&kColor_Gray_Dark_06;" />
+			<KeyFrame name="&kColor_HotTextFocused;" 									h="&kColor_Blue_01_H;" s="&kColor_Blue_01_S;" v="&kColor_Blue_01_V;" />
+			
+			<KeyFrame name="&kColor_HotTextLabelDefault;" 						v="&kColor_Gray_Dark_08;" />
+			<KeyFrame name="&kColor_HotTextLabelHover;" 							v="&kColor_Gray_Dark_09;" />
+			<KeyFrame name="&kColor_HotTextLabelDisabled;" 						v="&kColor_Gray_Dark_06;" />
+			<KeyFrame name="&kColor_HotTextLabelFocused;" 						v="&kColor_Gray_Dark_09;" />
+			
+			<!-- divider -->
+			<KeyFrame name="&kColor_Divider;" 												v="&kColor_Gray_Dark_05;" />
+			
+			<!-- slider -->
+			<KeyFrame name="&kColor_SliderTrackDisabled;" 										v="&kColor_Gray_Dark_06;" />
+            <KeyFrame name="&kColor_SliderTrackEnabled;" 										v="&kColor_Gray_Dark_06;" />
+			
+			<!-- scrollbar -->
+			<KeyFrame name="&kColor_ScrollBarTrackDefault;" 					v="&kColor_Gray_Dark_01;" />
+			<KeyFrame name="&kColor_ScrollBarTrackDisabled;" 					v="&kColor_Gray_Dark_03;" />
+			
+			<KeyFrame name="&kColor_ScrollBarThumbDefault;" 					v="&kColor_Gray_Dark_05;" />
+			<KeyFrame name="&kColor_ScrollBarThumbActive;" 						v="&kColor_Gray_Dark_06;" />
+			<KeyFrame name="&kColor_ScrollBarThumbDisabled;" 					v="&kColor_Gray_Dark_03;" a="0.0" />
+			
+			<!-- progess bar -->
+			<KeyFrame name="&kColor_ProgressBarTrack;" 								v="&kColor_Gray_Dark_02;" />
+			<KeyFrame name="&kColor_ProgressBarDisabled;" 						v="&kColor_Gray_Dark_04;" />
+			<KeyFrame name="&kColor_ProgressBarDefault;" 							h="&kColor_Blue_01_H;" s="&kColor_Blue_01_S;" v="&kColor_Blue_01_V;" />
+			
+			<!-- lists -->
+			<KeyFrame name="&kColor_ListBackground;" 									v="&kColor_Gray_Dark_01;" />
+			<KeyFrame name="&kColor_ListBorder;" 											v="&kColor_Gray_Dark_05;" />
+			
+			<KeyFrame name="&kColor_ListBoxBackgroundHighlighted;" 		v="&kColor_Gray_Dark_03;" />
+			<KeyFrame name="&kColor_ListBoxBackgroundSelected;" 			v="&kColor_Gray_Dark_06;" />
+			<KeyFrame name="&kColor_ListBoxBackgroundDefault;" 				v="&kColor_Gray_Dark_01;" />
+			
+			<!-- tabwell -->
+			<KeyFrame name="&kColor_TabWell;" 												v="&kColor_Gray_Dark_03;" />
+			<KeyFrame name="&kColor_TabActive;" 											v="&kColor_Gray_Dark_03;" />
+			<KeyFrame name="&kColor_TabInactive;" 										v="&kColor_Gray_Dark_03;" />
+			<KeyFrame name="&kColor_TabWellDivider;" 									v="&kColor_Gray_Dark_05;" />
+			
+			<KeyFrame name="&kColor_TabTextActive;" 									v="&kColor_Gray_Dark_09;" />
+			<KeyFrame name="&kColor_TabTextInactive;" 								v="&kColor_Gray_Dark_08;" />
+			<KeyFrame name="&kColor_TabTextDisabled;" 								v="&kColor_Gray_Dark_06;" />
+			
+			<!-- tree -->
+			<KeyFrame name="&kColor_TreeDivider;" 										v="&kColor_Gray_Dark_04;" />
+			<KeyFrame name="&kColor_TreeSelected;" 										v="&kColor_Gray_Dark_06;" />
+			<KeyFrame name="&kColor_TreeMarquee;" 										h="&kColor_Blue_01_H;" s="&kColor_Blue_01_S;" v="&kColor_Blue_01_V;" a="0.25" />
+			<KeyFrame name="&kColor_TreeDrag;" 												h="&kColor_Blue_01_H;" s="&kColor_Blue_01_S;" v="&kColor_Blue_01_V;" />
+			<KeyFrame name="&kColor_TreeHeader;" 										v="&kColor_Gray_Dark_06;" />
+			
+			<!-- tooltip -->
+			<KeyFrame name="&kColor_ToolTipText;" 										v="&kColor_Gray_Dark_09;" />
+			<KeyFrame name="&kColor_ToolTipBackground;" 							v="&kColor_Gray_Dark_06;" />
+			
+			<!-- star rating -->
+			<KeyFrame name="&kColor_StarRatingUnselected;" 						v="&kColor_Gray_Dark_07;" />
+			<KeyFrame name="&kColor_StarRatingSelected;" 							h="&kColor_Blue_01_H;" s="&kColor_Blue_01_S;" v="&kColor_Blue_01_V;" />
+    
+			<!-- icons -->
+			<KeyFrame name="&kColor_IconFill;" 												v="0.7608" />
+			<KeyFrame name="&kColor_IconFillMedium;" 									v="0.5216" />
+			<KeyFrame name="&kColor_IconFillPale;" 										v="0.4157" />
+			
+			<KeyFrame name="&kColor_IconInvertFill;" 									v="0.3373" />
+			<KeyFrame name="&kColor_IconInvertFillMedium;" 						v="0.6706" />
+			<KeyFrame name="&kColor_IconInvertFillPale;" 							v="0.8157" />		
+    
+			<KeyFrame name="&kColor_IconColored;" 										h="210.00" s="0.8085" v="0.9216" />
+			<KeyFrame name="&kColor_IconInvertColored;" 							h="212.86" s="0.9130" v="0.9020" />
+    
+			<!-- level meter -->
+			<KeyFrame name="&kColor_LevelMeterBorder;" 								v="&kColor_Black_V;" />
+			
+			<!-- stuff -->
+			<KeyFrame name="&kColor_ButtonBarBackgroundDefault;"					v="&kColor_Gray_Dark_02;" />
+    
+			<!-- ScrollBar arrow colors-->
+			<KeyFrame name="&kColor_ScrollBarArrowDefault;" 				v="&kColor_Gray_Dark_07;" />
+			<KeyFrame name="&kColor_ScrollBarArrowHover;" 					v="&kColor_Gray_Dark_08;" />
+			<KeyFrame name="&kColor_ScrollBarArrowDisable;" 				v="&kColor_Gray_Dark_04;" />
+		</Theme>
+  
+		<Theme t="&Light;" >
+  
+			<!-- PALETTE -->
+			<KeyFrame name="&kColor_Gray_01;"		v="&kColor_Gray_Light_01;" />
+			<KeyFrame name="&kColor_Gray_02;"		v="&kColor_Gray_Light_02;" />
+			<KeyFrame name="&kColor_Gray_03;"		v="&kColor_Gray_Light_03;" />
+			<KeyFrame name="&kColor_Gray_04;"		v="&kColor_Gray_Light_04;" />
+			<KeyFrame name="&kColor_Gray_05;"		v="&kColor_Gray_Light_05;" />
+			<KeyFrame name="&kColor_Gray_06;"		v="&kColor_Gray_Light_06;" />
+			<KeyFrame name="&kColor_Gray_07;"		v="&kColor_Gray_Light_07;" />
+			<KeyFrame name="&kColor_Gray_08;"		v="&kColor_Gray_Light_08;" />
+			<KeyFrame name="&kColor_Gray_09;"		v="&kColor_Gray_Light_09;" />
+			<KeyFrame name="&kColor_Gray_10;"		v="&kColor_Gray_Light_10;" />
+			
+			<KeyFrame name="&kColor_Blue;" 	h="&kColor_Blue_04_H;" s="&kColor_Blue_04_S;" v="&kColor_Blue_04_V;" />
+		
+			<!-- CORE -->
+			<KeyFrame name="&kColor_ApplicationBackground;" 					v="&kColor_Gray_Light_05;" />
+			<KeyFrame name="&kColor_ContentBackground;" 							v="&kColor_Gray_Light_03;" />
+			<KeyFrame name="&kColor_Focus;" 													h="&kColor_Blue_04_H;" s="&kColor_Blue_04_S;" v="&kColor_Blue_04_V;" />
+			
+			<!-- BUTTON SHARED -->
+			<KeyFrame name="&kColor_ButtonBackgroundDisabled;" 				v="&kColor_Gray_Light_04;" />
+			
+			<!-- BUTTON NON-COMMIT -->
+			<KeyFrame name="&kColor_ButtonBackgroundDefaultStandard;" v="&kColor_Gray_Light_02;" />
+			<KeyFrame name="&kColor_ButtonBackgroundHoverStandard;" 	v="&kColor_Gray_Light_04;" />
+			<KeyFrame name="&kColor_ButtonBackgroundDownStandard;" 		v="&kColor_Gray_Light_03;" />
+			
+			<KeyFrame name="&kColor_ButtonStandardBorder;"						v="&kColor_Gray_Light_05;" />
+	
+			<!-- BUTTON COMMIT -->
+			<KeyFrame name="&kColor_ButtonBackgroundDefault;" 				v="&kColor_Gray_Light_03;" />
+			
+			<KeyFrame name="&kColor_ButtonSecondary;" 								v="&kColor_Gray_Light_08;" />
+			<KeyFrame name="&kColor_ButtonPrimary;" 									v="&kColor_Gray_Light_10;" />
+			
+			<KeyFrame name="&kColor_ButtonBackgroundDownSecondary;" 	v="&kColor_Gray_Light_07;" /> 
+			<KeyFrame name="&kColor_ButtonBackgroundDownPrimary;" 		v="&kColor_Gray_Light_09;" />
+			
+			<!-- BUTTON ICON -->
+			<KeyFrame name="&kColor_PictureButtonBackgroundDown;" 		v="&kColor_Gray_Light_03;" />
+			<KeyFrame name="&kColor_PictureButtonBackgroundHover;" 		v="&kColor_Gray_Light_04;" />
+			<KeyFrame name="&kColor_PictureButtonBorder;" 						v="&kColor_Gray_Light_05;" />
+			
+			<!-- BUTTON TOGGLE -->
+			<KeyFrame name="&kColor_ToggleSelectedBackground;" 				v="&kColor_Gray_Light_01;" />
+			<KeyFrame name="&kColor_ToggleSelectedBorder;" 						v="&kColor_Gray_Light_05;" />
+			<KeyFrame name="&kColor_ToggleHoverBackground;" 					v="&kColor_Gray_Light_04;" />
+			<KeyFrame name="&kColor_ToggleHoverBorder;" 							v="&kColor_Gray_Light_05;" />
+			
+			<!-- BUTTON TEXT -->
+			<KeyFrame name="&kColor_ButtonTextHover;" 								v="&kColor_Gray_Light_01;" />
+			<KeyFrame name="&kColor_ButtonTextFocus;" 								v="&kColor_White_V;" />
+			<KeyFrame name="&kColor_ButtonTextDisabled;" 							v="&kColor_Gray_Light_06;" />
+			
+			<!-- FIELDS: POPUP, COMBOBOX -->
+			<KeyFrame name="&kColor_FieldBackgroundDefault;" 					v="&kColor_Gray_Light_02;" />
+			<KeyFrame name="&kColor_FieldBackgroundHover;" 						v="&kColor_Gray_Light_04;" />
+			<KeyFrame name="&kColor_FieldBackgroundDown;" 						v="&kColor_Gray_Light_03;" />
+			<KeyFrame name="&kColor_FieldBackgroundDisabled;" 				v="&kColor_Gray_Light_04;" />
+			
+			<KeyFrame name="&kColor_FieldBorderDefault;" 							v="&kColor_Gray_Light_05;" />
+			
+			<KeyFrame name="&kColor_FaceDefault;" 										v="&kColor_Gray_Light_09;" />
+			<KeyFrame name="&kColor_FaceActive;" 											v="&kColor_Gray_Light_09;" />
+			<KeyFrame name="&kColor_FaceDisabled;" 										v="&kColor_Gray_Light_06;" />
+			
+			<!-- FIELDS: TEXTFIELD, COMBOBOX -->
+			<KeyFrame name="&kColor_TextFieldBackgroundDefault;" 			v="&kColor_Gray_Light_01;" />
+			<KeyFrame name="&kColor_TextFieldBackgroundFocused;" 			v="&kColor_Gray_Light_01;" />
+			<KeyFrame name="&kColor_TextFieldBackgroundWithScrollBars;" 	v="&kColor_Gray_Light_01;" />
+			
+			<KeyFrame name="&kColor_TextFieldFaceDefault;" 						v="&kColor_Gray_Light_09;" />
+			<KeyFrame name="&kColor_TextFieldFaceFocused;" 						v="&kColor_Gray_Light_09;" />
+			<KeyFrame name="&kColor_TextFieldFaceDisabled;" 					v="&kColor_Gray_Light_06;" />
+			
+			<!-- stuff -->
+			<KeyFrame name="&kColor_StaticTextDefault;" 							v="&kColor_Gray_Light_08;" />
+			<KeyFrame name="&kColor_StaticTextDisabled;" 							v="&kColor_Gray_Light_06;" />
+			
+			<KeyFrame name="&kColor_MessageBoxText;" 									v="&kColor_Gray_Light_09;" />
+			<KeyFrame name="&kColor_TextColored;" 										h="&kColor_Blue_04_H;" s="&kColor_Blue_04_S;" v="&kColor_Blue_04_V;" />
+			
+			<!-- option controls: RADIOBUTTON, CHECKBOX -->
+			<KeyFrame name="&kColor_ControlTextDefault;"							v="&kColor_Gray_Light_08;" />
+			<KeyFrame name="&kColor_ControlTextDisabled;"							v="&kColor_Gray_Light_06;" />
+			
+			<KeyFrame name="&kColor_ControlDefault;"									v="&kColor_Gray_Light_08;" />
+			<KeyFrame name="&kColor_ControlActive;"										v="&kColor_Gray_Light_09;" />
+			<KeyFrame name="&kColor_ControlDisabled;"									v="&kColor_Gray_Light_06;" />
+			
+			<!-- hottext -->
+			<KeyFrame name="&kColor_HotTextDefault;" 									h="&kColor_Blue_04_H;" s="&kColor_Blue_04_S;" v="&kColor_Blue_04_V;" />
+			<KeyFrame name="&kColor_HotTextHover;" 										h="&kColor_Blue_04_H;" s="&kColor_Blue_04_S;" v="&kColor_Blue_04_V;" />
+			<KeyFrame name="&kColor_HotTextDisabled;" 								v="&kColor_Gray_Light_06;" />
+			<KeyFrame name="&kColor_HotTextFocused;" 									h="&kColor_Blue_04_H;" s="&kColor_Blue_04_S;" v="&kColor_Blue_04_V;" />
+			
+			<KeyFrame name="&kColor_HotTextLabelDefault;" 						v="&kColor_Gray_Light_08;" />
+			<KeyFrame name="&kColor_HotTextLabelHover;" 							v="&kColor_Gray_Light_09;" />
+			<KeyFrame name="&kColor_HotTextLabelDisabled;" 						v="&kColor_Gray_Light_06;" />
+			<KeyFrame name="&kColor_HotTextLabelFocused;" 						v="&kColor_Gray_Light_09;" />
+			
+			<!-- divider -->
+			<KeyFrame name="&kColor_Divider;" 												v="&kColor_Gray_Light_05;" />
+			
+			<!-- slider -->
+			<KeyFrame name="&kColor_SliderTrackDisabled;" 										v="&kColor_Gray_Light_06;" />
+            <KeyFrame name="&kColor_SliderTrackEnabled;" 										v="&kColor_Gray_Light_06;" />
+			
+			<!-- scrollbar -->
+			<KeyFrame name="&kColor_ScrollBarTrackDefault;" 					v="&kColor_Gray_Light_01;" />
+			<KeyFrame name="&kColor_ScrollBarTrackDisabled;" 					v="&kColor_Gray_Light_03;" />
+			
+			<KeyFrame name="&kColor_ScrollBarThumbDefault;" 					v="&kColor_Gray_Light_05;" />
+			<KeyFrame name="&kColor_ScrollBarThumbActive;" 						v="&kColor_Gray_Light_06;" />
+			<KeyFrame name="&kColor_ScrollBarThumbDisabled;" 					v="&kColor_Gray_Light_03;" a="0.0" />
+			
+			<!-- progess bar -->
+			<KeyFrame name="&kColor_ProgressBarTrack;" 								v="&kColor_Gray_Light_02;" />
+			<KeyFrame name="&kColor_ProgressBarDisabled;" 						v="&kColor_Gray_Light_04;" />
+			<KeyFrame name="&kColor_ProgressBarDefault;" 							h="&kColor_Blue_04_H;" s="&kColor_Blue_04_S;" v="&kColor_Blue_04_V;" />
+			
+			<!-- lists -->
+			<KeyFrame name="&kColor_ListBackground;" 									v="&kColor_Gray_Light_01;" />
+			<KeyFrame name="&kColor_ListBorder;" 											v="&kColor_Gray_Light_05;" />
+			
+			<KeyFrame name="&kColor_ListBoxBackgroundHighlighted;" 		v="&kColor_Gray_Light_03;" />
+			<KeyFrame name="&kColor_ListBoxBackgroundSelected;" 			v="&kColor_Gray_Light_06;" />
+			<KeyFrame name="&kColor_ListBoxBackgroundDefault;" 				v="&kColor_Gray_Light_01;" />
+			
+			<!-- tabwell -->
+			<KeyFrame name="&kColor_TabWell;" 												v="&kColor_Gray_Light_03;" />
+			<KeyFrame name="&kColor_TabActive;" 											v="&kColor_Gray_Light_03;" />
+			<KeyFrame name="&kColor_TabInactive;" 										v="&kColor_Gray_Light_03;" />
+			<KeyFrame name="&kColor_TabWellDivider;" 									v="&kColor_Gray_Light_05;" />
+			
+			<KeyFrame name="&kColor_TabTextActive;" 									v="&kColor_Gray_Light_09;" />
+			<KeyFrame name="&kColor_TabTextInactive;" 								v="&kColor_Gray_Light_08;" />
+			<KeyFrame name="&kColor_TabTextDisabled;" 								v="&kColor_Gray_Light_06;" />
+			
+			<!-- tree -->
+			<KeyFrame name="&kColor_TreeDivider;" 										v="&kColor_Gray_Light_04;" />
+			<KeyFrame name="&kColor_TreeSelected;" 										v="&kColor_Gray_Light_06;" />
+			<KeyFrame name="&kColor_TreeMarquee;" 										h="&kColor_Blue_04_H;" s="&kColor_Blue_04_S;" v="&kColor_Blue_04_V;" a="0.25" />
+			<KeyFrame name="&kColor_TreeDrag;" 												h="&kColor_Blue_04_H;" s="&kColor_Blue_04_S;" v="&kColor_Blue_04_V;" />
+			<KeyFrame name="&kColor_TreeHeader;" 										v="&kColor_Gray_Light_06;" />
+			
+			<!-- tooltip -->
+			<KeyFrame name="&kColor_ToolTipText;" 										v="&kColor_Gray_Light_09;" />
+			<KeyFrame name="&kColor_ToolTipBackground;" 							v="&kColor_Gray_Light_06;" />
+			
+			<!-- star rating -->
+			<KeyFrame name="&kColor_StarRatingUnselected;" 						v="&kColor_Gray_Light_07;" />
+			<KeyFrame name="&kColor_StarRatingSelected;" 							h="&kColor_Blue_04_H;" s="&kColor_Blue_04_S;" v="&kColor_Blue_04_V;" />
+    
+			<!-- icons -->
+			<KeyFrame name="&kColor_IconFill;" 												v="0.2745" />
+			<KeyFrame name="&kColor_IconFillMedium;" 									v="0.5490" />
+			<KeyFrame name="&kColor_IconFillPale;" 										v="0.6667" />
+			
+			<KeyFrame name="&kColor_IconInvertFill;" 									v="0.6980" />
+			<KeyFrame name="&kColor_IconInvertFillMedium;" 						v="0.3960" />
+			<KeyFrame name="&kColor_IconInvertFillPale;" 							v="0.2667" />
+    
+			<KeyFrame name="&kColor_IconColored;" 										h="212.86" s="0.9130" v="0.9020" />
+			<KeyFrame name="&kColor_IconInvertColored;" 							h="210.00" s="0.8085" v="0.9216" />
+			
+			<!-- level meter -->
+			<KeyFrame name="&kColor_LevelMeterBorder;" 								v="&kColor_Gray_Light_09;" />
+			
+			<!-- stuff -->
+			<KeyFrame name="&kColor_ButtonBarBackgroundDefault;"					v="&kColor_Gray_Light_02;" />
+			<!-- ScrollBar arrow colors-->
+			<KeyFrame name="&kColor_ScrollBarArrowDefault;" 				v="&kColor_Gray_Light_07;" />
+			<KeyFrame name="&kColor_ScrollBarArrowHover;" 					v="&kColor_Gray_Light_08;" />
+			<KeyFrame name="&kColor_ScrollBarArrowDisable;" 				v="&kColor_Gray_Light_04;" />
+    
+		</Theme>
+  
+		<Theme t="&Lightest;" >
+  
+			<!-- PALETTE -->
+			<KeyFrame name="&kColor_Gray_01;"		v="&kColor_Gray_Lightest_01;" />
+			<KeyFrame name="&kColor_Gray_02;"		v="&kColor_Gray_Lightest_02;" />
+			<KeyFrame name="&kColor_Gray_03;"		v="&kColor_Gray_Lightest_03;" />
+			<KeyFrame name="&kColor_Gray_04;"		v="&kColor_Gray_Lightest_04;" />
+			<KeyFrame name="&kColor_Gray_05;"		v="&kColor_Gray_Lightest_05;" />
+			<KeyFrame name="&kColor_Gray_06;"		v="&kColor_Gray_Lightest_06;" />
+			<KeyFrame name="&kColor_Gray_07;"		v="&kColor_Gray_Lightest_07;" />
+			<KeyFrame name="&kColor_Gray_08;"		v="&kColor_Gray_Lightest_08;" />
+			<KeyFrame name="&kColor_Gray_09;"		v="&kColor_Gray_Lightest_09;" />
+			<KeyFrame name="&kColor_Gray_10;"		v="&kColor_Gray_Lightest_10;" />
+			
+			<KeyFrame name="&kColor_Blue;" 	h="&kColor_Blue_03_H;" s="&kColor_Blue_03_S;" v="&kColor_Blue_03_V;" />
+		
+			<!-- CORE -->
+			<KeyFrame name="&kColor_ApplicationBackground;" 					v="&kColor_Gray_Lightest_05;" />
+			<KeyFrame name="&kColor_ContentBackground;" 							v="&kColor_Gray_Lightest_03;" />
+			<KeyFrame name="&kColor_Focus;" 													h="&kColor_Blue_03_H;" s="&kColor_Blue_03_S;" v="&kColor_Blue_03_V;" />
+			
+			<!-- BUTTON SHARED -->
+			<KeyFrame name="&kColor_ButtonBackgroundDisabled;" 				v="&kColor_Gray_Lightest_04;" />
+			
+			<!-- BUTTON NON-COMMIT -->
+			<KeyFrame name="&kColor_ButtonBackgroundDefaultStandard;" v="&kColor_Gray_Lightest_02;" />
+			<KeyFrame name="&kColor_ButtonBackgroundHoverStandard;" 	v="&kColor_Gray_Lightest_04;" />
+			<KeyFrame name="&kColor_ButtonBackgroundDownStandard;" 		v="&kColor_Gray_Lightest_03;" />
+			
+			<KeyFrame name="&kColor_ButtonStandardBorder;"						v="&kColor_Gray_Lightest_05;" />
+	
+			<!-- BUTTON COMMIT -->
+			<KeyFrame name="&kColor_ButtonBackgroundDefault;" 				v="&kColor_Gray_Lightest_03;" />
+			
+			<KeyFrame name="&kColor_ButtonSecondary;" 								v="&kColor_Gray_Lightest_08;" />
+			<KeyFrame name="&kColor_ButtonPrimary;" 									v="&kColor_Gray_Lightest_10;" />
+			
+			<KeyFrame name="&kColor_ButtonBackgroundDownSecondary;" 	v="&kColor_Gray_Lightest_07;" /> 
+			<KeyFrame name="&kColor_ButtonBackgroundDownPrimary;" 		v="&kColor_Gray_Lightest_09;" />
+			
+			<!-- BUTTON ICON -->
+			<KeyFrame name="&kColor_PictureButtonBackgroundDown;" 		v="&kColor_Gray_Lightest_03;" />
+			<KeyFrame name="&kColor_PictureButtonBackgroundHover;" 		v="&kColor_Gray_Lightest_04;" />
+			<KeyFrame name="&kColor_PictureButtonBorder;" 						v="&kColor_Gray_Lightest_05;" />
+			
+			<!-- BUTTON TOGGLE -->
+			<KeyFrame name="&kColor_ToggleSelectedBackground;" 				v="&kColor_Gray_Lightest_01;" />
+			<KeyFrame name="&kColor_ToggleSelectedBorder;" 						v="&kColor_Gray_Lightest_05;" />
+			<KeyFrame name="&kColor_ToggleHoverBackground;" 					v="&kColor_Gray_Lightest_04;" />
+			<KeyFrame name="&kColor_ToggleHoverBorder;" 							v="&kColor_Gray_Lightest_05;" />
+			
+			<!-- BUTTON TEXT -->
+			<KeyFrame name="&kColor_ButtonTextHover;" 								v="&kColor_Gray_Lightest_01;" />
+			<KeyFrame name="&kColor_ButtonTextFocus;" 								v="&kColor_White_V;" />
+			<KeyFrame name="&kColor_ButtonTextDisabled;" 							v="&kColor_Gray_Lightest_06;" />
+			
+			<!-- FIELDS: POPUP, COMBOBOX -->
+			<KeyFrame name="&kColor_FieldBackgroundDefault;" 					v="&kColor_Gray_Lightest_02;" />
+			<KeyFrame name="&kColor_FieldBackgroundHover;" 						v="&kColor_Gray_Lightest_04;" />
+			<KeyFrame name="&kColor_FieldBackgroundDown;" 						v="&kColor_Gray_Lightest_03;" />
+			<KeyFrame name="&kColor_FieldBackgroundDisabled;" 				v="&kColor_Gray_Lightest_04;" />
+			
+			<KeyFrame name="&kColor_FieldBorderDefault;" 							v="&kColor_Gray_Lightest_05;" />
+			
+			<KeyFrame name="&kColor_FaceDefault;" 										v="&kColor_Gray_Lightest_09;" />
+			<KeyFrame name="&kColor_FaceActive;" 											v="&kColor_Gray_Lightest_09;" />
+			<KeyFrame name="&kColor_FaceDisabled;" 										v="&kColor_Gray_Lightest_06;" />
+			
+			<!-- FIELDS: TEXTFIELD, COMBOBOX -->
+			<KeyFrame name="&kColor_TextFieldBackgroundDefault;" 			v="&kColor_Gray_Lightest_01;" />
+			<KeyFrame name="&kColor_TextFieldBackgroundFocused;" 			v="&kColor_Gray_Lightest_01;" />
+			<KeyFrame name="&kColor_TextFieldBackgroundWithScrollBars;" 	v="&kColor_Gray_Lightest_01;" />
+			
+			<KeyFrame name="&kColor_TextFieldFaceDefault;" 						v="&kColor_Gray_Lightest_09;" />
+			<KeyFrame name="&kColor_TextFieldFaceFocused;" 						v="&kColor_Gray_Lightest_09;" />
+			<KeyFrame name="&kColor_TextFieldFaceDisabled;" 					v="&kColor_Gray_Lightest_06;" />
+			
+			<!-- stuff -->
+			<KeyFrame name="&kColor_StaticTextDefault;" 							v="&kColor_Gray_Lightest_08;" />
+			<KeyFrame name="&kColor_StaticTextDisabled;" 							v="&kColor_Gray_Lightest_06;" />
+			
+			<KeyFrame name="&kColor_MessageBoxText;" 									v="&kColor_Gray_Lightest_09;" />
+			<KeyFrame name="&kColor_TextColored;" 										h="&kColor_Blue_03_H;" s="&kColor_Blue_03_S;" v="&kColor_Blue_03_V;" />
+			
+			<!-- option controls: RADIOBUTTON, CHECKBOX -->
+			<KeyFrame name="&kColor_ControlTextDefault;"							v="&kColor_Gray_Lightest_08;" />
+			<KeyFrame name="&kColor_ControlTextDisabled;"							v="&kColor_Gray_Lightest_06;" />
+			
+			<KeyFrame name="&kColor_ControlDefault;"									v="&kColor_Gray_Lightest_08;" />
+			<KeyFrame name="&kColor_ControlActive;"										v="&kColor_Gray_Lightest_09;" />
+			<KeyFrame name="&kColor_ControlDisabled;"									v="&kColor_Gray_Lightest_06;" />
+			
+			<!-- hottext -->
+			<KeyFrame name="&kColor_HotTextDefault;" 									h="&kColor_Blue_03_H;" s="&kColor_Blue_03_S;" v="&kColor_Blue_03_V;" />
+			<KeyFrame name="&kColor_HotTextHover;" 										h="&kColor_Blue_03_H;" s="&kColor_Blue_03_S;" v="&kColor_Blue_03_V;" />
+			<KeyFrame name="&kColor_HotTextDisabled;" 								v="&kColor_Gray_Lightest_06;" />
+			<KeyFrame name="&kColor_HotTextFocused;" 									h="&kColor_Blue_03_H;" s="&kColor_Blue_03_S;" v="&kColor_Blue_03_V;" />
+			
+			<KeyFrame name="&kColor_HotTextLabelDefault;" 						v="&kColor_Gray_Lightest_08;" />
+			<KeyFrame name="&kColor_HotTextLabelHover;" 							v="&kColor_Gray_Lightest_09;" />
+			<KeyFrame name="&kColor_HotTextLabelDisabled;" 						v="&kColor_Gray_Lightest_06;" />
+			<KeyFrame name="&kColor_HotTextLabelFocused;" 						v="&kColor_Gray_Lightest_09;" />
+			
+			<!-- divider -->
+			<KeyFrame name="&kColor_Divider;" 												v="&kColor_Gray_Lightest_05;" />
+			
+			<!-- slider -->
+			<KeyFrame name="&kColor_SliderTrackDisabled;"							v="&kColor_Gray_Lightest_06;" />
+      <KeyFrame name="&kColor_SliderTrackEnabled;"							v="&kColor_Gray_Lightest_06;" />
+			
+			<!-- scrollbar -->
+			<KeyFrame name="&kColor_ScrollBarTrackDefault;" 					v="&kColor_Gray_Lightest_01;" />
+			<KeyFrame name="&kColor_ScrollBarTrackDisabled;" 					v="&kColor_Gray_Lightest_03;" />
+			
+			<KeyFrame name="&kColor_ScrollBarThumbDefault;" 					v="&kColor_Gray_Lightest_05;" />
+			<KeyFrame name="&kColor_ScrollBarThumbActive;" 						v="&kColor_Gray_Lightest_06;" />
+			<KeyFrame name="&kColor_ScrollBarThumbDisabled;" 					v="&kColor_Gray_Lightest_03;" a="0.0" />
+			
+			<!-- progess bar -->
+			<KeyFrame name="&kColor_ProgressBarTrack;" 								v="&kColor_Gray_Lightest_02;" />
+			<KeyFrame name="&kColor_ProgressBarDisabled;" 						v="&kColor_Gray_Lightest_04;" />
+			<KeyFrame name="&kColor_ProgressBarDefault;" 							h="&kColor_Blue_03_H;" s="&kColor_Blue_03_S;" v="&kColor_Blue_03_V;" />
+			
+			<!-- lists -->
+			<KeyFrame name="&kColor_ListBackground;" 									v="&kColor_Gray_Lightest_01;" />
+			<KeyFrame name="&kColor_ListBorder;" 											v="&kColor_Gray_Lightest_05;" />
+			
+			<KeyFrame name="&kColor_ListBoxBackgroundHighlighted;" 		v="&kColor_Gray_Lightest_03;" />
+			<KeyFrame name="&kColor_ListBoxBackgroundSelected;" 			v="&kColor_Gray_Lightest_06;" />
+			<KeyFrame name="&kColor_ListBoxBackgroundDefault;" 				v="&kColor_Gray_Lightest_01;" />
+			
+			<!-- tabwell -->
+			<KeyFrame name="&kColor_TabWell;" 												v="&kColor_Gray_Lightest_03;" />
+			<KeyFrame name="&kColor_TabActive;" 											v="&kColor_Gray_Lightest_03;" />
+			<KeyFrame name="&kColor_TabInactive;" 										v="&kColor_Gray_Lightest_03;" />
+			<KeyFrame name="&kColor_TabWellDivider;" 									v="&kColor_Gray_Lightest_05;" />
+			
+			<KeyFrame name="&kColor_TabTextActive;" 									v="&kColor_Gray_Lightest_09;" />
+			<KeyFrame name="&kColor_TabTextInactive;" 								v="&kColor_Gray_Lightest_08;" />
+			<KeyFrame name="&kColor_TabTextDisabled;" 								v="&kColor_Gray_Lightest_06;" />
+			
+			<!-- tree -->
+			<KeyFrame name="&kColor_TreeDivider;" 										v="&kColor_Gray_Lightest_04;" />
+			<KeyFrame name="&kColor_TreeSelected;" 										v="&kColor_Gray_Lightest_06;" />
+			<KeyFrame name="&kColor_TreeMarquee;" 										h="&kColor_Blue_03_H;" s="&kColor_Blue_03_S;" v="&kColor_Blue_03_V;" a="0.25" />
+			<KeyFrame name="&kColor_TreeDrag;" 												h="&kColor_Blue_03_H;" s="&kColor_Blue_03_S;" v="&kColor_Blue_03_V;" />
+			<KeyFrame name="&kColor_TreeHeader;" 										v="&kColor_Gray_Lightest_06;" />
+			
+			<!-- tooltip -->
+			<KeyFrame name="&kColor_ToolTipText;" 										v="&kColor_Gray_Lightest_09;" />
+			<KeyFrame name="&kColor_ToolTipBackground;" 							v="&kColor_Gray_Lightest_06;" />
+			
+			<!-- star rating -->
+			<KeyFrame name="&kColor_StarRatingUnselected;" 						v="&kColor_Gray_Lightest_07;" />
+			<KeyFrame name="&kColor_StarRatingSelected;" 							h="&kColor_Blue_03_H;" s="&kColor_Blue_03_S;" v="&kColor_Blue_03_V;" />
+    
+			<!-- icons -->
+			<KeyFrame name="&kColor_IconFill;" 												v="0.3373" />
+			<KeyFrame name="&kColor_IconFillMedium;" 									v="0.6706" />
+			<KeyFrame name="&kColor_IconFillPale;" 										v="0.8157" />			
+			
+			<KeyFrame name="&kColor_IconInvertFill;" 									v="0.7608" />
+			<KeyFrame name="&kColor_IconInvertFillMedium;" 						v="0.5216" />
+			<KeyFrame name="&kColor_IconInvertFillPale;" 							v="0.4157" />
+    
+			<KeyFrame name="&kColor_IconColored;" 										h="212.86" s="0.9130" v="0.9020" />
+			<KeyFrame name="&kColor_IconInvertColored;" 							h="210.00" s="0.8085" v="0.9216" />
+    
+			<!-- level meter -->
+			<KeyFrame name="&kColor_LevelMeterBorder;" 								v="&kColor_Gray_Lightest_09;" />
+			
+			<!-- stuff -->
+			<KeyFrame name="&kColor_ButtonBarBackgroundDefault;"					v="&kColor_Gray_Lightest_02;" />
+			<!-- ScrollBar arrow colors-->
+			<KeyFrame name="&kColor_ScrollBarArrowDefault;" 				v="&kColor_Gray_Lightest_07;" />
+			<KeyFrame name="&kColor_ScrollBarArrowHover;" 					v="&kColor_Gray_Lightest_08;" />
+			<KeyFrame name="&kColor_ScrollBarArrowDisable;" 				v="&kColor_Gray_Lightest_04;" />
+    
+    
+		</Theme>
+  
+  
+		<Theme t="&General;" > <!-- these don't change depending on the application brightness value, but are constant -->
+      
+			<KeyFrame t="&General;" hold="true" name="&kColor_Unused;" v="0.00" a="0.00" />
+			
+			<KeyFrame t="&General;" hold="true" name="&kColor_White;" v="&kColor_White_V;" />
+			<KeyFrame t="&General;" hold="true" name="&kColor_Black;" v="&kColor_Black_V;" />
+			
+			<KeyFrame t="&General;" hold="true" name="&kColor_DisabledImageAlpha;" v="0.00" a="0.27" />
+			
+			<KeyFrame t="&General;" name="&kColor_HotTextUnderlineDisabled;" 				v="0.00" a="0.00" />
+			<KeyFrame t="&General;" name="&kColor_HotTextUnderlineDefault;" 				v="0.00" a="0.00" />
+			<KeyFrame t="&General;" name="&kColor_HotTextUnderlineHover;" 					v="0.00" a="0.00" />
+			
+			<!-- Brush Color Values -->
+			<KeyFrame t="&General;" hold="true" name="&kColor_BrushShapePreviewOutline;" 				v="0.0" />
+			<KeyFrame t="&General;" hold="true" name="&kColor_BrushShapePreviewBackground;" 		v="1.0" />
+			<KeyFrame t="&General;" hold="true" name="&kColor_BrushShapePreviewFill;" 					v="0.0" />
+			<KeyFrame t="&General;" hold="true" name="&kColor_BrushShapePreviewVariationFill;" 	v=".706" />
+			
+		</Theme>
+ 
+	</ThemeColors>
+	
+</ThemeParameters>

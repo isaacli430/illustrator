@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <link rel="stylesheet" href="../../fonts/adobe-clean.css">
+        <link rel="stylesheet" href="./style.css">
+        
+        <script type="text/javascript" src="../../js/CSInterface.js"></script>
+        <script type="text/javascript" src="./main.js"></script>
+    </head>
+
+    <body>
+        <div id="popupContainer" class="coach">
+            <div id="div1" data-locale="SnapToPixelCoachText1" class="text"></div>
+            <div id="div2" data-locale="SnapToPixelCoachText2" class="text"></div>
+        </div>
+    </body>
+
+    <script type="text/javascript">
+        window.onload = function() {
+            var cs = new CSInterface();
+            var resourceBundle = cs.initResourceBundle();   
+            InformClientAboutPopupHeight("SnapToPixelCoachHeightUpdate");
+        }
+    </script>
+</html>

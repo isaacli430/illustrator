@@ -1,0 +1,20 @@
+layout TransparencyMaxControlGroup
+{
+     view subview(identifier: "TransparencyMinControlGroup",
+				 layout_theme: @controlbar,
+				 show_border: false,
+				 child_vertical: @align_center,
+				 margin : 0,
+				 spacing: 5,
+				 height:  31)
+    {		
+		optional(identifier: "OpacityHyperlinkSubGroup", child_vertical:  @align_center, margin : 0)			
+		{
+			link_button(identifier: "OpacityHyperlinkButton",
+							wants_focus: false,
+							name: "$$$/TransparencyPalette/Pnl/Opacity=Opacity",
+							alt: "$$$/TransparencyPalette/Str/TransparencyPalette=Transparency Panel");
+		}
+    }
+}
+

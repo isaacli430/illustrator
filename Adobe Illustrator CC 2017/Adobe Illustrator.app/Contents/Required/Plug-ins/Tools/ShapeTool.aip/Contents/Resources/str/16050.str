@@ -1,0 +1,20 @@
+/* [1] */
+-108
+/* [2] */
+$$$/ShapeTool/Str/Error/2=The filter cannot complete because there isn't enough memory (RAM) available.
+/* [3] */
+271
+/* [4] */
+$$$/ShapeTool/Str/Error/4=The filter cannot complete because there isn't enough memory (RAM) available.
+/* [5] */
+SEGM
+/* [6] */
+$$$/ShapeTool/Str/Error/AnchorPoints=The filter cannot complete because a path has too many anchor points.
+/* [7] */
+NESS
+/* [8] */
+$$$/ShapeTool/Str/Error/6=The filter cannot complete because a layer is locked or invisible.
+/* [9] */
+<others>
+/* [10] */
+$$$/ShapeTool/Str/Error/Unknown=The filter cannot complete because of an unknown error.

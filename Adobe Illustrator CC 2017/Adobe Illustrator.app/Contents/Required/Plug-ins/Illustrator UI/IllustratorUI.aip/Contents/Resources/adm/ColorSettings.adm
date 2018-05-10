@@ -1,0 +1,76 @@
+sheet ColorSettings
+{
+interface:
+	/* This cell is set from code but is not bound to any widget */
+	IsAI6Emulation: false;
+
+	SettingItems:	[
+						{name: "$$$/_ColorConvdg/Mnu/Settings=Emulate Adobe^R Illustrator^R 6.0"},
+						{name: ""},
+						{name: "$$$/_ColorConvdg/Mnu/Settings/1=Custom"},
+						{name: ""}
+					];
+
+	SyncStatus: "OutOfSync";
+
+	SyncStatusText: empty <== SyncStatus == "SyncNotApplicable" ? "$$$/_ColorConvdg/Str/OneAppText=For more information on color settings, search for ^Qsetting up color management^Q in Help. This term is searchable from any Creative Cloud application."
+																: SyncStatus == "InSync" ? "$$$/_ColorConvdg/Str/InSyncText=Synchronized: Your Creative Cloud applications are synchronized using the same color settings for consistent color management."
+																							: "$$$/_ColorConvdg/Str/OutOfSyncText=Unsynchronized: Your Creative Cloud applications are not synchronized for consistent color. To synchronize, select Color Settings in Bridge.";
+
+	RGBPolicyItems:	[
+						{name: "$$$/_ColorConvdg/Mnu/RGBPolices=Off",							value: "Off"},
+						{name: "$$$/_ColorConvdg/Mnu/RGBPolices/1=Preserve Embedded Profiles",	value: "PreserveEmbedded"},
+						{name: "$$$/_ColorConvdg/Mnu/RGBPolices/2=Convert to Working Space",	value: "ConvertToWorkingSpace"}
+					];
+
+	/* This cell is set from code but is not bound to any widget */
+	RGBWorkingSpaceMonitor: false;
+
+	RGBPolicyDisabledItemsList: [] <== RGBWorkingSpaceMonitor ? ["PreserveEmbedded", "ConvertToWorkingSpace"] : [];
+
+	unlink RGBPolicy: "Off" <== IsAI6Emulation ? RememberRGBPolicy : RGBPolicy;
+	RememberRGBPolicy: "Off" <== IsAI6Emulation ? RememberRGBPolicy : RGBPolicy;
+
+	CMYKPolicyItems:	[
+							{name: "$$$/_ColorConvdg/Mnu/CMYKPolicies=Off",												value: "Off"},
+							{name: "$$$/_ColorConvdg/Mnu/CMYKPolicies/Safe=Preserve Numbers (Ignore Linked Profiles)",	value: "PreserveNumbers"},
+							{name: "$$$/_ColorConvdg/Mnu/CMYKPolicies/1=Preserve Embedded Profiles",					value: "PreserveEmbedded"},
+							{name: "$$$/_ColorConvdg/Mnu/CMYKPolicies/2=Convert to Working Space",						value: "ConvertToWorkingSpace"}
+						];
+
+	unlink CMYKPolicy: "Off" <== IsAI6Emulation ? RemeberCMYKPolicy : CMYKPolicy;
+	RemeberCMYKPolicy: "Off" <== IsAI6Emulation ? RemeberCMYKPolicy : CMYKPolicy;
+
+	RGBPolicyOff: false <== RGBPolicy == "Off";
+	CMYKPolicyOff: false <== CMYKPolicy == "Off";
+	CMYKPolicyPreserve: false <== CMYKPolicy == "PreserveNumbers";
+	CMYKPolicySafe: false <== CMYKPolicyOff || CMYKPolicyPreserve;
+	BothPoliciesOff: false <== RGBPolicyOff && CMYKPolicyOff;
+	BothPoliciesOffOrSafe: false <== RGBPolicyOff && CMYKPolicySafe;
+
+	unlink AskWhenOpeningIfProfileMismatch: false <== IsAI6Emulation ? RememberAskWhenOpeningIfProfileMismatch : AskWhenOpeningIfProfileMismatch;
+	RememberAskWhenOpeningIfProfileMismatch: false <== IsAI6Emulation ? RememberAskWhenOpeningIfProfileMismatch : AskWhenOpeningIfProfileMismatch;
+
+	AskWhenPastingIfProfileMismatch: false <== IsAI6Emulation ? BothPoliciesOffOrSafe ? false : RememberAskWhenPastingIfProfileMismatch : BothPoliciesOffOrSafe ? false : AskWhenPastingIfProfileMismatch;
+	RememberAskWhenPastingIfProfileMismatch: false <== IsAI6Emulation ? BothPoliciesOffOrSafe ? false : RememberAskWhenPastingIfProfileMismatch : BothPoliciesOffOrSafe ? false : AskWhenPastingIfProfileMismatch;
+
+	AskWhenOpeningIfProfileMissing: false <== IsAI6Emulation ? BothPoliciesOff ? false : RememberAskWhenOpeningIfProfileMissing : BothPoliciesOff ? false : AskWhenOpeningIfProfileMissing;
+	RememberAskWhenOpeningIfProfileMissing: false <== IsAI6Emulation ? BothPoliciesOff ? false : RememberAskWhenOpeningIfProfileMissing : BothPoliciesOff ? false : AskWhenOpeningIfProfileMissing;
+
+	RenderingIntentItems:	[
+								{name: "$$$/_ColorConvdg/Mnu/Intent=Perceptual",				value: "Perceptual"},
+								{name: "$$$/_ColorConvdg/Mnu/Intent/1=Saturation",				value: "Saturation"},
+								{name: "$$$/_ColorConvdg/Mnu/Intent/2=Relative Colorimetric",	value: "RelativeColorimetric"},
+								{name: "$$$/_ColorConvdg/Mnu/Intent/3=Absolute Colorimetric",	value: "AbsoluteColorimetric"}
+							];
+
+	unlink RenderingIntent: "Perceptual" <== IsAI6Emulation ? RememberRenderingIntent : RenderingIntent;
+	RememberRenderingIntent: "Perceptual" <== IsAI6Emulation ? RememberRenderingIntent : RenderingIntent;
+
+	unlink UseBlackPointCompensation: false <== IsAI6Emulation ? RememberUseBlackPointCompensation : UseBlackPointCompensation;
+	RememberUseBlackPointCompensation: false <== IsAI6Emulation ? RememberUseBlackPointCompensation : UseBlackPointCompensation;
+
+	AdvancedMode: false;
+
+	Description: "";
+}

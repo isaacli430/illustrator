@@ -1,0 +1,112 @@
+layout TransformMaxControlGroup
+{
+     view subview(identifier: "TransformMaxControlGroup",
+				 layout_theme: @controlbar,
+				 show_border: false,
+				 child_vertical: @align_center,
+				 placement: @place_row,
+				 margin : 0,
+				 spacing: 5,
+				 height:  31)
+    {		
+		optional(identifier: "TransformHyperlinkSubGroup", child_vertical:  @align_center, margin : 0,placement: @place_row, spacing: 5)			
+		{
+			subview(margin:0, show_border: false, height: 25 , child_vertical:@align_center)
+			{
+				separator(orientation: @vertical, vertical: @align_fill);
+			}
+			overlay(vertical: @align_center)
+			{
+				panel(bind: @showControlPanelNinePinPoint, value:0)
+				{
+					pin_selector(identifier: "NinePointPinSelector",
+									wants_focus: false,
+									bind: @ninePointPinSelector,
+									vertical: @align_center,
+									alt: "$$$/TransformPalett/Str/ToolTip/ProxyItem=Reference Point");
+				}
+				panel(bind: @showControlPanelNinePinPoint, value:1)
+				{
+						image(alt: "$$$/TransformPalett/Str/ToolTip/OnePinpoint=Reference Point",
+							image: {normal:"SP_ReferencePoint_22x22_N.png",dark_normal:"SP_ReferencePoint_22x22_N_D.png"},
+							wants_focus: false,
+							vertical: @align_center,
+							identifier: "OnePinPoint"); 
+							
+				}
+				panel(bind: @showControlPanelNinePinPoint, value:2)
+				{
+						image(alt: "$$$/TransformPalett/Str/ToolTip/Symbol_Reg_Mark=Symbol Registration Point",
+							image: {normal:"SP_RegistrationPoint_22x22_N.png",dark_normal:"SP_RegistrationPoint_22x22_N_D.png"},
+							wants_focus: false,
+							vertical: @align_center,
+							identifier: "Symbol_Reg_Mark"); 
+							
+				}
+			}
+			row(spacing:@related_spacing)
+			{
+				link_button(identifier: "XValueHyperlinkButton",
+								name: "$$$/TransformPalette/16000/Lbl1=X:",
+								wants_focus: false,
+								alt: "$$$/TransformPalett/Mnu/TransformPalette=Transform Panel");
+				unit_hot_number(identifier: "XPosition",
+								alt: "$$$/TransformPalett/Str/ToolTip/XTextItem=X Value",
+								decimal_places: 3, digits: 4, stepper: true,
+								unit:"CurrentDocumentUnit",
+								max_value: 16384, min_value: -16384,
+								bind_final: true);
+			}
+			row(spacing:@related_spacing)
+			{
+				link_button(identifier: "YValueHyperlinkButton",
+								name: "$$$/TransformPalette/16000/Lbl2=Y:",
+								wants_focus: false,
+								alt: "$$$/TransformPalett/Mnu/TransformPalette=Transform Panel");
+				unit_hot_number(identifier: "YPosition",
+								alt: "$$$/TransformPalett/Str/ToolTip/YTextItem=Y Value",
+								decimal_places: 3, digits: 4, stepper: true,
+								unit:"CurrentDocumentUnit",
+								max_value: 16384, min_value: -16384,
+								bind_final: true);				
+			}
+			row(spacing: @related_spacing, child_vertical:@align_center)
+			{
+				row(spacing:@related_spacing)
+				{
+					link_button(identifier: "WValueHyperlinkButton",
+									name: "$$$/TransformPalette/16000/Lbl3=W:",
+									wants_focus: false,
+									alt: "$$$/TransformPalett/Mnu/TransformPalette=Transform Panel");
+					unit_hot_number(identifier: "WidthValue",
+									alt: "$$$/TransformPalett/Str/ToolTip/WidthTextItem=W Value",
+									decimal_places: 3,digits: 4, stepper: true,
+									unit:"CurrentDocumentUnit",
+									max_value: 16384,	min_value: 0, 
+									bind_final: true);
+				}
+				toggle_button(identifier: "NoConstrainIcon",
+												image: {down: "SP_LinkHori_Sm_N.png", dark_down:"SP_LinkHori_Sm_N_D.png", normal: "SP_UnlinkHor_Sm_N.png", dark_normal:"SP_UnlinkHor_Sm_N_D.png"},
+												alt: "$$$/TransformPalett/Str/ToolTip/LinkItem=Constrain Width and Height Proportions",
+												value_on: true, value_off: false,
+												bind: @ShowConstrainIcon, 
+												vertical: @align_center,
+												wants_focus: false);
+				row(spacing:@related_spacing)
+				{			
+					link_button(identifier: "HValueHyperlinkButton",
+									name: "$$$/TransformPalette/16000/Lbl4=H:",
+									wants_focus: false,
+									alt: "$$$/TransformPalett/Mnu/TransformPalette=Transform Panel");
+					unit_hot_number(identifier: "HeightValue",
+									alt: "$$$/TransformPalett/Str/ToolTip/HeightTextItem=H Value",
+									decimal_places: 3,	digits: 4, stepper: true,
+									unit:"CurrentDocumentUnit",
+									max_value: 16384,	min_value: 0,
+									bind_final: true);
+				}
+			}
+		}		
+    }
+}
+

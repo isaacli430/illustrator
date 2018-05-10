@@ -1,0 +1,178 @@
+layout FlareUI
+{
+    view subview(identifier: "AIEveSubView",
+				 layout_theme: @dialog_large,
+				 show_border: false,
+				 child_horizontal: @align_fill,
+				 spacing:@unrelated_spacing)
+    {
+		column(spacing:@inter_group_spacing)
+		{
+			row(child_vertical: @align_fill,horizontal:@align_fill,spacing:@inter_group_spacing)
+			{
+				group(identifier: "CenterGrp",
+						name: "$$$/Flare/CNTL/4=Center")
+				{
+					unit_hot_number(identifier: "CenterDiameter",
+								name: "$$$/Flare/CNTL/5=&Diameter:",
+								max_value: 1000,
+								min_value: 0,
+								stepper: true,
+								digits: 5,
+								decimal_places: 0,
+								bind: @CenterDiameterCell, bind_final: true, 
+								unit: "NumberEditUnit_Point",
+								set_default_focus: true);
+								
+					unit_hot_number(identifier: "CenterOpacity",
+								name: "$$$/Flare/CNTL/7=&Opacity:",
+								max_value: 100,
+								min_value: 0,
+								slider: true,
+								digits: 5,
+								decimal_places: 0,
+								bind: @CenterOpacityCell, bind_final: true, 
+								unit: "NumberEditUnit_Percent");
+								
+					unit_hot_number(identifier: "CenterBrightness",
+								name: "$$$/Flare/CNTL/9=&Brightness:",
+								max_value: 100,
+								min_value: 0,
+								slider: true,
+								digits: 5,
+								decimal_places: 0,
+								bind: @CenterBrightnessCell, bind_final: true, 
+								unit: "NumberEditUnit_Percent");
+				}
+				
+				group(identifier: "HaloGrp",
+						name: "$$$/Flare/CNTL/11=Halo",
+						horizontal: @align_fill)
+				{
+					unit_hot_number(identifier: "HaloGrowth",
+								name: "$$$/Flare/CNTL/12=&Growth:",
+								max_value: 300,
+								min_value: 0,
+								slider: true,
+								digits: 5,
+								decimal_places: 0,
+								bind: @HaloGrowthCell, bind_final: true, 
+								unit: "NumberEditUnit_Percent");
+					
+					unit_hot_number(identifier: "HaloFuzziness",
+								name: "$$$/Flare/CNTL/13=&Fuzziness:",
+								max_value: 100,
+								min_value: 0,
+								slider: true,
+								digits: 5,
+								decimal_places: 0,
+								bind: @HaloFuzzinessCell, bind_final: true, 
+								unit: "NumberEditUnit_Percent");
+				}	
+			}
+			
+			row(child_vertical: @align_fill,spacing:@inter_group_spacing)
+			{
+				group(identifier: "RaysGrp",
+						header: "checkbox(identifier: 'RaysChkBx',
+								 name: '$$$/Flare/CNTL/17=&Rays', horizontal: @align_left,
+								 bind: @RaysChkBxCell)")
+				{
+					unit_hot_number(identifier: "RaysNumber",
+								name: "$$$/Flare/CNTL/18=&Number:",
+								max_value: 50,
+								min_value: 0,
+								stepper: true,
+								digits: 5,
+								decimal_places: 0,
+								bind: @RaysNumberCell, bind_final: true,
+								unit: "NumberEditUnit_NoUnit");
+								
+					unit_hot_number(identifier: "RaysLongest",
+								name: "$$$/Flare/CNTL/20=&Longest:",
+								max_value: 1000,
+								min_value: 0,
+								slider: true,
+								digits: 5,
+								decimal_places: 0,
+								bind: @RaysLongestCell, bind_final: true, 
+								unit: "NumberEditUnit_Percent");
+							
+					unit_hot_number(identifier: "RaysFuzziness",
+								name: "$$$/Flare/CNTL/22=Fu&zziness:",
+								max_value: 100,
+								min_value: 0,
+								slider: true,
+								digits: 5,
+								decimal_places: 0,
+								bind: @RaysFuzzinessCell, bind_final: true, 
+								unit: "NumberEditUnit_Percent");
+				}
+				
+				group(identifier: "RingsGrp",
+						header: "checkbox(identifier: 'RingsChkBx',
+								 name: '$$$/Flare/CNTL/25=R&ings', horizontal: @align_left,
+								 bind: @RingsChkBxCell)")
+				{
+					unit_hot_number(identifier: "RingsPath",
+								name: "$$$/Flare/CNTL/26=Pat&h:",
+								max_value: 1000,
+								min_value: 0,
+								stepper: true,
+								digits: 5,
+								decimal_places: 0,
+								bind: @RingsPathCell, bind_final: true,
+								unit: "NumberEditUnit_Point");
+					
+					unit_hot_number(identifier: "RingsNumber",
+								name: "$$$/Flare/CNTL/28=Nu&mber:",
+								max_value: 50,
+								min_value: 0,
+								stepper: true,
+								digits: 5,
+								decimal_places: 0,
+								bind: @RingsNumberCell, bind_final: true,
+								unit: "NumberEditUnit_NoUnit");
+								
+					unit_hot_number(identifier: "RingsLargest",
+								name: "$$$/Flare/CNTL/30=L&argest:",
+								max_value: 250,
+								min_value: 0,
+								slider: true,
+								digits: 5,
+								decimal_places: 0,
+								bind: @RingsLargestCell, bind_final: true, 
+								unit: "NumberEditUnit_Percent");
+								
+					angle_picker(identifier: "RingsAnglePicker",
+										name: "$$$/Flare/CNTL/32=Dire&ction:",
+										value_range: {min_value:0, max_value: 359},
+										wants_focus: true,
+										bind: @RingsDirectionCell, bind_final: true, 
+										show_editbox:true);
+				}
+			}
+		}
+        row(spacing:@separated_spacing,child_vertical:@align_center)
+        {
+			checkbox(identifier: "previewButton",
+					 name: "$$$/Flare/CNTL/3=&Preview",
+					 horizontal: @align_left,
+					 guide_mask: [@guide_label],
+					 bind: @PreviewCheckBoxCell);
+					 
+			row(reverse:os==@mac,horizontal: @align_right,spacing:@related_spacing)
+			 {
+				button(identifier: "okButton",
+					   name: "$$$/gOK=OK",
+					   commit_button: true);
+
+				button(identifier: "cancel_ResetButton",
+						commit_button: true,
+					   items: [{name: "$$$/gCancel=Cancel", action: @cancel},
+							{name: "$$$/gReset=Reset", action: @reset, modifiers: @opt}]);
+			}
+		}         
+    }
+}
+

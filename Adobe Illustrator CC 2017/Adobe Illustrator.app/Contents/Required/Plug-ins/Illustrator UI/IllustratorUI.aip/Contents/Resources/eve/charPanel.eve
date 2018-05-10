@@ -1,0 +1,489 @@
+layout TypeOnPathTool
+{
+	view subview(identifier: "CharPanelSubView",
+				 layout_theme: @panel, width: gStandardMinPanelWidth,
+				 show_border: false,
+				 child_vertical: @align_center)
+	{
+		
+		optional
+		(
+			bind: @ShowTextTouchUpButton,
+			value: true	
+		)
+		{
+				subview(identifier: "TouchTypeToolButtonSubview", show_border: false, horizontal: @align_fill,  margin:0)
+				{	
+					row(spacing: 0, margin: 0, horizontal: @align_left, child_horizontal: @align_left)
+			
+						{
+								button
+								(
+									identifier: "TextTouchUpHandle",					
+									bind: @TextTouchUpButton,	
+									height: 22,
+									name:"$$$/_TextDlgs/Mnu/charPalCmd/TouchType=Touch Type Tool"								
+								);		
+						}
+				}
+			
+
+			
+		}
+		
+		subview(identifier: "FontSearchPopupSubview", show_border: false, horizontal: @align_fill,  margin:0)
+		{
+			popup_custom_dropdown(identifier: "FontFamilyPopupDummy",set_default_focus: true,
+						include_custom_item: false,
+						horizontal: @align_fill,
+						popup_maximum_width_chars:15,
+						alt: "$$$/_TextDlgs/Str/SLOkCharPalToolTips/1=Set the font family");
+			
+		}
+		popup(identifier: "FontStylePopup",
+					include_custom_item: false,
+					bind: @FontStyle,
+					horizontal: @align_fill,
+					popup_maximum_width_chars:15,
+					alt: "$$$/_TextDlgs/Str/SLOkCharPalToolTips/2=Set the font style");
+		
+		separator(orientation: @horizontal, vertical: @align_center, margin: 0);
+		row(margin: 0, horizontal: @align_fill, spacing: 1)
+		{
+			unit_hot_number
+			(
+				identifier: "FontSizePopup",
+				is_image_label:true,
+				label: "SP_TextSize_Md_N.png",
+				max_value: 1296, min_value: 0.1,
+				stepper: true, popuplist: true,
+				unit: 'NumberEditUnit_Point',
+				decimal_places: 2, digits: 2,
+				bind: @FontSize,
+				alt: "$$$/_TextDlgs/Str/SLOkCharPalToolTips/3=Set the font size",
+				horizontal: @align_left
+			);
+			unit_hot_number
+			(
+				identifier: "FontLeadingPopup",
+				label: @leadPict,
+				is_image_label:true,
+				stepper: true,
+				popuplist: true,
+				decimal_places: 2,digits: 2,
+				bind: @Leading, bind_final: true,
+				unit: 'NumberEditUnit_Point',					
+				alt: "$$$/_TextDlgs/Str/SLOkCharPalToolTips/5=Set the leading",
+				horizontal: @align_right
+			);
+		}
+		
+		optional
+		(
+			bind: @ShowAsian,
+			value: true
+		)
+		{
+			row(margin: 0, horizontal: @align_fill)
+			{
+				unit_hot_number
+				(
+					identifier: "VerticalScalePopup1",
+					label: "SP_TextVertScale_Md_N.png",
+					is_image_label:true,
+					stepper: true,decimal_places: 2,
+					popuplist: true, items: @ScalePopupItems,
+					bind: @VerticalScale, bind_final: true,
+					max_value: 10000, min_value: 1,digits: 2,
+					unit: "NumberEditUnit_Percent",
+					alt: "$$$/_TextDlgs/Str/SLOkCharPalToolTips/13=Vertical Scale",
+					horizontal: @align_left
+				);	
+				
+				unit_hot_number
+				(
+						identifier: "HorizontalScalePopup1",
+						label: "SP_TextHorizScale_Md_N.png",
+						is_image_label:true,
+						stepper: true,
+						decimal_places: 2,digits: 2,
+						popuplist: true, items: @ScalePopupItems,
+						max_value: 10000, min_value: 1,
+						bind: @HorizontalScale, bind_final: true,
+						unit: "NumberEditUnit_Percent",
+						alt: "$$$/_TextDlgs/Str/SLOkCharPalToolTips/11=Horizontal Scale",
+						horizontal: @align_right
+				);
+			}
+		}
+		
+		row(margin: 0, horizontal: @align_fill)
+		{				
+			unit_hot_number
+			(
+				identifier: "TextKerningPopup",
+				is_image_label:true,
+				label: @kernPict,
+				alt: "$$$/_TextDlgs/Str/SLOkCharPalToolTips/7=Set the kerning between two characters",
+				min_value: -1000, max_value: 10000,digits: 2,
+				popuplist: true, items: @KerningPopupItems,
+				bind: @TextKerning, bind_final: true,
+				stepper: true,decimal_places: 2,
+				unit: 'NumberEditUnit_NoUnit',
+				horizontal: @align_left
+			);	
+			
+			unit_hot_number
+			(
+				identifier: "TextTrackingPopup",
+				is_image_label: true,
+				label: @trackPict,
+				alt: "$$$/_TextDlgs/Str/SLOkCharPalToolTips/9=Set the tracking for the selected characters",
+				bind: @TextTracking, bind_final: true,
+				decimal_places: 2,stepper: true,digits: 2,
+				popuplist: true, items: @TrackingPopupItems,
+				unit: 'NumberEditUnit_NoUnit',
+				min_value: -1000, max_value: 10000,
+				horizontal: @align_right
+			);
+		}
+		
+		optional
+		(
+			bind: @ShowExtendedOptions,
+			value: true
+		)
+		{
+			separator(orientation: @horizontal, vertical: @align_center, margin: 0);
+			
+			optional
+			(
+				bind: @ShowAsian,
+				value: false
+			)
+			{
+				row(margin: 0, horizontal: @align_fill)
+				{
+					unit_hot_number
+					(
+						identifier: "VerticalScalePopup2",
+						label: "SP_TextVertScale_Md_N.png",
+						is_image_label:true,
+						stepper: true,decimal_places: 2,
+						popuplist: true, items: @ScalePopupItems,
+						bind: @VerticalScale, bind_final: true,
+						max_value: 10000, min_value: 1,digits: 2,
+						unit: "NumberEditUnit_Percent",
+						alt: "$$$/_TextDlgs/Str/SLOkCharPalToolTips/13=Vertical Scale",
+						horizontal: @align_left
+					);	
+					
+					unit_hot_number
+					(
+							identifier: "HorizontalScalePopup2",
+							label: "SP_TextHorizScale_Md_N.png",
+							is_image_label:true,
+							stepper: true,
+							decimal_places: 2,digits: 2,
+							popuplist: true, items: @ScalePopupItems,
+							max_value: 10000, min_value: 1,
+							bind: @HorizontalScale, bind_final: true,
+							unit: "NumberEditUnit_Percent",
+							alt: "$$$/_TextDlgs/Str/SLOkCharPalToolTips/11=Horizontal Scale",
+							horizontal: @align_right
+					);		
+				}
+			}
+
+			optional
+			(
+				bind: @ShowAsian,
+				value: true,
+				placement: @place_column
+			)
+			{
+				unit_hot_number
+				(
+					identifier: "TsumePopup",
+					digits: 2,
+					label: "SP_AsianTextTsume_Md_N.png",
+					is_image_label: true,
+					alt: "$$$/_TextDlgs/Str/SLOkCharPalToolTips/25=Tsume",
+					stepper: true,decimal_places: 2,
+					popuplist: true, items: @TsumePopupItems,
+					bind: @TsumeValue, bind_final: true,
+					min_value: 0, max_value: 100,
+					unit: "NumberEditUnit_Percent" 
+				);
+					
+				row(guide_mask: [@guide_label], margin: 0, horizontal: @align_fill)
+				{
+					row(horizontal: @align_left, spacing: @label_widget_spacing, margin: 0)
+					{
+						image 
+						(
+							identifier: "AkiLeftImage",
+							alt: "$$$/_TextDlgs/Str/SLOkCharPalToolTips/27=Insert Aki (Left)",
+							image: {normal: "SP_AsianTextAkiLeft_Md_N.png",dark_normal: "SP_AsianTextAkiLeft_Md_N_D.png"}
+						);
+
+						popup
+						(
+							identifier: "LEftAkiPopup",
+							items: @AkiItems,
+							bind: @LeftAki,
+							include_custom_item: false,
+							popup_maximum_width_chars: 4,
+							horizontal: @align_left,
+							alt: "$$$/_TextDlgs/Str/SLOkCharPalToolTips/27=Insert Aki (Left)"
+						);
+					}
+					row(spacing: 0, margin: 0, horizontal: @align_right)
+					{
+						image 
+						(
+							identifier: "AkiRightImage",
+							alt: "$$$/_TextDlgs/Str/SLOkCharPalToolTips/29=Insert Aki (Right)",
+							image: {normal: "SP_AsianTextAkiRight_Md_N.png",dark_normal: "SP_AsianTextAkiRight_Md_N_D.png"}
+						);
+					
+					
+						popup
+						(
+							identifier: "RightAkiPopup",
+							items: @AkiItems,
+							bind: @RightAki,
+							include_custom_item: false,
+							popup_maximum_width_chars: 4,
+							alt: "$$$/_TextDlgs/Str/SLOkCharPalToolTips/29=Insert Aki (Right)"
+						);
+					}
+				}
+				separator(orientation: @horizontal, vertical: @align_center, margin: 0);
+			}
+			
+			row(margin: 0, horizontal: @align_fill)
+			{
+				unit_hot_number(
+					identifier: "BaselineShiftPopup",
+					is_image_label: true,stepper: true,
+					label: @BaselinePict,digits: 2,
+					alt: "$$$/_TextDlgs/Str/SLOkCharPalToolTips/15=Set the baseline shift",
+					popuplist: true,decimal_places: 2,
+					min_value: -0.1, max_value: 1296,
+					bind: @BaselineShift, bind_final: true,
+					unit: 'NumberEditUnit_Point',
+					horizontal: @align_left
+				);
+				
+				
+				unit_hot_number(
+					identifier: "CharRotationPopup",
+					is_image_label: true,
+					label: "SP_CharacterRotation_Md_N.png",
+					alt: "$$$/_TextDlgs/Str/SLOkCharPalToolTips/19=Character Rotation",
+					popuplist: true, items: @CharRotationItems,
+					bind: @CharRotation, bind_final: true,
+					decimal_places: 2,stepper: true,
+					min_value: -360, max_value: 360,digits: 2,
+					unit:"NumberEditUnit_Degree",
+					horizontal: @align_right
+				);
+			}
+			
+			column(spacing: 0, margin: 0, horizontal: @align_fill, child_horizontal: @align_fill)
+			{
+				separator(orientation: @horizontal, vertical: @align_center, margin: 0);
+			
+				row(horizontal: @align_fill, margin:0)
+				{
+					row(horizontal: @align_left, margin: 0)
+					{
+						toggle_button
+						(
+							value_on: 1, value_off: 0,
+							bind: @FontCaps,
+							image: {normal:"SP_TextAllCaps_18x16_N.png",dark_normal:"SP_TextAllCaps_18x16_N_D.png"},
+							wants_focus: false,
+							alt: "$$$/_TextDlgs/Mnu/charPalCmd/AllCaps=All Caps"
+						);
+						toggle_button
+						(
+							value_on: 2, value_off: 0,
+							bind: @FontCaps,
+							image: {normal:"SP_TextSmallCaps_Sm_N.png",dark_normal:"SP_TextSmallCaps_Sm_N_D.png"},
+							wants_focus: false,
+							alt: "$$$/_TextDlgs/Mnu/charPalCmd/SmallCaps=Small Caps"
+						);
+					}
+
+					row(horizontal: @align_center, margin:0)
+					{
+						toggle_button
+						(
+							value_on: 2, value_off: 0,
+							bind: @FontScript,
+							image: {normal:"SP_TextSuperscript_Sm_N.png",dark_normal:"SP_TextSuperscript_Sm_N_D.png"},
+							wants_focus: false,
+							alt: "$$$/_TextDlgs/Mnu/charPalCmd/Superscript=Superscript"
+						);
+						toggle_button
+						(
+							value_on: 1, value_off: 0,
+							bind: @FontScript,
+							image: {normal:"SP_TextSubscript_Sm_N.png",dark_normal:"SP_TextSubscript_Sm_N_D.png"},
+							wants_focus: false,
+							alt: "$$$/_TextDlgs/Mnu/charPalCmd/Subscript=Subscript"
+						);
+					}
+
+					row(horizontal: @align_right, margin:0)
+					{
+						overlay()
+						{
+							optional(margin:0, bind: @horizOrientation, value: true)
+							{
+								toggle_button
+								(
+									value_on: true, value_off: false,
+									bind: @UnderlineOn,
+									image: {normal: "SP_TextUnderline_Sm_N.png", dark_normal: "SP_TextUnderline_Sm_N_D.png"},
+									wants_focus: false,
+									alt: "$$$/_TextDlgs/Str/SLOkCharPalToolTips/31=Underline"
+								);
+							}
+							optional(margin:0, bind: @horizOrientation, value: false)
+							{
+								toggle_button
+								(
+									value_on: true, value_off: false,
+									bind: @UnderlineOn,
+									image: {normal: "SP_TextVertUnderlineRight_Sm_N.png", dark_normal: "SP_TextVertUnderlineRight_Sm_N_D.png"},
+									wants_focus: false,
+									alt: "$$$/_TextDlgs/Str/SLOkCharPalToolTips/31=Underline"
+								);
+							}
+						}
+							
+						overlay()
+						{
+							optional(margin: 0, bind: @horizOrientation, value: true)
+							{
+								toggle_button
+								(
+									value_on: true, value_off: false,
+									bind: @StrikeThroughOn,
+									image: {normal: "SP_TextStrikeThrough_Sm_N.png", dark_normal: "SP_TextStrikeThrough_Sm_N_D.png"},
+									wants_focus: false,
+									alt: "$$$/_TextDlgs/Str/SLOkCharPalToolTips/32/win=Strikethrough"
+								);
+							}
+							optional(margin: 0, bind: @horizOrientation, value: false)
+							{
+								toggle_button
+								(
+									value_on: true, value_off: false,
+									bind: @StrikeThroughOn,
+									image: {normal: "SP_TextVertStrikeThroug_Sm_N.png", dark_normal: "SP_TextVertStrikeThroug_Sm_N_D.png"},
+									wants_focus: false,
+									alt: "$$$/_TextDlgs/Str/SLOkCharPalToolTips/32/win=Strikethrough"
+								);
+							}
+						}
+					}
+				}
+			
+				separator(orientation: @horizontal, vertical: @align_center, margin: 0);
+			}
+			
+			row(margin: 0, horizontal: @align_fill)
+			{
+				popup
+				(					
+					identifier: "LanguagePopup",
+					items: @LanguageItems,
+					bind: @Language,
+					include_custom_item: false,
+					popup_maximum_width_chars: 5,
+					popup_minimum_width_chars: 5,
+					horizontal: @align_left,
+					alt: "$$$/_TextDlgs/Str/SLOkCharPalToolTips/18=Language"
+				);
+				
+				image
+				(
+					identifier: "AntiAliasImage", guide_mask: [@guide_label], horizontal: @align_right,
+					alt: "$$$/_TextDlgs/Str/SLOkCharPalToolTips/35=Set the anti-aliasing method",
+					image: {normal: "SP_TextAntialias_Md_N.png", dark_normal: "SP_TextAntialias_Md_N_D.png"}
+				);
+					
+				popup
+				(
+					identifier: "AntiAliasPopup",
+					items: [{name: "$$$/_TextDlgs/Mnu/SLOTextAntialiasMenu/1=None",value: "1"},
+						{name: "$$$/_TextDlgs/Mnu/SLOTextAntialiasMenu/2=Sharp",value: "2"},
+						{name: "$$$/_TextDlgs/Mnu/SLOTextAntialiasMenu/3=Crisp",value: "3"},
+						{name: "$$$/_TextDlgs/Mnu/SLOTextAntialiasMenu/4=Strong",value: "4"}],
+					bind: @AntiAlias,
+					include_custom_item: false,
+					horizontal: @align_right,
+					popup_maximum_width_chars: 5,
+					popup_minimum_width_chars: 5,
+					alt: "$$$/_TextDlgs/Str/SLOkCharPalToolTips/35=Set the anti-aliasing method"
+				);
+			}
+
+			optional
+			(
+			bind: @WorldReady,
+			value: true,
+			placement: @place_column
+			)
+			{
+				separator(orientation: @horizontal, vertical: @align_center);
+
+				popup
+				(
+					identifier: "DigitsTypePopup", name: "$$$/_TextDlgs/CharPanel/DigitType=Digits:",
+					alt: "$$$/_TextDlgs/Str/SLOkCharPalToolTips/DigitsTypeToolTip=Digits Type",
+					include_custom_item: false,
+					guide_mask: [@guide_label],
+					horizontal:@align_fill
+				);
+				
+				row(horizontal: @align_fill)
+				{
+					unit_hot_number(
+						identifier: "DiacHorizontalPopup",
+						is_image_label: true,
+						label: "SP_MENADiacriticsHorizontal_Md_N.png",
+						alt: "$$$/_TextDlgs/Str/SLOkCharPalToolTips/DiacHorizontalToolTip=Adjust Horizontal Diacritic(s) Position",
+						popuplist: true, items: @DiacriticItems,
+						bind: @DiacHorizontal, bind_final: true,
+						decimal_places: 2,stepper: true,
+						min_value: -1000, max_value: 1000,
+						digits: 2,
+						unit:"NumberEditUnit_NoUnit",
+						horizontal: @align_left
+					);
+					
+					unit_hot_number(
+						identifier: "DiacVerticalPopup",
+						is_image_label: true,
+						label: "SP_MENADiacriticsVertical_Md_N.png",
+						alt: "$$$/_TextDlgs/Str/SLOkCharPalToolTips/DiacVerticalToolTip=Adjust Vertical Diacritic(s) Position",
+						popuplist: true, items: @DiacriticItems,
+						bind: @DiacVertical, bind_final: true,
+						decimal_places: 2,stepper: true,
+						min_value: -1000, max_value: 1000,
+						digits: 2,
+						unit:"NumberEditUnit_NoUnit",
+						horizontal: @align_right
+					);
+					
+					
+				}
+			}
+		}
+	}
+}

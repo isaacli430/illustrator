@@ -1,0 +1,19 @@
+sheet PerformancePreference
+{
+	interface:
+		
+		ShowGPUStatus						: 1;
+		PerfEnableGPUBoolCell				: true;
+		PerfAnimZoomBoolCell				: true;
+		PerfEnableThinFilledPathsBoolCell	: false;
+		
+		PerfVendorString					: " ";
+		PerfDeviceString					: " ";
+		PerfVersionString					: " ";
+		PerfMemoryString					: " ";
+        ShowGPUWarning						:(os == @win)? 1 : 0;
+		ShowDisplayPerformanceSettings		: false;
+		CustomSettingValue					: 2;
+		PerfEnabledisplaySettingOption		: 1;
+		ShowAlertApplicableOnRestart		: false;
+}

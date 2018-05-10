@@ -1,0 +1,132 @@
+layout TypePreference
+{
+	view subview(identifier: "TypePrefEveSubView",
+				 child_horizontal: @align_fill,
+				 placement: @place_column,
+				 show_border: false, 
+				 margin: [22,15,0,15],
+				 layout_theme: @dialog_large)
+	{
+		column(spacing: 0)
+		{
+		static_text(identifier: "TPStaticTextCaption",
+					name: "$$$/PrefsDlg/TPDlg/Caption=Type"
+					);
+		
+		separator(identifier: "TPTopSeparator");
+		}
+		
+
+		column()
+		{
+			unit_hot_number(identifier: "TPEditNumberSize",
+								name: "$$$/PrefsDlg/TPDlg/TPEditNumberSize=&Size/Leading:",
+								decimal_places: 2,
+								min_value: 0.1,
+								max_value: 72,
+								digits: 4,
+								bind: @TPSizeCell
+								);
+								
+			unit_hot_number(identifier: "TPEditNumberTracking",
+								name: "$$$/PrefsDlg/TPDlg/TPEditNumberTracking=&Tracking:",
+								suffix: "$$$/PrefsDlg/TPDlg/TrackSuffix=/1000 em",
+								decimal_places: 0,
+								min_value: -1000,
+								max_value: 10000,
+								digits: 4,
+								bind: @TPTrackCell
+								);
+		
+		
+			unit_hot_number(identifier: "TPEditNumberShift",
+								name: "$$$/PrefsDlg/TPDlg/TPEditNumberShift=&Baseline Shift:",
+								decimal_places: 2,
+								min_value: 0.1,
+								max_value: 72,
+								digits: 4,
+								bind: @TPBaselineShiftCell
+								);
+		}
+		
+		optional(bind: @IsWorldReadyModeCell, value: false, guide_mask: [ @guide_label ])
+		{
+				group(name: "$$$/PrefsDlg/TPDlg/TPLanguageOptionsGroup=Language Options", child_vertical: @align_center, horizontal: @align_fill)
+                {
+					checkbox(identifier: "TPCheckboxAsianOptions", name: "$$$/PrefsDlg/TPDlg/TPCheckboxEastAsianOptions=Show East &Asian Options",
+								bind: @TPAsianBoolCell);
+
+					checkbox(identifier: "EnableIndicSupportCheckBox", name: "$$$/prefsDlg/TPDlg/TPCheckboxShowIndicOptions=Show &Indic Options", 
+								bind: @EnableIndic);
+				}
+		}
+		
+		checkbox(identifier: "TPCheckboxSelectionPath", guide_mask: [ @guide_label ],
+								name: "$$$/PrefsDlg/TPDlg/TPCheckboxSelectionPath=T&ype Object Selection by Path Only",
+								bind: @TPSelectionBoolCell
+								);
+		
+		checkbox(identifier: "TPCheckboxFontEnglish", guide_mask: [ @guide_label ],
+								name: "$$$/PrefsDlg/TPDlg/TPCheckboxFontEnglish=Show Font Names in &English",
+								bind: @TPEngBoolCell
+								);
+		
+		checkbox(identifier: "TPCheckboxAutoSizing", guide_mask: [ @guide_label ],
+								name: "$$$/PrefsDlg/TPDlg/TPCheckboxAutoSizing=Auto Size &New Area Type",
+								bind: @TPAutoSizingCell
+								);
+
+		column(guide_mask: [ @guide_label ])
+		{
+			popup(	identifier: "TPPopupFontNumbers",
+					include_custom_item: false,
+					name: "$$$/PrefsDlg/TPDlg/TPPopupFontNumbers=Number of Recent &Fonts:" ,
+					items: @TPFontNumber,
+					bind: @TPFontCell
+				);
+			
+		row()
+		{					
+			checkbox(identifier: "TPCheckboxFontPreview", guide_mask: [ @guide_label ],
+								name: "$$$/PrefsDlg/TPDlg/TPCheckboxFontPreview=Font &Preview",
+								bind: @TPPreviewState
+								);
+								
+			popup(identifier: "TPPopupFontPreview", 
+				bind: @TPPreviewPopupState,
+				include_custom_item: false,
+				name: "$$$/PrefsDlg/TPDlg/TPPopupFontPreview=Si&ze:",
+				items: [ 
+						  { name: "$$$/Preferences/TextPreviewSize/Small=Small",
+                          value: 1},
+                          { name: "$$$/Preferences/TextPreviewSize/Medium=Medium",
+                          value: 2},
+                          { name: "$$$/Preferences/TextPreviewSize/Large=Large",
+                          value: 3}
+                      ]
+              );
+		}
+		}
+		checkbox(identifier: "TPCheckboxEnableMissingGlyph", guide_mask: [ @guide_label ],
+								name: "$$$/PrefsDlg/TPDlg/TPCheckboxEnableMissingGlyph=Enable Missing &Glyph Protection",
+								bind: @TPGlyphBoolCell,
+								alt: "$$$/_PreferencesDialog/FontLockingToolTip=Allow automatic font substitution for missing glyphs."
+								);
+		optional(margin: 0, bind: @TPShowNonInlineOption, value: true)
+		{
+			checkbox(identifier: "TPCheckboxInlineInput", guide_mask: [ @guide_label ],
+									name: "$$$/PrefsDlg/TPDlg/TPCheckboxInlineInput=&Use Inline Input for Non-Latin Text",
+									bind: @TPNonLatinBoolCell
+									);
+		}	
+		checkbox(identifier: "TPCheckboxHighlightSubstitutedFonts", guide_mask: [ @guide_label ],
+								name: "$$$/PrefsDlg/TPDlg/TPCheckboxHighlightSubstitutedFonts=Highlight Substituted Fonts",
+								bind: @TPHilightFontsBoolCell
+								);
+		
+		checkbox(identifier: "TPCheckboxFillWithDefaultText", guide_mask: [ @guide_label ],
+								name: "$$$/PrefsDlg/TPDlg/TPCheckboxFillWithDefaultText=Fill New Type Objects With Placeh&older Text",
+								bind: @TPFillTextBoolCell
+								);
+	}
+}

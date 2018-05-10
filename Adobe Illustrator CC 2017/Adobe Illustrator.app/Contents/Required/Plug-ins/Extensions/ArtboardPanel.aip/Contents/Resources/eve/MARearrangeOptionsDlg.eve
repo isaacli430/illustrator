@@ -1,0 +1,111 @@
+layout MARearrangeOptionsDlg
+{
+    view subview(identifier: "MARearrangeOptions",
+                 layout_theme: @dialog_large,
+                 placement: @place_column,
+                 show_border: false,
+				 spacing:@unrelated_spacing)
+    {
+		column(child_horizontal: @align_fill)
+		{
+			display_text(identifier: "ArtboardCountString",
+					name: "$$$/MARearrangeUI/Dlg/Options/ArtboardCount=Artboards:",
+					bind:@ArtboardNumber);
+	
+			row(child_vertical:@align_center)
+			{
+				overlay()
+				{
+					panel(bind: @left_to_right, value: true, margin: 0, placement: @place_row, child_vertical: @align_center)
+					{
+						button_bar(identifier: "ArrangementButtonBarLToR",
+								name: "$$$/MARearrangeUI/Dlg/Options/Layout=Layout:",
+								bind: @Layout,vertical: @align_fill,
+								
+								items: [{image: {normal:"SP_GridByRow_Sm_N.png",dark_normal:"SP_GridByRow_Sm_N_D.png"}, show_border: true, value: 0, alt: "$$$/CropAreaPlugin/Dialog/GridByRowTip=Grid by Row"},
+										{image: {normal:"SP_GridByColumn_Sm_N.png",dark_normal:"SP_GridByColumn_Sm_N_D.png"}, show_border: true, value: 1, alt: "$$$/CropAreaPlugin/Dialog/GridByColTip=Grid by Column"},
+										{image: {normal:"SP_RowOnly_Sm_N.png",dark_normal:"SP_RowOnly_Sm_N_D.png"}, show_border: true, value: 2, alt: "$$$/CropAreaPlugin/Dialog/RowOnlyTip=Arrange by Row"},
+										{image: {normal:"SP_ColumnOnly_Sm_N.png",dark_normal:"SP_ColumnOnly_Sm_N_D.png"}, show_border: true, value: 3, alt: "$$$/CropAreaPlugin/Dialog/ColOnlyTip=Arrange by Column"}]
+								);
+								
+						toggle_button(image:{normal:"SP_LeftToRight_Sm_N.png",dark_normal:"SP_LeftToRight_Sm_N_D.png"},
+									identifier: "ToggleButtonLR",
+									bind: @left_to_right,
+									value_on: false,
+									value_off: true,
+									show_border: true,
+									alt: "$$$/CropAreaPlugin/Dialog/zToggleString=Change to Right-to-Left Layout",
+									wants_focus: false);		
+					}
+				
+					panel(bind: @left_to_right, value: false, margin: 0, placement: @place_row, child_vertical: @align_center)
+					{
+						button_bar(identifier: "ArrangementButtonBarRToL",
+								name: "$$$/MARearrangeUI/Dlg/Options/Layout=Layout:",
+								bind: @Layout,vertical: @align_fill,
+								items: [{image: {normal:"SP_RightToLeft_GridByRow_Sm_N.png",dark_normal:"SP_RightToLeft_GridByRow_Sm_N_D.png"}, show_border: true, value: 0, alt: "$$$/CropAreaPlugin/Dialog/RLGridByRowTip=Right-to-Left Grid by Row"},
+										{image: {normal:"SP_RightToLeft_GridByColumn_Sm_N.png",dark_normal:"SP_RightToLeft_GridByColumn_Sm_N_D.png"}, show_border: true, value: 1, alt: "$$$/CropAreaPlugin/Dialog/RLGridByColTip=Right-to-Left Grid by Column"},
+										{image: {normal:"SP_RightToLeft_RowOnly_Sm_N.png",dark_normal:"SP_RightToLeft_RowOnly_Sm_N_D.png"}, show_border: true, value: 2, alt: "$$$/CropAreaPlugin/Dialog/RLRowOnlyTip=Right-to-Left Arrange by Row"},
+										{image: {normal:"SP_ColumnOnly_Sm_N.png",dark_normal:"SP_ColumnOnly_Sm_N_D.png"}, show_border: true, value: 3, alt: "$$$/CropAreaPlugin/Dialog/ColOnlyTip=Arrange by Column"}]
+								);
+					
+						toggle_button(image:{normal:"SP_RightToLeft_Sm_N.png",dark_normal:"SP_RightToLeft_Sm_N_D.png"},
+									identifier: "ToggleButtonRL",
+									bind: @left_to_right,
+									value_on: true,
+									value_off: false,
+									show_border: true,
+									alt: "$$$/CropAreaPlugin/Dialog/zRLToggleString=Change to Left-to-Right Layout",
+									wants_focus: false);			
+
+					}
+				}
+			}
+			row(child_vertical: @align_center, margin:0)
+			{
+				column()
+				{
+					unit_hot_number(identifier: "RowEdit", name: @RowColString, stepper:true,set_default_focus:true);
+					unit_hot_number(identifier: "SpacingEdit",name: "$$$/MARearrangeUI/Dlg/Options/spacing=Spac&ing:", stepper:true);
+				}
+				column(vertical: @align_top)
+				{
+					optional(bind: @ShowWarning, value: true, margin: 0)
+					{
+						info_icon(identifier: "WarningIcon",
+							icontype:"note",
+							size:"small",
+							alt: "$$$/MARearrangeUI/Dlg/WarningString=Artboard within artboard is considered a single artboard");
+					}
+
+				}
+			}
+
+			checkbox(identifier: "MAMoveArtworkOpt",
+				 name: "$$$/MARearrangeUI/Dlg/Options/optionsDownsampleLinkedImages=&Move Artwork with Artboard");
+
+			row(child_vertical: @align_center,
+				horizontal: @align_fill,spacing:@related_spacing)
+			{
+				info_icon(icontype:"note",size:"small");
+
+				static_text(characters: 25,
+						horizontal: @align_fill,
+						identifier: "TipString2",
+						theme_font_size: @small,
+						name: "$$$/MARearrangeUI/Dlg/Options/MoveArtTipString=If 'Move Artwork with Artboard' is checked, the artwork will move with the artboards to their final location.");
+			} 
+		}      
+
+        row(child_horizontal: @align_fill, horizontal: @align_right, reverse: os == @mac,spacing:@related_spacing)
+        {
+            button(identifier: "okButton",
+                   name: "$$$/gOK=OK",
+					commit_button: true);
+
+            button(identifier: "cancelButton",
+                   name: "$$$/gCancel=Cancel",
+					commit_button: true);
+        }
+    }
+}

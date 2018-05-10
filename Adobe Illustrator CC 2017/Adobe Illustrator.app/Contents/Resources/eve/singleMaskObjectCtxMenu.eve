@@ -1,0 +1,24 @@
+layout singleMaskObjectCtxMenu
+{
+	view menu( id: 69,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/context/Undo=Undo", id:					(os == @win) ? 1970168943 : 1970168943, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/context/Redo=Redo", id:					(os == @win) ? 1919247471 : 1919247471, help_id:0);
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/context/MakePixelPerfect=Make Pixel Perfect", id:		 		 0x63697A01, help_id:  0 ) ;
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/context/Perspective=Perspective", id:	 322, help_id:  72 ) { separator();  }
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/context/ImageCrop=Crop Image", id:		392, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/context/Enter6=Isolate Selected Clipping Mask", id:		286, help_id:0);	
+		menu( text: "$$$/_MBAR/Mnu/mask/Release=Release Clipping Mask", id:	121, help_id:0);
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/context/Transform=Transform", id:	 91, help_id:  23 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/context/Arrange=Arrange", id:		 92, help_id:  47 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/context/Select=Select", id:		 79, help_id:  24 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/context/DL=Add to Library", id:		 0x51756C01, help_id:  0 ) ;
+		menu( text: "$$$/_MBAR/Mnu/context/SmartExport=Collect For Export", id: 			0x65697A10, help_id: 0 ) ;
+		menu( text: "$$$/_MBAR/Mnu/context/Export=Export Selection...", id:		 		 0x63697A00, help_id:  0 ) ;
+	}
+}

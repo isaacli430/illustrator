@@ -1,0 +1,37 @@
+layout legacyGradientMeshConversionOptionsDialog
+{
+	view subview(identifier: "legacyGradientMeshConversionOptionsDialog_subview",
+					layout_theme: @dialog_large,
+					spacing: @unrelated_spacing,
+					show_border: false)
+	{
+		column()
+		{
+			static_text(identifier: "infoStaticText",
+						name: "$$$/LegacyFileImportOptions/Mesh/Info=The artwork that is being imported was created by a previous version of Adobe Illustrator. It contains a gradient mesh whose vertices are colorized by spot colors. How would you like this version of Adobe Illustrator to convert it?",
+						characters: 25);
+			group(identifier: "optionsGroup",
+						name: "$$$/LegacyFileImportOptions/Mesh/Options=Options",
+						horizontal: @align_fill,
+						child_horizontal: @align_fill)
+			{
+				radiogroup(identifier: "optionsRadioGroup")
+				{
+					radio_button(identifier: "preserveColorsRadioButton",
+									name: "$$$/LegacyFileImportOptions/Mesh/PreserveSpot=Preserve Spot Colors",
+									value: 0,
+									bind: @preserveOptions);
+					radio_button(identifier: "preserveAppearanceRadioButton",
+									name: "$$$/LegacyFileImportOptions/Mesh/PreserveAppearance=Preserve Appearance",
+									value: 1,
+									bind: @preserveOptions);
+				}
+			}
+		}
+		button(identifier: "okButton",
+				name: "$$$/gOK=OK",
+				set_default_focus: true,
+				commit_button: true,
+				horizontal: @align_right);
+	}
+}

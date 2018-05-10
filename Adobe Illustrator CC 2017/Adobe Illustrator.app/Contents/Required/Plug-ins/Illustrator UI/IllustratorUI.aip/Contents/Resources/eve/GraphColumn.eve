@@ -1,0 +1,28 @@
+layout GraphColumn
+{
+	view subview(identifier: "AIEveSubView", placement: @place_column, show_border: false, layout_theme: @dialog_large, spacing:@unrelated_spacing)
+	{
+		column(vertical:@align_fill, horizontal:@align_fill)
+		{
+			column(vertical:@align_fill, horizontal:@align_fill, spacing:@label_widget_spacing)
+			{
+				static_text(name: "$$$/_GraphCol/Dlg/GraphBarDesign/colListText=Choose Column Design:", horizontal: @align_left);
+				row(horizontal: @align_fill, vertical:@align_fill, guide_mask:[ @guide_label ])
+				{
+					list(identifier: "designslist", height: 200, width: 180, horizontal: @align_fill, vertical:@align_fill);
+					image(identifier: "designpreview", height: 200, width: 180, vertical: @align_fill, show_border:true);
+				}
+			}
+			
+			popup(identifier: "columnTypePopup", bind:@columnTypeValue, name:"$$$/_GraphCol/Dlg/GraphBarDesign/colTypeText=&Column Type:", items: @columnTypeItems, include_custom_item: false);
+			checkbox(name:"$$$/_GraphCol/Dlg/GraphBarDesign/rotateLegend=&Rotate Legend Design", bind: @rotateLegendValue, identifier:"rotateCheckbox", value_on:1, value_off:0);
+			unit_hot_number(identifier:"eachDesignNumber", name:"$$$/_GraphCol/Dlg/GraphBarDesign/repEachText1=&Each Design Represents:", bind: @eachDesignValue, decimal_places:10, min_value:0.0000000001, max_value: 10000000000, digits:8, suffix:"$$$/_GraphCol/Dlg/GraphBarDesign/repEachText2=units");
+			popup(identifier:"fractionsPopup", bind:@fractionsPopupValue, name:"$$$/_GraphCol/Dlg/GraphBarDesign/fractionText=&For Fractions:",items: @fractionPopupItems, include_custom_item: false);
+		}
+		row(reverse: os == @mac, horizontal: @align_right, spacing:@related_spacing)
+        {
+			button(default: true, identifier: "okButton", name: "$$$/gOK=OK", commit_button:true);
+			button(cancel: true, identifier: "cancelButton", name: "$$$/gCancel=Cancel", commit_button:true);
+        }
+    }
+}

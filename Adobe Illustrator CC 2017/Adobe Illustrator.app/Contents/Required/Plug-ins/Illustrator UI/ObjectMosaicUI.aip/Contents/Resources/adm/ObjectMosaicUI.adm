@@ -1,0 +1,6 @@
+sheet ObjectMosaicUI
+{
+	interface:
+		HorzGrp: empty;
+		VertGrp: empty;
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+	<menuItem id="1" text="$$$/BrushManager/LibraryFlyoutMenu/AddToBrushes=&amp;Add To Brushes"></menuItem>
+  <separator id="100"></separator>
+  <separator id="200"></separator>
+  <menuItem id="10" text="$$$/BrushManager/LibraryFlyoutMenu/ThumbnailView=&amp;Thumbnail View"></menuItem>
+	<menuItem id="11" text="$$$/BrushManager/LibraryFlyoutMenu/ListView=&amp;List View"></menuItem>
+	<separator></separator>
+	<menuItem id="2" text="$$$/BrushManager/LibraryFlyoutMenu/Persistent=Pe&amp;rsistent"></menuItem>
+</menu>

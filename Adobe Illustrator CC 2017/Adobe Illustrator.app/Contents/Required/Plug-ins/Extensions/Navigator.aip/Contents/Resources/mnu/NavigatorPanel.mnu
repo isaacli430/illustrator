@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+	<menuItem id="1" text="$$$/Navigator/Mnu/Navigator/ViewArtboardContentsOnly=&amp;View Artboard Contents Only"></menuItem>
+	<separator></separator>
+	<menuItem id="2" text="$$$/Navigator/Mnu/Navigator/2=Panel &amp;Options..."></menuItem>
+</menu>

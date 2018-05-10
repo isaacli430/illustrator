@@ -1,0 +1,388 @@
+layout SVGSaveOptions
+{
+    view subview(identifier: "SVGOptionsSubview", placement: @place_column, show_border: false, margin: 0)
+    {
+    	optional(bind: @ShowSVGBanner, value: true)
+		{
+			subview(identifier: "SVGOptionsBanner", spacing: 0, horizontal: @align_fill, margin: 0, placement: @place_row, show_border: false)
+			{
+				row(horizontal: @align_fill, margin:[10,15,10,15])
+				{
+					static_text(identifier: "SVGOptionsBannerText",
+								font_size: 12,
+								vertical: @align_center,
+								name: "$$$/SVGOptions/Dlg/BannerText=Export web-optimized SVG and other formats.");
+							
+					button(identifier: "SVGOptionsBannerButton", 
+							vertical: @align_center, 
+							horizontal: @align_right,
+							font_size: 12,
+							name: "$$$/SmartExoprtFTUE/Banners/BannerButtonString=Try Export for Screens");
+				}
+			}
+		}
+		
+		subview(identifier: "AIEveSubView", layout_theme: @dialog_large, horizontal: @align_fill, placement: @place_column, show_border: false, 
+			spacing: @unrelated_spacing, child_horizontal: @align_center)
+	    {	
+
+			column(horizontal: @align_fill,spacing: @related_spacing)
+			{			
+				popup(identifier: "SvgProfiles",
+						name: "$$$/svgOptions/Dlg/DTDLabel=S&VG Profiles:",
+						include_custom_item: false, set_default_focus: true, bind:@SvgProfilesCell,
+						items: [{name:"$$$/svgFileFormat/Str/SVG1=SVG 1.0", value:0},
+								{name:"$$$/svgFileFormat/Str/SVG11=SVG 1.1", value:1},
+								{name:"$$$/svgFileFormat/Str/SVG11Tiny=SVG Tiny 1.1", value:2},
+								{name:"$$$/svgFileFormat/Str/SVG11TinyPlusWin=SVG Tiny 1.1 +", value:3},
+								{name:"$$$/svgFileFormat/Str/SVG11Basic=SVG Basic 1.1", value:4}, 
+								{name: "$$$/svgFileFormat/Str/SVG12Tiny=SVG Tiny 1.2", value:5}]);
+									
+					
+				group(identifier: "Fonts",
+					  name: "$$$/svgOptions/Dlg/Fonts=Fonts", 
+					  placement: @place_column, horizontal:@align_fill)
+				{
+					column(child_horizontal: @align_fill)
+					{
+						popup(identifier: "Type",
+										name: "$$$/svgOptions/Dlg/TypeLabel=&Type:", 
+										include_custom_item: false,bind:@TypeCell, 
+										items: [
+											{name:"$$$/svgFileFormat/Str/FontsSVG=SVG", value:1},
+											{name:"$$$/svgFileFormat/Str/FontsOutline=Convert to outline", value:2}]);
+						popup(identifier: "Subsetting",
+											name: "$$$/svgOptions/Dlg/SubsettingLabel=&Subsetting:",
+											include_custom_item: false, bind:@SubsettingCell, 
+											items: [{name:"$$$/svgFileFormat/Str/None=None (Use System Fonts)", value:0},
+												{name:"$$$/svgFileFormat/Str/OnlyGlyphsUsed=Only Glyphs Used", value:1},
+												{name:"$$$/svgFileFormat/Str/CommonEnglish=Common English", value:2},
+												{name:"$$$/svgFileFormat/Str/CommonEnglishGlyphs/Win=Common English & Glyphs Used", value:3},
+												{name:"$$$/svgFileFormat/Str/CommonRoman=Common Roman ", value:4},
+												{name:"$$$/svgFileFormat/Str/CommonRomanGlyphs/Win=Common Roman & Glyphs Used", value:5},
+												{name:"$$$/svgFileFormat/Str/AllGlyphs=All Glyphs", value:6}]);
+					}
+				}
+
+				group(identifier: "Options",
+							  name: "$$$/svgOptions/Dlg/Options=Options",
+							  placement: @place_column, horizontal: @align_fill)
+				{
+					radiogroup(identifier: "ImageLocationGroup", placement: @place_row, horizontal: @align_fill, show_border: false)
+					{
+						radio_button(identifier: "Embed", label: "$$$/svgOptions/Dlg/ImageLocation=Image Location:", 
+								 bind: @ImagesLocationCell, 
+								 name: "$$$/svgOptions/Dlg/Embed=&Embed",
+								 value: 0);
+											
+						radio_button(identifier: "Link",
+								 bind: @ImagesLocationCell, guide_mask: [ @guide_label ],
+								 name: "$$$/svgOptions/Dlg/Link=&Link",
+								 value: 1);
+					}
+								 
+					checkbox(identifier: "Preserve", bind:@IncludePGFCell, 
+										name: "$$$/svgOptions/Dlg/Preserve=&Preserve Illustrator Editing Capabilities");
+				}
+				optional(bind:@SVGAdvanceOptionsCell, value:true, horizontal: @align_fill, margin:0)
+				{
+					group(identifier: "AdvanceOptions",
+								  name: "$$$/svgOptions/Dlg/AdvanceOptions=Advanced Options",
+								  placement: @place_column, horizontal: @align_fill)
+					{
+						popup(identifier: "CSSProperties",
+											name: "$$$/svgOptions/Dlg/CSSProperties=&CSS Properties:",
+											include_custom_item: false,bind:@CSSPropertiesCell,
+											items: [{name:"$$$/svgFileFormat/Str/Presentation=Presentation Attributes", value:0},
+												{name:"$$$/svgFileFormat/Str/StyleAttributes=Style Attributes", value:1},
+												{name:"$$$/svgFileFormat/Str/EntryReference=Style Attributes (Entity References)", value:2},
+												{name:"$$$/svgFileFormat/Str/StyleElements=Style Elements", value:3}]);
+
+						checkbox(identifier: "IncludeUnusedStyles", bind:@IncludeUnusedStylesCell,
+									name: "$$$/svgOptions/Dlg/IncludeUnusedStyles=&Include Unused Graphic Styles");
+						
+						row(horizontal: @align_fill, child_horizontal: @align_left)
+						{						
+							unit_hot_number(identifier: "CoordinatePrecision", bind:@CoordinationPrecisionCell, min_value:1, max_value:7,
+												name: "$$$/svgOptions/Dlg/DecimalPlaces=&Decimal Places:");
+							
+							popup(identifier: "Encoding",
+												name: "$$$/svgOptions/Dlg/Encoding=E&ncoding:",
+												include_custom_item: false, bind:@EncodingCell,
+												items: [{name:"$$$/private/svgFileFormat/Str/ISO=ISO 8859-1", value:0},
+													{name:"$$$/private/svgFileFormat/Str/UTF8=Unicode (UTF-8)", value:1},
+													{name:"$$$/private/svgFileFormat/Str/UTF16=Unicode (UTF-16)", value:2}]);
+						}	
+								
+						separator();
+								
+						row(horizontal: @align_fill, child_horizontal: @align_left, guide_mask: [ @guide_label ])	
+						{
+							column(horizontal: @align_fill, child_horizontal: @align_left)
+							{				
+
+								checkbox(identifier: "AutoKerning", bind:@AutoKerningCell,
+														name: "$$$/svgOptions/Dlg/AutoKerning=Output &fewer <tspan> elements");
+								checkbox(identifier: "UseSVGTextOnPath", bind:@UseSVGTextOnPathCell,
+														name: "$$$/svgOptions/Dlg/UseSVGTextOnPath=&Use <textPath> element for Text on Path");
+								checkbox(identifier: "ResponsiveSVG", bind:@ResponsiveSVGCell,
+												name: "$$$/svgOptions/Dlg/ResponsiveSVG=Responsive");
+							}		
+						
+							column(horizontal: @align_fill, child_horizontal: @align_left)
+							{																									
+
+								checkbox(identifier: "Slicing", bind:@SlicingCell,
+														name: "$$$/svgOptions/Dlg/Slicing=Include Slicin&g Data");
+								
+								checkbox(identifier: "XMP", bind:@XMPCell,
+													name: "$$$/svgOptions/Dlg/XMP=Include &XMP");
+
+							}	
+						}
+					}		
+				}
+							
+				
+						   
+				group(identifier: "Description",
+					  name: "$$$/svgOptions/Dlg/Description=Description",
+					  horizontal: @align_fill, placement: @place_row, child_horizontal:@align_left, child_vertical:@align_top)
+				{
+					 info_icon(icontype: "note", size: "small");
+					 overlay(horizontal: @align_fill, child_horizontal:@align_left, child_vertical:@align_top)
+					 {
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:0)
+						{
+							static_text(characters: 1, name: "$$$/svgOptions/Dlg/Descirbe=Hold the cursor over a setting for additional information.",adjust_baseline_for_single_line_text: false,theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:1)
+						{
+							static_text(characters: 1, name:  "$$$/svgFileFormat/Str/DTDLabel=Specifies the desired SVG XML Document Type Definition.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:2)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/DTD10=The exported file has features and syntax compatible with the SVG 1.0 Specification.",adjust_baseline_for_single_line_text: false,theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:3)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/DTD11=The exported file has features and syntax compatible with the SVG 1.1 Specification.",adjust_baseline_for_single_line_text: false,theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:4)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/DTD11Plus=The exported file has features and syntax compatible with the SVG 1.1 Specification. This profile is suitable for mobile phones.", adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:5)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/DTDTiny11Plus=The exported file has features and syntax compatible with the SVG Tiny 1.1 Specification with the additional support of fill-opacity, stroke-opacity and gradient. This profile is suitable for mobile phones.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:6)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/DTDBasic11=The exported file has features and syntax compatible with the SVG Basic 1.1 Specification. This profile is suitable for PDAs.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:7)
+						{
+							static_text(characters: 1, name:  "$$$/svgFileFormat/Str/DTD12Tiny=The exported file has features and syntax compatible with the SVG Tiny 1.2 Specification. This profile is suitable for mobile phones.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:8)
+						{
+							static_text(characters: 1, name:  "$$$/svgFileFormat/Str/TypeLabel=Select the desired font type setting.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:9)
+						{
+							static_text(characters: 1, name:  "$$$/svgFileFormat/Str/FontCEF=This font format produces the best visual fidelity for displaying text. The Adobe SVG Viewer can display text using this format, however not all viewers support this format.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:10)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/FontSVG=This is the standard W3C SVG font format.  It is supported by all viewers, but does not produce the best visual fidelity for small text due to the lack of font hinting.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:11)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/FontOutline=This font option will convert all text to outlined paths. Note however that the visual fidelity of small outlined text may not be accurately preserved.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:12)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/SpecifyMethod=Specifies the method for choosing which glyphs are saved with the document.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:13)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/NoneProvide=None (Use System Fonts) provides the smallest possible files but relies on the fonts being installed on end user systems.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:14)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/OnlyGlyphsUsedDesc=Only Glyphs Used is the set of glyphs for text that exists in the document. This option is not available for linked fonts. Do not use this option if the textual content of the SVG file might change.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:15)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/CommonEnglishIs=Common English is the set of English font characters. This is useful when the textual content of the SVG file might change.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:16)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/CommonEnglishGlypsUsedIs=Common English && Glyphs Used is the set of English font characters plus all other glyphs used in the document. This is useful when the textual content of the SVG file might change.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:17)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/RomanLetter=Common Roman is the set of Roman-letter font characters. This is useful when the textual content of the SVG file might change.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:18)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/RomanLetterFont=Common Roman && Glyphs Used is the set of Roman-letter font characters plus all other glyphs used in the document. This is useful when the textual content of the SVG file might change.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:19)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/FullSet=All Glyphs is the full set of English and Roman-letter font characters. This is useful when the textual content of the SVG file might change.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:20)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/ReferencedIn=Specifies the location of the images referenced in the document.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:21)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/DirectlyIn=Embed the images directly in the document. This increases file size, but ensures that the images will always be included with the file.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:22)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/Original=Link document to images exported from the original Illustrator file. This is useful for multiple SVG files that share common raster elements. Images are saved as JPEG (no alpha channel) or PNG (alpha channel).",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:23)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/PreserveEditingC=Select this option to preserve Illustrator editing capabilities for future revisions.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:24)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/CSSProp=CSS Properties determine where attributes are placed within the CSS code.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:25)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/HighestPoint=Presentation Attributes applies properties at the highest point in the hierarchy, which allows for the most flexibility for specific edits and transformations.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:26)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/IncreaseFile=Style Attributes creates the most readable files, but may increase file size. Use this for code used in transformations, such as Extensible Stylesheet Language Transformation (XSLT).",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:27)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/FasterRend=Style Attributes (Entity References) results in faster rendering times and reduced file size.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:28)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/BestOption=Style Elements is the best option when creating a single style sheet that formats both HTML and SVG documents. This may result in slower rendering speeds.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:29)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/Precision/Label=Specifies precision of vectors in exported artwork. Values range from 1 to 7, where a high value results in a larger file and increased image quality. 3 is the best choice for most files.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:30)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/Precision/Edit=Specifies precision of vectors in exported artwork. Values range from 1 to 7, where a high value results in a larger file and increased image quality. 3 is the best choice for most files.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:31)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/EncodingSpec=Encoding specifies the format for writing the characters of the SVG file.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:32)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/UseISO=Encode the file characters using the ISO 8859-1 standard. This is suitable for European languages.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:33)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/UseUTF8=Encode the file characters using the Unicode (UTF-8) standard. This is an 8-bit format suitable for a wider variety of languages, such as Japanese, Chinese, or Hebrew, as well as European languages.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:34)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/UseUTF16=Encode the file characters using the Unicode (UTF-16) standard. This is a 16-bit format suitable for a wider variety of languages, such as Japanese, Chinese, or Hebrew, as well as European languages.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:35)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/Namespace=Optimize for the Adobe SVG Viewer through an Adobe XML namespace, to take advantage of faster rendering for features such as filter effects.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:36)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/IncludeExtended=Includes the extended syntax for use with server scripting languages such as Adobe Graphics Server, as well as variables and data sets created in the document.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:37)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/Slicing=Include slicing data to preserve slice locations and optimization settings.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:38)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/Metadata=Include file info (metadata) to preserve information about your document. This is useful to track information such as ^[Author^], ^[Date Created^], and ^[Date Modified^].",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:39)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/AutoKern=Outputs fewer <tspan> elements which will reduce file size. Appearance may change due to ignoring kerning position.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:40)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/TextOnPath=When this font option is checked, <textPath> will be used to write text on a path object. When unchecked, each character is written as a <text> element. Use <textPath> if you want a more compact xml form. Note, <textPath> may not preserve the appearance shown in the Illustrator document.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:41)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/ShowMore=Show entire SVG dialog.",adjust_baseline_for_single_line_text: false,theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:42)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/ShowLess=Show basic SVG dialog.",adjust_baseline_for_single_line_text: false,theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:43)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/ShowCode=Launches a text editor to view the SVG code.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:44)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/Preview=Launches a web browser to view the SVG document.",adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:45)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/IncludeUnusedGS=Select this option to include all the unused graphic styles as CSS within the SVG.", adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@DescriptionPanelCell, value:46)
+						{
+							static_text(characters: 1, name: "$$$/svgFileFormat/Str/ResponsiveSVG=Select this option to make SVG resizable by CSS in web pages.", adjust_baseline_for_single_line_text: false, theme_font_size: @small);
+						}
+
+					 }
+				}
+
+			}		
+	        
+			row(spacing: @separated_spacing,horizontal: @align_fill, child_horizontal: @align_fill, child_vertical: @align_center)
+			{
+				
+				row(child_horizontal: @align_left)
+				{	
+				toggle_button(identifier: "OptionsButton", vertical: @align_fill,
+	                            bind: @SVGAdvanceOptionsCell,
+	                            spring_loaded: true,
+	                            value_on: true,
+	                            value_off: false,
+	                            on_text: "$$$/SVGOptions/Less=Less Options",
+	                            off_text: "$$$/SVGOptions/More=More Options"
+								,commit_button: true);
+						   
+				button(identifier: "Show", action: @ShowAction, vertical: @align_fill,
+						   name: "$$$/SVGOptions/Show=SVG Code..."
+						   ,commit_button: true);
+						   
+					   
+				button(identifier: "Preview", vertical: @align_fill, action: @PreviewAction, show_border:true,
+						   name: "$$$/SVGOptions/Preview=Web Preview...",
+						   image:{normal:"Web_Preview.png", dark_normal: "Web_Preview_D.png"});
+							   
+			}
+				
+				
+			row(horizontal: @align_fill, child_horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+				{
+					button(default: true, commit_button: true,
+						   identifier: "okButton",
+						   name: "$$$/SVGOptions/Ok=OK");
+
+					button(cancel: true, commit_button: true,
+						   identifier: "cancelButton",
+						   name: "$$$/SVGOptions/Cancel=Cancel");
+				}
+			}
+	    }
+    }
+}

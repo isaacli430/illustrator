@@ -1,0 +1,21 @@
+layout SeparationPreviewPanel
+{
+    view subview(identifier: "SeparationPreviewPanelEveSubview",
+                 layout_theme: @panel,
+                 placement: @place_column,
+				 show_border: false,
+				 child_horizontal: @align_fill)
+    {
+		row()
+		{
+			checkbox(identifier: "OverprintPreviewCheckBox", name: "$$$/SeparationPreview/SeparationPreviewPanel/OPPCheckboxText=Overprint Preview");
+		}
+		multicolumn_tree(identifier: "SeperationPreviewTree", wants_focus: false, vertical: @align_fill);
+		row(spacing:@unrelated_spacing)
+		{
+			checkbox(identifier: "ShowUsedSpotCheckBox", name: "$$$/SeparationPreview/SeparationPreviewPanel/UsedSpot=Show Used Spot Colors Only");
+			resize_gripper_gap();
+		}
+		
+    }	
+}

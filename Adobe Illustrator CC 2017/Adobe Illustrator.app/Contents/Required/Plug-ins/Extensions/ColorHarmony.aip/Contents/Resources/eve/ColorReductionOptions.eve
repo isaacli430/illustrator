@@ -1,0 +1,86 @@
+layout ColorReductionOptionsDialog
+{
+view subview(identifier: "ColorReductionOptionsDialog_subview",
+					name: '$$$/ColorHarmonies/ColorReductionOptions/DialogTitle=Color Reduction Options',
+					layout_theme: @dialog,
+					placement: @place_column, 
+					spacing: @unrelated_spacing,
+					show_border: false)
+	{
+		group(header: "popup(identifier: 'ReduceDlgPresetPopup',
+								name: '$$$/ColorHarmonies/HarmonyDialog/PresetsList=P&reset:',
+								include_custom_item: false,
+								items: [{name: '$$$/ColorHarmony/HarmonyDialog/PresetName/Custom=Custom', value: 0},
+										{name: '$$$/ColorHarmony/HarmonyDialog/PresetName/FromLibrary=Color library...', value: 1},
+										{name: '$$$/ColorHarmony/HarmonyDialog/PresetName/1ColorSpot=1 color job...', value: 2},
+										{name: '$$$/ColorHarmony/HarmonyDialog/PresetName/2ColorSpot=2 color job...', value: 3},
+										{name: '$$$/ColorHarmony/HarmonyDialog/PresetName/3ColorSpot=3 color job...', value: 4},
+										{name: '$$$/ColorHarmony/HarmonyDialog/PresetName/WithHarmony=Color Harmony', value: 5}],
+								set_default_focus: true,
+								horizontal: @align_left,
+								alt: '$$$/ColorHarmonies/HarmonyDialog/Tooltips/RecolorPresets=Specifies a recoloring preset'
+                                )",
+			placement: @place_column)
+		{
+			
+			unit_hot_number(identifier: "EditNumberColors",
+					   name: "$$$/ColorHarmonies/HarmonyDialog/NumColorsLabel=&Colors:",
+					   min_value: 1,
+					   digits: 3,
+					   decimal_places: 0,
+					   unit: 'NumberEditUnit_NoUnit',
+					   stepper: true,
+					   popuplist: true,
+					   alt: "$$$/ColorHarmonies/Tooltips/NumColors=Controls how many colors will appear in the recolored artwork"
+					);
+					
+			row(spacing: @related_spacing)
+			{
+				popup(identifier: "ReduceDlgLimitToLib",
+						name: "$$$/ColorHarmonies/ColorReductionOptions/LimitToLibrary=Limit To Library:",
+						include_custom_item: false,
+						image: {normal: "SP_LimitToLibNotEnabledTri_Lg_N.png", dark_normal:"SP_LimitToLibNotEnabledTri_Lg_N_D.png"},
+						alt: '$$$/ColorHarmonies/HarmonyDialog/Tooltips/LimitToLibrary=Limits the color group to colors in a swatch library',	
+						show_popup_arrow: false, wants_focus: false);      
+				static_text(identifier: "SwatchLibrary", horizontal: @align_fill, max_characters: 16, name: "XXXXXXXXXXXXXXXXXXXX");
+			}
+			popup(	identifier: 'ReduceDlgSortMethod',
+					name: "$$$/ColorHarmonies/ColorReductionOptions/SortMethodLabel=&Sort:",
+					bind: @SortPopup,
+					include_custom_item: false,
+					items: [{name: '$$$/ColorHarmonies/ColorReductionOptions/SortMethod/None=None', value: 0},
+							{name: '$$$/ColorHarmony/ColorSpace/SortHueF=Hue - forward', value: 2},
+							{name: '$$$/ColorHarmony/ColorSpace/SortHueB=Hue - backward', value: -2},
+							{name: '$$$/ColorHarmony/ColorSpace/SortLightnessDL=Lightness - dark to light', value: 5},
+							{name: '$$$/ColorHarmony/ColorSpace/SortLightnessLD=Lightness - light to dark', value: -5}]);
+		
+			popup(	identifier: 'ReduceDlgDefaultMapMethod',
+					name: "$$$/ColorHarmonies/ColorReductionOptions/ColorizeMethodLabel=Colorize &Method:",
+					bind: @DefaultMap,
+					include_custom_item: false,
+					items: [{name: "$$$/ColorHarmony/MappingMethodName/Exact=Exact", value: 0},
+							{name: "$$$/ColorHarmony/MappingMethodName/PreserveTints=Preserve Tints", value: 1},
+							{name: "$$$/ColorHarmony/MappingMethodName/ScaleTints=Scale Tints", value: 3},
+							{name: "$$$/ColorHarmony/MappingMethodName/TintsAndShades=Tints and Shades", value: 4},
+							{name: "$$$/ColorHarmony/MappingMethodName/BaseShift=Hue Shift", value: 5}]);
+		
+			checkbox(identifier: 'ReduceDlgCombineTints',
+						name: '$$$/ColorHarmonies/ColorReductionOptions/CombineTints=Combine &Tints');
+			column(spacing: 5)
+			{
+				checkbox(identifier: 'ReduceDlgExcludeWhite',
+						label: "$$$/ColorHarmonies/ColorReductionOptions/ExcludeLabel=Preserve:",
+						name: '$$$/ColorHarmonies/ColorReductionOptions/ExcludeWhite=&White');
+				checkbox(identifier: 'ReduceDlgExcludeBlack',
+						name: '$$$/ColorHarmonies/ColorReductionOptions/ExcludeBlack=&Black');
+				checkbox(identifier: 'ReduceDlgExcludeGrays',
+						name: '$$$/ColorHarmonies/ColorReductionOptions/ExcludeGrays=&Grays');
+			}
+		}
+		row( horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+		{
+			button(default: true,commit_button: true,identifier: "okButton",name: "$$$/gOK=OK");
+			button(cancel: true,commit_button: true,identifier: "cancelButton",name: "$$$/gCancel=Cancel");
+		}	
+	}
+}

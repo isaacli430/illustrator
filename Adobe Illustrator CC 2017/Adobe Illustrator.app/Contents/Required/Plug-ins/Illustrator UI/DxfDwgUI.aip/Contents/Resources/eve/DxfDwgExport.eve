@@ -1,0 +1,153 @@
+layout DxfDwgExport
+{
+    view subview(identifier: "DxfDwgOptions",
+                 layout_theme: @dialog_large,
+                 name: "$$$/DxfDwg/Dlg/ExportParam/Caption=DXF/DWG Options",
+                 placement: @place_column, 
+                 spacing: @unrelated_spacing,
+                 show_border: false)
+    {      
+        column(spacing: @unrelated_spacing)
+        {
+            popup(bind: @AutoCADVersion,
+							identifier: "popup_AutoCAD_version",
+							include_custom_item: false,
+							items: @AutoCADVersionItems,
+							name: '$$$/DxfDwg/Dlg/ExportParam/Cluster/Version=AutoCAD &Version:', 
+							value: 0,
+							set_default_focus: true
+							);
+			row(placement: @place_column,horizontal: @align_fill,spacing: @inter_group_spacing)
+		{
+			group(child_horizontal: @align_fill,
+                  identifier: "ScaleFrame",
+				  horizontal: @align_fill,
+                  name: "$$$/DxfDwg/Dlg/ExportParam/Cluster/Scale=Artwork Scale")
+            {
+				row()
+				{
+					unit_hot_number(name: "$$$/DxfDwg/Dlg/ExportParam/Static/Scale=&Scale:",
+								identifier: "Edit_ScaleFrom",
+								value: 1,
+								decimal_places: 4,
+								min_value: 0.0001,
+								max_value: 10000,
+								bind_controller: @ScaleFrom,
+								bind_view: @ScaleView,	
+								guide_mask: [ @guide_label ],
+								bind_final: true);
+								
+					popup(identifier: "popupScaleType",
+						  include_custom_item: false,
+						  bind: @ScaleType,
+						  guide_mask: [ @guide_label ],
+						  items: @ScaleItems);
+					static_text(guide_mask: [ @guide_label ], name: "=");				 
+					unit_hot_number(suffix: "$$$/DxfDwg/Dlg/ExportParam/Static/Units=Unit(s)",
+								value: 1,
+								identifier: "Edit_To",
+								decimal_places: 4,
+								min_value: 0.0001,
+								max_value: 10000,
+								guide_mask: [ @guide_label ],
+								bind: @ScaleTo);					 									 
+				}
+				checkbox(bind: @ScaleLineWeight,
+						state: "unchecked",
+						identifier: "Check_Lineweights",
+						 value_off: 0,		
+						 value_on: 1,		
+						guide_mask: [ @guide_label ],	
+						name: "$$$/DxfDwg/Dlg/ExportParam/CheckBox/ScaleLineweights=Scale &Lineweights");
+			}
+
+            
+			group(child_horizontal: @align_fill,
+                  identifier: "ColorFrame",
+				  horizontal: @align_fill,
+                  name: '$$$/DxfDwg/Dlg/ExportParam/Cluster/ColorsAndFormat=Color & File Format')
+			{
+				popup(identifier: "numberofcolors",
+						name: '$$$/DxfDwg/Dlg/ExportParam/Cluster/NumColors=Number of &Colors:',
+							  include_custom_item: false,
+							  bind: @NumberOfColors,
+							  horizontal: @align_left,
+							  disabled_items: @DisabledList,
+							  items: @Num_Color_Items);
+				row()
+				{		
+					radiogroup()
+					{
+						radio_button(bind: @RatsterFormat,
+							label: '$$$/DxfDwg/Dlg/ExportParam/Cluster/Format=Raster File Format:',
+							identifier: "Radio_PNG",
+							value: 0,								
+							name: '$$$/DxfDwg/Dlg/ExportParam/RadioButton/PNG=P&NG');
+							
+						radio_button(bind: @RatsterFormat,
+									value: 1,
+									identifier: "Radio_JPEG",
+									name: '$$$/DxfDwg/Dlg/ExportParam/RadioButton/JPEG=&JPEG');
+					}
+				}	
+							 
+				
+			}
+						
+			group(child_horizontal: @align_fill,
+                  identifier: "OptionsFrame",
+				  horizontal: @align_fill,
+                  name: '$$$/DxfDwg/Dlg/ExportParam/Cluster/Options=Options')
+			{
+				radiogroup()
+				{
+					radio_button(bind: @Options,
+								value: 0,
+								identifier: "Radio_Appearance",
+								guide_mask: [ @guide_label ],
+								name: '$$$/DxfDwg/Dlg/ExportParam/RadioButton/PreserveAppearance=&Preserve Appearance');
+					radio_button(bind: @Options,
+								value: 1,
+								identifier: "Radio_Editability",
+								guide_mask: [ @guide_label ],
+								name: '$$$/DxfDwg/Dlg/ExportParam/RadioButton/MaximumEditability=&Maximum Editability');
+				}
+				checkbox(bind: @ExportSelectedArt,
+						 state: "unchecked",
+						 identifier: "Check_ExportSelectedArt",
+						 value_off: 0,								 
+						 value_on: 1,
+						 guide_mask: [ @guide_label ],
+						name: '$$$/DxfDwg/Dlg/ExportParam/CheckBox/ExportOnlySelected=&Export Selected Art Only');
+				checkbox(bind: @AlterPaths,
+						 state: "unchecked",
+						 identifier: "Check_AlterPaths",
+						 value_off: 0,								 
+						 value_on: 1,	
+						 guide_mask: [ @guide_label ],
+						name: '$$$/DxfDwg/Dlg/ExportParam/CheckBox/AlterForAppearance=&Alter Paths for Appearance');
+				checkbox(bind: @OutLineText,
+						 state: "unchecked",
+						 identifier: "Check_OutLineText",
+						 value_off: 0,								 
+						 value_on: 1,	
+						 guide_mask: [ @guide_label ],
+						name: '$$$/DxfDwg/Dlg/ExportParam/CheckBox/OutlineText=&Outline Text');
+			}
+        }
+	
+        row(child_horizontal: @align_right, spacing: @related_spacing, reverse: os == @mac, horizontal: @align_fill)
+        {
+            button(default: true,
+                   identifier: "okButton",
+                   name: "$$$/gOK=OK",
+                   commit_button: true);
+
+            button(cancel: true,
+                   identifier: "cancelButton",
+                   name: "$$$/gCancel=Cancel",
+                   commit_button: true);
+        }
+	}
+    }
+}

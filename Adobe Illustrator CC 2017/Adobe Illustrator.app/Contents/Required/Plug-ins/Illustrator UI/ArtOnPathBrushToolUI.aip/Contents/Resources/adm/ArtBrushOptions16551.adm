@@ -1,0 +1,28 @@
+sheet ArtBrushOptions
+{
+    interface:
+        art_brush_name: "";	
+		pattern_popup_value: 0;
+		Width : 1;
+		Remember_Variation : 100;
+		unlink Variation : 1 <== pattern_popup_value > 1 ? Variation : Remember_Variation;
+		zero_thousand: {min_value: 1, max_value:1000};
+		Proportional: false;
+		brush_scale: 0;
+		direction: 0;
+		selection: 0;
+		flip_along_value: false;
+		flip_across_value: false;
+		colorization_item_value: 0;
+		color_picker: 0;
+		OverlapFoldAdjustDefaultValue: 0;
+		preview_checkbox_checked: false;
+		min_max: 1;
+				
+	logic:
+		when ( ! (pattern_popup_value <= 1) ) relate
+		{
+			Variation		<== Remember_Variation;
+			Remember_Variation	<== Variation;
+		}
+}

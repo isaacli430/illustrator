@@ -1,0 +1,34 @@
+layout TouchCalligraphicToolOptionsPanel
+{
+    view subview(identifier: "TouchCalligraphicToolOptionsPanelSubview",
+				show_border: false,
+				child_horizontal: @align_center,
+				layout_theme:@touch_tooloptions)
+
+    {
+			toggle_button(identifier: "ConstrainedDrawingButton",
+						image: { normal: "SP_TouchConstrainedAngles_Lg_N.png", dark_normal: "SP_TouchConstrainedAngles_Lg_N_D.png" },
+						wants_focus: false); 
+						
+    	separator(orientation: @horizontal);
+		
+	   	subview(identifier: "BrushSizePreviewSubview", width:30, height:30,show_border: false);
+		
+	   	unit_scrubby_number(identifier: "BrushSizeTextEdit",
+							unit:"NumberEditUnit_Point",
+							max_value: 1296,
+		                    min_value: 0,
+		                    decimal_places: 0,
+		                    digits: 0,
+		                    touch_control: true
+							);   
+							
+	   	subview(identifier: "BrushSizeSliderSubview", width : 30, height : 120,show_border: false);
+		
+		toggle_button(identifier: "StylusButton",
+						image: { normal: "SP_TouchPenPreassure_Lg_N.png", dark_normal: "SP_TouchPenPreassure_Lg_N_D.png" },
+						wants_focus: false); 
+						
+	   	separator(orientation: @horizontal);
+	}
+}

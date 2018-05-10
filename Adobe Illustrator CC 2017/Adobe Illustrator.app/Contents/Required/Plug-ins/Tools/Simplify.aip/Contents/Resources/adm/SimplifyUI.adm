@@ -1,0 +1,19 @@
+sheet SimplifyUI
+{
+interface:
+	CurvePrecisionFilter: {min_value: 0, max_value: 100};
+	AngleThresholdFilter: {min_value: 0, max_value: 180};
+	CurvePrecisionCell: 0 <== (StraightLinesCheckBoxCell == false) ? CurvePrecisionCell : RememberCurvePrecisionCell;
+	AngleThresholdCell: 0;
+	RememberCurvePrecisionCell: 0;
+	ShowOriginalCheckBoxCell: false;
+	StraightLinesCheckBoxCell: false;
+	PreviewCheckBoxCell: false;
+	
+logic:
+	when (StraightLinesCheckBoxCell == false) relate
+	{
+		CurvePrecisionCell <== RememberCurvePrecisionCell;
+		RememberCurvePrecisionCell <== CurvePrecisionCell;
+	}
+}

@@ -1,0 +1,17 @@
+layout visibleMenuBarMenu_Mac
+{
+	view menu( id: 8,
+				menubar: true )
+	{
+	menu( text: "$$$/_MBAR/Mnu/VisibleMenuBar/Apple=Apple", id: 1, help_id:   2 ) { separator();  }
+	menu( text: "$$$/_MBAR/Mnu/VisibleMenuBar/File=&File", id:	3, help_id:   26 ) { separator();  }
+	menu( text: "$$$/_MBAR/Mnu/VisibleMenuBar/Edit=&Edit", id:	9, help_id:  28 ) { separator();  }
+	menu( text: "$$$/_MBAR/Mnu/VisibleMenuBar/Object=&Object", id:	10, help_id:  6 ) { separator();  }
+	menu( text: "$$$/_MBAR/Mnu/VisibleMenuBar/Text=&Type", id:	176, help_id:  7 ) { separator();  }
+	menu( text: "$$$/_MBAR/Mnu/VisibleMenuBar/Select=&Select", id:	137, help_id:  50 ) { separator();  }
+	menu( text: "$$$/_MBAR/Mnu/VisibleMenuBar/Effect=Effe&ct", id:	182, help_id:  48 ) { separator();  }
+	menu( text: "$$$/_MBAR/Mnu/VisibleMenuBar/View=&View", id:	183, help_id:  45 ) { separator();  }
+	menu( text: "$$$/_MBAR/Mnu/VisibleMenuBar/Window=&Window", id:	189, help_id:  10 ) { separator();  }
+	menu( text: "$$$/_Menu/Mac/Help=Help", id:	219, help_id:  21 ) { separator();  }
+	}
+}

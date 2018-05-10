@@ -1,0 +1,22 @@
+layout DynamicCornerControlGroup
+{
+     view subview(identifier: "DynamicCornerControlGroup",
+				 layout_theme: @controlbar,
+				 show_border: false,
+				 child_vertical: @align_center,
+				 placement: @place_row,
+				 margin : 0,
+				 spacing: 5,
+				 height:  31)
+    {		
+		optional(identifier: "DynamicCornerControlGroupSubGroup", child_vertical:  @align_center, margin : 0,spacing: @related_spacing, placement: @place_row)			
+		{
+			separator(orientation: @vertical, vertical: @align_fill);
+			link_button(identifier: "DynamicCornerHyperlinkButton",
+							wants_focus: false,
+							name: "$$$/DynamicCorner/MinGrp/Str/Corner=Corners",
+							alt: "$$$/DynamicCorner/MinGrp/Str/DynamicCornerPalette=Live Corners");
+		}					
+    }
+}
+

@@ -1,0 +1,8 @@
+sheet LineSegmentToolsUI
+{
+	interface:
+		fill	: true;
+		length	: 1.0;
+		angle	: 1.0;	
+		hiddenText: 0;
+}

@@ -1,0 +1,31 @@
+layout PreferenceUI
+{
+    view subview(identifier: "AIEvePrefListSubView",
+				 layout_theme: @dialog_large,spacing: @unrelated_spacing,
+				 child_horizontal: @align_fill,
+				 placement: @place_column,
+				 show_border: false)
+    {
+	  row(child_horizontal: @align_left)
+	  {
+		list(identifier: "PreferenceList", width:50,  row_height: 20);
+		
+				optional(margin: 0, bind:@showHiddenList, value: true)
+				{
+					list(identifier: "PreferenceHiddenList", items:@PreferenceListItems );
+				}
+			
+				
+	  }
+	  row(child_horizontal: @align_right, reverse: os == @mac, vertical: @align_bottom,spacing: @related_spacing)
+			{ 
+				button(default: true,
+							identifier: "okButton",commit_button: true,
+							name: "$$$/gOK=OK");
+				button(cancel: true,
+							identifier: "cancelButton",commit_button: true,
+							name: "$$$/gCancel=Cancel");       
+			} 
+			
+     }
+}

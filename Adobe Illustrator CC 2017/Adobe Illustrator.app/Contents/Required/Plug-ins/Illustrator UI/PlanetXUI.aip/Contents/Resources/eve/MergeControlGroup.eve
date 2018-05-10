@@ -1,0 +1,29 @@
+layout MergeControlGroup
+{
+    view subview(identifier: "MergeControlGroup",
+				 placement: @place_row,
+				 layout_theme: @controlbar,
+				 show_border: false,
+				 child_vertical: @align_center,
+				 margin : 0,
+				 spacing: 5,
+				 height:  31
+				 )
+    {
+		optional(identifier: "MergeControlGroupSubGroup",
+				 placement: @place_row,
+				 child_vertical: @align_center,
+				 spacing: 5,
+				 margin: 0)
+		{
+				subview(margin:0, show_border: false, height: 25 , child_vertical:@align_center)
+				{
+					separator(orientation: @vertical, vertical: @align_fill);
+				}
+				button(identifier: "MergeLivePaintButton",
+						name: "$$$/MergeControlGroup/MergeLivePaint/Name=Merge Live Paint",
+						wants_focus: false,
+						alt: "$$$/MergeControlGroup/MergeLivePaint/MergeLivePaintTip=Add selected paths and/or merge Live Paint groups");
+		}
+	}
+}

@@ -1,0 +1,7 @@
+sheet GraphCellStyle
+{
+interface:
+		NumDecimals: 2;
+		CellWidth: 7;
+}
+

@@ -1,0 +1,5 @@
+sheet GaussianBlurUI
+{
+interface:
+	filter: {min_value: 1, max_value: 205};
+}

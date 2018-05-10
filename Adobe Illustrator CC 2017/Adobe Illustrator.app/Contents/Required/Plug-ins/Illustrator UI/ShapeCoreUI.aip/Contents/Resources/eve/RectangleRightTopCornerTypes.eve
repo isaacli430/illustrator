@@ -1,0 +1,17 @@
+layout RectangleRightTopCornerTypes
+{
+     view subview(identifier: "RectangleRightTopCornerTypes",
+					spacing: 0,
+					margin: 0,
+				 	show_border: false,
+					wants_focus: false)
+    {
+		button_bar(identifier: "RightTopCornerType",
+					items:	[
+								{ image: { normal: "SP_NormalRoundingRT_Sm_N.png", dark_normal: "SP_NormalRoundingRT_Sm_N_D.png" }, show_border: true, value: 1, alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/RoundCornerType=Round"},
+								{ image: { normal: "SP_InverseRoundingRT_Sm_N.png", dark_normal: "SP_InverseRoundingRT_Sm_N_D.png" }, show_border: true, value: 2, alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/InvertedRoundCornerType=Inverted Round"},
+								{ image: { normal: "SP_ChamferRT_Sm_N.png", dark_normal: "SP_ChamferRT_Sm_N_D.png" }, show_border: true, value: 3, alt: "$$$/ShapeCoreUI/RectangleProperties/ToolTip/ChamferCornerType=Chamfer"}
+							],
+					wants_focus: false);
+    }
+}

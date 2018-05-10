@@ -1,0 +1,129 @@
+layout PathfinderTrapOptions
+{
+    view subview(placement: @place_column,spacing: @unrelated_spacing,
+					layout_theme: @dialog_large,
+					show_border: false)
+    {
+        column(horizontal: @align_fill,spacing: @inter_group_spacing)
+        {
+				popup(identifier: "operationPopup",
+					  include_custom_item: false,
+					  set_default_focus: true,
+					  items: [ { name: "$$$/Pathfinder/Mnu/16200/1=Add",
+								 value: "uniteCommand" },
+							   { name: "$$$/Pathfinder/Mnu/16200/2=Intersect",
+								 value: "intersectCommand" },
+							   { name: "$$$/Pathfinder/Mnu/16200/3=Exclude",
+								 value: "excludeCommand" },
+							   { name: "$$$/Pathfinder/Mnu/16200/4=Subtract",
+								 value: "backMinusFrontCommand" },
+							   { name: "$$$/Pathfinder/Mnu/16200/5=Minus Back",
+								 value: "frontMinusBackCommand" },
+							   { name: "$$$/Pathfinder/Mnu/16200/6=Divide",
+								 value: "divideCommand" },
+							   { name: "$$$/Pathfinder/Mnu/16200/7=Trim",
+								 value: "trimCommand" },
+							   { name: "$$$/Pathfinder/Mnu/16200/8=Merge",
+								 value: "mergeCommand" },
+							   { name: "$$$/Pathfinder/Mnu/16200/9=Crop",
+								 value: "cropCommand" },
+							   { name: "$$$/Pathfinder/Mnu/16200/10=Outline",
+								 value: "outlineCommand" },
+							   { name: "$$$/Pathfinder/Mnu/16200/11=Hard Mix",
+								 value: "hardCommand" },
+							   { name: "$$$/Pathfinder/Mnu/16200/12=Soft Mix",
+								 value: "softCommand" },
+							   { name: "$$$/Pathfinder/Mnu/16200/13=Trap",
+								 value: "trapCommand" } ],
+					  name: "$$$/Pathfinder/16200/Txt1=&Operation:");
+
+            group(name: "$$$/Pathfinder/16200/Cluster1=Soft Mix Settings",horizontal: @align_fill)
+            {
+				
+				unit_hot_number( identifier: "mixingRateNumberEdit",
+							 name: "$$$/Pathfinder/16200/Txt2=&Mixing Rate:",
+							 decimal_places: 2,
+							 digits: 4,
+							 unit: "NumberEditUnit_Percent"
+							 );				
+            }
+
+            group(name: "$$$/Pathfinder/16200/Cluster2=Trap Settings",horizontal: @align_fill)
+            {
+				
+				unit_hot_number( identifier: "thicknessNumberEdit",
+							 name: "$$$/Pathfinder/16200/Txt4=Thic&kness:",
+							 decimal_places: 2,
+							 digits: 4,
+							 suffix: "$$$/Pathfinder/16200/Txt5=points"
+							 );				
+
+				
+				unit_hot_number( identifier: "heightWidthNumberEdit",
+							 name: "$$$/Pathfinder/16200/Txt6=&Height/Width:",
+							 decimal_places: 2,
+							 digits: 4,
+							 unit: "NumberEditUnit_Percent"
+							 );				
+				
+				unit_hot_number( identifier: "tintReductionNumberEdit",
+							 name: "$$$/Pathfinder/16200/Txt7=Tint &Reduction:",
+							 decimal_places: 2,
+							 digits: 4,
+							 unit: "NumberEditUnit_Percent"
+							 );				
+
+                checkbox(identifier: "processTrapChkbox", guide_mask: [ @guide_label ],
+                         name: "$$$/Pathfinder/16200/chk1=&Traps with Process Color");
+
+                checkbox(identifier: "reverseTrapChkbox", guide_mask: [ @guide_label ],
+                         name: "$$$/Pathfinder/16200/chk2=Re&verse Traps");
+            }
+
+            group(name: "$$$/Pathfinder/16200/Cluster3=Advanced Options",horizontal: @align_fill)
+            {
+				/*
+                edit_number(identifier: "precisionNumberEdit"
+                ,name: "$$$/Pathfinder/16200/Txt8=Pre&cision:"
+                ,suffix: "$$$/Pathfinder/16200/Txt5=points");
+				*/
+				unit_hot_number( identifier: "precisionNumberEdit",
+							 name: "$$$/Pathfinder/16200/Txt8=Pre&cision:",
+							 decimal_places: 2,
+							 digits: 4,
+							 suffix: "$$$/Pathfinder/16200/Txt5=points"
+							 );				
+				
+                checkbox(identifier: "removeRedundantChkBox", guide_mask: [ @guide_label ],
+                         name: "$$$/Pathfinder/16200/chk3=R&emove Redundant Points");
+
+                checkbox(identifier: "divideOutlineChkbox", guide_mask: [ @guide_label ],
+                         name: "$$$/Pathfinder/16200/chk4=Divide and Outline Will Remove &Unpainted Artwork");
+            }
+	  }			
+	row(vertical: @align_fill,horizontal: @align_fill,child_vertical: @align_center,spacing: @separated_spacing)
+		{
+			checkbox(identifier: "previewChkbox",
+				horizontal: @align_center,
+				 name: "$$$/Pathfinder/16200/chk5=&Preview");
+			row(horizontal: @align_fill,spacing: @button_group_spacing)
+			{
+				button(identifier: "defaultButton",
+					name: "$$$/Pathfinder/16200/Btn3=&Defaults",vertical: @align_fill);
+			
+				row(horizontal: @align_fill,
+				child_horizontal: @align_right,
+				reverse: os == @mac, spacing: @related_spacing)
+				{
+					button(name: "$$$/gOK=OK",
+        					identifier: "okButton", commit_button: true);
+					button(name: "$$$/gCancel=Cancel",
+        					identifier: "cancelButton", commit_button: true);
+				}
+			}
+		}			
+			            
+      
+
+    }
+}

@@ -1,0 +1,14 @@
+layout transformMenu
+{
+	view menu( id: 23,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/Transform/Again=&Transform Again", id:	22, help_id:0);
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/Transform/Move=&Move...", id:			54, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Transform/Rotate=&Rotate...", id:		162, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Transform/Reflect=R&eflect...", id:		164, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Transform/Scale=&Scale...", id:			163, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Transform/Shear=S&hear...", id:			165, help_id:0);
+}
+}

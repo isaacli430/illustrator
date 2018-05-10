@@ -1,0 +1,27 @@
+layout CreateMesh
+{
+    view subview(layout_theme: @dialog_large, spacing: @unrelated_spacing, show_border: false)
+    {
+        column()
+        {
+			unit_hot_number(bind: @Rows, identifier: "rows", digits: 3, decimal_places: 0, max_value: 50, min_value: 1, name: "$$$/SmoothShade/Dialog/Rows=&Rows:", set_default_focus: true);
+			unit_hot_number(bind: @Columns, identifier: "columns", digits: 3, decimal_places: 0, max_value: 50, min_value: 1, name: "$$$/SmoothShade/Dialog/Columns=&Columns:");
+            popup(bind: @Appearance, identifier: "appearance", name: "$$$/SmoothShade/Dialog/Appearance=&Appearance:", include_custom_item: false, 
+			items: [{ name: "$$$/SmoothShade/Dialog/AppearanceFlat=Flat", value: 0 },
+					{ name: "$$$/SmoothShade/Dialog/AppearanceCenter=To Center", value: 1 },
+					{ name: "$$$/SmoothShade/Dialog/AppearanceEdge=To Edge", value: 2 } ]);
+			unit_hot_number(bind: @Highlight, identifier: "highlight", digits: 4, max_value: 100, min_value: 0, decimal_places: 2, name: "$$$/SmoothShade/Dialog/Highlight=&Highlight:", unit: "NumberEditUnit_Percent");
+        }
+
+        row(horizontal: @align_fill, child_vertical: @align_center)
+        {
+            checkbox(bind: @Preview, identifier: "preview", horizontal: @align_left, guide_mask: [@guide_label], name: "$$$/SmoothShade/Dialog/Preview=&Preview");
+            panel(); // dummy panel, to 'give' space between the controls.
+            row(reverse: os == @mac, horizontal: @align_right, spacing: @related_spacing)
+            {
+				button(name: "$$$/gOk=OK", commit_button: true, identifier: "okButton");
+				button(name: "$$$/gCancel=Cancel", commit_button: true, identifier: "cancelButton");
+			}            
+        }
+    }
+}

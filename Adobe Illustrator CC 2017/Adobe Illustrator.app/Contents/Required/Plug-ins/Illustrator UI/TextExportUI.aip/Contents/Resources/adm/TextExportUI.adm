@@ -1,0 +1,6 @@
+sheet TextExportUI
+{
+	interface:
+		platform: "";
+		encoding: "";
+}

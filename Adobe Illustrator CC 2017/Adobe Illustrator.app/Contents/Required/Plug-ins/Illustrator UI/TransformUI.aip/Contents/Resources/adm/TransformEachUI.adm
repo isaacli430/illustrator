@@ -1,0 +1,34 @@
+sheet TransformEachUI
+{
+	interface:
+		horizontalScale	: 1.0;
+		vericalScale	: 1.0;
+		horizontalMove	: 1.0;	
+		vericalMove		: 1.0;	
+		rotate			: 0.0;	
+		copyNumberEdit	: 1.0;
+		view			: "copyButtonView";
+		copyButtonClicked: true;
+		ninePointPinSelector: 4;
+		ShowScaleRectangleCorners: true;
+		showPreview: false;
+		showCopyButton:true;
+		reflectX:false;
+		reflectY: false;
+		random: false;
+		scaleStrokeAndEffect: false;
+		scaleCornerRadiiForShapes: false;
+		transformObjects:  true;
+		transformPatterns: false;
+		scaleFilter: {min_value: 0, max_value: 200};
+		scaleValueRange: {min_value: -4000, max_value: 4000};
+		moveFilter: {min_value: -100, max_value: 100};
+		moveValueRange: {min_value: -4000, max_value: 4000};
+		
+	logic:
+		relate
+		{
+			transformObjects <== (!transformPatterns && !transformObjects) ? !transformPatterns : transformObjects;
+			transformPatterns <== (!transformPatterns && !transformObjects) ? !transformObjects : transformPatterns;
+		}
+}

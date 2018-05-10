@@ -1,0 +1,24 @@
+/* [1] */
+-108
+/* [2] */
+The filter cannot complete because there isn’t enough memory (RAM) available.\n\n[^0]
+/* [3] */
+271
+/* [4] */
+The filter cannot complete because there isn’t enough memory (RAM) available.\n\n[^0]
+/* [5] */
+SEGM
+/* [6] */
+The filter cannot complete because a path has too many anchor points.\n\n[^0]
+/* [7] */
+NESS
+/* [8] */
+The filter cannot complete because a layer is locked or invisible.\n\n[^0]
+/* [9] */
+!sel
+/* [10] */
+You must select a path first.\n\n[^0]
+/* [11] */
+<others>
+/* [12] */
+The filter cannot complete because of an unknown error.\n\n[^0]

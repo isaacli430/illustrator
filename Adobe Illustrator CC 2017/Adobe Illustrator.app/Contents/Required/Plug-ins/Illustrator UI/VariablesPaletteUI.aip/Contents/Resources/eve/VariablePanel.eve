@@ -1,0 +1,82 @@
+layout VariablePanel
+{
+    view subview(identifier: "VariableOptions",
+				 show_border: false, margin: gPanelToolbarSubviewMargin,
+				 layout_theme: @panel, width: gStandardMinPanelWidth
+				 )
+    {
+		column(horizontal: @align_fill, vertical: @align_fill, spacing: gPanelToolbarTopSpacing)
+		{
+			row(spacing: 0, horizontal: @align_fill)
+			{
+				button(identifier: "CaptureDSButton", image: {normal: "SP_Snapshot_Sm_N.png", dark_normal: "SP_Snapshot_Sm_N_D.png"}, alt: "$$$/VariablesPalette/Str/CaptureDataSet=Capture Data Set");
+				combobox(identifier: "dataSetPopup", name: '$$$/VariablesPalette/16000/Txt=Data Set: ', max_characters: 255, popup_minimum_width_chars: 4, popup_maximum_width_chars: 10, horizontal: @align_fill, alt: "$$$/VariablesPalette/Str/RenDataSet=Rename Data Set");
+				button(identifier: "PrevDSButton", image: {normal: "SP_PreviousPage_Sm_N.png", dark_normal: "SP_PreviousPage_Sm_N_D.png"}, alt:  "$$$/VariablesPalette/Str/PreviousDataSet=Previous Data Set");
+				button(identifier: "NextDSButton", image: {normal: "SP_NextPage_Sm_N.png", dark_normal: "SP_NextPage_Sm_N_D.png"}, alt: "$$$/VariablesPalette/Str/NextDataSet=Next Data Set");
+			}
+    		
+			column(horizontal: @align_fill, vertical: @align_fill, spacing: -1)
+			{
+				buttongroup(horizontal: @align_fill, spacing: -1)
+				{
+					button(name:  "$$$/VariablesPalette/Str/T=T", height: 22, identifier: "sortByTypeButton", min_characters: 0, alt: "$$$/VariablesPalette/Str/SortByTitle=Sort by Type");
+					button(identifier: "sortByVarButton", width: 100, height: 22, name:  "$$$/VariablesPalette/Str/V=Variables", alt: "$$$/VariablesPalette/Str/SortByVariable=Sort by Variable");
+					button(identifier: "sortByObjButton", horizontal: @align_fill, height: 22, name: "$$$/VariablesPalette/Str/O=Objects", alt: "$$$/VariablesPalette/Str/SortByObject=Sort by Object");
+				}
+				multicolumn_tree(identifier: "DataSets", horizontal: @align_fill, vertical: @align_fill, width: 220, height: 100, wants_focus: false);
+			}
+				
+			row(vertical: @align_bottom, horizontal: @align_fill)
+			{
+				row(horizontal: @align_left)
+				{	
+					overlay()
+					{
+						panel(bind: @lockButton, value: true)
+						{
+							buttongroup(spacing: gPanelToolbarIconSpacing, child_width: gPanelToolbarIconWidth, child_height: gPanelToolbarIconHeight) 
+							{
+								button(identifier: "LockButton", wants_focus: false, image: {normal: "SP_LockAll_Wi_N.png", dark_normal: "SP_LockAll_Wi_N_D.png"}, alt: "$$$/VariablesPalette/Str/UnlockVariables=Unlock Variables");
+							}
+						}	
+						panel(bind: @lockButton, value: false)
+						{
+							buttongroup(spacing: gPanelToolbarIconSpacing, child_width: gPanelToolbarIconWidth, child_height: gPanelToolbarIconHeight) 
+							{	
+								button(identifier: "UnlockButton", wants_focus: false, image: {normal: "SP_UnlockAll_Wi_N.png", dark_normal: "SP_UnlockAll_Wi_N_D.png"}, alt: "$$$/VariablesPalette/Str/LockVariables=Lock Variables");
+							}	
+						}
+					}
+				}
+
+				row(horizontal: @align_right, child_vertical: @align_fill)
+				{
+					buttongroup(spacing: gPanelToolbarIconSpacing, child_width: gPanelToolbarIconWidth, child_height: gPanelToolbarIconHeight) 
+					{
+						button(identifier: "MakeObjDynaButton",
+							image: {normal: "SP_DynamicObject_Wi_N.png",dark_normal:"SP_DynamicObject_Wi_N_D.png"},
+							alt: "$$$/VariablesPalette/Str/MakeObjectDynamic=Make Object Dynamic");
+
+          				button(identifier: "ViewObjDynaButton",
+							image: {normal: "SP_ViewDynamic_Wi_N.png",dark_normal:"SP_ViewDynamic_Wi_N_D.png"},
+							alt: "$$$/VariablesPalette/Str/VisibilityDynamic=Make Visibility Dynamic");
+
+          				button(identifier: "UnlinkButton",
+							image: {normal: "SP_Unlink_Wi_N.png",dark_normal:"SP_Unlink_Wi_N_D.png"},
+							alt:  "$$$/VariablesPalette/Str/UnbindVariable=Unbind Variable");
+
+          				button(identifier: "NewButton",
+							image: {normal: "SP_New_Wi_N.png",dark_normal:"SP_New_Wi_N_D.png"},
+							alt: "$$$/VariablesPalette/Str/NewVariable=New Variable");
+
+          				button(identifier: "DeleteButton",
+							image: {normal: "SP_Delete_Wi_N.png",dark_normal:"SP_Delete_Wi_N_D.png"},
+							alt: "$$$/VariablesPalette/Str/DeleteVariable=Delete Variable");
+				
+						resize_gripper_gap();
+					}
+				}
+			}
+		}
+    }
+}

@@ -1,0 +1,19 @@
+sheet ShearDialog
+{
+	interface:
+		AxisRadioGp: 0;
+		ShearAngleEditNumberCell: 0;		
+		AngleEditNumberCell: 0;
+		ObjectCheckBoxCell: true <== (dummyCell == true)? ObjectCheckBoxCell : true;
+		PatternCheckBoxCell: false <== ( dummyCell == true)? PatternCheckBoxCell : false ;
+		PreviewCheckBoxCell: true;
+		dummyCell: true;
+		
+	logic:
+	when (dummyCell) relate
+	{
+		ObjectCheckBoxCell <== (!PatternCheckBoxCell && !ObjectCheckBoxCell)? !PatternCheckBoxCell :ObjectCheckBoxCell;
+		PatternCheckBoxCell <== (!PatternCheckBoxCell && !ObjectCheckBoxCell)? !ObjectCheckBoxCell :PatternCheckBoxCell;
+		
+	}
+}

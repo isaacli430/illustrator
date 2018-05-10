@@ -1,0 +1,33 @@
+layout PixelPerfectControlGroup
+{
+     view subview(identifier: "PixelPerfectControlGroup",
+				 layout_theme: @controlbar,
+				 show_border: false,
+				 child_vertical: @align_center,
+				 placement: @place_row,
+				 margin : 0,
+				 spacing: 5,
+				 height: 31)
+    {	
+		optional(identifier: "PixelPerfectSubGroup", child_vertical: @align_center, margin : 0, spacing: 0)
+		{
+			row(child_vertical: @align_fill, spacing:0)
+			{
+				button(identifier: "MakePixelPerfectButton",
+                        image: {normal: "S_MakePixelPerfect_Md_N.png", dark_normal: "S_MakePixelPerfect_Md_N_D.png"},
+                        alt: "$$$/PixelPerfect/ControlPanel/MakePixelPerfectText=Align selected art to pixel grid");
+						
+				button(identifier: "SnapToPixelButton",
+                        image: {normal: "S_SnapToPixel_Md_N.png", dark_normal: "S_SnapToPixel_Md_N_D.png"},
+                        alt: "$$$/PixelPerfect/ControlPanel/SnapToPixel=Align art to pixel grid on creation and transformation");
+
+				popup(identifier: "SnapToPixelDropDownButton",
+						image: "P_DropDownArrow_N.png",
+						alt: "$$$/PixelPerfect/ControlPanel/PixelPerfectOptionsText=Advance options for Snap to Pixel",
+						wants_focus: false,
+						button_view: true,
+						allow_mouse_scroll: false);			
+			}						
+		}
+	}
+}

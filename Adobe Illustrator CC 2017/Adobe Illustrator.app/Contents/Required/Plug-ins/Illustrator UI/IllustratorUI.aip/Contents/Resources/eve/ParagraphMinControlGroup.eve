@@ -1,0 +1,19 @@
+layout ParagraphMinControlGroup
+{
+     view subview(identifier: "ParagraphMinControlGroup",
+				 layout_theme: @controlbar,
+				 show_border: false,
+				 child_vertical: @align_center,
+				 margin : 0,
+				 spacing: 5,
+				 height:  31)
+    {		
+		optional(identifier: "ParagraphHyperlinkSubGroup", child_vertical:  @align_center, margin : 0)			
+		{
+			link_button(identifier: "ParagraphHyperlinkButton",
+							name: "$$$/_TextDlgs/ParagraphControlGroupName=Paragraph",
+							alt: "$$$/_TextDlgs/ParagraphPaletteTip=Paragraph Panel");
+		}
+    }
+}
+

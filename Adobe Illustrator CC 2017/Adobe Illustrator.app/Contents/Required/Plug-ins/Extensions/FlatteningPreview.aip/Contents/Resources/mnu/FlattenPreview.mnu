@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+	<menuItem id="1" text="$$$/FlatteningPreview/PreviewPalette/PaletteMnu/HideOptions=Hide Options"></menuItem>
+	<separator></separator>
+	<menuItem id="3" text="$$$/FlatteningPreview/PreviewPalette/PaletteMnu/QuickPreview=Quick Preview"></menuItem>
+	<menuItem id="4" text="$$$/FlatteningPreview/PreviewPalette/PaletteMnu/DetailedPreview=Detailed Preview"></menuItem>
+	<separator></separator>
+	<menuItem id="6" text="$$$/FlatteningPreview/PreviewPalette/PaletteMnu/SavePreset=Save Transparency Flattener Preset..."></menuItem>
+	<menuItem id="7" text="$$$/FlatteningPreview/PreviewPalette/PaletteMnu/RedefinePreset=Redefine Preset "></menuItem>
+</menu>

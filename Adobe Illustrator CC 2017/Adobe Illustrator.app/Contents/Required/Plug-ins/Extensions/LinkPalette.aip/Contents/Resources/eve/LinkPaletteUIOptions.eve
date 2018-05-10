@@ -1,0 +1,67 @@
+layout PaletteOptionsUI
+{
+	view subview(child_horizontal: @align_fill,
+                 identifier: "AIEveSubView",
+                 layout_theme: @dialog_large,
+                 show_border: false)
+	{
+	
+		column(child_horizontal: @align_fill, placement: @place_col)
+		{
+			group(name: "$$$/LinkPalette/Dlg/PaletteOptions/STATIC/Win=Thumbnail Size",
+					identifier: "ThumbnailSizeGroup")
+			{
+				radiogroup(placement: @place_col, show_border: false, margin:0, spacing:5, identifier: "ThumbnailSizeRadioGroup")
+				{
+					radio_button(bind: @ThumbnailSizeRadioGp,
+								name: "$$$/LinkPalette/Dlg/PaletteOptions/NoIcons=&None",
+								identifier: "NoIcons",
+								value: @NoIcons);
+					row(horizontal: @align_left, spacing:0)
+					{
+						radio_button(bind: @ThumbnailSizeRadioGp, identifier: "SmallIcons", value: @small);
+						button(identifier: "SmallIconsImageButton", wants_focus:false, show_border: false, image: {normal: "SP_ThumbnailSize_31x31_N.png", dark_normal: "SP_ThumbnailSize_31x31_N_D.png"} );
+						
+					}
+					row(horizontal: @align_left, spacing:0)
+					{
+						radio_button(bind: @ThumbnailSizeRadioGp, identifier: "MediumIcons", value: @medium);
+						button(identifier: "MediumIconsImageButton", wants_focus:false, show_border: false, image: {normal: "SP_ThumbnailSize_56x56_N.png", dark_normal: "SP_ThumbnailSize_56x56_N_D.png"});
+					}
+					row(horizontal: @align_left, spacing:0)
+					{
+						radio_button(bind: @ThumbnailSizeRadioGp, identifier: "LargeIcons", value: @large);
+						button(identifier: "LargeIconsImageButton", wants_focus:false, show_border: false, image: {normal: "SP_ThumbnailSize_81x81_N.png", dark_normal: "SP_ThumbnailSize_81x81_N_D.png"});
+						overlay()
+						{
+							panel(bind:@HiddenSpace, value:0)
+							{				
+								display_text(value:"abcdefghijklm");
+							}
+						}
+					}
+				}
+			
+			}
+		column(spacing: @unrelated_spacing)
+		{
+			checkbox(name: '$$$/LinkPalette/Dlg/PaletteOptions/TransparencyInteractionCheck=Show DCS &Transparency Interactions', 
+						identifier: "showTransparencyInteractions", guide_mask: [@guide_label]);				
+
+			
+			row(horizontal: @align_right,
+ 					reverse: os == @mac, spacing: @related_spacing)
+			{
+
+				button(commit_button: true,
+                   			identifier: "okButton",
+                   			name: "$$$/gOK=OK");
+
+            			button(commit_button: true,
+                  	 		identifier: "cancelButton",
+                  	 		name: "$$$/gCancel=Cancel");
+			}
+     	}	
+       	}		
+	}
+}

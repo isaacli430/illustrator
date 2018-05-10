@@ -1,0 +1,72 @@
+layout FlattenTransparencyUI16200
+{
+    view subview(identifier: "AIEveSubView",
+				layout_theme: @dialog_large,
+				show_border: false,
+				spacing: @unrelated_spacing)
+	{		
+	column()
+	{		
+			combo_slider(identifier: "BalanceSlider",
+                                    slider_point: @up,
+                                    horizontal: @align_fill,
+                                    min_max_filter: @filterRasterVector,
+                                    name: "$$$/FlattenTransparency/Dlg/RasterVectorBalance=Raster/Vector &Balance:",
+                                    decimal_places: 0,
+									set_default_focus: true,
+									minLength: 150,
+									ticks_pos: [0, 0.250 ,0.500, 0.750, 1],
+ 									show_ticks: true,
+									snap_on_ticks: true,
+                                    unit: "NumberEditUnit_NoUnit",                               
+                                    left_mini_label: "$$$/FlattenTransparency/Dlg/Rasters=Rasters",
+                                    right_mini_label:  "$$$/FlattenTransparency/Dlg/Vectors=Vectors",                                      
+                                    digits: 3);				
+		
+			unit_hot_number(identifier: "LineResolutionPopUp", 
+					name: "$$$/FlattenTransparency/Dlg/MaximumResolution=&Line Art and Text Resolution:", 
+					popuplist:true,
+					digits: 7,
+					min_value:1,
+					max_value:9600,
+					unit: "NumberEditUnit_NoUnit",                
+					decimal_places: 2,
+					suffix: "$$$/FlattenTransparency/Dlg/PPI=ppi" 
+					);
+			unit_hot_number(identifier: "GradientResolutionPopUp", 
+					name: "$$$/FlattenTransparency/Dlg/MinimumResolution=&Gradient and Mesh Resolution:", 
+					popuplist:true,
+					digits: 7,
+					min_value:1,
+					max_value:9600,
+					unit: "NumberEditUnit_NoUnit",    
+					decimal_places: 2,
+					suffix: "$$$/FlattenTransparency/Dlg/PPI=ppi"  
+					);
+			checkbox(default: true,
+					identifier: "convertText",
+					guide_mask: [ @guide_label ],
+					name: "$$$/FlattenTransparency/Dlg/CheckboxOutlineText=Convert All &Text to Outlines");	
+			checkbox(default: true,
+					identifier: "convertStrokes",
+					guide_mask: [ @guide_label ],
+					name: "$$$/FlattenTransparency/Dlg/CheckboxOutlineStrokes=Convert All &Strokes to Outlines");				
+			checkbox(default: true,
+				identifier: "clipComplex",
+				guide_mask: [ @guide_label ],
+				name: "$$$/FlattenTransparency/Dlg/CheckboxClipComplexRegions=Clip Comple&x Regions");		
+			checkbox(default: false,
+				identifier: "antiAliasOption",
+				guide_mask: [ @guide_label ],
+				name: "$$$/FlattenTransparency/Dlg/CheckboxAntiAliasOption=&Anti-alias Rasters");
+	}
+					
+	 row(horizontal: @align_right, reverse: os == @mac, child_vertical: @align_center, spacing: @related_spacing)
+      {
+		 button(identifier: "okButton", commit_button: true,
+           name: "$$$/gOK=OK");
+		 button(identifier: "cancelButton", commit_button: true,
+           name: "$$$/gCancel=Cancel");	
+       }
+	}
+}

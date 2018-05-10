@@ -1,0 +1,14 @@
+sheet SoftPoofSetupCustomize
+{
+	interface:
+		preserveCheckboxTitleIndex: 0;
+		enablePreserveCheckbox: true;
+		enableSimulatePaperCheckbox: true;
+		enableSimulateBlackinkCheckbox: true;
+		previewCheckBox: true;
+		
+		preserveCheckbox: false <== enablePreserveCheckbox == true ? preserveCheckbox : false;
+		unlink renderingPopup: 0 <== preserveCheckbox == false ? renderingPopup : 0;
+		unlink simulatePaperCheckBox: true <== enableSimulatePaperCheckbox == true? simulatePaperCheckBox : false;
+		simulateBlackinkCheckbox: true <== simulatePaperCheckBox == false && enableSimulateBlackinkCheckbox == true? simulateBlackinkCheckbox : simulatePaperCheckBox == true?  true : false ;
+}

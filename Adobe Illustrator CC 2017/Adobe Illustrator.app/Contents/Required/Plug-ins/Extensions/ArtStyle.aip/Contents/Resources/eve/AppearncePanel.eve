@@ -1,0 +1,54 @@
+layout AppearancePanel
+ {
+     view subview(identifier: "AIEveSubView",
+                                  placement: @place_column,
+                                  layout_theme: @panel,
+                                  show_border: false,
+								  margin: gPanelToolbarSubviewMargin,
+								  spacing: gPanelToolbarTopSpacing,
+                                  child_horizontal: @align_fill)
+         {
+                multicolumn_tree(identifier: "MCT",
+                                                         wants_focus: false,
+                                                         horizontal: @align_fill,
+                                                         vertical: @align_fill);
+                                                         
+				row()
+				{
+					buttongroup(horizontal: @align_left, child_vertical: @align_fill,
+											spacing: gPanelToolbarIconSpacing, child_width: gPanelToolbarIconWidth, child_height: gPanelToolbarIconHeight)
+                         {
+                                 button(identifier: "AddStroke",
+                                                 image: {normal: "SP_AddStroke_Xs_N.png",dark_normal: "SP_AddStroke_Xs_N_D.png"},
+                                                 alt: "$$$/ArtStyle/Str/16724=Add New Stroke",
+                                                 wants_focus: false);
+								 button(identifier: "AddFill",
+                                                 image: {normal: "SP_AddFill_Xs_N.png",dark_normal: "SP_AddFill_Xs_N_D.png"},
+                                                 alt: "$$$/ArtStyle/Str/16725=Add New Fill",
+                                                 wants_focus: false);
+								 button(identifier: "AddEffect",
+                                                 image: {normal: "SP_EffectsTri_Wi_N.png",dark_normal: "SP_EffectsTri_Wi_N_D.png"},
+                                                 alt: "$$$/ArtStyle/Str/16726=Add New Effect",
+                                                 wants_focus: false);
+                         }
+					 buttongroup(horizontal: @align_right, child_vertical: @align_fill,
+											spacing: gPanelToolbarIconSpacing, child_width: gPanelToolbarIconWidth, child_height: gPanelToolbarIconHeight)
+                         {
+                                 button(identifier: "Clear",
+                                                 image: {normal: "SP_None_Xs_N.png",dark_normal: "SP_None_Xs_N_D.png"},
+                                                 alt: "$$$/ArtStyle/Str/16710=Clear Appearance",
+                                                 wants_focus: false);
+                                 button(identifier: "Duplicate",
+                                                 image: {normal: "SP_New_Wi_N.png",dark_normal: "SP_New_Wi_N_D.png"},
+                                                 alt: "$$$/ArtStyle/Str/16707=Duplicate Selected Item",
+                                                 wants_focus: false);
+                                 button(identifier: "Delete",
+                                                 image: {normal: "SP_Delete_Wi_N.png",dark_normal: "SP_Delete_Wi_N_D.png"},
+                                                 alt: "$$$/ArtStyle/Str/16708=Delete Selected Item",
+                                                 wants_focus: false);
+ 
+                                 resize_gripper_gap();
+                         }
+				}
+         }
+}

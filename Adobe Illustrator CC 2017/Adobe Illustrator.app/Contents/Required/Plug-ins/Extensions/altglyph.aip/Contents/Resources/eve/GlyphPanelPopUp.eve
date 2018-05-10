@@ -1,0 +1,9 @@
+layout GlyphsPanelPopUp
+{
+   view subview(identifier: "GlyphsPanelPopUpSubView",
+			        layout_theme: @panel,
+				 show_border: false)
+	{
+		
+	} 	
+}

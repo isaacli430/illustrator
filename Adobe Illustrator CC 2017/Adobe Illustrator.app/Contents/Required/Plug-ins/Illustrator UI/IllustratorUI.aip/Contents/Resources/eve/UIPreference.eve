@@ -1,0 +1,120 @@
+layout UIPreference
+{
+interface:
+	
+	view subview(identifier: "UIPrefEveSubView",
+				 placement: @place_column,
+				 show_border: false, 
+				 margin: [22,15,0,15],
+				 layout_theme: @dialog_large)
+	{
+		column(spacing: 0, horizontal: @align_fill)
+		{
+			static_text(identifier: "UIPStaticTextCaption",
+					name: "$$$/PrefsDlg/UIPDlg/Caption=User Interface"
+					);
+		
+			separator(identifier: "UIPTopSeparator");
+		}
+		
+		row(horizontal: @align_fill)
+		{
+			column( child_horizontal: @align_right, spacing : @inter_group_spacing, margin:[10,0,0,0], vertical : @align_fill)
+			{
+				static_text(identifier: "UIPBrightnessPresetsText",
+								name: "$$$/PrefsDlg/UIPDlg/UIPStaticTextBrightness=&Brightness:"
+								);
+				static_text(identifier: "Canvas_same_as_sliderText",
+								name: "$$$/PrefsDlg/UIPDlg/UIanvasBrightness=Canvas Color:"
+								);
+			}
+			column(vertical : @align_fill)
+			{
+				button_bar(identifier: "UIPrefBrightnessButtonBar", show_border: false, guide_mask: [ @guide_label ],
+								label: "$$$/PrefsDlg/UIPDlg/UIPStaticTextBrightness=&Brightness:",
+								items: [
+									{image: {normal:"SP_Transparent_N.png"}, show_border: false, value:0, alt: "$$$/PrefsDlg/UIPDlg/UIPStaticTextDark=Dark"},
+									{image: {normal:"SP_Transparent_N.png"}, show_border: false, value:1, alt: "$$$/PrefsDlg/UIPDlg/UIPStaticTextMediumDark=Medium Dark"},
+									{image: {normal:"SP_Transparent_N.png"}, show_border: false, value:2, alt: "$$$/PrefsDlg/UIPDlg/UIPStaticTextMediumLight=Medium Light"},
+									{image: {normal:"SP_Transparent_N.png"}, show_border: false, value:3, alt: "$$$/PrefsDlg/UIPDlg/UIPStaticTextLight=Light"}
+								]
+							);
+				radiogroup()
+				{
+					radio_button(bind: @UICanvasBrightnessOption,
+									value: 0, guide_mask: [ @guide_label ],
+									identifier: "Canvas_same_as_slider",
+									name: "$$$/PrefsDlg/UIPDlg/UICanvasSameAsSlider=&Match User Interface Brightness");
+					radio_button(bind: @UICanvasBrightnessOption,
+									value: 1, guide_mask: [ @guide_label ],
+									identifier: "Canvas_brightness_cell",
+									name: "$$$/PrefsDlg/UIPDlg/UICanvasBrightnessCell=&White");
+				}
+			}
+		}
+		
+		checkbox(identifier: "UIPCheckboxCollapse",
+					name: "$$$/PrefsDlg/UIPDlg/UIPCheckboxCollapse=&Auto-Collapse Iconic Panels",
+					bind: @UICollapseCell, horizontal: @align_fill, guide_mask: [ @guide_label ]);
+		
+		checkbox(identifier: "UIPCheckboxOpen",
+					name: "$$$/PrefsDlg/UIPDlg/UIPCheckboxOpen=&Open Documents As Tabs",
+					bind: @UIOpenCell, horizontal: @align_fill, guide_mask: [ @guide_label ]);
+					
+		checkbox(identifier: "UIPCheckboxLargeTabs",
+					name: "$$$/PrefsDlg/UIPDlg/UIPCheckboxLargeTabs=&Large Tabs",
+					bind: @UITabsCell, horizontal: @align_fill, guide_mask: [ @guide_label ]);
+		
+		column(guide_mask: [ @guide_label ])
+		{
+			optional(placement: @place_column, bind: @UIScalePref, value: os != @mac)
+			{	
+				panel(margin: 0, placement: @place_row)
+				{
+					checkbox(identifier: "UIPCheckboxScaleUI",
+								name: "$$$/PrefsDlg/UIPDlg/UIPCheckboxScaleUI=For High-PPI Displays, Scale the User Interface",
+								horizontal: @align_fill, guide_mask: [ @guide_label ]);
+					
+					info_icon(icontype:"note", size: "small", alt: "$$$/PrefsDlg/UIPDlg/Str/ToolTip/ScaleUI=Illustrator only supports UI scaling of 100%, 150%, 200%. If the OS level scaling is set to 125%, then Illustrator UI can either be displayed at 100% or 150%.");
+				}
+				
+				column(indent: 25)
+				{
+					radiogroup(identifier: "UIPSnapUIScaleFactorRadioGroup")
+					{
+						radio_button(identifier: "UIPScaleUILowerButton", bind: @UISnapUIScaleFactor, value: 0,
+										name: "$$$/PrefsDlg/UIPDlg/ScaleUILowerButton=Scale to Lower Supported Scale Factor");
+							
+						radio_button(identifier: "UIPScaleUIUpperButton", bind: @UISnapUIScaleFactor, value: 1,
+										name: "$$$/PrefsDlg/UIPDlg/ScaleUIUpperButton=Scale to Higher Supported Scale Factor");
+					}
+				}
+			}
+			
+			separator(identifier: "UIBrightnessScrollOptionsSeparator");
+		}
+		optional(placement: @place_column, bind: @ShowScrollPref, value: os != @mac)
+		{
+			radiogroup()
+			{
+				radio_button(identifier: "UIPScrollButtonPos1", bind: @ScrollButtonPos, value: 0,
+					label: "$$$/PrefsDlg/UIPDlg/ScrollButtonPos=Scroll Buttons:",
+					name: "$$$/PrefsDlg/UIPDlg/ScrollButton/AtTwoEndsd=At Two &Ends");
+					
+				radio_button(identifier: "UIPScrollButtonPos2", bind: @ScrollButtonPos, value: 1,
+					name: "$$$/PrefsDlg/UIPDlg/ScrollButton/Together=&Together");
+			}
+			optional(placement: @place_row ,vertical: @align_center, horizontal: @align_left, bind: @UIShowAlert)
+	        {
+        	    info_icon(icontype: "warning", size: "small");
+                        
+                static_text(identifier: "UIPStaticTextWarn",
+                            name: "$$$/PrefsDlg/PSPDlg/PSPStaticTextWarn=Note:  Changes will take effect the next time you start Illustrator.",
+                            characters: 29,theme_font_size: @small,
+                            adjust_baseline_for_single_line_text: false
+                            );
+			}
+		}
+	
+	}
+}

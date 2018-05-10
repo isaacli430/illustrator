@@ -1,0 +1,35 @@
+layout ShapeBuilderToolOptionsPanel
+{
+   view subview(identifier: "ShapeBuilderToolOptionsPanelSubView",
+				show_border: false,
+				layout_theme:@touch_tooloptions,
+				child_horizontal:@align_center)
+    {		
+
+		column(child_horizontal:@align_center)
+                {
+					button_bar(
+					identifier: "ShapeBuilderToolTouchRadioGp",is_vertical: true, button_inner_bevel: false, button_outer_bevel: false, 
+					button_inner_gradient: false, wants_focus: false, hasSeparators: false, width_margin: 6.0, height_margin: 7.0,
+					items: [
+									 {image: {normal: "SP_TouchMergeShapes_Md_N.png", dark_normal: "SP_TouchMergeShapes_Md_N_D.png"}, value: 1, alt: "$$$/PlanetXUI/Str/16702=Merge Mode"},
+									 {image: {normal: "SP_TouchSubstractShapes_Md_N.png", dark_normal: "SP_TouchSubstractShapes_Md_N_D.png"}, value: 2, alt: "$$$/PlanetXUI/Str/16703=Subtract Mode"}
+							]
+					);
+                    
+                    separator();
+					
+					toggle_button(identifier: "RectangleMarqueeSelection"
+						, image: {normal: "SP_TouchRectSelect_Md_N.png", dark_normal: "SP_TouchRectSelect_Md_N_D.png"}
+						, alt: "$$$/PlanetXUI/Str/16704=Marquee Drag"
+						, wants_focus: false
+						, button_inner_bevel: false
+						, button_outer_bevel: false
+						, inset_undrawn_space: false);
+						
+                    separator();
+                                                
+                    }	
+    }
+}
+

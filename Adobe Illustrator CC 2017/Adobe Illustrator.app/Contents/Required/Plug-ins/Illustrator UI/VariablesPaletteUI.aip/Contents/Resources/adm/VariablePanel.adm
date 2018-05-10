@@ -1,0 +1,5 @@
+sheet VariablePanel
+{
+  interface:
+	lockButton: false;
+}

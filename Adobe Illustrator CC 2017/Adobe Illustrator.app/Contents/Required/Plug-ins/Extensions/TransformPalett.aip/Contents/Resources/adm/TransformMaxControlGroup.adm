@@ -1,0 +1,7 @@
+sheet TransformMaxControlGroup
+{
+interface:
+	ShowConstrainIcon: false;
+	ninePointPinSelector: 4;
+	showControlPanelNinePinPoint: 0;
+}

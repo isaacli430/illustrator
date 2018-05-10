@@ -1,0 +1,37 @@
+layout GPUEnabledMessage
+{
+ 	view subview(identifier: "GPUEnabledMessageSubView",
+			 child_horizontal: @align_fill,
+			 vertical: @align_fill,
+			 layout_theme: @panel,
+			 show_border: false,
+			 margin: [10, 10, 10, 10],
+			 placement: @place_column)
+    {		
+		row(horizontal: @align_fill, margin: 0.5)
+		{
+			column(horizontal: @align_fill, vertical: @align_top)
+			{
+				image (identifier:"GPUIcon",guide_mask:[@guide_label],image:{normal:"SP_GPUAccelerated_Lg_N.png", dark_normal:"SP_GPUAccelerated_Lg_N.png"});
+			}
+			guide_consumer(consume_horizontal: 1);
+			column(horizontal: @align_fill)
+			{
+				column(spacing: 0, horizontal: @align_fill, vertical: @align_fill)
+				{
+					static_text(identifier: "GPUDetectedString", name: "$$$/GPUEnabledMessage/CompatibleGPU=Compatible GPU detected.");
+					static_text(identifier: "GPUEnabledString", name: "$$$/GPUEnabledMessage/GPUEnabled=GPU Preview is enabled.");
+				}
+				row(horizontal: @align_fill)
+				{
+					column(spacing: 0, horizontal: @align_fill)
+					{
+						static_text(identifier: "GPUPreferenceString", characters: 18, horizontal: @align_fill, name: "$$$/GPUEnabledMessage/ToggleStr1=Go to Preferences > GPU Performance \nto change settings.",
+						adjust_baseline_for_single_line_text: false
+						);
+					}
+				}
+			}			
+		}
+	}
+}

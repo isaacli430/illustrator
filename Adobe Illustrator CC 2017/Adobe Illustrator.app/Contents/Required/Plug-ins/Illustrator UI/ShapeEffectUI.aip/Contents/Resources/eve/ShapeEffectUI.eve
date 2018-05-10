@@ -1,0 +1,114 @@
+layout ShapeEffectUI
+{
+    view subview(identifier: "AIEveSubView",
+				 show_border: false,
+				 layout_theme: @dialog_large,
+				 child_horizontal: @align_fill,spacing: @unrelated_spacing)
+    {
+		popup(identifier: "ShapePopUp",
+			  name: "$$$/ShapeEffect/Dlg/ShapeOptions/3=&Shape:",
+			  include_custom_item: false,
+			  items: [{name: "$$$/ShapeEffect/Mnu/Shape/1=Rectangle", value: "Rectangle"},
+					  {name: "$$$/ShapeEffect/Mnu/Shape/2=Rounded Rectangle", value: "RoundedRectangle"},
+					  {name: "$$$/ShapeEffect/Mnu/Shape/3=Ellipse", value: "Ellipse"}]);
+		row(placement: @place_column,spacing: @inter_group_spacing,horizontal: @align_fill)	
+	{			  	
+		group(name: "$$$/ShapeEffect/Dlg/ShapeOptions/OptionsGroupName=Options",horizontal: @align_fill)
+		{
+			radiogroup(placement: @place_row)
+			{			  
+				radio_button(bind: @SizeRadioGp,
+									label: "$$$/ShapeEffect/Dlg/ShapeOptions/sizeOptionsName=Size:",
+									value: "Absolute",
+									identifier: "AbsoluteRadioButton",
+									name: "$$$/ShapeEffect/Dlg/ShapeOptions/ShapeAbsoluteButton=&Absolute");  
+	   								
+				radio_button(bind: @SizeRadioGp,
+									value: "Relative",
+									identifier: "RelativeRadioButton",
+									name: "$$$/ShapeEffect/Dlg/ShapeOptions/ShapeRelativeButton=&Relative");  
+			}  
+   			
+			overlay()
+			{ 
+				panel(bind: @SizeRadioGp, value: "Absolute", margin: 0)
+				{
+					 unit_hot_number(identifier: "Width",
+										name: "$$$/ShapeEffect/Dlg/ShapeOptions/6=&Width:",
+										max_value: 16384,
+										min_value: 0.001,
+										digits: 7,
+										decimal_places: 4,
+										stepper: true,
+										unit: "CurrentDocumentUnit");  
+									
+					 unit_hot_number(identifier: "Height",
+										name: "$$$/ShapeEffect/Dlg/ShapeOptions/8=&Height:",
+										max_value: 16384,
+										min_value: 0.001,
+										digits: 7,
+										decimal_places: 4,
+										stepper: true,
+										unit: "CurrentDocumentUnit");  
+				}
+				
+				panel(bind: @SizeRadioGp, value: "Relative", margin: 0)
+				{
+					 unit_hot_number(identifier: "ExtraWidth",
+										name: "$$$/ShapeEffect/Dlg/ShapeOptions/12=&Extra Width:",
+										max_value: 16000,
+										min_value: -16000,
+										digits: 7,
+										decimal_places: 4,
+										stepper: true,
+										unit: "CurrentDocumentUnit");  
+									
+					 unit_hot_number(identifier: "ExtraHeight",
+										name: "$$$/ShapeEffect/Dlg/ShapeOptions/14=E&xtra Height:",
+										max_value: 16000,
+										min_value: -16000,
+										digits: 7,
+										decimal_places: 4,
+										stepper: true,
+										unit: "CurrentDocumentUnit");  
+				}
+			}	
+		}
+		
+		
+			group(horizontal: @align_fill)
+            {
+                 unit_hot_number(identifier: "CnrRadius",
+								name: "$$$/ShapeEffect/Dlg/ShapeOptions/17=&Corner Radius:",
+								max_value: 32767,
+								min_value: -32768,
+								digits: 7,
+								decimal_places: 4,
+								vertical: @align_center,
+								stepper: true,
+								unit: "CurrentDocumentUnit");  
+            }
+		
+	}
+  		
+	row(vertical: @align_fill,child_vertical: @align_center,child_horizontal: @align_fill,spacing: @separated_spacing)
+			{
+			   checkbox(identifier: "previewButton",
+						 name: "$$$/ShapeEffect/Dlg/ShapeOptions/ShapePreviewButton=&Preview",
+						 horizontal: @align_left,
+						 guide_mask: [@guide_label]);
+		        
+			   row(horizontal: @align_right, reverse: os == @mac, child_vertical: @align_center, spacing: @related_spacing)
+			   {
+					button(identifier: "okButton",
+						   name: "$$$/gOK=OK",
+						   commit_button: true);
+
+					button(identifier: "cancelButton",
+						   name: "$$$/gCancel=Cancel",
+						   commit_button: true);
+			   }
+			}
+		
+    }
+}

@@ -1,0 +1,29 @@
+sheet ParagraphPanel
+{
+	interface:
+		enableAlignmentRadioButton : true;
+		LeftIndentSize : 0.0;
+		FirstLeftIndentSize : 0.0;
+		RightIndentSize : 0.0;
+		SpaceBeforeParagraph : 0.0;
+		SpaceAfterParagraph : 0.0;
+		ShowOptions: true;
+		ShowAsianOptions: true;
+		KinsokuSetting: 0;
+		MojuikumiSetting: 0;
+		Hyphenate: true;
+		Orientation: 0;
+		WorldReady: false;
+		ParaDirection : 0;
+		unlink AlignType: 5 <== enableAlignmentRadioButton == true? AlignType : 5;
+		Kashida : 0 <== (AlignType >=7 && AlignType <=10) ? Kashida : 0 ;		
+		LeftIndentPict: "SP_TextLeftIndent_Md_N.png" <== (Orientation == 0) ? "SP_TextLeftIndent_Md_N.png" : "SP_VertIndentTop_Md_N.png";
+		LeftIndentToolTip: "$$$/_TextDlgs/Str/5403/8=Left indent" <== (Orientation == 0) ? "$$$/_TextDlgs/Str/5403/8=Left indent": "$$$/_TextDlgs/Str/5433/8=Top indent";
+		RightIndentPict: "SP_TextRightIndent_Md_N.png" <== (Orientation == 0) ? "SP_TextRightIndent_Md_N.png" : "SP_VertIndentBottom_Md_N.png";
+		RightIndentToolTip: "$$$/_TextDlgs/Str/5403/10=Right indent" <== (Orientation == 0)? "$$$/_TextDlgs/Str/5403/10=Right indent"  : "$$$/_TextDlgs/Str/5433/10=Bottom indent";
+		FirstLineIndentPict: "SP_TextFirstLineIndent_Md_N.png" <== (Orientation == 0) ? "SP_TextFirstLineIndent_Md_N.png" :  "SP_VertFirstLineIndent_Md_N.png";
+		FirstLineIndentToopTip: "$$$/_TextDlgs/Str/5403/12=First-line left indent" <== (Orientation == 0) ? "$$$/_TextDlgs/Str/5403/12=First-line left indent" : "$$$/_TextDlgs/Str/5433/12=First-line top indent";
+		SpaceBeforePict: "SP_SpaceBefore_Md_N.png" <== (Orientation == 0) ? "SP_SpaceBefore_Md_N.png" :"SP_VertTextSpaceBefore_Md_N.png";
+		SpaceAfterPict: "SP_SpaceAfter_Md_N.png" <== (Orientation == 0) ? "SP_SpaceAfter_Md_N.png" : "SP_VertTextSpaceAfter_Md_N.png";
+		PanelUnits: "ApplicationAsianTextUnit" <== (ShowAsianOptions == true) ? "ApplicationAsianTextUnit" : "ApplicationTextUnit";
+}

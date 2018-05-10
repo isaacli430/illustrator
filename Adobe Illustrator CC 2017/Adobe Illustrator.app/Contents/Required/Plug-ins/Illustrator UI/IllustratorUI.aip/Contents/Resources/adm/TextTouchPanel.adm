@@ -1,0 +1,31 @@
+sheet TextTouchPanel
+{
+	interface:
+		FontFamily: 0;
+		FontStyle : 0;
+		FontSize : 0;
+		Leading : 0;
+		TextKerning : 0;
+		TextTracking : 0;
+		textButtons : 0;
+		ShowAsian: true;
+		HorizontalScale: 0;
+		VerticalScale: 0;
+		TsumeValue: 0;
+		LeftAki: "";
+		RightAki: "";
+		BaselineShift: 0;
+		CharRotation: 0;
+		DiacVertical:0;
+		DiacHorizontal:0;
+		AntiAlias: "";
+		Language: "";
+		horizOrientation: true;
+		enableButton: true;
+		WorldReady: false;
+		
+		enableAlignmentRadioButton : true;
+		unlink AlignType: 5 <== enableAlignmentRadioButton == true? AlignType : 5;
+		
+		leadPict: "SP_TextLeading_Md_N.png" <== (horizOrientation == true) ? "SP_TextLeading_Md_N.png" : "SP_TextVertLeading_Md_N.png";
+}

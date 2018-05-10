@@ -1,0 +1,41 @@
+layout TextExportUI
+{
+	view subview(identifier: "AIEveSubView",
+				 layout_theme: @dialog_large,
+				 placement: @place_column,
+				 show_border: false,
+				 spacing: @unrelated_spacing)
+	{
+		column(horizontal: @align_fill, child_horizontal: @align_fill)
+		{
+			popup(identifier: "Platform",
+				  bind: @platform,
+				  include_custom_item: false,
+				  set_default_focus: true,
+				  items: [ { name: "$$$/TextExport/Dialog/Platform/1=Windows", value: "platform_win" },
+						   { name: "$$$/TextExport/Dialog/Platform/2=Mac (PowerPC-based)", value: "platform_mac_ppc" },
+						   { name: "$$$/TextExport/Dialog/Platform/3=Mac (Intel-based)", value: "platform_mactel" }],
+				  name: "$$$/TextExport/Dialog/Platform=&Platform:");
+
+			popup(identifier: "Encoding",
+				  bind: @encoding,
+				  include_custom_item: false,
+				  items: [ { name: "$$$/TextExport/Dialog/Encoding/1=Default Platform", value: "encoding_platform_default" },
+						   { name: "$$$/TextExport/Dialog/Encoding/2=Unicode", value: "encoding_unicode" }],
+				  name: "$$$/TextExport/Dialog/Encoding=&Encoding:");
+		}
+
+		row(horizontal: @align_right, spacing: @related_spacing, reverse: os == @mac)
+		{
+			button(default: true,
+				   name: "$$$/TextExport/Dialog/Export=E&xport",
+				   identifier: "okButton",
+				   commit_button: true);
+
+			button(cancel: true,
+				   name: "$$$/gCancel=Cancel",
+				   identifier: "cancelButton",
+				   commit_button: true);
+		}
+	}
+}

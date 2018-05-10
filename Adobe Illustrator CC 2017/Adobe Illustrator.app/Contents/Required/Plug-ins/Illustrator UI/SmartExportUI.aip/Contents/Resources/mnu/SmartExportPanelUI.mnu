@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+	<menuItem id="1" text="$$$/SmartExportUI/ExportPanel/FlyoutMenu/GridViewEntry=Grid View"></menuItem>
+	<menuItem id="2" text="$$$/SmartExportUI/ExportPanel/FlyoutMenu/ListViewEntry=List View"></menuItem>
+	<separator></separator>
+	<menuItem id="3" text="$$$/SmartExportUI/ExportPanel/FlyoutMenu/FileFormatOptions=Format Settings..."></menuItem>
+	<separator></separator>
+	<menuItem id="4" text="$$$/SmartExportUI/ExportPanel/FlyoutMenu/OpenLocationAfterExport=Open Location After Export"></menuItem>
+
+</menu>

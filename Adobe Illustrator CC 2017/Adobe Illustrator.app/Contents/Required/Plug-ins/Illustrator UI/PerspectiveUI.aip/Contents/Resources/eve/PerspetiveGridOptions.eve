@@ -1,0 +1,64 @@
+layout PerspetiveGridOptions
+{
+    view subview(identifier: "AIEveSubView",
+                 placement: @place_column,
+                 show_border: false,
+                 spacing: @unrelated_spacing,
+                 layout_theme: @dialog_large)
+    {
+		column(horizontal: @align_fill)
+		{
+			checkbox(identifier: "planeSwitcherVisibilityCheckbox",
+					 guide_mask: [ @guide_label ],
+					 bind: @PlaneSwitcherVisible,
+					 set_default_focus: true,
+					 name: "$$$/PerspectiveUI/ToolOptionsDlg/ShowHideWidget/Title=&Show Active Plane Widget");
+
+			popup(identifier: "planeSwitcherPositionPopup",
+				  bind: @PlaneSwitcherPosition,
+				  name: "$$$/PerspectiveUI/ToolOptionsDlg/WidgetPosition/Title=Widget &Position:",
+				  include_custom_item: false,
+				  items: [
+							{ name: "$$$/PerspectiveUI/ToolOptionsDlg/Position/TopLeft=Top-Left", value: 0 },
+							{ name: "$$$/PerspectiveUI/ToolOptionsDlg/Position/TopRight=Top-Right", value: 1 },
+							{ name: "$$$/PerspectiveUI/ToolOptionsDlg/Position/BottomLeft=Bottom-Left", value: 2 },
+							{ name: "$$$/PerspectiveUI/ToolOptionsDlg/Position/BottomRight=Bottom-Right", value: 3 }
+						  ]);
+
+			group(identifier: "AutomaticPlanePositioningGroup",
+				  name: "$$$/PerspectiveUI/ToolOptionsDlg/HeightInferencing/Title=Automatic Plane Positioning",
+				  horizontal: @align_fill,
+				  guide_mask: [ @guide_label ],
+				  placement: @place_column)
+			{
+				static_text(identifier: "descriptionText",
+							characters: 1,
+							horizontal: @align_fill,
+							name: "$$$/PerspectiveUI/ToolOptionsDlg/HeightInference/Desc=With Perspective Selection Tool, mouse over the following points and press the Shift key to temporarily move the active plane at that location.");
+
+				checkbox(identifier: "inferenceArtworkCheckbox",
+						 bind: @infObjects,
+						 name: "$$$/PerspectiveUI/ToolOptionsDlg/HeightInferencing/Artwork=&Anchor Point of Perspective Artwork");
+
+				checkbox(identifier: "inferenceGridCheckbox",
+						 bind: @infGridLines,
+						 name: "$$$/PerspectiveUI/ToolOptionsDlg/HeightInferencing/Grids=&Intersection of Gridlines");
+			}
+		}
+
+		row(horizontal: @align_right,
+			spacing: @related_spacing,
+			reverse: os == @mac)
+		{
+			button(default: true,
+				   commit_button: true,
+				   identifier: "okButton",
+				   name: "$$$/gOK=OK");
+
+			button(cancel: true,
+				   commit_button: true,
+				   identifier: "cancelButton",
+				   name: "$$$/gCancel=Cancel");
+		}
+    }
+}

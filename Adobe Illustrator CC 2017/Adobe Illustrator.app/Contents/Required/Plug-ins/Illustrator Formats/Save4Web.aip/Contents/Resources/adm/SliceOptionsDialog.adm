@@ -1,0 +1,49 @@
+sheet SliceOptionsDialog
+{
+	interface:
+		SliceTypeItems: [ { name: "$$$/Save4Web/SliceOptionsDialog/SliceTypeMenu/NoImage=No Image", value: 0 },
+							{ name: "$$$/Save4Web/SliceOptionsDialog/SliceTypeMenu/Image=Image", value: 1 },
+							{ name: "$$$/Save4Web/SliceOptionsDialog/SliceTypeMenu/HTMLText=HTML Text", value: 2 }
+        ];
+		
+		TargetMenuItems: [ { name: "$$$/Save4Web/SliceOptionsDialog/TargetMenu/NewWindow=_blank", value: 0 },
+							{ name: "$$$/Save4Web/SliceOptionsDialog/TargetMenu/ParentWindow=_self", value: 1 },
+							{ name: "$$$/Save4Web/SliceOptionsDialog/TargetMenu/SameWindow=_parent", value: 2 },
+							{ name: "$$$/Save4Web/SliceOptionsDialog/TargetMenu/SameFrame=_top", value: 3 }
+        ];
+		
+		HAlignItems: [{ name: "$$$/Save4Web/SliceOptionsDialog/HAlignMenu/HorizAlignLeft=Left", value: 1 },
+						{ name: "$$$/Save4Web/SliceOptionsDialog/HAlignMenu/HorizAlignCenter=Center", value: 2 },
+						{ name: "$$$/Save4Web/SliceOptionsDialog/HAlignMenu/HorizAlignRight=Right", value: 3 },
+						{ name: "$$$/Save4Web/SliceOptionsDialog/HAlignMenu/HorizAlignDefault=Default", value: 0 }
+		];
+		VAlignItems: [ { name: "$$$/Save4Web/SliceOptionsDialog/VAlignMenu/VertAlignTop=Top", value: 1 },
+						{ name: "$$$/Save4Web/SliceOptionsDialog/VAlignMenu/VertAlignBaseline=Baseline", value: 2 },
+						{ name: "$$$/Save4Web/SliceOptionsDialog/VAlignMenu/VertAlignMiddle=Middle", value: 3 },
+						{ name: "$$$/Save4Web/SliceOptionsDialog/VAlignMenu/VertAlignBottom=Bottom", value: 4 },
+						{ name: "$$$/Save4Web/SliceOptionsDialog/VAlignMenu/VertAlignDefault=Default", value: 0 }
+		
+		];
+		
+		ColorPopupItems: [ {name:"$$$/Save4Web/SliceOptionsDialog/ColorPopupMenu/ColorNone=None", value:1},
+							{name:"-", value:-1},
+							{name:"$$$/Save4Web/SliceOptionsDialog/ColorPopupMenu/MatteLabel=Matte", value:2},
+							{name:"-", value:-2},
+							{name:"$$$/Save4Web/SliceOptionsDialog/ColorPopupMenu/ColorEyedropperColor=Eyedropper Color", value:3},
+							{name:"$$$/Save4Web/SliceOptionsDialog/ColorPopupMenu/ColorWhite=White", value:4},
+							{name:"$$$/Save4Web/SliceOptionsDialog/ColorPopupMenu/ColorBlack=Black", value:5},
+							{name:"-", value:-3},
+							{name:"$$$/Save4Web/SliceOptionsDialog/ColorPopupMenu/ColorOther=Other...", value:6}
+		];
+		SliceTypeCell: 1;
+		TargetPopupCell: 0;
+		PanelSelection: 1 <== SliceTypeCell == 1 ? 1 : 0;
+		TextIsHTMLCell: true;
+		HAlignCell: 0;
+		VAlignCell: 0;
+		ShowLinkedImage: 1;
+		SliceNameCell: "";
+		MessageCell: "";
+		AltCell: "";
+		TextDisplayedCell: "";
+}

@@ -1,0 +1,81 @@
+layout TabPanel_Horizontal
+{
+	view subview(identifier: "TabPanelSubView",
+				 layout_theme: @panel,
+				 show_border: false)
+	{	
+		row(horizontal: @align_fill)
+		{
+			panel(placement: @place_row, show_border: false, spacing: @connected_spacing, margin: 0, horizontal: @align_left)
+			{
+				row()
+				{
+					toggle_button(identifier: "LeftJustTab",
+						toolbox_style: true,
+						image: {normal: "SP_TabLeft_Sm_N.png",dark_normal:"SP_TabLeft_Sm_N_D.png"},
+						alt: "$$$/_STRList/STR/258/164=Left-Justified Tab",
+						bind: @TabJustRadioGp,
+						value_on: 0);
+
+					toggle_button(identifier: "CenterJustTab",
+						toolbox_style: true,
+						image: {normal: "SP_TabCenter_Sm_N.png",dark_normal:"SP_TabCenter_Sm_N_D.png"},
+						alt: "$$$/_STRList/STR/258/166=Center-Justified Tab",
+						bind: @TabJustRadioGp,
+						value_on: 1);
+
+					toggle_button(identifier: "RightJustTab",
+						toolbox_style: true,
+						image: {normal: "SP_TabRight_Sm_N.png",dark_normal:"SP_TabRight_Sm_N_D.png"},
+						alt: "$$$/_STRList/STR/258/165=Right-Justified Tab",
+						bind: @TabJustRadioGp,
+						value_on: 2);
+
+					toggle_button(identifier: "DecimalJustTab",
+						toolbox_style: true,
+						image: {normal: "SP_TabDecimal_Sm_N.png",dark_normal:"SP_TabDecimal_Sm_N_D.png"},
+						alt: "$$$/_STRList/STR/258/167=Decimal-Justified Tab",
+						bind: @TabJustRadioGp,
+						value_on: 3);
+				}
+
+				unit_hot_number(identifier: "TabXEdit",
+					name: "$$$/TabPanel/Dlg/X=X:",
+					decimal_places:2,
+					digits:3,
+					min_value:0,
+					max_value:2304,
+					unit:"CurrentDocumentUnit",
+					bind: @TabXValue, bind_final: true);
+
+				edit_text(identifier: "TabLeaderEdit",
+					name: "$$$/TabPanel/Dlg/Leader=Leader:",
+					max_characters: 8,
+					characters: 7,
+					bind: @TabLeaderStr);
+
+				edit_text(identifier: "TabAlignOnEdit", horizontal: @align_right,
+					name: "$$$/TabPanel/Dlg/AlignOn=Align On:",
+					max_characters: 1,
+					characters: 1,
+					bind: @TabAlignOnStr);
+			}		
+
+		}
+				
+		row(horizontal: @align_fill, vertical: @align_center)
+		{
+			panel(identifier: "TabWidgetPanel", spacing: 0, show_border: false, width: 395, height: 45, margin: 0, horizontal: @align_fill, guide_mask: [@guide_label])
+			{
+				image(identifier: "TabDragWidget", width: 395, height: 12, horizontal: @align_fill);
+				image(identifier: "TabRulerWidget", width: 395, height: 22, horizontal: @align_fill);				
+			}
+			
+			button(identifier: "Magnet",
+					image: { normal: "SP_MagnetSnap_Sm_N.png", dark_normal: "SP_MagnetSnap_Sm_N_D.png" },
+					alt: "$$$/TabPanel/Dlg/MagnetTooltipHorizontal=Position Panel Above Text",
+					action: @MagentAction, guide_mask: [],
+					horizontal: @align_right);		
+		}
+	}
+}

@@ -1,0 +1,5 @@
+sheet PresetManager
+{
+	interface:
+		showPresetDesc: 0;		
+}

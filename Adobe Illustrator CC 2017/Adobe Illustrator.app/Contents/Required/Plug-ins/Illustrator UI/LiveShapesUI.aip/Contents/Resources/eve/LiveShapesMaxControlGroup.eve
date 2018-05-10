@@ -1,0 +1,34 @@
+layout LiveShapesMaxControlGroup
+{
+     view subview(identifier: "LiveShapesMaxControlGroup",
+				 layout_theme: @controlbar,
+				 show_border: false,
+				 child_vertical: @align_center,
+				 placement: @place_row,
+				 margin : 0,
+				 spacing: 5,
+				 height:  31)
+    {		
+		optional(identifier: "LiveShapesMaxControlGroupSubGroup", child_vertical:  @align_center, margin : 0,spacing: @related_spacing, placement: @place_row)	
+		{
+			separator(orientation: @vertical, vertical: @align_fill);
+			
+			link_button(identifier: "ShapeHyperlinkButton",
+							wants_focus: false,
+							name: "$$$/LiveShapes/str/ControlGroupHyperLinkName=Shape:",
+							alt: "$$$/LiveShapes/str/ControlGroupHyperLinkAltName=Shape Properties");
+
+			subview(identifier: "LiveShapesMaxControlGroupSubView", show_border: false, margin: 0)
+			{
+				
+			}
+			
+			toggle_button(identifier: "HideWidgetsForShapeTool",
+							bind: @HideWidgetsForShapeTool,
+							value_on: true,
+							value_off: false,
+							image: { normal: "SP_ShapeWidgetsOn_Md_N.png", dark_normal: "SP_ShapeWidgetsOn_Md_N_D.png", down: "SP_ShapeWidgetsOff_Md_N.png", dark_down: "SP_ShapeWidgetsOff_Md_N_D.png" },
+							wants_focus: false);
+		}
+    }
+}

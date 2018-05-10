@@ -1,0 +1,31 @@
+sheet VariableWidthResetWarning
+{
+	interface:
+		
+		ColorPickerNormalMode: 0;
+		ColorModelSwatchesToggleStaticText : "$$$/PaintStyle/Dlg/ColorPicker/6=Select Color:";
+		ColorModelSwatchesToggleButton : true;
+
+		show_webColors : true;
+		webColorsCheckbox : false;
+
+		radioButtonValue : 0;
+
+		hue : 0;
+		saturation : 0;
+		brightness : 100;
+
+		red : 255;
+		green : 255;
+		blue : 255;
+
+		cyan : 0;
+		magenta : 0;
+		yellow : 0;
+		black : 0;
+		hexadecimalValue : "FFFFFF";
+
+		show_outOfGamutButtons : true;
+		show_outOfWebButtons : true;
+		ShowRGBHSBCMYK : true;
+}

@@ -1,0 +1,28 @@
+sheet SmartExportUI
+{
+	interface:
+		FormatValue:0;
+		PresetScaleValue:1;
+		DeleteValue	:0;
+		SuffixValue	:"0";
+		FormatItems: [	{ name: "PNG", value: 0 },
+						{ name: "PNG 8", value: 1 },
+						{ name: "JPG 100", value: 2 },
+						{ name: "JPG 80", value: 3 },
+						{ name: "JPG 50", value: 4 },
+						{ name: "JPG 20", value: 5},
+						{ name: "SVG", value: 6 },
+						{ name: "PDF", value: 7 }
+					];
+		ScaleItems: [	{ name: "1x" , value: 1 },
+						{ name: "2x", value: 2 },
+						{ name: "3x", value: 3 },
+						{ name: "4x", value: 4 },
+						{ name: "$$$/SmartExportUI/ExportSettingsRowCompact/ScaleItems/1.5x=1.5x", value: 1.5 },
+						{ name: "$$$/SmartExportUI/ExportSettingsRowCompact/ScaleItems/0.5x=0.5x", value: 0.5 },
+						{ name: "$$$/SmartExportUI/ExportSettingsRowCompact/ScaleItems/0.75x=0.75x", value: 0.75 },
+						{ name: "$$$/SmartExportUI/ExportSettingsRow/ScaleItems/Width=Width", value: -100 },
+						{ name: "$$$/SmartExportUI/ExportSettingsRow/ScaleItems/Height=Height", value: -101 },
+						{ name: "$$$/SmartExportUI/ExportSettingsRow/ScaleItems/Resolution=Resolution", value: -102 }
+					];
+}

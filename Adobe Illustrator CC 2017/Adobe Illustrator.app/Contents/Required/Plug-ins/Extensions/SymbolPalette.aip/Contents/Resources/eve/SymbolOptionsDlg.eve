@@ -1,0 +1,72 @@
+layout SymbolOptionsDlg
+{
+    view subview(identifier: "AIEveSubView",
+					placement: @place_column,
+					show_border: false,
+					layout_theme: @dialog_large)
+    {
+		column(horizontal: @align_fill)
+		{
+			edit_text(	identifier: "EditTextSymbolName", 
+						name: '$$$/SymbolPalette/Dlg/optDlgStaticName=&Name:', 
+						horizontal: @align_fill, 
+						bind: @SymbolName, 
+						set_default_focus: true,
+						characters :22,
+						max_characters: 63);
+			
+			popup(identifier: "PopupSymbolExportType", 
+					include_custom_item: false, 
+					name: '$$$/SymbolPalette/Dlg/optDlgStaticExport=&Export Type:', 
+					bind: @SymbolExportType, 
+					items: @SymbolExportTypeChoices);
+
+			optional(margin: 0, bind: @IsDynamicSymbolsOn, value: true, placement: @place_row)
+			{
+				radiogroup()
+				{
+					radio_button(label: '$$$/SymbolPalette/Dlg/symbolType=Symbol Type:',
+								name: "$$$/SymbolPalette/Dlg/Options/Dynamic=Dynamic Symbol",
+								identifier: "DynamicSymbolRadioButton",
+								bind: @SymbolTypeRadio,
+								value: 2);
+
+					radio_button(name: "$$$/SymbolPalette/Dlg/Options/Static=Static Symbol",
+								identifier: "StaticSymbolRadioButton",
+								bind: @SymbolTypeRadio,
+								value: 1);
+				}
+			}
+
+			optional(margin: 0, bind: @IsSymbolCreation, value: true, placement: @place_row)
+			{
+				pin_selector(	identifier: "PinSelectorResgistrationPoint", 
+								label: '$$$/SymbolPalette/Dlg/optDlgStaticRegistration=Registration:', 
+								wants_focus: false, 
+								bind: @RegistrationValue);
+			}
+
+			checkbox(	identifier: "CheckEnableGuides",
+						name: '$$$/SymbolPalette/Dlg/optDlgStaticEnableGuides=Enable Guides for 9-Slice Scaling', 
+						bind: @EnableGuides);
+			checkbox(	identifier: "CheckAlignToGrid",
+						name: '$$$/SymbolPalette/Dlg/optDlgStaticPixelPerfect=Align to Pixel Grid',
+						bind: @AlignToPixelGrid);
+		}
+
+		column(horizontal: @align_fill, spacing: @unrelated_spacing)
+		{
+			group(identifier: "GroupInfo", horizontal: @align_fill, placement: @place_row, spacing: @related_spacing)
+			{
+				info_icon(identifier: "InfoIcon", icontype: "note", size: "small");
+				static_text(identifier: "StaticInfo", characters: 1, horizontal: @align_fill, theme_font_size: @small,
+					name: '$$$/SymbolPalette/Dlg/optDlgInfo=\"Movie Clip\" and \"Graphic\" are tags for Flash import. There is no difference between these two symbols in Illustrator.');
+			}
+			row(horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+			{
+				button(name: "$$$/gOK=OK", commit_button: true, identifier: "okButton");
+				button(name: "$$$/gCancel=Cancel", commit_button: true, identifier: "cancelButton");
+			}
+		}
+    }
+}

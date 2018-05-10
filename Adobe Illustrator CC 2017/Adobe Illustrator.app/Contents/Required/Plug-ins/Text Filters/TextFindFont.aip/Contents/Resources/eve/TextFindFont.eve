@@ -1,0 +1,213 @@
+layout TextFindFont
+{
+    view subview(identifier: "AIEveSubView",
+				 child_horizontal: @align_fill,
+				 placement: @place_column,
+				 show_border: false, 
+				 layout_theme: @dialog_large,spacing: @unrelated_spacing
+				 )
+    {
+		row(child_horizontal: @align_fill)
+		{
+
+			column(horizontal:@align_fill)
+			{
+				column(spacing:@label_widget_spacing,horizontal:@align_fill)
+				{
+					row(horizontal:@align_fill)
+					{
+						row(spacing: 0)
+						{
+							static_text(identifier: "StaticTextFontInDocLabel", name:"$$$/TextFindFont/Dlg/Main/19new=Fonts in Document:");
+							static_text(identifier: "StaticTextFontInDoc", name:"(99999)");
+						}
+						static_text(identifier: "StaticTextFontSync", name:"$$$/TextFindFont/Dlg/Main/Sync=Sync", horizontal:@align_right);
+						static_text(identifier: "DummyText", name:"", horizontal:@align_right);
+					}
+					row(horizontal:@align_fill)
+					{
+					multicolumn_tree(identifier: "DocFontMCT",
+							width:290,
+							height:92,horizontal:@align_fill);
+					}
+					row(spacing: 0)
+					{
+						static_text(identifier: "StaticTextMissingFontNumberLabel", name:"$$$/TextFindFont/Dlg/Main/MissingFontLabel=Missing Fonts: ");
+						static_text(identifier: "StaticTextMissingFontNumber", name:"(99999)");
+					}
+				}
+				
+				
+				row()
+				{
+					popup(identifier: 'PopupReplace',
+							include_custom_item: false,
+							items: [ 
+								{ name: '$$$/TextFindFont/Mnu/FontList/1=Document',
+                                 value: 0},
+								 { name: '$$$/TextFindFont/Mnu/FontList/3=Recent',
+                                 value: 1} ,
+								{ name: '$$$/TextFindFont/Mnu/FontList/2=System',
+                                 value: 2}
+                                ],
+							name: '$$$/TextFindFont/Dlg/Main/cluster=Replace With Font From:  '
+							);
+					
+				}
+					
+				column(spacing:@label_widget_spacing, horizontal:@align_fill)
+				{
+					row(horizontal:@align_fill)
+					{
+						static_text(identifier: "StaticTextFontReplaceLabel", name:"Fonts in Document: (99999)", horizontal:@align_fill);
+						
+						button(
+								identifier: "FilterButton",
+								alt: "$$$/TextFindFont/FilterButton/ToolTip=Manage Filters",
+								image:{normal:"SP_FilterOptions_Sm_N.png",dark_normal:"SP_FilterOptions_Sm_N_D.png"},
+								horizontal:@align_right);
+					}
+					
+					row(horizontal:@align_fill)
+					{
+						
+						multicolumn_tree(identifier: "ReplaceFontMCT",
+							width:290,
+							height:130,horizontal:@align_fill);
+					}
+				}
+				overlay(horizontal:@align_fill)
+				{
+					panel(identifier: "TKDErrorStringGroup", bind: @ShowPanel, value: 0)
+					{
+						row(spacing:@label_widget_spacing,horizontal:@align_fill, child_horizontal: @align_fill, vertical: @align_center)
+							{
+								column(horizontal: @align_left)
+								{
+									info_icon( icontype: "warning", size: "small");
+								}
+								subview(theme_name: "AI Panel default",show_border:false,margin:0,spacing: 0, horizontal: @align_fill)
+								{
+									column(horizontal: @align_fill, spacing:@label_widget_spacing)
+									{
+								
+										static_text(horizontal: @align_fill, identifier: "TKDErrorString", name:"You are not currently signed in to Creative Cloud. Please go to Help->Sign In and enter your Adobe Id. Application Restart is required", characters: 1);
+										optional(identifier: "TKDHyperlinkGroup", bind: @ShowURL, value: true)
+										{
+											link_button(identifier: "TKDHyperlinkButton",
+																name: "$$$/TextFindFont/Dlg/Main/HyperLink=Show status");
+													
+		
+										}
+									}
+								}
+						}
+					}
+					panel(identifier: "TKDSpinningWheel", bind: @ShowPanel, value: 1)
+					{
+						row(spacing:0,horizontal:@align_fill, vertical: @align_center)
+						{
+							column()
+							{
+								subview(identifier: "AISubViewSpinningWheel",
+								child_horizontal: @align_fill,
+								show_border: false, 
+								margin:0,
+								width: 20, height: 35,
+								spacing: @unrelated_spacing
+								)
+								{
+								}
+							}
+							subview(theme_name: "AI Panel default",show_border:false,margin:0,spacing: 0, horizontal: @align_fill)
+							{
+								column(horizontal: @align_fill)
+								{
+									optional(identifier: "TKDSubscriptionStaticText", bind: @ShowSpWheelSubscriptionText, value: true)
+									{
+										static_text(identifier: "SpinningWheelText1",
+															name: "$$$/TextFindFont/Dlg/Main/kTIPText1=Syncing Typekit fonts... Check Creative Cloud application for details.",
+															horizontal: @align_fill, characters : 1
+															);
+									}
+									optional(identifier: "TKDQueryStaticText", bind: @ShowSpWheelQueryText, value: true)
+									{
+										static_text(identifier: "SpinningWheelText2",
+															name: "$$$/TextFindFont/Dlg/Main/kTIPText2=Looking for fonts to sync from Typekit",
+															horizontal: @align_fill, characters : 1
+															);
+									}
+								}			
+							}
+						}
+					}
+					panel(identifier: "EmptyPanel", bind: @ShowPanel, value: 2)
+					{
+					}
+				}
+			}
+			column(child_horizontal:@align_fill, spacing: @separated_spacing)
+			{
+				column(child_horizontal:@align_fill)
+				{
+					button(
+								identifier: "findButton",action: @find,
+								name: "$$$/TextFindFont/Dlg/Main/2=&Find");
+					subview(identifier: "ChangeButtonSubview", show_border: false, horizontal: @align_fill,  margin:0)
+					{	
+						row(spacing: 0, margin: 0, horizontal: @align_fill, child_horizontal: @align_fill)
+						{
+							button(	identifier: "changeButton",
+									action: @change,
+									name:"$$$/TextFindFont/Dlg/Main/3=&Change");		
+						}
+					}
+					button(
+								identifier: "changeAllButton",action: @changeall,
+								name: "$$$/TextFindFont/Dlg/Main/4=C&hange All");
+								
+					button(
+								identifier: "saveListButton",action: @save,
+								name: "$$$/TextFindFont/Dlg/Main/6=&Save List...");
+					button(
+								identifier: "syncTKDFOnts",action: @sync,
+								name: "$$$/TextFindFont/Dlg/Main/7=S&ync Fonts",
+								alt: "$$$/TextFindFont/Dlg/SyncFontsButtonToolTip=Restore checked fonts from Typekit" );
+								
+					
+				}
+				column(child_horizontal: @align_fill, spacing: 0)
+				{
+					static_text(identifier: "StaticTextTip",
+											 name: "$$$/TextFindFont/Dlg/Main/kTIPText=Tip:",
+											 horizontal: @align_center
+											 );
+					optional(margin: 0, bind: @ShowWinContextMenuInfo, value: false)
+					{
+						static_text(identifier: "StaticTextWarnWin",
+											 name: "$$$/TextFindFont/Dlg/Main/kMacInfoText=Ctrl-click and hold a font name to see a preview.",
+											 characters: 7, horizontal: @align_center
+											 );
+					}
+					optional(margin: 0, bind: @ShowWinContextMenuInfo, value: true)
+					{
+						static_text(identifier: "StaticTextWarnMac",
+											 name: "$$$/TextFindFont/Dlg/Main/kWinInfoText=Right-click and hold a font name to see a preview.",
+											 characters: 7, horizontal: @align_center
+											 );
+					}
+				}
+			}
+        }
+
+        row(vertical: @align_fill,child_horizontal: @align_fill, child_vertical: @align_center,spacing: @separated_spacing)
+        {	
+			row(child_horizontal: @align_right, spacing: @related_spacing)
+			{ 
+				button( 	default: true,
+							identifier: "okButton", commit_button: true,action: @done,
+							name: "$$$/TextFindFont/Dlg/Main/OK=&Done");      
+			} 
+        }
+    }
+}

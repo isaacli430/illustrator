@@ -1,0 +1,6 @@
+sheet LayerOptions
+{
+interface:
+	/* The number of values here is to be kept in sync with num_layer_colors in LayerPalDlg.cpp */
+	border_highlighted: true;
+}

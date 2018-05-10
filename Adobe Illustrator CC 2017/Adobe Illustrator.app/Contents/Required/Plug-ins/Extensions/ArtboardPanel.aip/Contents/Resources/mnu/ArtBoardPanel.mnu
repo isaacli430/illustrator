@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+	<menuItem id="1" text="$$$/ArtboardPanel/Mnu/16600/1=&amp;New Artboard"></menuItem>
+	<menuItem id="2" text="$$$/ArtboardPanel/Mnu/16600/2=Duplicate Artboards"></menuItem>
+	<menuItem id="3" text="$$$/ArtboardPanel/Mnu/16600/3=Delete Artboards"></menuItem>
+	<separator></separator>
+	<menuItem id="5" text="$$$/ArtboardPanel/Mnu/16600/5=Delete Empty Artboards"></menuItem>
+	<separator></separator>
+	<menuItem id="7" text="$$$/ArtboardPanel/Mnu/16600/7=Convert to Artboards"></menuItem>
+	<menuItem id="8" text="$$$/ArtboardPanel/Mnu/16600/8=Artboard Options..."></menuItem>
+	<separator></separator>
+	<menuItem id="10" text="$$$/ArtboardPanel/Mnu/16600/10=Rearrange Artboards..."></menuItem>
+</menu>

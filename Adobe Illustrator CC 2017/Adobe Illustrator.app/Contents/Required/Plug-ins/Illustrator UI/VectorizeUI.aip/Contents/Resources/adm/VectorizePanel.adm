@@ -1,0 +1,33 @@
+sheet VectorizePanel
+{
+interface: 
+			SelectedPresetIcon: 0;
+			ShowAdvancedState : false ;
+			LibraryVsColorRange : 0 <== ColorSelection > 2? 1 : 0 ;
+			TracingPreset: 0;
+			ColorMode: 0;
+			CornerSliderFilter: {min_value: 0, max_value: 100};
+			LimitedColorFilter: {min_value: 2, max_value: 30};
+			FullColorFilter: {min_value: 0.0, max_value: 100.0};
+			ThresholdFilter: {min_value: 1, max_value: 255};
+			PathFilter: {min_value: 1, max_value: 100};
+			LimitedColors: 30;
+			FullColors: 100.0;
+			AutomaticColors: 100.0;
+			PathFidelity: 50;
+			CornerFidelity: 50;
+			NoiseFidelity: 50;
+			IgnoreWhite: false;
+			SnapCurvesToLines: false;
+			CreateFill: true;
+			CreateStroke: false;
+			NumberofPaths: "0";
+			NumberofAnchors: "0";
+			NumberofColors: "0";
+			PreviewPopup: 0;
+			ColorSelection: 0;
+			OverlappingOrAbutting: 1;
+			MaxStrokeWeight:10;
+			ShowSuspend: false;	
+			ShowLibNotOpenWarning: false;
+}

@@ -1,0 +1,8 @@
+layout hiddenSelectMenu
+{
+	view menu( id: 53,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/HiddenSelect/SwitchTools=Switch Selection Tools", id:	221, help_id:0);
+}
+}

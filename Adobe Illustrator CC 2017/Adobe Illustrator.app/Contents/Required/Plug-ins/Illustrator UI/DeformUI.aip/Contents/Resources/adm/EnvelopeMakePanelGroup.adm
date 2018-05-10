@@ -1,0 +1,12 @@
+sheet EnvelopeMakePanelGroup
+{
+constant:
+	DistortName: ['$$$/Deform/ControlPalette/Str/MakeEnvelope/MakeWithWarp=Make With Warp...',
+				  '$$$/Deform/ControlPalette/Str/MakeEnvelope/MakeWithMesh=Make With Mesh...'];
+interface:
+		 entriesMakeEnv: [		{name: DistortName[0], value: 1, action:@makeEnvPopAction},
+							{name: DistortName[1], value: 2, action:@makeEnvPopAction }
+				];
+				
+makeEnvPop: 0;
+}

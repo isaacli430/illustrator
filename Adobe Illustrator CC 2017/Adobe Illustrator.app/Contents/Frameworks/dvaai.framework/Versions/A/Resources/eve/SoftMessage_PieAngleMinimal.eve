@@ -1,0 +1,17 @@
+layout SoftMessage_PieAngleMinimal_
+{
+    view subview(show_border: false, spacing: 0  )
+    {	
+	row(horizontal:@align_fill, spacing: 0)
+	{	
+		column(horizontal: @align_fill, spacing: 0)
+		{	
+			static_text(identifier: "PieAngle", name: "$$$/ShapeTool/PieAngleReadoutSoftMessage/PieAngleStr=Pie Angle: ", horizontal: @align_right);
+		}
+		column(horizontal: @align_fill, spacing: 0)
+		{
+			static_text(identifier: "PieAngleValue", name:"-0000.00 mm", horizontal: @align_left);
+		}
+	}
+    }
+}

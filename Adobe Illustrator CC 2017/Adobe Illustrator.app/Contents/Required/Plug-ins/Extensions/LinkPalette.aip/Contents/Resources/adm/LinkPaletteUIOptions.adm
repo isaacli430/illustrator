@@ -1,0 +1,6 @@
+sheet PaletteOptionsUI
+{
+	interface:
+		ThumbnailSizeRadioGp: empty;
+		HiddenSpace: 1;
+}

@@ -1,0 +1,18 @@
+sheet AlignPanel
+{
+	interface:
+				spacingRememberCell: 0;
+				popUpIndex: 0;
+				IsSpacingNumberEditEnabled: false;
+				unlink spacingCell: 0 <== (IsSpacingNumberEditEnabled == false) ? spacingRememberCell : spacingCell;
+				button: 0;
+				ShowOptions: true; 
+
+	logic:
+		when (IsSpacingNumberEditEnabled == true) relate
+		{
+			spacingCell <== spacingRememberCell;
+			spacingRememberCell <== spacingCell;
+		}
+
+}

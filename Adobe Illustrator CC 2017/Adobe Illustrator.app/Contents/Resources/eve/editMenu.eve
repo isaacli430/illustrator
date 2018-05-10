@@ -1,0 +1,25 @@
+layout editMenu_Mac
+{
+	view menu( id: 28,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/Edit/Undo=&Undo", id:						(os == @win) ? 1970168943 : 1970168943, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Edit/Redo=&Redo", id:						(os == @win) ? 1919247471 : 1919247471, help_id:0);
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/Edit/Cut=Cu&t", id:							(os == @win) ? 1668641824 : 1668641824, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Edit/Copy=&Copy", id:						(os == @win) ? 1668247673 : 1668247673, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Edit/Paste=&Paste", id:						(os == @win) ? 1885434740 : 1885434740, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Edit/PasteFront=Paste in &Front", id:		18, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Edit/PasteBack=Paste in &Back", id:			19, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Edit/PasteInPlace=Pa&ste in Place", id:		315, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Edit/PasteInAllArtboard=Pa&ste on All Artboards", id:			316, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Edit/Clear=C&lear", id:						(os == @win) ? 1668048225 : 1668048225, help_id:0);
+		separator();
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/Edit/ColorSettings=Color Settin&gs...", id:	139, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Edit/AssignProfile=&Assign Profile...", id:	203, help_id:0);
+		separator();
+		separator();
+		menu( text: "$$$/_MBAR/ImportExportSettings/MySettings=My Settings", id:			338, help_id:  77 ) { separator();  }		
+}
+}

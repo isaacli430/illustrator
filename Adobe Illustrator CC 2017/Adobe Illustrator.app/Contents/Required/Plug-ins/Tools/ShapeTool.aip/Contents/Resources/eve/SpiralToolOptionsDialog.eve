@@ -1,0 +1,69 @@
+layout SpiralToolOptionsDialog
+{
+    view subview(identifier: "AIEveSubView",
+                 name: '$$$/ShapeTool/Cap/Spiral=Spiral',
+                 placement: @place_column,
+                 show_border: false,
+                 layout_theme: @dialog_large,
+                 spacing: @unrelated_spacing)
+   {
+		
+		unit_hot_number(identifier: "radius",
+					name: '$$$/ShapeTool/Dlg/Spiral/SpiralRadiusText=&Radius:',
+					bind: @radius,
+					min_value: 5,
+					max_value: @max_radius,
+					decimal_places: 4,
+					digits: 9
+					);
+		unit_hot_number(identifier: "decay",
+					name: '$$$/ShapeTool/Dlg/Spiral/SpiralDecayText=&Decay:',
+					unit: "NumberEditUnit_Percent",
+					min_value: 5,
+					max_value: 150,
+					bind: @decay,
+					decimal_places: 2,
+					digits: 6                        
+					);
+		unit_hot_number(identifier: "segments",
+					name: '$$$/ShapeTool/Dlg/Spiral/SpiralSegUnit=&Segments:',
+					stepper: true,
+					set_default_focus: true,
+					bind: @num_segments,
+					min_value: 2,
+					max_value: 1000,
+					decimal_places: 0,
+					digits: 4
+					);
+                    
+		row()
+		{
+			button_bar(bind: @style, 
+			identifier: "direction",
+			name: "$$$/ShapeTool/Dlg/Spiral/18=S&tyle:",	
+				   items: [ { 
+							  identifier: "clockwise", 
+							  image: {normal: "SP_SpiralCW_32x32_N.png", dark_normal:"SP_SpiralCW_32x32_N_D.png"},							  
+							  value: 1 },
+							{ 
+							  identifier: "anticlockwise", 
+							  image: {normal:"SP_SpiralCCW_32x32_N.png", dark_normal: "SP_SpiralCCW_32x32_N_D.png"},
+							  value: 0 }
+							  ]);
+			
+		}
+		
+		
+		row(horizontal: @align_right, spacing: @related_spacing, reverse: os == @mac)
+		{
+			button(	default: true,
+					identifier: "okButton",
+					name: "$$$/gOK=OK",
+					commit_button: true);
+            button(	cancel: true,
+					identifier: "cancelButton",
+					name: "$$$/gCancel=Cancel",
+					commit_button: true);
+		}
+	}
+}

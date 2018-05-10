@@ -1,0 +1,102 @@
+layout WarpOptionsUI
+{
+	view subview(identifier: "WarpOptionsUI",
+					layout_theme: @dialog_large,
+					placement: @place_column,
+					spacing: @unrelated_spacing,
+					show_border: false)
+	{
+		column(horizontal: @align_fill)
+		{
+			column(child_horizontal: @align_fill)
+			{
+				popup(identifier: "WarpStylePopup",
+						bind: @WarpStyle,
+						include_custom_item: false,
+						iconpopup_include_vertical_separator: false,
+						items: @WarpStyleItems,
+						name: "$$$/Deform/WarpOptionsDlg/StylePopupLabel=&Style:");
+			
+				radiogroup(placement: @place_row,
+							 show_border: false,
+							 margin: 0)
+				{
+					radio_button(identifier: "HorizontalRadioButton",
+									bind: @Rotate,
+									value: "Horizontal",
+									horizontal: @align_left,
+									name: "$$$/Deform/WarpOptionsDlg/HorizontalRadioButton=&Horizontal");
+
+					radio_button(identifier: "VerticalRadioButton",
+									bind: @Rotate,
+									value: "Vertical",
+									horizontal: @align_right,
+									name: "$$$/Deform/WarpOptionsDlg/VerticalRadioButton=&Vertical");
+				}
+			}
+
+			combo_slider(identifier: "BendComboSlider",
+						bind: @Bend, bind_final: true, 
+						center_tick: true,
+						decimal_places: 2,
+						digits: 6,
+						min_max_filter: @MinMaxFilter,
+						set_default_focus: true,
+						slider_point: @up,
+						unit: "NumberEditUnit_Percent",
+						minLength: 201,
+						name: "$$$/Deform/WarpOptionsDlg/BendComboSliderLabel=&Bend:");
+			
+			group(identifier: "DistortionGroup",
+					horizontal: @align_fill,
+					name: "$$$/Deform/WarpOptionsDlg/DistortionGroupLabel=Distortion")
+			{
+				combo_slider(identifier: "HorizontalDistortionComboSlider",
+								bind: @HorizontalDistortion, bind_final: true,
+								center_tick: true,
+								decimal_places: 2,
+								digits: 6,
+								min_max_filter: @MinMaxFilter,
+								slider_point: @up,
+								unit: "NumberEditUnit_Percent",
+								minLength: 201,
+								name: "$$$/Deform/WarpOptionsDlg/HorizontalDistortionComboSliderLabel=H&orizontal:");
+			
+				combo_slider(identifier: "VerticalDistortionComboSlider",
+								bind: @VerticalDistortion, bind_final: true,
+								center_tick: true,
+								decimal_places: 2,
+								digits: 6,
+								min_max_filter: @MinMaxFilter,
+								slider_point: @up,
+								unit: "NumberEditUnit_Percent",
+								minLength: 201,
+								name: "$$$/Deform/WarpOptionsDlg/VerticalDistortionComboSliderLabel=V&ertical:");
+			}
+		}
+
+		row(horizontal: @align_fill,
+			child_vertical: @align_center,
+			guide_mask: [ @guide_label ],spacing: @separated_spacing)
+		{
+			checkbox(identifier: "PreviewCheckbox",
+						bind: @Preview,
+						name: "$$$/Deform/WarpOptionsDlg/PreviewCheckbox=&Preview");
+
+			row(horizontal: @align_right,
+				spacing: @related_spacing,
+				reverse: os == @mac)
+			{
+				button(identifier: "okButton",
+						commit_button: true,
+						default: true,
+						name: "$$$/gOK=OK");
+						
+				button(identifier: "cancelButton",
+						commit_button: true,
+						cancel: true,
+						name: "$$$/gCancel=Cancel");
+			}
+		}
+	}
+}

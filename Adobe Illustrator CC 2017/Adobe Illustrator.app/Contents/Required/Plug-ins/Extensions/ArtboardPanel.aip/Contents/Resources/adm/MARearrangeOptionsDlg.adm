@@ -1,0 +1,9 @@
+sheet MARearrangeOptionsDlg
+{
+	interface:
+		RowColString: "$$$/MARearrangeUI/Dlg/Options/ColString=C&olumns:";
+		ShowWarning: false;
+		left_to_right: true;
+		Layout: 0;
+		ArtboardNumber:"1";
+}

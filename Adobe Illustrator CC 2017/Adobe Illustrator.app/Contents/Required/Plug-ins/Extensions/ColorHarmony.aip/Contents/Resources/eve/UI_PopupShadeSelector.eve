@@ -1,0 +1,11 @@
+layout UI_PopupShadeSelector
+{
+	view subview(identifier: "UI_PopupShadeSelector_subview",
+					name: '$$$/ColorHarmonies/ColorReductionOptions/DialogTitle=Color Reduction Options',
+					layout_theme: @dialog_large,
+					placement: @place_column, width: 154, height: 154,
+					spacing: @unrelated_spacing,
+					show_border: true)
+	{
+	}				
+}

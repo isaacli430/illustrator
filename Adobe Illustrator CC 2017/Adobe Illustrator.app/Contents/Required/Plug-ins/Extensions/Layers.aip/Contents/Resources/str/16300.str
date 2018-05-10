@@ -1,0 +1,22 @@
+/* [1] */
+$$$/Layers/Str/Tooltip/eyeButtonTip/Mac=Toggles Visibility (Cmd-click to toggle view mode)
+/* [2] */
+$$$/Layers/Str/Tooltip/lockButtonTip=Toggles Lock (editable when blank)
+/* [3] */
+$$$/Layers/Str/Tooltip/newButtonTip=Create New Layer
+/* [4] */
+$$$/Layers/Str/Tooltip/trashButtonTip=Delete Selection
+/* [5] */
+$$$/Layers/Str/Tooltip/penTip=Indicates current drawing layer
+/* [6] */
+$$$/Layers/Str/Tooltip/lockedPenTip=Indicates current drawing layer (locked)
+/* [7] */
+$$$/Layers/Str/Tooltip/selArtTip=Indicates Selected Art (click to select art)
+/* [8] */
+$$$/Layers/Str/Tooltip/selArtSelTip=Indicates Selected Art (drag to move art)
+/* [9] */
+$$$/Layers/Str/Tooltip/newSubLayerButtonTip=Create New Sublayer
+/* [10] */
+$$$/Layers/Str/Tooltip/makeMaskButtonTip=Make/Release Clipping Mask
+/* [11] */
+$$$/Layers/Str/Tooltip/targetColTip=Click to target, drag to move appearance

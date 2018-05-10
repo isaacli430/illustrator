@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BuildDate</key>
+	<string>2016/07/28-01:10:39</string>
+	<key>BuildID</key>
+	<string>36906</string>
+	<key>BuildType</key>
+	<string>Release</string>
+	<key>BuildVersion</key>
+	<string>79.1083762_15.1083660</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>AdobePSL</string>
+	<key>CFBundleGetInfoString</key>
+	<string>AdobePSL 15.1.0.36906, Â© 1984-2015 Adobe Systems Incorporated</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.adobe.psl</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleLongVersionString</key>
+	<string>79.1083762_15.1083660, Â© 1984-2015 Adobe Systems Incorporated</string>
+	<key>CFBundlePackageType</key>
+	<string>FMWK</string>
+	<key>CFBundleShortVersionString</key>
+	<string>AdobePSL 15.1.0.36906</string>
+	<key>CFBundleSignature</key>
+	<string>ADBE</string>
+	<key>CFBundleVersion</key>
+	<string>15.1.0.36906</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Â© 1984-2015 Adobe Systems Incorporated</string>
+</dict>
+</plist>

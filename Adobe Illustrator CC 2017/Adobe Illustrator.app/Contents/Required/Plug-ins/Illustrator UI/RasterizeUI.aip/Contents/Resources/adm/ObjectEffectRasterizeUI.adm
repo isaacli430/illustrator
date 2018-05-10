@@ -1,0 +1,42 @@
+sheet ObjectEffectRasterizeUI
+{
+	interface:
+		IsRasterEffect: false;
+		IsPreserveSpotCheckedInDocumentRasterDialog: false;
+		
+		ColorItemSet1: [{ name: "$$$/Rasterize/Mnu/Model/CMYK=CMYK", value: 0 },
+                  	      	{ name: "$$$/Rasterize/Mnu/Model/Grayscale=Grayscale", value: 1 },
+                  	      	{ name: "$$$/Rasterize/Mnu/Model/Bitmap=Bitmap", value:2 }] ;
+                  	      	 
+                ColorItemSet2: [{ name: "$$$/Rasterize/Mnu/Model/RGB=RGB", value: 0 },                  	    
+                  	      	{ name: "$$$/Rasterize/Mnu/Model/Grayscale=Grayscale", value: 1 },
+                  	      	{ name: "$$$/Rasterize/Mnu/Model/Bitmap=Bitmap", value:2 }] ;  	      	 
+                  	      	 
+                ColorItemSet3: [{ name: "$$$/Rasterize/Mnu/Model/Grayscale=Grayscale", value: 1 },
+			      	{ name: "$$$/Rasterize/Mnu/Model/Bitmap=Bitmap", value:2 }] ;  	      	 
+
+
+		ColorModel: 0;
+		ColorItemSet : ColorItemSet1 <== (ColorModel == 0) ? ColorItemSet1: ( (ColorModel == 1) ? ColorItemSet2 : ColorItemSet3);                  	      	 
+		
+		ColorPopupVal: 0;
+
+		ResolutionPopup: 72;
+		OtherResolution: ResolutionPopup <== (ResolutionPopup < 0) ? (ResolutionPopup == -2 ? tempOtherResolution : OtherResolution): ResolutionPopup;		tempOtherResolution: ResolutionPopup <== (ResolutionPopup == -2) ? tempOtherResolution : OtherResolution;
+
+		BackGroundRadioGp: 1;
+
+		unlink Antialias: 0 <== ColorPopupVal == 2 ? 0 : Antialias;		
+
+		PathfinderSuiteAvailable: true;
+		unlink ClippingMaskCheckState: (PathfinderSuiteAvailable == true) ? ClippingMaskCheckState : false;
+		
+		PaddingOptionsNumberEdit: 0;
+		
+		PreserveSpotCheckboxState: true <== (ColorPopupVal != 0) ? restorePreserveSpotCell: PreserveSpotCheckboxState;
+		restorePreserveSpotCell: true <== (ColorPopupVal == 0) ? PreserveSpotCheckboxState : restorePreserveSpotCell;
+		
+		PreserveSpotWarning: 2 <== (IsRasterEffect == true)?((IsPreserveSpotCheckedInDocumentRasterDialog == false)? 1 : 2)
+			:((PreserveSpotCheckboxState == false && ColorPopupVal == 0) ? 0 : 2);
+					
+}

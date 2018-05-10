@@ -1,0 +1,12 @@
+layout guidesMenu
+{
+	view menu( id: 14,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/Guides/Hide=Hide G&uides", id:			154, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Guides/Lock=Loc&k Guides", id:			155, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Guides/Make=&Make Guides", id:			52, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Guides/Release=Re&lease Guides", id:			53, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Guides/Clear=&Clear Guides", id:			113, help_id:0);
+}
+}

@@ -1,0 +1,169 @@
+layout ScribbleFillUI
+{
+    view subview(identifier: "AIEveSubView",
+				 layout_theme: @dialog_large,
+				 show_border: false,
+				 spacing: @unrelated_spacing)
+	{		
+			group(identifier: "SettingsGp",
+					header: "popup(identifier: 'PresetPopUp',
+									name: '$$$/ScribbleFill/Options/Settings=Se&ttings:',
+									disabled_items: @disabled_items,
+									include_custom_item: false, horizontal: @align_left,
+									items: @entries,						
+									bind: @valuePreset,
+									set_default_focus: true)",
+					placement: @place_column,
+					child_horizontal: @align_fill,horizontal: @align_fill)
+			{					
+					column(child_horizontal: @align_fill)
+					{
+						angle_picker(identifier: "AnglePicker",	
+							name: "$$$/ScribbleFill/Options/AngleLabel=&Angle:",	
+							value_range: {min_value:-360, max_value: 360},						
+							show_editbox: true,
+							bind_final :true,
+							decimal_places:2,
+							bind: @angle);	
+												
+						combo_slider(identifier: "PathOverlapEdit",
+							slider_point: @up,
+							min_max_filter: @filterPath,
+							name: "$$$/ScribbleFill/Options/PathOverlapLabel=Path &Overlap:",
+							decimal_places: 2,
+							min_value: -1000,
+							max_value:1000, 
+							bind_final :true,
+							segments: [[0, -1000], [0.26, -100], [0.5, 0], [0.74, 100], [1, 1000]],				   
+							unit: "ApplicationRulerUnit",                           
+							left_mini_label: "$$$/ScribbleFill/Options/PathOverlap/LeftLabel=Inside",
+							right_mini_label:  "$$$/ScribbleFill/Options/PathOverlap/RightLabel=Outside",  
+							center_mini_label: "$$$/ScribbleFill/Options/PathOverlap/CenterLabel=Centered",
+							bind: @path,
+							minLength: 200,
+							digits: 6);	
+																					
+						combo_slider(identifier: "PathVariationEdit",
+								slider_point: @up,
+								name: "$$$/ScribbleFill/Options/PathOverlapVariationLabel=&Variation:",
+								decimal_places: 2,
+								min_max_filter: @filterPathVar,
+								min_value:0,
+								max_value:1000,								
+								bind_final :true,
+								unit: "ApplicationRulerUnit",
+								segments: [[0, 0], [0.3456, 100], [0.358, 110], [0.71, 600], [1, 1000]],
+								left_mini_label: "$$$/ScribbleFill/Options/PathOverlapVariation/LeftLabel=None",
+								right_mini_label:  "$$$/ScribbleFill/Options/PathOverlapVariation/RightLabel=Wide",    
+								bind: @pathvariation,
+								minLength: 200,                                 
+								digits: 6);	 														
+					}
+				
+			
+			
+		    group(identifier: "LineClusterGp",
+					placement: @place_column,horizontal: @align_fill,
+					child_horizontal: @align_fill,
+					name: "$$$/ScribbleFill/Options/LineCluster=Line Options")	
+				{
+					combo_slider(identifier: "StrokeWidthEdit",
+								slider_point: @up,
+								name:  "$$$/ScribbleFill/Options/WidthLabel=Stroke &Width:",
+								decimal_places: 2,
+								min_max_filter: @filterStroke,
+								min_value:0.01,
+								max_value:1000,
+								bind: @stroke,
+								segments: [[0, 0.01], [0.3456, 100], [0.358, 110], [0.71, 600], [1, 1000]],								
+								bind_final :true,
+								unit: "ApplicationRulerUnit",
+								horizontal: @align_left,
+								minLength: 200,
+								digits: 6);	                                    
+					
+					separator();
+					combo_slider(identifier: "CurvinessEdit",
+                                slider_point: @up,
+                                name: "$$$/ScribbleFill/Options/CurvinessLabel=&Curviness:",
+                                decimal_places: 2,
+                                min_max_filter: @filterCurviness,
+                                min_value:0,
+                                max_value:100,
+                                bind_final :true,
+                                unit: "NumberEditUnit_Percent",
+                                left_mini_label: "$$$/ScribbleFill/Options/Curviness/LeftLabel=Angular",
+                                right_mini_label:  "$$$/ScribbleFill/Options/Curviness/RightLabel=Loopy", 
+                                bind: @curviness,
+                                minLength: 200,
+                                digits: 6);	                            				
+					
+					combo_slider(identifier: "CurvinessVariationEdit",
+                                slider_point: @up,
+                                name: "$$$/ScribbleFill/Options/CurvinessVariationLabel=Variatio&n:",
+                                decimal_places: 2,
+                                min_max_filter: @filterCurviness,
+                                min_value:0,
+                                max_value:100,
+                                bind_final :true,
+                                unit: "NumberEditUnit_Percent",
+                                left_mini_label: "$$$/ScribbleFill/Options/CurvinessVariation/LeftLabel=None",
+                                right_mini_label:  "$$$/ScribbleFill/Options/CurvinessVariation/RightLabel=Wide", 
+                                bind: @curvinessvar,
+                                minLength: 200,
+                                digits: 6);	                                    					
+					
+					separator();
+				
+					combo_slider(identifier: "SpacingEdit",
+                                slider_point: @up,
+                                name: "$$$/ScribbleFill/Options/SpacingLabel=&Spacing:",
+                                decimal_places: 2,
+                                min_max_filter: @filterStroke,
+                                min_value:0.01,
+                                max_value:1000,
+                                segments: [[0, 0.01], [0.3456, 100], [0.358, 110], [0.71, 600], [1, 1000]],                                
+								bind_final :true,
+                                unit: "ApplicationRulerUnit",
+                                left_mini_label: "$$$/ScribbleFill/Options/Spacing/LeftLabel=Tight",
+                                right_mini_label:  "$$$/ScribbleFill/Options/Spacing/RightLabel=Loose", 
+                                bind: @spacing,
+                                minLength: 200,
+                                digits: 6);	                                					
+					
+					combo_slider(identifier: "SpacingVariationEdit",
+                                slider_point: @up,
+                                name: "$$$/ScribbleFill/Options/SpacingVariationLabel=Va&riation:",
+                                decimal_places: 2,
+                                min_max_filter: @filterPathVar,
+                                min_value:0,
+                                max_value:1000,                                
+								bind_final :true,
+                                unit: "ApplicationRulerUnit",
+                                segments: [[0, 0], [0.3456, 100], [0.358, 110], [0.71, 600], [1, 1000]],
+                                left_mini_label: "$$$/ScribbleFill/Options/SpacingVariation/LeftLabel=None",
+                                right_mini_label:  "$$$/ScribbleFill/Options/SpacingVariation/RightLabel=Wide",  
+                                bind: @spacingvar, 
+                                minLength: 200,                                
+                                digits: 6);	                                      					
+								
+				}
+			}		
+	row(horizontal: @align_fill, child_vertical: @align_center,spacing: @separated_spacing)
+           {
+              checkbox(identifier: "previewButton",
+   					 name: "$$$/gPreview=&Preview",
+   					 horizontal: @align_left,
+					 bind: @Preview,
+   					 guide_mask: [@guide_label]);
+               
+              row(horizontal: @align_right, reverse: os == @mac, child_vertical: @align_center, spacing: @related_spacing)
+              {
+   				button(identifier: "okButton", commit_button: true,
+                   name: "$$$/gOK=OK");
+				button(identifier: "cancelButton", commit_button: true,
+                   name: "$$$/gCancel=Cancel");
+               }
+           }
+	}
+}

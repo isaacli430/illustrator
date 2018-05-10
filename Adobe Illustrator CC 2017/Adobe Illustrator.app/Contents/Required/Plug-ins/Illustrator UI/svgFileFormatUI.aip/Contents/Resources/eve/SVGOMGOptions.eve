@@ -1,0 +1,118 @@
+layout SVGOMGOptions
+{
+	view subview(identifier: "SVGOMGOptionsSubview", placement: @place_column, show_border: false, margin: 0)
+    {
+    	optional(bind: @ShowSVGOMGBanner, value: true)
+		{
+			subview(identifier: "SVGOMGOptionsBanner", spacing: 0, horizontal: @align_fill, margin: 0, placement: @place_row, show_border: false)
+			{
+				row(horizontal: @align_fill, margin:[10,15,10,15])
+				{
+					static_text(identifier: "SVGOMGOptionsBannerText",
+								font_size: 12,
+								vertical: @align_center,
+								name: "$$$/SVGOMGOptions/Dlg/BannerText=Get multiple file formats in one click.");
+							
+					button(identifier: "SVGOMGOptionsBannerButton", 
+							vertical: @align_center, 
+							horizontal: @align_right,
+							font_size: 12,
+							name: "$$$/SmartExoprtFTUE/Banners/BannerButtonString=Try Export for Screens");
+				}
+			}
+		}
+		
+		subview(identifier: "AIEveSubView", layout_theme: @dialog_large, horizontal: @align_fill, placement: @place_column, show_border: false, 
+			spacing: @unrelated_spacing, child_horizontal: @align_center)
+		{	
+			column(horizontal:@align_fill, spacing:15)
+			{
+				column(horizontal:@align_left, child_horizontal: @align_fill)
+				{
+					popup(identifier: "SVGCSS",
+						name: "$$$/svgOMGOptions/Dlg/CSS=&Styling:", 
+						alt: "$$$/svgOMGOptions/Dlg/CSSDescription=Choose how CSS is generated",
+						include_custom_item: false, 
+						items: [
+								{name:"$$$/svgOMGOptions/Str/StyleElements=Internal CSS", value:0},
+								{name:"$$$/svgOMGOptions/Str/StyleAttributes=Inline Style", value:1},
+								{name:"$$$/svgOMGOptions/Str/PresentationAttributes=Presentation Attributes", value:2}
+								]
+						);
+					popup(identifier: "SVGFont",
+						name: "$$$/svgOMGOptions/Dlg/Font=&Font:", 
+						alt: "$$$/svgOMGOptions/Dlg/FontDescription=Choose how fonts are exported",
+						include_custom_item: false,
+						items: [
+								{name:"$$$/svgOMGOptions/Str/ConvertToOutlines=Convert To Outlines", value:0},
+								{name:"$$$/svgOMGOptions/Str/SVG=SVG", value:1}							
+								]
+						);			
+					popup(identifier: "SVGImageLocation",
+						name: "$$$/svgOMGOptions/Dlg/ImageLocation=&Images:", 
+						alt: "$$$/svgOMGOptions/Dlg/ImageLocationDescription=Choose how images are saved in exported SVG",
+						include_custom_item: false,
+						items: [
+								{name:"$$$/svgOMGOptions/Str/Preserve=Preserve", value:0},
+								{name:"$$$/svgOMGOptions/Str/Embed=Embed", value:1},
+								{name:"$$$/svgOMGOptions/Str/Link=Link", value:2}							
+								]
+						);
+					popup(identifier: "SVGIdType",
+						name: "$$$/svgOMGOptions/Dlg/idType=&Object IDs:", 
+						alt: "$$$/svgOMGOptions/Dlg/idTypeDescription=Choose how object names (IDs) are generated in exported SVG",
+						include_custom_item: false,
+						items: [
+								{name:"$$$/svgOMGOptions/Str/Regular=Layer Names", value:0},
+								{name:"$$$/svgOMGOptions/Str/Minimal=Minimal", value:1},
+								{name:"$$$/svgOMGOptions/Str/Unique=Unique", value:2}							
+								]
+						);						
+					unit_hot_number(identifier: "SVGCoordinatePrecision", 
+						alt: "$$$/svgOMGOptions/Dlg/PrecisionDescription=Choose the precision of vectors exported SVG",				
+						min_value:0, max_value:5,
+						name: "$$$/svgOMGOptions/Dlg/DecimalPlaces=&Decimal:"
+						);
+					row()	
+					{
+					checkbox(identifier: "SVGMinification", name: "$$$/svgOMGOptions/Dlg/Minify=Minify",
+						alt: "$$$/svgOMGOptions/Dlg/MinifyDescription=Reduces size of the SVG"		
+						);
+					checkbox(identifier: "SVGResponsive", name: "$$$/svgOMGOptions/Dlg/Responsive=Responsive",
+						alt: "$$$/svgOMGOptions/Dlg/ResponsiveDescription=Makes the SVG Responsive", horizontal: @align_fill
+						);
+				}
+
+				}
+
+			}
+			
+			optional(bind: @ShowSVGOMGCodePreviewOkCancel, value: true)
+			{
+				row(horizontal:@align_fill, spacing: @related_spacing)
+				{
+					row(horizontal: @align_left, margin:[0,0,0,15])
+					{
+						button(identifier: "SVGShowCode",
+								vertical: @align_fill,
+								name: "$$$/svgOMGOptions/ShowCode=Show Code",
+								alt: "$$$/svgFileFormat/Str/ShowCode=Launches a text editor to view the SVG code.",
+								horizontal: @align_left
+								);					   				  
+						button(identifier: "SVGPreview", vertical: @align_fill, show_border:true,
+								name: "$$$/svgOMGOptions/Preview=Web Preview...",
+								alt: "$$$/svgFileFormat/Str/Preview=Launches a web browser to view the SVG document.",
+								image:{normal:"Web_Preview.png", dark_normal: "Web_Preview_D.png"},
+								horizontal: @align_left
+								);
+					}
+					row(horizontal: @align_fill, child_horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+					{
+						button(identifier: "okButton", commit_button: true, name: "$$$/svgOMGOptions/Ok=OK");
+						button(identifier: "cancelButton", commit_button: true, name: "$$$/svgOMGOptions/Cancel=Cancel");
+					}
+				}
+			}
+		}
+	}
+}

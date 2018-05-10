@@ -1,0 +1,39 @@
+layout GraphViewFloatingDlg
+{
+    view subview(	
+		identifier: "GraphViewPanel",
+		layout_theme: @dialog_large,
+		show_border: false,
+		child_horizontal: @align_fill,
+		margin: 0, spacing: 0)
+    {
+		row(spacing: 0)
+		{
+			edit_text(	characters: 30, 
+						max_characters: 255, 
+						identifier: "TextEntry", 
+						horizontal: @align_fill,
+						vertical: @align_fill,
+						set_default_focus: true);
+		
+			button(identifier: "Import", image: {normal: "SP_GraphDataImport_Md_N.png", dark_normal: "SP_GraphDataImport_Md_N_D.png"}, 
+					action: @Import, alt: "$$$/_GraphDataDialog/Str/3921=Import data", wants_focus: false);
+				
+			button(identifier: "SwapRowCol", image: {normal: "SP_SwapRowCol_Md_N.png", dark_normal: "SP_SwapRowCol_Md_N_D.png"}, 
+					action: @SwapRowCol, alt: "$$$/_GraphDataDialog/Str/3922=Transpose row/column", wants_focus: false);
+						
+			button(identifier: "SwapXY", image: {normal: "SP_SwapXY_Md_N.png", dark_normal: "SP_SwapXY_Md_N_D.png"}, 
+					action: @SwapXY, alt: "$$$/_GraphDataDialog/Str/3923=Switch x/y", wants_focus: false);
+						
+			button(identifier: "CellStyle", image: {normal: "SP_CellSize_Md_N.png", dark_normal: "SP_CellSize_Md_N_D.png"}, 
+					action: @CellStyle, alt: "$$$/_GraphDataDialog/Str/3924=Cell style", wants_focus: false);
+						
+			button(identifier: "Undo", image: {normal: "SP_Undo_Md_N.png", dark_normal: "SP_Undo_Md_N_D.png"}, 
+					action: @Undo, alt: "$$$/_GraphDataDialog/Str/3925=Revert", wants_focus: false);
+						
+			button(identifier: "Apply", image: {normal: "SP_Accept_Md_N.png", dark_normal: "SP_Accept_Md_N_D.png"}, 
+					action: @Apply, alt: "$$$/_GraphDataDialog/Str/3926=Apply", wants_focus: false);    
+		}
+		subview(identifier: "GraphView", show_border: false, vertical: @align_fill);
+    }
+}

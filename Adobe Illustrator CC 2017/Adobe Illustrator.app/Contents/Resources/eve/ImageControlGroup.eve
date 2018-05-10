@@ -1,0 +1,104 @@
+layout ImageControlGroup
+{
+    view subview(identifier: "ImageControlGroup"
+				, placement: @place_row
+				, layout_theme: @controlbar
+				, show_border: false
+				, child_vertical: @align_center
+				, margin: 0
+				, spacing: 5
+				, height: 31)
+    {
+		optional(identifier: "ImageControlGroupSubGroup1"
+				, placement: @place_row
+				, child_vertical: @align_center
+				, margin: 0)
+		{
+			link_button(identifier: "ImageNameLinkButton"
+						, wants_focus: false
+						, name: "xxxxxxxxxxxxxxxxxxxxxxxx");
+						
+		}	
+		optional(identifier: "ImageControlGroupSubGroup2"
+			, placement: @place_row
+			, child_vertical: @align_center
+			, margin: 0)
+			{
+				display_text(identifier: "ImageTypeLabel"
+					, name: ""
+					, characters: 10
+					, value: @ImageTypeLabelCell);
+						
+				display_text(identifier: "ImageResLabel"
+					, name: ""
+					, characters: 10
+					, value: @ImageResLabelCell);
+			}			
+			
+		optional(identifier: "ImageControlGroupSubGroup3"
+			, placement: @place_row
+			, child_vertical: @align_center
+			, margin: 0, spacing: @related_spacing)
+			{
+				overlay()
+                {
+                    optional(bind: @imageEmbed, value: true, margin: 0)
+                    {
+                        button(identifier: "ImageEmbedButton"
+						, action: @ImageEmbedButtonAction
+						, name: "$$$/LinkControlPanelEntry/ImageEmbed=Embed"
+						, wants_focus: false);
+                    }        
+                    optional(bind: @imageEmbed, value: false, margin: 0)
+                    {                                	
+						button(identifier: "ImageUnEmbedButton"
+						, action: @ImageUnEmbedButtonAction
+						, name: "$$$/LinkControlPanelEntry/ImageUnEmbed=Unembed"
+						, wants_focus: false);     
+                    }
+                }				
+				button(identifier: "ImageEditOriginalButton"
+				, action: @ImageEditOriginalButtonAction
+				, name: "$$$/LinkPalette/Str/LinkPalette/EditButton=Edit Original"
+				, wants_focus: false);
+			}			
+			
+		optional(identifier: "ImageControlGroupSubGroup4"
+			, placement: @place_row
+			, child_vertical: @align_center
+			, margin: 0, spacing:@related_spacing)
+			{
+				row(spacing: 0)
+				{
+					button(identifier: "ImageVectorizeButton"
+					, action: @ImageVectorizeButtonAction
+					, name: "$$$/CtrlPanel/ImageTraceButton=Image Trace"
+					, alt: "$$$/CtrlPanel/ImageTraceButton/Tooltip=Converts Image into Tracing object"
+					, button_style: true);
+						
+					popup(identifier: "ImageVectorizePopup"
+							, wants_focus: false
+							, image: (os == @mac ?
+								{normal: "P_DropDownArrowMac_9x18_N.png"}
+								: {normal: "P_DropDownArrowWin_9x18_N.png"})
+							, include_custom_item: false
+							, button_view: true
+							, alt: "$$$/AI/ImageControlGroup/TracingPopupTip=Tracing Presets");
+				}
+				button(identifier: "ImageMaskButton"
+						, action: @ImageMaskButtonAction
+						, name: "$$$/LinkControlPanelEntry/MaskEntry=Mask"
+						, wants_focus: false);
+			}
+		optional(identifier: "ImageControlGroupSubGroup5"
+			, placement: @place_row
+			, child_vertical: @align_center
+			, margin: 0, spacing: @related_spacing)
+			{
+				button(identifier: "ImageCropButton"
+							, action: @ImageCropButtonAction
+							, name: "$$$/CtrlPanel/ImageCrop=Crop Image"
+							, wants_focus: false);
+			}			
+		}
+}

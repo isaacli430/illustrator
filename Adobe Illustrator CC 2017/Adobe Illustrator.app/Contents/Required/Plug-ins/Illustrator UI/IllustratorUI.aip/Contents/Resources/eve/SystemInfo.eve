@@ -1,0 +1,33 @@
+layout SystemInfo
+{
+    view subview(	identifier: "SystemInfoSubView",
+			layout_theme: @dialog_large,
+			child_horizontal: @align_fill,
+			placement: @place_column,
+			show_border: false,
+			spacing: @unrelated_spacing)
+    {
+        row(child_horizontal: @align_fill)
+            {
+                edit_text(characters: 50,
+                          identifier: "textEditBox",
+                          lines: 18,
+                          scrollable: true,
+                          readonly: true);
+            }
+
+        row(horizontal: @align_fill, child_horizontal: @align_right,spacing: @inter_group_spacing)
+            {
+                button(identifier: "clipboardButton",
+                       name: "$$$/_sysinfo/Dlg/copytoclipboard=Copy to Clipboard",
+                       action: @ClipButtonAction,
+					   vertical: @align_center,
+                       horizontal:@align_left);
+
+                button(default: true,
+                       identifier: "okButton",
+                       name: "$$$/gOK=OK",
+					   commit_button: true);
+            }
+    }
+}

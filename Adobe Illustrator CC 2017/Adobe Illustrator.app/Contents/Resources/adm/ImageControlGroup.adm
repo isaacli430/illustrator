@@ -1,0 +1,8 @@
+sheet ImageControlGroup
+{
+interface:
+	ImageNamePopupLabelCell: "";
+	ImageTypeLabelCell: "CMYK";
+	ImageResLabelCell: "xxxxxxxxxxxxxxx";
+	imageEmbed: true;
+}

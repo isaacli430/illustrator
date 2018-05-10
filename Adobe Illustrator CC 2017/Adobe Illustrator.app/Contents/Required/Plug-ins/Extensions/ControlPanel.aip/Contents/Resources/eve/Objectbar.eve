@@ -1,0 +1,19 @@
+layout AlignControlPanelMinGroup
+{
+    view subview(identifier: "Objectbar",
+				 show_border: false,
+				 placement: @place_row,				 
+				 margin : 10,
+				 spacing: 0,
+				 height:  31,
+				 width: 1024)
+    {										
+		button( identifier: "PopupDropDownPictureBtn",
+				button_style: true,
+				vertical: @align_center,
+				horizontal: @align_right,
+				image:{normal: "SP_OptionFlyout_15x9_N.png",dark_normal:"SP_OptionFlyout_15x9_N_D.png"}
+				);		
+	}
+}
+

@@ -1,0 +1,49 @@
+sheet WidthPointEditDialog
+{
+	interface:
+		showDoubleDialog:0;
+		sideMaxWidth: 0;
+		totalMaxWidth: 0;
+		showDeleteButton: false;
+		
+		
+		adjustAdjoining: false <== adjustAdjoiningEnabled ? adjustAdjoining : rememberAdjustAdjoining;
+		rememberAdjustAdjoining: false <== adjustAdjoiningEnabled ? adjustAdjoining : rememberAdjustAdjoining;
+		adjustAdjoiningEnabled <== true;
+		
+		rightWidth: 0 <== singleWidthOut ? rememberRightWidth : rightWidth;
+		rememberRightWidth: 0 <== (singleWidthOut) ? rememberRightWidth : rightWidth;
+		
+		rightWidth2: 0 <== singleWidthInc ? rememberRightWidth2 : rightWidth2;
+		rememberRightWidth2: 0 <== (singleWidthInc) ? rememberRightWidth2 : rightWidth2;
+
+		leftWidth: 0 <== singleWidthOut ? rememberLeftWidth : leftWidth;
+		rememberLeftWidth: 0 <== (singleWidthOut) ? rememberLeftWidth : leftWidth;
+		
+		leftWidth2: 0 <== singleWidthInc ? rememberLeftWidth2 : leftWidth2;
+		rememberLeftWidth2: 0 <== (singleWidthInc) ? rememberLeftWidth2 : leftWidth2;
+		
+		totalWidth: 0 <== singleWidthOut ? rememberTotalWidth : totalWidth;
+		rememberTotalWidth: 0 <== (singleWidthOut) ? rememberTotalWidth : totalWidth;
+		
+		totalWidth2: 0 <== singleWidthInc ? rememberTotalWidth2 : totalWidth2;
+		rememberTotalWidth2: 0 <== (singleWidthInc) ? rememberTotalWidth2 : totalWidth2;
+		
+		proportionalOn: false <== singleWidthOut ? rememberProportionalOn : proportionalOn;
+		rememberProportionalOn: false <== (singleWidthOut) ? rememberProportionalOn : proportionalOn;
+		
+		proportional2On: false <== singleWidthInc ? rememberProportional2On : proportional2On;
+		rememberProportional2On: false <== (singleWidthInc) ? rememberProportional2On : proportional2On;
+		
+		singleWidthInc: false;
+		singleWidthOut: false;
+	
+	logic:
+		relate {
+			singleWidthInc <== singleWidthOut ? false: singleWidthInc;
+			singleWidthOut <== singleWidthInc ? false: singleWidthOut;
+		}
+		
+	invariant:
+		deleteButton <== showDeleteButton == true;
+}

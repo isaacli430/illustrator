@@ -1,0 +1,47 @@
+layout SwatchControlGroup
+{
+    view subview(identifier: "SwatchControlGroup",
+				layout_theme: @controlbar,
+				show_border: false,
+				child_vertical: @align_center,
+				placement: @place_row,
+				margin : 0,
+				spacing: 5,
+				height:  31)
+    {		
+		optional(identifier: "SwatchFillHyperLink", child_vertical: @align_center, margin : 0, placement: @place_row)
+		{
+			popup_panel_button(identifier: "FillSwatch",
+								width: 36,
+								shape_square: true,
+								alt: "$$$/SwatchLibs/Str/FillStrokeItemTip=Hold shift key to bring up alternate color UI");
+		}
+		
+		optional(identifier: "SwatchStrokeHyperLink", child_vertical: @align_center, margin : 0, placement: @place_row)
+		{
+			popup_panel_button(identifier: "StrokeSwatch",
+								width: 36,
+								shape_square: true,
+								alt: "$$$/SwatchLibs/Str/FillStrokeItemTip=Hold shift key to bring up alternate color UI");
+						
+			row(spacing:@related_spacing)
+			{
+				link_button(identifier:"StrokePanel",
+							name: "$$$/SwatchLibs/Str/StrokeLabelInlineEditControlLabel=Stroke:",
+							alt: "$$$/SwatchLibs/Str/StrokePaletteItemTip=Stroke Panel");
+							
+				unit_hot_number(identifier: "StrokeWidth",
+							alt: "$$$/SwatchLibs/Str/StrokeWeightItemTip=Stroke Weight",
+							max_value: 1000, min_value: 0,
+							stepper: true,
+							unit: "ApplicationStrokeUnit",
+							popuplist: true,
+							decimal_places: 3,
+							digits: 2,
+							bind_final: true);
+			}
+		}
+				
+    }
+}
+

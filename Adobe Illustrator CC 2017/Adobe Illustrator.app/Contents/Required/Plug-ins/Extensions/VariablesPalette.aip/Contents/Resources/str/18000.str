@@ -1,0 +1,56 @@
+/* [1] */
+$$$/VariablesPalette/Str/UndoDelete=Undo Delete Variable
+/* [2] */
+$$$/VariablesPalette/Str/RedoDelete=Redo Delete Variable
+/* [3] */
+$$$/VariablesPalette/Str/UndoVariable=Undo Variable Options
+/* [4] */
+$$$/VariablesPalette/Str/RedoVariable=Redo Variable Options
+/* [5] */
+$$$/VariablesPalette/Str/UndoNew=Undo New Variable
+/* [6] */
+$$$/VariablesPalette/Str/RedoNew=Redo New Variable
+/* [7] */
+$$$/VariablesPalette/Str/UndoUnbinding=Undo Unbinding
+/* [8] */
+$$$/VariablesPalette/Str/RedoUnbinding=Redo Unbinding
+/* [9] */
+$$$/VariablesPalette/Str/UndoBinding=Undo Binding
+/* [10] */
+$$$/VariablesPalette/Str/RedoBinding=Redo Binding
+/* [11] */
+$$$/VariablesPalette/Str/UndoCapture=Undo Capture Data Set
+/* [12] */
+$$$/VariablesPalette/Str/RedoCapture=Redo Capture Data Set 
+/* [13] */
+$$$/VariablesPalette/Str/UndoDeleteDataSet=Undo Delete Data Set
+/* [14] */
+$$$/VariablesPalette/Str/RedoDeleteDataSet=Redo Delete Data Set 
+/* [15] */
+$$$/VariablesPalette/Str/UndoRename=Undo Rename Data Set
+/* [16] */
+$$$/VariablesPalette/Str/RedoRename=Redo Rename Data Set
+/* [17] */
+$$$/VariablesPalette/Str/UndoUpdate=Undo Update Data Set
+/* [18] */
+$$$/VariablesPalette/Str/RedoUpdate=Redo Update Data Set
+/* [19] */
+$$$/VariablesPalette/Str/UndoNext=Undo Next Data Set
+/* [20] */
+$$$/VariablesPalette/Str/RedoNext=Redo Next Data Set
+/* [21] */
+$$$/VariablesPalette/Str/UndoPrev=Undo Previous Data Set
+/* [22] */
+$$$/VariablesPalette/Str/RedoPrev=Redo Previous Data Set
+/* [23] */
+$$$/VariablesPalette/Str/UndoLock=Undo Lock Variables
+/* [24] */
+$$$/VariablesPalette/Str/RedoLock=Redo Lock Variables
+/* [25] */
+$$$/VariablesPalette/Str/UndoUnlock=Undo Unlock Variables
+/* [26] */
+$$$/VariablesPalette/Str/RedoUnlock=Redo Unlock Variables
+/* [27] */
+$$$/VariablesPalette/Str/UndoLoad=Undo Load Variable Library
+/* [28] */
+$$$/VariablesPalette/Str/RedoLoad=Redo Load Variable Library

@@ -1,0 +1,46 @@
+layout ExpFeaturesPreference
+{
+	view subview(identifier: "ExpFeaturesPrefEveSubView",
+				 child_horizontal: @align_fill,
+				 placement: @place_column,
+				 show_border: false,
+				 margin: [22,15,10,15],
+				 layout_theme: @dialog_large)
+	{
+		column(spacing : 0)
+		{
+			static_text(identifier: "EFPrefsStaticTextCaption",
+							name: "$$$/PrefsDlg/EFPrefsDlg/EFPrefsStaticTextCaption=Technology Previews"
+							);
+		
+			separator(identifier: "EFPrefsTopSeparator");
+		}
+		
+		checkbox(identifier: "EFPrefsCheckboxEnableCharts",
+				name: "$$$/PrefsDlg/EFPrefsDlg/EFPrefsCheckboxEnableCharts=&Enable Creative Cloud Charts (Preview)",
+				guide_mask: [ @guide_label ],
+				bind: @EFPrefsEnableCharts
+					);
+		column(spacing : 0, margin: [0,14,0,0])
+		{
+			row(horizontal: @align_fill, margin: [0,2,0,0])
+			{
+			static_text(identifier: "ChartsInfo", name: "$$$/PrefsDlg/EFPrefsDlg/ChartsInfo=Create custom graphs, charts, and infographics from your own data, using a simple, intuitive interface. Charts can be easily customized by replacing the standard chart designs with Illustrator artwork to create beautiful, data-driven visualizations.", characters: 1, horizontal: @align_fill, theme_font_size: @medium);
+			}
+			row(horizontal: @align_left)
+			{
+			link_button(identifier: "EFPrefsMoreInfo",
+						font_size: @large,
+						name: "$$$/PrefDlg/EFPrefsDlg/EFPrefsStaticMoreInfo=More Info..."
+					);
+			}
+		
+			row(margin: [22,0,0,0])
+			{
+				info_icon(icontype:"warning", size: "small", alt: "$$$/PrefsDlg/EFPrefsDlg/Str/ToolTip/EFPrefsUI=Changes will take effect the next time you launch Illustrator");
+				
+				static_text(identifier: "ChartsPrefInfo", name: "$$$/PrefsDlg/EFPrefsDlg/ChartsPrefInfo=Changes will take effect the next time you launch Illustrator.", horizontal: @align_fill, theme_font_size: @small);
+			}
+		}
+	}
+}

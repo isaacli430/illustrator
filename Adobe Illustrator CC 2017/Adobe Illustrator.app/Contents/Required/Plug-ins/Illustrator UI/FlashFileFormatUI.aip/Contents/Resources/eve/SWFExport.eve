@@ -1,0 +1,499 @@
+layout SwfExportDialog
+{
+    view subview(identifier: "AIEveSubView",
+		         layout_theme: @dialog_large,
+                 placement: @place_column,
+                 show_border: false,spacing: @unrelated_spacing)
+	{
+		column(spacing: @inter_group_spacing)
+		{
+			optional(margin:0, bind: @editORnewUI, value: false)
+			{
+				row(horizontal: @align_center, child_vertical: @align_center)
+				{
+					panel(width: 250, margin: 0, child_vertical: @align_center)
+					{
+					popup(identifier: "presetPopup", 
+						name: "$$$/FlashFileFormat/Dlg/Options/presetTitleStr=&Preset:",
+						set_default_focus: true,
+						horizontal: @align_fill,
+						include_custom_item: false,
+						items: [{ name: "$$$/SWFExport/Str/Presets/customPreset=[Custom]", value: 0 },
+								{ name: "-", value: 1 }]);
+					}
+					button(identifier: "savePresetButton",
+							action: @savePresetButtonAction,
+							 image: {normal:"SP_Save_Md_N.png", dark_normal:"SP_Save_Md_N_D.png"},
+							show_border: true);
+				}
+			}
+			optional(margin:0, bind: @editORnewUI, value: true)
+			{
+				row(horizontal: @align_center)
+				{
+					edit_text(name: "$$$/FlashFileFormat/Dlg/Options/presetTitleStr=&Preset:",
+						identifier: "presetTextEdit",
+						set_default_focus: true,
+						bind: @presetTextEdit,
+						characters: 26,
+						max_characters: 64,
+						horizontal: @align_fill);
+				}
+			}
+					
+			group(identifier: "highlightFrame",
+					header: "button_bar(bind: @basic, identifier: 'BasicAdvancedButton', horizontal: @align_center,
+							items: [{ name: '$$$/FlashFileFormat/Dlg/Options/less=Basic', value: true },
+									{ name: '$$$/FlashFileFormat/Dlg/Options/more=Advanced', value: false }]);
+					placement: @place_column")
+			{
+			
+				overlay(child_vertical: @align_center, child_horizontal: @align_fill, horizontal: @align_fill)
+				{
+					panel(margin:0, bind:@basic, value:true, guide_mask: [@guide_baseline], child_horizontal: @align_fill)
+					{
+						column(horizontal: @align_left, child_horizontal: @align_fill)
+						{
+							popup(identifier: "exportAsPopup", 
+							name: "$$$/FlashFileFormat/Dlg/Options/exportasTitleStr=&Export As:",
+							include_custom_item: false,
+							bind:@exportAsPopup,
+							items: [ { name: "$$$/SWFExport/Str/Presets/filetofile=AI File to SWF File", value: 1 },
+									 { name: "$$$/SWFExport/Str/Presets/layertoframe=AI Layers to SWF Frames", value: 2 },
+									 { name: "$$$/SWFExport/Str/Presets/layertofile=AI Layers to SWF Files", value: 3 },
+									 { name: "$$$/SWFExport/Str/Presets/layerstosymbols=AI Layers to SWF Symbols", value: 4 },
+									 { name: "$$$/SWFExport/Str/Presets/artboardtofiles=Artboards to Files", value: 5 }]);
+
+							popup(identifier: "versionPopup", 
+								name: "$$$/FlashFileFormat/Dlg/Options/versionTitleStr=&Version:",
+								include_custom_item: false,
+								bind: @versionPopup,
+								items: [ { name: "$$$/FlashFileFormat/Mnu/Version/1=Flash Player 1", value: 1 },
+										 { name: "$$$/FlashFileFormat/Mnu/Version/2=Flash Player 2", value: 2 },
+										 { name: "$$$/FlashFileFormat/Mnu/Version/3=Flash Player 3", value: 3 },
+										 { name: "$$$/FlashFileFormat/Mnu/Version/4=Flash Player 4", value: 4 },
+										 { name: "$$$/FlashFileFormat/Mnu/Version/5=Flash Player 5", value: 5 },
+										 { name: "$$$/FlashFileFormat/Mnu/Version/6=Flash Player 6", value: 6 },
+										 { name: "$$$/FlashFileFormat/Mnu/Version/7=Flash Player 7", value: 7 },
+										 { name: "$$$/FlashFileFormat/Mnu/Version/8=Flash Player 8", value: 8 },
+										 { name: "$$$/FlashFileFormat/Mnu/Version/9=Flash Player 9", value: 9 }]);
+						}
+						
+						separator(horizontal: @align_fill);
+							
+						row(child_horizontal: @align_fill)
+						{
+							row(horizontal: @align_left, child_spacing: 0)
+							{
+								panel(margin:0){}
+							
+								column(guide_mask: [ @guide_label ])
+								{
+									checkbox(identifier: "cliipToArtboardCheckBox",
+											bind:@cliipToArtboardCheckBox,
+											name: "$$$/FlashFileFormat/Dlg/Options/optionsItemClipArtboardCheckbox=Cl&ip to Artboard Size");
+
+									checkbox(identifier: "compressCheckBox",
+											bind:@compressCheckBox,
+											name: "$$$/FlashFileFormat/Dlg/Options/optionsItemCompressFile=C&ompress File");
+
+									checkbox(identifier: "appearanceCheckBox",
+											bind:@appearanceCheckBox,
+											name: "$$$/FlashFileFormat/Dlg/Options/optionsItemPreserveAppearanceCheckbox=P&reserve Appearance");
+									
+									checkbox(identifier: "protectImportCheckBox",
+											bind:@protectImportCheckBox,
+											name: "$$$/FlashFileFormat/Dlg/Options/optionsItemReadOnlyCheckbox=Pro&tect from Import");
+
+									
+									
+										edit_text(name: "$$$/FlashFileFormat/Dlg/Options/optionsPasswordTitleStr=Password:",
+								                      identifier: "passwordTextEdit",
+								                       bind: @passwordTextEdit,
+								                        horizontal: @align_left,
+								                       indent: gLargeIndent,
+								                         guide_mask: [@guide_label],
+								                          password: true,
+								                             max_characters: 64);
+									
+
+
+
+
+								}
+							}
+							
+							panel(width:80, margin:0){}
+							
+							row(horizontal: @align_right, child_spacing: 0)
+							{
+								column()
+								{
+									checkbox(identifier: "symbolsCheckBox",
+											bind:@symbolsCheckBox,
+											name: "$$$/FlashFileFormat/Dlg/Options/optionsItemExportAllSymbols=Include Unused &Symbols");
+								
+									checkbox(identifier: "kerningCheckBox",
+											bind:@kerningCheckBox,
+											name: "$$$/FlashFileFormat/Dlg/Options/optionsItemIgnoreTextKerning=Ignore &Kerning Information for Text");
+										
+									checkbox(identifier: "outlineCheckBox",
+											bind:@outlineCheckBox,
+											name: "$$$/FlashFileFormat/Dlg/Options/optionsItemTextAsPath=E&xport Text as Outlines");
+											
+									checkbox(identifier: "metadataCheckBox",
+											bind:@metadataCheckBox,
+											name: "$$$/FlashFileFormat/Dlg/Options/optionsItemMetadata=Include &Metadata");
+								}
+								
+								panel(margin:0){}
+							}
+						}
+						 
+						
+						
+						separator();
+						
+						column()
+						{
+							unit_hot_number(identifier: "curveQualityNumberEdit",
+									name: "$$$/FlashFileFormat/Dlg/Options/optionsItemTextCurveQuality=C&urve Quality:",
+									bind:@curveQualityNumberEdit,
+									decimal_places: 0,
+									max_value: 10,
+									min_value: 0,
+									slider: true,
+									digits: 2);
+							
+							swatch(	label:  "$$$/FlashFileFormat/Dlg/Options/optionsItemSetBackgroundColor=Background Color:",
+									identifier: "backgColorSwatch",
+									border: @border_normal
+									);
+	                  		
+							popup(identifier: "playbackSecurityPopup", 
+								name: "$$$/FlashFileFormat/Dlg/Options/optionsItemPlaybackSecurity=&Local Playback Security:",
+								include_custom_item: false,
+								indent: 20,
+								bind:@playbackSecurityPopup,
+								items: [ { name: "$$$/SWFExport/Str/Presets/LocalAccess=Access Local Files Only", value: 1 },
+										 { name: "$$$/SWFExport/Str/Presets/NetworkAccess=Access Network Files Only", value: 2 }]);
+						}
+						
+					}	/*panel*/
+					
+					panel(margin:0, bind:@basic, value:false, guide_mask: [@guide_baseline, @guide_label], horizontal: @align_center)
+					{
+						radiogroup()
+						{
+							row() {
+								radio_button(name: "$$$/FlashFileFormat/Dlg/Options/optionsItemRadioZLIB=&Lossless",
+											label: "$$$/FlashFileFormat/Dlg/Options/optionsItemTextImageFormat=Image Format:",
+											bind :@imgFormatRadioButton,
+											value: 1,
+											identifier: "losslessRadioButton");
+											
+								radio_button(name: "$$$/FlashFileFormat/Dlg/Options/optionsItemRadioJPEG=Lossy (&JPEG)",
+											bind :@imgFormatRadioButton,
+											value: 2,
+											guide_mask: [ @guide_label ],
+											identifier: "lossyRadioButton");
+							}
+						}
+						
+						
+						row()
+						{
+							popup(identifier: "jpegQualityPopup", 
+								name: "$$$/FlashFileFormat/Dlg/Options/optionsItemTextQuality=JPEG &Quality:",
+								include_custom_item: false,
+								bind:@jpegQualityPopup,
+								items: [ { name: "$$$/SWFExport/Str/Presets/low=Low", value: 1 },
+										 { name: "$$$/SWFExport/Str/Presets/medium=Medium", value: 2 },
+										 { name: "$$$/SWFExport/Str/Presets/high=High", value: 3 },
+										 { name: "$$$/SWFExport/Str/Presets/maximum=Maximum", value: 4 }]);
+										
+							unit_hot_number(identifier: "jpegQualityNumberEdit",
+										guide_mask: [ @guide_label ],
+										bind:@jpegQualityNumberEdit,
+										bind_final: true,
+										max_value: 10,
+										min_value: 0,
+										slider: true,
+										digits: 2);
+						}
+						
+						radiogroup()
+						{
+							row() {
+								radio_button(name: "$$$/FlashFileFormat/Dlg/Options/optionsItemRadioBaseline=&Baseline (Standard)",
+											label: "$$$/FlashFileFormat/Dlg/Options/optionsItemTextMethod=Method:",
+											bind :@methodRadioButton,
+											value: 1,
+											identifier: "blineStandardRadioButton");
+											
+								radio_button(name: "$$$/FlashFileFormat/Dlg/Options/optionsItemRadioOptimized=Baseline &Optimized",
+											bind :@methodRadioButton,
+											value: 2,
+											guide_mask: [ @guide_label ],
+											identifier: "blineOptimizedRadioButton");
+							}
+						}
+						
+						unit_hot_number(identifier: "resolutionNumberEdit",
+									bind:@resolutionNumberEdit,
+									name: "$$$/FlashFileFormat/Dlg/Options/optionsItemTextResolution=&Resolution:",
+									max_value: 600.0,
+									min_value: 72.0,
+									decimal_places: 2,
+									digits: 4,
+									suffix: "$$$/FlashFileFormat/Dlg/Options/optionsItemTextPPI=ppi");
+						
+						unit_hot_number(decimal_places: 2,
+									identifier: "framerateNumberEdit",
+									max_value: 120,
+									min_value: 0.01,
+									digits: 4,
+									bind:@framerateNumberEdit,
+									name: "$$$/FlashFileFormat/Dlg/Options/optionsItemTextFrameRate=&Frame Rate:",
+									suffix: "$$$/FlashFileFormat/Dlg/Options/optionsItemTextFPS=fps");
+						
+						checkbox(identifier: "loopingCheckBox",
+								bind:@loopingCheckBox,
+								name: "$$$/FlashFileFormat/Dlg/Options/optionsItemLoopingCheckbox=&Looping");
+						
+						row()
+						{
+							checkbox(identifier: "animateBlendsCheckBox",
+									bind:@animateBlendsCheckBox,
+									name: "$$$/FlashFileFormat/Dlg/Options/optionsItemAnimateBlends=A&nimate Blends");
+							
+							radiogroup() {
+								row() {
+									radio_button(name: "$$$/FlashFileFormat/Dlg/Options/optionsItemAnimateBlendInSequence=In &Sequence",
+												bind:@blendAnimationRadioButton,
+												value: 1,
+												guide_mask: [ @guide_label ],
+												identifier: "sequenceRadioButton");
+
+									radio_button(name: "$$$/FlashFileFormat/Dlg/Options/optionsItemAnimateBlendInBuild=In Buil&d",
+												bind:@blendAnimationRadioButton,
+												value: 2,
+												guide_mask: [ @guide_label ],
+												identifier: "buildRadioButton");
+								}
+							}
+						}
+						
+						popup(identifier: "layerOrderPopup",
+							bind:@layerOrderPopup,
+							name: "$$$/FlashFileFormat/Dlg/Options/optionsItemOrderLayersPrompt=La&yer Order:",
+							include_custom_item: false,
+							items: [ { name: "$$$/SWFExport/Str/Presets/bottomup=Bottom Up", value: 1 },
+									 { name: "$$$/SWFExport/Str/Presets/topdown=Top Down", value: 2 }]);
+							
+						checkbox(identifier: "exportStaticLCheckBox",
+								bind:@exportStaticLCheckBox,
+								name: "$$$/FlashFileFormat/Dlg/Options/optionsItemBackgroundCheckbox=&Export Static Layers");
+							
+						list(identifier:"layersList",
+							height: 84,
+							width: 200);
+								
+					}	/*panel*/
+					
+				}	/*overlay*/
+			
+			} /* button-bar group*/
+			
+			column( horizontal: @align_fill, child_horizontal: @align_fill) {
+				group(identifier: "descriptionFrame",
+					placement: @place_row,
+					horizontal: @align_fill,
+					child_vertical: @align_top,
+					name: "$$$/FlashFileFormat/Dlg/Options/optionsItemDescription=Description",
+					spacing: @label_widget_spacing)
+				{
+					info_icon(icontype: "note", size: "small");
+							
+					overlay(horizontal: @align_fill, child_vertical: @align_top)
+					{
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:0)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/Version/1=Choose a compatible version for the exported SWF file.");
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:1)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/ClipToArtBoard/1=Select this option to specify the frame size as the Artboard size. The default will be the bounding box of the artwork.");
+						}	
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:2)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/CompressFile/1=Select this option to export as a compressed SWF file.");
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:3)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/PreserveAppearance/1=Select this option to flatten all artwork into a single layer before exporting.");
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:4)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/ProtectFromImport/1=Select this option to prevent the Flash file from being imported by other applications.");
+						}	
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:5)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/ExportAllSymbols/1=Select this option to include all Movie Clip symbols defined in the symbols panel in the exported SWF file.");
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:6)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/IgnoreKerning/1=Select this option to remove kerning from the text objects when exporting to SWF file.");
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:7)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/TextAsOutlines/1=Select this option if you want to maintain the appearance of Text objects, by exporting them as curves instead of Text.");
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:8)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/Metadata/1=Select this option to include minimal metadata information in the SWF File. The fields specified in the File Info dialog will be included.");
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:9)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/Password/1=Type the password required when opening the SWF file in Flash Authoring or other application.");
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:10)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/CurveQuality/1=Select a value for the Cubic curve tolerance level for curves in Flash file.");
+						}	
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:11)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/ImageFormat/1=Choose an image format. Lossless(ZLIB) or Lossy(JPEG) compression for images.");
+						}	
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:12)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/JPEGQuality/1=Specify the quality of JPEG compression if Lossy.");
+						}	
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:13)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/JPEGMethod/1=Choose whether to use an optimized baseline or the standard one for the JPEG compression.");
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:14)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/JPEGResolution/1=Specify a resolution for the image.");
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:15)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/FrameRate/1=Enter a value for the frame rate for the Flash file. The default is 12fps.");
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:16)
+						{
+							static_text(characters: 1, theme_font_size: @small,name: "$$$/FlashFileFormat/Description/Looping/1=Select this option to enable continuous looped playback of the Flash file.");
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:17)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/AnimateBlendCheckbox/1=Select this option if the blend art objects in the document have to be animated.");
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:18)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/AnimateBlendSequence/1=Select this option to expand the blend art objects in sequence, while exporting to Flash frames.");
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:19)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/AnimateBlendBuild/1=Select this option to expand the blend art objects in build, while exporting to Flash frames.");
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:20)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/BackgroundCheckbox/1=Select this option to include one or more layers or sublayers as static in all exported frames.");
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:21)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/BackgroundListbox/1=Choose one or more layers or sublayers from the list. Contents of these layers will be included in all exported frames.");
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:22)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/BackgroundColorButton/1=Click to launch the color picker. The chosen color will be exported as the background color in the Flash file.");
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:23)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/PlaybackLocal/1=Select this option to give only local file access to the SWF file.");
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:24)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/PlaybackNetwork/1=Select this option to give only Network access to the SWF file.");
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:25)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/OrderLayerBottomUp/1=The layers will be exported Bottom Up. The bottom most layer is exported first, followed by the rest.");
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:26)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/OrderLayerTopDown/1=The layers will be exported Top Down. The topmost layer is exported to the first Flash frame. If animate blend option is specified, this will expand the blend objects from start to end.");
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:27)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/Basic/1=Click to show Basic Options.");
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:28)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/Advanced/1=Click to show Advanced Options.");
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:29)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/ExportFileToFile/1=Exports all art in the document to a single Flash file.");
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:30)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/ExportLayerToFrame/1=Exports art in each Illustrator layer to individual Flash frames in a single Flash file.");
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:31)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/ExportLayerToFile/1=Exports art in each Illustrator layer to a separate Flash file.");
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:32)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/ExportlayerToSymbols/1=Exports art in each Illustrator layer as a single Movie Clip in the exported SWF file. The name of the movie clip is the same as the layer title.");
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:33)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/ExportArtboardToFile/1=Exports each of the selected Artboard to a separate SWF file. Presets saved with this option will only be available when multiple Artboards are exported.");
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:34)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/SwfPresetOption/1=Choose a preset that will populate values for the various options. To define or edit more presets, select Edit->SWF Presets in Illustrator.");
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:35)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/SavePreset/1=Saves the current set of options as a SWF preset.");
+						}
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:36)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/WebPreview/1=Launches a web browser to preview the SWF file.");
+						}							
+						panel(child_horizontal: @align_fill, child_vertical: @align_top, margin:0, bind:@warningPanel, value:38)
+						{
+							static_text(characters: 1, theme_font_size: @small, name: "$$$/FlashFileFormat/Description/DefaultText/1=Hold the cursor over a setting for additional information.");
+						}
+					}
+				}
+			}
+		}	
+				row(horizontal: @align_fill, child_vertical: @align_center,spacing: @separated_spacing)
+				{
+					optional(margin:0, bind: @editORnewUI, value: false)
+					{
+						row(horizontal: @align_left)
+						{
+							button(identifier: "previewButton",
+									action: @previewButtonAction,
+									image:{normal:"SP_Browser_Md_N.png",dark_normal:"SP_Browser_Md_N_D.png"},
+									show_border: true,
+									alt: "$$$/FlashFileFormat/Dlg/Options/previewLabelStr=Web Preview...");						
+							
+						}
+					}
+					
+					row(horizontal: @align_right, child_vertical: @align_center, reverse: os == @mac, spacing: @related_spacing)
+					{
+						button(identifier: "okButton", name: "$$$/gOK=OK", commit_button:true);
+						button(identifier: "cancelButton", name: "$$$/gCancel=Cancel", commit_button:true);
+					}
+				}
+			
+	}
+}

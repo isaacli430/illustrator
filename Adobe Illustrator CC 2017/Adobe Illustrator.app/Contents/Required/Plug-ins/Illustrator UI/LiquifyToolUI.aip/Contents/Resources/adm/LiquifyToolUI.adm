@@ -1,0 +1,51 @@
+sheet LiquifyToolUI
+{
+constant:
+		IdxWarpTool:		0;
+		IdxPuckerTool:		1;
+		IdxBloatTool:		2;
+		IdxTwirlTool:		3;
+		IdxScallopTool:		4;
+		IdxCrystallizeTool: 5;
+		IdxWrinkleTool:		6;
+		
+		optionsArr:    ["$$$/Liquify/DITL/17100/19=Warp Options",
+						"$$$/Liquify/DITL/17101/19=Pucker Options",
+						"$$$/Liquify/DITL/17102/19=Bloat Options",
+						"$$$/Liquify/DITL/17103/19=Twirl Options",
+						"$$$/Liquify/DITL/17104/20=Scallop Options",
+						"$$$/Liquify/DITL/17105/20=Crystallize Options",
+						"$$$/Liquify/DITL/17106/20=Wrinkle Options"
+						];
+
+interface:
+		currentTool: IdxTwirlTool;
+		enablePressurePen: false;
+		
+		detailCheckCell: false;
+		simplifyCheckCell: false;
+		showSizeCheckCell: false;
+		detailTwirlRateCell: -180.0;
+
+		unlink checkPenCell: false <== (enablePressurePen == true) ? checkPenCell : false;
+
+		unlink simplifyComboCell: 0.2 <== (simplifyCheckCell == true) ? simplifyComboCell : simplifyRememberVal;
+		simplifyRememberVal: 0.2 <== (simplifyCheckCell == true) ? simplifyComboCell : simplifyRememberVal;
+		
+		unlink detailComboCell: 1 <== (detailCheckCell == true) ? detailComboCell : detailRememberVal;
+		detailRememberVal: 1 <== (detailCheckCell == true) ? detailComboCell : detailRememberVal;
+
+		unlink BrushOptions: false <== (currentTool == IdxScallopTool) || (currentTool == IdxCrystallizeTool) || (currentTool == IdxWrinkleTool);
+		unlink HorizVertRowCell: false <== (currentTool == IdxWrinkleTool);
+		unlink ComplexityRowCell: false <== (currentTool == IdxScallopTool) || (currentTool == IdxCrystallizeTool) || (currentTool == IdxWrinkleTool);
+		unlink SimplyRowCell: false <== (currentTool == IdxWarpTool) || (currentTool == IdxPuckerTool) || (currentTool == IdxBloatTool) || (currentTool == IdxTwirlTool);
+		unlink isTwirlTool: false <== (currentTool == IdxTwirlTool);
+
+		detailFilter: {min_value: 1, max_value: 10};
+		simplifyFilter: {min_value: 0.2, max_value: 100};
+		twirlRateFilter: {min_value: -180, max_value: 180};
+
+		unlink options : "" <==  optionsArr[currentTool];
+}
+
+

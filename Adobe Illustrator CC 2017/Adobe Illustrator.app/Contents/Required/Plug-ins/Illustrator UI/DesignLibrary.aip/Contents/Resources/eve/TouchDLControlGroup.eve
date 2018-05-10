@@ -1,0 +1,21 @@
+layout TouchDLMaxControlGroup
+{
+     view subview(identifier: "TouchDLMaxControlGroup",
+				 show_border: false,
+				 child_vertical: @align_center,
+				 placement: @place_row,
+				 margin: 0)
+    {		
+		optional(identifier: "TouchDLSubGroup", child_vertical:  @align_center, child_horizontal:  @align_center, margin : 0, spacing: 0, placement: @place_row)			
+		{
+			 button(identifier: "DLGroupImage",
+						image: { normal: "SP_DESIGN_LIBRARY_N.png", dark_normal: "SP_DESIGN_LIBRARY_N_D.png" },
+						alt: "$$$/DesignLibrary/PathKey/LibraryKey=Libraries",
+						horizontal:@align_fill,
+						vertical:@align_fill,
+						wants_focus: false);
+		}
+				
+    }
+}
+

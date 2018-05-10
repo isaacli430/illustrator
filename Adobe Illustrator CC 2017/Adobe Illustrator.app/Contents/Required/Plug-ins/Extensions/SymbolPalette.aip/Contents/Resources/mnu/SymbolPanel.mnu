@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+	<menuItem id="1" text="$$$/SymbolPalette/Mnu/16600/1=&amp;New Symbol..."></menuItem>
+	<menuItem id="2" text="$$$/SymbolPalette/Mnu/16600/2=Rede&amp;fine Symbol"></menuItem>
+	<menuItem id="3" text="$$$/SymbolPalette/Mnu/16600/3=&amp;Duplicate Symbol"></menuItem>
+	<menuItem id="4" text="$$$/SymbolPalette/Mnu/16600/4=D&amp;elete Symbol"></menuItem>
+	<menuItem id="5" text="$$$/SymbolPalette/Mnu/16600/5=Ed&amp;it Symbol"></menuItem>
+	<separator></separator>
+	<menuItem id="7" text="$$$/SymbolPalette/Mnu/16600/7=&amp;Place Symbol Instance"></menuItem>
+	<menuItem id="8" text="$$$/SymbolPalette/Mnu/16600/8=&amp;Replace Symbol"></menuItem>
+	<menuItem id="9" text="$$$/SymbolPalette/Mnu/16600/9=Brea&amp;k Link to Symbol"></menuItem>
+	<menuItem id="10" text="$$$/SymbolPalette/Mnu/16600/ResetTransform=Reset &amp;Transformation"></menuItem>
+	<separator></separator>
+	<menuItem id="12" text="$$$/SymbolPalette/Mnu/SelectUnused=Select All &amp;Unused"></menuItem>
+	<menuItem id="13" text="$$$/SymbolPalette/Mnu/SelectInstances=Select All &amp;Instances"></menuItem>
+	<separator></separator>
+	<menuItem id="15" text="$$$/SymbolPalette/Mnu/SortByName=&amp;Sort by Name"></menuItem>
+	<separator></separator>
+	<menuItem id="17" text="$$$/SymbolPalette/Mnu/ThumbnailView=&amp;Thumbnail View"></menuItem>
+	<menuItem id="18" text="$$$/SymbolPalette/Mnu/SmallListView=Sm&amp;all List View"></menuItem>
+	<menuItem id="19" text="$$$/SymbolPalette/Mnu/LargeListView=Large List &amp;View"></menuItem>
+	<separator></separator>
+	<menuItem id="21" text="$$$/SymbolPalette/Mnu/Options=Symbol &amp;Options..."></menuItem>
+	<separator></separator>
+	<subMenu id="23" text="$$$/SymbolPalette/Mnu/Library=Open Symbol &amp;Library">
+		<separator></separator>
+		<menuItem id="25" text="$$$/BrushManager/PanelFlyoutMenu/OtherLibrary=&amp;Other Library..."></menuItem>
+	</subMenu>
+	<menuItem id="26" text="$$$/SymbolPalette/Mnu/Save=Save Symbol Librar&amp;y..."></menuItem>
+</menu>

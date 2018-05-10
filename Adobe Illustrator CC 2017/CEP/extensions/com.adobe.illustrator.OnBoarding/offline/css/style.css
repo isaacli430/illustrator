@@ -1,0 +1,22 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+#main { background-color: #0F6AD8; overflow: hidden; font-family:adobe-clean, sans-serif; font-size: 12px; width: 100%}
+#left {float:left; color:#fff; vertical-align:middle; padding-left: 10pt }
+#right {float:right; color:#fff; vertical-align:middle; padding-right: 10pt}
+#button {
+    background-color: #0F6AD8;
+	padding-top: 2pt;
+	padding-bottom: 2pt;
+	padding-left: 10pt;
+	padding-right: 10pt;
+    border-radius:15px;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+	border: solid white;
+	border-width: 1px;
+	font-family:adobe-clean, sans-serif;
+	font-size: 12px;
+    }

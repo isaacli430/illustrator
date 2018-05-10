@@ -1,0 +1,19 @@
+sheet ScaleDialog
+{
+	interface:
+		ScaleRatio: 0;
+		ScaleStrokeAndEffectCell: false;
+		ScaleCornerRadiiForShapesCell: false;
+		ObjectCheckBoxCell: true <== (dummyCell == true)? ObjectCheckBoxCell : true;
+		PatternCheckBoxCell: false <== ( dummyCell == true)? PatternCheckBoxCell : false ;
+		PreviewCheckBoxCell: true;
+		dummyCell: true;
+		
+	logic:
+	when (dummyCell) relate
+	{
+		ObjectCheckBoxCell <== (!PatternCheckBoxCell && !ObjectCheckBoxCell)? !PatternCheckBoxCell :ObjectCheckBoxCell;
+		PatternCheckBoxCell <== (!PatternCheckBoxCell && !ObjectCheckBoxCell)? !ObjectCheckBoxCell :PatternCheckBoxCell;
+		
+	}
+}

@@ -1,0 +1,181 @@
+layout IllustratorOptions
+{
+	view subview( identifier: "IllustratorOptions",
+					layout_theme: @dialog_large,
+					placement: @place_column,
+					show_border: false,
+					child_horizontal: @align_fill,
+					spacing: @unrelated_spacing
+					)
+	{
+		column(child_horizontal: @align_fill,spacing: @related_spacing)
+		{
+			row(spacing: @label_widget_spacing)
+			{
+				column(spacing: @related_spacing)
+				{
+					row()
+					{
+						popup(identifier:   "VersionsPopup",
+							name: "$$$/_FFILLUST/Dlg/11320/Version=Version:",
+							include_custom_item: false,
+							bind: @versionPopupValue,
+							items: @IllustratorOptionsPopupItems,
+							set_default_focus: true
+							);
+						panel(margin: 0, bind: @showWarning)
+						{
+							info_icon(identifier:"InfoIcon1",
+									icontype:"warning",
+									size:"small",
+									guide_mask: [ @guide_label ]);
+						}
+					}
+					optional(margin:0, bind: @showWarning, value: false, vertical: @align_fill)
+					{
+						row(margin: 0)
+						{
+							guide_consumer(consume_horizontal: 1);
+							static_text(guide_mask: [@guide_label], horizontal: @align_left, identifier: "CC_Compatible_Warning", theme_font_size: @small, name: "$$$/_FFILLUST/Dlg/11320/CCCompatibility=Compatible with Illustrator 17 and above.");
+						}
+					}
+				}
+			}
+			group(identifier:   "FontsFrame",horizontal: @align_fill,
+				name: "$$$/_FFILLUST/Dlg/11320/6=Fonts",
+				spacing: 0)
+			{
+				row()
+				{
+					static_text(identifier: "SubsetsStaticText",
+								name: "$$$/_FFILLUST/Dlg/11320/SubsetFonts=Subset fonts when percent of characters used");
+								
+					info_icon(identifier:"InfoIcon2",
+                   				icontype:"note",
+                    				size:"small",
+                    				guide_mask: [ @guide_label ]);
+				}
+				row()
+				{
+					edit_number(name: "$$$/_FFILLUST/Dlg/11320/LessThan=is le&ss than:", 
+							identifier: "LessThanEditText", 
+							bind: @lessThanEdit,
+							decimal_places: 2,
+							interval: 0.01,
+							max_value: 100,
+							min_value: 0,
+							unit: "NumberEditUnit_Percent",
+							guide_mask: [ @guide_label ],
+							digits:5);
+				}
+			}
+			group(identifier: "OptionsFrame",horizontal: @align_fill,
+					name: "$$$/_FFILLUST/Dlg/11320/20=Options",
+					guide_mask: [ @guide_label ])
+			{
+				
+				checkbox(identifier: "PDFComatibleCheckBox",
+						name: "$$$/_FFILLUST/Dlg/11320/21=Create PDF &Compatible File", 
+						bind: @createPDFCompatibleFile);
+				
+				checkbox(identifier: "LinkedFilesCheckBox",
+						name: "$$$/_FFILLUST/Dlg/11320/22=Include &Linked Files",
+						bind: @LinkedFilesCheckBoxVal);
+					
+				row()
+				{
+					checkbox(identifier: "ProfilesCheckBox",
+							name: "$$$/_FFILLUST/Dlg/11320/23=Embed ICC &Profiles",
+							bind: @embedICCProfile);
+							static_text(identifier: "ProfilesStaticText");
+				}
+				
+				checkbox(identifier: "CompressionCheckBox",
+						name: "$$$/_FFILLUST/Dlg/11320/25=Use Co&mpression",
+						bind: @compressionCheckBoxVal);
+					
+				checkbox(identifier: "ArtboardsCheckBox",
+						name: "$$$/_FFILLUST/Dlg/11320/26=Sa&ve each artboard to a separate file",
+						bind: @ArtboardsCheckBoxVal);
+            			row(indent: gIndent,guide_mask: [ @guide_label ])
+				{
+					radiogroup( horizontal: @align_fill, show_border: false, margin: 0, placement: @place_row)
+    					{
+						radio_button(bind: @Artboards,
+									identifier: "AllArtboardsRadioButton",
+									name: "$$$/_FFILLUST/Dlg/11320/27=&All",
+									value: 1,
+									vertical: @align_center);
+						row(spacing:@label_widget_spacing)
+						{
+							radio_button(bind: @Artboards,
+									identifier: "RangeArtboardsRadioButton",
+									name: "$$$/_FFILLUST/Dlg/11320/28=Ran&ge:",
+									value: 2,
+									vertical: @align_center);
+							edit_text(identifier: "RangeArtboardsEditText",
+									bind: @RangeArtboardsEditTextVal,
+									characters: 8,
+									vertical: @align_center);
+						
+							optional(bind: @ShowRangeWarning, value:1, placement: @place_row,margin:0,spacing:@related_spacing, child_vertical: @align_center)
+							{
+								info_icon(identifier: "infoIconImage", icontype: "warning", size: "small");	
+								static_text(identifier: "infoText", name: '$$$/IllustratorUI/IllustratorOptions/InvalidRangeErr=Invalid range.');
+							}
+						}
+					}					
+				}			
+			}
+			group(identifier: "TransparencyFrame",horizontal: @align_fill,
+					name: "$$$/_FFILLUST/Dlg/11320/labelTransparency=Transparency",
+					guide_mask: [ @guide_label ])
+			{
+				radiogroup( horizontal: @align_fill, show_border: false, margin: 0)
+    				{
+					radio_button(bind: @Transparency,
+								identifier: "PreservePathsRadioButton",
+								name: "$$$/_FFILLUST/Dlg/11320/41=Preserve Pa&ths (discard transparency)",
+								guide_mask: [ @guide_label ],
+								value: 1);
+					radio_button(bind: @Transparency,
+								identifier: "PreserveAppearanceRadioButton",
+								name: "$$$/_FFILLUST/Dlg/11320/42=Preserve Appearance and Overpr&ints",
+								guide_mask: [ @guide_label ],
+								value: 2);
+				}
+				row()
+				{
+					popup(identifier:   "PresetsPopup",
+							include_custom_item: false,
+							name: "$$$/_FFILLUST/Dlg/11320/Preset=P&reset:",
+							popup_maximum_width_chars: 12, 
+							bind: @PresetsPopupVal);
+					button(identifier: "CustomButton",
+							name: "$$$/_FFILLUST/Dlg/11300/Custom=C&ustom...",
+							action: @CustomButtonAction);
+				}
+			}
+			column(spacing: @label_widget_spacing)
+			{
+				static_text(identifier: "WarningsStaticText",
+								name: "$$$/_FFILLUST/Dlg/11320/Warning=Warnings");
+				multicolumn_tree(identifier: "MCT",
+								wants_focus: false,
+								horizontal: @align_fill,
+								height: 75);
+			}		
+		}
+		row(child_horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+		{ 
+			button(default: true,
+						identifier: "okButton",
+						name: "$$$/gOK=OK",
+						commit_button: true);
+			button(cancel: true,
+						identifier: "cancelButton",
+						name: "$$$/gCancel=Cancel",
+						commit_button: true);
+		} 
+    }
+}

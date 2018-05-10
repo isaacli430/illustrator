@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+	
+	<menuItem id="1" text="$$$/CSS/Mnu/CSS/2=Copy Selected Style"></menuItem>
+  <menuItem id="2" text="$$$/CSS/Mnu/CSS/3=Generate CSS"></menuItem>
+  <separator></separator>
+  <menuItem id="3" text="$$$/CSS/Mnu/CSS/4=Export Selected CSS..."></menuItem>
+  <menuItem id="4" text="$$$/CSS/Mnu/CSS/5=Export All..."></menuItem>
+  <separator></separator>
+  <menuItem id="5" text="$$$/CSS/Mnu/CSS/6=Export Options..."></menuItem>
+
+</menu>

@@ -1,0 +1,14 @@
+/* [1] */
+
+/* [2] */
+
+/* [3] */
+$$$/OffsetPath/Str/19000/3=Offset must be a non-zero number.
+/* [4] */
+$$$/OffsetPath/Str/19000/4=Curve error must be a non-negative number.
+/* [5] */
+$$$/OffsetPath/Str/19000/5=Not enough computer memory available for the filter to complete the command.
+/* [6] */
+$$$/OffsetPath/Str/19000/6=The filter failed to complete the requested command.  (diagnosis: 0, 1).
+/* [7] */
+$$$/OffsetPath/Str/19000/7=Miter limit must be a number greater than or equal to one.

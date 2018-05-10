@@ -1,0 +1,28 @@
+sheet FindUIControlGroup
+{
+constant:
+	PresetName: ['$$$/Find/Mnu/ControlPanelGroup/All=All',
+				  '$$$/Find/Mnu/ControlPanelGroup/FillColor=Fill Color',
+				  '$$$/Find/Mnu/ControlPanelGroup/StrokeColor=Stroke Color',
+				  '$$$/Find/Mnu/ControlPanelGroup/FillStrokeColor=Fill & Stroke Color',
+				  '$$$/Find/Mnu/ControlPanelGroup/StrokeWeight=Stroke Weight',
+				  '$$$/Find/Mnu/ControlPanelGroup/Opacity=Opacity',
+				  '$$$/Find/Mnu/ControlPanelGroup/Style=Graphic Style',
+				  '$$$/Find/Mnu/ControlPanelGroup/Appearance=Appearance',
+				  '$$$/Find/Mnu/ControlPanelGroup/AppearanceAttributes=Appearance Attribute',
+				  '$$$/Find/Mnu/ControlPanelGroup/LiveShape=Shape'];
+interface:
+		 entriesSelectSame: [		{name: PresetName[0], value: 1, action:@selectSamePopUpAction},
+							{name: PresetName[1], value: 2, action:@selectSamePopUpAction },
+							{name: PresetName[2], value: 3, action:@selectSamePopUpAction },
+							{name: PresetName[3], value: 4, action:@selectSamePopUpAction },
+							{name: PresetName[4], value: 5, action:@selectSamePopUpAction },
+							{name: PresetName[5], value: 6, action:@selectSamePopUpAction },						
+							{name: PresetName[6], value: 7, action:@selectSamePopUpAction },
+							{name: PresetName[7], value: 8, action:@selectSamePopUpAction },
+							{name: PresetName[8], value: 9, action:@selectSamePopUpAction },
+							{name: PresetName[9], value: 10, action:@selectSamePopUpAction }
+				];
+				
+selectSame: 0;
+}

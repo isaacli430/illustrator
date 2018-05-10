@@ -1,0 +1,6 @@
+layout fontMRUMenu
+{
+	view menu( id: 58,
+				menubar: false )
+	{ separator();  }
+}

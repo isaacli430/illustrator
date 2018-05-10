@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+	<menuItem id="1" text="$$$/Layers/Mnu/Layers/menuNewLayer=&amp;New Layer..."></menuItem>
+	<menuItem id="2" text="$$$/Layers/Mnu/Layers/menuNewSubLayer=New Su&amp;blayer..."></menuItem>
+	<menuItem id="3" text="$$$/Layers/Mnu/Layers/menuDuplicateSel=Dupli&amp;cate [Item/Selection]"></menuItem>
+	<menuItem id="4" text="$$$/Layers/Mnu/Layers/menuDeleteSel=&amp;Delete [Item/Selection]"></menuItem>
+  <separator></separator>
+	<menuItem id="6" text="$$$/Layers/Mnu/Layers/menuLayerOptions=&amp;Options for [Item/Selection]..."></menuItem>
+  <separator></separator>
+	<menuItem id="8" text="$$$/Layers/Mnu/Layers/menuToggleClipMask=[Make/Release] Clipping Ma&amp;sk"></menuItem>
+	<menuItem id="9" text="$$$/Layers/Mnu/Layers/menuEnterIsolationMode=Enter &amp;Isolation Mode"></menuItem>
+	<menuItem id="10" text="$$$/Layers/Mnu/Layers/menuExitIsolationMode=E&amp;xit Isolation Mode"></menuItem>
+  <separator></separator>
+	<menuItem id="12" text="$$$/Layers/Mnu/Layers/menuLocateRow=Locat&amp;e [Layer/Object]"></menuItem>
+	<separator></separator>
+	<menuItem id="14" text="$$$/Layers/Mnu/Layers/menuMergeLayers=&amp;Merge Selected"></menuItem>
+	<menuItem id="15" text="$$$/Layers/Mnu/Layers/menuFlattenArtwork=&amp;Flatten Artwork"></menuItem>
+	<menuItem id="16" text="$$$/Layers/Mnu/Layers/menuCollectInNew=Collect in Ne&amp;w Layer"></menuItem>
+  <separator></separator>
+	<menuItem id="18" text="$$$/Layers/Mnu/Layers/menuRlsToLayersSeq=Release to Layers (Se&amp;quence)"></menuItem>
+	<menuItem id="19" text="$$$/Layers/Mnu/Layers/menuRlsToLayersBld=Release to La&amp;yers (Build)"></menuItem>
+	<menuItem id="20" text="$$$/Layers/Mnu/Layers/menuReverseOrder=Re&amp;verse Order"></menuItem>
+  <separator></separator>
+  <menuItem id="22" text="$$$/Layers/Mnu/Layers/menuToggleTemplate=&amp;Template"></menuItem>
+  <menuItem id="23" text="$$$/Layers/Mnu/Layers/menuHideOthers=&amp;Hide Others"></menuItem>
+  <menuItem id="24" text="$$$/Layers/Mnu/Layers/menuArtworkOthers=[O&amp;utline/&amp;Preview Others/All]"></menuItem>
+  <menuItem id="25" text="$$$/Layers/Mnu/Layers/menuLockOthers=&amp;Lock Others"></menuItem>
+	<separator></separator>
+	<menuItem id="27" text="$$$/Layers/Mnu/Layers/menuPasteRemember=Paste &amp;Remembers Layers"></menuItem>
+	<separator></separator>
+	<menuItem id="29" text="$$$/Layers/Mnu/Layers/menuPaletteOptions=&amp;Panel Options..."></menuItem>
+</menu>

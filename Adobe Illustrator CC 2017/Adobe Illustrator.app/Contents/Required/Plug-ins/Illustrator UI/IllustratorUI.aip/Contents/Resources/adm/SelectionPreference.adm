@@ -1,0 +1,30 @@
+sheet SelectionPreference
+{
+interface:
+	SPSnapRadioState: false;
+	SPAnchorRadioGp: empty;
+	SPHandlesRadioGp: empty;
+	SPToleranceCell: 0;
+	SPSelectPathCell: false;
+	SPHiliteCell: false;
+	SPHandleCell: false;
+	SPRubberBandPenCell: true;
+	SPRubberBandCurvatureCell: true;
+	SPSelectBehindCell: false;
+	SPConstrainPathDraggingCell: false;
+	SPShowAnchorPointsInSelectionToolAndShapeToolsCell: false;
+	SPCornerLimitCheckboxState: true;
+	SPLimitValuesnum: [  
+                                "105°",
+                                "120°",
+								"135°",
+                                "150°",
+                                "165°"
+                                      ];
+	
+	unlink SPSnapNumberState: 0 <== (SPSnapRadioState == false) ? SPSnapNumberStateRemember : SPSnapNumberState;
+	SPSnapNumberStateRemember: 0 <== (SPSnapRadioState == false) ? SPSnapNumberStateRemember : SPSnapNumberState;
+	
+	unlink SPCornerLimitNumberState: 0 <== (SPCornerLimitCheckboxState == false) ? SPCornerLimitNumberStateRemember : SPCornerLimitNumberState;
+	SPCornerLimitNumberStateRemember: 0 <== (SPCornerLimitCheckboxState == false) ? SPCornerLimitNumberStateRemember : SPCornerLimitNumberState;
+}

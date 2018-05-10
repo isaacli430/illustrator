@@ -1,0 +1,90 @@
+sheet FindReplace
+{
+constant:
+	SpecialNames: ['$$$/FindReplace/Bullet=Bullet Character',
+				  '$$$/FindReplace/Carat=Caret Character',
+				  '$$$/FindReplace/Copyright=Copyright Symbol',
+				  '$$$/FindReplace/Flb=Forced Line Break',
+				  '$$$/FindReplace/Registeredtrademark=Registered Trademark Symbol',
+				  '$$$/FindReplace/Sectionsymbol=Section Symbol',
+				  '$$$/FindReplace/Tabcharacter=Tab Character',
+				  '$$$/FindReplace/Emdash=Em Dash',
+				  '$$$/FindReplace/Emspace=Em Space',
+				  '$$$/FindReplace/Endash=En Dash',
+				  '$$$/FindReplace/Enspace=En Space',
+				  '$$$/FindReplace/Hairspace=Hair Space',
+				  '$$$/FindReplace/thinspace=Thin Space',
+				  '$$$/FindReplace/Discretionaryhyphen=Discretionary Hyphen',
+				  '$$$/FindReplace/Dlqm=Double Left Quotation Mark',
+				  '$$$/FindReplace/Drqm=Double Right Quotation Mark',
+				  '$$$/FindReplace/Slqm=Single Left Quotation Mark',
+				  '$$$/FindReplace/Srqm=Single Right Quotation Mark'];
+interface:
+		 entriesFind: [		{name: SpecialNames[0], value: 0,  action:@popUpFindAction},
+							{name: SpecialNames[1], value: 1, action:@popUpFindAction},
+							{name: SpecialNames[2], value: 2, action:@popUpFindAction},
+							{name: SpecialNames[3], value: 3, action:@popUpFindAction},
+							{name: SpecialNames[4], value: 4, action:@popUpFindAction},
+							{name: SpecialNames[5], value: 5, action:@popUpFindAction},						
+							{name: SpecialNames[6], value: 6, action:@popUpFindAction},
+							{name: SpecialNames[7], value: 7, action:@popUpFindAction},
+							{name: SpecialNames[8], value: 8, action:@popUpFindAction},
+							{name: SpecialNames[9], value: 9, action:@popUpFindAction},
+							{name: SpecialNames[10], value: 10, action:@popUpFindAction},
+							{name: SpecialNames[11], value: 11, action:@popUpFindAction},
+							{name: SpecialNames[12], value: 12, action:@popUpFindAction},
+							{name: "", value: @bgSeparator1 },
+							{name: SpecialNames[13], value: 13, action:@popUpFindAction},
+							{ name: "", value: @bgSeparator2 },
+							{name: SpecialNames[14], value: 14, action:@popUpFindAction},
+							{name: SpecialNames[15], value: 15, action:@popUpFindAction},
+							{name: SpecialNames[16], value: 16, action:@popUpFindAction},
+							{name: SpecialNames[17], value: 17, action:@popUpFindAction}
+				] ;
+				
+			entriesReplace: [		{name: SpecialNames[0], value: 0,  action:@popUpReplaceAction},
+						{name: SpecialNames[1], value: 1, action:@popUpReplaceAction},
+						{name: SpecialNames[2], value: 2, action:@popUpReplaceAction},
+						{name: SpecialNames[3], value: 3, action:@popUpReplaceAction},
+						{name: SpecialNames[4], value: 4, action:@popUpReplaceAction},
+						{name: SpecialNames[5], value: 5, action:@popUpReplaceAction},						
+						{name: SpecialNames[6], value: 6, action:@popUpReplaceAction},
+						{name: SpecialNames[7], value: 7, action:@popUpReplaceAction},
+						{name: SpecialNames[8], value: 8, action:@popUpReplaceAction},
+						{name: SpecialNames[9], value: 9, action:@popUpReplaceAction},
+						{name: SpecialNames[10], value: 10, action:@popUpReplaceAction},
+						{name: SpecialNames[11], value: 11, action:@popUpReplaceAction},
+						{name: SpecialNames[12], value: 12, action:@popUpReplaceAction},
+						{name: "", value: @bgSeparator1 },
+						{name: SpecialNames[13], value: 13, action:@popUpReplaceAction},
+						{ name: "", value: @bgSeparator2 },
+						{name: SpecialNames[14], value: 14, action:@popUpReplaceAction},
+						{name: SpecialNames[15], value: 15, action:@popUpReplaceAction},
+						{name: SpecialNames[16], value: 16, action:@popUpReplaceAction},
+						{name: SpecialNames[17], value: 17, action:@popUpReplaceAction}
+			] ;
+				
+	
+	WorldReadyCell: false;
+	lockedLayersCell: false;
+	hiddenLayersCell: false;
+	searchBackwardsCell: false;
+	findWholeWordsCell: false;
+	matchCaseCell: false;
+	ignoreAccentsCell :false;
+
+	showOverset: false;
+	showFind: false;
+	showReplaceFind: false;
+	showReplace: false;
+	showReplaceAll: false;
+	showDone: true;
+	
+invariant:
+    findButton <== showFind == true; 
+    replaceFindButton <== showReplaceFind == true; 
+    replaceButton <== showReplace == true; 
+    replaceAllButton <== showReplaceAll == true; 
+    doneButton <== showDone == true; 
+
+}

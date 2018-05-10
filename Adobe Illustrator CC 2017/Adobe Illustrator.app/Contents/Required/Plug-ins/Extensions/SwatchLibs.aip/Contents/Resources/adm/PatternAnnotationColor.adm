@@ -1,0 +1,10 @@
+sheet PatternAnnotatorColor
+{
+	interface:
+		colorPresetIx: 3;
+		useAsDefault: false;
+		dummyTextPanelForAvoidingTruncation: true;
+
+	output:
+		result <== {dummy: colorPresetIx, dummy2: useAsDefault};
+}

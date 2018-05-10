@@ -1,0 +1,7 @@
+sheet TouchPreference
+{
+interface:
+	
+	TPSwitchToTWS: false;
+	TPPreciseCursor: true;
+}

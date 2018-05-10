@@ -1,0 +1,22 @@
+layout DataRecoveryTurnOffMessage
+{
+	view subview(identifier: "DataRecoveryTurnOffMessageEveSubView",
+				 child_horizontal: @align_fill,
+				 horizontal: @align_fill,
+				 vertical: @align_fill, 
+				 show_border: true,
+				 margin: [15,15,15,15], 
+				 layout_theme: @dialog_large)				 
+	{
+		row(spacing:15)
+		{
+			image(image:{normal:"SP_Alert_Xl_N.png", dark_normal:"SP_Alert_Xl_N_D.png"}, horizontal:@align_left);
+
+			column(horizontal:@align_fill)
+			{
+				static_text(name: "$$$/DRMessage/Message1=This document contains artwork that may slow down saving of recovery information. Data Recovery has been turned off.", characters:21, theme_font_size: @large);
+				static_text(name: "$$$/DRMessage/Message2=To turn Data Recovery on, go to Preferences>File Handling & Clipboard", characters:21, theme_font_size: @large);
+			}
+		}
+	}
+}

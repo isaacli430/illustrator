@@ -1,0 +1,17 @@
+layout TouchSwatchControlGroup
+{
+	view subview(identifier: "TouchSwatchControlGroup",
+		layout_theme: @controlbar,
+		show_border: false,
+		child_vertical: @align_center,
+		placement: @place_row,
+		margin: 0
+		)
+    {	
+		optional(identifier: "TouchSwatchFillHyperLink", child_vertical: @align_center, margin : 0, placement: @place_row)
+		{
+			
+			stroke_fill(identifier:  "TouchSwatch", vertical: @align_center, horizontal : @align_center, small_mode: true, has_default:false, has_swap:false, ai_color_mode: true );
+		}	    
+	}		
+}

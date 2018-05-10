@@ -1,0 +1,6 @@
+sheet SVGOMGOptions
+{
+interface:
+	ShowSVGOMGBanner: false;
+	ShowSVGOMGCodePreviewOkCancel: true;
+}

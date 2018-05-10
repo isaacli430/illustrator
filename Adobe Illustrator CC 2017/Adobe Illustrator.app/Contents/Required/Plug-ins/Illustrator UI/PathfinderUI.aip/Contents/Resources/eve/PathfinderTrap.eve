@@ -1,0 +1,77 @@
+layout PathfinderTrap
+{
+    view subview(identifier: "AIEveSubView",
+					layout_theme: @dialog_large,
+					placement: @place_column,
+					show_border: false,
+					spacing: @unrelated_spacing)
+    {
+	column(spacing: @inter_group_spacing,horizontal: @align_fill)
+	{
+            group(identifier: "settingsGroup",
+                  name: "$$$/PathfinderS/Dlg/trapParameters/17=Settings",horizontal: @align_fill)
+            {
+				
+				unit_hot_number( identifier: "thickness",
+                             name: "$$$/PathfinderS/Dlg/trapParameters/trapParametersDialogTrapThicknessText=&Thickness:",
+							 max_value: 5000,
+							 min_value: 0.01,
+							 digits: 4,
+							 decimal_places: 2,
+							 digits: 4,
+							 suffix: "$$$/PathfinderS/Dlg/trapParameters/6=points",
+							 set_default_focus: true
+							 );
+							 
+				unit_hot_number( identifier: "heightWidth",
+                             name: "$$$/PathfinderS/Dlg/trapParameters/trapParametersDialogHeightWidthAspectRatioText=&Height/Width:",
+							 max_value: 400,
+							 min_value: 25,
+							 digits: 4,
+							 decimal_places: 2,
+							 digits: 4,
+							 unit: "NumberEditUnit_Percent"
+							 );
+
+				  unit_hot_number( identifier: "reduction",
+                             name: "$$$/PathfinderS/Dlg/trapParameters/trapParametersDialogTrapTintText=Tint &Reduction:",
+							 max_value: 100,
+							 min_value: 0,
+							 digits: 4,
+							 decimal_places: 2,
+							 digits: 4,
+                             unit: "NumberEditUnit_Percent"
+							 );                 
+            }
+
+            group(identifier: "optionsGroup",
+                  name: "$$$/PathfinderS/Dlg/trapParameters/18=Options",horizontal: @align_fill)
+            {
+                checkbox(name: "$$$/PathfinderS/Dlg/trapParameters/trapParametersDialogConvertCustomColors=Tra&ps with Process Color",
+						 identifier: "convertCustomColor", guide_mask: [ @guide_label ]);
+
+                checkbox(name: "$$$/PathfinderS/Dlg/trapParameters/trapParametersDialogReverseTrap=Re&verse Traps",
+						 identifier: "reverseTrap", guide_mask: [ @guide_label ]);
+            }
+	}
+	    row(horizontal: @align_fill,spacing: @separated_spacing)
+	    {
+			button(name: "$$$/PathfinderS/Dlg/trapParameters/trapParametersDialogDefaultButton=&Defaults",
+				identifier: "defaultButton",
+				commit_button: true,
+				vertical: @align_fill);
+			
+				row(horizontal: @align_fill,
+			child_horizontal: @align_right,
+				reverse: os == @mac, spacing: @related_spacing)
+				{
+					button(default: true,name: "$$$/gOK=OK",
+        					identifier: "okButton", commit_button: true);
+					button(cancel: true,name: "$$$/gCancel=Cancel",
+        					identifier: "cancelButton", commit_button: true);
+				}
+	   }
+			            
+        
+    }
+}

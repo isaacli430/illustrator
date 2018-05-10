@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDisplayName</key>
+	<string>VariablesPaletteUI</string>
+	<key>CFBundleExecutable</key>
+	<string>VariablesPaletteUI</string>
+	<key>CFBundleGetInfoHTML</key>
+	<string>VariablesPaletteUI version 21.1.0, Copyright © 1987-2017 Adobe Systems Inc. All rights reserved.</string>
+	<key>CFBundleGetInfoString</key>
+	<string>VariablesPaletteUI version 21.1.0, Copyright © 1987-2017 Adobe Systems Inc. All rights reserved.</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.adobe.illustrator.plugins.VariablesPaletteUI</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>VariablesPaletteUI</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>VariablesPaletteUI version 21.1.0</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>21.1.0</string>
+	<key>CSResourcesFileMapped</key>
+	<true/>
+	<key>LSRequiresCarbon</key>
+	<true/>
+	<key>NSPrincipalClass</key>
+	<string>ExoMacApplication</string>
+</dict>
+</plist>

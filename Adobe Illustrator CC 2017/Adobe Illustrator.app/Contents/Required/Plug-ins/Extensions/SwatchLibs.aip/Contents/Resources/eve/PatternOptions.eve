@@ -1,0 +1,116 @@
+layout PatternOptions
+{
+    view subview(identifier: "AIPatternOptionsSubView", 
+                 layout_theme: @panel, horizontal: @align_fill,
+				 child_vertical: @align_center, placement: @place_column,
+				 show_border: false)
+    {
+		row()
+		{
+			toggle_button(identifier: "PatternTool", bind: @toolSelected, value_on: true, value_off: false, show_border: true, image: {normal: "SP_TileBoundsTool_Lg_N.png", dark_normal: "SP_TileBoundsTool_Lg_N_D.png" }, alt: "$$$/SwatchLibs/ToolTips/PatternToolButton=Pattern Tile Tool", guide_mask: [@guide_label]);
+		}
+		separator(orientation: @horizontal, horizontal: @align_fill);
+		column(horizontal: @align_fill)
+		{
+			row(horizontal: @align_fill)
+			{
+				edit_text(horizontal: @align_fill, identifier: "PatternNameTextEdit", characters: 14, max_characters: 31, name: "$$$/SwatchLibs/PatOptions/NameLabel=Name:");
+			}
+			row(horizontal: @align_fill, vertical: @align_fill, child_vertical: @align_fill)
+			{
+				column()
+				{
+					popup(identifier: "TileType", bind: @tileType, include_custom_item: false, name: "$$$/SwatchLibs/PatOptions/TileType=Tile Type:", items: @itemsTileType);
+					popup(identifier: "BrickOffset", bind: @brickOffset, include_custom_item: false, name: "$$$/SwatchLibs/PatOptions/Offset=Brick Offset:", items: @itemsBrickOffset);
+				}
+				column()
+				{
+					image(identifier: "SwatchThumbnail", width: 52, height: 52);
+				}
+			}
+		}
+
+		separator(orientation: @horizontal, horizontal: @align_fill);
+
+		row(spacing: @related_spacing)
+		{
+			column()
+			{
+				edit_number(identifier: "TileWidth",
+							bind: @tileWidth,
+							unit: 'CurrentDocumentUnit',
+							decimal_places: 4,
+							max_value: 4000,
+							min_value: 2,
+							digits: 9,
+							name: "$$$/SwatchLibs/PatOptions/Width=Width:");
+
+				edit_number(identifier: "TileHeight",
+							bind: @tileHeight,
+							unit: 'CurrentDocumentUnit',
+							decimal_places: 4,
+							max_value: 4000,
+							min_value: 2,
+							digits: 9,
+							name: "$$$/SwatchLibs/PatOptions/Height=Height:");
+			}
+			toggle_button(identifier: "SizeConstrainOff", 
+									image: {down: "SP_Link_Md_N.png", dark_down:"SP_Link_Md_N_D.png", normal: "SP_Unlink_Md_N.png", dark_normal:"SP_Unlink_Md_N_D.png"}, 
+									alt: "$$$/SwatchLibs/ToolTips/SizeConstrainOff=Maintain Width and Height Proportions",
+									value_on: true, value_off: false, 
+									bind: @constrainSize, 
+									action: @toggleSizeLink,
+									vertical: @align_center);
+		}
+
+		checkbox(identifier: "AutoGrowCheckbox", name: "$$$/SwatchLibs/PatOptions/AutoGrow=Size Tile to Art", bind: @autoGrow);
+		checkbox(identifier: "AutoMoveCheckbox", name: "$$$/SwatchLibs/PatOptions/AutoMove=Move Tile with Art", bind: @autoMove);
+		row(spacing: @related_spacing)
+		{
+			column()
+			{
+				edit_number(identifier: "HSpacing",
+							bind: @xSpacing,
+							unit: 'CurrentDocumentUnit',
+							decimal_places: 4,
+							max_value: 4000,
+							min_value: -3998,
+							digits: 9,
+							name: "$$$/SwatchLibs/PatOptions/HSpacing=H Spacing:");
+
+				edit_number(identifier: "VSpacing",
+							bind: @ySpacing,
+							unit: 'CurrentDocumentUnit',
+							decimal_places: 4,
+							max_value: 4000,
+							min_value: -3998,
+							digits: 9,
+							name: "$$$/SwatchLibs/PatOptions/VSpacing=V Spacing:");
+			}
+			toggle_button(identifier: "HVConstrainOff", 
+									image: {down: "SP_Link_Md_N.png", dark_down:"SP_Link_Md_N_D.png", normal: "SP_Unlink_Md_N.png", dark_normal:"SP_Unlink_Md_N_D.png"}, 
+									alt: "$$$/SwatchLibs/ToolTips/SpacingConstrainOff=Maintain Spacing Proportions",
+									value_on: true, value_off: false, 
+									bind: @constrainSpacing, 
+									action: @toggleSpacingLink,
+									vertical: @align_center);
+		}
+
+		row()
+		{
+			button_bar(identifier: "H_Overlap_BBar", bind: @leftInFront, vertical: @align_fill, name: "$$$/SwatchLibs/PatOptions/Overlap=Overlap:", items: @itemsH_Overlap_BBar);
+			button_bar(identifier: "V_Overlap_BBar", bind: @topInFront, vertical: @align_fill, items: @itemsV_Overlap_BBar);
+		}
+
+		separator(orientation: @horizontal, horizontal: @align_fill);
+		popup(identifier: "Repeat", bind: @numRepeats, include_custom_item: false, name: "$$$/SwatchLibs/PatOptions/RepeatLabel=Copies:", items: @itemsRepeat );
+		row(spacing: @label_widget_spacing)
+		{
+			checkbox(identifier: "DimCheckbox", name: "$$$/SwatchLibs/PatOptions/Dim=Dim Copies to:", bind: @dimCopies);
+			unit_hot_number(identifier: "Intensity", bind: @dimTo, unit: 'NumberEditUnit_Percent', decimal_places: 0, min_value: 0.0, max_value: 100.0, digits: 2, popuplist: true, items: @dimToValues, bind_final: true, guide_mask: [@guide_label]);
+		}
+
+		checkbox(identifier: "ShowTileBounds", name: "$$$/SwatchLibs/PatOptions/showTileBounds=Show Tile Edge", bind: @showTileBounds);
+		checkbox(identifier: "ShowSwatchBounds", name: "$$$/SwatchLibs/PatOptions/showSwatchBounds=Show Swatch Bounds", bind: @showSwatchBounds, alt: "$$$/SwatchLibs/ToolTips/ShowSwatchBounds=Object(s) outside these bounds are not repeated");
+	 }
+}

@@ -1,0 +1,144 @@
+layout ObjectMosaicUI
+{
+    view subview(identifier: "AIEveSubView",
+                 child_horizontal: @align_fill,
+                 layout_theme: @dialog_large,
+                 name: "$$$/ObjectMosaic/Cap/Mosaic=Object Mosaic",
+                 placement: @place_column,
+                 spacing: @unrelated_spacing,
+                 show_border: false)
+    {
+        column(child_horizontal: @align_fill,spacing: @inter_group_spacing)
+        {
+            row(child_vertical: @align_fill,
+				spacing: @inter_group_spacing,child_horizontal: @align_fill)
+            {
+                column(child_horizontal: @align_fill,
+					   spacing: @inter_group_spacing)
+                {
+                    group(child_vertical: @align_fill,
+                          identifier: "CurrentSizegroup",
+                          name: "$$$/ObjectMosaic/Dlg/Mosaic/CurrentSize=Current Size",
+                          placement: @place_row,
+                          spacing: @label_widget_spacing,
+                          vertical: @align_fill)
+                    {
+                        column(child_vertical: @align_center,
+							   child_horizontal: @align_right)
+                        {
+                            static_text(name: "$$$/ObjectMosaic/Dlg/Mosaic/Width=Width:");
+                            static_text(name: "$$$/ObjectMosaic/Dlg/Mosaic/Height=Height:");
+                        }
+
+                        column(child_vertical: @align_center,
+							   child_horizontal: @align_left)
+                        {
+                            static_text(identifier: "OrigWidthStatic", name: "$$$/ObjectMosaic/Dlg/Mosaic/dummy=00000000000");
+                            static_text(identifier: "OrigHeightStatic", name: "$$$/ObjectMosaic/Dlg/Mosaic/dummy=00000000000");
+                        }
+                    }
+
+                    group(child_vertical: @align_center,
+                          identifier: "TileSpacinggroup",
+                          name: "$$$/ObjectMosaic/Dlg/Mosaic/TileSpacing=Tile Spacing",
+                          placement: @place_column,
+                          vertical: @align_bottom)
+                    {
+                        unit_hot_number(identifier: "TileSpaceHorzTxt",
+										decimal_places: 2,
+										digits: 7,
+										set_default_focus: true,
+										name: "$$$/ObjectMosaic/Dlg/Mosaic/W_idth=W&idth:");
+
+                        unit_hot_number(identifier: "TileSpaceVertTxt",
+										decimal_places: 2,
+										digits: 7,
+										name: "$$$/ObjectMosaic/Dlg/Mosaic/H_eight=H&eight:");
+					}
+                }
+
+                column(child_horizontal: @align_right,
+					   spacing: @inter_group_spacing)
+                {
+                    group(identifier: "NewSizegroup",
+                          name: "$$$/ObjectMosaic/Dlg/Mosaic/NewSize=New Size",
+                          placement: @place_column,
+                          vertical: @align_fill,horizontal: @align_fill)
+                    {
+                        unit_hot_number(identifier: "NewWidthTxt",
+										decimal_places: 2,
+										digits: 7,
+										name: "$$$/ObjectMosaic/Dlg/Mosaic/_Width=&Width:",
+										unit: "NumberEditUnit_Percent");
+
+                        unit_hot_number(identifier: "NewHeightTxt",
+										decimal_places: 2,
+										digits: 7,
+										name: "$$$/ObjectMosaic/Dlg/Mosaic/_Height=&Height:",
+										unit: "NumberEditUnit_Percent");
+                    }
+
+                    group(identifier: "NumberOfTilesgroup",
+                          name: "$$$/ObjectMosaic/Dlg/Mosaic/NumberOfTiles=Number of Tiles",
+                          placement: @place_column,
+                          vertical: @align_bottom,horizontal: @align_fill)
+                    {
+                        unit_hot_number(identifier: "HorizontalCountTxt",
+										decimal_places: 2,
+										digits: 7,
+										name: "$$$/ObjectMosaic/Dlg/Mosaic/Wid_th=Wi&dth:");
+
+                        unit_hot_number(identifier: "VerticalCountTxt",
+										decimal_places: 2,
+										digits: 7,
+										name: "$$$/ObjectMosaic/Dlg/Mosaic/Hei_ght=Hei&ght:");
+                    }
+                }
+            }
+
+            group(horizontal: @align_fill,
+                  identifier: "MosaicOptionsgroup",
+                  name: "$$$/ObjectMosaic/Dlg/Mosaic/Options=Options",
+                  placement: @place_column, 
+                  guide_mask: [@guide_label])
+            {
+				radiogroup(placement: @place_row)
+				{
+					radio_button(bind: @HorzGrp, value: @width, identifier: "HorizontalRadio", label: "$$$/ObjectMosaic/Dlg/Mosaic/ConstrainRatio=Constrain Ratio:", name: "$$$/ObjectMosaic/Dlg/Mosaic/lockHorizontal=Wid&th");
+					radio_button(bind: @HorzGrp, value: @height, identifier: "VerticalRadio", name: "$$$/ObjectMosaic/Dlg/Mosaic/lockVertical=Height");
+				}
+				radiogroup(placement: @place_row)
+				{
+					radio_button(bind: @VertGrp, value: @color, identifier: "ColorRadio", label: "$$$/ObjectMosaic/Dlg/Mosaic/Result=Result:", name: "$$$/ObjectMosaic/Dlg/Mosaic/colorButton=C&olor");
+					radio_button(bind: @VertGrp, value: @gray, identifier: "GrayRadio", name: "$$$/ObjectMosaic/Dlg/Mosaic/grayButton=Gra&y");
+				}
+				
+                  
+                checkbox(identifier: "UsePercentChk", name: "$$$/ObjectMosaic/Dlg/Mosaic/resizeByPercent=Resi&ze using Percentages");
+                checkbox(identifier: "DeleteRasterChk", name: "$$$/ObjectMosaic/Dlg/Mosaic/delRasterCheck=Delete Ra&ster");
+            }
+        }
+
+        row(spacing: @separated_spacing,
+			child_vertical: @align_fill)
+        {
+            button(identifier: "MosaicUseRatioButton",
+                   name: "$$$/ObjectMosaic/Dlg/Mosaic/useDimensions=&Use Ratio");
+
+			row(reverse: os == @mac,
+				child_vertical: @align_fill,
+				horizontal: @align_right,
+				spacing: @related_spacing)
+			{
+				button(default: true,
+					   commit_button: true,
+					   identifier: "okButton",
+					   name: "$$$/gOK=OK");
+
+				button(identifier: "cancelButton",
+					   commit_button: true,
+					   name: "$$$/gCancel=Cancel");
+			}
+        }
+    }
+}

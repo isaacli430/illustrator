@@ -1,0 +1,48 @@
+sheet warichuOptionsDialog
+{
+	interface:
+		warichu: 0;
+		lines: 2;
+		linesItems: ["2", "3", "4", "5"];
+		lineGap: 0;
+		scale: 50;
+		scaleItems: ["30%",
+						"40%",
+						"50%",
+						"60%",
+						"70%"];
+		alignment: 1;
+		horizontalAlignmentItems: [{name: "$$$/_TextDlgs/Mnu/SLOWariChuHorizontalAligmentMenu/1=Default Alignment", value: 1},
+									{name: "-", value: 2},
+									{name: "$$$/_TextDlgs/Mnu/SLOWariChuHorizontalAligmentMenu/3=Left aligned", value: 3},
+									{name: "$$$/_TextDlgs/Mnu/SLOWariChuHorizontalAligmentMenu/4=Center aligned", value: 4},
+									{name: "$$$/_TextDlgs/Mnu/SLOWariChuHorizontalAligmentMenu/5=Right aligned", value: 5},
+									{name: "$$$/_TextDlgs/Mnu/SLOWariChuHorizontalAligmentMenu/6=Full Just Left", value: 6},
+									{name: "$$$/_TextDlgs/Mnu/SLOWariChuHorizontalAligmentMenu/7=Full Just Center", value: 7},
+									{name: "$$$/_TextDlgs/Mnu/SLOWariChuHorizontalAligmentMenu/8=Full Just Right", value: 8},
+									{name: "$$$/_TextDlgs/Mnu/SLOWariChuHorizontalAligmentMenu/9=Force Full Just", value: 9}];
+		verticalAlignmentItems: [{name: "$$$/_TextDlgs/Mnu/SLOWariChuVerticalAligmentMenu/1=Default Alignment", value: 1},
+									{name: "-", value: 2},
+									{name: "$$$/_TextDlgs/Mnu/SLOWariChuVerticalAligmentMenu/3=Top aligned", value: 3},
+									{name: "$$$/_TextDlgs/Mnu/SLOWariChuVerticalAligmentMenu/4=Center aligned", value: 4},
+									{name: "$$$/_TextDlgs/Mnu/SLOWariChuVerticalAligmentMenu/5=Bottom aligned", value: 5},
+									{name: "$$$/_TextDlgs/Mnu/SLOWariChuVerticalAligmentMenu/6=Full Just Top", value: 6},
+									{name: "$$$/_TextDlgs/Mnu/SLOWariChuVerticalAligmentMenu/7=Full Just Center", value: 7},
+									{name: "$$$/_TextDlgs/Mnu/SLOWariChuVerticalAligmentMenu/8=Full Just Bottom", value: 8},
+									{name: "$$$/_TextDlgs/Mnu/SLOWariChuVerticalAligmentMenu/9=Force Full Just", value: 9}];
+		textOrientation: 1;
+		alignmentItems: verticalAlignmentItems <== (textOrientation == 1) ? verticalAlignmentItems : horizontalAlignmentItems;
+		minNumOfCharOnFirstLine: 1;
+		minNumOfCharItems: ["1",
+							"2",
+							"3",
+							"4",
+							"5",
+							"6",
+							"7",
+							"8",
+							"9",
+							"10"];
+		minNumOfCharOnLastLine: 1;
+		preview: 0;
+}

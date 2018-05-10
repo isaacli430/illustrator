@@ -1,0 +1,93 @@
+layout VariablePropDialog
+{
+    view subview(identifier: "VariableOptions",
+                 placement: @place_column,
+                 child_horizontal: @align_fill,
+				show_border: false,
+				layout_theme: @dialog_large,
+				spacing:@unrelated_spacing)
+    {
+        column(child_horizontal: @align_fill)
+        {
+           edit_text(characters: 20,
+                      identifier: "name",
+                      max_characters: 99,
+                      set_default_focus: true,
+                      name: "$$$/VariablesPalette/Dlg/VariableProp/3=&Name:");
+           
+           
+            popup(identifier: "type",
+					  include_custom_item: false,
+					  items: [ { name: "$$$/VariablesPalette/Mnu/VariablesType/kNoType=(no type)", value: "none" },
+							   { name: "$$$/VariablesPalette/Mnu/VariablesType/kGraphDataType=Graph Data", value: "graph"  },
+							   { name: "$$$/VariablesPalette/Mnu/VariablesType/kImageType=Linked File", value: "linked" } ,
+							   { name: "$$$/VariablesPalette/Mnu/VariablesType/kTextType=Text String", value: "text" } ,
+							   { name: "$$$/VariablesPalette/Mnu/VariablesType/kVisibilityType=Visibility", value: "visibility" } ],
+					   name: "$$$/VariablesPalette/Dlg/VariableProp/5=&Type:"
+					   );
+
+           
+            group(identifier: "description",
+                  name: "$$$/VariablesPalette/Dlg/VariableProp/8=Description",
+                  theme_font_size: @small)
+            { 
+	    		overlay(child_horizontal: @align_fill,
+						horizontal: @align_fill)
+	    		{
+	    			panel(bind: @descString,
+						  value: 0,
+						  margin: 0)
+					{
+						static_text(identifier: "desc_text_NoType", characters : 1, horizontal: @align_fill,theme_font_size: @small, 
+	    				name: "$$$/VariablesPalette/Dlg/VariableProp/VariableDesc/Win=Variables with (no type) receive the type of the first object to which they are bound. Unbound variables can be set to any of the variable type options.");
+					}
+					panel(bind: @descString,
+						  value: 1,
+						  margin: 0)
+					{
+						static_text(identifier: "desc_text_Graph", characters : 1, horizontal: @align_fill,theme_font_size: @small,  
+	    				name: "$$$/VariablesPalette/Str/GrapthD=The value of a Graph Data variable can be modified by selecting the bound graph object, and editing the graph data through Object > Graph > Data.");
+					}
+					panel(bind: @descString,
+						  value: 2,
+						  margin: 0)
+					{
+						static_text(identifier: "desc_text_Linked", characters : 1, horizontal: @align_fill,theme_font_size: @small,  
+	    				name: "$$$/VariablesPalette/Str/Linked=The value of a Linked File variable can be modified by replacing the linked object with either the Replace command in the Links panel, or File > Place.");
+					}
+					panel(bind: @descString,
+						  value: 3,
+						  margin: 0)
+					{
+						static_text(identifier: "desc_text_Text", characters : 1, horizontal: @align_fill,theme_font_size: @small,  
+	    				name: "$$$/VariablesPalette/Str/TextString=The value of a Text String variable can be modified by highlighting the related text object in the document, and entering new text.");
+					}
+					panel(bind: @descString,
+						  value: 4,
+						  margin: 0)
+					{
+						static_text(identifier: "desc_text_Visibility", characters : 1, horizontal: @align_fill,theme_font_size: @small,  
+	    				name: "$$$/VariablesPalette/Str/Locating=The value of a Visibility variable can be modified by locating the related entry in the Layers panel, and clicking on the eyeball icon to toggle visibility.");
+					}
+				}											    		
+           }
+
+            
+        }
+
+        row(child_horizontal: @align_right, reverse: os==@mac, spacing: @related_spacing)
+        {
+            button(default: true,
+                   identifier: "okButton",
+                   name: "$$$/gOK=OK",
+                   commit_button: true);
+
+            button(cancel: true,
+                   identifier: "cancelButton",
+                   name: "$$$/gCancel=Cancel",
+                   commit_button: true);
+
+        }
+    }
+}
+

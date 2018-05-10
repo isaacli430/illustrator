@@ -1,0 +1,41 @@
+sheet TouchAppBar
+{
+interface:
+	
+	/* Is there any document */
+	DocumentPresent: false;
+	
+	/* Is HP Sprout machine its enabled. */
+	HPSproutEnabled: false;
+	
+	FileMenuType:0;
+
+    /*Is Starter Workspace is enabled*/
+    StarterWorkspaceEnabled : 0;
+
+
+	FileMenuItemsSprout: [ { name: "$$$/AppBarControls/TouchAppBar/FileMenu/NewRGBDocument=New RGB Document", value: 0, action: @NewRGBDoc },
+					 { name: "$$$/AppBarControls/TouchAppBar/FileMenu/NewCMYKDocument=New CMYK Document", value: 1, action: @NewCMYKDoc  },
+					 { name: "$$$/AppBarControls/TouchAppBar/FileMenu/Open=Open...", value: 2, action: @OpenDoc  },
+					 { name: "$$$/AppBarControls/TouchAppBar/FileMenu/Place=Place...", value: 3,  bind: @DocumentPresent, bind_output: true, action: @Place  },
+					 { name: "$$$/AppBarControls/TouchAppBar/FileMenu/CaptureImage=Capture Image", value: 4,  bind: @DocumentPresent, bind_output: true, action: @Capture   },
+					 {name:'-', value: 5},
+					 { name: "$$$/AppBarControls/TouchAppBar/FileMenu/Close=Close", value: 6,  bind: @DocumentPresent, bind_output: true, action: @CloseDoc   },
+					 { name: "$$$/AppBarControls/TouchAppBar/FileMenu/Save=Save", value: 7,  bind: @DocumentPresent, bind_output: true, action: @SaveDoc   },
+					 {name:'-', value: 8},
+					 { name: "$$$/AppBarControls/TouchAppBar/FileMenu/Exit=Exit", value: 9, action: @Exit}
+					];
+	FileMenuItems	: [ { name: "$$$/AppBarControls/TouchAppBar/FileMenu/NewRGBDocument=New RGB Document", value: 0, action: @NewRGBDoc },
+					 { name: "$$$/AppBarControls/TouchAppBar/FileMenu/NewCMYKDocument=New CMYK Document", value: 1, action: @NewCMYKDoc  },
+					 { name: "$$$/AppBarControls/TouchAppBar/FileMenu/Open=Open...", value: 2, action: @OpenDoc  },
+					 { name: "$$$/AppBarControls/TouchAppBar/FileMenu/Place=Place...", value: 3,  bind: @DocumentPresent, bind_output: true, action: @Place  },
+					 {name:'-', value: 4},
+					 { name: "$$$/AppBarControls/TouchAppBar/FileMenu/Close=Close", value: 5,  bind: @DocumentPresent, bind_output: true, action: @CloseDoc   },
+					 { name: "$$$/AppBarControls/TouchAppBar/FileMenu/Save=Save", value: 6,  bind: @DocumentPresent, bind_output: true, action: @SaveDoc   },
+					 {name:'-', value: 7},
+					 { name: "$$$/AppBarControls/TouchAppBar/FileMenu/Exit=Exit", value: 8, action: @Exit}
+					];
+invariant: 	
+
+	Invariant_DocumentPresent <== DocumentPresent;
+}

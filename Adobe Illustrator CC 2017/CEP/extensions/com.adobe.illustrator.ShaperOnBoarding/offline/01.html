@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Introduction to Shaper</title>
+
+<script src="easeljs-0.8.1.min.js"></script>
+<script src="tweenjs-0.6.1.min.js"></script>
+<script src="movieclip-0.8.1.min.js"></script>
+<script src="Shaper Animation 1.js"></script>
+<script src="./lib/jquery-1.9.1.js"></script>
+<script src="./lib/CSInterface.js"></script>
+<script src="./internal/shaper_onboarding.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".wrapper").swipe({
+             swipeLeft: function() { window.location =  "02.html"},
+             swipeRight: function() { },
+        })  ;
+    });
+</script>
+
+<script>
+var canvas, stage, exportRoot;
+
+function init() {
+	canvas = document.getElementById("canvas");
+	exportRoot = new lib.ShaperAnimation1();
+
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	stage.update();
+
+	createjs.Ticker.setFPS(lib.properties.fps);
+	createjs.Ticker.addEventListener("tick", stage);
+}
+</script>
+
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onload="init();">
+
+<div class="wrapper">
+	<div class="hero">
+    	<canvas id="canvas" width="1200" height="540" style="background-color: #F2F3F3; width: 100%"></canvas>
+    </div>
+    <div class="content">
+    	<div class="copy">
+        	<h2 data-locale="GetStarted"></h2>
+            <p data-locale="GetStartedDesc"></p>
+        </div>
+        <div class="footer">
+            <div class="bullets">
+            	<a class="current"></a>
+                <a href="02.html"></a>
+                <a href="03.html"></a>
+			</div>
+            <div class="nav">
+                <a class="arrowLeft ghosted"><img src="arrow-left.svg" alt=""></a>
+                <a href="02.html" class="arrowRight"><img src="arrow-right.svg" alt=""></a>
+            </div>
+            <a href="" class="close" data-locale="Close"  onclick="window.__adobe_cep__.closeExtension()"></a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

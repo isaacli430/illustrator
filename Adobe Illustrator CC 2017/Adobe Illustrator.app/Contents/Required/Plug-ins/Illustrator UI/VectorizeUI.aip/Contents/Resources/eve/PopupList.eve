@@ -1,0 +1,23 @@
+layout PopupListPanel
+{
+ 	view subview(identifier: "PopupListSubView",
+			 child_horizontal: @align_fill,
+			 layout_theme: @panel,
+			 show_border: false,
+			 child_vertical: @align_center,
+			 placement: @place_column)
+   	{
+		row(width: 224, spacing: 0)
+		{
+			multicolumn_tree
+			(
+				identifier: "MultiColumnTree",
+				width: 224,
+				height: 314,
+				wants_focus: false,
+				horizontal: @align_fill,
+				vertical: @align_fill
+			);
+		}
+	}
+}

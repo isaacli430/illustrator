@@ -1,0 +1,14 @@
+layout TouchDLPanel
+{
+     view subview(identifier: "TouchDLPanel",
+				 show_border: false,
+				 child_vertical: @align_center,
+				 placement: @place_row,
+				 margin: 0,
+				 width : 240,
+				 height : 300)
+    {		
+				/*Design Library view will be loaded by extension. */
+    }
+}
+

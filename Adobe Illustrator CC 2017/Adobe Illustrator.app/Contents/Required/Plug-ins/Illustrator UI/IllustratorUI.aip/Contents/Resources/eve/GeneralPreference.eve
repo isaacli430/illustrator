@@ -1,0 +1,146 @@
+layout GeneralPreference
+{
+	view subview(identifier: "GeneralPrefEveSubView",
+				 child_horizontal: @align_fill,
+				 placement: @place_column,
+				 show_border: false, 
+				 margin: [22,15,0,15],
+				 layout_theme: @dialog_large)
+	{
+		column(spacing: 0)
+		{
+		static_text(identifier: "GPStaticTextCaption",
+					name: "$$$/PrefsDlg/GPDlg/Caption=General"
+					);
+		
+		separator(identifier: "GPTopSeparator");
+		}
+		
+		column(horizontal: @align_left, child_horizontal: @align_fill)
+		{
+		unit_hot_number(identifier: "GPEditNumberKBInc",
+					name: "$$$/PrefsDlg/GPDlg/KBIncrement=&Keyboard Increment:",
+                    max_value: 1296,
+					min_value: 0.01,
+                    decimal_places: 4,
+					digits: 4,
+                    bind: @GPRealkbInc
+                    );
+		
+		unit_hot_number(identifier: "GPEditNumberConstrainAngle",
+					name: "$$$/PrefsDlg/GPDlg/ConstrainAngle=Constrain &Angle:",
+					unit:"NumberEditUnit_Degree",
+                    max_value: 360,
+					min_value: -360,
+                    decimal_places: 2,
+					digits: 4,
+                    bind: @GPRealCAngle
+                    );
+		
+		unit_hot_number(identifier: "GPEditNumberCornerRadius",
+					name: "$$$/PrefsDlg/GPDlg/CornerRadius=Corner &Radius:",
+                    max_value: 1296,
+					min_value: 0,
+                    decimal_places: 2,
+					digits: 4,
+                    bind: @GPRealCRadius
+                    );
+		}
+                    
+        separator(identifier: "GPMidSeparator");
+        
+        row(guide_mask: [ @guide_label ], child_horizontal: @align_fill, horizontal: @align_fill)
+        {
+        column()
+        {
+			checkbox(	identifier: "GPCheckDisableAutoAdd",
+						name: "$$$/PrefsDlg/GPDlg/CheckDisableAutoAdd=Disa&ble Auto Add/Delete",
+						bind: @GPBoolAutoAdd
+					);
+			checkbox(	identifier: "GPCheckPreciseCursor",
+						name: "$$$/PrefsDlg/GPDlg/CheckPreciseCursor=Use Pr&ecise Cursors",
+						bind: @GPBoolPCusrsor
+					);
+			checkbox(	identifier: "GPCheckToolTips",
+						name: "$$$/PrefsDlg/GPDlg/CheckToolTips=Show Tool T&ips",
+						bind: @GPBoolTooltip
+					);
+			checkbox(	identifier: "GPCheckAA",
+						name: "$$$/PrefsDlg/GPDlg/CheckAA=Anti-aliased Ar&twork",
+						bind: @GPBoolAA
+					);
+			checkbox(	identifier: "GPCheckSameTint",
+						name: "$$$/PrefsDlg/GPDlg/CheckSameTint=Select Sa&me Tint %",
+						bind: @GPBoolTint
+					);
+			optional(bind: @GPBoolHomeScreenEnabled, value: true)
+			{
+				checkbox(	identifier: "GPCheckHomeBnd",
+						name: "$$$/PrefsDlg/GPDlg/CheckWelcomeOpen=S&how The Start Workspace When No Documents Are Open",
+						bind: @GPBoolHomeScreenBnd
+					);
+			}
+			optional(bind: @GPBoolRecentFileEnabled, value: true)
+			{
+				checkbox(	identifier: "GPCheckRecentFileBnd",
+						name: "$$$/PrefsDlg/GPDlg/CheckEnhancedOpen=Show The Recent Files Workspace While Ope&ning A File",
+						bind: @GPBoolRecentFileBnd
+					);
+			}
+			optional(bind: @GPBoolNativeNewDocEnabled, value: true)
+			{
+				checkbox(	identifier: "GPCheckNativeNewDocBnd",
+						name: "$$$/PrefsDlg/GPDlg/CheckNativeNewDocEnabled=Use legacy ^[File New^] interface",
+						bind: @GPBoolNativeNewDocBnd
+					);
+			}
+			checkbox(	identifier: "GPCheckPreviewBnd",
+						name: "$$$/PrefsDlg/GPDlg/CheckPreviewBnd=Use Pre&view Bounds",
+						bind: @GPBoolPrvBnd
+					);
+        }
+        column()
+        {
+			checkbox(	identifier: "GPCheckIsolate",
+						name: "$$$/PrefsDlg/GPDlg/CheckIsolate=Do&uble Click To Isolate",
+						bind: @GPBoolIsolate
+					);
+			optional(bind: @IsWorldReadyModeCell, value: false)
+			{
+				checkbox(	identifier: "GPCheckJapaneseCropMark",
+						name: "$$$/PrefsDlg/GPDlg/CheckJapaneseCropMark=Use &Japanese Crop Marks",
+						bind: @GPBoolcjk
+						);
+			}
+			checkbox(	identifier: "GPCheckTransformTiles",
+						name: "$$$/PrefsDlg/GPDlg/CheckTransformTiles=Trans&form Pattern Tiles",
+						bind: @GPBoolTxTile
+					);
+			checkbox(	identifier: "GPCheckScaleCornerRadiiForShapes",
+						name: "$$$/PrefsDlg/GPDlg/CheckScaleRadiiForShapes=&Scale Corners",
+						alt: "$$$/PrefsDlg/GPDlg/ToolTip/ScaleRadiiForShapes=Set this option to scale corner radii proportionally",
+						bind: @GPBoolScaleRadiiShape
+					);
+			checkbox(	identifier: "GPCheckScaleStroke",
+						name: "$$$/PrefsDlg/GPDlg/CheckScaleStroke=Scale Str&okes & Effects",
+						bind: @GPBoolScaleStroke
+					);
+        }
+		}
+		
+		row(guide_mask: [ @guide_label ], child_horizontal: @align_fill, horizontal: @align_fill)
+		{
+			checkbox(	identifier: "GPCheckLegacyFile", guide_mask: [ @guide_label ],
+						name: "$$$/PrefsDlg/GPDlg/CheckLegacyFile=Append [Converted] Upon Opening &Legacy Files",
+						bind: @GPBoolLegacy
+					);
+		}
+
+		separator(identifier: "GPEndSeparator");
+		
+		button( identifier: "GPButtonResetWarnings",
+				name: "$$$/PrefsDlg/GPDlg/ButtonResetWarnings=Reset All Warning &Dialogs",
+				horizontal: @align_left
+				);	
+	}
+}

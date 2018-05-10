@@ -1,0 +1,48 @@
+sheet ParticleSystemUI
+{
+	interface:
+		SelectedSymbolTool: 0;
+		IsSprayerToolSelected: true <== (SelectedSymbolTool == 0) ? true : false;
+		ShowBrushCheckBoxCell: true;
+		AffectsDensityCheckBoxCell: true;
+		ProportionalResizingCheckBoxCell: true;
+		SymbolSetDensityCell: 5;
+		IntensityCell: 8 <== (IntensityModifierPopUpCell == 0)? IntensityCell : DuplicateIntensityCell;
+		DuplicateIntensityCell: 8;
+		DiameterCell: 200;
+		UseAvgDensity: 1;
+		UseAvgScale: 1;
+		UseAvgOrient: 1;
+		UseAvgAlpha: 1;
+		UseAvgColor: 1;
+		UseAvgStyle: 1;
+		MethodPopUpCell: 1 ;
+		IntensityModifierPopUpCell: 0 <== (IsIntensityModifierPopUpCellEnabled == 1)? IntensityModifierPopUpCell : 0;
+		IsIntensityModifierPopUpCellEnabled: 0;
+	
+		tipStrings : [
+					"$$$/ParticleSystem/Str/16152/Win=Hold down the Shift key to bring symbol instances forward.\nHold down the Shift+Alt keys to send symbol instances backward.",
+					"$$$/ParticleSystem/Str/16153/Win=Hold down the Alt key to push symbol instances away from the cursor.",
+					"$$$/ParticleSystem/Str/16154/Win=Hold down the Alt key to decrease the size of symbol instances.\nHold down the Shift key to do density-preserving scale.",
+					"$$$/ParticleSystem/Str/16155=(no shortcut keys)",
+					"$$$/ParticleSystem/Str/16156/Win=Hold down the Alt key to decrease the amount of colorization.\nHold down the Shift key to maintain the tint intensity of previously stained instances.",
+					"$$$/ParticleSystem/Str/16157/Win=Hold down the Alt key to decrease transparency.",
+					"$$$/ParticleSystem/Str/16158/Win=Hold down the Alt key to decrease the style intensity.\nHold down the Shift key to maintain the style intensity of previously styled instances.",
+					"$$$/ParticleSystem/Str/16152/Mac=Hold down the Shift key to bring symbol instances forward.\rHold down the Shift+Option keys to send symbol instances backward.",
+					"$$$/ParticleSystem/Str/16153/Mac=Hold down the Option key to push symbol instances away from the cursor.",
+					"$$$/ParticleSystem/Str/16154/Mac=Hold down the Option key to decrease the size of symbol instances.\rHold down the Shift key to do density-preserving scale.",
+					"$$$/ParticleSystem/Str/16156/Mac=Hold down the Option key to decrease the amount of colorization.\rHold down the Shift key to maintain the tint intensity of previously stained instances.",
+					"$$$/ParticleSystem/Str/16157/Mac=Hold down the Option key to decrease transparency.",
+					"$$$/ParticleSystem/Str/16158/Mac=Hold down the Option key to decrease the style intensity.\rHold down the Shift key to maintain the style intensity of previously styled instances."
+
+			];
+		tipStringLargest : tipStrings[max_length_string(@tipStrings)];
+	logic:
+		when (IntensityModifierPopUpCell == 0) relate
+   		{
+   			IntensityCell <== DuplicateIntensityCell;
+  			DuplicateIntensityCell <== IntensityCell;
+  		}
+  		
+  		
+}

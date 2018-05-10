@@ -1,0 +1,267 @@
+layout GraphType
+{
+    view subview(identifier: "AIEveSubView", placement: @place_column, show_border: false, layout_theme: @dialog_large, spacing: @unrelated_spacing)
+    {			
+        group(placement: @place_column, header: "popup(items: @GraphMenu, identifier: 'GraphOptions', horizontal: @align_left, bind: @GraphMenuIndex, include_custom_item: false)", spacing: @inter_group_spacing)
+        {
+			overlay(horizontal: @align_fill)
+			{
+				panel(bind: @ShowOptionsGroup, value: 4, margin: 0)
+				{
+					overlay(horizontal: @align_fill)
+					{
+						panel(bind: @AxisToUse, value: 1, margin: 0)
+						{
+							group(name: "$$$/Illustrator/Graphs/Dialog/GraphType/groupTickMarks=Tick Marks", placement: @place_column, horizontal: @align_fill, guide_mask: [@guide_label])
+							{
+								column(horizontal: @align_fill)
+								{
+									popup(identifier: "left_ticksLength", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tickMarks=Lengt&h:", include_custom_item: false, bind: @LeftAxis_TickMarksLength, items: @TickMarksMenu);
+									unit_hot_number(identifier: "left_ticksPerDivision", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tickDraw=Dr&aw", suffix: "$$$/Illustrator/Graphs/Dialog/GraphType/tickDrawSx=tick marks per division", bind: @LeftAxis_TickMarksDivision, min_value: 0, max_value: 1000, decimal_places: 2, digits: 5);
+								}
+								checkbox(identifier: "left_ticksBetweenLabels", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tickDrawBetweenLabels=Draw tick marks between la&bels", bind: @LeftAxis_TickMarksBetweenLabels);
+							}
+						}
+						panel(bind: @AxisToUse, value: 2, margin: 0)
+						{
+							group(name: "$$$/Illustrator/Graphs/Dialog/GraphType/groupTickMarks=Tick Marks", placement: @place_column, horizontal: @align_fill, guide_mask: [@guide_label])
+							{
+								column(horizontal: @align_fill)
+								{
+									popup(identifier: "right_ticksLength", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tickMarks=Lengt&h:", include_custom_item: false, bind: @RightAxis_TickMarksLength, items: @TickMarksMenu);
+									unit_hot_number(identifier: "right_ticksPerDivision", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tickDraw=Dr&aw", suffix: "$$$/Illustrator/Graphs/Dialog/GraphType/tickDrawSx=tick marks per division", bind: @RightAxis_TickMarksDivision, min_value: 0, max_value: 1000, decimal_places: 2, digits: 5);
+								}
+								checkbox(identifier: "right_ticksBetweenLabels", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tickDrawBetweenLabels=Draw tick marks between la&bels", bind: @RightAxis_TickMarksBetweenLabels);
+							}
+						}
+						panel(bind: @AxisToUse, value: 3, margin: 0)
+						{
+							group(name: "$$$/Illustrator/Graphs/Dialog/GraphType/groupTickMarks=Tick Marks", placement: @place_column, horizontal: @align_fill, guide_mask: [@guide_label])
+							{
+								column(horizontal: @align_fill)
+								{
+									popup(identifier: "top_ticksLength", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tickMarks=Lengt&h:", include_custom_item: false, bind: @TopAxis_TickMarksLength, items: @TickMarksMenu);
+									unit_hot_number(identifier: "top_ticksPerDivision", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tickDraw=Dr&aw", suffix: "$$$/Illustrator/Graphs/Dialog/GraphType/tickDrawSx=tick marks per division", bind: @TopAxis_TickMarksDivision, min_value: 0, max_value: 1000, decimal_places: 2, digits: 5);
+								}
+								checkbox(identifier: "top_ticksBetweenLabels", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tickDrawBetweenLabels=Draw tick marks between la&bels", bind: @TopAxis_TickMarksBetweenLabels);
+							}
+						}
+						panel(bind: @AxisToUse, value: 4, margin: 0)
+						{
+							group(name: "$$$/Illustrator/Graphs/Dialog/GraphType/groupTickMarks=Tick Marks", placement: @place_column, horizontal: @align_fill, guide_mask: [@guide_label])
+							{
+								column(horizontal: @align_fill)
+								{
+									popup(identifier: "bottom_ticksLength", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tickMarks=Lengt&h:", include_custom_item: false, bind: @BottomAxis_TickMarksLength, items: @TickMarksMenu);
+									unit_hot_number(identifier: "bottom_ticksPerDivision", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tickDraw=Dr&aw", suffix: "$$$/Illustrator/Graphs/Dialog/GraphType/tickDrawSx=tick marks per division", bind: @BottomAxis_TickMarksDivision, min_value: 0, max_value: 1000, decimal_places: 2, digits: 5);
+								}
+								checkbox(identifier: "bottom_ticksBetweenLabels", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tickDrawBetweenLabels=Draw tick marks between la&bels", bind: @BottomAxis_TickMarksBetweenLabels);
+							}
+						}
+					}
+				}
+				panel(bind: @ShowOptionsGroup, value: 2, margin: 0, guide_mask: [@guide_baseline])
+				{
+					overlay(horizontal: @align_fill)
+					{
+						panel(bind: @AxisToUse, value: 1, margin: 0, guide_mask: [@guide_label])
+						{
+							group(name: "$$$/Illustrator/Graphs/Dialog/GraphType/groupTick=Tick Values", placement: @place_column, horizontal: @align_fill)
+							{
+								checkbox(identifier: "left_overrideValues",  name: "$$$/Illustrator/Graphs/Dialog/GraphType/tick1=O&verride Calculated Values", guide_mask: [@guide_label], bind: @LeftAxis_OverrideCalculatedValues);
+								row()
+								{
+									unit_hot_number(identifier: "left_minOverride", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tickMin=M&in:", bind: @LeftAxis_OverrideMinValue, min_value: -2147483, max_value: 2147483, decimal_places: 2, digits: 7);
+									unit_hot_number(identifier: "left_maxOverride", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tickMax=&Max:", bind: @LeftAxis_OverrideMaxValue, min_value: -2147483, max_value: 2147483, decimal_places: 2, digits: 7);
+									unit_hot_number(identifier: "left_divisions", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tickDivisions=&Divisions:", bind: @LeftAxis_OverrideDivisionsValue, min_value: 1, max_value: 1000, decimal_places: 0, digits: 5);
+								}
+							}
+							group(name: "$$$/Illustrator/Graphs/Dialog/GraphType/groupTickMarks=Tick Marks", placement: @place_column, horizontal: @align_fill)
+							{
+								popup(identifier: "left_ticksLength2", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tickMarks=Lengt&h:", include_custom_item: false, bind: @LeftAxis_TickMarksLength, items: @TickMarksMenu);
+								unit_hot_number(identifier: "left_ticksPerDivision2", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tickDraw=Dr&aw", suffix: "$$$/Illustrator/Graphs/Dialog/GraphType/tickDrawSx=tick marks per division", bind: @LeftAxis_TickMarksDivision, min_value: 0, max_value: 1000, decimal_places: 2, digits: 5);
+							}
+							group(name: "$$$/Illustrator/Graphs/Dialog/GraphType/groupLabels=Add Labels", placement: @place_column, horizontal: @align_fill)
+							{
+								edit_text(identifier: "left_prefixLabel", name: "$$$/Illustrator/Graphs/Dialog/GraphType/labelPrefix=&Prefix:", bind: @LeftAxis_LabelPrefix,max_characters: 9);
+								edit_text(identifier: "left_suffixLabel", name: "$$$/Illustrator/Graphs/Dialog/GraphType/labelSuffix=Su&ffix:", bind: @LeftAxis_LabelSuffix,max_characters: 9);
+							}						
+						}
+						panel(bind: @AxisToUse, value: 2, margin: 0, guide_mask: [@guide_label])
+						{
+							group(name: "$$$/Illustrator/Graphs/Dialog/GraphType/groupTick=Tick Values", placement: @place_column, horizontal: @align_fill)
+							{
+								checkbox(identifier: "right_overrideValues",  name: "$$$/Illustrator/Graphs/Dialog/GraphType/tick1=O&verride Calculated Values", guide_mask: [@guide_label], bind: @RightAxis_OverrideCalculatedValues);
+								row()
+								{
+									unit_hot_number(identifier: "right_minOverride", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tickMin=M&in:", bind: @RightAxis_OverrideMinValue, min_value: -2147483, max_value: 2147483, decimal_places: 2, digits: 7);
+									unit_hot_number(identifier: "right_maxOverride", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tickMax=&Max:", bind: @RightAxis_OverrideMaxValue, min_value: -2147483, max_value: 2147483, decimal_places: 2, digits: 7);
+									unit_hot_number(identifier: "right_divisions", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tickDivisions=&Divisions:", bind: @RightAxis_OverrideDivisionsValue, min_value: 1, max_value: 1000, decimal_places: 0, digits: 5);
+								}
+							}
+							group(name: "$$$/Illustrator/Graphs/Dialog/GraphType/groupTickMarks=Tick Marks", placement: @place_column, horizontal: @align_fill)
+							{
+								popup(identifier: "right_ticksLength2", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tickMarks=Lengt&h:", include_custom_item: false, bind: @RightAxis_TickMarksLength, items: @TickMarksMenu);
+								unit_hot_number(identifier: "right_ticksPerDivision2", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tickDraw=Dr&aw", suffix: "$$$/Illustrator/Graphs/Dialog/GraphType/tickDrawSx=tick marks per division", bind: @RightAxis_TickMarksDivision, min_value: 0, max_value: 1000, decimal_places: 2, digits: 5);
+							}
+							group(name: "$$$/Illustrator/Graphs/Dialog/GraphType/groupLabels=Add Labels", placement: @place_column, horizontal: @align_fill)
+							{
+								edit_text(identifier: "right_prefixLabel", name: "$$$/Illustrator/Graphs/Dialog/GraphType/labelPrefix=&Prefix:", bind: @RightAxis_LabelPrefix);
+								edit_text(identifier: "right_suffixLabel", name: "$$$/Illustrator/Graphs/Dialog/GraphType/labelSuffix=Su&ffix:", bind: @RightAxis_LabelSuffix);
+							}						
+						}
+						panel(bind: @AxisToUse, value: 3, margin: 0, guide_mask: [@guide_label])
+						{
+							group(name: "$$$/Illustrator/Graphs/Dialog/GraphType/groupTick=Tick Values", placement: @place_column, horizontal: @align_fill)
+							{
+								checkbox(identifier: "top_overrideValues", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tick1=O&verride Calculated Values", guide_mask: [@guide_label], bind: @TopAxis_OverrideCalculatedValues);
+								row()
+								{
+									unit_hot_number(identifier: "top_minOverride", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tickMin=M&in:", bind: @TopAxis_OverrideMinValue, min_value: -2147483, max_value: 2147483, decimal_places: 2, digits: 7);
+									unit_hot_number(identifier: "top_maxOverride", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tickMax=&Max:", bind: @TopAxis_OverrideMaxValue, min_value: -2147483, max_value: 2147483, decimal_places: 2, digits: 7);
+									unit_hot_number(identifier: "top_divisions", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tickDivisions=&Divisions:", bind: @TopAxis_OverrideDivisionsValue, min_value: 1, max_value: 1000, decimal_places: 0, digits: 5);
+								}
+							}
+							group(name: "$$$/Illustrator/Graphs/Dialog/GraphType/groupTickMarks=Tick Marks", placement: @place_column, horizontal: @align_fill)
+							{
+								popup(identifier: "top_ticksLength2", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tickMarks=Lengt&h:", include_custom_item: false, bind: @TopAxis_TickMarksLength, items: @TickMarksMenu);
+								unit_hot_number(identifier: "top_ticksPerDivision2", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tickDraw=Dr&aw", suffix: "$$$/Illustrator/Graphs/Dialog/GraphType/tickDrawSx=tick marks per division", bind: @TopAxis_TickMarksDivision, min_value: 0, max_value: 1000, decimal_places: 2, digits: 5);
+							}
+							group(name: "$$$/Illustrator/Graphs/Dialog/GraphType/groupLabels=Add Labels", placement: @place_column, horizontal: @align_fill)
+							{
+								edit_text(identifier: "top_prefixLabel", name: "$$$/Illustrator/Graphs/Dialog/GraphType/labelPrefix=&Prefix:", bind: @TopAxis_LabelPrefix);
+								edit_text(identifier: "top_suffixLabel", name: "$$$/Illustrator/Graphs/Dialog/GraphType/labelSuffix=Su&ffix:", bind: @TopAxis_LabelSuffix);
+							}						
+						}
+						panel(bind: @AxisToUse, value: 4, margin: 0, guide_mask: [@guide_label])
+						{
+							group(name: "$$$/Illustrator/Graphs/Dialog/GraphType/groupTick=Tick Values", placement: @place_column, horizontal: @align_fill)
+							{
+								checkbox(identifier: "bottom_overrideValues", guide_mask: [@guide_label], name: "$$$/Illustrator/Graphs/Dialog/GraphType/tick1=O&verride Calculated Values", bind: @BottomAxis_OverrideCalculatedValues);
+								row()
+								{
+									unit_hot_number(identifier: "bottom_minOverride", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tickMin=M&in:", bind: @BottomAxis_OverrideMinValue, min_value: -2147483, max_value: 2147483, decimal_places: 2, digits: 7);
+									unit_hot_number(identifier: "bottom_maxOverride", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tickMax=&Max:", bind: @BottomAxis_OverrideMaxValue, min_value: -2147483, max_value: 2147483, decimal_places: 2, digits: 7);
+									unit_hot_number(identifier: "bottom_divisions", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tickDivisions=&Divisions:", bind: @BottomAxis_OverrideDivisionsValue, min_value: 1, max_value: 1000, decimal_places: 0, digits: 5);
+								}
+							}
+							group(name: "$$$/Illustrator/Graphs/Dialog/GraphType/groupTickMarks=Tick Marks", placement: @place_column, horizontal: @align_fill)
+							{
+								popup(identifier: "bottom_ticksLength2", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tickMarks=Lengt&h:", include_custom_item: false, bind: @BottomAxis_TickMarksLength, items: @TickMarksMenu);
+								unit_hot_number(identifier: "bottom_ticksPerDivision2", name: "$$$/Illustrator/Graphs/Dialog/GraphType/tickDraw=Dr&aw", suffix: "$$$/Illustrator/Graphs/Dialog/GraphType/tickDrawSx=tick marks per division", bind: @BottomAxis_TickMarksDivision, min_value: 0, max_value: 1000, decimal_places: 2, digits: 5);
+							}
+							group(name: "$$$/Illustrator/Graphs/Dialog/GraphType/groupLabels=Add Labels", placement: @place_column, horizontal: @align_fill)
+							{
+								edit_text(identifier: "bottom_prefixLabel", name: "$$$/Illustrator/Graphs/Dialog/GraphType/labelPrefix=&Prefix:", bind: @BottomAxis_LabelPrefix);
+								edit_text(identifier: "bottom_suffixLabel", name: "$$$/Illustrator/Graphs/Dialog/GraphType/labelSuffix=Su&ffix:", bind: @BottomAxis_LabelSuffix);
+							}
+						}
+					}
+				}
+				panel(bind: @ShowOptionsGroup, value: 1, margin: 0, guide_mask: [@guide_baseline],spacing: @inter_group_spacing)
+				{
+					group(name: "$$$/Illustrator/Graphs/Dialog/GraphType/groupType=Type", horizontal: @align_fill)
+					{
+						radiogroup(horizontal: @align_center, placement: @place_row, spacing: @related_spacing)
+						{
+							toggle_button(identifier: "columnGraphID", toolbox_style: true, bind: @GraphType, value_on: 1, image: {normal: "SP_ColumnGraph_Lg_N.png", dark_normal: "SP_ColumnGraph_Lg_N_D.png"}, alt: "$$$/Illustrator/Graphs/Dialog/GraphType/tipColumn=Column");
+							toggle_button(identifier: "stackedColumnGraphID", toolbox_style: true, bind: @GraphType, value_on: 2, image: {normal: "SP_StackedColumnGraph_Lg_N.png", dark_normal: "SP_StackedColumnGraph_Lg_N_D.png" }, alt: "$$$/Illustrator/Graphs/Dialog/GraphType/tipStColumn=Stacked Column");
+							toggle_button(identifier: "barGraphID", toolbox_style: true, bind: @GraphType, value_on: 3, image: {normal: "SP_BarGraph_Lg_N.png", dark_normal: "SP_BarGraph_Lg_N_D.png" }, alt: "$$$/Illustrator/Graphs/Dialog/GraphType/tipBar=Bar");
+							toggle_button(identifier: "stackedBarGraphID", toolbox_style: true, bind: @GraphType, value_on: 4, image: {normal: "SP_StackedBarGraph_Lg_N.png", dark_normal: "SP_StackedBarGraph_Lg_N_D.png" }, alt: "$$$/Illustrator/Graphs/Dialog/GraphType/tipStBar=Stacked Bar");
+							toggle_button(identifier: "lineGraphID", toolbox_style: true, bind: @GraphType, value_on: 5, image: {normal: "SP_LineGraph_Lg_N.png", dark_normal: "SP_LineGraph_Lg_N_D.png" }, alt: "$$$/Illustrator/Graphs/Dialog/GraphType/tipLine=Line");
+							toggle_button(identifier: "areaGraphID", toolbox_style: true, bind: @GraphType, value_on: 6, image: {normal: "SP_AreaGraph_Lg_N.png", dark_normal: "SP_AreaGraph_Lg_N_D.png" }, alt: "$$$/Illustrator/Graphs/Dialog/GraphType/tipArea=Area");
+							toggle_button(identifier: "scatterGraphID", toolbox_style: true, bind: @GraphType, value_on: 7, image: {normal: "SP_ScatterGraph_Lg_N.png", dark_normal: "SP_ScatterGraph_Lg_N_D.png" }, alt: "$$$/Illustrator/Graphs/Dialog/GraphType/tipScatter=Scatter");
+							toggle_button(identifier: "pieGraphID", toolbox_style: true, bind: @GraphType, value_on: 8, image: {normal: "SP_PieGraph_Lg_N.png", dark_normal: "SP_PieGraph_Lg_N_D.png" }, alt: "$$$/Illustrator/Graphs/Dialog/GraphType/tipPie=Pie");
+							toggle_button(identifier: "radarGraphID", toolbox_style: true, bind: @GraphType, value_on: 9, image: {normal: "SP_RadarGraph_Lg_N.png", dark_normal: "SP_RadarGraph_Lg_N_D.png" }, alt: "$$$/Illustrator/Graphs/Dialog/GraphType/tipRadar=Radar");
+						}
+						overlay(horizontal: @align_center)
+						{
+							panel(bind: @ShowValueAxis, value: true, margin: 0)
+							{
+								popup(identifier: "valueAxisID", name: "$$$/Illustrator/Graphs/Dialog/GraphType/valueaxisoption=Value A&xis:", popup_minimum_width_chars: 8, include_custom_item: false, items: @ValueAxisMenu, bind: @ValueAxis, set_default_focus: true);
+							}
+							panel(bind: @IsRadarGraphType, value: true, placement: @place_row, margin: 0)
+							{
+								info_icon(icontype: "note", size: "small");
+								static_text(name: "$$$/Illustrator/Graphs/Dialog/GraphType/radarAxis=Value Axis Is On All Sides");
+							}
+						}
+					}
+					group(name: "$$$/Illustrator/Graphs/Dialog/GraphType/groupStyle=Style", horizontal: @align_fill, placement: @place_row)
+					{
+						column()
+						{
+							checkbox(identifier: "dropShapdowID", name: "$$$/Illustrator/Graphs/Dialog/GraphType/style1=Add &Drop Shadow", guide_mask: [@guide_label], bind: @StyleAddDropShadow);
+							checkbox(identifier: "legendOnTopID", name: "$$$/Illustrator/Graphs/Dialog/GraphType/style2=Add &Legend Across Top", guide_mask: [@guide_label], bind: @StyleAddLegendAcrossTop);
+						}
+						column()
+						{
+							checkbox(identifier: "rowInFrontID", name: "$$$/Illustrator/Graphs/Dialog/GraphType/style3=First &Row in Front", bind: @StyleFirstRowInFront);
+							checkbox(identifier: "colInFrontID", name: "$$$/Illustrator/Graphs/Dialog/GraphType/style4=First &Column in Front", bind: @StyleFirstColumnInFront);
+						}
+					}
+					group(name: "$$$/Illustrator/Graphs/Dialog/GraphType/groupOptions=Options", horizontal: @align_fill, child_vertical: @align_center)
+					{
+						overlay(vertical: @align_center)
+						{
+							panel(margin: 0, bind: @IsColumnBarGraphType, value: true, guide_mask: [@guide_label], vertical: @align_center)
+							{
+								overlay()
+								{
+									panel(margin: 0, bind: @IsBarGraphType, value: false)
+									{
+										unit_hot_number(identifier: "columnWidthID", name: "$$$/Illustrator/Graphs/Dialog/GraphType/column=Column W&idth:", min_value: 1, max_value: 1000, decimal_places: 2, digits: 5, unit: "NumberEditUnit_Percent", bind: @ColumnWidth);
+									}
+									panel(margin: 0, bind: @IsBarGraphType, value: true)
+									{
+										unit_hot_number(identifier: "barWidthID", name: "$$$/Illustrator/Graphs/Dialog/GraphType/bar=Bar W&idth:", min_value: 1, max_value: 1000, decimal_places: 2, digits: 5, unit: "NumberEditUnit_Percent", bind: @BarWidth);
+									}
+								}
+								unit_hot_number(identifier: "clusterWidthID", name: "$$$/Illustrator/Graphs/Dialog/GraphType/cluster=Cl&uster Width:", min_value: 1, max_value: 1000, decimal_places: 2, digits: 5, unit: "NumberEditUnit_Percent", bind: @ClusterWidth);
+							}
+							panel(margin: 0, bind: @IsAreaGraphType, value: true, vertical: @align_center, child_horizontal: @align_center)
+							{
+								row()
+								{
+									info_icon(icontype: "note", size: "small");
+									static_text(name: "$$$/Illustrator/Graphs/Dialog/GraphType/nooptionsArea=No Options for Area Graphs");
+								}
+							}
+							panel(margin: 0, bind: @IsLineScatterRadarGraphType, value: true, placement: @place_row, vertical: @align_center)
+							{
+								column()
+								{
+									checkbox(identifier: "markDataPointsID", name: "$$$/Illustrator/Graphs/Dialog/GraphType/lineOption1=Mar&k Data Points", guide_mask: [@guide_label], bind: @MarkDataPoints);
+									panel(margin: 0, bind: @IsScatterGraphType, value: false)
+									{
+										checkbox(identifier: "edgeToEdgeLinesID", name: "$$$/Illustrator/Graphs/Dialog/GraphType/lineOption2=&Edge-to-Edge Lines", guide_mask: [@guide_label], bind: @EdgeToEdgeLines);
+									}
+								}
+								column()
+								{
+									checkbox(identifier: "connectDataPointsID", name: "$$$/Illustrator/Graphs/Dialog/GraphType/lineOption3=C&onnect Data Points", bind: @ConnectDataPoints);
+									checkbox(identifier: "drawFilledLinesID", name: "$$$/Illustrator/Graphs/Dialog/GraphType/lineOption4=Dra&w Filled Lines", bind: @DrawFilledLines);
+									unit_hot_number(identifier: "lineWidthID", name: "$$$/Illustrator/Graphs/Dialog/GraphType/lineOption5=L&ine Width:", min_value: 0, max_value: 100, decimal_places: 2, digits: 5, unit: 'NumberEditUnit_Point', bind: @LineWidth);
+								}
+							}
+							panel(margin: 0, bind: @IsPieGraphType, value: true, placement: @place_column, horizontal: @align_fill, vertical: @align_center, guide_mask: [@guide_label])
+							{
+								row(horizontal: @align_fill)
+								{
+									popup(identifier: "legendOptionID", name: "$$$/Illustrator/Graphs/Dialog/GraphType/pieOption1=Le&gend:", include_custom_item: false, items: @PieLegendsMenu, bind: @PieLegends);
+									popup(identifier: "sortOptionID", name: "$$$/Illustrator/Graphs/Dialog/GraphType/pieOption2=&Sort:", include_custom_item: false, items: @PieSortMenu, bind: @PieSort);
+								}						
+								popup(identifier: "positionOptionID", name: "$$$/Illustrator/Graphs/Dialog/GraphType/pieOption3=Posi&tion:", include_custom_item: false, items: @PiePositionMenu, bind: @PiePosition);
+							}
+						}
+					}				
+				}
+			}
+        }
+        row(horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+        {
+			button(default: true, identifier: "okButton", commit_button: true, name: "$$$/gOK=OK");
+			button(cancel: true, identifier: "cancelButton", commit_button: true, name: "$$$/gCancel=Cancel");
+        }
+    }
+}

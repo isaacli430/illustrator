@@ -1,0 +1,15 @@
+layout SoftMessage_Dimension_
+{
+    view subview(show_border: false)
+    {		
+		row(horizontal: @align_fill)
+		{		
+				
+			static_text(identifier: "BeginLabel",name: "XXXXXXX");	
+            image(identifier: "ActionImage" ,vertical: @align_center);							
+			static_text(identifier: "EndLabel",name: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+			
+		}
+    }
+}
+

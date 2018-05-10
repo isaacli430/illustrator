@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+	<menuItem id="1" text="$$$/ArtOnPathBrushToolUI/PopupDialog/Mnu/ListView=&amp;List View"></menuItem>
+	<menuItem id="2" text="$$$/ArtOnPathBrushToolUI/PopupDialog/Mnu/ThumbnailView=&amp;Thumbnail View"></menuItem>
+</menu>

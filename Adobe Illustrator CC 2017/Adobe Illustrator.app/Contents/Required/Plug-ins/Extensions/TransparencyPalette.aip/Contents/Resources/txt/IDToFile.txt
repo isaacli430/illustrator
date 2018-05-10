@@ -1,0 +1,13 @@
+16000.adm                                         		TransparencyPanel.adm                             
+16000.eve                                         		TransparencyPanel.eve                             
+16000.mnu                                        		TransparencyPanel.mnu                            
+16010.mnu                                        		TransparencyPopupPanel.mnu                       
+16100.adm                                         		TransparencyMaxControlGroup.adm                   
+16100.eve                                         		TransparencyMaxControlGroup.eve                   
+16200.adm                                         		TransparencyMinControlGroup.adm                   
+16200.eve                                         		TransparencyMinControlGroup.eve                   
+16201.eve												TouchTransparencyPanel.eve
+16201.adm												TouchTransparencyPanel.adm
+16202.eve												TouchTransparencyControlGroup.eve
+Transparency_N.png                                		SP_PL_Transparency_N.png                          
+Transparency_N_D.png                              		SP_PL_Transparency_N_D.png                        

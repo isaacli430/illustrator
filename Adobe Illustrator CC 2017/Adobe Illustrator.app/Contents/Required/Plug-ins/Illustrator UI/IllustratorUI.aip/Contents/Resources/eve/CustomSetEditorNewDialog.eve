@@ -1,0 +1,30 @@
+layout customsetnew
+{
+	view subview(name: "$$$/CustomSetNewDlg/DialogName=New Custom Set",
+                     show_border: false,layout_theme: @dialog_large,
+                     placement: @place_row)
+	{
+		column(child_horizontal: @align_fill)
+		{
+			
+			edit_text(identifier: "SetName", characters: 22, set_default_focus: true, max_characters: 255, name: "$$$/CustomSetNewDlg/Name=Name:");
+			
+			popup(identifier: "BasedOn", name: "$$$/CustomSetNewDlg/BasedOn=Based On:",
+				items:[ {name: "$$$/CustomSetNewDlg/None=None", value: 0}, 
+					{name: "$$$/CustomSetNewDlg/Katakana=Katakana", value: 1},
+					{name: "$$$/CustomSetNewDlg/Hiragana=Hiragana", value: 2},
+					{name: "$$$/CustomSetNewDlg/Punctuation=Punctuation", value: 3},
+					{name: "$$$/CustomSetNewDlg/FullWidth=Full Width Symbols/Numerics", value: 4},
+					{name: "$$$/CustomSetNewDlg/OneByte=1 Byte Numbers", value: 5},
+					{name: "$$$/CustomSetNewDlg/TwoByte=2 Byte Numbers", value: 6}
+				],
+				include_custom_item: false);
+			
+			row(child_horizontal: @align_right,  reverse: os == @mac, spacing: @related_spacing)
+			{
+				button(identifier: "okButton",     name: "$$$/gOK=OK", commit_button: true);
+				button(identifier: "cancelButton", name: "$$$/gCancel=Cancel", commit_button: true);
+			}
+		}
+	}
+}

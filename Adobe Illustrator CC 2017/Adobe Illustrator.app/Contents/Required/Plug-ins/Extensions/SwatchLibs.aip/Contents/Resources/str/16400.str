@@ -1,0 +1,36 @@
+/* [1] */
+$$$/SwatchLibs/Str/16401=Can't define a new pattern from the selection.
+/* [2] */
+$$$/SwatchLibs/Str/16402=Patterns cannot contain guides.
+/* [3] */
+$$$/SwatchLibs/Str/16403=The backmost selected object must be a rectangle defining the tile boundary. This rectangle must not be filled or stroked.
+/* [4] */
+$$$/SwatchLibs/Str/16404=Can't redefine the selected pattern.
+/* [5] */
+$$$/SwatchLibs/Str/16405=Patterns cannot contain anything painted with a pattern.
+/* [6] */
+$$$/SwatchLibs/Str/16406=Can't delete the selected pattern or patterns.
+/* [7] */
+$$$/SwatchLibs/Str/16407=Can't rename the selected pattern.
+/* [8] */
+$$$/SwatchLibs/Str/16408=Patterns cannot contain placed illustrations.
+/* [9] */
+$$$/SwatchLibs/Str/16409=Patterns cannot contain masked objects.
+/* [10] */
+$$$/SwatchLibs/Str/16410=Patterns and designs cannot contain graphs.
+/* [11] */
+$$$/SwatchLibs/Str/16411=Patterns cannot contain images or effects that create images.
+/* [12] */
+$$$/SwatchLibs/Str/16412=Unknown swatch error!
+/* [13] */
+$$$/SwatchLibs/Str/16414=Invalid name. Please choose another.
+/* [14] */
+$$$/SwatchLibs/Str/16415=Swatch name '%s' is already in use. Please choose another.
+/* [15] */
+$$$/SwatchLibs/Str/16416=Spot colors used in linked EPS or PDF files, legacy text, or non-native art cannot be deleted or changed.
+/* [16] */
+$$$/SwatchLibs/Str/16417=Patterns cannot contain opacity masks or effects that create opacity masks.
+/* [17] */
+$$$/SwatchLibs/Str/16418=That name cannot be used for a spot color because it is reserved for process plates. Please choose another name.
+/* [18] */
+$$$/SwatchLibs/Str/16419=The selected swatches cannot be converted to spot colors because one of them has a name which is reserved for process plates.

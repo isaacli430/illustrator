@@ -1,0 +1,59 @@
+layout SoftPoofSetupCustomize
+{
+	view subview(identifier: "SoftPoofSetupCustomize",
+				 placement: @place_column,
+				 show_border: false, 
+				 layout_theme: @dialog_large)
+	{
+			column(child_horizontal: @align_fill)
+			{
+				popup(identifier: "DevicePopup", set_default_focus: true, name: "$$$/SoftProofDialog/label1=&Device to Simulate:", include_custom_item: false, popup_maximum_width_chars: 18, popup_minimum_width_chars: 18);
+			overlay()
+			{
+					panel(margin:0, bind: @preserveCheckboxTitleIndex, value: 0)
+					{
+						checkbox(identifier: "preserve_checkbox_RGB",bind: @preserveCheckbox, value: true,
+									 name: "$$$/_ColorConvdg/Str/PreserveRGBNumbers=Preserve RGB &Numbers");
+					}
+					panel(margin:0, bind: @preserveCheckboxTitleIndex, value: 1)
+					{
+						checkbox(identifier: "preserve_checkbox_CMYK",bind: @preserveCheckbox, value: true,
+									 name: "$$$/_ColorConvdg/Str/PreserveCMYKNumbers=Preserve CMYK &Numbers");
+					}
+					panel(margin:0, bind: @preserveCheckboxTitleIndex, value: 2)
+					{
+						checkbox(identifier: "preserve_checkbox_color",bind: @preserveCheckbox, value: true,
+									 name: "$$$/_ColorConvdg/Str/PreserveColorNumbers=Preserve Color &Numbers");
+					}
+						
+			}
+			popup(identifier: "Renderingpopup", name: "$$$/SoftProofDialog/label2=&Rendering Intent:", include_custom_item: false, bind: @renderingPopup,
+			 items: [ { name: "$$$/_ColorConvdg/Mnu/Intent=Perceptual", value: 0 },
+							   { name: "$$$/_ColorConvdg/Mnu/Intent/1=Saturation", value: 1},
+							   { name: "$$$/_ColorConvdg/Mnu/Intent/2=Relative Colorimetric", value: 2},
+							   {name: "$$$/_ColorConvdg/Mnu/Intent/3=Absolute Colorimetric", value: 3} ]);
+			column(spacing: @unrelated_spacing, child_horizontal: @align_fill)
+			{
+				group(identifier: "optionsFrame",guide_mask:[@guide_label],
+					name: "$$$/SoftProofDialog/Display=Display Options (On-Screen)")
+				{
+					checkbox(identifier: "simulatepaper_checkbox",bind: @simulatePaperCheckBox,
+								 name: "$$$/SoftProofDialog/SimulatePaper=&Simulate Paper Color");
+					checkbox(identifier: "simulateblackink_checkbox",bind: @simulateBlackinkCheckbox,
+								 name: "$$$/SoftProofDialog/SimulateInk=Simulate &Black Ink");
+				}
+				row(child_vertical: @align_center,spacing: @separated_spacing,child_horizontal: @align_fill)
+				{
+					checkbox(identifier: "preview_checkbox",guide_mask:[@guide_label], bind: @previewCheckBox,
+								 name: "$$$/SoftProofDialog/Preview=&Preview");
+					
+					row(horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+					{
+						button(identifier: "okButton", name: "$$$/gOK=OK",  commit_button: true);
+						button(identifier: "cancelButton", name: "$$$/gCancel=Cancel",  commit_button: true);
+					}
+				}
+			}
+			}		 
+	}
+}

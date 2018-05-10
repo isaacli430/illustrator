@@ -1,0 +1,24 @@
+sheet LivePaintSelectionOptionDialog
+{
+	interface:
+		paintbucketUI: true;
+		fillSelectCB: true;
+		strokeSelectCB: true;
+		swatchPreviewCB: true;
+		highlightCB: true;
+		fillCBName: "" <== paintbucketUI ? "$$$/PlanetX/Dialog/LivePaint/PaintFills=Paint &Fills" : "$$$/PlanetX/Dialog/LivePaint/SelectFills=Select &Fills";
+		strokeCBName: "" <== paintbucketUI ? "$$$/PlanetX/Dialog/LivePaint/PaintStrokes=Paint &Strokes" : "$$$/PlanetX/Dialog/LivePaint/SelectStrokes=Select &Strokes";
+		
+		rememberWidthSpinEdit: 1.0 <== highlightCB ? widthSpinEdit : rememberWidthSpinEdit;
+		unlink widthSpinEdit: 1.0 <== highlightCB ? widthSpinEdit : rememberWidthSpinEdit;
+		
+		rememberColorsPopup: 0 <== highlightCB ? colorsPopup : rememberColorsPopup;
+		unlink colorsPopup: 0 <== highlightCB ? colorsPopup : rememberColorsPopup;	
+
+	logic:
+		relate
+		{
+			fillSelectCB <== strokeSelectCB ? fillSelectCB : true;
+			strokeSelectCB <== fillSelectCB ? strokeSelectCB : true;
+		}
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+	<menuItem id="1" text="$$$/ArtStyle/Mnu/16500/1=Add New &amp;Fill"></menuItem>
+	<menuItem id="2" text="$$$/ArtStyle/Mnu/16500/2=Add New &amp;Stroke"></menuItem>
+	<menuItem id="3" text="$$$/ArtStyle/Mnu/16500/3=&amp;Duplicate Item"></menuItem>
+  <menuItem id="4" text="$$$/ArtStyle/Mnu/16500/4=&amp;Remove Item"></menuItem>
+	<separator></separator>
+	<menuItem id="6" text="$$$/ArtStyle/Mnu/16500/5=&amp;Clear Appearance"></menuItem>
+  <menuItem id="7" text="$$$/ArtStyle/Mnu/16500/6=Reduce to &amp;Basic Appearance"></menuItem>
+	<separator></separator>
+	<menuItem id="9" text="$$$/ArtStyle/Mnu/16500/7=&amp;New Art Has Basic Appearance"></menuItem>
+  <separator></separator>
+  <menuItem id="11" text="$$$/ArtStyle/Mnu/16500/8=Hide Thumbnail"></menuItem>
+  <separator></separator>
+	<menuItem id="13" text="$$$/ArtStyle/Mnu/16500/9=Redefine Graphic Sty&amp;le"></menuItem>
+	<separator></separator>
+	<menuItem id="15" text="$$$/ArtStyle/Mnu/16500/10=Show &amp;All Hidden Attributes"></menuItem>
+</menu>

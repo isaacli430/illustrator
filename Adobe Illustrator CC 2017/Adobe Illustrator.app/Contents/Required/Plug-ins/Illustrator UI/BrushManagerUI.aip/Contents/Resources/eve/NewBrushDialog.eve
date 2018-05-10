@@ -1,0 +1,31 @@
+layout NewBrushDialog
+{
+    view subview(identifier: "newBrushDialogSubView",
+					child_horizontal: @align_fill,
+					placement: @place_column,
+					show_border: false,
+					spacing: @unrelated_spacing,
+					layout_theme: @dialog_large)
+    {
+    
+       column(identifier: "radioButtonGpColumn")
+	   {
+	            static_text(identifier: "newBrushTypeStaticText",
+	                        name: "$$$/BrushManager/NewBrushPalette/Text/Name=Select a new brush type:                         ");
+	   }
+	        
+	      row(horizontal: @align_right, reverse: os == @mac,
+				spacing: @related_spacing)
+        {
+           button( default: true,
+					identifier: "okButton",
+					commit_button: true,
+					name: "$$$/gOK=OK");
+		
+			button( cancel: true,
+					identifier: "cancelButton",
+					commit_button: true,
+					name: "$$$/gCancel=Cancel");
+        }
+    }
+}

@@ -1,0 +1,4 @@
+16100.adm                                         		KinsokuShoriSettings.adm                          
+16100.eve                                         		KinsokuShoriSettings.eve                          
+16101.adm                                         		NewKinsoku.adm                                    
+16101.eve                                         		NewKinsoku.eve                                    

@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Learn Panel Projects</title>
+<link rel="stylesheet" type="text/css" href="css\main.css">
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/CSInterface.js"></script>
+<script>
+var CSLibrary = new CSInterface();
+
+function CreateAnIcon() {
+console.log(parent.document);
+var stepEvent = new CSEvent("OnBoardingEvent", "APPLICATION");
+var dataMap = {
+				"Type" : "ShowIAM",
+				"Data" : "LearnPanelStart"
+			};
+stepEvent.data = JSON.stringify(dataMap);
+CSLibrary.dispatchEvent(stepEvent);
+console.log ('Create Icon Start');
+//alert(window.top);
+getRelativeUrlAndRedirect('create-an-icon.html');
+}
+</script>
+<!--<script src="//use.typekit.com/whd3raw.js"></script>
+<script>try{Typekit.load();}catch(e){}</script>-->
+</head>
+<body>
+<div class="top">
+	<div class="head">Select a Project</div>
+	<div id="one" class="section" onMouseOver="show_button1()" onMouseOut="hide_button1()" style="cursor:pointer;" onClick="CreateAnIcon()">
+	<div id="sidebar"><p><img id="img1" src="images\LearnPanelIcons_01Icon.svg"; width="55"/></p></div>
+    <div id="icon" class="content">
+	<p style="color: #3f3f3f; font-size: 14px;"><b>Create an Icon</b></p>
+    <p style="font-size: 12px; margin-top: 4px;">Put together a nifty, usable camera icon in four quick and easy steps.</p>
+    <p style="font-size: 12px; margin-top: 12px;">5 min <input style="visibility:hidden" id="try-me-1" type="button" name="button" value="Try now"/></p>
+	</div>
+	</div>
+	<div id="two" class="section" onMouseOver="show_button2()" onMouseOut="hide_button2()" style="cursor:pointer; border-top: solid 1px #D8D8D8;">
+	<div id="sidebar"><p><img id="img2" src="images\LearnPanelIcons_02Logo.svg"; width="55"/></p></div>
+    <div id="logo" class="content">
+	<p style="color: #3f3f3f; font-size: 14px;"><b>Create a Logo</b></p>
+    <p style="font-size: 12px; margin-top: 4px;">Create your personalized brand statement with a professional logo.</p>
+    <p style="font-size: 12px; margin-top: 12px;">10 min <input style="visibility:hidden" id="try-me-2" type="button" name="button" value="Try now"/></p>
+	</div>
+	</div>
+	<div id="three" class="section" onMouseOver="show_button3()" onMouseOut="hide_button3()" style="cursor:pointer; border-top: solid 1px #D8D8D8;">
+	<div id="sidebar"><p><img id="img3" src="images\LearnPanelIcons_03Trace.svg"; width="55"/></p></div>
+    <div id="trace" class="content">
+	<p style="color: #3f3f3f; font-size: 14px;"><b>Create a Traced Image</b></p>
+    <p style="font-size: 12px; margin-top: 4px;">Convert your sketches or photos into editable, vector artwork.</p>
+    <p style="font-size: 12px; margin-top: 12px;">10 min <input style="visibility:hidden" id="try-me-3" type="button" name="button" value="Try now"/></p>
+	</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+layout textOrientationMenu
+{
+	view menu( id: 25,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/Orientation/Horizontal=&Horizontal", id:	229, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Orientation/Vertical=&Vertical", id:		230, help_id:0);
+}
+}

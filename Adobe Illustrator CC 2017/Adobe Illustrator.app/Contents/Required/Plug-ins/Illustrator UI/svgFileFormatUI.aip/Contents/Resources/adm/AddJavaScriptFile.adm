@@ -1,0 +1,6 @@
+sheet AddJavaScriptFiles
+{
+interface:
+	URLCell: "";
+	LanguageCell: "";
+}

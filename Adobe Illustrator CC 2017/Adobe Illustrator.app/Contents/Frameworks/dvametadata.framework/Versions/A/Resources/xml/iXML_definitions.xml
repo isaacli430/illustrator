@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xmp_definitions>
+	<xmp_schema prefix='iXML' namespace='http://ns.adobe.com/ixml/1.0/' label="$$$/xmp/iXML/labels/iXML=iXML" description="$$$/xmp/iXML/descriptions/iXML=Provides unambiguous communication of file and project based metadata between various stages of workflow in production, telecine, picture editorial and audio post production.">
+		<xmp_property name='trackList'	type='seq'	element_type='track' category='internal' label="$$$/xmp/iXML/labels/TrackList=Track List"	description="$$$/xmp/iXML/descriptions/TrackList=Describes the audio tracks within a file."/>
+	</xmp_schema>
+	<xmp_type name='track' label="$$$/xmp/iXML/labels/Track=Track" description="$$$/xmp/iXML/descriptions/Track=Holds information about an audio track within a file. The index is the same as INTERLEAVE_INDEX in iXML.">
+    	<xmp_field prefix='iXML' name='channelIndex'	type='integer'		namespace='http://ns.adobe.com/ixml/1.0/'	min='0' max='4294967295'	label="$$$/xmp/iXML/labels/ChannelIndex=Channel Index"	description="$$$/xmp/iXML/descriptions/ChannelIndex=Communicates the &quot;input&quot; or &quot;source&quot; number on a recorder. For an 8 channel recorder, the inputs might be identified as 1 to 8, however for a given recording, only tracks 4 and 6 may be armed. In this file, the tracks for these 2 channels would have channel indices of 4 and 6 respectively so that anyone reading the file knows that the audio on the 2 audio tracks in the file come from microphone sources 4 and 6."/>
+    	<xmp_field prefix='iXML' name='name' 			type='text'			namespace='http://ns.adobe.com/ixml/1.0/'								label="$$$/xmp/iXML/labels/Name=Name" 					description="$$$/xmp/iXML/descriptions/Name=The name of the track."/>
+    	<xmp_field prefix='iXML' name='function' 		type='openchoice'	namespace='http://ns.adobe.com/ixml/1.0/'	element_type='text'			label="$$$/xmp/iXML/labels/Function=Function" 			description="$$$/xmp/iXML/descriptions/Function=Allows explicit identification of a track's purpose, such that software reading the file can apply appropriate treatment to that track's audio data. For example it could communicate LEFT or RIGHT so that a player could pan each channel automatically. Also it can identify MID-SIDE functionality so that a player can apply the appropriate signal processing to these channels to derive a stereo image to a listener.">
+    		<xmp_choice raw_value='M-MID_SIDE' label="$$$/xmp/iXML/function/M-MID_SID=M/S Mid"/>
+    		<xmp_choice raw_value='S-MID_SIDE' label="$$$/xmp/iXML/function/S-MID_SID=M/S Side"/>
+    		
+    		<xmp_choice raw_value='X-X_Y' label="$$$/xmp/iXML/function/X-X_Y=X/Y X"/>
+    		<xmp_choice raw_value='Y-X_Y' label="$$$/xmp/iXML/function/Y-X_Y=X/Y Y"/>
+    		
+    		<xmp_choice raw_value='L-MIX' label="$$$/xmp/iXML/function/L-MIX=Stereo Mix Left"/>
+    		<xmp_choice raw_value='R-MIX' label="$$$/xmp/iXML/function/R-MIX=Stereo Mix Right"/>
+    		
+    		<xmp_choice raw_value='MIX' label="$$$/xmp/iXML/function/MIX=Mixdown"/>
+    		
+    		<xmp_choice raw_value='LEFT' label="$$$/xmp/iXML/function/LEFT=Stereo Left"/>
+    		<xmp_choice raw_value='RIGHT' label="$$$/xmp/iXML/function/RIGHT=Stereo Right"/>
+    		
+    		<xmp_choice raw_value='F-DMS' label="$$$/xmp/iXML/function/F-DMS=Double M/S Front"/>
+    		<xmp_choice raw_value='8-DMS' label="$$$/xmp/iXML/function/8-DMS=Double M/S Side"/>
+    		<xmp_choice raw_value='R-DMS' label="$$$/xmp/iXML/function/R-DMS=Double M/S Rear"/>
+    		
+    		<xmp_choice raw_value='L-LCR' label="$$$/xmp/iXML/function/L-LCR=LCR Left"/>
+    		<xmp_choice raw_value='C-LCR' label="$$$/xmp/iXML/function/C-LCR=LCR Center"/>
+    		<xmp_choice raw_value='R-LCR' label="$$$/xmp/iXML/function/R-LCR=LCR Right"/>
+    		
+    		<xmp_choice raw_value='L-LCRS' label="$$$/xmp/iXML/function/L-LCRS=LCRS Front Left"/>
+    		<xmp_choice raw_value='C-LCRS' label="$$$/xmp/iXML/function/C-LCRS=LCRS Front Center"/>
+    		<xmp_choice raw_value='R-LCRS' label="$$$/xmp/iXML/function/R-LCRS=LCRS Front Right"/>
+    		<xmp_choice raw_value='S-LCRS' label="$$$/xmp/iXML/function/S-LCRS=LCRS Rear"/>
+    		
+    		<xmp_choice raw_value='L-5.1' label="$$$/xmp/iXML/function/L-5.1=5.1 Front Left"/>
+    		<xmp_choice raw_value='C-5.1' label="$$$/xmp/iXML/function/C-5.1=5.1 Front Center"/>
+    		<xmp_choice raw_value='R-5.1' label="$$$/xmp/iXML/function/R-5.1=5.1 Front Right"/>
+    		<xmp_choice raw_value='Ls-5.1' label="$$$/xmp/iXML/function/Ls-5.1=5.1 Rear Left"/>
+    		<xmp_choice raw_value='Rs-5.1' label="$$$/xmp/iXML/function/Rs-5.1=5.1 Rear Right"/>
+    		<xmp_choice raw_value='LFE-5.1' label="$$$/xmp/iXML/function/LFE-5.1=5.1 LFE"/>
+    		
+    		<xmp_choice raw_value='L-7.1' label="$$$/xmp/iXML/function/L-7.1=7.1 Front Left"/>
+    		<xmp_choice raw_value='Lc-7.1' label="$$$/xmp/iXML/function/Lc-7.1=7.1 Front Left Center"/>
+    		<xmp_choice raw_value='C-7.1' label="$$$/xmp/iXML/function/C-7.1=7.1 Front Center"/>
+    		<xmp_choice raw_value='Rc-7.1' label="$$$/xmp/iXML/function/Rc-7.1=7.1 Front Right Center"/>
+    		<xmp_choice raw_value='R-7.1' label="$$$/xmp/iXML/function/R-7.1=7.1 Front Right"/>
+    		<xmp_choice raw_value='Ls-7.1' label="$$$/xmp/iXML/function/Ls-7.1=7.1 Rear Left"/>
+    		<xmp_choice raw_value='Rs-7.1' label="$$$/xmp/iXML/function/Rs-7.1=7.1 Rear Right"/>
+    		<xmp_choice raw_value='LFE-7.1' label="$$$/xmp/iXML/function/LFE-7.1=7.1 LFE"/>
+    		
+    		<xmp_choice raw_value='L-GENERIC' label="$$$/xmp/iXML/function/L-GENERIC=Main Layer Front Left"/>
+    		<xmp_choice raw_value='Lc-GENERIC' label="$$$/xmp/iXML/function/Lc-GENERIC=Main Layer Front Left Center"/>
+    		<xmp_choice raw_value='C-GENERIC' label="$$$/xmp/iXML/function/C-GENERIC=AMain Layer Front Center"/>
+    		<xmp_choice raw_value='Rc-GENERIC' label="$$$/xmp/iXML/function/Rc-GENERIC=Main Layer Front Right Center"/>
+    		<xmp_choice raw_value='R-GENERIC' label="$$$/xmp/iXML/function/R-GENERIC=Main Layer Front Right"/>
+    		<xmp_choice raw_value='Ls-GENERIC' label="$$$/xmp/iXML/function/Ls-GENERIC=Main Layer Rear Left"/>
+    		<xmp_choice raw_value='Cs-GENERIC' label="$$$/xmp/iXML/function/Cs-GENERIC=Main Layer Rear Center"/>
+    		<xmp_choice raw_value='Rs-GENERIC' label="$$$/xmp/iXML/function/Rs-GENERIC=Main Layer Rear Right"/>
+    		<xmp_choice raw_value='LFE-GENERIC' label="$$$/xmp/iXML/function/LFE-GENERIC=LFE"/>
+    		
+    		<xmp_choice raw_value='Sl-GENERIC' label="$$$/xmp/iXML/function/Sl-GENERIC=Main Layer Side Left"/>
+    		<xmp_choice raw_value='Sr-GENERIC' label="$$$/xmp/iXML/function/Sr-GENERIC=Main Layer Side Right"/>
+    		
+    		<xmp_choice raw_value='Lcs-GENERIC' label="$$$/xmp/iXML/function/Lcs-GENERIC=Main Layer Rear Left Center"/>
+    		<xmp_choice raw_value='Rcs-GENERIC' label="$$$/xmp/iXML/function/Rcs-GENERIC=Main Layer Rear Right Center"/>
+    		
+    		<xmp_choice raw_value='LFE2-GENERIC' label="$$$/xmp/iXML/function/LFE2-GENERIC=LFE 2"/>
+    		
+    		<xmp_choice raw_value='VoG-GENERIC' label="$$$/xmp/iXML/function/VoG-GENERIC=Top Layer Voice of God"/>
+    		<xmp_choice raw_value='Tl-GENERIC' label="$$$/xmp/iXML/function/Tl-GENERIC=Top Layer Front Left"/>
+    		<xmp_choice raw_value='Tc-GENERIC' label="$$$/xmp/iXML/function/Tc-GENERIC=Top Layer Front Center"/>
+    		<xmp_choice raw_value='Tr-GENERIC' label="$$$/xmp/iXML/function/Tr-GENERIC=Top Layer Front Right"/>
+    		<xmp_choice raw_value='Trl-GENERIC' label="$$$/xmp/iXML/function/Trl-GENERIC=Top Layer Rear Left"/>
+    		<xmp_choice raw_value='Trc-GENERIC' label="$$$/xmp/iXML/function/Trc-GENERIC=Top Layer Rear Center"/>
+    		<xmp_choice raw_value='Trr-GENERIC' label="$$$/xmp/iXML/function/Trr-GENERIC=Top Layer Rear Right"/>
+    		<xmp_choice raw_value='Tsl-GENERIC' label="$$$/xmp/iXML/function/Tsl-GENERIC=Top Layer Side Left"/>
+    		<xmp_choice raw_value='Tsr-GENERIC' label="$$$/xmp/iXML/function/Tsr-GENERIC=Top Layer Side Right"/>
+    		
+    		<xmp_choice raw_value='VoD-GENERIC' label="$$$/xmp/iXML/function/VoD-GENERIC=Bottom Layer Voice of Devil"/>
+    		<xmp_choice raw_value='Bl-GENERIC' label="$$$/xmp/iXML/function/Bl-GENERIC=Bottom Layer Front Left"/>
+    		<xmp_choice raw_value='Bc-GENERIC' label="$$$/xmp/iXML/function/Bc-GENERIC=Bottom Layer Front Center"/>
+    		<xmp_choice raw_value='Br-GENERIC' label="$$$/xmp/iXML/function/Br-GENERIC=Bottom Layer Front Right"/>
+    		<xmp_choice raw_value='Brl-GENERIC' label="$$$/xmp/iXML/function/Brl-GENERIC=Bottom Layer Rear Left"/>
+    		<xmp_choice raw_value='Brc-GENERIC' label="$$$/xmp/iXML/function/Brc-GENERIC=Bottom Layer Rear Center"/>
+    		<xmp_choice raw_value='Brr-GENERIC' label="$$$/xmp/iXML/function/Brr-GENERIC=Bottom Layer Rear Right"/>
+    		<xmp_choice raw_value='Bsl-GENERIC' label="$$$/xmp/iXML/function/Bsl-GENERIC=Bottom Layer Side Left"/>
+    		<xmp_choice raw_value='Bsr-GENERIC' label="$$$/xmp/iXML/function/Bsr-GENERIC=Bottom Layer Side Right"/>
+    		
+    		<xmp_choice raw_value='W-SOUNDFIELD' label="$$$/xmp/iXML/function/W-SOUNDFIELD=W (Soundfield, B-Format, Ambisonics)"/>
+    		<xmp_choice raw_value='X-SOUNDFIELD' label="$$$/xmp/iXML/function/X-SOUNDFIELD=X (Soundfield, B-Format, Ambisonics)"/>
+    		<xmp_choice raw_value='Y-SOUNDFIELD' label="$$$/xmp/iXML/function/Y-SOUNDFIELD=Y (Soundfield, B-Format, Ambisonics)"/>
+    		<xmp_choice raw_value='Z-SOUNDFIELD' label="$$$/xmp/iXML/function/Z-SOUNDFIELD=Z (Soundfield, B-Format, Ambisonics)"/>
+    		
+    		<xmp_choice raw_value='VIDEO' label="$$$/xmp/iXML/function/VIDEO=Video"/>
+    	</xmp_field>
+  	</xmp_type>
+</xmp_definitions>

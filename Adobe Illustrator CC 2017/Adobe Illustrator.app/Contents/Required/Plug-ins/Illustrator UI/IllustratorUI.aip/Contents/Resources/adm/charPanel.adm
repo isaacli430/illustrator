@@ -1,0 +1,102 @@
+sheet TypeOnPathTool
+{
+	interface:
+		FontFamily: 0;
+		FontStyle : 0;
+		FontSize : 0;
+		Leading : 0;
+		TextKerning : 0;
+		TextTracking : 0;
+		textButtons : 0;
+		ShowAsian: true;
+		HorizontalScale: 0;
+		VerticalScale: 0;
+		TsumeValue: 0;
+		LeftAki: "";
+		RightAki: "";
+		BaselineShift: 0;
+		CharRotation: 0;
+		DiacVertical:0;
+		DiacHorizontal:0;
+		AntiAlias: "";
+		Language: "";
+		horizOrientation: true;
+		enableButton: true;
+		WorldReady: false;
+		FontCaps: 0 <== enableButton == true? FontCaps : 0;
+		FontScript: 0 <== enableButton == true? FontScript : 0;
+		TextTouchUpButton: false <== enableButton == true? TextTouchUpButton : false;
+		UnderlineOn: false <== enableButton == true? UnderlineOn : false;
+		StrikeThroughOn: false <== enableButton == true? StrikeThroughOn : false;
+		BaselinePict: "SP_TextBaselineShift_Md_N.png" <== (horizOrientation == true) ? "SP_TextBaselineShift_Md_N.png" : "SP_TextVertBaselineShift_Md_N.png";
+		kernPict: "SP_TextKerning_Md_N.png" <== (horizOrientation == true) ? "SP_TextKerning_Md_N.png" : "SP_TextVertKerning_Md_N.png";
+		leadPict: "SP_TextLeading_Md_N.png" <== (horizOrientation == true) ? "SP_TextLeading_Md_N.png" : "SP_TextVertLeading_Md_N.png";
+		trackPict: "SP_TextTracking_Md_N.png" <== (horizOrientation == true) ? "SP_TextTracking_Md_N.png" : "SP_TextVertTracking_Md_N.png";
+		ShowExtendedOptions : true;
+		ShowTextTouchUpButton : true;
+		
+		DiacriticItems:
+		[
+			"$$$/CharacterPaletteMenu/DiacriticItems/Other=Other",
+			"",
+			"-200", "-100", "-75", "-50", "-25", "-10", "-5", "", "0",  "", "5", "10", "25", "50", "75", "100", "200"
+		];
+		
+		KerningPopupItems: 
+		[
+			"$$$/_TextDlgs/Mnu/kerning/1=Auto",
+			"$$$/_TextDlgs/Mnu/kerning/2=Optical",
+			"$$$/_TextDlgs/Mnu/kerning/3=Metrics - Roman Only",
+			"",
+			"-100","-75","-50","-25","-10","-5","","0","","5","10","25","50","75","100","200"	
+		];
+		TrackingPopupItems: 
+		[
+			 "-100","-75","-50","-25","-10","-5","","0","","5","10","25","50","75","100","200"
+		];
+		ScalePopupItems:
+		[
+			"25%","50%","75%","90%","100%","110%","125%","150%","175%","200%"
+		];
+		TsumePopupItems:
+		[
+			"0%","10%","20%","30%","40%","50%","60%","70%","80%","90%","100%"
+		];
+		AkiItems:
+		[
+			{name: "$$$/_TextDlgs/Mnu/kAkiMenu/1=None", value: "0"},
+			{name: "", value: "0"},
+			{name: "$$$/_TextDlgs/Mnu/kAkiMenu/3=Auto", value: "2"},
+			{name: "", value: "0"},
+			{name: "$$$/_TextDlgs/Mnu/kAkiMenu/5=8-bu (1/8 em space)", value: "3"},
+			{name: "$$$/_TextDlgs/Mnu/kAkiMenu/6=4-bu (1/4 em space)", value: "4"},
+			{name: "$$$/_TextDlgs/Mnu/kAkiMenu/7=2-bu (1/2 em space)", value: "5"},
+			{name: "$$$/_TextDlgs/Mnu/kAkiMenu/8=2-bu 4-bu (3/4 em space)", value: "6"},
+			{name: "$$$/_TextDlgs/Mnu/kAkiMenu/9=Zenkaku (1 em space)", value: "7"}
+		];
+		CharRotationItems:
+		[
+			"$$$/CharacterPaletteMenu/RotateCharacterMenu/Other=Other",
+			"",
+			"$$$/CharacterPaletteMenu/RotateCharacterMenu/Minus180=-180^D",
+			"$$$/CharacterPaletteMenu/RotateCharacterMenu/Minus150=-150^D",
+			"$$$/CharacterPaletteMenu/RotateCharacterMenu/Minus120=-120^D",
+			"$$$/CharacterPaletteMenu/RotateCharacterMenu/Minus90=-90^D",
+			"$$$/CharacterPaletteMenu/RotateCharacterMenu/Minus60=-60^D",
+			"$$$/CharacterPaletteMenu/RotateCharacterMenu/Minus45=-45^D",
+			"$$$/CharacterPaletteMenu/RotateCharacterMenu/Minus30=-30^D",
+			"$$$/CharacterPaletteMenu/RotateCharacterMenu/0=0^D",
+			"$$$/CharacterPaletteMenu/RotateCharacterMenu/30=30^D",
+			"$$$/CharacterPaletteMenu/RotateCharacterMenu/45=45^D",
+			"$$$/CharacterPaletteMenu/RotateCharacterMenu/60=60^D",
+			"$$$/CharacterPaletteMenu/RotateCharacterMenu/90=90^D",
+			"$$$/CharacterPaletteMenu/RotateCharacterMenu/120=120^D",
+			"$$$/CharacterPaletteMenu/RotateCharacterMenu/150=150^D",
+			"$$$/CharacterPaletteMenu/RotateCharacterMenu/180=180^D"
+		];
+		LanguageItems:
+		[
+			{name: "$$$/_TextDlgs/Mnu/SLOLanguageMenu/1=Multiple Languages", value: "0"},
+			{name: "", value: "1"}
+		];
+}

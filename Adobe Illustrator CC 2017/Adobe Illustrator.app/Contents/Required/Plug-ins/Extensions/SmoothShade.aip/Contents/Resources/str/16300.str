@@ -1,0 +1,18 @@
+/* [1] */
+$$$/SmoothShade/Str/16301=The operation could not be completed due to an error.
+/* [2] */
+$$$/SmoothShade/Str/16302=Not enough memory to complete the operation.
+/* [3] */
+$$$/SmoothShade/Str/16303=Canceled.
+/* [4] */
+$$$/SmoothShade/Str/16304=Cannot create a gradient mesh from a single point.
+/* [5] */
+$$$/SmoothShade/Str/16305=A gradient mesh must be created from a path or an image.
+/* [6] */
+$$$/SmoothShade/Str/16306=The object is locked.
+/* [7] */
+$$$/SmoothShade/Str/16307=The layer is locked.
+/* [8] */
+$$$/SmoothShade/Str/16308=The path has too many points to create a gradient mesh.
+/* [9] */
+$$$/SmoothShade/Str/16309=Cannot create a gradient mesh from a single line.

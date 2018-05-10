@@ -1,0 +1,111 @@
+layout RasterizeUI
+{
+    view subview(identifier: "AIEveSubView",
+					show_border: false,
+					placement: @place_column,
+					layout_theme: @dialog_large,
+					spacing: @unrelated_spacing)
+    {
+		column()
+		{
+			popup(identifier: "ColorModelPopup", name: "$$$/Rasterize/Dlg/AutoOptions/TextModel=&Color Model:", 
+				popup_minimum_width_chars: 9, popup_maximum_width_chars: 9,
+				include_custom_item: false, set_default_focus: true,
+				items: [ { name: "$$$/Rasterize/Mnu/Model/RGB=RGB", value: "rgbPopupValue" },
+							{ name: "$$$/Rasterize/Mnu/Model/CMYK=CMYK", value: "cmykPopupValue" },
+							{ name: "$$$/Rasterize/Mnu/Model/Grayscale=Grayscale", value: "grayscalePopupValue" },
+							{ name: "$$$/Rasterize/Mnu/Model/Bitmap=Bitmap", value:"bitmapValue" }] );
+
+			column(child_horizontal: @align_fill,spacing: @inter_group_spacing)
+			{				 						
+				row(horizontal: @align_fill)
+				{
+					popup(identifier: "ResolutionPopup", include_custom_item: false, bind: @ResolutionPopup,
+							name: "$$$/Rasterize/Dlg/AutoOptions/GroupResolution=&Resolution:",
+							popup_minimum_width_chars: 9, popup_maximum_width_chars: 9,
+							items: [{ name: "$$$/Rasterize/Dlg/AutoOptions/RadioScreen=Screen (72 ppi)", value: 72 },
+						{ name: "$$$/Rasterize/Dlg/AutoOptions/RadioMedium=Medium (150 ppi)", value: 150 },
+						{ name: "$$$/Rasterize/Dlg/AutoOptions/RadioHigh=High (300 ppi)", value: 300 },
+						{ name: "", value: 0},
+						{ name: "$$$/Rasterize/Dlg/AutoOptions/RadioOther=Other", value: -1 }]);
+				
+					panel(bind: @ResolutionPopup, value: -1)
+					{
+						unit_hot_number(identifier: "ResolutionNumberEdit",
+										min_value: 1,
+										max_value: 2400,
+										decimal_places: 2,
+										digits: 4,
+										suffix: "$$$/Rasterize/Dlg/AutoOptions/TextResolution=ppi",
+										bind: @OtherResolution,
+										guide_mask: [@guide_label]);	
+					}			
+				}
+			
+				group(name: "$$$/Rasterize/Dlg/AutoOptions/GroupBackground=Background",
+						identifier: "BackgroundOptions",
+						guide_mask: [ @guide_label])
+				{
+					radiogroup(identifier: "backgroundRadioGroup")
+					{
+						radio_button(bind: @BackGroundRadioGp,
+										name: "$$$/Rasterize/Dlg/AutoOptions/RadioWhiteBG=&White",
+										identifier: "WhiteRadioButton",
+										value: @one);
+
+						radio_button(bind: @BackGroundRadioGp,
+										name: "$$$/Rasterize/Dlg/AutoOptions/RadioTransparentBG=&Transparent",
+										identifier: "TransparentRadioButton",
+										value: @two);
+					}
+				}
+				group(name: "$$$/Rasterize/Dlg/AutoOptions/GroupOptions=Options",
+							identifier: "OptionsGroup",
+							guide_mask: [ @guide_label])
+				{
+						checkbox(name: "$$$/Rasterize/Dlg/AutoOptions/CheckAntialias=&Anti-alias",
+                					identifier: "AntiAliasCheckBox");
+
+						checkbox(name: "$$$/Rasterize/Dlg/AutoOptions/CheckCreateMask=Create Clipping &Mask",
+                					identifier: "CreateClippingMask");
+
+						unit_hot_number(identifier: "OptionsNumberEdit",
+										min_value: 0,
+										max_value: 720,
+										unit: "CurrentDocumentUnit",
+										decimal_places: 2,
+										digits: 6,
+										name: "$$$/Rasterize/Dlg/AutoOptions/TextAdd=A&dd:",
+										suffix: "$$$/Rasterize/Dlg/AutoOptions/TextAroundObject=Around Object",
+										guide_mask: [ @guide_label ]);
+
+						checkbox(name: "$$$/Rasterize/Dlg/AutoOptions/CheckPreserveSpots=&Preserve spot colors",
+                					identifier: "PreserveSpotColors");
+				}
+				row( child_vertical: @align_top, spacing: @label_widget_spacing)
+				{
+						info_icon( icontype: "note", identifier: "WarningIcon", size: "small", horizontal: @align_left);
+
+						static_text(characters: 25,
+									theme_font_size: @small,
+									horizontal: @align_fill,
+									identifier: "WarningString",
+									name: "$$$/Rasterize/Dlg/AutoOptions/TextEffectsWarning/Win=Changing these settings will break the link with graphic styles that are applied to images. In addition, changing these settings may affect the appearance of currently applied raster effects.");
+				}
+			}
+		}
+		
+		row(horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+		{
+			button(default: true,
+				commit_button: true,
+				identifier: "okButton",
+				name: "$$$/gOK=OK");
+
+			button(cancel: true,
+				commit_button: true,
+				identifier: "cancelButton",
+				name: "$$$/gCancel=Cancel");
+		}
+    }
+}

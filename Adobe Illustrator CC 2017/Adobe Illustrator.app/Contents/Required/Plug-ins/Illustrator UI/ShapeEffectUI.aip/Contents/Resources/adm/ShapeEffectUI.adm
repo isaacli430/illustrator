@@ -1,0 +1,5 @@
+sheet ShapeEffectUI
+{
+	interface:
+			SizeRadioGp: "Absolute";
+}

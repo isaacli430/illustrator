@@ -1,0 +1,64 @@
+layout NamedStyleLibraryPanel
+{
+    view subview(identifier: "AIEveSubView",
+				 placement: @place_column,
+				 layout_theme: @panel,
+				 show_border: false,
+				 margin: gPanelToolbarSubviewMargin,
+				 spacing: gPanelToolbarTopSpacing,
+				 child_vertical: @align_center)
+	{
+		overlay(vertical: @align_fill, horizontal: @align_fill)
+		{
+			panel(margin: 0, bind: @NamedStylesView, value: "List", vertical: @align_fill, horizontal: @align_fill)
+			{
+				multicolumn_tree(identifier: "NamedStyles_mct",
+									wants_focus: false,
+									height: 120,
+									width: 200,
+									horizontal: @align_fill,
+									vertical: @align_fill);
+			}
+
+			panel(margin: 0, bind: @NamedStylesView, value: "Thumbnail", vertical: @align_fill, horizontal: @align_fill)
+			{
+				grid_view(identifier: "NamedStyles_grid",
+							height: 120,
+							width: 200,
+							horizontal: @align_fill,
+							vertical: @align_fill);
+			}
+		}
+
+		buttongroup(child_vertical: @align_fill,horizontal: @align_fill, vertical: @align_bottom, 
+										spacing: gPanelToolbarIconSpacing, child_width: gPanelToolbarIconWidth, child_height: gPanelToolbarIconHeight)
+			{
+
+			button(identifier: "Libraries",
+					horizontal: @align_left,
+					image: {normal: "SP_LibraryTri_Wi_N.png", dark_normal: "SP_LibraryTri_Wi_N_D.png"},
+					alt: "$$$/ArtStyle/Str/16719=Graphic Styles Libraries Menu",
+					wants_focus: false);
+
+			button(identifier: "breakLinkButton",
+					horizontal: @align_right,
+					image: {normal: "SP_Unlink_Wi_N.png", dark_normal:"SP_Unlink_Wi_N_D.png"},
+					alt: "$$$/ArtStyle/Str/16713=Break Link to Graphic Style",	
+					wants_focus: false);
+
+			button(identifier: "newGraphicStyleButton",
+					horizontal: @align_right,
+					image: {normal: "SP_New_Wi_N.png", dark_normal:"SP_New_Wi_N_D.png"},
+					alt: "$$$/ArtStyle/Str/16711=New Graphic Style",
+					wants_focus: false);
+						
+			button(identifier: "deleteGraphicStyleButton",
+					horizontal: @align_right,
+					image: {normal: "SP_Delete_Wi_N.png", dark_normal:"SP_Delete_Wi_N_D.png"},
+					alt: "$$$/ArtStyle/Str/16712=Delete Graphic Style",
+					wants_focus: false);
+
+			resize_gripper_gap(horizontal: @align_right);
+			}
+	}
+}

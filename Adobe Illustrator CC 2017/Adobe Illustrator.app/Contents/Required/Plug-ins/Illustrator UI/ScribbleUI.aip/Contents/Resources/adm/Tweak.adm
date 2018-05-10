@@ -1,0 +1,21 @@
+sheet tweak
+{
+    interface:
+    
+		abs_filter: {min_value: 0, max_value: 100};
+		rel_filter: {min_value: 0, max_value: 100};
+		
+		HSliderValue: 10;
+		VSliderValue: 10;
+	
+		modifyAnchor: true;
+		modifyIn: true;
+		modifyOut: true;
+    
+		// Relative: false, Absolute: true
+        Mode: false;
+        Preview: false;
+        
+        SliderUnits: "NumberEditUnit_Percent" <== Mode == true ? "CurrentDocumentUnit" : "NumberEditUnit_Percent";
+        EditRange: {min_value: 0, max_value: 100} <== Mode == true ? {min_value: 0, max_value: 7200} : {min_value: 0, max_value: 100};
+}

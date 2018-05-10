@@ -1,0 +1,6 @@
+sheet TracingControlPanelGroup
+{
+interface:
+		TracingPreset: 0;
+		PreviewPopup: 0;
+}

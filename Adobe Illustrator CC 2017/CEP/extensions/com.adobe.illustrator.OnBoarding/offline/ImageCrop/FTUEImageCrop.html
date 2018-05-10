@@ -1,0 +1,64 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" href="../../fonts/adobe-clean.css">
+    <link rel="stylesheet" href="./style.css">
+
+    <script type="text/javascript" src="../../js/CSInterface.js"></script>
+	<script src="../../js/lib/ResizeSensor.js"></script>
+    <script type="text/javascript" src="./main.js"></script>
+</head>
+
+<body>
+	<div id="popupContainer">
+		<div class="box" style="border:0">
+			<div class="coach">
+				<div class="right">
+						<div>
+						<p id="div1" data-locale="ImageCropCoachText" class="text"></p>
+						</div>
+					   <div class="button">
+								<span data-locale="PanelCoachGotitLink" class="close" onclick="DismissClicked()"></span>
+								<button  data-locale="PanelCoachKnowHowButton" class="click" onclick="LearnMoreClicked()"></button>
+						</div>
+				   </div>
+			</div>
+		</div>
+    </div>
+</body>
+
+<script type="text/javascript">
+        window.onload = function() {
+            var cs = new CSInterface();
+            var resourceBundle = cs.initResourceBundle();
+            InformClientAboutPopupHeight("ImageCropCoachHeightUpdate");
+        }
+
+        function DismissClicked()
+        {
+            var rsp_event = new CSEvent("ImageCropOnBoardingEvent", "APPLICATION");
+            var jsonObj = {
+                "Data": '',
+                "Type": "ImageCropDismissClicked"
+            };
+            rsp_event.data = JSON.stringify(jsonObj);
+            CSLibrary.dispatchEvent(rsp_event);
+        }
+		function LearnMoreClicked()
+		{
+            var rsp_event = new CSEvent("ImageCropOnBoardingEvent", "APPLICATION");
+            var jsonObj = {
+                "Data": '',
+                "Type": "ImageCropLearnMoreClicked"
+            };
+            rsp_event.data = JSON.stringify(jsonObj);
+            CSLibrary.dispatchEvent(rsp_event);
+        }
+		var element = document.getElementById('popupContainer');
+		new ResizeSensor(element, function() {
+            InformClientAboutPopupHeight("ImageCropCoachHeightUpdate");
+        });
+</script>
+</html>

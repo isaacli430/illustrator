@@ -1,0 +1,26 @@
+layout ClippingMaskControlGroup
+{
+    view subview(identifier: "ClippingMaskControlGroup"
+				, placement: @place_row
+				, layout_theme: @controlbar
+				, show_border: false
+				, child_vertical: @align_center
+				, margin: 0
+				, spacing: 5
+				, height: 31)
+    {
+		optional(identifier: "ClippingMaskControlGroupSubGroup"
+				, placement: @place_row
+				, child_vertical: @align_center
+				, margin: 0)
+		{	
+			button_bar(	identifier: "ClippingMaskButtonBarCG",
+						wants_focus: false,
+						items: 	[
+								{image: {normal: "SP_SelectClippingPath_Md_N.png",dark_normal:"SP_SelectClippingPath_Md_N_D.png"} , show_border: true, value: 0, alt: '$$$/AI/ClippingMaskControlGroup/SelectContainer=Edit Clipping Path'},
+								{image: {normal: "SP_SelectContent_Md_N.png",dark_normal:"SP_SelectContent_Md_N_D.png"} , show_border: true, value: 1, alt: '$$$/AI/ClippingMaskControlGroup/SelectContent=Edit Contents'}
+								]
+                    );   
+		}
+	}
+}

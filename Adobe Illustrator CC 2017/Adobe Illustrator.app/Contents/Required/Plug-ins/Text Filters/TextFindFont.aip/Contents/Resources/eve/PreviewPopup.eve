@@ -1,0 +1,15 @@
+layout PreviewPopup
+{
+	view subview(identifier: "PreviewPopupEveSubView",
+			 child_horizontal: @align_fill,
+			 layout_theme: @panel,
+			 show_border: false,
+			 child_vertical: @align_center,
+			 placement: @place_column)	
+	{
+				image(identifier: "IMG",
+							wants_focus: false,
+							height: 50,
+							width: 160);
+	}
+}

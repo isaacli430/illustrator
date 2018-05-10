@@ -1,0 +1,56 @@
+layout CharParaStylePanel
+{
+    view subview(identifier: "CharParaStylePanelView",
+				 layout_theme: @panel, spacing: gPanelToolbarTopSpacing, margin: gPanelToolbarSubviewMargin,
+				 show_border: false)
+    {
+		multicolumn_tree
+		(
+			identifier: "multicolumntree",
+			wants_focus: false,
+			horizontal: @align_fill,
+			vertical: @align_fill
+		);
+		row(horizontal: @align_fill)
+		{
+
+			optional(bind: @IsCCLibraryEnabled)
+			 {
+				column()
+				{
+					
+					button
+					(
+						identifier: "AddToDL",horizontal: @align_left,
+						alt: "$$$/CharParaStylesPlugin/Str/Tip/kAddToDLToolTip=Add selected Style to my current Library",
+						image: {normal:"SP_CCPushToLibrary_Wi_N.png", dark_normal: "SP_CCPushToLibrary_Wi_N_D.png"}
+					);
+				
+				}
+			}
+			column(horizontal: @align_right)
+			{
+				row()
+				{
+					buttongroup(child_vertical: @align_bottom ,spacing: gPanelToolbarIconSpacing, child_width: gPanelToolbarIconWidth, child_height: gPanelToolbarIconHeight)
+					{
+						button
+						(
+							identifier: "NewButton",
+							alt: "$$$/CharParaStylesPlugin/Str/Tip/kNewStyleToolTip=Create New Style",
+							image: {normal:"SP_New_Wi_N.png", dark_normal: "SP_New_Wi_N_D.png"}
+						);
+						
+						button
+						(
+							identifier: "Deletebutton",				
+							alt: "$$$/CharParaStylesPlugin/Str/Tip/kDeleteStyleToolTip=Delete Selected Styles",
+							image: {normal:"SP_Delete_Wi_N.png", dark_normal: "SP_Delete_Wi_N_D.png"}
+						);
+						resize_gripper_gap();
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,9 @@
+layout exportMenu
+{
+	view menu(id: 79, menubar: false)
+	{
+		menu(text: "$$$/_MBAR/Mnu/Export/ExportForScreens=Export for Screens...", id: 354, help_id: 0);
+		menu(text: "$$$/_MBAR/Mnu/Export/ExportAs=Export As...", id: 355, help_id: 0);	
+		menu(text: "$$$/_MBAR/Mnu/Export/SaveForWebExport=Save for Web (Legacy)...", id: 356, help_id: 0);	
+	}
+}

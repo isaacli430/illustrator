@@ -1,0 +1,42 @@
+layout PolygonToolOptionsDialog
+{
+    view subview(identifier: "AIEveSubView",
+                 name: '$$$/ShapeTool/Cap/Poly=Polygon',
+                 placement: @place_column,
+                 show_border: false,
+                 layout_theme: @dialog_large,
+                 spacing: @unrelated_spacing)
+    {		
+		unit_hot_number(identifier: "radius",
+                    name: '$$$/ShapeTool/Dlg/Poly/PolyText=&Radius:',
+                    bind: @radius,
+                    min_value: 0,
+                    max_value: @max_radius,
+                    decimal_places: 4,
+                    digits: 9
+                    );
+
+        unit_hot_number(identifier: "sides",
+                    name: '$$$/ShapeTool/Dlg/Poly/PolySidesUnit=&Sides:',
+                    stepper: true,
+                    set_default_focus: true,
+                    bind: @sides,
+                    min_value: 3,
+					max_value: 1000,
+                    decimal_places: 0,
+                    digits: 4
+                    );		
+		
+		row(child_horizontal: @align_fill, horizontal: @align_right, spacing: @related_spacing, reverse: os == @mac)
+		{
+			button(	default: true,
+					identifier: "okButton",
+					name: "$$$/gOK=OK",
+					commit_button: true);
+            button(	cancel: true,
+					identifier: "cancelButton",
+					name: "$$$/gCancel=Cancel",
+					commit_button: true);
+		}
+	}
+}

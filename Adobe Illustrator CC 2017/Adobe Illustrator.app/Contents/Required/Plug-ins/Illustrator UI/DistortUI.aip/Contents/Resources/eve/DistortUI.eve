@@ -1,0 +1,29 @@
+layout FreeDistort
+{
+    view subview(identifier: "FreeDistort",
+                 layout_theme: @dialog_large,
+                 placement: @place_column,
+				 show_border: false, 
+				spacing: @unrelated_spacing)
+    {      
+			image(identifier: "PreviewArea", width: 304, height: 210);
+			
+			
+			
+			row( horizontal: @align_fill,spacing: @separated_spacing)
+				{
+					 button(identifier: "resetButton",
+							name: "$$$/gRESET=&Reset",vertical: @align_fill,commit_button: true);
+					row(horizontal: @align_right,vertical: @align_fill,child_horizontal: @align_right,child_vertical: @align_fill, reverse: os == @mac, 
+						spacing: @related_spacing)
+					{
+						button(identifier: "okButton", name: "$$$/gOK=OK", set_default_focus: true, commit_button: true);
+						button(identifier: "cancelButton", name: "$$$/gCancel=Cancel", commit_button: true);
+					}	
+				}
+			
+			
+			
+
+    }
+}

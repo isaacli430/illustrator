@@ -1,0 +1,19 @@
+layout DocInfoPanel
+{
+    view subview(identifier: "DocInfoSubView",
+				 layout_theme: @panel,
+				 show_border: false, 
+				 wants_focus: false)
+		{			
+			list(identifier: "DocInfoList",
+									wants_focus: false,
+									show_border: false,
+									theme_font_size: @small,
+									orientation: "vertical",
+									vertical: @align_fill,
+									horizontal: @align_fill);
+			resize_gripper_gap();
+									
+		}
+}
+

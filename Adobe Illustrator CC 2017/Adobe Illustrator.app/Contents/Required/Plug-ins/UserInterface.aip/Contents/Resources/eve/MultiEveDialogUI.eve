@@ -1,0 +1,34 @@
+layout MultiEveDialogUI
+{
+    view subview(identifier: "AIEveMultiEveListSubView",
+				 layout_theme: @dialog_large,spacing: @unrelated_spacing,
+				 child_horizontal: @align_fill,
+				 placement: @place_column,
+				 show_border: false)
+    {
+	  row(child_horizontal: @align_left)
+	  {
+		/* Specify fixed "width" of list box via 2 ways:
+		1. "width" attribute to set list box width to that value irrespective of size of items contained (which will show ... if they are long). 
+			Ex: list(identifier: "MultiEveList", width : 100);
+		2. Skip "width" attribute and instead provide an item with some number of characters in it. 
+		
+		However, the best is to use floating width as opposed to fixed width where in we specify minimum width through option 1/2 above 
+		and maximum width is taken from the width of items inside the listbox. Use GetMaximumItemWidth() of UI_ListBox.cpp to achieve this.
+
+		Here, we are chosing option 2 + floating width approach.
+		*/
+		list(identifier: "MultiEveList", items:@MultiEveListItems );
+	  }
+	  row(child_horizontal: @align_right, reverse: os == @mac, vertical: @align_bottom,spacing: @related_spacing)
+			{ 
+				button(default: true,
+							identifier: "okButton",commit_button: true,
+							name: "$$$/gOK=OK");
+				button(cancel: true,
+							identifier: "cancelButton",commit_button: true,
+							name: "$$$/gCancel=Cancel");       
+			} 
+			
+     }
+}

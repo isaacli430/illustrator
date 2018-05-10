@@ -1,0 +1,52 @@
+/* [1] */
+$$$/BoundingBox/Str/Undo/UndoBB/Mac=Undo Free Transform Tool
+/* [2] */
+$$$/BoundingBox/Str/Undo/RedoBB/Mac=Redo Free Transform Tool
+/* [3] */
+$$$/BoundingBox/Str/Undo/UndoBBScale=Undo Scale
+/* [4] */
+$$$/BoundingBox/Str/Undo/RedoBBScale=Redo Scale
+/* [5] */
+$$$/BoundingBox/Str/Undo/UndoBBRotate=Undo Rotate
+/* [6] */
+$$$/BoundingBox/Str/Undo/RedoBBRotate=Redo Rotate
+/* [7] */
+$$$/BoundingBox/Str/Undo/UndoFT/Mac=Undo Free Transform Tool
+/* [8] */
+$$$/BoundingBox/Str/Undo/RedoFT/Mac=Redo Free Transform Tool
+/* [9] */
+$$$/BoundingBox/Str/Undo/UndoFTScale=Undo Scale
+/* [10] */
+$$$/BoundingBox/Str/Undo/RedoFTScale=Redo Scale
+/* [11] */
+$$$/BoundingBox/Str/Undo/UndoFTRotate=Undo Rotate
+/* [12] */
+$$$/BoundingBox/Str/Undo/RedoFTRotate=Redo Rotate
+/* [13] */
+$$$/BoundingBox/Str/Undo/UndoFTShear=Undo Shear
+/* [14] */
+$$$/BoundingBox/Str/Undo/RedoFTShear=Redo Shear
+/* [15] */
+$$$/BoundingBox/Str/Undo/UndoFTMove=Undo Move
+/* [16] */
+$$$/BoundingBox/Str/Undo/RedoFTMove=Redo Move
+/* [17] */
+$$$/BoundingBox/Str/Undo/UndoFTProjection=Undo Perspective
+/* [18] */
+$$$/BoundingBox/Str/Undo/RedoFTProjection=Redo Perspective
+/* [19] */
+$$$/BoundingBox/Str/Undo/UndoSelectBehind=Undo Select Next Object Below
+/* [20] */
+$$$/BoundingBox/Str/Undo/RedoSelectBehind=Redo Select Next Object Below
+/* [21] */
+$$$/BoundingBox/Str/Undo/UndoSelectInFront=Undo Select Next Object Above
+/* [22] */
+$$$/BoundingBox/Str/Undo/RedoSelectInFront=Redo Select Next Object Above
+/* [23] */
+$$$/BoundingBox/Str/Undo/UndoSelectBottom=Undo Select Last Object Below
+/* [24] */
+$$$/BoundingBox/Str/Undo/RedoSelectBottom=Redo Select Last Object Below
+/* [25] */
+$$$/BoundingBox/Str/Undo/UndoSelectTop=Undo Select First Object Above
+/* [26] */
+$$$/BoundingBox/Str/Undo/RedoSelectTop=Redo Select First Object Above

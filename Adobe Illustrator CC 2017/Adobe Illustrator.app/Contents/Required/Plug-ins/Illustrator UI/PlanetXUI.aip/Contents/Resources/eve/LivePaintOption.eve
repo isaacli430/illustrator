@@ -1,0 +1,85 @@
+layout LivePaintSelectionOptionDialog
+{
+    view subview(identifier: "AIEveSubView",
+		         layout_theme: @dialog_large, spacing: @unrelated_spacing,
+                 placement: @place_column,child_horizontal: @align_fill,
+                 show_border: false)
+	{
+		column(child_horizontal: @align_fill,spacing: @inter_group_spacing)
+		{
+            group(identifier: "optionsFrame",
+				placement: @place_column,
+				name: "$$$/PlanetX/Dialog/LivePaint/Options=Options")
+			{
+					row()
+					{
+						checkbox(identifier: "selectFillCheckBox",
+							guide_mask: [ @guide_label ],
+							set_default_focus: true, 
+							name: @fillCBName,
+							bind: @fillSelectCB);
+
+						checkbox(identifier: "selectStrokeCheckBox",
+							guide_mask: [ @guide_label ],
+							name: @strokeCBName,
+							bind: @strokeSelectCB);
+					}
+					optional(margin:0, bind: @paintbucketUI, value: true)
+					{  
+						checkbox(identifier: "swatchPreviewCheckBox",
+							guide_mask: [ @guide_label ],
+							name: "$$$/PlanetX/Dialog/LivePaint/CursorSwatchPreview=Cursor Swatch &Preview",
+							bind: @swatchPreviewCB);
+					}
+	     	}
+		
+            group(identifier: "highlightFrame",
+					header: "checkbox(identifier: 'highlightFrameCheckBox', bind: @highlightCB, horizontal: @align_left,
+										name: '$$$/PlanetX/Dialog/Highlight=&Highlight')
+					placement: @place_column")
+            {
+				row(child_horizontal: @align_fill, child_vertical: @align_center)
+            	{
+					popup(identifier: "colorsPopup", 
+						name: "$$$/PlanetX/Dialog/LivePaint/HighlightColor=&Color:",
+                      			bind: @colorsPopup, 
+								always_notify: true,
+						include_custom_item: false,
+						      			items: gSmallColorPopupList
+						   );
+
+						swatch(	identifier: "colorSwatch",
+								border: @border_normal,
+								use_padding: true
+							   );						
+		}
+             	
+				unit_hot_number(identifier: "widthSpinEdit",
+							unit: "ApplicationStrokeUnit",
+							name: "$$$/PlanetX/Dialog/LivePaint/StrokeWeight=&Width:",
+							bind: @widthSpinEdit,
+							decimal_places: 0,
+							min_value: 1,
+							max_value: 72, digits: 3,
+                         	stepper:true);
+	    }
+	}
+	  
+			row(horizontal: @align_fill, vertical:@align_fill, child_vertical:@align_fill, spacing:@separated_spacing )
+			{
+				optional(horizontal: @align_left, margin:0, bind: @paintbucketUI, value: true)
+				{
+					button(identifier: "tipsButton",vertical:@align_fill,
+							commit_button: true,
+							name: "$$$/PlanetX/Dialog/Paintbucket/Tips=Tips");
+				}
+				
+				row(horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+				{
+					button(identifier: "okButton",  commit_button: true, name: "$$$/gOK=OK");
+					button(identifier: "cancelButton",  commit_button: true, name: "$$$/gCancel=Cancel");
+				}
+			}
+
+    }
+}

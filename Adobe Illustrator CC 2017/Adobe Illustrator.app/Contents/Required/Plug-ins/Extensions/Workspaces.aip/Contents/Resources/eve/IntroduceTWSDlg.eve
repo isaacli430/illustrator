@@ -1,0 +1,32 @@
+layout IntroduceTWSDlg
+{
+    view subview(identifier: "IntroduceTWSSubview",
+                 layout_theme: @dialog_large,
+                 show_border: false,
+				 child_horizontal: @align_fill,
+                 spacing: @related_spacing)
+    {
+        row()
+        {
+			image(identifier: "IntroductionImage", image: {normal: "SP_TWS_IMAGE_N.png", dark_normal: "SP_TWS_IMAGE_N.png"}, vertical: @align_center);
+			column()
+			{
+				static_text(identifier: "IntroductionMessage1", name: "$$$/Workspaces/TWS/IntroduceTWS/Message1=We've noticed you're using a touch-enabled device.");
+				static_text(identifier: "IntroductionMessage2", name: "$$$/Workspaces/TWS/IntroduceTWS/Message2=Switch to the Touch workspace, designed to make you productive with pen and touch while on the go. You can always switch to your existing workspaces at any time.", characters: 1, horizontal: @align_fill);
+			}
+		}
+
+		row(horizontal: @align_right, spacing: @related_spacing, reverse: os == @mac)
+		{
+			button(default: true,
+				   identifier: "okButton",
+				   name: "$$$/gYES=Switch",
+				   commit_button: true);
+
+			button(cancel: true,
+				   identifier: "cancelButton",
+				   name: "$$$/gNo=Don't Switch",
+				   commit_button: true);
+		}		
+    }
+}

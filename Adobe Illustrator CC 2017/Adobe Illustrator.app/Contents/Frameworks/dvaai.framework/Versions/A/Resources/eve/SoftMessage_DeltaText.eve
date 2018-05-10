@@ -1,0 +1,19 @@
+
+layout SoftMessage_Dimension_
+{
+    view subview(show_border: false, spacing: 0)
+    {		
+	row(horzontal:@align_fill, spacing: 0)
+	{
+		column(horizontal: @align_fill, spacing: 0)
+		{
+			static_text(identifier:"DeltaBaseLineLabel", name: "$$$/TextTouchUp/SoftMessage/Baseline=Baseline Shift: ", horizontal: @align_right);
+		}
+		column(horizontal: @align_fill, spacing: 0)
+		{
+			static_text(identifier:"DeltaBaseLineValue", name:"0000mm", horizontal: @align_left);
+		}
+	}
+
+    }
+}

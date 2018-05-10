@@ -1,0 +1,26 @@
+layout GradientThumbnailDialog
+{
+    view subview(identifier: "AIEveSubView",
+				 placement: @place_column,
+				 layout_theme: @panel,
+				 show_border: true,
+				 margin: gPanelToolbarSubviewMargin,
+				 spacing: -2,
+				 child_vertical: @align_center)
+	{
+		
+			multicolumn_tree(identifier: "SwatchesStyles_mct",
+									wants_focus: false,
+									height: 125,
+									width: 175,
+									horizontal: @align_fill,
+									vertical: @align_fill);
+
+			button(identifier: "SaveButton",
+					horizontal: @align_left,
+					image: {normal: "SP_Save_Wi_N.png",dark_normal:"SP_Save_Wi_N_D.png"},
+					alt: "$$$/PaintStyle/Str/Gradient/ThumbnailSaveToolTip=Add to Swatches",
+					wants_focus: false);
+
+	}
+}

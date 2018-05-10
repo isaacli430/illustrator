@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+
+	<menuItem id="34" text="$$$/LinkPalette/Mnu/LinkPalette/34=&amp;Relink from CC Library..."></menuItem>
+	<menuItem id="6" text="$$$/LinkPalette/Mnu/LinkPalette/4=&amp;Relink..."></menuItem>
+	<menuItem id="2" text="$$$/LinkPalette/Mnu/LinkPalette/1=&amp;Go To Link"></menuItem>
+	<menuItem id="3" text="$$$/LinkPalette/Mnu/LinkPalette/3=&amp;Edit Original"></menuItem>
+	<menuItem id="5" text="$$$/LinkPalette/Mnu/LinkPalette/2=&amp;Update Link"></menuItem>
+	<menuItem id="7" text="$$$/LinkPalette/Mnu/LinkPalette/5=Pla&amp;cement Options..."></menuItem>	
+	<separator></separator>
+	
+	
+	<menuItem id="18" text="$$$/LinkPalette/Mnu/ManagedLinkPaletteMenuID/SaveLinkVersion=Check In Link..."></menuItem>
+	<menuItem id="19" text="$$$/LinkPalette/Mnu/ManagedLinkPaletteMenuID/Versions=Versions..."></menuItem>
+	<separator></separator>
+	
+	<menuItem id="10" text="$$$/LinkPalette/Mnu/LinkPalette/6=Embe&amp;d Image"></menuItem>
+	<separator></separator>
+	<menuItem id="32" text="$$$/LinkPalette/Mnu/LinkPalette/21=Reveal in Bridge..."></menuItem>
+	<menuItem id="33" text="$$$/LinkPalette/Mnu/LinkPalette/22=Link &amp;File Info..."></menuItem>
+	<separator></separator>
+	<menuItem id="8" text="$$$/LinkPalette/Mnu/LinkPalette/8=Show A&amp;ll"></menuItem>
+	<menuItem id="9" text="$$$/LinkPalette/Mnu/LinkPalette/9=Show &amp;Missing"></menuItem>
+	<menuItem id="11" text="$$$/LinkPalette/Mnu/LinkPalette/10=Show M&amp;odified"></menuItem>
+	<menuItem id="13" text="$$$/LinkPalette/Mnu/LinkPalette/11=Show Em&amp;bedded"></menuItem>
+	<separator></separator>
+	<menuItem id="14" text="$$$/LinkPalette/Mnu/LinkPalette/13=Sort by N&amp;ame"></menuItem>
+	<menuItem id="15" text="$$$/LinkPalette/Mnu/LinkPalette/15=Sort by &amp;Kind"></menuItem>
+	<menuItem id="16" text="$$$/LinkPalette/Mnu/LinkPalette/17=Sort by &amp;Status"></menuItem>
+	<separator></separator>
+	<menuItem id="1" text="$$$/LinkPalette/Mnu/LinkPalette/19=&amp;Panel Options..."></menuItem>
+</menu>

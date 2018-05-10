@@ -1,0 +1,68 @@
+layout TIFFExportOptionsDlg
+{
+    view subview(horizontal: @align_fill, placement: @place_column, identifier: "TIFFExportOptions", layout_theme: @dialog_large, show_border: false)
+    {
+	column(spacing: @unrelated_spacing){
+		column(horizontal: @align_fill)
+		{
+			popup(identifier: "TIFFColorModel_popup", name: "$$$/TIFFFileFormat/Dlg/16010/3=&Color Model:", include_custom_item: false, select_on_key: true, bind: @ColorModel, set_default_focus: true, 
+			  items: [	{ name: "$$$/TIFFFileFormat/Mnu/16010/1=RGB", value: 1 },
+						{ name: "$$$/TIFFFileFormat/Mnu/16010/2=CMYK", value: 2 } ,
+						{ name: "$$$/TIFFFileFormat/Mnu/16010/3=Grayscale", value: 3 }]);
+						
+			row(child_horizontal: @align_fill)
+			{
+				popup(identifier: "ResolutionPopup",
+						name: "$$$/TIFFFileFormat/Dlg/16010/17=&Resolution:",
+						bind: @Resolution,
+						include_custom_item: false,
+						items: [ { name: "$$$/TIFFFileFormat/Dlg/16010/5=Screen (72 ppi)", value: 72},
+								 { name: "$$$/TIFFFileFormat/Dlg/16010/6=Medium (150 ppi)", value: 150},
+								 { name: "$$$/TIFFFileFormat/Dlg/16010/7=High (300 ppi)", value: 300},
+								 { name: "", value: 0 },
+								 { name: "$$$/TIFFFileFormat/Dlg/16010/8=Other", value: -1}]);
+								 
+				panel(bind: @Resolution, value: -1)
+				{
+					unit_hot_number(identifier: "ResolutionNumberEdit", 
+									min_value: 72, 
+									max_value: 2400,
+									decimal_places: 2,
+									digits: 4,
+									suffix: "$$$/TIFFFileFormat/Dlg/16010/10=ppi",
+									bind: @OtherResolution,
+									guide_mask: [@guide_label]);
+				}
+			}  
+			row( child_vertical: @align_center)
+			{
+				popup(identifier: "antiAliasOption", name: "$$$/TIFFFileFormat/Dlg/16010/11=&Anti-aliasing:", bind: @Antialias,
+						include_custom_item: false,
+						select_on_key: true,
+						items: [{name: "$$$/TIFFFileFormat/Dlg/Antialiasing/None=None", value: 1},
+								{name: "$$$/TIFFFileFormat/Dlg/Antialiasing/ArtOptimized=Art Optimized (Supersampling)", value: 2},
+								{name: "$$$/TIFFFileFormat/Dlg/Antialiasing/TypeOptimized=Type Optimized (Hinted)", value: 3}]);
+				panel(margin: 0, bind: @ShowInfo, value: true)
+				{
+					info_icon(identifier: "InfoIcon", icontype: "note", size: "small");
+				}
+			}
+			checkbox(identifier: "TIFFLZWCompression", name: "$$$/TIFFFileFormat/Dlg/16010/12=&LZW Compression", bind: @LZWCompression, guide_mask: [@guide_label]);
+			row()
+			{
+				checkbox(identifier: "TIFFEmbedICCProfile", name: "$$$/TIFFFileFormat/Dlg/16010/15=&Embed ICC Profile:", bind: @EmbedProfile, guide_mask: [@guide_label]);
+				panel(bind: @ShowProfile, placement: @place_row, value: true, margin: 0)
+				{ 	
+					static_text(identifier: "profileName", theme_font_size: @small, name: " ",characters: 15);
+				}
+			}
+		}
+					
+		row(horizontal: @align_right, spacing: @related_spacing, reverse: os == @mac)
+		{
+			button(identifier: "okButton", name: "$$$/gOK=OK", commit_button: true);
+			button(identifier: "cancelButton", name: "$$$/gCancel=Cancel", commit_button: true);
+		}
+		}
+	}
+}

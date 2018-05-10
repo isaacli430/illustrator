@@ -1,0 +1,11 @@
+sheet SymbolControlGroupDlg
+{
+invariant:
+	valueEditSymbol		<== valueIsOneSymbolSelected == true;
+	valueResetInstance	<== valueIsSymbolTransformed == true;
+interface:
+	valueIsOneSymbolSelected: true;
+	valueIsSymbolTransformed: false;
+	valueSymbolName: "";
+	valueSymbolType: 0;
+}

@@ -1,0 +1,8 @@
+/* [1] */
+$$$/Roughen/Str/Error/1=You must select a path first.
+/* [2] */
+$$$/Roughen/Str/Error/2=Cannot Paste:  Paste would exceed character limit.
+/* [3] */
+$$$/Roughen/Str/Error/3=Cannot Paste:  Paste must only contain numbers
+/* [4] */
+$$$/Roughen/Str/Error/4=Filter cannot complete because doing so would exceed the maximum number of anchor points allowed for a path.

@@ -1,0 +1,21 @@
+sheet CSSExportOptionsDlg
+{
+interface:
+	UnitRadioGp: 0;
+	FillCheckBoxCell: true;
+	StrokeCheckBoxCell: true;
+	OpacityCheckBoxCell: true;
+	PositionCheckBoxCell: false;
+	DimensionsCheckBoxCell: true;
+	GenerateCheckBoxCell: false;
+	VendorCheckBoxCell: false;
+	UnsupportedArtCheckBoxCell : false;
+	unlink WebkitCheckBoxCell: false <== ( VendorCheckBoxCell == false ) ? false : WebkitCheckBoxCell;
+	unlink MozillafireFoxCheckBoxCell: false <== ( VendorCheckBoxCell == false ) ? false : MozillafireFoxCheckBoxCell;
+	unlink IExplorerCheckBoxCell: false <== ( VendorCheckBoxCell == false ) ? false : IExplorerCheckBoxCell;
+	unlink OperaCheckBoxCell: false <== ( VendorCheckBoxCell == false ) ? false : OperaCheckBoxCell;
+	
+	
+	ResolutionPopup: 300;
+	OtherResolution: ResolutionPopup <== (ResolutionPopup == -1) ? OtherResolution : ResolutionPopup;
+}

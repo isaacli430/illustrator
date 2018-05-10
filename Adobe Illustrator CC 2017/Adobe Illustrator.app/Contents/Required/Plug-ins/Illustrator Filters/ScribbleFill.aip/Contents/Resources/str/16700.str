@@ -1,0 +1,46 @@
+/* [1] */
+DO NOT localize strings with colons and semicolons
+/* [2] */
+$$$/ScribbleFill/Presets/PresetDefault=Default
+/* [3] */
+StrokeWidth:3;Angle:30;Scribbliness:.05;ScribbleVariation:.01;Spacing:5;SpacingVariation:.5;EdgeOverlap:0;EdgeOverlapVariation:5
+/* [4] */
+$$$/ScribbleFill/Presets/Preset1=Childlike
+/* [5] */
+StrokeWidth:5;Angle:-10;Scribbliness:.15;ScribbleVariation:.15;Spacing:10;SpacingVariation:20;EdgeOverlap:0;EdgeOverlapVariation:10
+/* [6] */
+$$$/ScribbleFill/Presets/Preset2=Dense
+/* [7] */
+StrokeWidth:4;Angle:45;Scribbliness:.02;ScribbleVariation:.01;Spacing:7;SpacingVariation:.2;EdgeOverlap:0;EdgeOverlapVariation:2
+/* [8] */
+$$$/ScribbleFill/Presets/Preset3=Loose
+/* [9] */
+StrokeWidth:3;Angle:-20;Scribbliness:.07;ScribbleVariation:0;Spacing:20;SpacingVariation:8;EdgeOverlap:0;EdgeOverlapVariation:5
+/* [10] */
+$$$/ScribbleFill/Presets/Preset4=Moir#{eacute}
+/* [11] */
+StrokeWidth:2;Angle:-45;Scribbliness:.1;ScribbleVariation:0;Spacing:4;SpacingVariation:0;EdgeOverlap:0;EdgeOverlapVariation:0
+/* [12] */
+$$$/ScribbleFill/Presets/Preset5=Sharp
+/* [13] */
+StrokeWidth:3;Angle:30;Scribbliness:0;ScribbleVariation:0;Spacing:3;SpacingVariation:1;EdgeOverlap:0;EdgeOverlapVariation:4
+/* [14] */
+$$$/ScribbleFill/Presets/Preset6=Sketch
+/* [15] */
+StrokeWidth:5;Angle:-30;Scribbliness:.03;ScribbleVariation:.03;Spacing:10;SpacingVariation:1;EdgeOverlap:0;EdgeOverlapVariation:4
+/* [16] */
+$$$/ScribbleFill/Presets/Preset7=Snarl
+/* [17] */
+StrokeWidth:1;Angle:60;Scribbliness:.5;ScribbleVariation:.5;Spacing:3;SpacingVariation:1;EdgeOverlap:0;EdgeOverlapVariation:10
+/* [18] */
+$$$/ScribbleFill/Presets/Preset8=Swash
+/* [19] */
+StrokeWidth:2;Angle:0;Scribbliness:.35;ScribbleVariation:.05;Spacing:6;SpacingVariation:.2;EdgeOverlap:0;EdgeOverlapVariation:0
+/* [20] */
+$$$/ScribbleFill/Presets/Preset10=Tight
+/* [21] */
+StrokeWidth:1;Angle:30;Scribbliness:0;ScribbleVariation:0;Spacing:1.5;SpacingVariation:.5;EdgeOverlap:0;EdgeOverlapVariation:0
+/* [22] */
+$$$/ScribbleFill/Presets/Preset9=Zig-zag
+/* [23] */
+StrokeWidth:2;Angle:-20;Scribbliness:0;ScribbleVariation:0;Spacing:8;SpacingVariation:0;EdgeOverlap:0;EdgeOverlapVariation:0

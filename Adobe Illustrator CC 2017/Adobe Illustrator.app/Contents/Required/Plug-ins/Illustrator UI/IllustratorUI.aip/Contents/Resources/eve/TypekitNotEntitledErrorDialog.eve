@@ -1,0 +1,58 @@
+layout TypekitNotEntitledErrorDialog
+{
+	view subview(margin: 0, placement: @place_column, 
+					show_border: false
+					)
+	{
+		column(child_horizontal:@align_fill, horizontal: @align_fill, spacing: 20)
+		{
+			row(margin: 0)
+			{
+				image (identifier:"TKDErrorImage", image: "upgrade-interstitial-hero.png", show_border: false);
+			}
+			
+			column(margin: 12, child_horizontal:@align_fill, horizontal: @align_fill, spacing: 15)
+			{
+				row(child_horizontal:@align_fill, horizontal: @align_fill)
+				{
+					static_text(identifier: "StaticText1",
+													name: "$$$/IllustratorUI/Dlg/TypekitNotEntitledErrorDialog/kErrorText1=To sync fonts, please upgrade your Creative Cloud membership.",
+													characters: 1, horizontal: @align_fill, font_size :20, bold: true
+													);										 
+				}
+				
+				row(child_horizontal:@align_fill, horizontal: @align_fill)
+				{		 
+					static_text(identifier: "StaticText2",
+													name: "$$$/IllustratorUI/Dlg/TypekitNotEntitledErrorDialog/kErrorText2=Choose from hundreds of quality fonts to sync to your desktop, and use them in any application.",
+													characters: 1, horizontal: @align_fill, font_size :14
+													);											 
+				}
+			}
+			
+			column(child_horizontal: @align_center, horizontal: @align_center, spacing: 20)
+				{
+						row(child_horizontal: @align_center, horizontal: @align_center, reverse: os == @mac,spacing: 20)
+						{
+							button(cancel: true,
+										width: 125,
+										identifier: "okButton",
+										commit_button: true,
+										name: "$$$/gClose=Close");
+		
+		
+							button(identifier: "learnMoreButton",
+										width: 125,
+										commit_button: true,
+										name: "$$$/IllustratorUI/Dlg/TypekitNotEntitledErrorDialog/fontProblemLearnMore=Learn More",
+										action: @learnMoreButtonAction
+										);								
+						}
+						
+						row()
+						{							
+						}					
+				}
+		}
+	}
+}

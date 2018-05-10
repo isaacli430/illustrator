@@ -1,0 +1,8 @@
+sheet AttributePanelUI
+{
+interface:
+		showWhiteWarning: 0;			
+		PanelState: 1;
+		ShowButtonbars: true <== (PanelState <= 2) ? true : false;
+		ShowNote: true <== (PanelState == 1) ? true : false;
+}

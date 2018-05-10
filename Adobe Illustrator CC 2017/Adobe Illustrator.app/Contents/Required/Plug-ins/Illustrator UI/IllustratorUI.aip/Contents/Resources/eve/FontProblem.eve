@@ -1,0 +1,78 @@
+layout FontProblem
+{
+	view subview(placement: @place_column, 
+					show_border: false,
+					child_horizontal: @align_fill,
+					child_vertical:@align_fill)
+	{
+		row(margin: 7)
+		{
+			info_icon
+			(
+				identifier:"AlertIcon1",
+				icontype:"warning",
+				size:"large"
+			);
+						
+			column(horizontal:@align_fill, vertical:@align_fill, child_horizontal:@align_fill, spacing:@unrelated_spacing) 
+			{
+				column(horizontal:@align_fill, vertical:@align_fill, child_horizontal:@align_fill)
+				{
+					static_text(
+						identifier:"fontProblemStaticText",
+						name: @fontProblemText,
+						characters: 23
+					);
+				
+					edit_text (
+						identifier: "warningList",
+						bind: @warningList,
+						scrollable: true,
+						characters: 25,
+						lines: 5,
+						readonly: true,
+						vertical: @align_fill
+					);
+				
+					overlay(child_horizontal:@align_fill)
+					{
+						panel(bind: @openDocumentOverlay, margin: 0, value: 0)
+						{
+							static_text(identifier:"openDocumentStaticText",
+											name: @openDocumentText
+										);
+						}
+						panel(bind: @openDocumentOverlay, margin: 0, value: 1)
+						{
+						}
+					}
+				}
+				column(child_horizontal:@align_fill)
+				{
+					overlay(child_horizontal:@align_fill)
+					{
+						panel(bind: @buttonOverlay, margin: 0, value: 0, child_horizontal: @align_fill)
+						{
+							row(child_horizontal: @align_right, reverse: os == @mac,spacing: @related_spacing)
+							{
+								button(default: true,
+											identifier: "openButton",commit_button: true,
+											name: "$$$/_FontProblem/Dlg/FontProblem/fontProblemOK=Open",
+											action: @okButtonAction);
+								button(cancel: true,
+											identifier: "cancelButton",commit_button: true,
+											name: "$$$/gCancel=Cancel");
+							}
+						}
+						panel(bind: @buttonOverlay, margin: 0, value: 1, child_horizontal: @align_right)
+						{
+							button(default: true,commit_button: true,
+										identifier: "okButton",
+										name: "$$$/gOK=OK");
+						}
+					}
+				}			
+			}
+		}
+	}
+}

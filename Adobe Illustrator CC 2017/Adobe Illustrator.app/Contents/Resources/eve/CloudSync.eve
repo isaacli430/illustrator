@@ -1,0 +1,89 @@
+layout CloudSyncPopup
+{
+ 	view subview(identifier: "CloudSyncPopupSubView", width: 225, height:92,
+			 child_horizontal: @align_fill,
+			 vertical: @align_fill,
+			 layout_theme: @panel,
+			 show_border: false,
+			 placement: @place_column)
+    {		
+		row(horizontal: @align_fill, margin: 5, vertical: @align_fill,placement: @place_row)
+		{
+			column(horizontal: @align_fill, vertical: @align_fill)
+			{
+				image (identifier:"cloud_icon",image:{normal:"SP_CreativeCloud_Md_N.png", dark_normal:"SP_CreativeCloud_Md_N_D.png"});
+			}
+			column(horizontal: @align_fill, vertical: @align_fill)
+			{
+				optional(margin:0, bind: @Conflict, value: false, placement: @place_column, vertical: @align_fill)
+				{
+					column(vertical: @align_top,child_vertical: @align_fill)
+					{
+						optional(value: true, margin: 0, bind: @showUserID,horizontal: @align_left)
+						{
+							static_text(identifier: "userIdMessage", name: @UserID);
+						}
+						
+						optional(value: true, margin: 0, bind: @showAdditionalSyncMessage,horizontal: @align_left)
+						{
+							static_text(name: @AdditionalSyncMessage, characters:17, adjust_baseline_for_single_line_text: false);
+						}
+												
+						static_text(identifier: "statusStringMessage", characters: 17, name: @StatusString, adjust_baseline_for_single_line_text: false);
+						
+						optional(value: true, margin: 0, bind: @showProgressBar,horizontal: @align_fill)
+						{
+							popup_progress_bar(identifier: "progressbar", horizontal: @align_fill);
+						}
+					}
+
+					column(vertical: @align_bottom, margin: 0)
+					{
+						optional(margin:0, bind: @ButtonState, value: 1, placement: @place_row, vertical: @align_center)
+						{
+							button(identifier: "preferencesSettingsButton", name: "$$$/CloudSyncPopup/Advanced=Advanced...");
+							button(identifier: "EnableSyncButton", name: "$$$/CloudSyncPopup/EnableSync=Enable and Sync", 
+											alt: "$$$//CloudSyncPopup/EnableSyncToolTip=Enable Sync Settings and start syncing");
+						}
+						optional(margin:0, bind: @ButtonState, value: 200, placement: @place_column, vertical: @align_center)
+						{
+							button(identifier: "syncNowButton", name: "$$$/CloudSync/SyncNow=Sync Settings Now");
+						}
+						optional(margin:0, bind: @ButtonState, value: 201, placement: @place_column, vertical: @align_center)
+						{
+							button(identifier: "resumeButton", name: "$$$/CloudSyncPopup/Resume=Resume");							
+						}
+						optional(margin:0, bind: @ButtonState, value: 202, placement: @place_column, vertical: @align_center)
+						{
+							button(identifier: "retryButton", name: "$$$/CloudSyncPopup/Retry=Retry");
+						}
+						optional(margin:0, bind: @ButtonState, value: 4, placement: @place_column, vertical: @align_center)
+						{
+							button(identifier: "pauseButton", name: "$$$/CloudSyncPopup/Pause=Pause");
+						}
+						optional(margin:0, bind: @ButtonState, value: 6, placement: @place_column, vertical: @align_center)
+						{
+							button(identifier: "applyButton", name: "$$$/CloudSyncPopup/Apply=Apply Now");
+						}
+						optional(margin:0, bind: @ButtonState, value: 9, placement: @place_row, vertical: @align_center)
+						{
+							button(identifier: "applyAndRestartButton", name: "$$$/CloudSyncPopup/RestartNowButton=Restart Now");
+							button(identifier: "restartLaterButton", name: "$$$/CloudSyncPopup/LaterButton=Later");
+						}
+					}
+				}
+				optional(margin:0, bind: @Conflict, value: true, placement: @place_column,child_horizontal: @align_fill, vertical: @align_center)
+				{
+					static_text(identifier: "ConflictMessage",characters: 17, name: "$$$/CloudSyncPopup/ConflictMessage=There are sync conflicts. Choose which settings to keep.", adjust_baseline_for_single_line_text: false);
+					row(horizontal: @align_fill,child_horizontal: @align_fill, spacing: @label_widget_spacing)
+					{
+						button(identifier: "keepLocalConflictButton", name: "$$$/CloudSyncPopup/SyncLocal=Sync Local");
+						button(identifier: "keepServerConflictButton", name: "$$$/CloudSyncPopup/SyncCloud=Sync Cloud");
+					}
+					button(identifier: "keepLatestConflictButton", name: "$$$/CloudSyncPopup/KeepLatest=Keep Latest File");
+					checkbox(identifier:	"rememberChoiceChkBx", 	 name: "$$$/CloudSyncPopup/RemeberChoice=Remember My Preference");
+				}
+			}
+		}			
+	}
+}

@@ -1,0 +1,9 @@
+sheet SmartExportPanel
+{
+interface:
+	ShowExportFormats : true ;
+	AddButtonType: 0;
+
+	IsMacOS <== ( os == @mac) ;
+	IsWinOS <== !IsMacOS;
+}

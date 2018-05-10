@@ -1,0 +1,6 @@
+sheet KeyboardShortcutDlg
+{
+interface:
+		valueCommandType: 1;
+		valueMatchCase: false;
+}

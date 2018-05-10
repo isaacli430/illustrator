@@ -1,0 +1,32 @@
+layout DynamicCornerControlGroup
+{
+     view subview(identifier: "DynamicCornerControlGroup",
+				 layout_theme: @controlbar,
+				 show_border: false,
+				 child_vertical: @align_center,
+				 placement: @place_row,
+				 margin : 0,
+				 spacing: 5,
+				 height:  31)
+    {		
+		optional(identifier: "DynamicCornerControlGroupSubGroup", child_vertical:  @align_center, margin : 0,spacing: @related_spacing, placement: @place_row)			
+		{
+			separator(orientation: @vertical, vertical: @align_fill);
+			link_button(identifier: "DynamicCornerHyperlinkButton",
+							wants_focus: false,
+							name: "$$$/DynamicCorner/str/HyperLinkName=Corners:",
+							alt: "$$$/DynamicCorner/Str/DynamicCornerPalette=Live Corners");
+			edit_number(identifier: "EditNumberRadius",
+						min_value: 0,
+						decimal_places: 2,
+						digits: 3,
+						unit:"CurrentDocumentUnit",
+						stepper: true,
+						alt: "$$$/DynamicCorner/Str/Radius=Corner Radius",
+						popuplist: false,
+						set_default_focus: true
+						);
+		}					
+    }
+}
+

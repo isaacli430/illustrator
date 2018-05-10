@@ -1,0 +1,15 @@
+sheet PathfinderPanel
+{
+	invariant:
+		buttonsCell <== buttonsEnable == true;
+		expandCell <== expandEnable == true;
+		staticText <== textEnable == true;
+	interface:
+		buttonsEnable	: false;
+		expandEnable : false;
+		textEnable : false;
+		showMixedAdd : 0;
+		showMixedSubtract : 0;
+		showMixedExclude : 0;
+		showMixedIntersect : 0;
+}

@@ -1,0 +1,27 @@
+sheet GeneralPreference
+{
+interface:
+	GPRealkbInc: 0;
+	GPRealCAngle: 0;
+	GPRealCRadius: 0;
+	
+	GPBoolAutoAdd: false;
+	GPBoolPCusrsor: false;
+	GPBoolTooltip: false;
+	GPBoolAA: false;
+	GPBoolTint: false;
+	GPBoolIsolate: false;
+	GPBoolcjk: false;
+	GPBoolTxTile: false;
+	GPBoolScaleRadiiShape:false;
+	GPBoolScaleStroke: false;
+	GPBoolPrvBnd: false;
+	GPBoolLegacy: false;
+	IsWorldReadyModeCell : false;
+	GPBoolHomeScreenBnd : true;
+	GPBoolRecentFileBnd: true;
+	GPBoolHomeScreenEnabled: true;
+	GPBoolRecentFileEnabled: true;
+	GPBoolNativeNewDocEnabled : true;
+	GPBoolNativeNewDocBnd: true;
+}

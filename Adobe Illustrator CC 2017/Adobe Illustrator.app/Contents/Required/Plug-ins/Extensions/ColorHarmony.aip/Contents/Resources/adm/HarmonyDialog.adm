@@ -1,0 +1,46 @@
+sheet ColorHarmonyDialog
+{
+	interface:
+		GlobalAdjustMinMaxFilter: {min_value: -100, max_value: 100};
+		slider_min_max: {min_value: 0, max_value: 100};
+
+		HarmonyPresetItems:	[	{ name: "$$$/ColorHarmony/HarmonyDialog/PresetName/FromLibrary=Color library...", value: 1},
+								{ name: "$$$/ColorHarmony/HarmonyDialog/PresetName/1ColorSpot=1 color job...", value: 2},
+								{ name: "$$$/ColorHarmony/HarmonyDialog/PresetName/2ColorSpot=2 color job...", value: 3},
+								{ name: "$$$/ColorHarmony/HarmonyDialog/PresetName/3ColorSpot=3 color job...", value: 4},
+								{ name: "$$$/ColorHarmony/HarmonyDialog/PresetName/WithHarmony=Color Harmony", value: 5}
+							];
+		ColorAdjustItems:	[{ name: "$$$/ColorHarmony/ColorSpace/RGB=RGB"},
+							{ name: "$$$/ColorHarmony/ColorSpace/HSB=HSB"},
+							{ name: "$$$/ColorHarmony/ColorSpace/CMYK=CMYK"},
+							{ name: "$$$/ColorHarmony/ColorSpace/RGBWeb=Web RGB"},
+							{ name: "$$$/ColorHarmony/ColorSpace/Tint=Tint"},
+							{ name: "$$$/ColorHarmony/ColorSpace/Lab=Lab"},
+							{ name: "-"},
+							{ name: "$$$/ColorHarmony/ColorSpace/GlobalAdjust=Global Adjust"}];
+		NewColorSortOptions: [	{name: "$$$/ColorHarmony/ColorSpace/SortCustom=Custom", value: 0},
+								{name: "$$$/ColorHarmony/ColorSpace/SortHueF=Hue - forward", value: 1},
+								{name: "$$$/ColorHarmony/ColorSpace/SortHueB=Hue - backward", value: 2},
+								{name: "$$$/ColorHarmony/ColorSpace/SortLightnessDL=Lightness - dark to light", value: 3},
+								{name: "$$$/ColorHarmony/ColorSpace/SortLightnessLD=Lightness - light to dark", value: 4}
+							];
+		
+		/*0 == @ColorWheelSmooth;
+		1 == @ColorWheelSegmented
+		2 == @ColorBars*/
+		EditColorUIType: 0; 
+
+		EditAssign: 0;
+		BrightSatToggle: 0; 
+		BrightnessSliderValue: 0;
+		SaturationSliderValue: 0;
+		GlobalAdjustLuminosity: 0;
+		GlobalAdjustSaturation: 0;
+		GlobalAdjustBrightness: 0;
+		GlobalAdjustTemperature: 0;
+		ShowWheel:	true <== (EditColorUIType == 2 || EditAssign == 1 ) ? false : true;
+		ShowAddRemoveColorTool: true <== (EditAssign == 0 && EditColorUIType != 2) ? true : false;
+		ShowColorStorage: true;
+		ShowLinkColors: true;
+		ShowColorEditor: false;
+}

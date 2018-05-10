@@ -1,0 +1,155 @@
+layout SmartGuidePreference
+{
+	view subview(identifier: "SmartGuidePrefEveSubView",
+				 child_horizontal: @align_fill,
+				 placement: @place_column,
+				 show_border: false, 
+				 margin: [22,15,0,15],
+				 layout_theme: @dialog_large)
+	{
+		column(spacing: 0)
+		{
+			static_text(identifier: "SGPStaticTextCaption",
+					name: "$$$/PrefsDlg/SGPDlg/Caption=Smart Guides"
+					);
+		
+			separator(identifier: "SGPTopSeparator");
+		}
+		
+		group(identifier: "SGPDisplayGrp",
+				name: "$$$/PrefsDlg/SGPDlg/SGPDisplayGrp=Display Options",
+				placement: @place_column)
+		{
+			row(child_vertical: @align_center)
+			{
+				popup(identifier: "SGPPopupColor",
+							include_custom_item: false,
+							name: "$$$/PrefsDlg/SGPDlg/SGPPopupColor=Colo&r:",
+							items: gSmallColorPopupList,
+							horizontal:@align_left
+							);
+				swatch(identifier: "SGPImageGridColor", border: @border_normal);				
+			}
+			row(guide_mask: [ @guide_label ], horizontal: @align_fill, child_horizontal: @align_fill)
+			{
+				column()
+				{
+					checkbox(identifier: "SGPCheckboxAlignGuide",
+									name: "$$$/PrefsDlg/SGPDlg/SGPCheckboxAlignGuide=&Alignment Guides",
+									bind: @SGAlignGuide
+									);
+					checkbox(identifier: "SGPCheckboxObjectHilite",
+									name: "$$$/PrefsDlg/SGPDlg/SGPCheckboxObjectHilite=&Object Highlighting",
+									bind: @SGHilite
+									);
+					checkbox(identifier: "SGPCheckboxTransformTool", guide_mask: [ @guide_label ],
+									name: "$$$/PrefsDlg/SGPDlg/SGPCheckboxTransformTool=&Transform Tools",
+									bind: @SGTransformTool
+									);
+
+				}
+				column()
+				{
+					checkbox(identifier: "SGPCheckboxAnchorLabels",
+									name: "$$$/PrefsDlg/SGPDlg/SGPCheckboxAnchorLabels=Anchor/Path &Labels",
+									bind: @SGAnchor
+									);
+					checkbox(identifier: "SGPCheckboxMeasureLabel",
+									name: "$$$/PrefsDlg/SGPDlg/SGPCheckboxMeasureLabel=&Measurement Labels",
+									bind: @SGMeasureLabel
+									);
+                    checkbox(identifier: "SGPCheckboxSpacingGuides",
+                                    name: "$$$/PrefsDlg/SGPDlg/SGPCheckboxSpacingGuides=&Spacing Guides",
+                                    bind: @SGSpacingGuides
+                                    );
+				}
+			}
+
+
+			column(child_horizontal: @align_fill)
+			{
+				row()
+				{
+					checkbox(identifier: "SGPCheckboxConstGuide", guide_mask: [ @guide_label ],
+										name: "$$$/PrefsDlg/SGPDlg/SGPCheckboxConstGuide=&Construction Guides:",
+										bind: @SGConsGuide
+										);
+										
+					popup(identifier: "SGPPopupGuideAngle",
+							include_custom_item: false,
+							name: "",
+							guide_mask: [ @guide_label ],
+							items: @SGPGuideAnglePopupItems
+							);
+				}
+				row()
+				{
+					column(guide_mask: [ @guide_label ])
+					{
+						row()
+						{
+							unit_hot_number(identifier: "SGPEditNumberAngle1",
+										name: "",
+										decimal_places: 4,
+										digits: 4,
+										min_value: -360,
+										max_value: 360
+										);
+							unit_hot_number(identifier: "SGPEditNumberAngle2",
+										name: "",
+										decimal_places: 4,
+										digits: 4,
+										min_value: -360,
+										max_value: 360
+										);
+							unit_hot_number(identifier: "SGPEditNumberAngle3",
+										name: "",
+										decimal_places: 4,
+										digits: 4,
+										min_value: -360,
+										max_value: 360
+										);
+						}
+						row()
+						{
+							unit_hot_number(identifier: "SGPEditNumberAngle4",
+										name: "",
+										decimal_places: 4,
+										digits: 4,
+										min_value: -360,
+										max_value: 360
+										);
+							unit_hot_number(identifier: "SGPEditNumberAngle5",
+										name: "",
+										decimal_places: 4,
+										digits: 4,
+										min_value: -360,
+										max_value: 360
+										);
+							unit_hot_number(identifier: "SGPEditNumberAngle6",
+										name: "",
+										decimal_places: 4,
+										digits: 4,
+										min_value: -360,
+										max_value: 360
+										);
+						}
+					}
+					image(identifier: "SGPImageAngle", horizontal: @align_right, vertical: @align_top, show_border: false, height: 50, width: 50);
+				}
+			}
+		
+		}
+		unit_hot_number(identifier: "SGPEditNumberSnapTolerance",
+								name: "$$$/PrefsDlg/SGPDlg/SGPEditNumberSnapTolerance=&Snapping Tolerance:",
+								horizontal: @align_left,
+								decimal_places: 2,
+								min_value: 0,
+								max_value: 10,
+								digits: 4,
+								bind: @SGSnapTolerance,
+								guide_mask: [ @guide_label ]
+								);
+	
+	}
+}

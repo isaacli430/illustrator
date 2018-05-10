@@ -1,0 +1,8 @@
+sheet ParagraphMaxControlGroup
+{
+interface:
+	Orientation: 0;
+	ParaDirection : 0;
+	IsWorldReady : true;	
+
+}

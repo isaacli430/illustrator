@@ -1,0 +1,7 @@
+sheet ArtboardOptionDialog
+{
+	interface:
+		Orientation: true;
+		ArtboardNameCellId: "";
+		RefPoint:0;
+}

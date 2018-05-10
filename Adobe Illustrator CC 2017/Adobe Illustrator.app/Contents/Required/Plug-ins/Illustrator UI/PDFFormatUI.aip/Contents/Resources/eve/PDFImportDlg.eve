@@ -1,0 +1,85 @@
+layout PDFImportDlg
+{
+    view subview(identifier: "AIEveSubView",
+				 placement: @place_column,
+				 show_border: false, 
+				 layout_theme: @dialog_large, spacing:@unrelated_spacing
+				 )
+    {
+column(horizontal:@align_fill)
+{
+column(horizontal:@align_center)
+{
+		optional(margin: 0, bind: @isPlace)
+		{
+    	popup(identifier: "CropPopup", include_custom_item: false,
+    		name: "$$$/PDFFormat/Static/Crop=&Crop to:", items:@cropItems, bind:@cropCell, guide_mask: [@guide_label]);
+    	}
+    	
+    	column(horizontal: @align_center, guide_mask: [ @guide_label ])
+    	{
+    		image(identifier: "PreviewImage", image: "", show_border:true, width: 150, height: 150, wants_focus: false,
+    		horizontal: @align_center);
+    		row(guide_mask: [ @guide_label ], child_vertical: @align_center, horizontal: @align_center, spacing:0)
+    		{
+    			row(spacing:0, horizontal:@align_left){
+    				button(identifier: "impFirst", image: {normal:"SP_FirstPage_Sm_N.png",dark_normal:"SP_FirstPage_Sm_N_D.png"}, bind: @result_prev, action: @first, wants_focus: false);
+    				button(identifier: "impPrev", image: {normal:"SP_PreviousPage_Sm_N.png",dark_normal:"SP_PreviousPage_Sm_N_D.png"}, bind:@result_prev, action: @prev, wants_focus: false);
+    				}
+    			
+    			edit_text(identifier: "pageText", characters: 8, horizontal: @align_center);
+    				
+    			row(spacing:0, horizontal:@align_right){
+    				button(identifier: "impNext", image: {normal:"SP_NextPage_Sm_N.png",dark_normal:"SP_NextPage_Sm_N_D.png"}, bind: @result_next, action: @next,wants_focus: false);
+    				button(identifier: "impLast", image: {normal:"SP_LastPage_Sm_N.png",dark_normal:"SP_LastPage_Sm_N_D.png"}, horizontal: @align_right, bind: @result_next, action: @last,wants_focus: false);
+    		 		}
+    		}
+    	}
+}
+    	
+    	row(child_vertical: @align_center)
+    	{
+    		optional(margin: 0, bind: @showPlaceInfo)
+    		{
+    			info_icon(identifier:"infoImage", icontype: "note", size: "small");
+    		}
+    		optional(margin: 0, bind: @showPlaceInfo)
+    		{
+    		static_text(identifier: "infoText", characters: 20, theme_font_size: @small,
+    			name: "$$$/PDFFormat/Str/ImportMsg=Select a page from the PDF to place into the document.");
+    		}
+    		optional(margin: 0, bind: @isOpen, placement: @place_column)
+    		{
+    			static_text(identifier: "infoTextOpen1", characters: 20, theme_font_size: @small,
+    				name: "$$$/PDFFormat/Dialogs/ImportMsg1=Select a page from the PDF to open.");
+    				
+    			static_text(identifier: "infoTextOpen2", characters: 20, theme_font_size: @small,
+    				name: '$$$/PDFFormat/Dialogs/ImportMsg2=To save this page back to the original mutiple-page PDF, use the \"Save\" command. To create a single-page PDF, use the \"Save As\" command.');
+    		}
+    	}
+}
+	
+      
+	row(horizontal: @align_fill, child_vertical: @align_center)
+    {
+    	panel(margin: 0, bind: @showPreviewField, horizontal: @align_left, vertical: @align_center)
+        {
+    		checkbox(identifier: "CheckBoxpreview",guide_mask: [ @guide_label ],
+    					 name: "$$$/PDFFormat/CheckBox/Preview=&Preview", horizontal: @align_left, vertical: @align_center,
+    					 bind: @preview);
+    	}
+    			
+    	row(reverse: os == @mac, horizontal: @align_right, spacing: @related_spacing)
+    	{ 
+    		button(
+    				identifier: "okButton",commit_button: true,
+    				name: "$$$/gOK=OK");
+    		button(
+    				identifier: "cancelButton",commit_button: true,
+    				name: "$$$/gCancel=Cancel");       
+    	} 
+    } 
+        
+    }
+}
+

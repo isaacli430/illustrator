@@ -1,0 +1,376 @@
+layout VectorizePanel
+{
+ 	view subview(identifier: "VectorizePanelSubView",
+			 child_horizontal: @align_fill,
+			 layout_theme: @panel,
+			 show_border: false,
+			 placement: @place_column)
+    {	
+		row(horizontal:@align_center)
+		{
+				row(child_vertical: @align_center, spacing: @label_widget_spacing)
+				{
+					toggle_button(
+									 toolbox_style: true,
+									 identifier: "PresetIconButton6",
+									 value_on: 6, value_off: 0,
+									 bind: @SelectedPresetIcon,
+									 wants_focus: false,
+									 image: {normal: "SP_AutomaticTrace_Md_N.png",dark_normal:"SP_AutomaticTrace_Md_N_D.png"},
+									 alt: "$$$/VectorizePanel/AutomaticTooltip=Auto-Color");
+					toggle_button(
+									 toolbox_style: true,
+									 identifier: "PresetIconButton1",
+									 value_on: 1, value_off: 0,
+									 bind: @SelectedPresetIcon,
+									 wants_focus: false,
+									 image: {normal: "SP_TracingPhoto_Md_N.png",dark_normal:"SP_TracingPhoto_Md_N_D.png"},
+									 alt: "$$$/VectorizePanel/HighColorToolTip=High Color");
+					 
+					 toggle_button(
+									 toolbox_style: true,
+									 identifier: "PresetIconButton2",
+									 value_on: 2, value_off: 0,
+									 bind: @SelectedPresetIcon,
+									 wants_focus: false,
+									 image: {normal: "SP_TracingPosterized_Md_N.png",dark_normal:"SP_TracingPosterized_Md_N_D.png"},
+									 alt: "$$$/VectorizePanel/LowColorToolTip=Low Color");
+									 
+					 toggle_button(
+									 toolbox_style: true,
+									 identifier: "PresetIconButton3",
+									 value_on: 3, value_off: 0,
+									 bind: @SelectedPresetIcon,
+									 wants_focus: false,
+									 image: {normal: "SP_TracingGreyscale_Md_N.png",dark_normal:"SP_TracingGreyscale_Md_N_D.png"},
+									 alt: "$$$/VectorizePanel/GrayscaleToolTip=Grayscale");
+					 
+					 toggle_button(
+									 toolbox_style: true,
+									 identifier: "PresetIconButton4",
+									 value_on: 4, value_off: 0,
+									 bind: @SelectedPresetIcon,
+									 wants_focus: false,
+									 image: {normal: "SP_TracingBW_Md_N.png",dark_normal:"SP_TracingBW_Md_N_D.png"},
+									 alt: "$$$/VectorizePanel/BlackandWhiteTooltip=Black and White");
+					
+					 toggle_button(
+									 toolbox_style: true,
+									 identifier: "PresetIconButton5",
+									 value_on: 5, value_off: 0,
+									 bind: @SelectedPresetIcon,
+									 wants_focus: false,
+									 image: {normal: "SP_TracingOutline_Md_N.png",dark_normal:"SP_TracingOutline_Md_N_D.png"},
+									 alt: "$$$/VectorizePanel/OutlineToolTip=Outline");
+				}
+			
+		}				
+		separator(orientation: @horizontal, horizontal: @align_fill);	
+		overlay(child_horizontal: @align_fill)
+		{	
+			panel(margin:0, child_horizontal: @align_fill)
+			{
+				column(child_horizontal:@align_fill)
+				{
+					column(child_horizontal: @align_fill)
+					{
+						row(horizontal:@align_fill, child_vertical:@align_center)
+						{
+							popup(	identifier: "PresetPopup", name: "$$$/VectorizePanel/PresetPopup=Preset:", bind: @TracingPreset,
+								alt: "$$$/VectorizePanel/PresetPopup/ToolTip=Select a tracing preset",
+								items: [ { name: "$$$/VectorizeUI/AutoTracePreset=Auto Trace Preset", value: 0}],
+								popup_maximum_width_chars: 10,
+								popup_minimum_width_chars: 10,
+								include_custom_item: false,
+								horizontal:@align_fill);
+								
+							button(	identifier: "PresetButton", 
+								alt: "$$$/VectorizePanel/PresetButton/ToolTip=Manage Presets",
+								image:{normal:"SP_Preset_Sm_N.png",dark_normal:"SP_Preset_Sm_N_D.png"});
+						}
+						
+						row(horizontal:@align_fill, child_vertical:@align_center)
+						{
+							popup(	identifier: "PreviewPopup", name: "$$$/VectorizePanel/Preview=View:", bind : @PreviewPopup,
+								alt: "$$$/VectorizePanel/Preview/ToolTip=Viewing Options",
+								items: [{ name: "$$$/VectorizePanel/PreviewTracing/VectorizeResult=Tracing Result", value: 0},
+										{ name: "$$$/VectorizePanel/PreviewTracing/VectorizeResultWithOutline=Tracing Result with Outlines", value: 1 },
+										{ name: "$$$/VectorizePanel/PreviewTracing/Outline=Outlines", value: 2},
+										{ name: "$$$/VectorizePanel/PreviewTracing/Outlinewithimage=Outlines with Source Image", value: 3},
+										{ name: "$$$/VectorizePanel/PreviewTracing/SourceImage=Source Image", value: 4}],
+								include_custom_item: false,
+								horizontal:@align_fill);
+								
+							button(	identifier: "PreviewButton", 
+								alt: "$$$/VectorizePanel/PreviewButton/ToolTip=Press & hold to view source image",
+								image:{normal:"SP_Visibility_Sm_N.png",dark_normal:"SP_Visibility_Sm_N_D.png"});
+						}
+						
+						
+							
+						row(horizontal:@align_fill)
+						{
+							popup(	identifier: "VectorizeModePopup", name: "$$$/VectorizePanel/TracingMode=Mode:",  bind: @ColorMode,
+								alt: "$$$/VectorizePanel/TracingMode/ToolTip=Color mode used for tracing",
+								items: [{ name: "$$$/VectorizePanel/TracingMode/Color=Color", value: 0},
+										{ name: "$$$/VectorizePanel/TracingMode/Grayscale=Grayscale", value: 1 },
+										{ name: "$$$/VectorizePanel/TracingMode/bw=Black and White", value: 2}],
+								include_custom_item: false,
+								horizontal:@align_fill);
+								
+								button( show_border:false,	identifier: "DummyImage_1", width: 24, height: 9, image:{});
+						}
+						
+
+						row(horizontal:@align_fill, child_vertical: @align_bottom)
+						{
+							popup(	identifier: "ColorPopup",
+								name: "$$$/VectorizePanel/ColorPopup=Palette:",
+								alt: "$$$/VectorizePanel/ColorPopup/ToolTip=Palette used for tracing",	
+								include_custom_item: false,
+								popup_maximum_width_chars: 10,
+								popup_minimum_width_chars: 10,
+								horizontal:@align_fill);
+							
+							overlay()
+							{
+								panel(bind: @ShowLibNotOpenWarning, value:false)
+								{
+									button(	 show_border:false,	 identifier: "DummyImage_2", width: 24, height: 9, image:{});
+								}
+								panel(bind: @ShowLibNotOpenWarning, value:true)
+								{
+									info_icon(identifier: "LibNotOpenWarning", icontype: "warning", size: "small", alt: "$$$/VectorizePanel/LibNotOpenWarning/Str=Swatch Library currently not available");
+								}
+							}
+						}
+					}
+					overlay(child_horizontal: @align_fill)
+					{
+						panel(bind:@ColorMode, value: 0, child_horizontal: @align_fill)
+						{
+							optional(bind:@ColorSelection, value: 0, child_horizontal: @align_fill)
+							{
+								combo_slider(identifier: "AutomaticColorSlider", 
+											name: "$$$/VectorizePanel/AutomaticColorSlider=Colors:",
+											alt: "$$$/VectorizePanel/AutomaticColorSlider/ToolTip=Color Accuracy in Percentage",
+											slider_point: @up,  min_max_filter: @FullColorFilter, bind: @AutomaticColors,bind_final: true,
+											left_mini_label: "$$$/VectorizePanel/FidelitySlider/Left/Label=Less",
+											right_mini_label: "$$$/VectorizePanel/FidelitySlider/Right/Label=More",
+											digits: 4);
+							}
+							optional(bind:@ColorSelection, value: 1, child_horizontal: @align_fill)
+							{
+								combo_slider(identifier: "LimitedColorSlider", 
+											name: "$$$/VectorizePanel/LimitedColorSlider=Colors:",
+											alt: "$$$/VectorizePanel/LimitedColorSlider/ToolTip=Maximum number of colors used for tracing",
+											slider_point: @up,  min_max_filter: @LimitedColorFilter, bind: @LimitedColors, bind_final: true,
+											left_mini_label: "$$$/VectorizePanel/FidelitySlider/Left=2",
+											right_mini_label: "$$$/VectorizePanel/FidelitySlider/Right=30", 
+											digits: 4);
+							}
+							optional(bind:@ColorSelection, value: 2, child_horizontal: @align_fill)
+							{
+								combo_slider(identifier: "FullColorSlider", 
+											name: "$$$/VectorizePanel/FullColorSlider=Colors:",
+											alt: "$$$/VectorizePanel/FullColorSlider/ToolTip=Color Accuracy in Percentage",
+											slider_point: @up,  min_max_filter: @FullColorFilter, bind: @FullColors, bind_final: true,
+											left_mini_label: "$$$/VectorizePanel/FidelitySlider/Left/Less=Less",
+											right_mini_label: "$$$/VectorizePanel/FidelitySlider/Right/More=More", 
+											decimal_places: 1,
+											digits: 4);
+							}
+							optional(bind:@LibraryVsColorRange, value: 1, child_horizontal: @align_fill)
+							{
+								popup_panel_button(identifier: "ColorGroupPopup",
+													name: "$$$/VectorizePanel/ColorGroupPopup=Colors:",
+													alt: "$$$/VectorizePanel/ColorGroupPopup/ToolTip=Limit the palette to the selected color group", 
+													include_custom_item: false
+												);
+
+							}
+						}
+						panel(bind:@ColorMode, value: 1, child_horizontal: @align_fill)
+						{
+							combo_slider(	identifier: "GrayscaleSlider", 
+											name: "$$$/VectorizePanel/GrayscaleSlider=Grays:",
+											alt: "$$$/VectorizePanel/GrayscaleSlider/ToolTipStr=Gray Scale Accuracy from 0 to 100",
+											slider_point: @up,  min_max_filter: @FullColorFilter, bind_final: true,
+											left_mini_label: "$$$/VectorizePanel/FidelitySlider/Left/Label=Less",
+											right_mini_label: "$$$/VectorizePanel/FidelitySlider/Right/Label=More",
+											digits: 4);						
+						}
+						panel(bind:@ColorMode, value: 2, child_horizontal: @align_fill)
+						{
+							combo_slider(	identifier: "ThresholdSlider", 
+											name: "$$$/VectorizePanel/ThreshholdSlider=Threshold:",
+											alt: "$$$/VectorizePanel/ThreshholdSlider/ToolTipStr=Pixels darker than threshold value are converted to black",
+											slider_point: @up,  min_max_filter: @ThresholdFilter, bind_final: true,
+											left_mini_label: "$$$/VectorizePanel/FidelitySlider/Left/Label=Less",
+											right_mini_label: "$$$/VectorizePanel/FidelitySlider/Right/Label=More",
+											digits: 4);						
+						}
+					}
+				}
+
+				row(child_vertical: @align_center, spacing:0)
+				{
+					overlay()
+					{
+						panel(bind: @ShowAdvancedState, value: false, margin: 0)
+						{
+							toggle_button(identifier: "ShowAdvancedOptionsButton", bind: @ShowAdvancedState, value_on: true, value_off: false, image:{normal:"SP_ArrowHeadRight_Xs_N.png", dark_normal: "SP_ArrowHeadRight_Xs_N_D.png"}, wants_focus: false);
+						}
+						panel(bind: @ShowAdvancedState, value: true, margin: 0)
+						{
+							toggle_button(identifier: "HideAdvancedOptionsButton", bind: @ShowAdvancedState, value_on: false, value_off: true, image:{normal:"SP_ArrowHeadDown_Xs_N.png", dark_normal: "SP_ArrowHeadDown_Xs_N_D.png"}, wants_focus: false);                                
+						}
+					}
+					static_text(name: "$$$/VectorizePanel/VectorizedObject=Advanced",
+								alt: "$$$/VectorizePanel/VectorizedObject/ToolTip=Show/Hide Advanced Options");
+					separator(orientation: @horizontal, horizontal: @align_fill);
+				}
+				optional(bind:@ShowAdvancedState, value: true, child_horizontal: @align_fill)
+				{
+					column(child_horizontal: @align_fill)
+					{
+						combo_slider(identifier: "PathSlider", name: "$$$/VectorizePanel/PathFidelitySlider=Paths:",bind_final: true,
+									alt: "$$$/VectorizePanel/PathFidelitySlider/ToolTip=Path Fitting (Higher value means tighter fit)",
+									slider_point: @up, min_max_filter: @PathFilter, bind: @PathFidelity,
+									unit: 'NumberEditUnit_Percent',digits: 4,decimal_places: 1,								
+									left_mini_label: "$$$/VectorizePanel/PathSlider/Left=Low", 
+									right_mini_label: "$$$/VectorizePanel/PathSlider/Right=High");
+
+					
+						combo_slider(name: "$$$/VectorizePanel/Corners=Corners:",
+										alt: "$$$/VectorizePanel/Corners/ToolTip=Corner Emphasis (Higher value means more corners)",
+										identifier: "AdvanceCornerSlider", bind_final: true,
+										slider_point: @up, min_max_filter: @CornerSliderFilter, bind: @CornerFidelity,
+										unit: 'NumberEditUnit_Percent',digits: 4,decimal_places: 1,																	
+										left_mini_label: "$$$/VectorizePanel/AdvanceCornerSlider/Left/Zero=Less",
+										right_mini_label: "$$$/VectorizePanel/AdvanceCornerSlider/Right/Hundred=More");
+										
+						combo_slider(name: "$$$/VectorizePanel/NoiseReduction=Noise:",
+										alt: "$$$/VectorizePanel/NoiseReduction/ToolTip=Reduces noise by ignoring areas of specified pixel size (Higher value means less noise)",
+										identifier: "AdvanceNoiseSlider", bind_final: true,
+										slider_point: @up, min_max_filter: @PathFilter, bind: @NoiseFidelity,
+										unit: 'NumberEditUnit_Pixel',digits: 4,																	
+										left_mini_label: "$$$/VectorizePanel/AdvanceNoiseSlider/Left/Zero=1",
+										right_mini_label: "$$$/VectorizePanel/AdvanceNoiseSlider/Right/Hundred=100");
+
+
+						row()
+						{
+							button_bar(identifier: "AdvanceSettingsOverlappingOrAbutting",
+										name: "$$$/VectorizePanel/Method=Method:",
+										alt: "$$$/VectorizePanel/Method/ToolTip=Choose a Tracing method ",
+										items: [
+												{image: {normal: "SP_AbuttingPaths_Md_N.png",dark_normal: "SP_AbuttingPaths_Md_N_D.png"} , show_border: true, value: 0, alt:"$$$/VectorizePanel/Abutting=Abutting (Creates cutout paths)"},
+												{image: {normal: "SP_StackingPaths_Md_N.png",dark_normal: "SP_StackingPaths_Md_N_D.png"} , show_border: true, value: 1, alt:"$$$/VectorizePanel/Overlapping=Overlapping (Creates stacked paths)"}
+												],
+										bind:@OverlappingOrAbutting);								
+						}
+					}
+					column()
+					{						
+						row()
+						{
+							checkbox(	identifier: "CreateFillsCheckBox",
+										bind: @CreateFill,
+										label:"$$$/VectorizePanel/AdvanceSettings/SettingsSection=Create:",
+										name: "$$$/VectorizePanel/CreateFill=Fills",
+										alt: "$$$/VectorizePanel/CreateFill/ToolTip=Create filled regions");
+									
+							checkbox(	identifier: "CreateStrokeCheckBox",
+										bind: @CreateStroke, 
+										name: "$$$/VectorizePanel/CreateStroke=Strokes",
+										alt: "$$$/VectorizePanel/CreateStroke/ToolTip=Create stroked paths");
+						}
+						
+											
+						unit_hot_number(identifier: "MaxWeight",
+									digits: 3,
+									min_value: 1, 
+									max_value: 100,									
+									stepper: true,
+									unit: "NumberEditUnit_Pixel",
+									bind: @MaxStrokeWeight, 
+									name: "$$$/VectorizePanel/MaxWeight=Stroke:",
+									alt: "$$$/VectorizePanel/MaxWeight/Tooltip=Maximum width in pixels that will be recognized and converted to stroked paths");
+									
+						checkbox(identifier: "AdvanceSettingsSnapCurvesToLines",
+								bind: @SnapCurvesToLines,
+								label: "$$$/VectorizePanel/Options=Options:",
+								name: "$$$/VectorizePanel/AdvanceSettingsSnapCurvesToLines=Snap Curves To Lines",
+								alt: "$$$/VectorizePanel/AdvanceSettingsSnapCurvesToLines/Tooltip=Replace slightly curved lines with straight lines");
+			
+						checkbox(identifier: "AdvanceSettingsIgnoreWhiteCheckBox",
+								bind: @IgnoreWhite,
+								name: "$$$/VectorizePanel/AdvanceSettingsIgnoreWhite=Ignore White",
+								alt: "$$$/VectorizePanel/AdvanceSettingsIgnoreWhite/ToolTip=Sets White colored Fills to None");
+					}
+				}
+				separator(orientation: @horizontal, horizontal: @align_fill);
+			
+				row()
+				{
+					row(child_vertical:@align_center, spacing: 10)
+					{
+						image(	identifier: "NoteImage",
+								alt: "$$$/VectorizePanel/NoteImage/ToolTip=Tracing result information",
+								image: {normal: "SP_Info_Sm_N.png",dark_normal:"SP_Info_Sm_N_D.png"}, guide_mask: [ @guide_label ]);
+								
+						row(horizontal:@align_left)
+						{
+							column()
+							{
+								static_text(identifier: "PathsInfo", name: "$$$/VectorizePanel/NumberofPathslabel=Paths:");
+								static_text(identifier: "AnchorsInfo", name: "$$$/VectorizePanel/NumberofAnchorPoints=Anchors:");
+							}
+							column()
+							{
+								static_text(identifier: "PathsInfoValue", name: @NumberofPaths);
+								static_text(identifier: "AnchorsInfoValue", name: @NumberofAnchors);
+							}
+						}
+					}
+					row(horizontal:@align_center)
+					{
+						column()
+						{
+							static_text(identifier: "ColorsInfo", name: "$$$/VectorizePanel/AdvanceSettings/ColorsStatistics=Colors:");
+						}
+						column()	
+						{
+							static_text(identifier: "ColorsInfoValue", name: @NumberofColors);
+						}
+					}			
+				}
+				separator(orientation: @horizontal, horizontal: @align_fill);
+				
+				row(vertical:@align_bottom, child_vertical: @align_center )
+				{
+					row(horizontal:@align_left)
+					{
+						checkbox(identifier: "AdvanceSettingsPreviewCheckBox",
+								guide_mask: [@guide_label],
+								bind: @ShowSuspend,
+								name: "$$$/VectorizePanel/PreviewCheckBox=Preview",
+								alt: "$$$/VectorizePanel/PreviewCheckBox/ToolTip=Preview the result of current settings");
+
+					}
+					row(horizontal:@align_right)
+					{
+						column()
+						{
+							button(	identifier: "AdvanceSettingsTraceButton", 
+									name: "$$$/VectorizePanel/TraceButton=Trace",
+									alt: "$$$/VectorizePanel/TraceButton/ToolTip=Trace the selected image using current settings");
+						}			
+					}
+				}			
+			}
+		}
+	}
+}
+

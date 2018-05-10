@@ -1,0 +1,19 @@
+sheet ColorGroupOptions
+{
+	interface:
+		cgNameString: "Color Group Name";
+		showWarning: false;
+		CreateFrom: empty;
+		errorTipString: "Error Tip";
+		ShowOptions: true;
+	logic:
+		relate
+		{
+			cgNameString <== cgNameString;
+			showWarning <== (cgNameString == "");
+		}
+	invariant:
+		error <== (cgNameString != "");
+	output:
+		result <== {dummy: cgNameString};
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+  <menuItem id="1" text="$$$/FWToolboxADM/Menu/ScreenMode/Normal=Normal Screen Mode"></menuItem>
+  <menuItem id="2" text="$$$/FWToolboxADM/Menu/ScreenMode/FullWithMenu=Full Screen Mode with Menu Bar"></menuItem>
+  <menuItem id="3" text="$$$/FWToolboxADM/Menu/ScreenMode/Full=Full Screen Mode"></menuItem>
+</menu>

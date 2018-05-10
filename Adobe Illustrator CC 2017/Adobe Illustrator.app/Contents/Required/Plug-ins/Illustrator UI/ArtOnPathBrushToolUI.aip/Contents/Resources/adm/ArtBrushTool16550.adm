@@ -1,0 +1,28 @@
+sheet ArtBrushToolOptions
+{
+interface:
+	HasPressure: true;
+	WidthPoints: true;
+	filter: {min_value: 1, max_value: 1000};
+    Width: 1;
+    UnitPercent: "NumberEditUnit_Percent";
+    pattern_popup_value: 0;
+	Proportional: false;
+	Overlap: empty;
+	colorization_item_value: 0;
+	OverlapFoldAdjustDefaultValue: 0;
+	Remember_Variation: 100;
+    unlink Variation: 1 <== (pattern_popup_value != 0 ) ? Variation : Remember_Variation;
+    DisabledList: [1, 2, 3, 4, 5, 6]  <== (HasPressure) ? ((WidthPoints) ? [] : [1]) : ((WidthPoints) ? [2, 3, 4, 5, 6] : [1, 2, 3, 4, 5, 6]);
+    preview_checkbox_checked: false;
+    flip_along_value: false;
+    flip_across_value: false;
+	min_max: 1;
+	
+	logic:
+	when ( ! (pattern_popup_value <= 1) ) relate
+	{
+		Variation		<== Remember_Variation;
+		Remember_Variation	<== Variation;
+	}
+}

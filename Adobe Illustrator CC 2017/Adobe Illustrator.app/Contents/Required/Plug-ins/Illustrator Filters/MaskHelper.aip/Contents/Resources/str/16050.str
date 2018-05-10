@@ -1,0 +1,28 @@
+/* [1] */
+-108
+/* [2] */
+$$$/MaskHelper/Str/Error/2/Mac=The filter cannot complete because there isn^}t enough memory (RAM) available.\n
+/* [3] */
+271
+/* [4] */
+$$$/MaskHelper/Str/Error/4/Mac=The filter cannot complete because there isn^}t enough memory (RAM) available.\n
+/* [5] */
+SEGM
+/* [6] */
+$$$/MaskHelper/Str/Error/6/Mac=The filter cannot complete because a path has too many anchor points.\n
+/* [7] */
+NESS
+/* [8] */
+$$$/MaskHelper/Str/Error/8/Mac=The filter cannot complete because a layer is locked or invisible.\n
+/* [9] */
+!sel
+/* [10] */
+$$$/MaskHelper/Str/Error/10/Mac=At least one mask must be selected in order to create a filled and/or stroked path for it.  The Select Masks filter will help.
+/* [11] */
+!stl
+/* [12] */
+$$$/MaskHelper/Str/Error/12=A fill or stroke needs to be defined before this filter can do anything. (Use the Paint Style panel.)
+/* [13] */
+<others>
+/* [14] */
+$$$/MaskHelper/Str/Error/14/Mac=The filter cannot complete because of an unknown error.\n

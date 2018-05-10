@@ -1,0 +1,19 @@
+sheet AreaTypeOptions
+{
+interface:
+		arrangement: 0;
+		arrangement2: 2;
+		valueTextFlowOverlay: 0;
+		EditNumberWidthValue: 0;
+		EditNumberHeightValue: 0;
+		EditNumberRowNumberValue: 0;
+		EditNumberRowSpanValue: 0;
+		EditNumberRowGutterValue: 0;
+		EditNumberColNumberValue: 0;
+		EditNumberColSpanValue: 0;
+		EditNumberColGutterValue: 0;
+		EditNumberInsetValue: 0;
+		EditNumberMinOffsetValue: 0;
+		IsWorldReady: false;
+		storydir: 0;
+}

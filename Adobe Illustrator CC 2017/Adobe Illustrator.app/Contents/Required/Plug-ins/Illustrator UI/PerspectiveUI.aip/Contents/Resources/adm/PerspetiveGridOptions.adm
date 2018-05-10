@@ -1,0 +1,9 @@
+sheet PerspetiveGridOptions
+{
+	interface:
+		PlaneSwitcherVisible: true;
+		unlink PlaneSwitcherPosition: 0 <== PlaneSwitcherVisible ? PlaneSwitcherPosition : RememberPlaneSwitcherPosition;
+		RememberPlaneSwitcherPosition: 0 <== PlaneSwitcherVisible ? PlaneSwitcherPosition : RememberPlaneSwitcherPosition;
+		infObjects: true;
+		infGridLines: true;
+}

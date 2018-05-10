@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+	<menuItem id="1" text="$$$/Pathfinder/Mnu/16001/1=&amp;Trap..."></menuItem>
+	<separator></separator>
+	<menuItem id="3" text="$$$/Pathfinder/Mnu/16001/2=&amp;Repeat Pathfinder"></menuItem>
+	<menuItem id="4" text="$$$/Pathfinder/Mnu/16001/3=&amp;Pathfinder Options..."></menuItem>
+	<separator></separator>
+	<menuItem id="6" text="$$$/Pathfinder/Mnu/16001/4=&amp;Make Compound Shape"></menuItem>
+	<menuItem id="7" text="$$$/Pathfinder/Mnu/16001/5=Release &amp;Compound Shape"></menuItem>
+	<menuItem id="8" text="$$$/Pathfinder/Mnu/16001/6=&amp;Expand Compound Shape"></menuItem>
+</menu>

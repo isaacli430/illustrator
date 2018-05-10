@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ExtensionManifest Version="7.0" ExtensionBundleId="com.adobe.illustrator.OnBoardingForLearnPanel" ExtensionBundleVersion="1.0.0"
+		ExtensionBundleName="OnBoardingForLearnPanel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ExtensionList>
+		<Extension Id="com.adobe.illustrator.OnBoardingForLearnPanel" Version="1.0" />
+	</ExtensionList>
+	<ExecutionEnvironment>
+		<HostList>
+			<Host Name="ILST" Version="19.0" />
+		</HostList>
+		<LocaleList>
+			<Locale Code="All" />
+		</LocaleList>
+		<RequiredRuntimeList>
+			<RequiredRuntime Name="CSXS" Version="5.0" />
+
+		</RequiredRuntimeList>
+	</ExecutionEnvironment>
+	<DispatchInfoList>
+		<Extension Id="com.adobe.illustrator.OnBoardingForLearnPanel">
+			<DispatchInfo >
+				<Resources>
+				<MainPath>./index.html</MainPath>
+				<ScriptPath>./OnBoarding.jsx</ScriptPath>
+				</Resources>
+				<Lifecycle>
+					<AutoVisible>false</AutoVisible>
+				</Lifecycle>
+				<UI>
+					<Type>Panel</Type>
+					<Menu>Learn</Menu>
+					<Geometry>
+		            	<Size>
+		              	  <Height>391</Height>
+		            	  <Width>333</Width>
+		            	</Size>
+		            	<MinSize>
+		            	  <Height>391</Height>
+		            	  <Width>333</Width>
+		            	</MinSize>
+		          	</Geometry>
+				</UI>
+			</DispatchInfo>
+		</Extension>
+	</DispatchInfoList>
+</ExtensionManifest>

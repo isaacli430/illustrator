@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<views
+    xmlns="http://ns.adobe.com/metadata/ui/1.0/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:xmp="http://ns.adobe.com/xap/1.0/"
+	xmlns:xmpRights="http://ns.adobe.com/xap/1.0/rights/"
+	xmlns:photoshop="http://ns.adobe.com/photoshop/1.0/">
+
+<!-- 
+	Basic View
+	Contains the basic metadata properties.
+	TODO remove labels and retrieve them from the schema
+-->	
+<view name="com.adobe.xmp.view.basic"
+      label="$$$/metadataui/view/basic_label=Basic"
+      description="$$$/metadataui/view/basic_description=Contains the basic metadata properties"
+	  version="0.9.0">
+
+	<!-- type localized -->
+	<property
+		name="dc:title"
+		label="Document Title"
+		description="$$$/xmp/dc/title_description=The title of the document, or the name given to the resource. Typically, it will be a name by which the resource is formally known."
+		autoCompletion="true"/>
+
+	<!-- type Seq-array of Text -->
+    <property
+		name="dc:creator"
+		label="Creator"
+		autoCompletion="true"
+		hint="$$$/metadataui/view/basic/CreatorHint=Commas can be used to separate multiple creators"/>
+
+	<!-- type Text -->
+    <property 
+		name="photoshop:AuthorsPosition"
+		label="Author's Position"
+		autoCompletion="true"/>
+	
+	<!-- type localized -->
+    <property
+		name="dc:description"
+		label="Description"
+		multiLines="3"
+		autoCompletion="true"/>
+	
+	<!-- type Real -->
+    <property
+		name="xmp:Rating"
+		label="Rating"/>
+
+	<!-- type Text -->
+    <property
+		name="photoshop:CaptionWriter"
+		label="Caption Writer"
+		autoCompletion="true"/>
+	
+	<!-- type Bag array of Text -->
+    <property
+		name="dc:subject"
+		label="Keywords:"
+  		multiLines="3"
+		autoCompletion="true"
+		hint="$$$/metadataui/view/hint/comma_separated_array=Semicolons or commas can be used to separate multiple values"/>
+	
+    <separator/>
+
+	<!-- type Boolean -->
+    <property
+		name="xmpRights:Marked"
+		label="Copyright"
+		widget="dropdown"
+		openChoice="false">
+		<!-- the label is displayed while the value is written to the XMP -->
+		<choice label="$$$/xmp/xmpRights/Marked_Unknown=Unknown" value=""/>
+		<choice label="$$$/xmp/xmpRights/Marked_Copyrighted=Copyrighted" value="True"/>
+		<choice label="$$$/xmp/xmpRights/Marked_Public Domain=Public Domain" value="False"/>
+	</property>
+	
+	<!-- type localized -->
+    <property
+		name="dc:rights"
+		label="Rights"
+		autoCompletion="true"/>
+
+	<!-- type URL -->
+    <property
+		name="xmpRights:WebStatement"
+		label="Web Statement"
+		autoCompletion="true"/>
+	
+	<!-- shortcut for widget "com.adobe.xmp.widgets.separator" -->
+    <separator/>
+
+	<!-- type Date -->
+    <property
+		name="xmp:CreateDate"
+		label="Creation Date"
+		readOnly="true"/>
+
+	<!-- type Date -->
+    <property
+		name="xmp:ModifyDate"
+		label="Modification Date"
+		readOnly="true"/>
+		  
+	<!-- type Text -->
+    <property
+		name="xmp:CreatorTool"
+		label="Creator Tool"
+		readOnly="true"/>
+	
+	<!-- type Text -->
+    <property
+		name="dc:format"
+		label="Format"
+		readOnly="true"/>
+		  
+</view>
+
+</views>

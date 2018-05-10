@@ -1,0 +1,16 @@
+/* [1] */
+!MEM
+/* [2] */
+$$$/AddArrow/Str/Error/Memory=The filter cannot complete because there isn't enough memory (RAM) available.
+/* [3] */
+271
+/* [4] */
+$$$/AddArrow/Str/Error/Memory=The filter cannot complete because there isn't enough memory (RAM) available.
+/* [5] */
+!sel
+/* [6] */
+$$$/AddArrow/Str/Error/OpenPath=You must select an open path first.
+/* [7] */
+<others>
+/* [8] */
+$$$/AddArrow/Str/Error/Unknown=The filter cannot complete because of an unknown error.

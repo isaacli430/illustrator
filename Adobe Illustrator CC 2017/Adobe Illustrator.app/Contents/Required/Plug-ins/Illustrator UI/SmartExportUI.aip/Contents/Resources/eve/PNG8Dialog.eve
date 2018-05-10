@@ -1,0 +1,65 @@
+layout PNG8Dialog
+{
+    view subview(identifier: "AIEveSubView",
+						placement: @place_column,
+						layout_theme: @dialog_large,
+						spacing: @inter_group_spacing,
+						show_border: false	)
+    {   
+		
+		popup(identifier: "antiAliasOption",
+			bind:@AntiAliasOption,
+			name: "$$$/SmartExportUI/PNG8Dialog/AntiAlias=&Anti-aliasing:", 
+			select_on_key: true, 
+			include_custom_item: false, 
+			items: [{name: "$$$/SmartExportUI/PNG8Dialog/Antialiasing/None=None", value: 0}, 
+			{name: "$$$/SmartExportUI/PNG8Dialog/Antialiasing/ArtOptimized=Art Optimized (Supersampling)", value: 1}, 
+			{name: "$$$/SmartExportUI/PNG8Dialog/Antialiasing/TypeOptimized=Type Optimized (Hinted)", value: 2}]); 
+	
+		unit_hot_number
+		(
+			identifier:"Colors",
+			name:"$$$/SmartExportUI/PNG8Dialog/ColorsLabel=Colors:",
+			bind:@Colors,
+			decimal_places:0,
+			digits: 2,
+			stepper: true,
+			min_value:@ColorsItemMinimum,
+			max_value:@ColorsItemMaximum,
+			popupList:true,
+			items:@ColorsPopupItems
+		);
+	
+		checkbox(bind: @Interlace,
+				horizontal: @align_left,
+				name: "$$$/SmartExportUI/PNG8Dialog/Interlace=Interlace");
+
+		row(horizontal: @align_fill)
+		{       
+			checkbox(
+				horizontal: @align_left,
+				bind:@Transparent,
+				name: "$$$/SmartExportUI/PNG8Dialog/Transparent=Transparent");
+
+			popup
+			(   identifier: "MattePopup",
+				bind:@MattePopup,
+				popup_maximum_width_chars: 5, 
+				popup_minimum_width_chars: 5,
+				include_custom_item: false,
+				name:"$$$/SmartExportUI/PNG8Dialog/MatteLabel=Matte:",
+				items:@MattePopupItems
+			);
+			swatch(identifier: "MatteItemColorSwatch", vertical:@align_center, border:@border_normal, width: 15, height: 15);   
+		} 
+
+		optional(bind: @ShowOkCancelButton, value: true)
+		{
+			row(horizontal: @align_right, vertical: @align_bottom, reverse: os == @mac, spacing: @related_spacing)
+			{
+				button(identifier: "okButton", commit_button: true, name: "$$$/gOK=OK");
+				button(identifier: "cancelButton", commit_button: true, name: "$$$/gCancel=Cancel");
+			}
+		}
+    }
+}

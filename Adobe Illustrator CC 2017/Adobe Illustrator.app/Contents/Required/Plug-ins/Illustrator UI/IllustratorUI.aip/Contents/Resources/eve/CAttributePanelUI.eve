@@ -1,0 +1,97 @@
+layout AttributePanelUI
+{
+    view subview(identifier: "AIEveSubView", width: gStandardMinPanelWidth, 
+				 placement: @place_column,
+				 layout_theme: @panel,
+				 show_border: false)
+    {			
+       	row(child_horizontal: @align_left, vertical: @align_top, child_vertical: @align_top)
+		{				
+			column(child_horizontal: @align_left, vertical: @align_center, child_vertical: @align_center)
+			{
+				checkbox(identifier: "overPrintFill", 
+                       guide_mask: [@guide_label],
+                       name: "$$$/IllustratorUI/str/Attribute/Panel/overPrintFillCheckBox=Overprint Fill");
+				checkbox(identifier: "overPrintStroke", 
+                      guide_mask: [@guide_label],                                                          
+                      name: "$$$/IllustratorUI/str/Attribute/Panel/overPrintStrokeCheckBox=Overprint Stroke");
+			}
+            overlay(child_horizontal: @align_right, vertical: @align_top, child_vertical: @align_top)
+            {
+				panel(horizontal: @align_fill, bind: @showWhiteWarning, value: 0, margin: 0)
+				{
+				}
+				panel(horizontal: @align_fill, bind: @showWhiteWarning, value: 1, margin: 0)
+				{
+					info_icon(identifier: "WarningIcon1", icontype: "warning", size: "small", horizontal: @align_right,
+					alt: "$$$/_AttributePalette/Str/16011=Selection includes overprinted process white objects");  
+				}
+				panel(horizontal: @align_fill, bind: @showWhiteWarning, value: 2, margin: 0)
+				{
+					info_icon(identifier: "WarningIcon2", icontype: "warning", size: "small", horizontal: @align_right,
+					alt: "$$$/_AttributePalette/Str/16012=In RGB documents, overprinting only affects spot colors");  
+				}				
+			}
+		}		
+			
+		optional(bind: @ShowButtonbars, horizontal: @align_fill)
+		{
+			separator(orientation: @horizontal, vertical: @align_center, horizontal: @align_fill);
+			row(horizontal: @align_fill)
+			{
+			button_bar(identifier: "CenterShowBBar", horizontal: @align_left,
+							   items: [
+									   {image: {normal: "SP_DontShowCenter_SM_N.png" , dark_normal: "SP_DontShowCenter_SM_N_D.png"}, show_border: true, value: 0, alt:  "$$$/_AttributePalette/Str/16006=Don't Show Center"},
+									   {image: {normal: "SP_ShowCenter_Sm_N.png" , dark_normal: "SP_ShowCenter_Sm_N_D.png"}, show_border: true, value: 1, alt: "$$$/_AttributePalette/Str/16007=Show Center"}                              
+							   ]
+						  );
+			
+			button_bar(identifier: "ReversePathShowBBar", horizontal: @align_center,
+							   items: [
+									   {image: {normal: "SP_ReversePathOff_Sm_N.png" , dark_normal: "SP_ReversePathOff_Sm_N_D.png"}, show_border: true, value: 0, alt:  "$$$/_AttributePalette/Str/16008=Reverse Path Direction Off"},
+									   {image: {normal: "SP_ReversePathOn_SM_N.png" , dark_normal: "SP_ReversePathOn_SM_N_D.png"}, show_border: true, value: 1, alt: "$$$/_AttributePalette/Str/16009=Reverse Path Direction On"}                              
+							   ]
+						  );
+			button_bar(identifier: "FillRuleShowBBar", horizontal: @align_right,
+							   items: [
+									   {image: {normal: "SP_NonZeroWindingFill_Sm_N.png" , dark_normal: "SP_NonZeroWindingFill_Sm_N_D.png"}, show_border: true, value: 0, alt: "$$$/_AttributePalette/Str/16013=Use Non-Zero Winding Fill Rule"},
+									   {image: {normal: "SP_EvenOddFillRule_Sm_N.png" , dark_normal: "SP_EvenOddFillRule_Sm_N_D.png"}, show_border: true, value: 1, alt: "$$$/_AttributePalette/Str/16014=Use Even-Odd Fill Rule"}                              
+							   ]
+						  );
+			}
+			separator(orientation: @horizontal, vertical: @align_center, horizontal: @align_fill);
+			row(horizontal: @align_fill, vertical: @align_center, child_vertical: @align_center)
+			{
+				popup(identifier: "imageMapPopUp", horizontal: @align_fill,
+						   name: "$$$/IllustratorUI/str/Attribute/Panel/imageMapPopUp=Image Map:",
+						   include_custom_item: false,
+						   items: [ { name: "$$$/_AttributePalette/Mnu/ImageMap/1=None", value: 0},
+											{ name: "$$$/_AttributePalette/Mnu/ImageMap/2=Rectangle", value: 1},
+											{ name: "$$$/_AttributePalette/Mnu/ImageMap/3=Polygon", value: 2 }]);
+
+				button(identifier: "browserButton",
+						   action: @browserAction,
+						   horizontal: @align_right,
+						   image: {normal: "SP_Browser_Md_N.png", dark_normal: "SP_Browser_Md_N_D.png"},
+						   alt: "$$$/gBrowser=Browser");
+			}
+			 combobox(identifier: "URLComboBox",
+				  name: "$$$/IllustratorUI/str/Attribute/Panel/URL=URL:",
+				  horizontal: @align_fill,       
+				  popup_maximum_width_chars: 10,
+				  max_characters: 256);
+		}
+		optional(bind: @ShowNote)
+		{
+			edit_text(identifier: "NoteList",
+					theme_font_size: @small,
+					guide_mask: [@guide_label],
+					orientation: "vertical",
+					height: 100,	
+					lines: 5,
+					scrollable: true, 
+					max_characters: 250,
+					horizontal: @align_fill);
+		}		
+    }
+}

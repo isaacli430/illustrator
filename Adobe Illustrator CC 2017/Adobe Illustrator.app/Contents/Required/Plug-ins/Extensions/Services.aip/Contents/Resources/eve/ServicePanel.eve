@@ -1,0 +1,11 @@
+layout ServicePanel
+{
+    view subview(identifier: "AIEveSubView",
+				 placement: @place_column,
+				 layout_theme: @panel,
+				 show_border: false,
+				 child_vertical: @align_center)
+	{
+	
+	}
+}

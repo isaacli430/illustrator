@@ -1,0 +1,18 @@
+sheet touch_smooth_tool
+{
+	interface:
+		showConstrainIcon: false;
+		dummyShowConstrainIcon:false;
+		Width: 0;
+		Height: 0;
+		Radius: 0;
+		constrain: 1;
+		logic:
+		when (dummyShowConstrainIcon) relate
+		{
+			Width <== Height * constrain;
+			Height <== Width / constrain;
+		}
+
+
+}

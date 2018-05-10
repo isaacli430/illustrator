@@ -1,0 +1,14 @@
+/* [1] */
+$$$/Colors/Str/ColorsError/1=You must select a path first.
+/* [2] */
+$$$/Colors/Str/ColorsError/2=At least three paths must be selected for this filter to work.
+/* [3] */
+$$$/Colors/Str/ColorsError/3=Compound paths are not supported by this filter.
+/* [4] */
+$$$/Colors/Str/ColorsError/4=Patterns, global colors and gradients cannot be processed by this filter.
+/* [5] */
+$$$/Colors/Str/ColorsError/5=No invertible colors found.
+/* [6] */
+$$$/Colors/Str/ColorsError/6=Global colors, gradients, and patterns will not be inverted.
+/* [7] */
+$$$/Colors/Str/ColorsError/7=Gradients and patterns will not be converted.

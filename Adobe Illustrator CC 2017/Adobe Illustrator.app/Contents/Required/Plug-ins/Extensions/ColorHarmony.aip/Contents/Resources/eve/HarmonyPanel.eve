@@ -1,0 +1,113 @@
+layout HarmonyPanel
+{
+ 	view subview(identifier: "HarmonySubView",
+			 child_horizontal: @align_fill,
+			 layout_theme: @panel,
+			 show_border: false,
+			 placement: @place_column,
+			 margin: gPanelToolbarSubviewMargin)
+   	{		
+		panel(value: true, margin: 0, horizontal:@align_fill, vertical: @align_top, child_vertical: @align_center, width: 90, height: 25, placement: @place_row)
+		{
+			swatch(identifier: "SyncBaseButtonID"
+						,wants_focus: false
+						,alt: "$$$/ColorHarmonies/ColorGuide/Tooltips/SyncBase=Set base color to the current color"
+						,guide_mask: [ @guide_label ]
+						,border: @border_normal);
+			
+			subview(identifier: "RulePickerContainerID", margin: 0, spacing: 0, horizontal: @align_fill)
+			{	
+				panel(margin: 0, spacing: 0, height: 26);
+			}
+
+			optional( bind: @ShowLargePanel, value: false, placement: @place_row, horizontal: @align_right)
+			{
+				row(spacing: gPanelToolbarIconSpacing, horizontal: @align_right)
+				{
+					button(identifier: "ShowHarmonyDialog_minimizedStateID",
+						action: @ShowHarmonyDialogAction,
+						image: {normal: "SP_LaunchLiveColor_Md_N.png", dark_normal: "SP_LaunchLiveColor_Md_N_D.png"},
+						alt:@TipString,
+						wants_focus: false,
+						horizontal: @align_right);
+
+					button(identifier: "SaveToSwatches_minimizedStateID",
+						action: @SaveToSwatchesAction,
+						image: {normal: "SP_NewColorGroup_Md_N.png", dark_normal: "SP_NewColorGroup_Md_N_D.png"},
+						alt: "$$$/ColorHarmonies/ColorGuide/Tooltips/SaveSwatches=Save color group to Swatch panel",
+						wants_focus: false,
+						horizontal: @align_right);
+				}	
+				resize_gripper_gap(horizontal: @align_right);
+			}			
+		}
+		optional(bind: @ShowLargePanel, value: true)
+		{
+			row(child_horizontal: @align_fill, horizontal: @align_fill, spacing: 0, margin: 0, guide_mask: [ @guide_label ])
+			{
+				row(margin:0, guide_mask: [ @guide_label ])
+				{
+					static_text(identifier: "ColorGuideVariationLeftTextID"
+							,name: @ColorGuideVariationLeftTextCell
+							,horizontal: @align_center, guide_mask: [ @guide_label ]);
+				}			
+				
+				button(identifier :"ActiveColorsIndicatorID"
+							,image: {normal: "ActiveColorsIndicator.png", dark_normal: "ActiveColorsIndicator_D.png"}
+							,show_border: false
+							,wants_focus: false
+							,alt: "$$$/ColorHarmonies/ColorGuide/Tooltips/ActiveColorsIndicator=Active Colors"
+							,horizontal: @align_center
+							,vertical: @align_bottom);
+				
+				row(margin:0, guide_mask: [ @guide_label ])
+				{
+					static_text(identifier: "ColorGuideVariationRightTextID"
+							,name: @ColorGuideVariationRightTextCell
+							,horizontal: @align_center, guide_mask: [ @guide_label ]);
+				}
+			}
+			column(child_horizontal: @align_fill, horizontal: @align_fill, vertical: @align_fill, spacing: gPanelToolbarTopSpacing)
+			{
+				multicolumn_tree(horizontal: @align_fill, vertical: @align_fill, identifier: "VariationGridID");
+			
+				buttongroup(vertical: @align_bottom, horizontal: @align_fill,spacing: gPanelToolbarIconSpacing, child_width: gPanelToolbarIconWidth, child_height: gPanelToolbarIconHeight)
+				{
+					popup(identifier: "SwatchLibPopupID",
+								image: {normal: "SP_LimitToLibNotEnabledTri_Wi_N.png", dark_normal: "SP_LimitToLibNotEnabledTri_Wi_N_D.png"},
+								alt: "$$$/ColorHarmonies/HarmonyDialog/Tooltips/LimitToLibrary=Limits the color group to colors in a swatch library",
+								wants_focus: false,
+								include_custom_item: false,
+								horizontal: @align_left,
+								vertical: @align_fill);
+								
+					static_text(identifier: "SwatchLibNameID",
+								name: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+								horizontal: @align_left,
+								max_characters: 16,
+								vertical: @align_center);
+								
+					row(spacing: gPanelToolbarIconSpacing, horizontal: @align_right)
+					{
+						button(identifier: "ShowHarmonyDialogID",
+									action: @ShowHarmonyDialogAction,
+									image: {normal: "SP_LaunchLiveColor_Wi_N.png", dark_normal: "SP_LaunchLiveColor_Wi_N_D.png"},
+									alt:@TipString,
+									wants_focus: false,
+									horizontal: @align_right);
+
+						button(identifier: "SaveToSwatchesID",
+									action: @SaveToSwatchesAction,
+									image: {normal: "SP_NewColorGroup_Wi_N.png", dark_normal: "SP_NewColorGroup_Wi_N_D.png"},
+									alt: "$$$/ColorHarmonies/ColorGuide/Tooltips/SaveSwatches=Save color group to Swatch panel",
+									wants_focus: false,
+									horizontal: @align_right);	
+					}
+		
+					resize_gripper_gap(horizontal: @align_right);
+				}
+			}
+		}
+	}
+}
+

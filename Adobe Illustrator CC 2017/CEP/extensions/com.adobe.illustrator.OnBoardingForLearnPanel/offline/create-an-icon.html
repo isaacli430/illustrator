@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Create an Icon</title>
+<link rel="stylesheet" type="text/css" href="css\inner.css">
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/inner.js"></script>
+<script type="text/javascript" src="js/CSInterface.js"></script>
+<script>
+var CSLibrary = new CSInterface();
+
+function CreateAnIcon() {
+	var stepEvent = new CSEvent("OnBoardingEvent", "APPLICATION");
+	var dataMap = {
+					"Type" : "ShowIAM",
+					"Data" : "LearnPanelStart"
+				};
+	stepEvent.data = JSON.stringify(dataMap);
+	CSLibrary.dispatchEvent(stepEvent);
+	console.log ('Create Icon Start');
+
+	//parent.location='create-an-icon.html';
+	getRelativeUrlAndRedirect('create-an-icon.html');
+}
+
+function Projects() {
+	getRelativeUrlAndRedirect('learn-panel-projects.html');
+}
+</script>
+<!--<script src="//use.typekit.com/whd3raw.js"></script>
+<script>try{Typekit.load();}catch(e){}</script> -->
+</head>
+<body>
+<div class="top">
+	<div class="head"  style="cursor:pointer;" onClick="Projects()"><img src="images\back.svg" width="6"/>&nbsp; Projects</div>
+
+	<div id="gate">
+	<div id="play"><p style="text-align: center; background-color: #282828; margin-top: 0pt;"><img src="images\gate.png"; width="250pt" style="vertical-aligh: center"/></p></div>
+    <div id="content">
+	<p style="color: #3f3f3f; font-size: 14px;">Follow the instructions in this panel.</p>
+	<p style="color: #3f3f3f; font-size: 14px;">Watch for helpful <img src="images\cues.svg" width="45pt" style="vertical-align:top"/></p>
+	<p style="color: #3f3f3f; font-size: 18px; margin-top: 5px"><b>Ready?</b></p>
+	</div>
+	</div>
+	<div id="first" style="display:none;">
+	<div id="play"><p style="text-align: center; background-color: #282828; margin-top: 0pt;"><img src="images\create.gif"; width="250pt" style="vertical-aligh: center"/></p></div>
+    <div id="content">
+	<p style="color: #3f3f3f; font-size: 14px; margin-bottom: 15px;"><b>Draw basic shapes (1/5)</b></p>
+    <p style="font-size: 12px;">Draw the basic shapes used as building blocks for the camera icon. Use the Shape tool to draw over the dotted lines.</p>
+	</div>
+	</div>
+	<div id="second" style="display:none;">
+	<div id="play"><p style="text-align: center; background-color: #282828; margin-top: 0pt;"><img src="images\selection.gif"; width="250pt" style="vertical-aligh: center"/></p></div>
+    <div id="content">
+	<p style="color: #3f3f3f; font-size: 14px; margin-bottom: 15px;"><b>Select shapes (2/5)</b></p>
+    <p style="font-size: 12px;">Select the shapes you have drawn for the next step. Click the Selection tool and drag it across the shapes you drew.</p>
+	</div>
+	</div>
+	<div id="third" style="display:none;">
+	<div id="play"><p style="text-align: center; background-color: #282828; margin-top: 0pt;"><img src="images\shape-builder.gif"; width="250pt" style="vertical-aligh: center"/></p></div>
+    <div id="content">
+	<p style="color: #3f3f3f; font-size: 14px; margin-bottom: 15px;"><b>Merge shapes (3/5)</b></p>
+    <p style="font-size: 12px;">Start merging shapes now. Use the Shape Builder tool (Shift + M) to paint over areas of the shape you want to merge.</p>
+	</div>
+	</div>
+	<div id="fourth" style="display:none;">
+	<div id="play"><p style="text-align: center; background-color: #282828; margin-top: 0pt;"><img src="images\colour.gif"; width="250pt" style="vertical-aligh: center"/></p></div>
+    <div id="content">
+	<p style="color: #3f3f3f; font-size: 14px; margin-bottom: 15px;"><b>Color your icon (4/5)</b></p>
+    <p style="font-size: 12px;">Color the shape to make the icon pop. Select your camera icon, and then click a color from the Swatches panel to color the icon.</p>
+	</div>
+	</div>
+	<div id="fifth" style="display:none;">
+	<div id="play"><p style="text-align: center; background-color: #282828; margin-top: 0pt;"><img src="images\export.gif"; width="250pt" style="vertical-aligh: center"/></p></div>
+    <div id="content">
+	<p style="color: #3f3f3f; font-size: 14px; margin-bottom: 15px;"><b>Good to go! (5/5)</b></p>
+    <p style="font-size: 12px;">Woo hoo! Your camera icon is ready! Select the finished icon using the Selection tool (V), and click File > Export Selection.</p>
+	</div>
+	</div>
+	<button id="start" onClick="first();">Let's go!</button>
+	<button id="prev" onClick="first();" style="opacity: 0;">Prev</button>
+	<button id="next" onClick="second();" style="opacity: 0;">Next</button>
+	<p>&nbsp;</p>
+</div>
+</body>
+</html>

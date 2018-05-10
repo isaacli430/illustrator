@@ -1,0 +1,114 @@
+layout PlanarConversionError
+{
+    view subview(identifier: "AIEveSubView",
+                 layout_theme: @dialog_large,
+                 placement: @place_column,
+				 show_border: false,
+				 spacing: @unrelated_spacing)
+    {
+		column(horizontal: @align_fill)
+		{
+			row(horizontal: @align_fill, spacing: @label_widget_spacing)
+			{
+				info_icon(icontype: "warning");
+				column(horizontal: @align_fill, child_horizontal: @align_fill)
+				{
+					static_text(bold: true,
+								identifier: "tip1heading1",
+								name: "$$$/PlanetX/ConversionError/Heading=The Live Paint Bucket only colors Live Paint groups.");
+
+					static_text(identifier: "tip1body1",
+								characters:1,
+								name: "$$$/PlanetX/ConversionError/body=Select the collection of paths that make up the artwork you want to color. Then click with the Live Paint Bucket to make a Live Paint group.");
+				}
+			}
+			
+			row()
+			{
+				column(horizontal: @align_left, spacing: @label_widget_spacing)
+				{
+					image(identifier: "Tip1_Image1", image: "Tip1_Image1.png");
+
+					row(horizontal: @align_fill, child_vertical: @align_top, spacing: @label_widget_spacing)
+					{
+						column()
+						{
+							static_text(identifier: "PictureDesc11StaticText",
+										name: "$$$/PlanetX/ConversionError/PictureDescNum1=1.");
+						}
+						column(horizontal: @align_fill)
+						{
+							static_text(horizontal: @align_fill,
+										characters:1,
+										adjust_baseline_for_single_line_text: false,
+										identifier: "PictureDesc12StaticText",
+										name: "$$$/PlanetX/ConversionError/PictureDesc1=Select a collection of paths");
+						}			
+					}
+				}
+
+				column(horizontal: @align_center, spacing: @label_widget_spacing)
+				{
+					image(identifier: "Tip1_Image2", image: "Tip1_Image2.png");
+
+					row(horizontal: @align_fill, child_vertical: @align_top, spacing: @label_widget_spacing)
+					{
+                		column()
+						{
+							static_text(identifier: "PictureDesc21StaticText",
+										name: "$$$/PlanetX/ConversionError/PictureDescNum2=2.");
+						}
+						column(horizontal: @align_fill)
+						{
+							static_text(horizontal: @align_fill,
+										characters:1,
+										adjust_baseline_for_single_line_text: false,
+										identifier: "PictureDesc22StaticText",
+										name: "$$$/PlanetX/ConversionError/PictureDesc2=Click with the Live Paint Bucket");
+						}
+					}
+				}
+	
+		        column(horizontal: @align_right, spacing: @label_widget_spacing)
+			    {
+				    image(identifier: "Tip1_Image3", image: "Tip1_Image3.png");
+	
+					row(horizontal: @align_fill, child_vertical: @align_top, spacing: @label_widget_spacing)
+			        {
+				    	column()
+						{
+							static_text(identifier: "PictureDesc31StaticText",
+										name: "$$$/PlanetX/ConversionError/PictureDescNum3=3.");
+						}
+						column(horizontal: @align_fill)
+						{
+							static_text(horizontal: @align_fill,
+										characters:1,
+										adjust_baseline_for_single_line_text: false,
+										identifier: "PictureDesc32StaticText",
+										name: "$$$/PlanetX/ConversionError/PictureDesc3=Paint areas between paths");
+						}			
+					}
+				}
+			}
+		}
+		
+        row(horizontal: @align_fill, child_vertical: @align_center)
+        {
+			row(spacing: @label_widget_spacing,child_vertical: @align_center)
+			{
+				checkbox(identifier: "dontShowAgainCB", horizontal: @align_left,
+							name: "$$$/PlanetX/ConversionError/DoNotShowAgain=Don't Show Again",
+							set_default_focus: true);
+				info_icon( icontype: "note", size: "small", horizontal: @align_left,
+							alt: "$$$/PlanetX/ConversionError/DoNotShowAgainTip=To view this tip again, double-click the Live Paint Bucket tool.");
+			}
+			
+            button(default: true,
+                   commit_button: true,
+                   horizontal: @align_right,
+                   identifier: "okButton",
+                   name: "$$$/gOK=OK");
+        }
+	}    
+}

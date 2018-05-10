@@ -1,0 +1,174 @@
+layout TransformPanel
+{
+	view subview(identifier: "AIEveSubView",
+				 layout_theme: @panel, width: gStandardMinPanelWidth, 
+				 show_border: false,
+				 child_vertical: @align_center)
+    {
+    row(child_vertical: @align_fill)
+    {
+		column()
+		{
+			row()
+			{	
+				overlay(vertical: @align_fill)
+				{
+					panel(bind: @showNinePinPoint, value:0)
+					{
+						pin_selector(identifier: "ninePointPinSelector",
+								 alt: "$$$/TransformPalett/Str/ToolTip/ProxyItem=Reference Point",
+								 wants_focus: false,
+								 bind: @ninePointPinSelector,
+								 vertical: @align_center);
+					}
+		
+					panel(bind: @showNinePinPoint, value:1)
+					{
+						image(alt: "$$$/TransformPalett/Str/ToolTip/ProxyItem=Reference Point",
+							image: {normal:"SP_ReferencePoint_22x22_N.png",dark_normal:"SP_ReferencePoint_22x22_N_D.png"},
+							wants_focus: false,
+							vertical: @align_center,
+							identifier: "OnePinPoint"); 
+						
+					}
+					panel(bind: @showNinePinPoint, value:2)
+					{
+							image(alt: "$$$/TransformPalett/Str/ToolTip/RegIconItem=Symbol Registration Point",
+								image: {normal:"SP_RegistrationPoint_22x22_N.png",dark_normal:"SP_RegistrationPoint_22x22_N_D.png"},
+								wants_focus: false,
+								vertical: @align_center,
+								identifier: "Symbol_Reg_Mark"); 
+							
+					}
+				}
+				row(spacing: 3)
+				{
+					row(spacing: @inter_group_spacing)
+					{
+						column(horizontal: @align_left)
+						{
+							unit_hot_number(name: "$$$/TransformPalette/16000/Lbl1=X:",
+										alt: "$$$/TransformPalett/Str/ToolTip/XTextItem=X Value",
+										unit:"CurrentDocumentUnit",
+										max_value: 16384, min_value: -16384,
+										decimal_places: 3,	digits: 4,
+										wants_focus: true,
+										identifier: "XPosition",
+										bind_final: true,
+										value: 0);
+
+							unit_hot_number(name: "$$$/TransformPalette/16000/Lbl2=Y:",
+										alt: "$$$/TransformPalett/Str/ToolTip/YTextItem=Y Value",
+										decimal_places: 3,	digits: 4,
+										wants_focus: true,
+										unit:"CurrentDocumentUnit",
+										max_value: 16384,
+										min_value: -16384,
+										bind_final: true,
+										identifier: "YPosition",
+										value: 0);
+						}
+						column(horizontal: @align_right)
+						{
+							unit_hot_number(name: "$$$/TransformPalette/16000/Lbl3=W:",
+										alt: "$$$/TransformPalett/Str/ToolTip/WidthTextItem=W Value",
+										wants_focus: true,
+										unit:"CurrentDocumentUnit",
+										max_value: 16384,
+										min_value: 0,
+										decimal_places: 3,	digits: 4,
+										bind: true, value: 0,
+										identifier: "Width");
+
+							unit_hot_number(name: "$$$/TransformPalette/16000/Lbl4=H:",
+										alt: "$$$/TransformPalett/Str/ToolTip/HeightTextItem=H Value",
+										decimal_places: 3,	digits: 4,
+										wants_focus: true,
+										unit:"CurrentDocumentUnit",
+										max_value: 16384,
+										min_value: 0,
+										bind: true, value: 0,
+										identifier: "Height");
+						}
+					}
+					column(vertical: @align_fill, horizontal: @align_right)
+					{
+						toggle_button(identifier: "NoConstrainIcon", image: {normal: "SP_Unlink_Md_N.png", dark_normal:"SP_Unlink_Md_N_D.png", down: "SP_Link_Md_N.png", dark_down:"SP_Link_Md_N_D.png"},
+												alt: "$$$/TransformPalett/Str/ToolTip/LinkItem=Constrain Width and Height Proportions",
+												value_on: true, value_off: false, 
+												bind: @showConstrainIcon, 
+												vertical: @align_center,
+												wants_focus: false);
+					}
+				}
+			}	
+			row()
+			{
+				panel(bind: @showWarningIcon, value: true)
+				{
+					image(identifier: "PatternWarning",
+						alt: "$$$/TransformPalett/Str/WarningToolTip=Transformations will only be applied to the pattern fill of selected object(s)",
+						wants_focus: false,
+						image: {normal:"SP_PatternWarning_Lg_N.png",dark_normal:"SP_PatternWarning_Lg_N_D.png"},
+						action: @warningAction);
+				}
+				unit_hot_number(identifier: "RotatePopup",
+						label: "SP_TransformAngle_Sm_N.png",
+						is_image_label: true,
+						popuplist: true,
+						digits: 1,
+						max_value: 360,
+						min_value: -360,
+						bind: true,
+						items: @rotateItems,
+						unit:"NumberEditUnit_Degree",
+						alt: "$$$/TransformPalett/Str/ToolTip/RotateTextItem=Rotate");
+						
+				unit_hot_number(identifier: "ShearPopup",
+						label: "SP_TransformShear_Sm_N.png",
+						is_image_label: true,
+						popuplist: true,
+						digits: 1,
+						max_value: 360,
+						min_value: -360,
+						bind: true,
+						items: @shearItems,
+						unit:"NumberEditUnit_Degree",
+						alt: "$$$/TransformPalett/Str/ToolTip/ShearTextItem=Shear");
+			}
+		}
+	}
+	optional(bind: @ShowPropertiesSection, value: true)
+	{
+		separator(orientation: @horizontal, vertical: @align_center, horizontal: @align_fill, identifier: "Separator1");
+		overlay(horizontal: @align_fill, vertical: @align_fill)
+		{
+			panel(bind: @PropertiesViewAvailable, value: false, horizontal: @align_fill)
+			{
+				subview(identifier: "NoPropertiesSubView", show_border: false, horizontal: @align_fill, height: 136)
+				{
+					static_text(identifier: "NoPropertiesLabel", horizontal: @align_center, vertical: @align_center, name: "$$$/TransformPalett/Str/NoShapeProperties=No Shape Properties", display_disable: true);
+				}
+			}
+			panel(bind: @PropertiesViewAvailable, value: true, horizontal: @align_fill)
+			{
+				subview(identifier: "PropertiesSubView", show_border: false, horizontal: @align_fill, vertical: @align_center, height: 136);
+			}
+		}
+	}
+	optional(bind: @ShowOptions, value: true)
+	{
+		separator(orientation: @horizontal, vertical: @align_center, horizontal: @align_fill, identifier: "Separator2");
+		column()
+		{
+			checkbox(name: "$$$/Transform/Dlg/Transform/ScaleRadiiForShapesLabel=Scale Corners",
+					identifier: "ScaleCornerRadiiForShapesChkBx",
+					alt: "$$$/TransformPalett/Str/ToolTip/ScaleRadiiForShapes=Set this option to scale corner radii proportionally",
+					bind: @scaleCornerRadiiForShapes);
+			checkbox(name: "$$$/Transform/Dlg/Transform/ScaleStrokesEffectsLabel=Scale Strokes && Effects",
+					identifier: "ScaleStrokeAndEffectChkBx",
+					bind: @scaleStrokeAndEffect);
+		}
+	}
+	}
+}

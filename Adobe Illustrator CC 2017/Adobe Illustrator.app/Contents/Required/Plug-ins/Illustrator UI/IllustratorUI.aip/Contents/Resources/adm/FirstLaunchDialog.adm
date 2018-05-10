@@ -1,0 +1,5 @@
+sheet FirstLaunchDialog
+{
+interface:
+	IsFirstMachine: false;
+}

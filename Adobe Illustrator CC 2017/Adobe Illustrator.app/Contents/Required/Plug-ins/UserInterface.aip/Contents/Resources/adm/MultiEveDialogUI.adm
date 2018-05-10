@@ -1,0 +1,7 @@
+sheet MultiEveDialogUI
+{
+interface:
+	MultiEveListItems: [
+						{ name: "$$$/MultiEveListItems/DummyItem/UsedForSpecifyingDefaultWidth/Str=xxxxxxxxxxxxx", value: 1 }
+						];
+}

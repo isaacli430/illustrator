@@ -1,0 +1,31 @@
+/* [1] */
+$$$/ShapeTool/Str/Tool/OvalToolName=Ellipse
+/* [2] */
+$$$/ShapeTool/Str/Tool/RectToolName=Rectangle
+/* [3] */
+$$$/ShapeTool/Str/Tool/RoundRectToolName=Rounded Rectangle
+/* [4] */
+$$$/ShapeTool/Str/Tool/PolyToolName=Polygon
+/* [5] */
+$$$/ShapeTool/Str/Tool/StarToolName=Star
+/* [6] */
+$$$/ShapeTool/Str/Tool/SpiralToolName=Spiral
+/* [7] */
+$$$/ShapeTool/Str/Tool/OvalToolTip=Ellipse Tool (L)
+/* [8] */
+$$$/ShapeTool/Str/Tool/RectToolTip=Rectangle Tool (M)
+/* [9] */
+$$$/ShapeTool/Str/Tool/RoundRectToolTip=Rounded Rectangle Tool (M)
+/* [10] */
+$$$/ShapeTool/Str/Tool/PolyToolTip=Polygon Tool (L)
+/* [11] */
+$$$/ShapeTool/Str/Tool/StarToolTip=Star Tool (L)
+/* [12] */
+$$$/ShapeTool/Str/TouchTool/SpiralToolTip=Spiral Tool (L)
+/* [13] */
+$$$/ShapeTool/Str/TouchTool/RectToolTip=Rectangle Tool
+/* [14] */
+$$$/ShapeTool/Str/TouchTool/RoundRectToolTip=Rounded Rectangle Tool
+/* [15] */
+$$$/ShapeTool/Str/TouchTool/OvalToolTip=Ellipse Tool
+

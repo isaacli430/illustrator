@@ -1,0 +1,11 @@
+sheet TouchAlignPanel
+{
+	interface:
+		align_option: 0;
+		align_rules: [	"$$$/FWAlignADM/Str/Touch/ToolTip/SelectionAlign=Align to: Selection",
+						"$$$/FWAlignADM/Str/Touch/ToolTip/KeyObjectAlign=Align to: Key Object",
+						"$$$/FWAlignADM/Str/Touch/ToolTip/ArtboardAlign=Align to: Artboard"];
+		rule_name <== align_rules[align_option];
+		align_name: "";
+		ShowDistributeButtons: 0;
+}

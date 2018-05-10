@@ -1,0 +1,23 @@
+sheet MagicWandPanel
+{
+interface:
+	FillColor: true;
+	unlink FillColorTolerance: 32 <== (FillColor) ? FillColorTolerance : RememberFillColorTolerance;
+        RememberFillColorTolerance:"off"<== (FillColor) ? FillColorTolerance : RememberFillColorTolerance;
+	StrokeColor: false;
+	StrokeColorTolerance: 32 <== (StrokeColor) ?  StrokeColorTolerance : RememberStrokeColorTolerance;
+        RememberStrokeColorTolerance: 32 <== (StrokeColor) ?  StrokeColorTolerance : RememberStrokeColorTolerance;
+	StrokeWeight: false;
+	unlink StrokeWeightTolerance: 5 <== (StrokeWeight) ? StrokeWeightTolerance : RememberStrokeWeightTolerance;
+        RememberStrokeWeightTolerance: 5 <== (StrokeWeight) ? StrokeWeightTolerance : RememberStrokeWeightTolerance;
+	Opacity: false;
+	unlink OpacityTolerance: 5 <== (Opacity) ? OpacityTolerance : RememberOpacityTolerance;
+        RememberOpacityTolerance:5 <== (Opacity) ? OpacityTolerance : RememberOpacityTolerance;
+	BlendingMode: false;
+	
+	PanelState: 1;
+	ShowOpacityGroup: true <== (PanelState == 1 || PanelState == 4) ? true : false;
+	ShowStrokeGroup: true <== (PanelState <= 2) ? true : false;
+	ShowFillGroup: true <== (PanelState == 4 || PanelState <=2)? true: true;
+	max_RGB_CMYK: 100;
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+  <menuItem id="1" text="$$$/FWToolboxADM/Menu/DrawingMode/Normal=Draw Normal"></menuItem>
+  <menuItem id="2" text="$$$/FWToolboxADM/Menu/DrawingMode/Behind=Draw Behind"></menuItem>
+  <menuItem id="3" text="$$$/FWToolboxADM/Menu/DrawingMode/Inside=Draw Inside"></menuItem>
+</menu>

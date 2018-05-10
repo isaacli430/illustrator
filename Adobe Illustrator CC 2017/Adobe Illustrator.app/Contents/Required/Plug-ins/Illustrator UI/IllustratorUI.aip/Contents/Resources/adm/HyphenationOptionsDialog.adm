@@ -1,0 +1,33 @@
+sheet hyphenationOptionsDialog
+{
+	interface:
+		hyphenation: 0;
+		
+		useAsianUnits: 0;
+		
+		unlink wordsLongerThan: 3 <== !(hyphenation == 1) ? wordsLongerThanLastVal : wordsLongerThan;
+		wordsLongerThanLastVal: 3 <== (hyphenation == 1) ? wordsLongerThan : wordsLongerThanLastVal;
+
+		unlink afterFirst: 1 <== !(hyphenation == 1) ? afterFirstLastVal : afterFirst;
+		afterFirstLastVal: 1 <== (hyphenation == 1) ? afterFirst : afterFirstLastVal;
+
+		unlink beforeLast: 1 <== !(hyphenation == 1) ? beforeLastLastVal : beforeLast;
+		beforeLastLastVal: 1 <== (hyphenation == 1) ? beforeLast : beforeLastLastVal;
+
+		unlink hyphenLimit: 0 <== !(hyphenation == 1) ? hyphenLimitLastVal : hyphenLimit;
+		hyphenLimitLastVal: 0 <== (hyphenation == 1) ? hyphenLimit : hyphenLimitLastVal;
+
+		unlink hyphenationZone: 0 <== !(hyphenation == 1) ? hyphenationZoneLastVal : hyphenationZone;
+		hyphenationZoneLastVal: 0 <== (hyphenation == 1) ? hyphenationZone : hyphenationZoneLastVal;
+		
+		unlink hyphenationZoneUnit: "ApplicationTextUnit" <== (useAsianUnits == 1) ? "ApplicationAsianTextUnit" : "ApplicationTextUnit";
+
+		unlink betterSpacingOrFewerHyphens: 0 <== !(hyphenation == 1) ? betterSpacingOrFewerHyphensLastVal : betterSpacingOrFewerHyphens;
+		betterSpacingOrFewerHyphensLastVal: 0 <== (hyphenation == 1) ? betterSpacingOrFewerHyphens : betterSpacingOrFewerHyphensLastVal;
+
+		unlink hyphenateCapitalizedWords: 0 <== !(hyphenation == 1) ? hyphenateCapitalizedWordsLastVal : hyphenateCapitalizedWords;
+		hyphenateCapitalizedWordsLastVal: 0 <== (hyphenation == 1) ? hyphenateCapitalizedWords : hyphenateCapitalizedWordsLastVal;
+
+		betterSpacingOrFewerHyphensFilter: {min_value: 0, max_value: 100};
+		preview: 0;
+}

@@ -1,0 +1,26 @@
+layout GraphDim
+{
+	view subview(identifier: "AIEveSubView", placement: @place_column, show_border: false, layout_theme: @dialog_large, spacing: @unrelated_spacing)
+	{
+		row(child_vertical: @align_center, child_horizontal: @align_fill)
+		{
+			column()
+			{
+				unit_hot_number(identifier: "widthID", min_value: 0, horizontal: @align_left, max_value: 16383, decimal_places: 4, name: "$$$/Illustrator/Graphs/Dialog/GraphDim/width=&Width:", bind: @Width, show_units: true, unit: 'CurrentDocumentUnit', set_default_focus: true);
+				unit_hot_number(identifier: "heightID", min_value: 0, horizontal: @align_left, max_value: 16383, decimal_places: 4, name: "$$$/Illustrator/Graphs/Dialog/GraphDim/height=&Height:", bind: @Height, show_units: true, unit: 'CurrentDocumentUnit');
+			}
+			toggle_button(identifier: "NoConstrainIcon", 
+							image: {normal: "NoConstrainIcon.png", dark_normal:"NoConstrainIconDark.png", down: "LinkOnConstrainIcon.png", dark_down:"LinkOnConstrainIconDark.png"}, 
+							alt: "$$$/Illustrator/Graphs/Dialog/GraphDim/ConstrainIconTip=Constrain Width and Height Proportions",
+							value_on: true, value_off: false, 
+							bind: @LinkAnchor, 
+							vertical: @align_center,
+							wants_focus: false);
+		}
+		row(reverse: os == @mac, horizontal: @align_right, spacing: @related_spacing)
+        {
+			button(default: true, identifier: "okButton", commit_button: true, name: "$$$/gOK=OK");
+			button(cancel: true, identifier: "cancelButton", commit_button: true, name: "$$$/gCancel=Cancel");
+        }
+    }
+}

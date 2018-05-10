@@ -1,0 +1,373 @@
+layout I3DUI
+{
+    view subview(identifier: "AIEveSubView",
+				 layout_theme: @dialog,
+				 placement: @place_column, 
+				 spacing: @unrelated_spacing,
+				 show_border: false)
+    {
+	column(horizontal: @align_fill,spacing:5)
+	{
+		column(horizontal: @align_fill)
+			{
+				group(identifier: "PositionGroup", 
+						header: "popup(identifier: 'PositionPopUp', horizontal: @align_left,
+							name: '$$$/I3DUI/Dlg/PositionPopupLabel=Positio&n:',
+							alt: '$$$/3D/ToolTip/OptionsDlg/Position=Choose a position preset',
+							include_custom_item: false,
+							items: [{name:'$$$/3D/RotationPreset/Custom=Custom Rotation', value: 1},
+								{name:'', value: 0},
+								{name:'$$$/3D/RotationPreset/Front=Front', value: 2},
+								{name:'$$$/3D/RotationPreset/Back=Back', value: 3},
+								{name:'$$$/3D/RotationPreset/Left=Left', value: 4},
+								{name:'$$$/3D/RotationPreset/Right=Right', value: 5},
+								{name:'$$$/3D/RotationPreset/Top=Top', value: 6},
+								{name:'$$$/3D/RotationPreset/Bottom=Bottom', value: 7},
+								{name:'', value: 0},				
+								{name:'$$$/3D/RotationPreset/OffAxisFront=Off-Axis Front', value: 8},
+								{name:'$$$/3D/RotationPreset/OffAxisBack=Off-Axis Back', value: 9},
+								{name:'$$$/3D/RotationPreset/OffAxisLeft=Off-Axis Left', value: 10},
+								{name:'$$$/3D/RotationPreset/OffAxisRight=Off-Axis Right', value: 11},
+								{name:'$$$/3D/RotationPreset/OffAxisTop=Off-Axis Top', value: 12},
+								{name:'$$$/3D/RotationPreset/OffAxisBottom=Off-Axis Bottom', value: 13},
+								{name:'', value: 0},				
+								{name:'$$$/3D/RotationPreset/IsometricLeft=Isometric Left', value: 14},
+								{name:'$$$/3D/RotationPreset/IsometricRight=Isometric Right', value: 15},
+								{name:'$$$/3D/RotationPreset/IsometricTop=Isometric Top', value: 16},
+								{name:'$$$/3D/RotationPreset/IsometricBottom=Isometric Bottom', value: 17}],
+								set_default_focus: true,
+								horizontal: @align_left)",
+						placement: @place_row, horizontal: @align_fill)
+				{
+
+					image(identifier: "TrackArea", width: 175, height: 175,  guide_mask: [ @guide_label ]);
+
+					column(child_horizontal: @align_right)
+					{
+						row(child_vertical: @align_center)
+						{
+						  image(identifier: "RotateXImage", 
+								alt: "$$$/3D/ToolTip/OptionsDlg/X=Specify rotation around the X axis",
+								image: {normal:"SP_3DRotateX_Md_N.png",dark_normal:"SP_3DRotateX_Md_N_D.png"});
+							
+						  angle_picker(identifier: "RotationXAnglePicker",
+										alt: "$$$/3D/ToolTip/OptionsDlg/X=Specify rotation around the X axis",
+										value_range: {min_value:-180, max_value: 180},
+										wants_focus: true,
+										show_editbox:true);
+						}
+					
+						row(child_vertical: @align_center)
+						{
+						image(identifier: "RotateYImage", 
+								alt: "$$$/3D/ToolTip/OptionsDlg/Y=Specify rotation around the Y axis",
+								image: {normal:"SP_3DRotateY_Md_N.png",dark_normal:"SP_3DRotateY_Md_N_D.png"});
+							
+						angle_picker(identifier: "RotationYAnglePicker",
+										alt: "$$$/3D/ToolTip/OptionsDlg/Y=Specify rotation around the Y axis",
+										value_range: {min_value:-180, max_value: 180},
+										wants_focus: true,
+										show_editbox:true);
+						}
+									
+						row(child_vertical: @align_center)
+						{
+							image(identifier: "RotateZImage",
+										alt: "$$$/3D/ToolTip/OptionsDlg/Z=Specify rotation around the Z axis",
+										image: {normal:"SP_3DRotateZ_Md_N.png",dark_normal:"SP_3DRotateZ_Md_N_D.png"});
+									
+							angle_picker(identifier: "RotationZAnglePicker",
+										alt: "$$$/3D/ToolTip/OptionsDlg/Z=Specify rotation around the Z axis",
+										value_range: {min_value:-180, max_value: 180},
+										wants_focus: true,
+										show_editbox:true);						
+						}
+	
+						unit_hot_number(identifier: "PerspectiveAngle", 
+										name: "$$$/3D/Position/Perspective=Pe&rspective:",
+										alt: "$$$/3D/ToolTip/OptionsDlg/Perspective=Specify lens distortion (simulate three point perspective)",
+										unit: 'NumberEditUnit_Degree', min_value: 0, max_value: 160, 
+										digits: 1, decimal_places: 2, slider: true);
+									
+					}
+				}
+			
+				overlay(horizontal: @align_fill, margin: 0)
+					{
+						optional( bind:@ExtrudeBevelVisibility, value: true,  margin: 0)
+						{				
+							group(identifier: "ExtrudeBevelGroup",
+								horizontal: @align_fill,
+								name: '$$$/I3DUI/Dlg/ExtrudeBevelGroupLabel=Extrude & Bevel',  guide_mask: [ @guide_label ],
+								spacing:2)
+							{
+								row( guide_mask: [ @guide_label ], child_vertical: @align_center)
+								{
+									unit_hot_number(identifier: "ExtrudeDepth", 
+										name: "$$$/I3DUI/Dlg/Extrude/Depth=Extrude &Depth:", 
+										alt: '$$$/3D/ToolTip/OptionsDlg/ExtrudeDepth=Specify depth of extrusion',
+										digits:4,
+										min_value:0,
+										max_value:2000,
+										unit: "NumberEditUnit_Point",                
+										decimal_places: 2, slider: true);	
+						
+									button_bar( name: "$$$/I3DUI/Dlg/CapLabel=Cap:", bind: @ExtrudeCapRadioGroup,
+										identifier: "ExtrudeCap",
+										items: [{ image: { normal: "SP_3DFilledCap_Md_N.png",dark_normal: "SP_3DFilledCap_Md_N_D.png"}, value: 0, alt: "$$$/I3DUI/Dlg/CapOn=Turn cap on for solid appearance"},
+										{ image: { normal: "SP_3DHollowCap_Md_N.png",dark_normal: "SP_3DHollowCap_Md_N_D.png"}, value: 1, alt: "$$$/I3DUI/Dlg/CapOff=Turn cap off for hollow appearance"} ] );
+								}
+							
+								row()
+								{
+									row()
+									{
+										popup(identifier: "BevelPopUp", horizontal: @align_left,
+											name: "$$$/3D/3DOptions/Bevel=Bevel:",
+											alt: '$$$/3D/ToolTip/OptionsDlg/Bevel=Choose bevel shape',
+											include_custom_item: false, popup_maximum_width_chars: 10, popup_minimum_width_chars: 10);
+									}
+									row(child_vertical: @align_center)
+									{
+										unit_hot_number(identifier: "BevelHeight", 
+											name: "$$$/3D/3DOptions/Height=&Height:", 
+											alt: '$$$/3D/ToolTip/OptionsDlg/BevelHeight=Specify bevel height',
+											digits:3,
+											min_value:1,
+											max_value:100,
+											unit: "NumberEditUnit_Point",                
+											decimal_places: 2, slider: true);	
+						
+										button_bar( identifier: "BevelExtent", bind: @BevelExtentRadioGroup,
+											items: [{ image: { normal: "SP_3DExtendOutward_Md_N.png",dark_normal: "SP_3DExtendOutward_Md_N_D.png"}, value: 0, alt: "$$$/3D/ToolTip/OptionsDlg/ExtentOut=Bevel Extent Out: Bevel is added to original object"},
+											{ image: { normal: "SP_3DExtendInward_Md_N.png",dark_normal: "SP_3DExtendInward_Md_N_D.png"}, value: 1, alt: "$$$/3D/ToolTip/OptionsDlg/ExtentIn=Bevel Extent In: Bevel is subtracted from original object"} ] );
+									}
+								}
+							}
+						}
+					
+						optional(bind:@RevolveVisibility, value: true,  margin: 0)
+						{
+							group(identifier: "RevolveGroup",
+								horizontal: @align_fill,
+								name: '$$$/I3DUI/Dlg/RevolveGroupLabel=Revolve'
+								)
+							{
+						
+								row(guide_mask: [ @guide_label ], child_vertical: @align_center)
+								{
+									angle_picker(identifier: "RevolveAnglePicker",
+										name: "$$$/I3DUI/Revolve/label=Angl&e:",
+										alt: '$$$/3D/ToolTip/OptionsDlg/Angle=Specify number of degrees an object is revolved around revolve axis',
+										value_range: {min_value:0, max_value: 360},
+										wants_focus: true,
+										show_editbox:true);
+						
+									button_bar( name: "$$$/I3DUI/Dlg/CapLabel=Cap:", bind: @RevolveCapRadioGroup,
+										identifier: "RevolveCap",
+										items: [{ image: { normal: "SP_3DFilledCap_Md_N.png",dark_normal: "SP_3DFilledCap_Md_N_D.png"}, value: 0, alt: "$$$/I3DUI/Dlg/CapOn=Turn cap on for solid appearance"},
+										{ image: { normal: "SP_3DHollowCap_Md_N.png",dark_normal: "SP_3DHollowCap_Md_N_D.png"}, value: 1, alt: "$$$/I3DUI/Dlg/CapOff=Turn cap off for hollow appearance"} ] );
+								}
+							
+								row(guide_mask: [ @guide_label ], spacing:@related_spacing)
+								{
+									unit_hot_number(identifier: "RevolveOffsetVal", 
+										name: "$$$/I3DUI/Dlg/Revolve/Offset=O&ffset:", 
+										alt: '$$$/3D/ToolTip/OptionsDlg/Offset=Specify offset from revolve axis',
+										digits:4,
+										min_value:0,
+										max_value:1000,
+										unit: "NumberEditUnit_Point",                
+										decimal_places: 2, 
+										 slider: true);	
+									
+									popup(identifier: 'RevolveFromPopup', horizontal: @align_left,
+										name: '$$$/I3DUI/Dlg/Revolve/RevolveFromPopupLabel=from',
+										alt: '$$$/3D/ToolTip/OptionsDlg/From=Specify whether revolve axis is on left or right side',
+										include_custom_item: false,
+										items: [{name:'$$$/I3DUI/Dlg/Revolve/edge/leftEdge=Left Edge', value: 0},
+												{name:'$$$/I3DUI/Dlg/Revolve/edge/rightEdge=Right Edge', value: 1}],
+										set_default_focus: true,
+										horizontal: @align_left);							
+								}
+						
+							}
+						}
+					}
+				
+				
+			overlay(horizontal: @align_fill, margin: 0)
+			{
+				optional(bind:@SimpleMode, value: true, margin: 0)
+				{
+				popup(identifier: 'SurfacePopUp', horizontal: @align_left,
+					name: '$$$/I3DUI/Dlg/SurfacePopupLabel=&Surface:',
+					alt: '$$$/3D/ToolTip/OptionsDlg/Surface=Specify a rendering style',
+								items: @ShadingType,
+								bind: @ShadingVal,
+								horizontal: @align_left, include_custom_item: false,  guide_mask: [ @guide_label ]);
+				}
+							
+				optional(bind:@AdvancedMode, value: true, margin: 0)
+				{				
+					group(identifier: "SurfaceGroup",
+						header: "popup(identifier: 'SurfacePopUpGroup', horizontal: @align_left,
+						name: '$$$/I3DUI/Dlg/SurfacePopupLabel=&Surface:',
+						alt: '$$$/3D/ToolTip/OptionsDlg/Surface=Specify a rendering style',
+									items: @ShadingType,
+									bind: @ShadingVal,
+									set_default_focus: true,
+									horizontal: @align_left, include_custom_item: false)",
+							placement: @place_column, horizontal: @align_fill)
+					{
+					
+							optional(bind:@LightControlsAvailable, value: true, margin: 0)
+							{
+								row()
+								{
+									column(child_horizontal: @align_left, spacing:0)
+									{
+										image(identifier: "LightArea", width: 72, height: 72, guide_mask: [ @guide_label ]);
+										buttongroup(horizontal: @align_left, child_vertical: @align_fill,
+                                                     spacing: gPanelToolbarIconSpacing, child_width: gPanelToolbarIconWidth, child_height: gPanelToolbarIconHeight)
+										{
+											button(identifier: "MoveLight",
+												image: {normal: "SP_MoveLightToBack_Wi_N.png", dark_normal: "SP_MoveLightToBack_Wi_N_D.png"},
+												wants_focus: false);
+										
+											button(identifier: "NewLight",
+												image: {normal: "SP_New_Wi_N.png", dark_normal: "SP_New_Wi_N_D.png"},
+												alt: "$$$/3D/ToolTip/OptionsDlg/NewLight=New Light",
+												wants_focus: false);
+									
+											button(identifier: "DeleteLight",
+												image: {normal: "SP_Delete_Wi_N.png", dark_normal: "SP_Delete_Wi_N_D.png"},
+												alt: "$$$/3D/ToolTip/OptionsDlg/DeleteLight=Delete Light",
+												wants_focus: false);
+										}						
+									}
+							
+									column()
+									{
+										unit_hot_number(identifier: "LightIntensity", 
+												name: "$$$/3D/3DOptions/Intensity=&Light Intensity:",
+												alt: "$$$/3D/ToolTip/OptionsDlg/LightingIntensity=Specify brightness of selected light",
+												min_value: 0, max_value: 100, 
+												digits: 3, decimal_places: 0, unit: "NumberEditUnit_Percent", slider: true);
+
+										unit_hot_number(identifier: "AmbientLight", 
+											name: "$$$/3D/3DOptions/Ambient=&Ambient Light:",
+											alt: "$$$/3D/ToolTip/OptionsDlg/AmbientLight=Control brightness of all surfaces uniformly",
+											min_value: 0, max_value: 100, 
+											digits: 3, decimal_places: 0, unit: "NumberEditUnit_Percent", slider: true);
+
+										unit_hot_number(identifier: "HighlightIntensity", 
+												name: "$$$/3D/3DOptions/highlightIntensity=Highlight &Intensity:",
+												alt: "$$$/3D/ToolTip/OptionsDlg/Matte=Control how much the object reflects light",
+												min_value: 0, max_value: 100, 
+												digits: 3, decimal_places: 0, unit: "NumberEditUnit_Percent", slider: true);
+										unit_hot_number(identifier: "HighlightSize", 
+												name: "$$$/3D/3DOptions/highlightsize=Highlight Si&ze:",
+												alt: "$$$/3D/ToolTip/OptionsDlg/Gloss=Specify size of highlight",
+												min_value: 0, max_value: 100, 
+												digits: 3, decimal_places: 0, unit: "NumberEditUnit_Percent", slider: true);
+
+										unit_hot_number(identifier: "BlendSteps", 
+												name: "$$$/3D/3DOptions/BlendSteps=&Blend Steps:",
+												alt: "$$$/3D/ToolTip/OptionsDlg/BlendSteps=Specify number of paths used to shade surface",
+												min_value: 0, max_value: 256, 
+												digits: 3, decimal_places: 0, slider: true);
+
+								
+									}						
+								}
+								row()
+								{
+									popup(identifier: "ShadeColor",
+										alt: '$$$/3D/ToolTip/OptionsDlg/ShadingColor=Specify how object is shaded',
+										include_custom_item: false,
+										items: @ShadingColor,		
+										bind: @ShadingColorVal,
+										name: "$$$/3D/3DOptions/ShadingColor=Shading &Color:",
+										set_default_focus: true);							
+									panel(bind: @CustomShadingColor, value: true, margin: 0)
+									{
+									swatch(identifier: "ShadingColorSwatch",
+											alt: '$$$/3D/ToolTip/OptionsDlg/ColorPicker=Specify shading color',
+											border: @border_normal);								
+									}
+								}
+						
+							}
+						
+							optional(bind: @LightControlNotAvailableWarning, value: true, margin: 0 )
+							{
+								static_text(theme_font_size: @small, name: "$$$/3D/ShadingMsg=Lighting controls are not available for this surface option.");					
+							}
+							
+							panel(value: true, margin: 0, spacing:2)
+							{
+								row( guide_mask: [ @guide_label ])
+								{
+									checkbox(identifier: "PreserveSpotColors",
+										alt: '$$$/3D/ToolTip/OptionsDlg/PreserveSpots=Disable items that can cause spot colors to be converted',
+										name: "$$$/3D/3DOptions/PreserveSpots=Preser&ve Spot Colors");
+
+									checkbox(identifier: "DrawHiddenFaces",
+										alt: '$$$/3D/ToolTip/OptionsDlg/RenderHiddenFaces=Specify whether surfaces hidden from view are drawn',
+										name: "$$$/3D/3DOptions/Backface=Dra&w Hidden Faces");
+
+								}
+							}
+					}
+			
+				}
+			}				
+		 }
+			optional(bind:@WarningVisible, value: true, margin: 0,child_vertical: @align_fill, child_horizontal: @align_fill)
+			{
+				row()
+				{
+					info_icon(identifier: "WarningIcon", icontype: "warning", size: "small");
+					static_text(theme_font_size: @small,name: @WarningText,
+								horizontal: @align_fill,
+								vertical:	@align_fill,							
+								characters:1);	
+				}
+			}
+	   }	
+		row(horizontal: @align_fill, child_vertical: @align_center,spacing: @separated_spacing)
+		{
+			checkbox(identifier: "previewButton", guide_mask: [ @guide_label ],
+					name: "$$$/I3DUI/Dlg/Preview=&Preview");
+
+			button(identifier: "MapArtButton", 
+				alt: '$$$/3D/ToolTip/OptionsDlg/MapArtwork=Map Artwork to surfaces of 3D object',
+				name: '$$$/3D/3DOptions/Mapping=&Map Art...',
+				 commit_button: true);
+
+			toggle_button(identifier: "OptionsButton",
+					bind: @AdvancedMode,
+					spring_loaded: true,
+					value_on: true,
+					value_off: false,
+					vertical: @align_fill,
+					on_text: "$$$/3D/Options/FewerOptions=Fewer &Options",
+					off_text: "$$$/3D/Options/MoreOptions=More &Options",commit_button: true);
+
+		
+				
+			row(reverse: os == @mac, horizontal: @align_right, spacing: @related_spacing)
+			{
+				button(default: true,
+				identifier: "okButton", commit_button: true,
+				name: "$$$/gOK=OK");
+
+				button(identifier: "cancel_ResetButton",commit_button: true,
+				items: [{name: "$$$/gCancel=Cancel", action: @cancel},
+							{name: "$$$/gReset=Reset", action: @reset, modifiers: @opt}]);
+			}		
+		}
+		
+    }
+}

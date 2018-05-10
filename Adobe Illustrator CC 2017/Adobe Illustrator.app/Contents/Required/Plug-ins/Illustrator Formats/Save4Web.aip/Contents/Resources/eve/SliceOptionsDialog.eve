@@ -1,0 +1,153 @@
+layout SliceOptionsDialog
+{
+	view subview(identifier: "SliceOptionsDialog",
+					layout_theme: @dialog,
+					placement: @place_column,
+					show_border: false
+					)
+	{
+		group(identifier: "SliceInfoGroup", spacing: 0, 
+		   header: "popup(identifier: 'SliceTypePopup',
+		   items: @SliceTypeItems,
+		   include_custom_item: false,
+		   name: '$$$/Save4Web/SliceOptionsDialog/SliceTypeCaption=Slice Type:',
+		   bind: @SliceTypeCell,
+		   horizontal: @align_left,
+		   alt: '$$$/Save4Web/SliceOptionsDialog/SliceType=Slice type')", horizontal: @align_fill, vertical: @align_fill)
+           {
+			   overlay()
+				   {
+						panel(margin: 0, bind: @PanelSelection, value: 0, horizontal: @align_fill)
+						{
+							row(horizontal: @align_fill)
+							{
+								static_text(name: "$$$/Save4Web/SliceOptionsDialog/textCaption=Text Displayed in Cell:",
+										alt: "$$$/Save4Web/SliceOptionsDialog/Text=Text and HTML code to display in table cell"
+								);
+								checkbox(identifier: "IsHTMLCB",
+										name: "$$$/Save4Web/SliceOptionsDialog/TextIsHTML=Text is HTML ",
+										bind: @TextIsHTMLCell,
+										horizontal: @align_right,
+										alt: "$$$/Save4Web/SliceOptionsDialog/Target=Specifies frame URL loads into"
+								);
+							}
+							row(horizontal:@align_fill, guide_mask: [@guide_label])
+							{
+								edit_text(characters: 28,
+										identifier: "TextDisplayed",
+										lines: 6.5,
+										bind: @TextDisplayedCell,
+										horizontal: @align_fill,
+										scrollable: true,
+										alt: "$$$/Save4Web/SliceOptionsDialog/Target=Specifies frame URL loads into"
+								);
+							}
+							row(horizontal:@align_fill, guide_mask: [@guide_label])
+							{
+								group(name: "$$$/Save4Web/SliceOptionsDialog/TableCaption=Cell Alignment", horizontal: @align_fill, vertical: @align_fill)
+								   {
+										row(horizontal: @align_fill)
+										{
+											popup(identifier: 'HAlignPopup',
+												   items: @HAlignItems,
+												   include_custom_item: false,
+												   name: '$$$/Save4Web/SliceOptionsDialog/HAlign=Hori&z:',
+												   bind: @HAlignCell,
+												   alt: '$$$/Save4Web/SliceOptionsDialog/HorizAlign=Controls horizontal alignment of slice contents'
+										   );
+											popup(identifier: 'VAlignPopup',
+												   items: @VAlignItems,
+												   include_custom_item: false,
+												   name: '$$$/Save4Web/SliceOptionsDialog/VAlign=&Vert:',
+												   bind: @VAlignCell,
+												   horizontal: @align_fill,
+												   alt: '$$$/Save4Web/SliceOptionsDialog/VertAlign=Controls vertical alignment of slice contents'
+										   );
+										}
+								   }
+							}
+						}
+						
+						panel(margin: 0, bind: @PanelSelection, value: 1, horizontal: @align_fill, child_vertical: @align_top, guide_mask: [@guide_label])
+						{
+							column()
+							{
+								edit_text(characters: 28,
+											name: "$$$/Save4Web/SliceOptionsDialog/NameCaption=&Name:",
+											identifier: "SliceNameTextEdit",
+											bind: @SliceNameCell,
+											alt: "$$$/Save4Web/SliceOptionsDialog/Name=Slice name"
+								);
+								combobox(identifier: "URLComboBox",
+											characters: 28,
+											horizontal: @align_fill,
+											name: "$$$/Save4Web/SliceOptionsDialog/URLCaption=&URL:",        
+											min_characters: 255,
+											max_characters: 255,
+											alt: "$$$/Save4Web/SliceOptionsDialog/URL=Specifies URL slice links to when clicked in browser"
+								);
+								popup(identifier: "SliceTargetPopup",
+									name: "$$$/Save4Web/SliceOptionsDialog/TargetCaption=&Target:",
+									bind: @TargetPopupCell,
+									items: @TargetMenuItems,
+									include_custom_item: false,
+									horizontal: @align_fill,
+									alt: "$$$/Save4Web/SliceOptionsDialog/Target=Specifies frame URL loads into"
+								);
+								edit_text(characters: 28,
+											name: "$$$/Save4Web/SliceOptionsDialog/MessageCaption=&Message:",
+											identifier: "MessageTextEdit",
+											bind: @MessageCell,
+											alt: "$$$/Save4Web/SliceOptionsDialog/Message=Contents will appear in browser status bar"
+								);
+								edit_text(characters: 28,
+											name: "$$$/Save4Web/SliceOptionsDialog/AltCaption=&Alt:",
+											identifier: "AltTextEdit",
+											bind: @AltCell,
+											alt: "$$$/Save4Web/SliceOptionsDialog/Alt=Specifies alternate text for browser"
+								);
+							}
+						}
+						
+					}                                        
+			}
+			
+		row(horizontal: @align_fill, child_vertical:@align_center)
+		{
+			panel(horizontal: @align_left, bind: @ShowLinkedImage, value: 1)
+			{
+				button(identifier: "linkedIcon",
+					image: "SlicePaletteLinked.png",
+					show_border: false,
+					alt: "$$$/Save4Web/SliceOptionsDialog/Linked=Indicates slice has linked optimization settings", 
+					label:"$$$/Save4Web/SliceOptionsDialog/LinkedCaption=Linked");
+			}
+			row(child_vertical:@align_center)
+			{
+				popup(identifier: 'Colorpopup',
+					items: @ColorPopupItems,
+					include_custom_item: false,
+					name: '$$$/Save4Web/SliceOptionsDialog/DialogColorCaption=Background:',
+					alt: '$$$/Save4Web/SliceOptionsDialog/Color=Selects background color for slice'
+				);
+				swatch(identifier: "ColorSwatch", 
+						vertical:@align_center,
+						border:@border_normal, 
+						width:15, height:15
+				);
+			}
+		}
+		row(horizontal: @align_right, spacing: @related_spacing, reverse: os == @mac)
+		{
+			button(default: true,
+				   identifier: "okButton",
+				   name: "$$$/Save4Web/SliceOptionsDialog/OK=OK",
+				   commit_button: true);
+
+			button(cancel: true,
+				   identifier: "cancelButton",
+				   name: "$$$/Save4Web/SliceOptionsDialog/Cancel=Cancel",
+				   commit_button: true);
+		}	
+	}
+}

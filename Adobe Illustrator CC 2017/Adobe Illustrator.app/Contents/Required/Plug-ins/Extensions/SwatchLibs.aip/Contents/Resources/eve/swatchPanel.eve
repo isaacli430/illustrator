@@ -1,0 +1,127 @@
+layout ActionsPanel
+{
+    view subview(identifier: "actions_panel_subview",
+				 layout_theme: @panel,
+				 show_border: false,
+				 margin: gPanelToolbarSubviewMargin
+				 )
+	{
+		optional(bind: @showFindOptions, value: true, horizontal: @align_fill, vertical:@align_top)
+			{
+				subview(identifier: "SearchContainer", horizontal:@align_fill, show_border:false, margin:0, width: 20, height: 21);
+			}
+		
+		optional(bind: @showHeaderStrip, value: true, horizontal: @align_fill, vertical:@align_top)
+		{
+			subview(identifier: "HeaderStripSubview", horizontal:@align_fill, show_border:false, margin:0, width: 20, height: 21)
+			{
+				row (horizontal:@align_fill, vertical:@align_top)
+				{
+					stroke_fill(identifier:  "SwatchStrokeFill", small_mode: true, has_default:false, has_swap:false, ai_color_mode: true);
+					button_bar(	identifier: "DisplayViewSwitch", horizontal: @align_right,
+								items: [
+									 {image: {normal: "SP_ListView_Md_N.png",dark_normal: "SP_ListView_Md_N_D.png"} , show_border: true, value: 0, alt:"$$$/SwatchLibs/ListView/Str/=Show List View"},
+									 {image: {normal: "SP_ThumbnailView_Md_N.png",dark_normal: "SP_ThumbnailView_Md_N_D.png"} , show_border: true, value: 1, alt: "$$$/SwatchLibs/ThumbnailView/Str/=Show Thumbnail View"}
+									 ]
+								,bind: @displayViewType	
+							); 
+				}
+			}
+		}
+		
+		column(horizontal: @align_fill,vertical: @align_fill,spacing: gPanelToolbarTopSpacing)
+		{
+			overlay(vertical: @align_fill, horizontal: @align_fill)
+			{
+				panel(margin: 0, bind: @showListMode, value: true, vertical: @align_fill, horizontal: @align_fill)
+				{
+					multicolumn_tree(identifier: "multicolumntree",
+									wants_focus: false,
+									height: 90,
+									width: 216,
+									horizontal: @align_fill,
+									vertical: @align_fill);
+				}
+
+				panel(margin: 0, bind: @showListMode, value: false, vertical: @align_fill, horizontal: @align_fill)
+				{
+					grid_view(identifier: "gridView",
+							height: 90,
+							width: 216,
+							horizontal: @align_fill,
+							vertical: @align_fill);
+				}
+			}
+	
+		buttongroup(child_vertical: @align_fill, horizontal: @align_fill, child_horizontal: @align_right,
+						spacing: gPanelToolbarIconSpacing, child_width: gPanelToolbarIconWidth, child_height: gPanelToolbarIconHeight)
+		{
+			button
+			(
+				identifier: "LibMenuButton",
+				horizontal: @align_left,
+				wants_focus: false,
+				action: @Libraries,
+				alt: "$$$/SwatchLibs/Str/16916=Swatch Libraries menu",
+				image: {normal:"SP_LibraryTri_Wi_N.png", dark_normal: "SP_LibraryTri_Wi_N_D.png"}
+			);
+			
+			button
+			(
+				identifier: "KulerColorThemesButton",
+				alt: "$$$/SwatchLibs/KulerPanel/OpenKulerPanel/TooltipStr=Open Color Themes panel",
+				horizontal: @align_left,
+				wants_focus: false,
+				image: {normal:"SP_OpenKulerPanel_Wi_N.png", dark_normal: "SP_OpenKulerPanel_Wi_N_D.png"}
+			);
+			
+			button
+			(
+				identifier: "PushToDesignLibraryButton",
+				alt: "$$$/CreativeCloudLibraries/Tooltip/PushToCCLibraries=Add selected Swatches and Color Groups to my current Library",
+				horizontal: @align_left,
+				wants_focus: false,
+				image: {normal: "SP_CCPushToLibrary_Wi_N.png", dark_normal:"SP_CCPushToLibrary_Wi_N_D.png"}
+			);
+			
+			button
+			(
+				identifier: "SwatchTypesButton",
+				action: @SwatchType,
+				wants_focus: false,
+				alt: "$$$/SwatchLibs/Str/16917=Show Swatch Kinds menu",
+				image: {normal:"SP_ShowAllSwatchesTri_Wi_N.png", dark_normal:"SP_ShowAllSwatchesTri_Wi_N_D.png"}
+			);
+			button
+			(
+				identifier: "OptionsButton",
+				alt: "$$$/SwatchLibs/Str/16913=Swatch Options",
+				wants_focus: false,
+				image: {normal:"SP_OptionsView_Xs_N.png", dark_normal:"SP_OptionsView_Xs_N_D.png"}
+			);
+			button
+			(
+				identifier: "NewGroupButton",
+				alt: "$$$/SwatchLibs/Str/16914=New Color Group",
+				wants_focus: false,
+				image: {normal:"SP_Folder_Wi_N.png", dark_normal:"SP_Folder_Wi_N_D.png"}
+			);
+			button
+			(
+				identifier: "NewButton",
+				alt: "$$$/SwatchLibs/Str/16909=New Swatch",
+				wants_focus: false,
+				image: {normal: "SP_New_Wi_N.png", dark_normal: "SP_New_Wi_N_D.png"}
+			);
+			button
+			(
+				identifier: "DeleteButton",
+				alt: "$$$/SwatchLibs/Str/16910=Delete Swatch",
+				wants_focus: false,
+				image: {normal:"SP_Delete_Wi_N.png", dark_normal:"SP_Delete_Wi_N_D.png"}
+			);
+			resize_gripper_gap();
+		}
+		}
+	}
+}

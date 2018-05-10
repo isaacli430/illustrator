@@ -1,0 +1,28 @@
+layout NamedStyleControlGroup
+{
+    view subview(identifier: "NamedStyleControlGroup"
+				, placement: @place_row
+				, layout_theme: @controlbar
+				, show_border: false
+				, child_vertical: @align_center
+				, margin: 0
+				, spacing: 5
+				, height: 31)
+    {
+		optional(identifier: "NamedStyleControlGroupSubGroup"
+				, placement: @place_row
+				, child_vertical: @align_center
+				, margin: 0
+				, spacing: @related_spacing)
+		{
+			static_text(identifier: "NamedStyleLabel"
+						, name: "$$$/ArtStyleControlGroup/StyleStaticTextStr=Style:");
+
+            popup_panel_button(
+                                identifier: "NamedStyleControlGroupWidget",
+                                width: 36,
+								shape_square: true,
+                                alt: "$$$/ArtStyle/Str/NamedStyleTip=Graphic Style Panel");
+ 		}
+	}
+}

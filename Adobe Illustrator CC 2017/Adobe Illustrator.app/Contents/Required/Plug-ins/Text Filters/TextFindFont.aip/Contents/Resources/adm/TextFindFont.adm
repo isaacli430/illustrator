@@ -1,0 +1,9 @@
+sheet TextFindFont
+{
+interface:
+			ShowURL: false;
+			ShowPanel: 2;
+			ShowSpWheelSubscriptionText: false;
+			ShowSpWheelQueryText: false;
+			ShowWinContextMenuInfo:(os == @win)? (true) : (false);
+}

@@ -1,0 +1,8 @@
+layout DebugPanel
+{
+	view subview()
+	{
+	}							
+}
+
+

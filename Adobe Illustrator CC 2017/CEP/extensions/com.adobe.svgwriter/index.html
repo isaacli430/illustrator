@@ -1,0 +1,368 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+/*************************************************************************
+*
+* ADOBE CONFIDENTIAL
+* ___________________
+*
+*  Copyright 2014, Adobe Systems Incorporated
+*  All Rights Reserved.
+*
+* NOTICE:  All information contained herein is, and remains
+* the property of Adobe Systems Incorporated and its suppliers,
+* if any.  The intellectual and technical concepts contained
+* herein are proprietary to Adobe Systems Incorporated and its
+* suppliers and are protected by trade secret or copyright law.
+* Dissemination of this information or reproduction of this material
+* is strictly forbidden unless prior written permission is obtained
+* from Adobe Systems Incorporated.
+**************************************************************************/
+-->
+<html>
+<head>
+<title>SVG Writer</title>
+<script type="text/javascript" src="js/CSInterface.js"></script>
+<script type="text/javascript"> 
+    String.prototype.escapeSpecialChars = function() {
+        return this.replace(/\\/g, "\\\\") 
+                   .replace(/\"/g, "\\\"")
+                   .replace(/\n/g, "\\n")
+                   .replace(/\r/g, "\\r");
+    };
+
+    var CSLibrary = new CSInterface();
+    var oldConsole = window.console;
+    var fs = require('fs');
+
+    function padNumberThreeDigits(number) {
+        if (number < 10)
+            return "00" + number;
+        if (number < 100)
+            return "0" + number;
+        return number;
+    }
+
+    function getCurrentTime() {
+        var date = new Date();
+        return date.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1") + ' ' + padNumberThreeDigits(date.getMilliseconds());
+    };
+
+    function getCommandComponents(data) {
+        // Default settings
+        if (data.options.preserveAspectRatio === undefined)
+            data.options.preserveAspectRatio = "xMidYMid";
+        if (data.options.isResponsive === undefined)
+            data.options.isResponsive = true;
+        if (data.options.preparedPath === undefined)
+            data.options.preparedPath = true;
+        return data;
+    }
+
+    CSLibrary.addEventListener("SaveSVG", function (event) {
+         var data = getCommandComponents(event.data);
+        if (!data) {
+            alert('SaveMultipleSVG bad format');
+            return;
+        }
+        saveSVG(data);
+    });
+	
+ 	{
+        // Send Ready Event to the host application.
+        // Ready event is sent after all addEventListeners() call i.e. when the extension has attached callbacks for all the events that host application can send.
+        var command = 'app.sendScriptMessage("SvgFileFormat", "readyCommand", "")';
+        CSLibrary.evalScript(command);
+    }
+	
+    function sendResponse(id, err, msg, signalFilePath, destinationFilePath, inMode) {
+        console.log(msg)
+        var obj = {id: id, code: err, message: msg, signal: signalFilePath, destinationPath: destinationFilePath , mode: inMode};
+        var command = 'app.sendScriptMessage("SvgFileFormat", "exportSVGResult", "' + JSON.stringify(obj).escapeSpecialChars() + '")';
+        CSLibrary.evalScript(command);
+
+        command = 'app.sendScriptMessage("SvgFileFormatUI", "exportSVGResult", "' + JSON.stringify(obj).escapeSpecialChars() + '")';
+        CSLibrary.evalScript(command);
+        console = oldConsole;
+    }
+
+    function sendProgress(id, step, total, signalFilePath, inMode) {
+        console.log("[" + id + "] Progress " + step + "/" + total);
+        var obj = {id: id, step: step, total: total, signal: signalFilePath, mode: inMode };
+        var command = 'app.sendScriptMessage("SvgFileFormat", "exportSVGProgress", "' + JSON.stringify(obj).escapeSpecialChars() + '")';
+        CSLibrary.evalScript(command);
+    }
+
+    function fileExists(file)
+    {
+        var stats = fs.statSync(file);
+        return stats.isFile();
+    }
+
+    function progress(id, currentSVG, totalSVGs, signalFilePath, inMode) {
+        var stepsPerSVG = 100;
+        var totalSteps = totalSVGs * stepsPerSVG;
+        function stepIt(no) {
+            sendProgress(id, (currentSVG - 1) * stepsPerSVG + no, totalSteps, signalFilePath, inMode);
+        }
+        return function (no) {
+            stepIt(no);
+            return !fileExists(signalFilePath); // return true to cancel.
+        };
+    }
+
+    function toLogFile(id, file, msg, prefix){
+        var logMsg = '[' + getCurrentTime() + '] ' + (prefix ? ('[' + prefix + '] ') : '') + '[' + id + '] ' + msg;
+        try {
+            fs.appendFileSync(file, logMsg + '\n');
+        } catch (e) {
+        }
+    };
+
+    function saveSVG(data) {
+        if (data.logPath) {
+            window.console = {
+                log: function (msg) { toLogFile(data.id, data.logPath, msg); },
+                error: function (msg) { toLogFile(data.id, data.logPath, msg, 'error'); },
+                warn: function (msg) { toLogFile(data.id, data.logPath, msg, 'warn'); },
+            };
+        }
+
+        var writer;
+        try {
+            writer = require('svgwriter');
+        } catch(err) {
+            console.error("Cannot load svgwriter module. Exception: " + err);
+        }
+
+        if (!writer) {
+            sendResponse(data.id, 13, "Writer module not found.", data.omgPath, data.svgPath, data.mode);
+            return;
+        }
+
+        if (data.logPath) {
+            // Only if debug is enabled
+            console.log("Copying json file to the right place...");
+            fs.createReadStream(data.omgPath).pipe(fs.createWriteStream(data.svgPath + '.json'));
+        }
+
+        console.log("Loading json file...");
+
+        var om = null;
+        var svgOMString = null;
+        try {
+            svgOMString = fs.readFileSync(data.omgPath, {encoding: "utf8", flag: "r"});
+        } catch (e) {
+            sendResponse(data.id, 14, "Could not load the JSON file " + data.omgPath, data.omgPath, data.svgPath, data.mode);
+            return;
+        }
+
+        try {
+            om = JSON.parse(svgOMString)
+            svgOMString = null;
+        } catch (e) {
+            sendResponse(data.id, 15, "Could not parse JSON from " + data.omgPath, data.omgPath, data.svgPath, data.mode);
+            return;
+        }
+
+        var finalErr = 0;
+
+        if (data.multiple) {
+            var fileName = data.svgPath;
+
+            var pos = fileName.indexOf(".");
+            if (pos >= 0)
+                fileName = fileName.substring(0, pos);
+
+            var howManySVGs = Object.keys(om).length;
+            var currentSVG = 0;
+            for (var key in om) {
+                var omg = om[key];
+                var options = data.options;
+                currentSVG++;
+                options.callback = progress(data.id, currentSVG, howManySVGs, data.omgPath, data.mode);
+                var localErr = writeJSONToFile(writer, options, omg, key, data.omgPath);
+                if (finalErr == 0 && localErr != 0)
+                    finalErr = localErr;
+                if (finalErr == -1) // cancelled by user
+                    break;
+            }
+        } else {
+            var options = data.options;
+            options.callback = progress(data.id, 1, 1, data.omgPath, data.mode);
+            finalErr = writeJSONToFile(writer, options, om, data.svgPath, data.omgPath);
+        }
+
+        sendResponse(data.id, finalErr, "SVG saved to " + data.svgPath, data.omgPath, data.svgPath, data.mode);
+    }
+
+    function writeJSONToFile(writer, options, om, svgPath, signalFilePath) {
+        var svgOut = null;
+        var svgWriterErrors = [];
+
+        console.log("Converting omg to svg...");
+
+        var svg = '';
+        try {
+            svg = writer.printSVG(om, options, svgWriterErrors);
+        } catch (err) {
+            console.error("EXCEPTION: " + err);
+            return 10;
+        }
+
+        if (!svg && !fileExists(signalFilePath)) {
+            console.log("The process has been cancelled by user");
+            return -1;
+        }
+
+        console.log("Dump svg to file " + svgPath);
+
+        try {
+            fs.writeFileSync(svgPath, svg, {encoding: "utf8", flag: "w"});
+        } catch (e) {
+            console.error("Error writing the svg file " + e);
+            return 17;         
+        }
+
+        console.log("Dump comlete with success");
+        return 0;
+    }
+
+    // ***********************************************************************************
+    // This is for testing purpose only.
+    // ***********************************************************************************
+    function startExport() {
+        // First picking the destination dir, so that we know where we dump errors.
+        var result = cep.fs.showSaveDialogEx("Export as SVG",
+                                             "~/Documents",
+                                            ["svg"],
+                                            "result.svg",
+                                            "SVG files",
+                                            "Export",
+                                            "File name:");
+        // The user hit cancel.
+        if (!result || !result.data || result.data == "")
+            return;
+
+        var fileName = result.data;
+        if (fileName.indexOf(".svg", fileName.length - 4) === -1)
+            fileName += ".svg";
+
+        var obj = {
+            jsonFormatOptions: {}, // Options for OMG Plugin
+            svgWriterOptions: {} // Options for svgWriter. These will be sent back to the extensions, to saveSVG.
+        };
+        var artboardsValue = "";
+        for (var i = 0; i < document.settings.artboards.length; i++)
+        {
+            var input = document.settings.artboards[i];
+            if (input.checked) {
+                artboardsValue = input.value;
+                break;
+            }
+        }
+
+        obj.jsonFormatOptions.embed = document.settings.embed.value;
+        obj.jsonFormatOptions.artboards = artboardsValue;
+        obj.jsonFormatOptions.convertToOutline = document.settings.convertToOutline.checked;
+        obj.jsonFormatOptions.svgPath = fileName;
+        obj.jsonFormatOptions.logPath = fileName + ".log";
+
+        obj.svgWriterOptions.trimToArtBounds = document.settings.trimArtBounds.checked || artboardsValue === "selected";
+        obj.svgWriterOptions.constrainToDocBounds = document.settings.clipDoc.checked;
+        obj.svgWriterOptions.precision = parseInt(document.settings.precision.value);
+        obj.svgWriterOptions.isResponsive = document.settings.responsive.checked;
+        obj.svgWriterOptions.minify = document.settings.minify.checked;
+        obj.svgWriterOptions.styling = document.settings.styling.value;
+        obj.svgWriterOptions.preserveAspectRatio = document.settings.preserveAspectRatio.value;
+        obj.svgWriterOptions.idType = document.settings.idType.value;
+
+        var command = 'app.sendScriptMessage("SvgFileFormat", "exportSVG", "' + JSON.stringify(obj).escapeSpecialChars() + '")';
+
+        CSLibrary.evalScript(command, function(response) {
+            if (response !== "ok") {
+                alert(response);
+            }
+        });
+
+    }
+    
+</script>
+<style type="text/css">
+    body {
+        background-color: rgb(72, 72, 72);
+    }
+    .content {
+        box-shadow: 0 0 0 2px rgb(56, 56, 56);
+        height: 290px;
+        margin: 0 auto;
+        font-family: sans-serif;
+        font-size: 11px;
+        color: #ffffff;
+        text-decoration: none; 
+        width: 200px;
+        padding: 5px;
+    }
+    .agora_button {
+        width: 125px;
+    }
+    form input[type="radio"], form input[type="checkbox"] {
+        cursor: pointer;
+    }
+    #reload {
+        opacity: 0.01;
+    }
+</style>
+</head>
+
+<body>
+    <div class="content">
+        <form name="settings">
+            Choose which artboards to export:<br>
+            <input type="radio" name="artboards" value="artboard">The active artboard<br>
+            <input type="radio" name="artboards" value="document" checked>The entire document<br>
+            <input type="radio" name="artboards" value="selected">The selected art<br>
+            <input type="radio" name="artboards" value="multiple">Each artboard to a separate file<br>
+            Options:<br>
+            <input type="checkbox" name="trimArtBounds">Trim to the art bounds<br>
+            <input type="checkbox" name="clipDoc">Clip to the document bounds<br>
+            <input type="checkbox" name="responsive" checked>Responsive<br>
+            <input type="checkbox" name="minify">Minify SVG<br>
+            Style attributes:
+            <select name="styling">
+                <option value="class" selected>Style elements</option>
+                <option value="style">Style attributes</option>
+                <option value="attribute">Presentation attributes</option>
+            </select>
+            <br/>
+            <input type="checkbox" name="convertToOutline">Convert text to outline<br>
+            Precision: <input type="number" name="precision" min="0" max="10" value="3"> <br>
+            Embed images:
+            <select name="embed">
+              <option value="preserve" selected>Preserve</option>
+              <option value="embed">Embed all</option>
+              <option value="link">Link all</option>
+            </select><br>
+            Preserve aspect ratio: 
+            <select name="preserveAspectRatio">
+              <option value="none">none</option>
+              <option value="xMinYMin">xMinYMin</option>
+              <option value="xMidYMin">xMidYMin</option>
+              <option value="xMaxYMin">xMaxYMin</option>
+              <option value="xMinYMid">xMinYMid</option>
+              <option value="xMidYMid" selected>xMidYMid</option>
+              <option value="xMinYMax">xMinYMax</option>
+              <option value="xMidYMax">xMidYMax</option>
+              <option value="xMaxYMax">xMaxYMax</option>
+            </select><br>
+            ID type: 
+            <select name="idType">
+              <option value="regular" selected>regular</option>
+              <option value="minimal">minimal</option>
+              <option value="unique">unique</option>
+            </select><br>
+            <input type="button" name="submit" class="agora_button" id="submitButton" value="Export SVG" onclick="startExport()"/>
+        </form>
+        <input type="button" name="reload" class="agora_button" id="reload" value="Reset" onclick="location.reload()"/>
+    </div>
+</body>
+</html>

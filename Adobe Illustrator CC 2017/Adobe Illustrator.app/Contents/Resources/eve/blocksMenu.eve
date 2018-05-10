@@ -1,0 +1,10 @@
+layout blocksMenu
+{
+	view menu( id: 27,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/ThreadedText/Creat=&Create", id:					133, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/ThreadedText/Release=&Release Selection", id:	157, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/ThreadedText/Remove=Re&move Threading", id:		158, help_id:0);
+}
+}

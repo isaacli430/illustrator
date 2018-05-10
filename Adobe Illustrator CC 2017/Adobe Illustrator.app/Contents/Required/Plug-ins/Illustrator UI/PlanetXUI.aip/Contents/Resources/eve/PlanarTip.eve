@@ -1,0 +1,229 @@
+layout PlanarTip
+{
+    view subview(identifier: "AIEveSubView",
+					layout_theme: @dialog_large,	
+					placement: @place_column,
+					show_border: false,
+					spacing: @unrelated_spacing)
+    {
+		column(horizontal: @align_fill)
+		{
+			overlay()
+			{
+				panel(bind: @showTip1, value: 1, margin: 0)
+				{
+					column(horizontal: @align_fill, child_horizontal: @align_fill)
+					{
+						static_text(identifier: "tip1heading",
+							        name: "$$$/PlanetX/Tip/Heading=How to use the Live Paint Bucket",
+								    characters: 1,
+									adjust_baseline_for_single_line_text: false,
+									bold: true);
+
+						static_text(identifier: "tip1body",
+							        name: "$$$/PlanetX/Tip/body=Select the collection of paths that make up the artwork you want to color. Then click with the Live Paint Bucket to make a Live Paint group.\n\nNote: You can find other Live Paint commands under the menu Object > Live Paint.",
+								    characters: 1,
+									adjust_baseline_for_single_line_text: false);
+					}
+						
+					row()
+					{
+						column(horizontal: @align_left, spacing: @label_widget_spacing)
+						{
+							image(identifier: "Tip1_Image1", image: "Tip1_Image1.png");
+
+							row(horizontal: @align_fill, child_vertical: @align_top, spacing: @label_widget_spacing)
+							{
+								column()
+								{
+									static_text(identifier: "PictureDesc111StaticText",
+												name: "$$$/PlanetX/Tip/PictureDescNum1=1.");
+								}
+								
+								column(horizontal: @align_fill)
+								{
+		        					static_text(identifier: "PictureDesc112StaticText",
+												name: "$$$/PlanetX/Tip/PictureDesc1=Select a collection of paths",
+												horizontal: @align_fill,
+												characters: 1,
+												adjust_baseline_for_single_line_text: false);
+								}        
+							}
+						}
+				
+						column(horizontal: @align_center, spacing: @label_widget_spacing)
+						{
+							image(identifier: "Tip1_Image2",image: "Tip1_Image2.png");
+				
+							row(horizontal: @align_fill, child_vertical: @align_top, spacing: @label_widget_spacing)
+							{
+								column()
+								{
+									static_text(identifier: "PictureDesc121StaticText",
+												name: "$$$/PlanetX/Tip/PictureDescNum2=2.");
+								}
+								
+								column(horizontal: @align_fill)
+								{
+    								static_text(identifier: "PictureDesc122StaticText",
+											name: "$$$/PlanetX/Tip/PictureDesc2=Click with the Live Paint Bucket",
+											horizontal: @align_fill,
+											characters: 1,
+											adjust_baseline_for_single_line_text: false);
+								}
+							}
+						}
+            
+						column(horizontal: @align_right, spacing: @label_widget_spacing)
+						{
+							image(identifier: "Tip1_Image3", image: "Tip1_Image3.png");
+
+							row(horizontal: @align_fill, child_vertical: @align_top, spacing: @label_widget_spacing)
+							{
+								column()
+								{
+									static_text(identifier: "PictureDesc131StaticText",
+											name: "$$$/PlanetX/Tip/PictureDescNum3=3.");
+								}
+								
+								column(horizontal: @align_fill)
+								{
+									static_text(identifier: "PictureDesc132StaticText",
+												name: "$$$/PlanetX/Tip/PictureDesc3=Paint areas between paths",
+												horizontal: @align_fill,
+												characters: 1,
+												adjust_baseline_for_single_line_text: false);
+								}
+        					}
+						}
+					}
+				}    
+			
+				panel(bind: @showTip1, value: 0, margin: 0)
+				{
+					column(horizontal: @align_fill,	child_horizontal: @align_fill)
+					{
+						static_text(characters: 1,
+									adjust_baseline_for_single_line_text: false,
+									identifier: "tip2heading1",
+									bold: true,
+									name: "$$$/PlanetX/Tip2/Heading1=How to add existing paths to a Live Paint group");
+
+						static_text(characters: 1,
+									adjust_baseline_for_single_line_text: false,
+									identifier: "tip2body1",
+									name: "$$$/PlanetX/Tip2/body1=Select a Live Paint group and the paths you want to add to it. Then use the menu command: Object > Live Paint > Merge.");
+
+						static_text(characters: 1,
+									adjust_baseline_for_single_line_text: false,
+									identifier: "tip2heading2",
+									bold: true,
+									name: "$$$/PlanetX/Tip2/Heading2=How to draw new artwork into an existing Live Paint group");
+
+						static_text(characters: 1,
+									adjust_baseline_for_single_line_text: false,
+									identifier: "tip2body2",
+									name: "$$$/PlanetX/Tip2/body2=Double-click with the Selection tool to isolate the selected group and begin drawing. Double-click on the artboard with the Selection tool to exit the isolated group when finished.");
+					}
+
+					row()
+					{
+						column(horizontal: @align_left, spacing: @label_widget_spacing)
+						{
+							image(identifier: "Tip2_Image1", image: "Tip2_Image1.png");
+
+							row(horizontal: @align_fill, child_vertical: @align_top, spacing: @label_widget_spacing)
+							{
+								column()
+								{
+									static_text(identifier: "PictureDesc211StaticText",
+												name: "$$$/PlanetX/Tip2/PictureDescNum1=1.");
+								}
+								
+								column(horizontal: @align_fill)
+								{
+									static_text(characters: 1,
+												adjust_baseline_for_single_line_text: false,
+												identifier: "PictureDesc212StaticText",
+												horizontal: @align_fill,
+												name: "$$$/PlanetX/Tip2/PictureDesc1=Double-click with the Selection tool to isolate the Live Paint group");
+								}
+							}
+						}	
+					
+						column(horizontal: @align_center, spacing: @label_widget_spacing)
+						{
+							image(identifier: "Tip2_Image2", image: "Tip2_Image2.png");
+
+							row(horizontal: @align_fill, child_vertical: @align_top, spacing: @label_widget_spacing)
+							{
+								column()
+								{
+									static_text(identifier: "PictureDesc221StaticText",
+												name: "$$$/PlanetX/Tip2/PictureDescNum2=2.");
+								}
+						
+								column(horizontal: @align_fill)
+								{
+									static_text(characters: 1,
+												adjust_baseline_for_single_line_text: false,
+												identifier: "PictureDesc222StaticText",
+												horizontal: @align_fill,
+												name: "$$$/PlanetX/Tip2/PictureDesc2=Draw new paths into the group");
+								}
+							}
+						}
+
+						column(horizontal: @align_right, spacing: @label_widget_spacing)
+						{
+							image(identifier: "Tip2_Image3",image: "Tip2_Image3.png");
+	
+							row(horizontal: @align_fill, child_vertical: @align_top, spacing: @label_widget_spacing)
+							{
+								column()
+								{
+									static_text(identifier: "PictureDesc231StaticText",
+												name: "$$$/PlanetX/Tip2/PictureDescNum3=3.");
+								}
+						
+								column(horizontal: @align_fill)
+								{
+									static_text(characters: 1,
+												adjust_baseline_for_single_line_text: false,
+												identifier: "PictureDesc232StaticText",
+												horizontal: @align_fill,
+												name: "$$$/PlanetX/Tip2/PictureDesc3=Use the Live Paint Bucket to paint areas between paths");
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+			
+		row(horizontal: @align_right, child_vertical: @align_fill,spacing: @button_group_spacing)
+		{
+			overlay(vertical: @align_fill, child_vertical: @align_fill)
+			{
+				panel(bind: @showTip1, value: 1, margin: 0, vertical: @align_fill, child_vertical: @align_fill)
+				{
+					button(identifier: "nextButton",
+							commit_button: true,
+							name: "$$$/PlanetX/Tip/Next=Next");
+				}
+			
+				panel(bind: @showTip1, value: 0, margin: 0, vertical: @align_fill, child_vertical: @align_fill)
+				{
+					button(identifier: "previousButton",
+							commit_button: true,
+							name: "$$$/PlanetX/Tip2/Previous=Previous");
+				}
+			}	
+                   
+			button(default: true,
+					commit_button: true,
+					identifier: "okButton",
+					name: "$$$/gOK=OK");
+		}
+    }
+}

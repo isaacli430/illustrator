@@ -1,0 +1,37 @@
+layout Round
+{
+    view subview(identifier: "AIEveSubView", 
+		layout_theme: @dialog_large,
+		spacing: @unrelated_spacing, 
+		show_border: false,
+		placement: @place_column)
+    {
+		unit_hot_number(characters: 10,
+					  max_characters: 10,
+					  decimal_places: 3,
+					  name: "$$$/Round/Dlg/Round/STATIC=&Radius:",
+					  min_value: 0.01,
+				  	  max_value: 4000,
+					  set_default_focus: true,
+					  unit: "CurrentDocumentUnit",
+					  stepper: true,
+					  identifier: "dRadius");				
+
+		row(child_horizontal: @align_left, horizontal: @align_fill,spacing: @separated_spacing,child_vertical: @align_center)
+		{
+			checkbox(name: "$$$/Round/Dlg/Round/PreviewD=&Preview",
+						bind: @Preview,guide_mask:[@guide_label],
+						identifier: "previewButton");
+			row(child_horizontal: @align_right, spacing: @related_spacing, reverse: os == @mac, horizontal: @align_fill)
+			{
+				button(name: "$$$/gOK=OK",
+						commit_button: true,
+					   identifier: "okButton");
+
+				button(name: "$$$/gCancel=Cancel",
+						commit_button: true,
+					   identifier: "cancelButton");
+			}
+		}			
+    }
+}

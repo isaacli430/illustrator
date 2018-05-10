@@ -1,0 +1,22 @@
+layout PerspectiveControlGroup
+{
+	view subview(identifier: "PerspectiveControlGroup",					
+					show_border: false,
+					layout_theme:  @controlbar,
+					child_vertical:  @align_center,
+					margin:0,
+					height:  31)	
+	{											
+		optional(identifier: "PerspectiveControlSubGroup", placement: @place_row, child_vertical: @align_center, margin:0, spacing: 0)
+		{
+			button(identifier: "PerspectiveEditObject",
+							   image:{normal:"SP_EditOriginal_Md_N.png",dark_normal:"SP_EditOriginal_Md_N_D.png"}
+							   );
+
+			button(identifier: "PerspectiveEditPerspective",
+								alt: "$$$/PerspectiveUI/ControlGroup/EditPerspective=Edit Perspective",			
+								image:{normal:"SP_EditPerspective_Md_N.png",dark_normal:"SP_EditPerspective_Md_N_D.png"}
+							   );	
+		}
+	}
+}

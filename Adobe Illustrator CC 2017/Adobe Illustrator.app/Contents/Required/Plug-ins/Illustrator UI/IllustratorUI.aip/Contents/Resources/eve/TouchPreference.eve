@@ -1,0 +1,38 @@
+layout TouchPreference
+{
+	view subview(identifier: "TouchPrefEveSubView",
+				 child_horizontal: @align_fill,
+				 placement: @place_column,
+				 show_border: false,
+				 margin: [22,15,0,15],
+				 layout_theme: @dialog_large)
+	{
+		column(spacing: 0)
+		{
+			static_text(identifier: "TPStaticTextCaption",
+							name: "$$$/PrefsDlg/TPDlg/TPStaticTextCaption=Touch Workspace"
+							);
+		
+			separator(identifier: "TPTopSeparator");
+		}
+		
+								
+		checkbox(identifier: "TPCheckboxSwitchToTWS",
+					name: "$$$/PrefsDlg/TPDlg/TPCheckboxSwitchToTWS=&Switch to Touch Workspace when the Keyboard is detached",
+					guide_mask: [ @guide_label ],
+					bind: @TPSwitchToTWS
+					);
+					
+		checkbox(identifier: "TPCheckboxPreciseCursor",
+					name: "$$$/PrefsDlg/TPDlg/TPCheckboxUsePreciseCursor=Use &Precise Cursors",
+					guide_mask: [ @guide_label ],
+					bind: @TPPreciseCursor
+					);
+					
+		link_button(identifier: "TouchPrefMoreInfo",
+					font_size: @large,
+					name: "$$$/PrefDlg/TPDlg/TPStaticMoreInfo=More Info..."
+					);
+	}
+}
+			

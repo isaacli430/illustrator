@@ -1,0 +1,44 @@
+sheet InfoPanel
+{
+	interface:
+	tTop1: "brush:brush: brush:brush:brush: brush:brush:";
+	tTop2: "brush:brush: brush:brush:brush: brush:brush:";
+	tx: "6000 cm";
+	ty: "0000 cm";
+	tw: "0000 cm";
+	th: "0000 cm";
+	tMid: "brush:brush: brush:brush:brush: brush:brush:";
+	td: "5 inch";
+	ta: "54 deg";
+	tz: "100%";
+	tColorL: "Gr:";
+	tColorR: "Gr:";
+	
+	lfc1: "C:";
+	tfc1: "C:";
+	lfc2: "M:";
+	tfc2: "M:";
+	lfc3: "Y:";
+	tfc3: "Y:";
+	lfc4: "K:";
+	tfc4: "K:";
+	
+	lsc1: "C:";
+	tsc1: "C:";
+	lsc2: "M:";
+	tsc2: "M:";
+	lsc3: "Y:";
+	tsc3: "Y:";
+	lsc4: "K:";
+	tsc4: "K:";
+	
+	
+	lx: "$$$/infoPalette/XCoord=X:";
+	ly: "$$$/infoPalette/YCoord=Y:";
+	lw: "$$$/infoPalette/Wname=W:";
+	lh: "$$$/infoPalette/Hname=H:";
+	la: "$$$/infoPalette/Wname=W:";
+	lz: "$$$/infoPalette/Hname=H:";
+	
+	ShowOptions: true;
+}

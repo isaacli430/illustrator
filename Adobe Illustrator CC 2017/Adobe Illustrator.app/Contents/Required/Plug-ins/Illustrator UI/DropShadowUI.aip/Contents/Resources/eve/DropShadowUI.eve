@@ -1,0 +1,98 @@
+layout DropShadowUI
+{
+	view subview(identifier: "AIEveSubView",
+					placement: @place_column,
+					show_border: false,
+					layout_theme: @dialog_large,
+					child_horizontal: @align_fill,spacing:@unrelated_spacing)
+	{
+		column()
+		{
+			popup(identifier: "mode", name:"$$$/DropShadow/Dlg/InnerGlow/BlendModeText=&Mode:",
+				set_default_focus: true,
+				include_custom_item: false, bind: @BlendMode,
+				items: [{name:"$$$/DropShadow/Mnu/16000/1=Normal",		value: 0},
+					{name:"-"},
+					{name:"$$$/DropShadow/Mnu/16000/2=Multiply",	value: 1},
+					{name:"$$$/DropShadow/Mnu/16000/3=Screen",		value: 2},
+					{name:"$$$/DropShadow/Mnu/16000/4=Overlay",		value: 3},
+					{name:"$$$/DropShadow/Mnu/16000/5=Soft Light",	value: 4},
+					{name:"$$$/DropShadow/Mnu/16000/6=Hard Light",	value: 5},
+					{name:"-"},
+					{name:"$$$/DropShadow/Mnu/16000/7=Color Dodge",	value: 6},
+					{name:"$$$/DropShadow/Mnu/16000/8=Color Burn",	value: 7},
+					{name:"-"},
+					{name:"$$$/DropShadow/Mnu/16000/9=Darken",		value: 8},
+					{name:"$$$/DropShadow/Mnu/16000/10=Lighten",	value: 9},
+					{name:"$$$/DropShadow/Mnu/16000/11=Difference",	value: 10},
+					{name:"$$$/DropShadow/Mnu/16000/12=Exclusion",	value: 11},
+					{name:"-"},
+					{name:"$$$/DropShadow/Mnu/16000/17=Hue",		value: 12},
+					{name:"$$$/DropShadow/Mnu/16000/18=Saturation",	value: 13},
+					{name:"$$$/DropShadow/Mnu/16000/19=Color",		value: 14},
+					{name:"$$$/DropShadow/Mnu/16000/20=Luminosity",	value: 15}
+					]
+				);
+
+			
+			unit_hot_number(identifier: "opacity",
+							name: "$$$/DropShadow/Dlg/InnerGlow/OpacityText=&Opacity:",
+							digits:6,decimal_places: 0,
+							stepper:true, min_value:0, max_value:100,
+							unit: "NumberEditUnit_Percent");
+							
+			unit_hot_number(identifier: "XOffset",
+								name: '$$$/DropShadow/Dlg/DropShadow/DSXOffsetText=&X Offset:',
+								digits:6,decimal_places: 2,
+								stepper:true, min_value:-1000, max_value:1000,bind:@XOffset,
+								unit:"CurrentDocumentUnit",bind_final:true);							
+			unit_hot_number(identifier: "YOffset",
+								name: '$$$/DropShadow/Dlg/DropShadow/DSYOffsetText=&Y Offset:',
+								digits:6,decimal_places: 2,
+								stepper:true, min_value:-1000, max_value:1000,bind:@YOffset,
+								unit:"CurrentDocumentUnit",bind_final:true);
+			unit_hot_number(identifier: "blur",
+						name: "$$$/DropShadow/Dlg/InnerGlow/BlurText=&Blur:",
+						digits:6,decimal_places: 2,
+						stepper:true, min_value:0, max_value:144,
+						unit:"CurrentDocumentUnit");
+			radiogroup(identifier:"ColorRadio",child_vertical:@align_fill,margin:0,show_border:false,placement:@place_row)
+			{
+				row(spacing:@label_widget_spacing,child_vertical:@align_center)
+				{
+					radio_button(identifier: "Color", bind: @ColorRadioGp, value:"Color", name: '$$$/DropShadow/Dlg/DropShadow/DSColorRadio=&Color:');
+					swatch(identifier: "SelectedColorWell",bind:@ShadowColor);
+				}
+				row(spacing:@label_widget_spacing,child_vertical:@align_center)
+				{
+					radio_button(identifier: "Darkness", bind: @ColorRadioGp, value:"Darkness", name: '$$$/DropShadow/Dlg/DropShadow/DSDarkerRadio=&Darkness:');
+					unit_hot_number(identifier: "DarknessEdit",
+							digits:3,decimal_places: 2,
+							min_value:-100,max_value:100,bind:@DarknessValue,
+								unit: "NumberEditUnit_Percent",bind_final:true);
+				}
+			}
+			optional(bind:@ShowWarning,value:true,placement: @place_row,margin:0,spacing:@related_spacing)
+			{
+				info_icon(identifier:"noteIcon",icontype:"note",size:"small");
+				static_text(identifier:"noteMsg",characters:1,name:'$$$/DropShadow/Warnings/overprintpreview=Spot colors may be shaded with black overprint. Turn on Overprint Preview to view.',
+							horizontal:@align_fill);
+			}
+		}
+
+		row(spacing:@separated_spacing,child_vertical:@align_center)
+		{
+			checkbox(name: "$$$/DropShadow/Dlg/InnerGlow/Preview=&Preview",
+				identifier: "previewButton", bind:@Preview,guide_mask: [@guide_label]);
+			row(reverse:os==@mac,horizontal: @align_right,spacing:@related_spacing)
+			{
+				button(name: "$$$/gOK=OK",
+					commit_button: true,
+					identifier: "okButton");
+				button(name: "$$$/gCancel=Cancel",
+					commit_button: true,
+					identifier: "cancelButton");
+			}
+		}
+	}
+}

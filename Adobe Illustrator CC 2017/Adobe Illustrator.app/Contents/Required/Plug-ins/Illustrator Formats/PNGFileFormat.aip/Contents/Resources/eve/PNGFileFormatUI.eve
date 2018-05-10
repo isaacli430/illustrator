@@ -1,0 +1,117 @@
+layout PNGFileFormatUI
+{
+	view subview(identifier: "PNGOptionsSubview", placement: @place_column, show_border: false, margin: 0)
+	{
+		optional(bind: @ShowPNGBanner, value: true)
+		{
+			subview(identifier: "PNGOptionsBanner", spacing: 0, horizontal: @align_fill, margin: 0, placement: @place_row, show_border: false)
+			{
+				row(horizontal: @align_fill, margin:[10,15,10,15])
+				{
+					static_text(identifier: "PNGOptionsBannerText",
+								font_size: 12,
+								vertical: @align_center,
+								name: "$$$/PNGFileFormat/Dlg/Options/PNGOptionsBannerText=Export in multiple scale factors.");
+							
+					button(identifier: "PNGOptionsBannerButton", 
+							vertical: @align_center, 
+							horizontal: @align_right,
+							font_size: 12,
+							name: "$$$/SmartExoprtFTUE/Banners/BannerButtonString=Try Export for Screens");
+				}
+			}
+		}
+			
+		subview(identifier: "AIEveSubView", layout_theme: @dialog_large, horizontal: @align_fill, placement: @place_column, show_border: false, 
+			spacing: @unrelated_spacing, child_horizontal: @align_center)
+		{
+			group(identifier: "optionsGroup", horizontal: @align_fill, placement: @place_column, name: "$$$/PNGFileFormat/ExportDialog/Options=Options")
+			{
+				optional(bind: @ShowPNGResolution, value: true)
+				{
+					row()
+					{
+						popup( identifier: "resolutionOption",
+							name: "$$$/PNGFileFormat/ExportDialog/Resolution=&Resolution:",
+							set_default_focus: true,
+							bind: @Resolution,
+							include_custom_item: false,
+							items: [ { name: "$$$/PNGFileFormat/ExportDialog/ScreenResolution=Screen (72 ppi)", value: 72},
+									 { name: "$$$/PNGFileFormat/ExportDialog/MediumResolution=Medium (150 ppi)", value: 150},
+									 { name: "$$$/PNGFileFormat/ExportDialog/HighResolution=High (300 ppi)", value: 300},
+									 { name: "", value: 0 },
+									 { name: "$$$/PNGFileFormat/ExportDialog/OtherResolution=Other", value: -1}]);
+					
+					
+						panel(bind: @Resolution, value: -1)
+						{
+							unit_hot_number(identifier: "numEditOtherResolution", 
+										min_value: 72, 
+										max_value: 2400, 
+										bind: @otherRes, 
+										decimal_places: 2,
+										digits: 4,
+										suffix: "$$$/PNGFileFormat/ExportDialog/PixelsPerInch=ppi");
+						}
+					}
+				}
+				row( child_vertical: @align_center)
+				{
+					popup(identifier: "antiAliasOption", name: "$$$/PNGFileFormat/ExportDialog/AntiAlias=&Anti-aliasing:", 
+						bind: @Antialias,
+						include_custom_item: false,
+						items: [{name: "$$$/PNGFileFormat/ExportDialog/Antialiasing/None=None", value: 0},
+							{name: "$$$/PNGFileFormat/ExportDialog/Antialiasing/ArtOptimized=Art Optimized (Supersampling)", value: 1},
+							{name: "$$$/PNGFileFormat/ExportDialog/Antialiasing/TypeOptimized=Type Optimized (Hinted)", value: 2}]);
+					overlay()
+					{
+						panel(margin: 0, bind: @Antialias, value: 1)
+						{
+							info_icon(identifier: "WarningIcon1", icontype: "note", size: "small", alt: "$$$/Rasterize/Str/ToolTip/ArtOptimizedAntialias=Text anti-aliasing settings will not be honored." );
+						}
+						panel(margin: 0, bind: @Antialias, value: 2)
+						{
+							info_icon(identifier: "WarningIcon2", icontype: "note", size: "small", alt: "$$$/Rasterize/Str/ToolTip/TextOptimizedAntialias=Best suited for text Objects. Text anti-aliasing settings will be honored.");
+						}
+					}
+				}
+				checkbox(identifier: "interlacedOption", bind: @Interlaced, name: "$$$/PNGFileFormat/ExportDialog/Interlaced=&Interlaced");
+				
+				optional(bind: @ShowBgColorInsideOptionsGroup, value: true)
+				{
+					popup(identifier: "bgColorOptionInsideOptionsGroup", name: "$$$/PNGFileFormat/ExportDialog/Color=Background &Color:",
+							bind: @Background,
+							include_custom_item: false,
+							items: [{ name: "$$$/PNGFileFormat/ExportDialog/TransparentBackground=Transparent", value: 0 },
+									{ name: "", value: 1 },
+									{ name: "$$$/PNGFileFormat/ExportDialog/WhiteBackground=White", value: 2 },
+									{ name: "$$$/PNGFileFormat/ExportDialog/BlackBackground=Black", value: 3 }
+									]);
+				}
+			}
+			optional(bind: @ShowPreview, value: true)
+			{	
+				group(identifier: "previewGroup", name: "$$$/PNGFileFormat/ExportDialog/Preview=Preview", child_horizontal: @align_center, horizontal: @align_fill)
+				{
+					popup(identifier: "bgColorOption", name: "$$$/PNGFileFormat/ExportDialog/Color=Background &Color:",
+						bind: @Background,
+						include_custom_item: false,
+						items: [{ name: "$$$/PNGFileFormat/ExportDialog/TransparentBackground=Transparent", value: 0 },
+								{ name: "", value: 1 },
+								{ name: "$$$/PNGFileFormat/ExportDialog/WhiteBackground=White", value: 2 },
+								{ name: "$$$/PNGFileFormat/ExportDialog/BlackBackground=Black", value: 3 }]);
+					image(identifier: "artworkPreviewItem", show_border: true, height: 100, width: 100);
+				}
+			}
+			
+			optional(bind: @ShowOkCancelButton, value: true)
+			{
+				row(horizontal: @align_right, reverse: os == @mac, spacing: @related_spacing)
+				{
+					button(identifier: "okButton", commit_button: true, name: "$$$/gOK=OK");
+					button(identifier: "cancelButton", commit_button: true, name: "$$$/gCancel=Cancel");
+				}
+			}
+		}
+	}
+}

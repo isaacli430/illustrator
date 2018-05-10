@@ -1,0 +1,25 @@
+layout objectMenu
+{
+	view menu( id: 6,
+				menubar: false )
+	{
+		menu( text: "$$$/_MBAR/Mnu/Object/Transform=&Transform", id:				91, help_id:  23 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/Object/Arrange=&Arrange", id:					92, help_id:  47 ) { separator();  }
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/Object/Group=&Group", id:						23, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Object/Ungroup=&Ungroup", id:					24, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Object/Lock=&Lock", id:							177, help_id:  51 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/Object/UnlockAll=Unloc&k All", id:				29, help_id:0);
+		menu( text: "$$$/_MBAR/Mnu/Object/Hide=&Hide", id:							222, help_id:  52 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/Object/ShowAll=Show All", id:					51, help_id:0);
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/Object/ExpandAppearance=&Expand Appearance", id:	148, help_id:0);
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/Object/Path=&Path", id:							97, help_id:  42 ) { separator();  }
+		separator();
+		menu( text: "$$$/_MBAR/Mnu/Object/ClippingMask=Clipping &Mask", id:			125, help_id:  15 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/Object/CompoundPath=C&ompound Path", id:			126, help_id:  16 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/Object/Artboards=&Artboards", id:				319, help_id:  71 ) { separator();  }
+		menu( text: "$$$/_MBAR/Mnu/Object/Graph=G&raph", id:						128, help_id:  18 ) { separator();  }
+	}
+}

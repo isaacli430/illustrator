@@ -1,0 +1,79 @@
+layout TouchPencilToolUI_
+{
+    view subview(identifier: "TouchPencilToolOptions",
+                child_horizontal: @align_fill, 
+				show_border: false,
+				layout_theme:@touch_panel,
+				spacing: @separated_spacing
+				)
+    {   
+    	column(child_horizontal: @align_fill, spacing : @separated_spacing)
+		{
+			column(horizontal: @align_fill, spacing:0)
+			{
+				static_text(identifier: "ToleranceFrame", name: "$$$/BRSPencilTool/Dlg/PencilToolPreferences/TouchFidelitySlider=Fidelity:", horizontal: @align_fill);
+				subview(identifier: "fidelity_ComboSlider", show_border: false, horizontal : @align_fill, height:32);
+				row(horizontal : @align_fill)
+				{
+					static_text(horizontal: @align_left, name: "$$$/BRSPencilTool/Dlg/PencilToolPreferences/Accurate=Accurate");
+					static_text(horizontal: @align_right, name: "$$$/BRSPencilTool/Dlg/PencilToolPreferences/Smooth=Smooth");
+				}
+			}
+			
+			row(horizontal: @align_fill)
+			{
+				column(spacing: @separated_spacing, guide_mask : [])
+				{
+					checkbox(identifier: "fillStrokesCheckBox", guide_mask: [@guide_label]);
+
+					checkbox(identifier: "keepSelectedCheckBox", guide_mask: [@guide_label]);
+					
+					checkbox(identifier: "toggleAutoCloseCheckBox", guide_mask: [@guide_label]);
+
+					checkbox(identifier: "editPathCheckBox", guide_mask: [@guide_label]);
+				}
+				column(spacing: @separated_spacing, guide_mask : [], horizontal: @align_fill)
+				{
+					static_text(horizontal: @align_left, name: "$$$/BRSPencilTool/Dlg/PencilToolPreferences/FillStrokes=Fill &new pencil strokes");
+
+					static_text(horizontal: @align_left, name: "$$$/BRSPencilTool/Dlg/PencilToolPreferences/KeepSelected=&Keep selected");
+					
+					row(horizontal: @align_fill)
+					{
+						static_text(horizontal: @align_left, name: "$$$/BRSPencilTool/Dlg/PencilToolPreferences/ToggleAutoClose=&Close paths when ends are within:");
+						edit_number(identifier: "editNumber2",
+									min_value: 0,
+									max_value: 20,
+									decimal_places: 0,
+									digits: 2);
+						static_text(name: "$$$/BRSPencilTool/Dlg/PencilToolPreferences/Within/pixels=pixels");
+					}
+
+					static_text(horizontal: @align_left, name: "$$$/BRSPencilTool/Dlg/PencilToolPreferences/EditSelectedPaths=&Edit selected paths");
+
+					row(horizontal: @align_fill)
+					{
+						static_text(name: "$$$/BRSPencilTool/Dlg/PencilToolPreferences/Within=&Within:");
+						edit_number(bind: @withinPx,
+									identifier: "editNumber1",
+									min_value: 0,
+									max_value: 20,
+									decimal_places: 0,
+									digits: 2);
+						static_text(name: "$$$/BRSPencilTool/Dlg/PencilToolPreferences/Within/pixels=pixels");
+					}
+					subview(identifier: "edit_distance_slider_subview", show_border: false, horizontal: @align_fill, height:22);
+				}
+			}
+		}
+
+		separator();
+
+		row( horizontal: @align_fill,margin : [0, 150, 0, 0])
+		{
+			button(identifier: "resetButton",
+			   name: "$$$/BRSPencilTool/Dlg/PencilToolPreferences/Reset=&Reset",horizontal: @align_right,vertical: @align_fill,commit_button: true);
+		}
+	}
+}
+

@@ -1,0 +1,40 @@
+/* [1] */
+-108
+/* [2] */
+$$$/CppPlugin/STR/Memory=The operation cannot complete because there isn't enough memory (RAM) available.
+/* [3] */
+271
+/* [4] */
+$$$/CppPlugin/STR/Memory=The operation cannot complete because there isn't enough memory (RAM) available.
+/* [5] */
+!MEM
+/* [6] */
+$$$/CppPlugin/STR/Memory=The operation cannot complete because there isn't enough memory (RAM) available.
+/* [7] */
+NESS
+/* [8] */
+$$$/CppPlugin/STR/Layer=The operation cannot complete because a layer is locked or invisible.
+/* [9] */
+SEGM
+/* [10] */
+$$$/CppPlugin/STR/AnchorPoints=The operation cannot complete because a path has too many anchor points.
+/* [11] */
+!sel
+/* [12] */
+$$$/CppPlugin/STR/Selection=The selection is not valid for this operation.
+/* [13] */
+DOC?
+/* [14] */
+$$$/CppPlugin/STR/OpenDoc=The operation cannot complete because there is no open document.
+/* [15] */
+~VAT
+/* [16] */
+$$$/CppPlugin/STR/Insertion=The operation cannot complete because an art object was of a type not allowed by the destination container.
+/* [17] */
+NEST
+/* [18] */
+$$$/CppPlugin/STR/ObjectDepth=This layer is 29 sub-levels deep. Actions like new layer, group, clipping, etc. cannot be performed at this layer level. Reduce or merge existing layers in this hierarchy to continue.
+/* [19] */
+<Others>
+/* [20] */
+$$$/CppPlugin/STR/Unknown=The operation cannot complete because of an unknown error.   [%s] 

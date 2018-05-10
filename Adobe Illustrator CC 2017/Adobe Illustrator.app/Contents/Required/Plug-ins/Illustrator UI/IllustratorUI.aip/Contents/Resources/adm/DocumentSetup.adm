@@ -1,0 +1,81 @@
+sheet DocumentSetup
+{
+constant:
+	allUnits: [
+					{ name : "$$$/_ARTWORKD/Mnu/rulerUnits/1=Points",  value : 3},
+					{ name : "$$$/_ARTWORKD/Mnu/rulerUnits/2=Picas",   value : 4},
+					{ name : "$$$/_ARTWORKD/Mnu/rulerUnits/3=Inches",   value : 1},
+					{ name : "$$$/_ARTWORKD/Mnu/rulerUnits/4=Millimeters",   value : 5},
+					{ name : "$$$/_ARTWORKD/Mnu/rulerUnits/5=Centimeters",   value : 2},
+					{ name : "$$$/_ARTWORKD/Mnu/rulerUnits/Ha=Ha",   value : 7},
+					{ name : "$$$/_ARTWORKD/Mnu/rulerUnits/6=Pixels",    value : 6}
+				];
+	englishUnits: [
+					{ name : "$$$/_ARTWORKD/Mnu/rulerUnits/1=Points",  value : 3},
+					{ name : "$$$/_ARTWORKD/Mnu/rulerUnits/2=Picas",   value : 4},
+					{ name : "$$$/_ARTWORKD/Mnu/rulerUnits/3=Inches",   value : 1},
+					{ name : "$$$/_ARTWORKD/Mnu/rulerUnits/4=Millimeters",   value : 5},
+					{ name : "$$$/_ARTWORKD/Mnu/rulerUnits/5=Centimeters",   value : 2},
+					{ name : "$$$/_ARTWORKD/Mnu/rulerUnits/6=Pixels",    value : 6}
+				];
+	NumberUnits: [
+					"<Unit strings>",
+					"NumberEditUnit_Inch",
+					"NumberEditUnit_CM",
+					"NumberEditUnit_Point",
+					"NumberEditUnit_Pica",
+					"NumberEditUnit_MM",
+					"NumberEditUnit_Pixel",
+					"NumberEditUnit_Ha"
+				];
+
+
+interface:
+		max_bleed_value: 72;
+		max_lr_bleed_value: max_bleed_value;
+		max_tb_bleed_value: max_bleed_value;
+		showAsianOptions:false;
+		unitItems: allUnits <== showAsianOptions ? allUnits: englishUnits;
+		unitsValue: 3;
+		bleed_decimal_places: 3 <== ruler_units == "NumberEditUnit_Inch" ? 4 : 3;
+		bleed_top : 0;
+		bleed_left : 0;
+		bleed_bottom : 0;
+		bleed_right : 0;
+		bleed_values_locked : false;
+		ruler_units: "NumberEditUnit_Point" <== NumberUnits[unitsValue];
+		ImageInOutline:false;
+		SubstitutedGlyphs:false;
+		SimulatePaperColor:false;
+		ExportValue:1;
+		transparency_grid: "medium";
+		GridSize: 2;
+		UseTypographerQuotes:true;
+		SuppressWhiteOverprint:true;
+		SuperScriptSize:0;
+		SubScriptSize:0;
+		SuperScriptPosition:0;
+		SubScriptPosition:0;
+		SmallCaps:0;
+		language:0;
+		GeneralType:0;
+logic:
+	when (bleed_values_locked == true) relate
+	{
+		bleed_top <== bleed_left;
+		bleed_left <== bleed_top;
+	}
+
+	when (bleed_values_locked == true) relate
+	{
+		bleed_left <== bleed_bottom;
+		bleed_bottom <== bleed_left;
+	}
+
+	when (bleed_values_locked == true) relate
+	{
+		bleed_bottom <== bleed_right;
+		bleed_right <== bleed_bottom;
+	}
+
+}

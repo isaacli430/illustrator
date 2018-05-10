@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+	<menuItem id="1" text="$$$/_TextDlgs/Mnu/SLOParaPalMenu/1=Hide Options"></menuItem>
+	<separator></separator>
+	<menuItem id="8" text="$$$/_TextDlgs/Mnu/SLOParaPalMenu/3=Roman Hanging Punctuation"></menuItem>
+	<separator></separator>
+	<menuItem id="13" text="$$$/_TextDlgs/Mnu/SLOParaPalMenu/5=Justification..."></menuItem>
+	<menuItem id="14" text="$$$/_TextDlgs/Mnu/SLOParaPalMenu/6=Hyphenation..."></menuItem>
+	<separator></separator>
+	<menuItem id="16" text="$$$/_TextDlgs/Mnu/SLOParaPopupPalMenu/6/win=Adobe &amp;Single-line Composer"></menuItem>
+	<menuItem id="17" text="$$$/_TextDlgs/Mnu/SLOParaPopupPalMenu/7/win=Adobe &amp;Every-line Composer"></menuItem>
+	<separator></separator>
+	<menuItem id="19" text="$$$/_TextDlgs/Mnu/SLOParaPopupPalMenu/9=Reset Panel"></menuItem>
+	<separator></separator>
+</menu>

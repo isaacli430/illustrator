@@ -1,0 +1,71 @@
+sheet ScatterBrushToolOptionsUI
+{
+interface:
+
+show: 0;
+scaleFilter: {min_value: 10, max_value: 1000};
+scaleValueRange: {min_value: 1, max_value: 10000};
+
+scaleRotationFilter: {min_value: -180, max_value: 180};
+scaleRotationValueRange: {min_value: -360, max_value: 360};
+
+scaleScatterFilter: {min_value: -1000, max_value: 1000};
+scaleScatterValueRange: {min_value: -10000, max_value: 10000};
+hideText:false;
+
+AV_ScatterBrushName: "";
+
+AV_size_left: 100;
+AV_spacing_left: 100;
+AV_scatter_left:0;
+AV_rotation_left:0;
+
+AV_size_right_old:		100;
+AV_spacing_right_old:	100;
+AV_scatter_right_old:	0;
+AV_rotation_right_old:	0;
+
+unlink AV_size_right	: 100	<== AV_brush_param_type_for_size	== 0 ? AV_size_right_old		: AV_size_right;
+unlink AV_spacing_right	: 100	<== AV_brush_param_type_for_spacing == 0 ? AV_spacing_right_old		: AV_spacing_right;
+unlink AV_scatter_right	: 0		<== AV_brush_param_type_for_scatter	== 0 ? AV_scatter_right_old		: AV_scatter_right;
+unlink AV_rotation_right: 0		<== AV_brush_param_type_for_rotation == 0 ? AV_rotation_right_old	: AV_rotation_right;
+
+AV_brush_param_type_for_size: 0;
+AV_brush_param_type_for_spacing:0;
+AV_brush_param_type_for_scatter:0;
+AV_brush_param_type_for_rotation:0;
+
+AV_brush_param_rotation_relative_to:0;
+AV_brush_param_colorization_method:0;
+
+
+AV_pick_key_color : false;
+
+
+logic:
+
+when ( ! (AV_brush_param_type_for_size		== 0) ) relate
+{
+	AV_size_right		<== AV_size_right_old;
+    AV_size_right_old	<== AV_size_right;
+}
+
+when ( ! (AV_brush_param_type_for_spacing	== 0) ) relate
+{
+	AV_spacing_right		<== AV_spacing_right_old;
+    AV_spacing_right_old	<== AV_spacing_right;
+}
+
+when ( ! (AV_brush_param_type_for_scatter	== 0) ) relate
+{
+	AV_scatter_right		<== AV_scatter_right_old;
+    AV_scatter_right_old	<== AV_scatter_right;
+}
+
+when ( ! (AV_brush_param_type_for_rotation	== 0) ) relate
+{
+	AV_rotation_right		<== AV_rotation_right_old;
+    AV_rotation_right_old	<== AV_rotation_right;
+}
+
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<menu>
+	<menuItem id="7" text="$$$/SwatchLibs/Mnu/Lib/Add=&amp;Add to Swatches"></menuItem>
+	<separator></separator>
+	<menuItem id="11" text="$$$/SwatchLibs/Mnu/16500/ByName=So&amp;rt by Name"></menuItem>
+	<menuItem id="12" text="$$$/SwatchLibs/Mnu/16500/ByKind=Sort by &amp;Kind"></menuItem>
+	<menuItem id="13" text="$$$/SwatchLibs/Mnu/16500/Find=Show &amp;Find Field"></menuItem>
+	<separator></separator>
+	<menuItem id="15" text="$$$/SwatchLibs/Mnu/16500/Sm=&amp;Small Thumbnail View"></menuItem>
+	<menuItem id="16" text="$$$/SwatchLibs/Mnu/16500/Md=&amp;Medium Thumbnail View"></menuItem>
+	<menuItem id="17" text="$$$/SwatchLibs/Mnu/16500/Lg=&amp;Large Thumbnail View"></menuItem>
+	<menuItem id="18" text="$$$/SwatchLibs/Mnu/Lib/SmList=Small List V&amp;iew"></menuItem>
+	<menuItem id="19" text="$$$/SwatchLibs/Mnu/Lib/LgList=Large List Vie&amp;w"></menuItem>
+</menu>

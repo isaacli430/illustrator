@@ -1,0 +1,18 @@
+sheet ActionPaletteBatchUI
+{
+	interface:
+		batchSourceMode: 0;
+		batchSourceModeSection: 0 <== (batchSourceMode == 0) ? 0 : 1;
+		unlink batchOpenPath: "" <== (batchSourceMode == 0) ? batchOpenPath : "";
+		unlink batchOverrideOpen: 0 <== (batchSourceMode == 0) ? batchOverrideOpen : 0;
+		unlink batchIncludeSubDir: 0 <== (batchSourceMode == 0) ? batchIncludeSubDir : 0;
+		disabledList: [] <== (batchSourceMode == 1)  ? [1, 2] : [];
+		batchSaveMode: 0 <== (batchSourceMode == 1) && ((batchSaveMode == 1) || (batchSaveMode == 2)) ? 0 : batchSaveMode;
+		batchOverrideExport: 0;
+		batchErrorMode: 0;
+		unlink batchOverrideSave: 0 <== (batchSourceMode == 1 || batchSaveMode == 2) ? batchOverrideSave : 0;
+		unlink batchSavePath: "" <== ((batchSourceMode == 1 && batchOverrideSave > 0) || batchSaveMode == 2) ? batchSavePath : "";
+		unlink batchExportPath: "" <== (batchOverrideExport > 0) ? batchExportPath : "";
+		unlink batchFileNameOptions: 0 <== (batchSourceMode == 1) ? batchFileNameOptions : 0;
+		unlink batchErrorPath: "" <== (batchErrorMode == 1) ? batchErrorPath : "";
+}

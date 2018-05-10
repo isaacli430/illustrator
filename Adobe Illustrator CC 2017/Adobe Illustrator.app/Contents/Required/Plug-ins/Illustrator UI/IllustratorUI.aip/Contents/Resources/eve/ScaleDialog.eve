@@ -1,0 +1,109 @@
+layout ScaleDialog
+{
+    view subview(show_border: false,
+                 layout_theme: @dialog_large,
+                 identifier: "ScaleDialogSubView",
+                 child_horizontal: @align_fill,spacing: @unrelated_spacing)
+    {
+		column(horizontal: @align_fill,child_horizontal: @align_fill,spacing: @inter_group_spacing)
+		{
+			group(name: "$$$/_TRANSFOR/Cap/Scale=Scale")
+			{	
+				row(spacing: @label_widget_spacing)
+				{
+					radio_button(name: "$$$/_TRANSFOR/Dlg/Scale/uniformRadioButton=&Uniform:",
+									value: 0,
+									bind: @ScaleRatio,
+									guide_mask: [ @guide_label],
+									identifier: "UniformRadioButton");
+					
+					unit_hot_number(identifier: "UniformScale",
+									min_value: -20000,
+									max_value: 20000,
+									decimal_places: 3,
+									digits: 5,
+									unit: "NumberEditUnit_Percent");
+				}
+					
+				radio_button(name: "$$$/_TRANSFOR/Dlg/Scale/nonUniformRadioButton=&Non-Uniform",
+								value: 1,
+								bind: @ScaleRatio,
+								guide_mask: [ @guide_label],
+								identifier: "NonUniformRadioButton");
+							
+				unit_hot_number(name: "$$$/_TRANSFOR/Dlg/Scale/horizontalTitleScale=&Horizontal:",
+								identifier: "HorizontalScale",
+								min_value: -20000,
+								max_value: 20000,
+								decimal_places: 3,
+								digits: 5,
+								unit: "NumberEditUnit_Percent");
+			
+				unit_hot_number(name: "$$$/_TRANSFOR/Dlg/Scale/verticalTitleScale=&Vertical:",
+								identifier: "VerticalScale",
+								min_value: -20000,
+								max_value: 20000,
+								decimal_places: 3,
+								digits: 5,
+								unit: "NumberEditUnit_Percent");
+			}
+			
+			group(name: "$$$/_TRANSFOR/Dlg/Scale/scaleOptionsGroupbox=Options",
+					guide_mask: [ @guide_label],
+					child_horizontal: @align_fill)
+			{
+				 checkbox(name: "$$$/_TRANSFOR/Dlg/Scale/scaleCornerRadiiForShapes=&Scale Corners",
+							identifier: "ScaleCorenrRadiiForShapesChkBx",
+							alt: "$$$/TransformPalett/Str/ToolTip/ScaleRadiiForShapes=Set this option to scale corner radii proportionally",
+							bind: @ScaleCornerRadiiForShapesCell);
+							
+				 checkbox(name: "$$$/_TRANSFOR/Dlg/Scale/scaleStrokeWeightScale=Scale Strokes && &Effects",
+							identifier: "ScaleStrokeAndEffectChkBx",
+							bind: @ScaleStrokeAndEffectCell);
+		        
+				 row(placement: @place_row)
+				 {
+					checkbox(name: "$$$/_TRANSFOR/Dlg/Scale/doObjectsScale=Transform &Objects",
+							identifier: "ObjectsCheckBox",
+							bind: @ObjectCheckBoxCell);
+					
+					checkbox(name: "$$$/_TRANSFOR/Dlg/Scale/doPatternsScale=Transform Pa&tterns",
+							bind: @PatternCheckBoxCell,
+							identifier: "PatternCheckBox");
+				 }
+			}
+			row(vertical: @align_fill,child_vertical: @align_center)
+			{
+				checkbox(name: "$$$/_TRANSFOR/Dlg/Scale/scalePreview=&Preview",
+					  bind: @PreviewCheckBoxCell,
+					  guide_mask: [ @guide_label],
+					  identifier: "PreviewCheckbox");
+			}            
+		}
+
+	
+		row(spacing: @button_group_spacing,child_vertical: @align_center)
+		{
+			button(name: "$$$/_TRANSFOR/Dlg/Scale/copyScale=&Copy",
+					identifier: "copyButton",
+					action: @copy,
+					vertical: @align_fill,
+					commit_button: true,
+					horizontal: @align_left);  
+	
+			row(spacing: @related_spacing, reverse: os == @mac,horizontal: @align_right)
+			{
+				button(name: "$$$/gOK=OK",
+						identifier: "okButton",
+						action: @ok,
+						commit_button: true);
+
+				button(identifier: "cancelButton",
+						name: "$$$/gCancel=Cancel",
+						action: @cancel,
+						commit_button: true);
+			}
+		}
+	}
+}
+}

@@ -1,0 +1,110 @@
+layout AlignControlPanelMaxGroup
+{
+    view subview(identifier: "AlignControlPanelMaxGroup",
+				 placement: @place_row,
+				 layout_theme: @controlbar,
+				 show_border: false,
+				 child_vertical: @align_center,
+				 margin : 0,
+				 spacing: 5,
+				 height:  31
+				 )
+    {						
+		optional(identifier: "AlignToPopUpSubGroup", placement: @place_row, child_vertical: @align_center, margin:0, spacing: 5)
+		{
+			subview(margin:0, show_border: false, height: 25 , child_vertical:@align_center)
+			{
+				separator(orientation: @vertical, vertical: @align_fill);
+			}
+			popup(identifier: "AlignToPopUp",
+								include_custom_item: false,
+								items: [{name: "$$$/FWAlignADM/Str/ToolTip/SelectionAlign=Align to Selection", value: 0},
+										{name: "$$$/FWAlignADM/Str/ToolTip/KeyObjectAlign=Align to Key Object", value: 1},
+										{name: "$$$/FWAlignADM/Str/ToolTip/ArtboardAlign=Align to Artboard", value: 2}],
+								image: {normal: "SP_AlignToSelection_27x18_N.png",dark_normal:"SP_AlignToSelection_27x18_N_D.png"},
+								wants_focus: false);		
+		}					
+		optional(identifier: "AlignHButtonsSubGroup", placement: @place_row, child_vertical: @align_center, margin:0, spacing:0)
+		{
+			button(identifier: "HorizontalAlignLeft",
+					image: {normal: "SP_AlignLeft_Md_N.png", dark_normal:"SP_AlignLeft_Md_N_D.png"},
+					alt: "$$$/FWAlignADM/Str/ToolTip/HAlignLeft=Horizontal Align Left",
+					wants_focus: false,
+					value: 1);
+					
+			button(identifier: "HorizontalAlignCenter",
+					image: {normal: "SP_AlignCenter_Md_N.png",dark_normal:"SP_AlignCenter_Md_N_D.png"},
+					alt: "$$$/FWAlignADM/Str/ToolTip/HAlignCenter=Horizontal Align Center",
+					wants_focus: false,
+					value: 2);
+
+			button(identifier: "HorizontalAlignRight",
+					image: {normal: "SP_AlignRight_Md_N.png", dark_normal:"SP_AlignRight_Md_N_D.png"},
+					alt: "$$$/FWAlignADM/Str/ToolTip/HAlignRight=Horizontal Align Right",
+					wants_focus: false,
+					value: 3);
+		 }
+		optional(identifier: "AlignVButtonsSubGroup", placement: @place_row, child_vertical: @align_center, margin:0, spacing:0)
+		{			
+			button(identifier: "VerticalAlignTop",
+					image: {normal: "SP_AlignTop_Md_N.png", dark_normal:"SP_AlignTop_Md_N_D.png"},
+					alt: "$$$/FWAlignADM/Str/ToolTip/VAlignTop=Vertical Align Top",
+					wants_focus: false,
+					value: 4);
+					
+			button(identifier: "VerticalAlignCenter",
+					image: {normal: "SP_AlignMiddle_Md_N.png",dark_normal:"SP_AlignMiddle_Md_N_D.png"},
+					alt: "$$$/FWAlignADM/Str/ToolTip/VAlignCenter=Vertical Align Center",
+					wants_focus: false,
+					value: 5);
+					
+			button(identifier: "VerticalAlignBottom",
+					image: {normal: "SP_AlignBottom_Md_N.png", dark_normal:"SP_AlignBottom_Md_N_D.png"},
+					alt: "$$$/FWAlignADM/Str/ToolTip/VAlignBottom=Vertical Align Bottom",
+					wants_focus: false,
+					value: 6);
+		}	
+		optional(identifier: "DistributeVButtonsSubGroup", placement: @place_row, child_vertical: @align_center, margin:0, spacing:0)
+		{	
+			button(identifier: "DistributeEdgeTop",
+					image: {normal: "SP_DistributeTopEdge_Md_N.png",dark_normal:"SP_DistributeTopEdge_Md_N_D.png"},
+					alt: "$$$/FWAlignADM/Str/ToolTip/VDistributeTop=Vertical Distribute Top",
+					wants_focus: false,
+					value: 7);
+					
+			button(identifier: "VerticalDistributeCenter",
+					image: {normal: "SP_DistributeVerticalCenter_Md_N.png",dark_normal:"SP_DistributeVerticalCenter_Md_N_D.png"},
+					alt: "$$$/FWAlignADM/Str/ToolTip/VDistributeCenter=Vertical Distribute Center",
+					wants_focus: false,
+					value: 8);
+					
+			button(identifier: "DistributeEdgeBottom",
+					image: {normal: "SP_DistributeBottomEdge_Md_N.png",dark_normal:"SP_DistributeBottomEdge_Md_N_D.png"},
+					alt: "$$$/FWAlignADM/Str/ToolTip/VDistributeBottom=Vertical Distribute Bottom",
+					wants_focus: false,
+					value: 9);
+		}
+		
+		optional(identifier: "DistributeHButtonsSubGroup", placement: @place_row, child_vertical: @align_center, margin:0, spacing:0)
+		{			
+			button(identifier: "DistributeEdgeLeft",
+					image: {normal: "SP_DistributeLeftEdge_Md_N.png",dark_normal:"SP_DistributeLeftEdge_Md_N_D.png"},
+					alt: "$$$/FWAlignADM/Str/ToolTip/HDistributeLeft=Horizontal Distribute Left",
+					wants_focus: false,
+					value: 10);
+					
+			button(identifier: "DistributeCenter",
+					image: {normal: "SP_DistributeHorizontalCenter_Md_N.png",dark_normal:"SP_DistributeHorizontalCenter_Md_N_D.png"},
+					alt: "$$$/FWAlignADM/Str/ToolTip/HDistributeCenter=Horizontal Distribute Center",
+					wants_focus: false,
+					value: 11);
+					
+			button(identifier: "DistributeEdgeRight",
+					image: {normal: "SP_DistributeRightEdge_Md_N.png",dark_normal:"SP_DistributeRightEdge_Md_N_D.png"},
+					alt: "$$$/FWAlignADM/Str/ToolTip/HDistributeRight=Horizontal Distribute Right",
+					wants_focus: false,
+					value: 12);								
+		}
+	}
+}
+

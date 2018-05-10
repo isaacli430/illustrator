@@ -1,0 +1,28 @@
+layout PasteOptionsUI
+{
+
+    view subview(identifier: "AIEveSubView",
+				placement: @place_col,
+				show_border: false,
+				layout_theme: @dialog_large,
+				spacing: @unrelated_spacing )
+    {
+        group(name: "$$$/_PasteOptions/Cap/11330/Cluster=Paste As", identifier: "group", horizontal: @align_fill)
+        {
+			radiogroup(identifier: "radioGroup")
+			{
+				radio_button(name: "$$$/_PasteOptions/Cap/11330/2=Compound &Shape (fully editable)",
+            				bind: @PasteOptionsRadioGp,
+							identifier: "CompoundShapeRadioButtonId",
+            				value: 0);
+
+				radio_button(name: "$$$/_PasteOptions/Cap/11330/3=Compound &Path (faster)",
+            				bind: @PasteOptionsRadioGp,
+							identifier: "CompoundPathRadioButtonId",
+            				value: 1);
+			}
+        }
+
+        button(name: "$$$/gOK=OK", identifier: "okButton", commit_button: true, horizontal: @align_right);
+    }
+}

@@ -1,0 +1,14 @@
+/* [1] */
+$$$/MPSCommon/Str/16001/Mac=\rEPS Parser
+/* [2] */
+$$$/MPSCommon/Str/16002/Mac=\rParsed EPS
+/* [3] */
+$$$/MPSCommon/STR/16000/3/Mac=Parsing PDF Format...
+/* [4] */
+$$$/MPSCommon/STR/16000/4/Mac=Parsing EPS Format...
+/* [5] */
+$$$/MPSCommon/STR/16000/5/Mac=The EPS parser is unable to parse the file.
+/* [6] */
+$$$/MPSCommon/STR/16000/6/Mac=Parsing could not complete because there is not enough memory. Some objects may be damaged or missing.
+/* [7] */
+$$$/MPSCommon/STR/16000/7/Mac=The current layer is locked. To add artwork, unlock it in the layer panel.

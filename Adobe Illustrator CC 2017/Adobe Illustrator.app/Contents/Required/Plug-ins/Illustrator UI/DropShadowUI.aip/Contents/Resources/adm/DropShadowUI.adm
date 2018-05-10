@@ -1,0 +1,16 @@
+sheet DropShadowUI
+{
+	constant:
+	my_red:{ r: 1,g: 0,b: 0 };
+	interface:
+		ColorRadioGp: "Color";
+		BlendMode: 1;
+		unlink DarknessValue:100 <== ColorRadioGp == "Color" ? SavedDarknessValue : DarknessValue;
+		SavedDarknessValue: 100 <==  ColorRadioGp == "Color" ? SavedDarknessValue : DarknessValue;
+		unlink ShadowColor:my_red <== ColorRadioGp != "Color"? my_red : ShadowColor;
+		XOffset:0;
+		YOffset:0;
+		EnablePreview:false;
+		unlink Preview:false <== EnablePreview == true? Preview : false;
+		ShowWarning <== ColorRadioGp != "Color" && DarknessValue != 0 && DarknessValue != 100;
+}
